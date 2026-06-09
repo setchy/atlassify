@@ -37,8 +37,7 @@ export const api = {
    * @param value - The plaintext string to encrypt.
    * @returns A promise resolving to the encrypted string.
    */
-  encryptValue: (value: string) =>
-    invokeMainEvent(EVENTS.SAFE_STORAGE_ENCRYPT, value),
+  encryptValue: (value: string) => invokeMainEvent(EVENTS.SAFE_STORAGE_ENCRYPT, value),
 
   /**
    * Decrypt an encrypted string using Electron's safe storage.
@@ -46,8 +45,7 @@ export const api = {
    * @param value - The encrypted string to decrypt.
    * @returns A promise resolving to the plaintext string.
    */
-  decryptValue: (value: string) =>
-    invokeMainEvent(EVENTS.SAFE_STORAGE_DECRYPT, value),
+  decryptValue: (value: string) => invokeMainEvent(EVENTS.SAFE_STORAGE_DECRYPT, value),
 
   /**
    * Enable or disable launching the application at system login.
@@ -221,10 +219,8 @@ export const api = {
 
   /** Aptabase analytics helpers. */
   aptabase: {
-    trackEvent: (
-      eventName: string,
-      props?: Record<string, string | number | boolean>,
-    ) => sendMainEvent(EVENTS.APTABASE_TRACK_EVENT, { eventName, props }),
+    trackEvent: (eventName: string, props?: Record<string, string | number | boolean>) =>
+      sendMainEvent(EVENTS.APTABASE_TRACK_EVENT, { eventName, props }),
   },
 };
 
@@ -235,9 +231,6 @@ export const api = {
 try {
   contextBridge.exposeInMainWorld('atlassify', api);
 } catch (err) {
-  // biome-ignore lint/suspicious/noConsole: preload environment is strictly sandboxed
-  console.error(
-    '[preload] Failed to expose Atlassify Bridge API to renderer',
-    err,
-  );
+  // oxlint-disable-next-line no-console -- preload environment is strictly sandboxed
+  console.error('[preload] Failed to expose Atlassify Bridge API to renderer', err);
 }

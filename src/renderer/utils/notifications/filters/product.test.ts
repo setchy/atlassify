@@ -7,8 +7,8 @@ import { useFiltersStore } from '../../../stores';
 
 import type { AtlassifyNotification } from '../../../types';
 
-import { PRODUCTS } from '../../products';
 import { productFilter } from '.';
+import { PRODUCTS } from '../../products';
 
 describe('renderer/utils/notifications/filters/product.ts', () => {
   it('hasProductFilters', () => {
@@ -28,13 +28,9 @@ describe('renderer/utils/notifications/filters/product.ts', () => {
   });
 
   it('getProductFilterCount', () => {
-    expect(
-      productFilter.getFilterCount(mockAccountNotifications, 'bitbucket'),
-    ).toBe(1);
+    expect(productFilter.getFilterCount(mockAccountNotifications, 'bitbucket')).toBe(1);
 
-    expect(productFilter.getFilterCount(mockAccountNotifications, 'jira')).toBe(
-      0,
-    );
+    expect(productFilter.getFilterCount(mockAccountNotifications, 'jira')).toBe(0);
   });
 
   it('filterNotificationByProduct', () => {
@@ -43,12 +39,8 @@ describe('renderer/utils/notifications/filters/product.ts', () => {
       product: PRODUCTS.jira,
     } as AtlassifyNotification;
 
-    expect(
-      productFilter.filterNotification(mockNotification, 'bitbucket'),
-    ).toBe(false);
+    expect(productFilter.filterNotification(mockNotification, 'bitbucket')).toBe(false);
 
-    expect(productFilter.filterNotification(mockNotification, 'jira')).toBe(
-      true,
-    );
+    expect(productFilter.filterNotification(mockNotification, 'jira')).toBe(true);
   });
 });

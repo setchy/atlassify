@@ -7,12 +7,7 @@ import * as comms from '../utils/system/comms';
 import * as tray from '../utils/system/tray';
 import * as theme from '../utils/ui/theme';
 import * as zoom from '../utils/ui/zoom';
-import {
-  useAccountsStore,
-  useFiltersStore,
-  useRuntimeStore,
-  useSettingsStore,
-} from './';
+import { useAccountsStore, useFiltersStore, useRuntimeStore, useSettingsStore } from './';
 import { initializeStoreSubscriptions } from './subscriptions';
 
 // Mock window.atlassify
@@ -114,9 +109,7 @@ describe('renderer/stores/subscriptions.ts', () => {
     });
 
     it('should trigger setKeyboardShortcut when keyboardShortcutEnabled changes', () => {
-      useSettingsStore
-        .getState()
-        .updateSetting('keyboardShortcutEnabled', false);
+      useSettingsStore.getState().updateSetting('keyboardShortcutEnabled', false);
 
       expect(comms.setKeyboardShortcut).toHaveBeenCalledWith(false);
     });
@@ -134,17 +127,13 @@ describe('renderer/stores/subscriptions.ts', () => {
     });
 
     it('should trigger setTrayIconColorAndTitle when showNotificationsCountInTray changes', () => {
-      useSettingsStore
-        .getState()
-        .updateSetting('showNotificationsCountInTray', false);
+      useSettingsStore.getState().updateSetting('showNotificationsCountInTray', false);
 
       expect(tray.setTrayIconColorAndTitle).toHaveBeenCalledTimes(1);
     });
 
     it('should update zoom level when zoomPercentage changes', () => {
-      useSettingsStore
-        .getState()
-        .updateSetting('zoomPercentage', 200 as Percentage);
+      useSettingsStore.getState().updateSetting('zoomPercentage', 200 as Percentage);
 
       expect(zoom.zoomPercentageToLevel).toHaveBeenCalledWith(200);
       expect(mockZoom.setLevel).toHaveBeenCalledWith(20); // 200 / 10
@@ -235,10 +224,7 @@ describe('renderer/stores/subscriptions.ts', () => {
       cleanup();
       cleanup = null;
 
-      expect(window.removeEventListener).toHaveBeenCalledWith(
-        'resize',
-        expect.any(Function),
-      );
+      expect(window.removeEventListener).toHaveBeenCalledWith('resize', expect.any(Function));
     });
   });
 
@@ -289,10 +275,7 @@ describe('renderer/stores/subscriptions.ts', () => {
       // Mock getLevel to return same value (100%)
       mockZoom.getLevel.mockReturnValue(10); // 100%
 
-      const updateSettingSpy = vi.spyOn(
-        useSettingsStore.getState(),
-        'updateSetting',
-      );
+      const updateSettingSpy = vi.spyOn(useSettingsStore.getState(), 'updateSetting');
 
       // Trigger resize
       expect(resizeHandler).toBeDefined();

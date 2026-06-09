@@ -46,9 +46,7 @@ describe('main/handlers/system.ts', () => {
     it('registers expected system IPC event handlers', () => {
       registerSystemHandlers(menubar);
 
-      const registeredEvents = onMock.mock.calls.map(
-        (call: [string]) => call[0],
-      );
+      const registeredEvents = onMock.mock.calls.map((call: [string]) => call[0]);
 
       expect(registeredEvents).toContain(EVENTS.OPEN_EXTERNAL);
       expect(registeredEvents).toContain(EVENTS.UPDATE_KEYBOARD_SHORTCUT);

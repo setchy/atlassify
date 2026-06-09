@@ -9,10 +9,7 @@ import { Errors } from '../utils/core/errors';
 import { NotificationsRoute } from './Notifications';
 
 vi.mock('../components/notifications/AccountNotifications', () => ({
-  AccountNotifications: (props: {
-    account: { id: string };
-    showAccountHeader: boolean;
-  }) => {
+  AccountNotifications: (props: { account: { id: string }; showAccountHeader: boolean }) => {
     return (
       <div
         data-account-id={props.account.id}

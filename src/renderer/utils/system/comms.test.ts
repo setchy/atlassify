@@ -39,10 +39,7 @@ describe('renderer/utils/system/comms.ts', () => {
 
       openExternalLink('https://atlassify.io/' as Link);
 
-      expect(window.atlassify.openExternalLink).toHaveBeenCalledWith(
-        'https://atlassify.io/',
-        true,
-      );
+      expect(window.atlassify.openExternalLink).toHaveBeenCalledWith('https://atlassify.io/', true);
     });
 
     it('should ignore opening external local links file:///', () => {
@@ -143,9 +140,7 @@ describe('renderer/utils/system/comms.ts', () => {
       updateTrayTitle('Atlassify');
 
       expect(window.atlassify.tray.updateTitle).toHaveBeenCalledTimes(1);
-      expect(window.atlassify.tray.updateTitle).toHaveBeenCalledWith(
-        'Atlassify',
-      );
+      expect(window.atlassify.tray.updateTitle).toHaveBeenCalledWith('Atlassify');
     });
   });
 });

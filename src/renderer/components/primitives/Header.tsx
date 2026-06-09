@@ -20,11 +20,7 @@ export const Header: FC<HeaderProps> = (props: HeaderProps) => {
   const { fetchNotifications } = useAppContext();
 
   return (
-    <Box
-      paddingBlock="space.200"
-      paddingInlineEnd="space.300"
-      paddingInlineStart="space.150"
-    >
+    <Box paddingBlock="space.200" paddingInlineEnd="space.300" paddingInlineStart="space.150">
       <Inline alignBlock="center" grow="fill" spread="space-between">
         <Tooltip content="Go back" position="right">
           <IconButton

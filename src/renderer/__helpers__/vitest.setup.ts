@@ -1,5 +1,4 @@
 import '@testing-library/jest-dom/vitest';
-
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 
 import { useAccountsStore, useFiltersStore, useSettingsStore } from '../stores';
@@ -21,9 +20,7 @@ vi.mock('../utils/core/random', () => ({
 vi.mock('axios', async (importOriginal) => {
   const actual = await importOriginal<typeof import('axios')>();
   const realAxios = actual.default;
-  const wrapped = vi.fn((...args: Parameters<typeof realAxios>) =>
-    realAxios(...args),
-  );
+  const wrapped = vi.fn((...args: Parameters<typeof realAxios>) => realAxios(...args));
 
   Object.assign(wrapped, realAxios);
 

@@ -51,11 +51,7 @@ describe('renderer/utils/api/experimental/client.ts', () => {
   it('getJiraProjectTypesByKeys - should fetch project types by keys', async () => {
     const mockProjectKeys = ['PROJ-1', 'PROJ-2'] as JiraProjectKey[];
     const mockCloudID = 'mock-cloud-id' as CloudID;
-    await client.getJiraProjectTypesByKeys(
-      mockAtlassianCloudAccount,
-      mockCloudID,
-      mockProjectKeys,
-    );
+    await client.getJiraProjectTypesByKeys(mockAtlassianCloudAccount, mockCloudID, mockProjectKeys);
 
     expect(request.performRequestForAccount).toHaveBeenCalledWith(
       mockAtlassianCloudAccount,

@@ -7,11 +7,7 @@ import { useNotifications } from '../hooks/useNotifications';
 import { useOnlineSync } from '../hooks/useOnlineSync';
 import { useRuntimeStore } from '../stores';
 
-import type {
-  AccountNotifications,
-  AtlassifyError,
-  AtlassifyNotification,
-} from '../types';
+import type { AccountNotifications, AtlassifyError, AtlassifyNotification } from '../types';
 
 export interface AppContextState {
   isOnline: boolean;
@@ -28,12 +24,8 @@ export interface AppContextState {
 
   fetchNotifications: () => Promise<void>;
 
-  markNotificationsRead: (
-    notifications: AtlassifyNotification[],
-  ) => Promise<void>;
-  markNotificationsUnread: (
-    notifications: AtlassifyNotification[],
-  ) => Promise<void>;
+  markNotificationsRead: (notifications: AtlassifyNotification[]) => Promise<void>;
+  markNotificationsUnread: (notifications: AtlassifyNotification[]) => Promise<void>;
 
   focusedNotificationId: string | null;
 
@@ -124,7 +116,5 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     ],
   );
 
-  return (
-    <AppContext.Provider value={contextValues}>{children}</AppContext.Provider>
-  );
+  return <AppContext.Provider value={contextValues}>{children}</AppContext.Provider>;
 };

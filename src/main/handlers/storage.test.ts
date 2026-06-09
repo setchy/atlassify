@@ -28,9 +28,7 @@ describe('main/handlers/storage.ts', () => {
     it('registers expected storage IPC event handlers', () => {
       registerStorageHandlers();
 
-      const registeredHandlers = handleMock.mock.calls.map(
-        (call: [string]) => call[0],
-      );
+      const registeredHandlers = handleMock.mock.calls.map((call: [string]) => call[0]);
 
       expect(registeredHandlers).toContain(EVENTS.SAFE_STORAGE_ENCRYPT);
       expect(registeredHandlers).toContain(EVENTS.SAFE_STORAGE_DECRYPT);

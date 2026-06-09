@@ -22,9 +22,7 @@ export async function transformNotifications(
   account: Account,
 ): Promise<AtlassifyNotification[]> {
   return Promise.all(
-    rawNotifications?.map((raw) =>
-      mapAtlassianNotificationToAtlassifyNotification(raw, account),
-    ),
+    rawNotifications?.map((raw) => mapAtlassianNotificationToAtlassifyNotification(raw, account)),
   );
 }
 

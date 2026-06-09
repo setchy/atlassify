@@ -83,9 +83,7 @@ export function useGlobalShortcuts({
             name: 'Toggle Read/Unread',
           });
 
-          useSettingsStore
-            .getState()
-            .toggleSetting('fetchOnlyUnreadNotifications');
+          useSettingsStore.getState().toggleSetting('fetchOnlyUnreadNotifications');
         },
       },
       groupByProduct: {
@@ -96,9 +94,7 @@ export function useGlobalShortcuts({
             name: 'Group By Product',
           });
 
-          useSettingsStore
-            .getState()
-            .toggleSetting('groupNotificationsByProduct');
+          useSettingsStore.getState().toggleSetting('groupNotificationsByProduct');
         },
       },
       groupByTitle: {
@@ -109,9 +105,7 @@ export function useGlobalShortcuts({
             name: 'Group By Title',
           });
 
-          useSettingsStore
-            .getState()
-            .toggleSetting('groupNotificationsByTitle');
+          useSettingsStore.getState().toggleSetting('groupNotificationsByTitle');
         },
       },
       filters: {

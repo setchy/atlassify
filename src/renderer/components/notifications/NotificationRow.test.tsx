@@ -13,9 +13,7 @@ import { NotificationRow, type NotificationRowProps } from './NotificationRow';
 describe('renderer/components/notifications/NotificationRow.tsx', () => {
   vi.spyOn(links, 'openNotification').mockImplementation(vi.fn());
   vi.spyOn(comms, 'openExternalLink').mockImplementation(vi.fn());
-  vi.spyOn(globalThis.Date, 'now').mockImplementation(() =>
-    new Date('2024').valueOf(),
-  );
+  vi.spyOn(globalThis.Date, 'now').mockImplementation(() => new Date('2024').valueOf());
 
   describe('should render notifications', () => {
     it('standard notification', async () => {
@@ -65,9 +63,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
 
       // Trigger transitionEnd to complete the animation and execute mutation
       await act(async () => {
-        notificationElement?.dispatchEvent(
-          new Event('transitionend', { bubbles: true }),
-        );
+        notificationElement?.dispatchEvent(new Event('transitionend', { bubbles: true }));
       });
 
       expect(links.openNotification).toHaveBeenCalledTimes(1);
@@ -114,9 +110,7 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
 
       // Trigger transitionEnd to complete the animation and execute mutation
       await act(async () => {
-        notificationElement?.dispatchEvent(
-          new Event('transitionend', { bubbles: true }),
-        );
+        notificationElement?.dispatchEvent(new Event('transitionend', { bubbles: true }));
       });
 
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);

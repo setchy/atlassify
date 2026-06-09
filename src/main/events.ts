@@ -38,10 +38,6 @@ export function handleMainEvent(
  * @param event - The IPC channel/event name to emit.
  * @param data - Optional payload sent with the event.
  */
-export function sendRendererEvent(
-  mb: Menubar,
-  event: EventType,
-  data?: string,
-) {
+export function sendRendererEvent(mb: Menubar, event: EventType, data?: string) {
   mb.window.webContents.send(event, data);
 }

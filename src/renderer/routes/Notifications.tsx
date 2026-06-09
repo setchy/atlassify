@@ -4,23 +4,17 @@ import { useAppContext } from '../hooks/useAppContext';
 import { useAccountsStore, useSettingsStore } from '../stores';
 
 import { AllRead } from '../components/AllRead';
-import { Loading } from '../components/Loading';
 import { Contents } from '../components/layout/Contents';
 import { Page } from '../components/layout/Page';
+import { Loading } from '../components/Loading';
 import { AccountNotifications } from '../components/notifications/AccountNotifications';
 import { Oops } from '../components/Oops';
 
 import { Errors } from '../utils/core/errors';
 
 export const NotificationsRoute: FC = () => {
-  const {
-    notifications,
-    globalError,
-    hasNotifications,
-    isOnline,
-    isLoading,
-    isErrorOrPaused,
-  } = useAppContext();
+  const { notifications, globalError, hasNotifications, isOnline, isLoading, isErrorOrPaused } =
+    useAppContext();
 
   const hasNoAccountErrors = useMemo(
     () => notifications.every((account) => account.error === null),

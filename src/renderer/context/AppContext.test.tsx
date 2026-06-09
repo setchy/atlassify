@@ -74,9 +74,7 @@ describe('renderer/context/App.tsx', () => {
       });
 
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
-      expect(markNotificationsReadMock).toHaveBeenCalledWith([
-        mockSingleAtlassifyNotification,
-      ]);
+      expect(markNotificationsReadMock).toHaveBeenCalledWith([mockSingleAtlassifyNotification]);
     });
 
     it('should call markNotificationsUnread', async () => {
@@ -87,9 +85,7 @@ describe('renderer/context/App.tsx', () => {
       });
 
       expect(markNotificationsUnreadMock).toHaveBeenCalledTimes(1);
-      expect(markNotificationsUnreadMock).toHaveBeenCalledWith([
-        mockSingleAtlassifyNotification,
-      ]);
+      expect(markNotificationsUnreadMock).toHaveBeenCalledWith([mockSingleAtlassifyNotification]);
     });
   });
 });

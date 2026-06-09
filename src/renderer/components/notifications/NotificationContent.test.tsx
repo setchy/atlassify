@@ -4,15 +4,10 @@ import userEvent from '@testing-library/user-event';
 import { renderWithProviders } from '../../__helpers__/test-utils';
 import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
 
-import {
-  NotificationContent,
-  type NotificationContentProps,
-} from './NotificationContent';
+import { NotificationContent, type NotificationContentProps } from './NotificationContent';
 
 describe('renderer/components/notifications/NotificationContent.tsx', () => {
-  vi.spyOn(globalThis.Date, 'now').mockImplementation(() =>
-    new Date('2024').valueOf(),
-  );
+  vi.spyOn(globalThis.Date, 'now').mockImplementation(() => new Date('2024').valueOf());
 
   it('renders notification message, body and footer', () => {
     const props: NotificationContentProps = {

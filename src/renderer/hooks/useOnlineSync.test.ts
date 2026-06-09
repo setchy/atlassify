@@ -50,9 +50,8 @@ describe('renderer/hooks/useOnlineSync.ts', () => {
     setOnlineSpy.mockClear();
 
     // Simulate system wake event
-    const wakeCallback = (
-      window.atlassify.onSystemWake as ReturnType<typeof vi.fn>
-    ).mock.calls[0][0];
+    const wakeCallback = (window.atlassify.onSystemWake as ReturnType<typeof vi.fn>).mock
+      .calls[0][0];
     wakeCallback();
 
     expect(setOnlineSpy).toHaveBeenCalledWith(navigator.onLine);

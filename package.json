@@ -3,6 +3,32 @@
   "version": "3.9.0",
   "private": true,
   "description": "Atlassian notifications on your menu bar.",
+  "keywords": [
+    "atlassian",
+    "atlassify",
+    "bitbucket",
+    "compass",
+    "confluence",
+    "electron",
+    "jira",
+    "menubar",
+    "notifications",
+    "taskbar",
+    "tray"
+  ],
+  "homepage": "https://atlassify.io",
+  "bugs": {
+    "url": "https://github.com/setchy/atlassify/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Adam Setch",
+    "url": "https://github.com/setchy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/setchy/atlassify.git"
+  },
   "main": "build/main.js",
   "scripts": {
     "clean": "rimraf build coverage dist node_modules",
@@ -20,41 +46,16 @@
     "i18n:check": "i18next-cli extract --ci --quiet",
     "i18n:lint": "i18next-cli lint",
     "i18n:status": "i18next-cli status",
-    "lint": "biome check --fix",
-    "lint:check": "biome check",
-    "test": "vitest --coverage --run",
-    "test:watch": "vitest --watch --coverage",
-    "test:ui": "vitest --ui"
+    "check": "vp check",
+    "check:fix": "vp check --fix",
+    "lint": "vp lint --fix",
+    "lint:check": "vp lint",
+    "format": "vp fmt",
+    "format:check": "vp fmt --check",
+    "test": "vp test --coverage --run",
+    "test:watch": "vp test --watch --coverage",
+    "test:ui": "vp test --ui"
   },
-  "engines": {
-    "node": ">=24"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/setchy/atlassify.git"
-  },
-  "keywords": [
-    "atlassify",
-    "atlassian",
-    "bitbucket",
-    "compass",
-    "confluence",
-    "jira",
-    "notifications",
-    "electron",
-    "menubar",
-    "taskbar",
-    "tray"
-  ],
-  "author": {
-    "name": "Adam Setch",
-    "url": "https://github.com/setchy"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/setchy/atlassify/issues"
-  },
-  "homepage": "https://atlassify.io",
   "dependencies": {
     "electron-log": "5.4.4",
     "electron-updater": "6.8.9",
@@ -90,7 +91,6 @@
     "@atlaskit/toggle": "16.1.0",
     "@atlaskit/tokens": "13.2.0",
     "@atlaskit/tooltip": "22.6.0",
-    "@biomejs/biome": "2.4.16",
     "@compiled/vite-plugin": "1.1.4",
     "@discordapp/twemoji": "16.0.1",
     "@electron/notarize": "3.1.1",
@@ -133,16 +133,12 @@
     "vite-plugin-checker": "0.14.1",
     "vite-plugin-electron": "0.29.1",
     "vite-plugin-electron-renderer": "0.14.7",
+    "vite-plus": "0.1.20",
     "vitest": "4.1.8",
     "zustand": "5.0.14"
   },
-  "packageManager": "pnpm@11.5.2",
-  "lint-staged": {
-    "*": "biome check --fix --no-errors-on-unmatched",
-    "*.{js,ts,tsx}": [
-      "bash -c 'tsc --noEmit'",
-      "bash -c 'pnpm i18n:lint'",
-      "pnpm test --changed --passWithNoTests --update"
-    ]
-  }
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "pnpm@11.5.2"
 }

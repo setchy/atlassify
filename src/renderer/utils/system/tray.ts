@@ -22,41 +22,20 @@ import { updateTrayColor, updateTrayTitle } from './comms';
 export function setTrayIconColorAndTitle() {
   const { notificationCount, hasMoreAccountNotifications, isError, isOnline } =
     useRuntimeStore.getState();
-  const {
-    showNotificationsCountInTray,
-    useUnreadActiveIcon,
-    useAlternateIdleIcon,
-  } = useSettingsStore.getState();
+  const { showNotificationsCountInTray, useUnreadActiveIcon, useAlternateIdleIcon } =
+    useSettingsStore.getState();
 
   let title = '';
-  if (
-    isOnline &&
-    !isError &&
-    notificationCount > 0 &&
-    showNotificationsCountInTray
-  ) {
+  if (isOnline && !isError && notificationCount > 0 && showNotificationsCountInTray) {
     title = `${notificationCount.toString()}${hasMoreAccountNotifications ? '+' : ''}`;
   }
 
-  const appState: TrayAppState = !isOnline
-    ? 'offline'
-    : isError
-      ? 'error'
-      : 'online';
+  const appState: TrayAppState = !isOnline ? 'offline' : isError ? 'error' : 'online';
 
-  const idleIconVariant: TrayIdleIconVariant = useAlternateIdleIcon
-    ? 'alternative'
-    : 'default';
+  const idleIconVariant: TrayIdleIconVariant = useAlternateIdleIcon ? 'alternative' : 'default';
 
-  const unreadIconVariant: TrayUnreadIconVariant = useUnreadActiveIcon
-    ? 'active'
-    : 'idle';
+  const unreadIconVariant: TrayUnreadIconVariant = useUnreadActiveIcon ? 'active' : 'idle';
 
-  updateTrayColor(
-    notificationCount,
-    appState,
-    idleIconVariant,
-    unreadIconVariant,
-  );
+  updateTrayColor(notificationCount, appState, idleIconVariant, unreadIconVariant);
   updateTrayTitle(title);
 }

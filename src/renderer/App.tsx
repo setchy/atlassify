@@ -1,16 +1,9 @@
 import { type FC, useEffect } from 'react';
-import {
-  Navigate,
-  Route,
-  HashRouter as Router,
-  Routes,
-  useLocation,
-} from 'react-router-dom';
+import { Navigate, Route, HashRouter as Router, Routes, useLocation } from 'react-router-dom';
 
 import { QueryClientProvider } from '@tanstack/react-query';
 
 import './App.css';
-
 import { AppProvider } from './context/AppContext';
 import { AccountsRoute } from './routes/Accounts';
 import { FiltersRoute } from './routes/Filters';
@@ -35,11 +28,7 @@ function RequireAuth({ children }) {
 
   const isLoggedIn = useAccountsStore((s) => s.isLoggedIn());
 
-  return isLoggedIn ? (
-    children
-  ) : (
-    <Navigate replace state={{ from: location }} to="/landing" />
-  );
+  return isLoggedIn ? children : <Navigate replace state={{ from: location }} to="/landing" />;
 }
 
 export const App: FC = () => {

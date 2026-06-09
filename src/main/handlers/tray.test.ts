@@ -34,9 +34,7 @@ describe('main/handlers/tray.ts', () => {
     it('registers expected tray IPC event handlers', () => {
       registerTrayHandlers(menubar);
 
-      const registeredEvents = onMock.mock.calls.map(
-        (call: [string]) => call[0],
-      );
+      const registeredEvents = onMock.mock.calls.map((call: [string]) => call[0]);
 
       expect(registeredEvents).toContain(EVENTS.UPDATE_ICON_COLOR);
       expect(registeredEvents).toContain(EVENTS.UPDATE_ICON_TITLE);
@@ -52,15 +50,11 @@ describe('main/handlers/tray.ts', () => {
     };
 
     it('returns offline icon when appState is offline', () => {
-      expect(selectTrayIcon({ ...base, appState: 'offline' })).toBe(
-        TrayIcons.offline,
-      );
+      expect(selectTrayIcon({ ...base, appState: 'offline' })).toBe(TrayIcons.offline);
     });
 
     it('returns error icon when appState is error', () => {
-      expect(selectTrayIcon({ ...base, appState: 'error' })).toBe(
-        TrayIcons.error,
-      );
+      expect(selectTrayIcon({ ...base, appState: 'error' })).toBe(TrayIcons.error);
     });
 
     it('returns active icon when there are notifications and unreadIconVariant is active', () => {
@@ -95,9 +89,7 @@ describe('main/handlers/tray.ts', () => {
     });
 
     it('returns idle icon when there are no notifications', () => {
-      expect(selectTrayIcon({ ...base, notificationsCount: 0 })).toBe(
-        TrayIcons.idle,
-      );
+      expect(selectTrayIcon({ ...base, notificationsCount: 0 })).toBe(TrayIcons.idle);
     });
 
     it('returns idleAlternate icon when there are no notifications and idleIconVariant is alternative', () => {

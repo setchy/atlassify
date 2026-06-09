@@ -82,9 +82,7 @@ describe('main/menu.ts', () => {
   /** Helper: build menu & return template (first arg passed to buildFromTemplate) */
   const buildAndGetTemplate = () => {
     menuBuilder.buildMenu();
-    return (Menu.buildFromTemplate as Mock).mock.calls.slice(
-      -1,
-    )[0][0] as TemplateItem[];
+    return (Menu.buildFromTemplate as Mock).mock.calls.slice(-1)[0][0] as TemplateItem[];
   };
 
   beforeEach(() => {
@@ -216,13 +214,10 @@ describe('main/menu.ts', () => {
 
     it('developer submenu click actions execute expected functions', () => {
       const template = buildAndGetTemplate();
-      const devEntry = template.find(
-        (item) => item?.label === 'Developer',
-      ) as TemplateItem;
+      const devEntry = template.find((item) => item?.label === 'Developer') as TemplateItem;
       expect(devEntry).toBeDefined();
       const submenu = devEntry.submenu;
-      const clickByLabel = (label: string) =>
-        submenu.find((i) => i.label === label)?.click?.();
+      const clickByLabel = (label: string) => submenu.find((i) => i.label === label)?.click?.();
 
       clickByLabel('Take Screenshot');
       expect(takeScreenshot).toHaveBeenCalledWith(menubar);
@@ -257,9 +252,7 @@ describe('main/menu.ts', () => {
 
     it('developer submenu includes expected static accelerators', () => {
       const template = buildAndGetTemplate();
-      const devEntry = template.find(
-        (item) => item?.label === 'Developer',
-      ) as TemplateItem;
+      const devEntry = template.find((item) => item?.label === 'Developer') as TemplateItem;
       const reloadItem = devEntry.submenu.find((i) => i.role === 'reload');
 
       expect(reloadItem?.accelerator).toBe('CommandOrControl+R');
@@ -283,12 +276,8 @@ describe('main/menu.ts', () => {
       const template = (Menu.buildFromTemplate as Mock).mock.calls.slice(
         -1,
       )[0][0] as TemplateItem[];
-      const devEntry = template.find(
-        (i) => i?.label === 'Developer',
-      ) as TemplateItem;
-      const toggleItem = devEntry.submenu?.find(
-        (i) => i.role === 'toggleDevTools',
-      );
+      const devEntry = template.find((i) => i?.label === 'Developer') as TemplateItem;
+      const toggleItem = devEntry.submenu?.find((i) => i.role === 'toggleDevTools');
 
       expect(toggleItem?.accelerator).toBe('Alt+Cmd+I');
     });
@@ -305,12 +294,8 @@ describe('main/menu.ts', () => {
       const template = (Menu.buildFromTemplate as Mock).mock.calls.slice(
         -1,
       )[0][0] as TemplateItem[];
-      const devEntry = template.find(
-        (i) => i?.label === 'Developer',
-      ) as TemplateItem;
-      const toggleItem = devEntry.submenu?.find(
-        (i) => i.role === 'toggleDevTools',
-      );
+      const devEntry = template.find((i) => i?.label === 'Developer') as TemplateItem;
+      const toggleItem = devEntry.submenu?.find((i) => i.role === 'toggleDevTools');
 
       expect(toggleItem?.accelerator).toBe('Ctrl+Shift+I');
     });

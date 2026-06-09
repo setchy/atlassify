@@ -3,11 +3,7 @@ import FlagIcon from '@atlaskit/icon/core/flag';
 
 import { useFiltersStore } from '../../../stores';
 
-import type {
-  AccountNotifications,
-  AtlassifyNotification,
-  CategoryType,
-} from '../../../types';
+import type { AccountNotifications, AtlassifyNotification, CategoryType } from '../../../types';
 import type { Filter, FilterDetails } from './types';
 
 import i18n from '../../../i18n';
@@ -42,10 +38,7 @@ export const categoryFilter: Filter<CategoryType> = {
     return filters.categories.includes(type);
   },
 
-  getFilterCount(
-    accountNotifications: AccountNotifications[],
-    category: CategoryType,
-  ) {
+  getFilterCount(accountNotifications: AccountNotifications[], category: CategoryType) {
     return accountNotifications.reduce(
       (memo, account) =>
         memo +
@@ -56,10 +49,7 @@ export const categoryFilter: Filter<CategoryType> = {
     );
   },
 
-  filterNotification(
-    notification: AtlassifyNotification,
-    category: CategoryType,
-  ): boolean {
+  filterNotification(notification: AtlassifyNotification, category: CategoryType): boolean {
     return notification.category === category;
   },
 };

@@ -1,37 +1,16 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 
-import {
-  keepPreviousData,
-  useMutation,
-  useQuery,
-  useQueryClient,
-} from '@tanstack/react-query';
+import { keepPreviousData, useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 import { Constants } from '../constants';
 
-import {
-  useAccountsStore,
-  useFiltersStore,
-  useRuntimeStore,
-  useSettingsStore,
-} from '../stores';
+import { useAccountsStore, useFiltersStore, useRuntimeStore, useSettingsStore } from '../stores';
 
-import type {
-  AccountNotifications,
-  AtlassifyError,
-  AtlassifyNotification,
-} from '../types';
+import type { AccountNotifications, AtlassifyError, AtlassifyNotification } from '../types';
 
-import {
-  markNotificationsAsRead,
-  markNotificationsAsUnread,
-} from '../utils/api/client';
+import { markNotificationsAsRead, markNotificationsAsUnread } from '../utils/api/client';
 import { notificationsKeys } from '../utils/api/queryKeys';
-import {
-  areAllAccountErrorsSame,
-  doesAllAccountsHaveErrors,
-  Errors,
-} from '../utils/core/errors';
+import { areAllAccountErrorsSame, doesAllAccountsHaveErrors, Errors } from '../utils/core/errors';
 import { rendererLogError } from '../utils/core/logger';
 import {
   getAllNotifications,
@@ -66,12 +45,8 @@ interface UseNotificationsResult {
 
   refetchNotifications: () => Promise<void>;
 
-  markNotificationsRead: (
-    notifications: AtlassifyNotification[],
-  ) => Promise<void>;
-  markNotificationsUnread: (
-    notifications: AtlassifyNotification[],
-  ) => Promise<void>;
+  markNotificationsRead: (notifications: AtlassifyNotification[]) => Promise<void>;
+  markNotificationsUnread: (notifications: AtlassifyNotification[]) => Promise<void>;
 }
 
 /**
@@ -97,18 +72,10 @@ export const useNotifications = (): UseNotificationsResult => {
   const products = useFiltersStore((s) => s.products);
 
   // Setting store values
-  const fetchOnlyUnreadNotifications = useSettingsStore(
-    (s) => s.fetchOnlyUnreadNotifications,
-  );
-  const groupNotificationsByTitle = useSettingsStore(
-    (s) => s.groupNotificationsByTitle,
-  );
-  const playSoundNewNotifications = useSettingsStore(
-    (s) => s.playSoundNewNotifications,
-  );
-  const showSystemNotifications = useSettingsStore(
-    (s) => s.showSystemNotifications,
-  );
+  const fetchOnlyUnreadNotifications = useSettingsStore((s) => s.fetchOnlyUnreadNotifications);
+  const groupNotificationsByTitle = useSettingsStore((s) => s.groupNotificationsByTitle);
+  const playSoundNewNotifications = useSettingsStore((s) => s.playSoundNewNotifications);
+  const showSystemNotifications = useSettingsStore((s) => s.showSystemNotifications);
   const notificationVolume = useSettingsStore((s) => s.notificationVolume);
 
   // Query key excludes filters to prevent API refetches on filter changes
@@ -208,11 +175,7 @@ export const useNotifications = (): UseNotificationsResult => {
   useEffect(() => {
     useRuntimeStore
       .getState()
-      .updateNotificationStatus(
-        notificationCount,
-        hasMoreAccountNotifications,
-        isErrorOrPaused,
-      );
+      .updateNotificationStatus(notificationCount, hasMoreAccountNotifications, isErrorOrPaused);
   }, [notificationCount, hasMoreAccountNotifications, isErrorOrPaused]);
 
   const refetchNotifications = useCallback(async () => {
@@ -231,8 +194,7 @@ export const useNotifications = (): UseNotificationsResult => {
     }
 
     const unfilteredNotifications =
-      queryClient.getQueryData<AccountNotifications[]>(notificationsQueryKey) ||
-      [];
+      queryClient.getQueryData<AccountNotifications[]>(notificationsQueryKey) || [];
 
     // Find new notifications by diffing previous and current
     const diffNotifications = getNewNotifications(
@@ -275,9 +237,7 @@ export const useNotifications = (): UseNotificationsResult => {
       await queryClient.cancelQueries({ queryKey: notificationsKeys.all });
 
       // Snapshot ALL notification queries for rollback on error
-      const previousQueriesData = queryClient.getQueriesData<
-        AccountNotifications[]
-      >({
+      const previousQueriesData = queryClient.getQueriesData<AccountNotifications[]>({
         queryKey: notificationsKeys.all,
       });
 
@@ -294,12 +254,7 @@ export const useNotifications = (): UseNotificationsResult => {
           }
 
           // Apply full post-processing including read state update and removal (if needed)
-          return postProcessNotifications(
-            account,
-            oldData,
-            targetNotifications,
-            action,
-          );
+          return postProcessNotifications(account, oldData, targetNotifications, action);
         },
       );
 
@@ -314,8 +269,7 @@ export const useNotifications = (): UseNotificationsResult => {
       targetNotifications: AtlassifyNotification[];
       action: NotificationActionType;
     }) => {
-      const markAsApiFn =
-        action === 'read' ? markNotificationsAsRead : markNotificationsAsUnread;
+      const markAsApiFn = action === 'read' ? markNotificationsAsRead : markNotificationsAsUnread;
 
       trackEvent('Action', {
         name: action === 'read' ? 'Mark as Read' : 'Mark as Unread',
@@ -329,10 +283,7 @@ export const useNotifications = (): UseNotificationsResult => {
         throw new Error('All notifications must belong to the same account');
       }
 
-      const notificationIDs = await resolveNotificationIdsForGroup(
-        account,
-        targetNotifications,
-      );
+      const notificationIDs = await resolveNotificationIdsForGroup(account, targetNotifications);
 
       await markAsApiFn(account, notificationIDs);
 

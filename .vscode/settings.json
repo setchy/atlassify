@@ -1,8 +1,12 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.biome": "explicit"
+    "source.fixAll.biome": "explicit",
+    "source.fixAll.oxc": "explicit"
   },
-  "editor.defaultFormatter": "biomejs.biome",
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "editor.formatOnSave": true,
+  "oxc.lint.configPath": "./vite.config.ts",
+  "oxc.fmt.configPath": "./vite.config.ts",
   "files.associations": {
     "*.css": "tailwindcss"
   },
@@ -10,10 +14,16 @@
     "editor.defaultFormatter": "astro-build.astro-vscode"
   },
   "[json]": {
-    "editor.defaultFormatter": "biomejs.biome"
+    "editor.defaultFormatter": "oxc.oxc-vscode"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "biomejs.biome"
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
   },
   "cSpell.words": [
     "atlassify",
@@ -21,7 +31,9 @@
     "partialize",
     "rovo",
     "xcss",
-    "aptabase"
+    "aptabase",
+    "oxfmt",
+    "oxlint"
   ],
   "i18n-ally.translate.engines": ["google"],
   "i18n-ally.localesPaths": ["src/renderer/i18n/locales"],

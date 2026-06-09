@@ -52,19 +52,13 @@ describe('renderer/utils/api/transform.ts', () => {
 
   describe('transformNotifications', () => {
     it('returns empty array when given no notifications', async () => {
-      const result = await transformNotifications(
-        [],
-        mockAtlassianCloudAccount,
-      );
+      const result = await transformNotifications([], mockAtlassianCloudAccount);
 
       expect(result).toEqual([]);
     });
 
     it('transforms a single notification correctly', async () => {
-      const result = await transformNotifications(
-        [mockRawNotification],
-        mockAtlassianCloudAccount,
-      );
+      const result = await transformNotifications([mockRawNotification], mockAtlassianCloudAccount);
 
       expect(result).toHaveLength(1);
 
@@ -74,9 +68,7 @@ describe('renderer/utils/api/transform.ts', () => {
       expect(notification.readState).toBe('unread');
       expect(notification.updated_at).toBe('2024-01-01T00:00:00.000Z');
       expect(notification.type).toBe('comment');
-      expect(notification.url).toBe(
-        'https://example.atlassian.net/browse/TEST-1',
-      );
+      expect(notification.url).toBe('https://example.atlassian.net/browse/TEST-1');
       expect(notification.category).toBe('direct');
       expect(notification.product).toBe(PRODUCTS.jira);
       expect(notification.account).toBe(mockAtlassianCloudAccount);
@@ -84,10 +76,7 @@ describe('renderer/utils/api/transform.ts', () => {
     });
 
     it('maps entity fields correctly', async () => {
-      const result = await transformNotifications(
-        [mockRawNotification],
-        mockAtlassianCloudAccount,
-      );
+      const result = await transformNotifications([mockRawNotification], mockAtlassianCloudAccount);
 
       expect(result[0].entity).toEqual({
         title: 'TEST-1 Summary',
@@ -97,10 +86,7 @@ describe('renderer/utils/api/transform.ts', () => {
     });
 
     it('maps actor fields correctly', async () => {
-      const result = await transformNotifications(
-        [mockRawNotification],
-        mockAtlassianCloudAccount,
-      );
+      const result = await transformNotifications([mockRawNotification], mockAtlassianCloudAccount);
 
       expect(result[0].actor).toEqual({
         displayName: 'Test User',
@@ -109,10 +95,7 @@ describe('renderer/utils/api/transform.ts', () => {
     });
 
     it('maps notificationGroup fields correctly', async () => {
-      const result = await transformNotifications(
-        [mockRawNotification],
-        mockAtlassianCloudAccount,
-      );
+      const result = await transformNotifications([mockRawNotification], mockAtlassianCloudAccount);
 
       expect(result[0].notificationGroup).toEqual({
         id: 'group-1',
@@ -131,10 +114,7 @@ describe('renderer/utils/api/transform.ts', () => {
         ],
       };
 
-      const result = await transformNotifications(
-        [rawWithActors],
-        mockAtlassianCloudAccount,
-      );
+      const result = await transformNotifications([rawWithActors], mockAtlassianCloudAccount);
 
       expect(result[0].notificationGroup.additionalActors).toEqual([
         { displayName: 'Actor One', avatarURL: 'https://example.com/a1.png' },
@@ -160,10 +140,7 @@ describe('renderer/utils/api/transform.ts', () => {
         },
       };
 
-      const result = await transformNotifications(
-        [rawWithPath],
-        mockAtlassianCloudAccount,
-      );
+      const result = await transformNotifications([rawWithPath], mockAtlassianCloudAccount);
 
       expect(result[0].path).toEqual({
         title: 'My Space',
@@ -173,10 +150,7 @@ describe('renderer/utils/api/transform.ts', () => {
     });
 
     it('sets path to undefined when path is null', async () => {
-      const result = await transformNotifications(
-        [mockRawNotification],
-        mockAtlassianCloudAccount,
-      );
+      const result = await transformNotifications([mockRawNotification], mockAtlassianCloudAccount);
 
       expect(result[0].path).toBeUndefined();
     });
@@ -226,10 +200,7 @@ describe('renderer/utils/api/transform.ts', () => {
     });
 
     it('passes the account to inferAtlassianProduct', async () => {
-      await transformNotifications(
-        [mockRawNotification],
-        mockAtlassianCloudAccount,
-      );
+      await transformNotifications([mockRawNotification], mockAtlassianCloudAccount);
 
       expect(inferAtlassianProductSpy).toHaveBeenCalledWith(
         mockAtlassianCloudAccount,

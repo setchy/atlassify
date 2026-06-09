@@ -26,9 +26,7 @@ const mockThemeObserverColorMode = (mode: 'light' | 'dark') => {
 
 describe('renderer/components/Sidebar.tsx', () => {
   const fetchNotificationsMock = vi.fn();
-  const openExternalLinkSpy = vi
-    .spyOn(comms, 'openExternalLink')
-    .mockImplementation(vi.fn());
+  const openExternalLinkSpy = vi.spyOn(comms, 'openExternalLink').mockImplementation(vi.fn());
 
   describe('logged in', () => {
     it('should render itself & its children - light mode', () => {
@@ -92,9 +90,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
       await userEvent.click(screen.getByTestId('sidebar-notifications'));
 
-      expect(openExternalLinkSpy).toHaveBeenCalledWith(
-        'https://team.atlassian.com/notifications',
-      );
+      expect(openExternalLinkSpy).toHaveBeenCalledWith('https://team.atlassian.com/notifications');
     });
 
     it('renders correct icon when there are no notifications', () => {
@@ -142,17 +138,11 @@ describe('renderer/components/Sidebar.tsx', () => {
     it('should toggle show only unread notifications', async () => {
       renderWithProviders(<Sidebar />);
 
-      expect(
-        screen.getByTestId('sidebar-toggle-unread-only--input'),
-      ).toBeChecked();
+      expect(screen.getByTestId('sidebar-toggle-unread-only--input')).toBeChecked();
 
-      await userEvent.click(
-        screen.getByTestId('sidebar-toggle-unread-only--toggle-cross-icon'),
-      );
+      await userEvent.click(screen.getByTestId('sidebar-toggle-unread-only--toggle-cross-icon'));
 
-      expect(
-        screen.getByTestId('sidebar-toggle-unread-only--input'),
-      ).not.toBeChecked();
+      expect(screen.getByTestId('sidebar-toggle-unread-only--input')).not.toBeChecked();
     });
   });
 
@@ -214,9 +204,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
       await userEvent.click(screen.getByTestId('sidebar-filter-notifications'));
 
-      expect(
-        screen.getByTestId('sidebar-filter-notifications'),
-      ).toMatchSnapshot();
+      expect(screen.getByTestId('sidebar-filter-notifications')).toMatchSnapshot();
       expect(navigateMock).toHaveBeenCalledTimes(1);
       expect(navigateMock).toHaveBeenCalledWith('/filters');
     });
@@ -228,9 +216,7 @@ describe('renderer/components/Sidebar.tsx', () => {
 
       await userEvent.click(screen.getByTestId('sidebar-filter-notifications'));
 
-      expect(
-        screen.getByTestId('sidebar-filter-notifications'),
-      ).toMatchSnapshot();
+      expect(screen.getByTestId('sidebar-filter-notifications')).toMatchSnapshot();
       expect(navigateMock).toHaveBeenCalledTimes(1);
       expect(navigateMock).toHaveBeenCalledWith('/', { replace: true });
     });
@@ -240,9 +226,7 @@ describe('renderer/components/Sidebar.tsx', () => {
         filters: { products: ['bitbucket'] },
       });
 
-      expect(
-        screen.getByTestId('sidebar-filter-notifications'),
-      ).toMatchSnapshot();
+      expect(screen.getByTestId('sidebar-filter-notifications')).toMatchSnapshot();
     });
   });
 

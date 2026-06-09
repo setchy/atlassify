@@ -14,9 +14,7 @@ import { formatNativeNotificationFooterText } from '../notifications/formatters'
  *
  * @param notifications - The notifications to surface as a native OS notification.
  */
-export const raiseNativeNotification = (
-  notifications: AtlassifyNotification[],
-) => {
+export const raiseNativeNotification = (notifications: AtlassifyNotification[]) => {
   let title: string;
   let body: string;
   let url: string = null;

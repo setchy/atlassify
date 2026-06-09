@@ -23,10 +23,13 @@ jobs:
         uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
         with:
           persist-credentials: false
+          sparse-checkout: |
+            renovate.json
+            .github
 
       - uses: ./.github/actions/setup-node
         with:
-          run-install: "false"
+          run-install: 'false'
 
       - name: Install Renovate
         run: pnpm install --global renovate

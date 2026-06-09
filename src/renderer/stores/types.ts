@@ -275,10 +275,7 @@ export interface SettingsActions {
   /**
    * Updates a specific setting by key to a new value.
    */
-  updateSetting: <K extends keyof SettingsState>(
-    name: K,
-    value: SettingsState[K],
-  ) => void;
+  updateSetting: <K extends keyof SettingsState>(name: K, value: SettingsState[K]) => void;
 
   /**
    * Toggles a boolean setting by key. Throws if the setting is not boolean.

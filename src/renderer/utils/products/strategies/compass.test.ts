@@ -16,9 +16,7 @@ describe('renderer/utils/products/strategies/compass', () => {
         message: 'some-component is failing a scorecard',
       } as AtlassifyNotification;
 
-      expect(
-        getProductStrategy(notification).avatarAppearance(notification),
-      ).toBe('square');
+      expect(getProductStrategy(notification).avatarAppearance(notification)).toBe('square');
     });
 
     it('avatarAppearance returns circle for non-scorecard notifications', () => {
@@ -28,9 +26,7 @@ describe('renderer/utils/products/strategies/compass', () => {
         message: 'John commented on your PR',
       } as AtlassifyNotification;
 
-      expect(
-        getProductStrategy(notification).avatarAppearance(notification),
-      ).toBe('circle');
+      expect(getProductStrategy(notification).avatarAppearance(notification)).toBe('circle');
     });
   });
 
@@ -42,9 +38,7 @@ describe('renderer/utils/products/strategies/compass', () => {
         message: 'some-component is failing a scorecard',
       } as AtlassifyNotification;
 
-      expect(getProductStrategy(notification).actorType(notification)).toBe(
-        'automation',
-      );
+      expect(getProductStrategy(notification).actorType(notification)).toBe('automation');
     });
 
     it('actorType returns user for non-scorecard notifications', () => {
@@ -54,9 +48,7 @@ describe('renderer/utils/products/strategies/compass', () => {
         message: 'John commented on your component',
       } as AtlassifyNotification;
 
-      expect(getProductStrategy(notification).actorType(notification)).toBe(
-        'user',
-      );
+      expect(getProductStrategy(notification).actorType(notification)).toBe('user');
     });
   });
 

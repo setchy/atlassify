@@ -14,10 +14,7 @@ import { sendRendererEvent } from '../events';
  * @param mb - The menubar instance to attach lifecycle events to.
  * @param contextMenu - The tray context menu to pop up on right-click.
  */
-export function initializeAppLifecycle(
-  mb: Menubar,
-  contextMenu: Electron.Menu,
-): void {
+export function initializeAppLifecycle(mb: Menubar, contextMenu: Electron.Menu): void {
   mb.on('ready', () => {
     mb.app.setAppUserModelId(APPLICATION.ID);
 

@@ -31,15 +31,9 @@ describe('renderer/components/settings/AppearanceSettings.tsx', () => {
   });
 
   it('should update the zoom values when using the zoom buttons', async () => {
-    const zoomOutSpy = vi
-      .spyOn(zoom, 'decreaseZoom')
-      .mockImplementation(vi.fn());
-    const zoomInSpy = vi
-      .spyOn(zoom, 'increaseZoom')
-      .mockImplementation(vi.fn());
-    const zoomResetSpy = vi
-      .spyOn(zoom, 'resetZoomLevel')
-      .mockImplementation(vi.fn());
+    const zoomOutSpy = vi.spyOn(zoom, 'decreaseZoom').mockImplementation(vi.fn());
+    const zoomInSpy = vi.spyOn(zoom, 'increaseZoom').mockImplementation(vi.fn());
+    const zoomResetSpy = vi.spyOn(zoom, 'resetZoomLevel').mockImplementation(vi.fn());
 
     // Zoom Out
     await userEvent.click(screen.getByTestId('settings-zoom-out'));

@@ -8,7 +8,6 @@
 
 ---
 
-
 ## Features
 
 - 🔔 Unified notifications from Atlassian Cloud products
@@ -18,19 +17,19 @@
 - ⚡ Fast, native experience
 - 🌐 Multi-language/localization support
 
-
 ## Quick Start
 
 1. **Download** Atlassify for free from [atlassify.io][website].
 2. **Install** and launch the app for your platform.
 3. **Authenticate** with your Atlassian account and start receiving notifications.
 
-#### Experimental 
+#### Experimental
+
 macOS users can also install via [Homebrew][brew]
+
 ```shell
 brew install --cask setchy/brews/atlassify
 ```
-
 
 ## Build & Development
 
@@ -44,22 +43,18 @@ pnpm dev
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for full development and contribution instructions.
 
-
 ## FAQ
 
 See our [Atlassify FAQs][faqs] for answers to common questions.
-
 
 ## Community & Support
 
 - Open an [issue][github-issues] for bugs or feature requests
 - See [CONTRIBUTING.md](CONTRIBUTING.md) for more ways to get involved
 
-
 ## License
 
 Atlassify is licensed under the MIT Open Source license. See [LICENSE](LICENSE) for details.
-
 
 ## Acknowledgements
 
@@ -68,15 +63,13 @@ I would like to acknowledge the following projects and resources that have inspi
 1. [Gitify][attribution-gitify] – An open-source GitHub notification app, which I am the lead maintainer of, served as the launchpad for Atlassify.
 2. [Atlassian Design System][attribution-atlassian] – The design principles and UI components (@atlaskit) from Atlassian have helped shape the user interface of Atlassify.
 
-
 <!-- LINK LABELS -->
+
 [social]: docs/public/images//social.png
 [website]: https://atlassify.io
 [faqs]: https://atlassify.io/faq
-
 [attribution-gitify]: https://gitify.io
 [attribution-atlassian]: https://atlassian.design
-
 [github]: https://github.com/setchy/atlassify
 [github-actions]: https://github.com/setchy/atlassify/actions
 [github-issues]: https://github.com/setchy/atlassify/issues
@@ -84,12 +77,10 @@ I would like to acknowledge the following projects and resources that have inspi
 [github-website]: https://github.com/setchy/atlassify-website
 [github-website-pulls]: https://github.com/setchy/atlassify-website/pulls
 [brew]: https://brew.sh
-
 [coverage-badge]: https://img.shields.io/sonar/coverage/setchy_atlassify?server=https%3A%2F%2Fsonarcloud.io&logo=sonarqubecloud
 [coverage]: https://sonarcloud.io/summary/new_code?id=setchy_atlassify
 [quality-badge]: https://img.shields.io/sonar/quality_gate/setchy_atlassify?server=https%3A%2F%2Fsonarcloud.io&logo=sonarqubecloud
 [quality]: https://sonarcloud.io/summary/new_code?id=setchy_atlassify
-
 [ci-workflow-badge]: https://img.shields.io/github/actions/workflow/status/setchy/atlassify/ci.yml?logo=github&label=CI
 [release-workflow-badge]: https://img.shields.io/github/actions/workflow/status/setchy/atlassify/release.yml?logo=github&label=Release
 [downloads-total-badge]: https://img.shields.io/github/downloads/setchy/atlassify/total?label=downloads@all&logo=github

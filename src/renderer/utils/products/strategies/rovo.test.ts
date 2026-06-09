@@ -15,9 +15,7 @@ describe('renderer/utils/products/strategies/rovo', () => {
         product: PRODUCTS.rovo,
       } as AtlassifyNotification;
 
-      expect(getProductStrategy(notification).actorType(notification)).toBe(
-        'rovo',
-      );
+      expect(getProductStrategy(notification).actorType(notification)).toBe('rovo');
     });
   });
 

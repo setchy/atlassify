@@ -18,13 +18,8 @@ import { getFlattenedNotificationsByProduct } from './group';
  * @param accountNotifications - The account notifications to check.
  * @returns The total count of all notifications across all accounts.
  */
-export function getNotificationCount(
-  accountNotifications: AccountNotifications[],
-) {
-  return accountNotifications.reduce(
-    (sum, account) => sum + account.notifications.length,
-    0,
-  );
+export function getNotificationCount(accountNotifications: AccountNotifications[]) {
+  return accountNotifications.reduce((sum, account) => sum + account.notifications.length, 0);
 }
 
 /**
@@ -33,9 +28,7 @@ export function getNotificationCount(
  * @param accountNotifications - The account notifications to check.
  * @returns `true` if any account has more notifications available to load, `false` otherwise.
  */
-export function hasMoreNotifications(
-  accountNotifications: AccountNotifications[],
-) {
+export function hasMoreNotifications(accountNotifications: AccountNotifications[]) {
   return accountNotifications?.some((account) => account.hasMoreNotifications);
 }
 
@@ -72,8 +65,7 @@ export async function getAllNotifications(): Promise<AccountNotifications[]> {
             throw new AxiosError(Errors.BAD_REQUEST.title);
           }
 
-          const rawNotifications =
-            res.data.notifications.notificationFeed.nodes;
+          const rawNotifications = res.data.notifications.notificationFeed.nodes;
 
           const notifications = await transformNotifications(
             rawNotifications,
@@ -115,15 +107,11 @@ export async function getAllNotifications(): Promise<AccountNotifications[]> {
  *
  * @param accountNotifications - The list of account notifications to assign order indices to.
  */
-export function stabilizeNotificationsOrder(
-  accountNotifications: AccountNotifications[],
-) {
+export function stabilizeNotificationsOrder(accountNotifications: AccountNotifications[]) {
   let orderIndex = 0;
 
   for (const account of accountNotifications) {
-    const flattenedNotifications = getFlattenedNotificationsByProduct(
-      account.notifications,
-    );
+    const flattenedNotifications = getFlattenedNotificationsByProduct(account.notifications);
 
     for (const notification of flattenedNotifications) {
       notification.order = orderIndex++;
@@ -151,9 +139,7 @@ export function getNewNotifications(
       return accountNotifications.notifications;
     }
 
-    const previousIds = new Set(
-      accountPreviousNotifications.notifications.map((item) => item.id),
-    );
+    const previousIds = new Set(accountPreviousNotifications.notifications.map((item) => item.id));
 
     return accountNotifications.notifications.filter(
       (notification) => !previousIds.has(notification.id),

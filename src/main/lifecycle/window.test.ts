@@ -16,9 +16,7 @@ describe('main/lifecycle/window.ts', () => {
     menubar = {
       hideWindow: vi.fn(),
       tray: {
-        getBounds: vi
-          .fn()
-          .mockReturnValue({ x: 100, y: 100, width: 22, height: 22 }),
+        getBounds: vi.fn().mockReturnValue({ x: 100, y: 100, width: 22, height: 22 }),
       },
       window: {
         setSize: vi.fn(),

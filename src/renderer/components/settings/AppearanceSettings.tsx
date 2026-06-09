@@ -74,9 +74,7 @@ export const AppearanceSettings: FC = () => {
             {t('settings.appearance.language')}:
           </Text>
           <Select
-            defaultValue={LANGUAGES.find((lang) =>
-              locale.startsWith(lang.value),
-            )}
+            defaultValue={LANGUAGES.find((lang) => locale.startsWith(lang.value))}
             menuPortalTarget={document.body}
             onChange={(option) => {
               handleLanguageChange(option);
@@ -129,10 +127,7 @@ export const AppearanceSettings: FC = () => {
                 <Box paddingInline="space.150">
                   <Text>{zoomPercentage.toFixed(0)}%</Text>
                 </Box>
-                <Tooltip
-                  content={t('settings.appearance.zoom_out')}
-                  position="bottom"
-                >
+                <Tooltip content={t('settings.appearance.zoom_out')} position="bottom">
                   <IconButton
                     icon={ZoomOutIcon}
                     isDisabled={!canDecreaseZoom(zoomPercentage)}
@@ -143,10 +138,7 @@ export const AppearanceSettings: FC = () => {
                     testId="settings-zoom-out"
                   />
                 </Tooltip>
-                <Tooltip
-                  content={t('settings.appearance.zoom_in')}
-                  position="bottom"
-                >
+                <Tooltip content={t('settings.appearance.zoom_in')} position="bottom">
                   <IconButton
                     icon={ZoomInIcon}
                     isDisabled={!canIncreaseZoom(zoomPercentage)}
@@ -158,10 +150,7 @@ export const AppearanceSettings: FC = () => {
                   />
                 </Tooltip>
               </Inline>
-              <Tooltip
-                content={t('settings.appearance.zoom_reset')}
-                position="bottom"
-              >
+              <Tooltip content={t('settings.appearance.zoom_reset')} position="bottom">
                 <IconButton
                   icon={RetryIcon}
                   label={t('settings.appearance.zoom_reset')}

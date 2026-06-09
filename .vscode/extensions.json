@@ -6,6 +6,7 @@
     "GraphQL.vscode-graphql",
     "GraphQL.vscode-graphql-syntax",
     "lokalise.i18n-ally",
+    "oxc.oxc-vscode",
     "SonarSource.sonarlint-vscode",
     "vitest.explorer",
     "zizmor.zizmor-vscode"

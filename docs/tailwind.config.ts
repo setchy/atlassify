@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss';
-import colors from 'tailwindcss/colors';
 import TailwindCSSMotion from 'tailwindcss-motion';
+import colors from 'tailwindcss/colors';
 
 const config: Config = {
   content: ['./src/**/*.{astro,ts,tsx}'],

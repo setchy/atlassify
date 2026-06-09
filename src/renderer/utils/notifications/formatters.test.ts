@@ -14,16 +14,14 @@ describe('renderer/utils/notifications/formatters.ts', () => {
     it('formatProperCase', () => {
       expect(formatProperCase(null)).toBe('');
       expect(formatProperCase('')).toBe('');
-      expect(formatProperCase('OUTDATED discussion')).toBe(
-        'Outdated Discussion',
-      );
+      expect(formatProperCase('OUTDATED discussion')).toBe('Outdated Discussion');
     });
 
     describe('formatNativeNotificationFooterText', () => {
       it('use entity title when available ', () => {
-        expect(
-          formatNativeNotificationFooterText(mockAtlassifyNotifications[1]),
-        ).toBe('Atlassify Space: Atlassify Home');
+        expect(formatNativeNotificationFooterText(mockAtlassifyNotifications[1])).toBe(
+          'Atlassify Space: Atlassify Home',
+        );
       });
 
       it('default case', () => {

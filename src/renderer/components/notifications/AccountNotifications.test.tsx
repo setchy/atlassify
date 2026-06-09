@@ -7,10 +7,7 @@ import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks'
 
 import * as links from '../../utils/system/links';
 import * as theme from '../../utils/ui/theme';
-import {
-  AccountNotifications,
-  type AccountNotificationsProps,
-} from './AccountNotifications';
+import { AccountNotifications, type AccountNotificationsProps } from './AccountNotifications';
 
 vi.mock('./ProductNotifications', () => ({
   ProductNotifications: () => <div>ProductNotifications</div>,
@@ -136,15 +133,9 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
 
       renderWithProviders(<AccountNotifications {...props} />);
 
-      expect(
-        screen.queryByTestId('account-profile--itemInner'),
-      ).not.toBeInTheDocument();
-      expect(
-        screen.queryByTestId('account-pull-requests'),
-      ).not.toBeInTheDocument();
-      expect(
-        screen.queryByTestId('account-mark-as-read'),
-      ).not.toBeInTheDocument();
+      expect(screen.queryByTestId('account-profile--itemInner')).not.toBeInTheDocument();
+      expect(screen.queryByTestId('account-pull-requests')).not.toBeInTheDocument();
+      expect(screen.queryByTestId('account-mark-as-read')).not.toBeInTheDocument();
       expect(screen.queryByTestId('account-toggle')).not.toBeInTheDocument();
     });
   });
@@ -152,9 +143,7 @@ describe('renderer/components/notifications/AccountNotifications.tsx', () => {
 
 describe('account actions', () => {
   it('should open profile when clicked', async () => {
-    const openAccountProfileSpy = vi
-      .spyOn(links, 'openAccountProfile')
-      .mockImplementation(vi.fn());
+    const openAccountProfileSpy = vi.spyOn(links, 'openAccountProfile').mockImplementation(vi.fn());
 
     const props: AccountNotificationsProps = {
       account: mockAtlassianCloudAccount,
@@ -171,15 +160,11 @@ describe('account actions', () => {
     await userEvent.click(screen.getByTestId('account-profile--itemInner'));
 
     expect(openAccountProfileSpy).toHaveBeenCalledTimes(1);
-    expect(openAccountProfileSpy).toHaveBeenCalledWith(
-      mockAtlassianCloudAccount,
-    );
+    expect(openAccountProfileSpy).toHaveBeenCalledWith(mockAtlassianCloudAccount);
   });
 
   it('should open my pull requests', async () => {
-    const openPullRequestsSpy = vi
-      .spyOn(links, 'openMyPullRequests')
-      .mockImplementation(vi.fn());
+    const openPullRequestsSpy = vi.spyOn(links, 'openMyPullRequests').mockImplementation(vi.fn());
 
     const props: AccountNotificationsProps = {
       account: mockAtlassianCloudAccount,
@@ -257,9 +242,7 @@ describe('account actions', () => {
       renderWithProviders(<AccountNotifications {...props} />);
     });
 
-    expect(
-      screen.getAllByTestId('notification-details').length,
-    ).toBeGreaterThan(0);
+    expect(screen.getAllByTestId('notification-details').length).toBeGreaterThan(0);
 
     await userEvent.click(screen.getByTestId('account-toggle'));
 

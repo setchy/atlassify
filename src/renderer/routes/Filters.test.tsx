@@ -13,10 +13,7 @@ describe('renderer/routes/Filters.tsx', () => {
 
   beforeEach(() => {
     // spy the actions on the real store
-    updateSpy = vi.spyOn(
-      useFiltersStore.getState() as FiltersStore,
-      'updateFilter',
-    );
+    updateSpy = vi.spyOn(useFiltersStore.getState() as FiltersStore, 'updateFilter');
     resetSpy = vi.spyOn(useFiltersStore.getState() as FiltersStore, 'reset');
   });
 
@@ -50,11 +47,7 @@ describe('renderer/routes/Filters.tsx', () => {
 
         await userEvent.click(screen.getByLabelText('Mentions'));
 
-        expect(updateSpy).toHaveBeenCalledWith(
-          'engagementStates',
-          'mention',
-          true,
-        );
+        expect(updateSpy).toHaveBeenCalledWith('engagementStates', 'mention', true);
       });
 
       it('should filter by engagement state - existing filter set', async () => {
@@ -65,11 +58,7 @@ describe('renderer/routes/Filters.tsx', () => {
 
         await userEvent.click(screen.getByLabelText('Mentions'));
 
-        expect(updateSpy).toHaveBeenCalledWith(
-          'engagementStates',
-          'mention',
-          false,
-        );
+        expect(updateSpy).toHaveBeenCalledWith('engagementStates', 'mention', false);
       });
     });
 

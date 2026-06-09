@@ -7,19 +7,13 @@ import * as native from './native';
 
 describe('renderer/utils/system/native.ts', () => {
   it('should raise a native notification for a single new notification', () => {
-    native.raiseNativeNotification(
-      mockSingleAccountNotifications[0].notifications,
-    );
+    native.raiseNativeNotification(mockSingleAccountNotifications[0].notifications);
 
     expect(window.atlassify.raiseNativeNotification).toHaveBeenCalledTimes(1);
 
     expect(window.atlassify.raiseNativeNotification).toHaveBeenCalledWith(
-      expect.stringContaining(
-        mockSingleAccountNotifications[0].notifications[0].message,
-      ),
-      expect.stringContaining(
-        mockSingleAccountNotifications[0].notifications[0].message,
-      ),
+      expect.stringContaining(mockSingleAccountNotifications[0].notifications[0].message),
+      expect.stringContaining(mockSingleAccountNotifications[0].notifications[0].message),
       mockSingleAccountNotifications[0].notifications[0].url,
     );
   });

@@ -28,14 +28,9 @@ export const NotificationRow: FC<NotificationRowProps> = ({
 }: NotificationRowProps) => {
   const markAsReadOnOpen = useSettingsStore((s) => s.markAsReadOnOpen);
 
-  const {
-    markNotificationsRead,
-    markNotificationsUnread,
-    focusedNotificationId,
-  } = useAppContext();
+  const { markNotificationsRead, markNotificationsUnread, focusedNotificationId } = useAppContext();
 
-  const [shouldAnimateNotificationExit, setShouldAnimateNotificationExit] =
-    useState(false);
+  const [shouldAnimateNotificationExit, setShouldAnimateNotificationExit] = useState(false);
   const [pendingMarkAsRead, setPendingMarkAsRead] = useState(false);
 
   const isFocused = focusedNotificationId === notification.id;
@@ -75,10 +70,7 @@ export const NotificationRow: FC<NotificationRowProps> = ({
     }
   };
 
-  const isNotificationUnread = readStateFilter.filterNotification(
-    notification,
-    'unread',
-  );
+  const isNotificationUnread = readStateFilter.filterNotification(notification, 'unread');
 
   const strategy = getProductStrategy(notification);
 
@@ -94,8 +86,7 @@ export const NotificationRow: FC<NotificationRowProps> = ({
       className={cn(
         'border-b border-atlassify-notifications hover:bg-atlassify-notifications',
         isFocused && 'bg-atlassify-notifications',
-        (isProductAnimatingExit || shouldAnimateNotificationExit) &&
-          'notification-exit',
+        (isProductAnimatingExit || shouldAnimateNotificationExit) && 'notification-exit',
       )}
       data-notification-id={notification.id}
       data-notification-row="true"

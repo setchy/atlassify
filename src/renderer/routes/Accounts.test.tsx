@@ -46,9 +46,7 @@ describe('renderer/routes/Accounts.tsx', () => {
       await userEvent.click(screen.getByTestId('account-profile--itemInner'));
 
       expect(openAccountProfileSpy).toHaveBeenCalledTimes(1);
-      expect(openAccountProfileSpy).toHaveBeenCalledWith(
-        mockAtlassianCloudAccount,
-      );
+      expect(openAccountProfileSpy).toHaveBeenCalledWith(mockAtlassianCloudAccount);
     });
 
     it('should refresh account', async () => {

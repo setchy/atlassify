@@ -1,10 +1,7 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import {
-  navigateMock,
-  renderWithProviders,
-} from '../../__helpers__/test-utils';
+import { navigateMock, renderWithProviders } from '../../__helpers__/test-utils';
 
 import { Header } from './Header';
 

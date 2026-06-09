@@ -3,10 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { renderWithProviders } from '../../__helpers__/test-utils';
 
-import {
-  NotificationActions,
-  type NotificationActionsProps,
-} from './NotificationActions';
+import { NotificationActions, type NotificationActionsProps } from './NotificationActions';
 
 describe('renderer/components/notifications/NotificationActions.tsx', () => {
   it('renders mark-as-read button when unread and not animating', () => {
@@ -45,12 +42,8 @@ describe('renderer/components/notifications/NotificationActions.tsx', () => {
 
     renderWithProviders(<NotificationActions {...props} />);
 
-    expect(
-      screen.queryByTestId('notification-mark-as-read'),
-    ).not.toBeInTheDocument();
-    expect(
-      screen.queryByTestId('notification-mark-as-unread'),
-    ).not.toBeInTheDocument();
+    expect(screen.queryByTestId('notification-mark-as-read')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('notification-mark-as-unread')).not.toBeInTheDocument();
   });
 
   it('calls onMarkAsRead when mark-as-read is clicked', async () => {

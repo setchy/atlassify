@@ -45,12 +45,7 @@ export async function performRequestForCredentials<TResult, TVariables>(
   query: TypedDocumentString<TResult, TVariables>,
   ...[variables]: TVariables extends Record<string, never> ? [] : [TVariables]
 ): Promise<AtlassianGraphQLResponse<TResult>> {
-  return performGraphQLApiRequest<TResult, TVariables>(
-    username,
-    token,
-    query,
-    variables,
-  );
+  return performGraphQLApiRequest<TResult, TVariables>(username, token, query, variables);
 }
 
 /**

@@ -23,9 +23,7 @@ export const mockAtlassianCloudAccountTwo: Account = {
   avatar: 'https://avatar.atlassify.io' as Link,
 };
 
-export function createMockAccountWithError(
-  error: AtlassifyError,
-): AccountNotifications {
+export function createMockAccountWithError(error: AtlassifyError): AccountNotifications {
   return {
     account: mockAtlassianCloudAccount,
     notifications: [],

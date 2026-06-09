@@ -28,8 +28,7 @@ describe('renderer/utils/notifications/postProcess.ts', () => {
         delayNotificationState: false,
         fetchOnlyUnreadNotifications: false,
         expected: false,
-        description:
-          'both delayNotificationState and fetchOnlyUnreadNotifications are false',
+        description: 'both delayNotificationState and fetchOnlyUnreadNotifications are false',
       },
       {
         delayNotificationState: true,
@@ -47,21 +46,19 @@ describe('renderer/utils/notifications/postProcess.ts', () => {
         delayNotificationState: true,
         fetchOnlyUnreadNotifications: true,
         expected: false,
-        description:
-          'both delayNotificationState and fetchOnlyUnreadNotifications are true',
+        description: 'both delayNotificationState and fetchOnlyUnreadNotifications are true',
       },
-    ])('should return $expected when read action and $description', ({
-      delayNotificationState,
-      fetchOnlyUnreadNotifications,
-      expected,
-    }) => {
-      useSettingsStore.setState({
-        delayNotificationState,
-        fetchOnlyUnreadNotifications,
-      });
+    ])(
+      'should return $expected when read action and $description',
+      ({ delayNotificationState, fetchOnlyUnreadNotifications, expected }) => {
+        useSettingsStore.setState({
+          delayNotificationState,
+          fetchOnlyUnreadNotifications,
+        });
 
-      expect(shouldRemoveNotificationsFromState()).toBe(expected);
-    });
+        expect(shouldRemoveNotificationsFromState()).toBe(expected);
+      },
+    );
   });
 
   describe('removeNotificationsForAccount', () => {

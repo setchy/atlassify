@@ -30,9 +30,7 @@ describe('renderer/utils/products/strategies/bitbucket', () => {
         },
       } as AtlassifyNotification;
 
-      expect(getProductStrategy(notification).actorType(notification)).toBe(
-        'rovo',
-      );
+      expect(getProductStrategy(notification).actorType(notification)).toBe('rovo');
     });
 
     it('actorType returns user for other display names', () => {
@@ -45,21 +43,15 @@ describe('renderer/utils/products/strategies/bitbucket', () => {
         },
       } as AtlassifyNotification;
 
-      expect(getProductStrategy(notification).actorType(notification)).toBe(
-        'user',
-      );
+      expect(getProductStrategy(notification).actorType(notification)).toBe('user');
     });
   });
 
   it('is instanceof DefaultStrategy', () => {
-    expect(bitbucketStrategy).toBeInstanceOf(
-      (defaultStrategy as object).constructor,
-    );
+    expect(bitbucketStrategy).toBeInstanceOf((defaultStrategy as object).constructor);
   });
 
   it('extractRepositoryName parses entity url correctly', () => {
-    expect(extractRepositoryName(mockSingleAtlassifyNotification)).toBe(
-      'myorg/notifications-test',
-    );
+    expect(extractRepositoryName(mockSingleAtlassifyNotification)).toBe('myorg/notifications-test');
   });
 });

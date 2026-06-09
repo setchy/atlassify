@@ -2,11 +2,7 @@ import { createMockAccountWithError } from '../../__mocks__/account-mocks';
 
 import type { AccountNotifications } from '../../types';
 
-import {
-  areAllAccountErrorsSame,
-  doesAllAccountsHaveErrors,
-  Errors,
-} from './errors';
+import { areAllAccountErrorsSame, doesAllAccountsHaveErrors, Errors } from './errors';
 
 describe('renderer/utils/core/errors.ts', () => {
   describe('doesAllAccountsHaveErrors', () => {

@@ -14,9 +14,7 @@ import {
 } from './links';
 
 describe('renderer/utils/system/links.ts', () => {
-  const openExternalLinkSpy = vi
-    .spyOn(comms, 'openExternalLink')
-    .mockImplementation(vi.fn());
+  const openExternalLinkSpy = vi.spyOn(comms, 'openExternalLink').mockImplementation(vi.fn());
 
   it('openAtlassifyReleaseNotes', () => {
     openAtlassifyReleaseNotes('v1.0.0');
@@ -29,25 +27,19 @@ describe('renderer/utils/system/links.ts', () => {
   it('openAtlassianSecurityDocs', () => {
     openAtlassianSecurityDocs();
 
-    expect(openExternalLinkSpy).toHaveBeenCalledWith(
-      URLs.ATLASSIAN.DOCS.API_TOKEN,
-    );
+    expect(openExternalLinkSpy).toHaveBeenCalledWith(URLs.ATLASSIAN.DOCS.API_TOKEN);
   });
 
   it('openAtlassianCreateToken', () => {
     openAtlassianCreateToken();
 
-    expect(openExternalLinkSpy).toHaveBeenCalledWith(
-      URLs.ATLASSIAN.WEB.SECURITY_TOKENS,
-    );
+    expect(openExternalLinkSpy).toHaveBeenCalledWith(URLs.ATLASSIAN.WEB.SECURITY_TOKENS);
   });
 
   it('openMyNotifications', () => {
     openMyNotifications();
 
-    expect(openExternalLinkSpy).toHaveBeenCalledWith(
-      URLs.ATLASSIAN.WEB.MY_NOTIFICATIONS,
-    );
+    expect(openExternalLinkSpy).toHaveBeenCalledWith(URLs.ATLASSIAN.WEB.MY_NOTIFICATIONS);
   });
 
   it('openMyPullRequests', () => {
@@ -59,9 +51,7 @@ describe('renderer/utils/system/links.ts', () => {
   it('openAccountProfile', () => {
     openAccountProfile(mockAtlassianCloudAccount);
 
-    expect(openExternalLinkSpy).toHaveBeenCalledWith(
-      'https://team.atlassian.com/people/123456789',
-    );
+    expect(openExternalLinkSpy).toHaveBeenCalledWith('https://team.atlassian.com/people/123456789');
   });
 
   describe('openNotification', () => {

@@ -28,12 +28,7 @@ describe('renderer/utils/system/tray.ts', () => {
       setTrayIconColorAndTitle();
 
       expect(updateTrayColorSpy).toHaveBeenCalledTimes(1);
-      expect(updateTrayColorSpy).toHaveBeenCalledWith(
-        5,
-        'online',
-        'default',
-        'active',
-      );
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(5, 'online', 'default', 'active');
       expect(updateTrayTitleSpy).toHaveBeenCalledTimes(1);
       expect(updateTrayTitleSpy).toHaveBeenCalledWith('5');
     });
@@ -47,12 +42,7 @@ describe('renderer/utils/system/tray.ts', () => {
       setTrayIconColorAndTitle();
 
       expect(updateTrayColorSpy).toHaveBeenCalledTimes(1);
-      expect(updateTrayColorSpy).toHaveBeenCalledWith(
-        5,
-        'online',
-        'default',
-        'active',
-      );
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(5, 'online', 'default', 'active');
       expect(updateTrayTitleSpy).toHaveBeenCalledTimes(1);
       expect(updateTrayTitleSpy).toHaveBeenCalledWith('5+');
     });
@@ -64,12 +54,7 @@ describe('renderer/utils/system/tray.ts', () => {
       setTrayIconColorAndTitle();
 
       expect(updateTrayColorSpy).toHaveBeenCalledTimes(1);
-      expect(updateTrayColorSpy).toHaveBeenCalledWith(
-        5,
-        'online',
-        'default',
-        'active',
-      );
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(5, 'online', 'default', 'active');
       expect(updateTrayTitleSpy).toHaveBeenCalledTimes(1);
       expect(updateTrayTitleSpy).toHaveBeenCalledWith('');
     });
@@ -80,12 +65,7 @@ describe('renderer/utils/system/tray.ts', () => {
       setTrayIconColorAndTitle();
 
       expect(updateTrayColorSpy).toHaveBeenCalledTimes(1);
-      expect(updateTrayColorSpy).toHaveBeenCalledWith(
-        5,
-        'offline',
-        'default',
-        'active',
-      );
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(5, 'offline', 'default', 'active');
       expect(updateTrayTitleSpy).toHaveBeenCalledTimes(1);
       expect(updateTrayTitleSpy).toHaveBeenCalledWith('');
     });
@@ -94,12 +74,7 @@ describe('renderer/utils/system/tray.ts', () => {
       setTrayIconColorAndTitle();
 
       expect(updateTrayColorSpy).toHaveBeenCalledTimes(1);
-      expect(updateTrayColorSpy).toHaveBeenCalledWith(
-        0,
-        'online',
-        'default',
-        'active',
-      );
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(0, 'online', 'default', 'active');
       expect(updateTrayTitleSpy).toHaveBeenCalledTimes(1);
       expect(updateTrayTitleSpy).toHaveBeenCalledWith('');
     });
@@ -113,12 +88,7 @@ describe('renderer/utils/system/tray.ts', () => {
 
       setTrayIconColorAndTitle();
 
-      expect(updateTrayColorSpy).toHaveBeenCalledWith(
-        5,
-        'online',
-        'alternative',
-        'idle',
-      );
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(5, 'online', 'alternative', 'idle');
     });
 
     it('should pass appState error when isError is true', () => {
@@ -126,12 +96,7 @@ describe('renderer/utils/system/tray.ts', () => {
 
       setTrayIconColorAndTitle();
 
-      expect(updateTrayColorSpy).toHaveBeenCalledWith(
-        0,
-        'error',
-        'default',
-        'active',
-      );
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(0, 'error', 'default', 'active');
       expect(updateTrayTitleSpy).toHaveBeenCalledWith('');
     });
 
@@ -140,12 +105,7 @@ describe('renderer/utils/system/tray.ts', () => {
 
       setTrayIconColorAndTitle();
 
-      expect(updateTrayColorSpy).toHaveBeenCalledWith(
-        0,
-        'offline',
-        'default',
-        'active',
-      );
+      expect(updateTrayColorSpy).toHaveBeenCalledWith(0, 'offline', 'default', 'active');
       expect(updateTrayTitleSpy).toHaveBeenCalledWith('');
     });
   });

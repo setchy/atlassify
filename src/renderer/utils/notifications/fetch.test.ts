@@ -6,11 +6,7 @@ import {
 
 import type { AccountNotifications } from '../../types';
 
-import {
-  getNewNotifications,
-  getNotificationCount,
-  hasMoreNotifications,
-} from './fetch';
+import { getNewNotifications, getNotificationCount, hasMoreNotifications } from './fetch';
 
 describe('renderer/utils/notifications/fetch.ts', () => {
   it('getNotificationCount', () => {
@@ -102,10 +98,7 @@ describe('renderer/utils/notifications/fetch.ts', () => {
         },
       ];
 
-      const result = getNewNotifications(
-        previousAccountNotifications,
-        newAccountNotifications,
-      );
+      const result = getNewNotifications(previousAccountNotifications, newAccountNotifications);
 
       expect(result).toHaveLength(2);
       expect(result.map((n) => n.id)).toEqual(['3', '4']);
@@ -138,10 +131,7 @@ describe('renderer/utils/notifications/fetch.ts', () => {
         },
       ];
 
-      const result = getNewNotifications(
-        previousAccountNotifications,
-        newAccountNotifications,
-      );
+      const result = getNewNotifications(previousAccountNotifications, newAccountNotifications);
 
       expect(result).toHaveLength(0);
     });
@@ -188,10 +178,7 @@ describe('renderer/utils/notifications/fetch.ts', () => {
         },
       ];
 
-      const result = getNewNotifications(
-        previousAccountNotifications,
-        newAccountNotifications,
-      );
+      const result = getNewNotifications(previousAccountNotifications, newAccountNotifications);
 
       expect(result).toHaveLength(2);
       expect(result.map((n) => n.id)).toEqual(['2', '11']);
@@ -230,10 +217,7 @@ describe('renderer/utils/notifications/fetch.ts', () => {
         },
       ];
 
-      const result = getNewNotifications(
-        previousAccountNotifications,
-        newAccountNotifications,
-      );
+      const result = getNewNotifications(previousAccountNotifications, newAccountNotifications);
 
       expect(result).toHaveLength(2);
       expect(result.map((n) => n.id)).toEqual(['10', '11']);
@@ -258,10 +242,7 @@ describe('renderer/utils/notifications/fetch.ts', () => {
         },
       ];
 
-      const result = getNewNotifications(
-        previousAccountNotifications,
-        newAccountNotifications,
-      );
+      const result = getNewNotifications(previousAccountNotifications, newAccountNotifications);
 
       expect(result).toHaveLength(0);
     });
@@ -289,10 +270,7 @@ describe('renderer/utils/notifications/fetch.ts', () => {
         },
       ];
 
-      const result = getNewNotifications(
-        previousAccountNotifications,
-        newAccountNotifications,
-      );
+      const result = getNewNotifications(previousAccountNotifications, newAccountNotifications);
 
       expect(result).toHaveLength(3);
       expect(result.map((n) => n.id)).toEqual(['5', '3', '4']);
@@ -331,10 +309,7 @@ describe('renderer/utils/notifications/fetch.ts', () => {
         },
       ];
 
-      const result = getNewNotifications(
-        previousAccountNotifications,
-        newAccountNotifications,
-      );
+      const result = getNewNotifications(previousAccountNotifications, newAccountNotifications);
 
       expect(result).toHaveLength(1);
       expect(result[0].id).toBe('2');
@@ -369,10 +344,7 @@ describe('renderer/utils/notifications/fetch.ts', () => {
         },
       ];
 
-      const result = getNewNotifications(
-        previousAccountNotifications,
-        newAccountNotifications,
-      );
+      const result = getNewNotifications(previousAccountNotifications, newAccountNotifications);
 
       expect(result).toHaveLength(4);
       expect(result.map((n) => n.id)).toEqual(['1', '2', '10', '11']);

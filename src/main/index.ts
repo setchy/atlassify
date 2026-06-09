@@ -13,11 +13,7 @@ import {
   trackEvent,
 } from './handlers';
 import { TrayIcons } from './icons';
-import {
-  configureWindowEvents,
-  initializeAppLifecycle,
-  onFirstRunMaybe,
-} from './lifecycle';
+import { configureWindowEvents, initializeAppLifecycle, onFirstRunMaybe } from './lifecycle';
 import MenuBuilder from './menu';
 import AppUpdater from './updater';
 
