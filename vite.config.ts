@@ -151,7 +151,7 @@ export default defineConfig(({ command }) => {
             envDir: fileURLToPath(new URL('.', import.meta.url)),
             build: {
               outDir: fileURLToPath(new URL('build', import.meta.url)),
-              rollupOptions: {
+              rolldownOptions: {
                 output: { entryFileNames: 'main.js' },
                 external: [
                   'electron',
@@ -172,7 +172,7 @@ export default defineConfig(({ command }) => {
           vite: {
             build: {
               outDir: fileURLToPath(new URL('build', import.meta.url)),
-              rollupOptions: { output: { entryFileNames: 'preload.js' } },
+              rolldownOptions: { output: { entryFileNames: 'preload.js' } },
             },
             resolve: { conditions: ['node'] },
           },
