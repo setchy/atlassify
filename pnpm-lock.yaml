@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  react-is: 19.2.6
+  react-is: 19.2.7
   yauzl: 3.3.1
   cross-spawn: 7.0.6
   got: 11.8.6
@@ -4136,8 +4136,8 @@ packages:
       typescript:
         optional: true
 
-  react-is@19.2.6:
-    resolution: {integrity: sha512-XjBR15BhXuylgWGuslhDKqlSayuqvqBX91BP8pauG8kd1zY8kotkNWbXksTCNRarse4kuGbe2kIY05ARtwNIvw==}
+  react-is@19.2.7:
+    resolution: {integrity: sha512-kZFnouyVv7eP/Phmrlo9FK+zcAdriZJvzxXHF1Sl1P377WSGe2G/JxVolhTrB/jeV47lKImhNUsijjHAAbcl/A==}
 
   react-popper@2.3.0:
     resolution: {integrity: sha512-e1hj8lL3uM+sgSR4Lxzn5h1GxBlpa4CQz0XLF8kx4MDrDRWY0Ena4c97PUeSX9i5W3UAfDP0z0FXCTQkoXUl3Q==}
@@ -8513,7 +8513,7 @@ snapshots:
 
   hoist-non-react-statics@3.3.2:
     dependencies:
-      react-is: 19.2.6
+      react-is: 19.2.7
 
   hosted-git-info@4.1.0:
     dependencies:
@@ -9532,7 +9532,7 @@ snapshots:
     dependencies:
       ansi-regex: 5.0.1
       ansi-styles: 5.2.0
-      react-is: 19.2.6
+      react-is: 19.2.7
 
   pretty-ms@9.3.0:
     dependencies:
@@ -9553,7 +9553,7 @@ snapshots:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
-      react-is: 19.2.6
+      react-is: 19.2.7
 
   propagate@2.0.1: {}
 
@@ -9649,7 +9649,7 @@ snapshots:
       react-dom: 19.2.7(react@19.2.7)
       typescript: 6.0.3
 
-  react-is@19.2.6: {}
+  react-is@19.2.7: {}
 
   react-popper@2.3.0(@popperjs/core@2.11.8)(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
     dependencies:
