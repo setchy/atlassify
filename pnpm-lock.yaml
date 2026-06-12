@@ -101,8 +101,8 @@ importers:
         specifier: 8.3.2
         version: 8.3.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/theme':
-        specifier: 23.2.0
-        version: 23.2.0(react@19.2.7)
+        specifier: 24.0.0
+        version: 24.0.0(react@19.2.7)
       '@atlaskit/toggle':
         specifier: 16.1.0
         version: 16.1.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -475,8 +475,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/theme@23.2.0':
-    resolution: {integrity: sha512-XRi0xXi9+4Oqmra/BMvm39LqZzG0du/6Is894pX3Rb+gW7F4q9e2Dxdy4DycyOGx55AVaNRVOidkTBfqNXP4Ug==}
+  '@atlaskit/theme@24.0.0':
+    resolution: {integrity: sha512-EWIhO4VGgMRODi0dEERXaba6u+Fn+6RPvGqNd8jfxhJ/9uNAg6gofz2x4DZnzV94iQTbqRraH7wTEdMqckGo0w==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5470,7 +5470,7 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/theme@23.2.0(react@19.2.7)':
+  '@atlaskit/theme@24.0.0(react@19.2.7)':
     dependencies:
       '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
       '@atlaskit/tokens': 13.3.1(react@19.2.7)

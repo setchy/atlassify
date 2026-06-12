@@ -86,7 +86,7 @@
     "@atlaskit/select": "21.12.11",
     "@atlaskit/spinner": "19.1.2",
     "@atlaskit/textfield": "8.3.2",
-    "@atlaskit/theme": "23.2.0",
+    "@atlaskit/theme": "24.0.0",
     "@atlaskit/toggle": "16.1.0",
     "@atlaskit/tokens": "13.3.1",
     "@atlaskit/tooltip": "22.6.1",
