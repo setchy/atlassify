@@ -107,8 +107,8 @@ importers:
         specifier: 16.1.0
         version: 16.1.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/tokens':
-        specifier: 13.2.0
-        version: 13.2.0(react@19.2.7)
+        specifier: 13.3.0
+        version: 13.3.0(react@19.2.7)
       '@atlaskit/tooltip':
         specifier: 22.6.0
         version: 22.6.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -497,6 +497,11 @@ packages:
 
   '@atlaskit/tokens@13.2.0':
     resolution: {integrity: sha512-yvLe1Pl7zDMuchE9/taZ7mKnACoktDeKMkwItvQUK1bQOlsKWVj3nMTFM3bZX4Aihmolq2Te1pdEiMuW0/pO7w==}
+    peerDependencies:
+      react: ^18.2.0 || ^19.0.0
+
+  '@atlaskit/tokens@13.3.0':
+    resolution: {integrity: sha512-I1qMM0RTI5yLyzqm+yTgqDwzMeeeGLkUuM7ukYmUHi15aazbT+sex6TouKSAI2UzbjCYOkbDFyb1/t2HKu8K9A==}
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
@@ -5516,6 +5521,18 @@ snapshots:
       - supports-color
 
   '@atlaskit/tokens@13.2.0(react@19.2.7)':
+    dependencies:
+      '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
+      '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
+      '@babel/runtime': 7.29.7
+      '@babel/traverse': 7.29.7
+      '@babel/types': 7.29.7
+      bind-event-listener: 3.0.0
+      react: 19.2.7
+    transitivePeerDependencies:
+      - supports-color
+
+  '@atlaskit/tokens@13.3.0(react@19.2.7)':
     dependencies:
       '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
