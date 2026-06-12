@@ -47,7 +47,7 @@
     "date-fns": "4.4.0",
     "marked": "18.0.5",
     "octokit": "5.0.5",
-    "sharp": "0.34.5",
+    "sharp": "0.35.1",
     "tailwind-merge": "3.6.0",
     "tailwindcss": "4.3.0",
     "tailwindcss-motion": "1.1.1"
