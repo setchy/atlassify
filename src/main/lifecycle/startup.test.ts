@@ -1,4 +1,4 @@
-import type { Menubar } from 'menubar';
+import type { Menubar } from 'electron-menubar';
 
 import { initializeAppLifecycle } from './startup';
 
@@ -12,10 +12,10 @@ vi.mock('electron', () => ({
     requestSingleInstanceLock: () => requestSingleInstanceLockMock(),
     on: (...a: unknown[]) => appOnMock(...a),
     quit: () => appQuitMock(),
-  },
+  } satisfies Pick<Electron.App, 'requestSingleInstanceLock' | 'on' | 'quit'>,
   nativeTheme: {
     on: () => nativeThemeMock(),
-  },
+  } satisfies Pick<Electron.NativeTheme, 'on'>,
 }));
 
 const sendRendererEventMock = vi.fn();
@@ -34,12 +34,10 @@ function createMb() {
   return {
     on: vi.fn(),
     showWindow: vi.fn(),
+    setContextMenu: vi.fn(),
     app: { setAppUserModelId: vi.fn(), quit: vi.fn() },
     tray: {
       setToolTip: vi.fn(),
-      setIgnoreDoubleClickEvents: vi.fn(),
-      on: vi.fn(),
-      popUpContextMenu: vi.fn(),
     },
   };
 }
@@ -64,6 +62,20 @@ describe('main/lifecycle/startup.ts', () => {
 
       expect(appQuitMock).toHaveBeenCalled();
       expect(logWarnMock).toHaveBeenCalled();
+    });
+
+    it('delegates context-menu wiring to mb.setContextMenu', () => {
+      const mb = createMb();
+      const contextMenu = {} as Electron.Menu;
+
+      initializeAppLifecycle(mb as unknown as Menubar, contextMenu);
+
+      const readyHandler = (mb.on as unknown as ReturnType<typeof vi.fn>).mock
+        .calls[0]?.[1];
+      expect(readyHandler).toBeDefined();
+      readyHandler?.();
+
+      expect(mb.setContextMenu).toHaveBeenCalledWith(contextMenu);
     });
   });
 });
