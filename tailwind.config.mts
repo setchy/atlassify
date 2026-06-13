@@ -1,4 +1,3 @@
-import { B200, DN40, DN50, N10, R300 } from '@atlaskit/theme/colors';
 import { token } from '@atlaskit/tokens';
 
 import type { Config } from 'tailwindcss';
@@ -23,7 +22,6 @@ const config: Config = {
         atlassify: {
           sidebar: 'var(--atlassify-background-sidebar)',
           notifications: 'var(--atlassify-background-notifications)',
-          attention: R300,
           heroicon: {
             neutral: {
               background: token('color.background.accent.gray.subtler'),
@@ -68,9 +66,8 @@ const config: Config = {
       });
       addBase({
         ':root': {
-          '--atlassify-background-sidebar': B200,
-          '--atlassify-background-notifications': N10,
-
+          '--atlassify-background-sidebar': '#2684FF', //TODO update to token when available (formerly B200)
+          '--atlassify-background-notifications': '#FAFBFC', //TODO update to token when available (formerly N10)
           '--atlassify-scrollbar-track': token(
             'color.background.accent.blue.subtlest',
           ),
@@ -82,9 +79,8 @@ const config: Config = {
           ),
         },
         '.dark': {
-          '--atlassify-background-sidebar': DN50,
-          '--atlassify-background-notifications': DN40,
-
+          '--atlassify-background-sidebar': '#283447', //TODO update to token when available (formerly DN50)
+          '--atlassify-background-notifications': '#202B3D', //TODO update to token when available (formerly DN40)
           '--atlassify-scrollbar-track': token(
             'color.background.accent.gray.subtlest',
           ),
