@@ -1,5 +1,7 @@
 import { APPLICATION } from './constants';
 
+import type { Theme } from './theme';
+
 const P = APPLICATION.EVENT_PREFIX;
 
 /**
@@ -120,7 +122,10 @@ export type EventContracts = AssertEventCoverage<{
   [EVENTS.WINDOW_SHOW]: { request: undefined; response: undefined };
   [EVENTS.WINDOW_HIDE]: { request: undefined; response: undefined };
   [EVENTS.VERSION]: { request: undefined; response: string };
-  [EVENTS.UPDATE_ICON_COLOR]: { request: number; response: undefined };
+  [EVENTS.UPDATE_ICON_COLOR]: {
+    request: ITrayColorUpdate;
+    response: undefined;
+  };
   [EVENTS.UPDATE_ICON_TITLE]: { request: string; response: undefined };
   [EVENTS.UPDATE_KEYBOARD_SHORTCUT]: {
     request: IKeyboardShortcut;
@@ -134,12 +139,17 @@ export type EventContracts = AssertEventCoverage<{
   [EVENTS.SAFE_STORAGE_ENCRYPT]: { request: string; response: string };
   [EVENTS.SAFE_STORAGE_DECRYPT]: {
     request: string;
-    response: ISafeStorageDecryptResult;
+    response: string;
   };
   [EVENTS.NOTIFICATION_SOUND_PATH]: { request: undefined; response: string };
   [EVENTS.OPEN_EXTERNAL]: { request: IOpenExternal; response: undefined };
   [EVENTS.RESET_APP]: { request: undefined; response: undefined };
+  [EVENTS.UPDATE_THEME]: { request: Theme; response: undefined };
   [EVENTS.TWEMOJI_DIRECTORY]: { request: undefined; response: string };
+  [EVENTS.APTABASE_TRACK_EVENT]: {
+    request: IAptabaseEvent;
+    response: undefined;
+  };
 }>;
 
 /** Request payload type for a given event. */
