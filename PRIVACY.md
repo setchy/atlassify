@@ -49,12 +49,12 @@ Disabling analytics does not disable core app functionality.
 
 ## Documentation Website Analytics
 
-The Atlassify documentation website uses Google Analytics for website traffic and page-level usage insights.
+The Atlassify documentation website uses [Google Analytics][google-analytics-website] for website traffic and page-level usage insights.
 
 ## Data Processors
 
-- Desktop app analytics: Aptabase
-- Website analytics: Google Analytics
+- Desktop app analytics: [Aptabase][aptabase-website]
+- Website analytics: [Google Analytics][google-analytics-website]
 
 ## Data Retention
 
@@ -76,3 +76,4 @@ This policy may be updated over time. Material changes will be reflected by upda
 
 <!-- LINK LABELS -->
 [aptabase-website]: https://aptabase.com/
+[google-analytics-website]: https://developers.google.com/analytics

@@ -54,11 +54,7 @@ See our [Atlassify FAQs][faqs] for answers to common questions.
 
 Atlassify includes optional anonymous usage analytics to help improve product quality and UX.
 
-- You can disable app analytics at any time from `Settings -> System -> Share anonymous usage analytics`.
-- Desktop app analytics are processed by Aptabase.
-- The docs website uses Google Analytics.
-
-See [PRIVACY.md](PRIVACY.md) for details on data categories, exclusions, retention, and contact information.
+See [PRIVACY.md](PRIVACY.md) for complete details.
 
 
 ## Community & Support
