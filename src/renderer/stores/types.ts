@@ -255,6 +255,11 @@ export interface SystemSettingsState {
   notificationVolume: Percentage;
 
   /**
+   * Whether to send anonymous usage analytics events.
+   */
+  enableAnonymousAnalytics: boolean;
+
+  /**
    * Whether to open the application on system startup.
    */
   openAtStartup: boolean;

@@ -206,6 +206,8 @@
       "title": "Reset Settings"
     },
     "system": {
+      "anonymous_analytics": "Share anonymous usage analytics",
+      "anonymous_analytics_help": "Help improve {{appName}} by sending anonymous usage events (for example: screens visited and actions used). Atlassian API tokens and notification content are never sent.",
       "keyboard_shortcut": "Enable keyboard shortcut",
       "keyboard_shortcut_help": "When enabled, you can use the hotkeys {{shortcut}} to show or hide {{appName}}.",
       "open_links": "Open Links",

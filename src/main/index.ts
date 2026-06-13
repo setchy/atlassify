@@ -10,7 +10,6 @@ import {
   registerStorageHandlers,
   registerSystemHandlers,
   registerTrayHandlers,
-  trackEvent,
 } from './handlers';
 import { TrayIcons } from './icons';
 import {
@@ -43,8 +42,6 @@ const contextMenu = menuBuilder.buildMenu();
 const appUpdater = new AppUpdater(mb, menuBuilder);
 
 app.whenReady().then(async () => {
-  trackEvent('Application', { event: 'Launched' });
-
   await onFirstRunMaybe();
 
   appUpdater.start();

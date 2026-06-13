@@ -206,6 +206,8 @@
       "title": "Einstellungen zurücksetzen"
     },
     "system": {
+      "anonymous_analytics": "Anonyme Nutzungsanalysen teilen",
+      "anonymous_analytics_help": "Helfen Sie dabei, {{appName}} zu verbessern, indem Sie anonyme Nutzungsereignisse senden (zum Beispiel besuchte Ansichten und verwendete Aktionen). Atlassian-API-Token und Benachrichtigungsinhalte werden niemals gesendet.",
       "keyboard_shortcut": "Tastaturkürzel aktivieren",
       "keyboard_shortcut_help": "Wenn diese Option aktiviert ist, können Sie die Hotkeys {{shortcut}} verwenden, um {{appName}} anzuzeigen oder auszublenden.",
       "open_links": "Offene Links",
