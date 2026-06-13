@@ -49,8 +49,8 @@ importers:
         specifier: 25.15.1
         version: 25.15.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/avatar-group':
-        specifier: 12.10.8
-        version: 12.10.8(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        specifier: 12.10.10
+        version: 12.10.10(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/badge':
         specifier: 18.7.0
         version: 18.7.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -280,8 +280,8 @@ packages:
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
-  '@atlaskit/avatar-group@12.10.8':
-    resolution: {integrity: sha512-fchEnLP45NO1i1vdPi/EFTcHRX9rHNeqTJWMVA11aD++0XXYsX072WF/jsQqieJ+lfEJuzgGT29Wf654/NAtLg==}
+  '@atlaskit/avatar-group@12.10.10':
+    resolution: {integrity: sha512-7YYSpcU/zauviJ3zF4f1bKsA0+R1ie0EIZf0hMk5O2uV2A21JJxWb74DI7PQNWs2NzsREooJdRYoeCEqVBgYJA==}
     peerDependencies:
       react: ^18.2.0
 
@@ -4911,7 +4911,7 @@ snapshots:
       '@babel/runtime': 7.29.7
       react: 19.2.7
 
-  '@atlaskit/avatar-group@12.10.8(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@atlaskit/avatar-group@12.10.10(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
       '@atlaskit/avatar': 25.15.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/css': 0.19.4(react@19.2.7)
@@ -4922,7 +4922,7 @@ snapshots:
       '@atlaskit/popup': 4.23.4(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/tokens': 13.3.1(react@19.2.7)
       '@atlaskit/tooltip': 22.6.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@atlaskit/top-layer': 0.14.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/top-layer': 0.16.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@babel/runtime': 7.29.7
       '@compiled/react': 0.20.0(react@19.2.7)
       bind-event-listener: 3.0.0
