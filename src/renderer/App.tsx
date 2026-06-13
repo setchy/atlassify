@@ -26,6 +26,7 @@ import { AppLayout } from './components/layout/AppLayout';
 
 import { queryClient } from './utils/api/client';
 import { migrateLegacyStoreToZustand } from './utils/core/storage';
+import { trackEvent } from './utils/system/comms';
 
 // Run migration from legacy local storage to Zustand stores (async)
 migrateLegacyStoreToZustand();
@@ -47,6 +48,11 @@ export const App: FC = () => {
   useEffect(() => {
     const cleanup = initializeStoreSubscriptions();
     return cleanup;
+  }, []);
+
+  // Track app launches after renderer startup so user analytics settings are respected.
+  useEffect(() => {
+    trackEvent('Application', { event: 'Launched' });
   }, []);
 
   return (

@@ -42,6 +42,9 @@ export const SystemSettings: FC = () => {
     (s) => s.playSoundNewNotifications,
   );
   const notificationVolume = useSettingsStore((s) => s.notificationVolume);
+  const enableAnonymousAnalytics = useSettingsStore(
+    (s) => s.enableAnonymousAnalytics,
+  );
   const openAtStartup = useSettingsStore((s) => s.openAtStartup);
 
   const volumeBoxStyles = xcss({
@@ -181,6 +184,22 @@ export const SystemSettings: FC = () => {
             </Tooltip>
           </SplitButton>
         </Inline>
+      </Inline>
+
+      <Inline space="space.100">
+        <Checkbox
+          isChecked={enableAnonymousAnalytics}
+          label={t('settings.system.anonymous_analytics')}
+          name="enableAnonymousAnalytics"
+          onChange={() => toggleSetting('enableAnonymousAnalytics')}
+        />
+        <InlineMessage appearance="info">
+          <div className="settings-help-text">
+            {t('settings.system.anonymous_analytics_help', {
+              appName: APPLICATION.NAME,
+            })}
+          </div>
+        </InlineMessage>
       </Inline>
 
       {!window.atlassify.platform.isLinux() && (

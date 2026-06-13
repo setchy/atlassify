@@ -206,6 +206,8 @@
       "title": "Réinitialiser les paramètres"
     },
     "system": {
+      "anonymous_analytics": "Partager des analyses d'utilisation anonymes",
+      "anonymous_analytics_help": "Aidez a ameliorer {{appName}} en envoyant des evenements d'utilisation anonymes (par exemple : ecrans visites et actions utilisees). Les jetons API Atlassian et le contenu des notifications ne sont jamais envoyes.",
       "keyboard_shortcut": "Activer le raccourci clavier",
       "keyboard_shortcut_help": "Lorsqu'il est activé, vous pouvez utiliser les raccourcis clavier {{shortcut}} pour afficher ou masquer {{appName}}.",
       "open_links": "Liens ouverts",

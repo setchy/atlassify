@@ -50,6 +50,13 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for full development and contribution ins
 See our [Atlassify FAQs][faqs] for answers to common questions.
 
 
+## Privacy & Analytics
+
+Atlassify includes optional anonymous usage analytics to help improve product quality and UX.
+
+See [PRIVACY.md](PRIVACY.md) for complete details.
+
+
 ## Community & Support
 
 - Open an [issue][github-issues] for bugs or feature requests
