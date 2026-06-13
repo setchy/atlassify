@@ -59,13 +59,15 @@ See [PRIVACY.md](PRIVACY.md) for complete details.
 
 ## Community & Support
 
-- Open an [issue][github-issues] for bugs or feature requests
-- See [CONTRIBUTING.md](CONTRIBUTING.md) for more ways to get involved
+- Open an [issue][github-issues] for bugs or feature requests.
+- See [CONTRIBUTING.md](CONTRIBUTING.md) for more ways to get involved.
 
 
 ## License
 
-Atlassify is licensed under the MIT Open Source license. See [LICENSE](LICENSE) for details.
+Atlassify is licensed under the MIT Open Source license. 
+
+See [LICENSE](LICENSE) for details.
 
 
 ## Acknowledgements
