@@ -54,6 +54,6 @@ describe('main/events', () => {
 
     sendRendererEvent(mb as unknown as Menubar, EVENTS.RESET_APP);
 
-    expect(sendMock).toHaveBeenCalledWith(EVENTS.RESET_APP, undefined);
+    expect(sendMock).toHaveBeenCalledWith(EVENTS.RESET_APP);
   });
 });
