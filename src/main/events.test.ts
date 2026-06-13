@@ -7,10 +7,10 @@ vi.mock('electron', () => ({
   ipcMain: {
     on: (...args: unknown[]) => onMock(...args),
     handle: (...args: unknown[]) => handleMock(...args),
-  },
+  } satisfies Pick<Electron.IpcMain, 'on' | 'handle'>,
 }));
 
-import type { Menubar } from 'menubar';
+import type { Menubar } from 'electron-menubar';
 
 import { handleMainEvent, onMainEvent, sendRendererEvent } from './events';
 
@@ -22,10 +22,7 @@ describe('main/events', () => {
   it('onMainEvent registers ipcMain.on listener', () => {
     const listenerMock = vi.fn();
 
-    onMainEvent(
-      EVENTS.WINDOW_SHOW,
-      listenerMock as unknown as (e: Electron.IpcMainEvent, d: unknown) => void,
-    );
+    onMainEvent(EVENTS.WINDOW_SHOW, listenerMock);
 
     expect(onMock).toHaveBeenCalledWith(EVENTS.WINDOW_SHOW, listenerMock);
   });
@@ -33,13 +30,7 @@ describe('main/events', () => {
   it('handleMainEvent registers ipcMain.handle listener', () => {
     const listenerMock = vi.fn();
 
-    handleMainEvent(
-      EVENTS.VERSION,
-      listenerMock as unknown as (
-        e: Electron.IpcMainInvokeEvent,
-        d: unknown,
-      ) => void,
-    );
+    handleMainEvent(EVENTS.VERSION, listenerMock);
 
     expect(handleMock).toHaveBeenCalledWith(EVENTS.VERSION, listenerMock);
   });
@@ -63,6 +54,6 @@ describe('main/events', () => {
 
     sendRendererEvent(mb as unknown as Menubar, EVENTS.RESET_APP);
 
-    expect(sendMock).toHaveBeenCalledWith(EVENTS.RESET_APP, undefined);
+    expect(sendMock).toHaveBeenCalledWith(EVENTS.RESET_APP);
   });
 });

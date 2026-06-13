@@ -1,6 +1,6 @@
 import { Menu, shell } from 'electron';
+import type { Menubar } from 'electron-menubar';
 import { autoUpdater } from 'electron-updater';
-import type { Menubar } from 'menubar';
 
 import type { Mock } from 'vitest';
 
@@ -29,9 +29,11 @@ vi.mock('electron', () => {
   return {
     Menu: {
       buildFromTemplate: vi.fn(),
-    },
+    } satisfies Pick<typeof Electron.Menu, 'buildFromTemplate'>,
     MenuItem: MockMenuItem,
-    shell: { openExternal: vi.fn() },
+    shell: {
+      openExternal: vi.fn(),
+    } satisfies Pick<Electron.Shell, 'openExternal'>,
   };
 });
 
@@ -90,7 +92,15 @@ describe('main/menu.ts', () => {
   beforeEach(() => {
     vi.mocked(isMacOS).mockReturnValue(false);
     menuItemInstances.length = 0; // Clear tracked instances
-    menubar = { app: { quit: vi.fn() } } as unknown as Menubar;
+    menubar = {
+      app: { quit: vi.fn() },
+      showWindow: vi.fn(),
+      hideWindow: vi.fn(),
+      tray: {
+        isDestroyed: vi.fn(() => false),
+        setContextMenu: vi.fn(),
+      },
+    } as unknown as Menubar;
     menuBuilder = new MenuBuilder(menubar);
   });
 
@@ -136,7 +146,7 @@ describe('main/menu.ts', () => {
       expect(menuBuilder['noUpdateAvailableMenuItem'].visible).toBe(true);
     });
 
-    it('should hide  menu item', () => {
+    it('should hide menu item', () => {
       menuBuilder.setNoUpdateAvailableMenuVisibility(false);
 
       // biome-ignore lint/complexity/useLiteralKeys: This is a test
@@ -192,6 +202,42 @@ describe('main/menu.ts', () => {
 
       // biome-ignore lint/complexity/useLiteralKeys: This is a test
       expect(menuBuilder['updateReadyForInstallMenuItem'].visible).toBe(false);
+    });
+  });
+
+  describe('windowVisibilityMenuItems', () => {
+    it('show item is visible by default; hide item is not', () => {
+      const showCfg = getMenuItemConfigByLabel(`Show ${APPLICATION.NAME}`);
+      const hideCfg = getMenuItemConfigByLabel(`Hide ${APPLICATION.NAME}`);
+
+      expect(showCfg?.visible).toBe(true);
+      expect(hideCfg?.visible).toBe(false);
+    });
+
+    it('setWindowVisibility(true) shows hide item, hides show item', () => {
+      menuBuilder.setWindowVisibility(true);
+
+      // biome-ignore lint/complexity/useLiteralKeys: This is a test
+      expect(menuBuilder['showWindowMenuItem'].visible).toBe(false);
+      // biome-ignore lint/complexity/useLiteralKeys: This is a test
+      expect(menuBuilder['hideWindowMenuItem'].visible).toBe(true);
+    });
+
+    it('setWindowVisibility(false) shows show item, hides hide item', () => {
+      menuBuilder.setWindowVisibility(true);
+      menuBuilder.setWindowVisibility(false);
+
+      // biome-ignore lint/complexity/useLiteralKeys: This is a test
+      expect(menuBuilder['showWindowMenuItem'].visible).toBe(true);
+      // biome-ignore lint/complexity/useLiteralKeys: This is a test
+      expect(menuBuilder['hideWindowMenuItem'].visible).toBe(false);
+    });
+
+    it('does not touch the tray on visibility change (library re-publishes on show/hide)', () => {
+      menuBuilder.buildMenu();
+      menuBuilder.setWindowVisibility(true);
+
+      expect(menubar.tray.setContextMenu).not.toHaveBeenCalled();
     });
   });
 

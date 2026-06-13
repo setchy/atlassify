@@ -1,6 +1,6 @@
 import { Menu, MenuItem, shell } from 'electron';
+import type { Menubar } from 'electron-menubar';
 import { autoUpdater } from 'electron-updater';
-import type { Menubar } from 'menubar';
 
 import { APPLICATION } from '../shared/constants';
 import { isMacOS } from '../shared/platform';
@@ -16,8 +16,11 @@ export default class MenuBuilder {
   private readonly noUpdateAvailableMenuItem: MenuItem;
   private readonly updateAvailableMenuItem: MenuItem;
   private readonly updateReadyForInstallMenuItem: MenuItem;
+  private readonly showWindowMenuItem: MenuItem;
+  private readonly hideWindowMenuItem: MenuItem;
 
   private readonly menubar: Menubar;
+  private menu?: Menu;
 
   /**
    * @param menubar - The menubar instance used for window and app interactions within menu actions.
@@ -53,13 +56,32 @@ export default class MenuBuilder {
         autoUpdater.quitAndInstall();
       },
     });
+
+    this.showWindowMenuItem = new MenuItem({
+      label: `Show ${APPLICATION.NAME}`,
+      visible: true,
+      click: () => {
+        this.menubar.showWindow();
+      },
+    });
+
+    this.hideWindowMenuItem = new MenuItem({
+      label: `Hide ${APPLICATION.NAME}`,
+      visible: false,
+      click: () => {
+        this.menubar.hideWindow();
+      },
+    });
   }
 
   /**
    * Build and return the tray right-click context menu.
    */
   buildMenu(): Menu {
-    const contextMenu = Menu.buildFromTemplate([
+    this.menu = Menu.buildFromTemplate([
+      this.showWindowMenuItem,
+      this.hideWindowMenuItem,
+      { type: 'separator' },
       this.checkForUpdatesMenuItem,
       this.noUpdateAvailableMenuItem,
       this.updateAvailableMenuItem,
@@ -115,7 +137,20 @@ export default class MenuBuilder {
       },
     ]);
 
-    return contextMenu;
+    return this.menu;
+  }
+
+  /**
+   * Reflect the current window visibility in the Show / Hide menu items.
+   * `electron-menubar` re-publishes the menu to the SNI host on every
+   * show/hide automatically, so a Linux libappindicator user sees the
+   * visibility flip without us touching the tray here.
+   *
+   * @param isVisible - Whether the popup window is currently visible.
+   */
+  setWindowVisibility(isVisible: boolean) {
+    this.showWindowMenuItem.visible = !isVisible;
+    this.hideWindowMenuItem.visible = isVisible;
   }
 
   /**
