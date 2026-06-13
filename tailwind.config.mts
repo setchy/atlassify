@@ -21,7 +21,7 @@ const config: Config = {
       colors: {
         atlassify: {
           sidebar: 'var(--atlassify-background-sidebar)',
-          notifications: 'var(--atlassify-background-notifications)',
+          notifications: token('color.background.neutral.subtle.hovered'),
           heroicon: {
             neutral: {
               background: token('color.background.accent.gray.subtler'),
@@ -67,7 +67,6 @@ const config: Config = {
       addBase({
         ':root': {
           '--atlassify-background-sidebar': '#2684FF', //TODO update to token when available (formerly B200)
-          '--atlassify-background-notifications': '#FAFBFC', //TODO update to token when available (formerly N10)
           '--atlassify-scrollbar-track': token(
             'color.background.accent.blue.subtlest',
           ),
@@ -79,8 +78,9 @@ const config: Config = {
           ),
         },
         '.dark': {
-          '--atlassify-background-sidebar': '#283447', //TODO update to token when available (formerly DN50)
-          '--atlassify-background-notifications': '#202B3D', //TODO update to token when available (formerly DN40)
+          '--atlassify-background-sidebar': token(
+            'color.background.brand.subtlest',
+          ),
           '--atlassify-scrollbar-track': token(
             'color.background.accent.gray.subtlest',
           ),
