@@ -1,4 +1,4 @@
-import type { Menubar } from 'electron-menubar';
+import type { Menubar } from 'menubar';
 
 vi.mock('electron', () => ({
   dialog: { showMessageBoxSync: vi.fn(() => 0) },

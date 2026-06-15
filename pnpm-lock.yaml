@@ -17,9 +17,6 @@ importers:
       electron-log:
         specifier: 5.4.4
         version: 5.4.4
-      electron-menubar:
-        specifier: 10.0.2
-        version: 10.0.2(electron@42.4.0)
       electron-updater:
         specifier: 6.8.9
         version: 6.8.9
@@ -29,6 +26,9 @@ importers:
       i18next-browser-languagedetector:
         specifier: 8.2.1
         version: 8.2.1
+      menubar:
+        specifier: 9.5.2
+        version: 9.5.2(electron@42.4.0)
       react:
         specifier: 19.2.7
         version: 19.2.7
@@ -2467,10 +2467,8 @@ packages:
     resolution: {integrity: sha512-istWgaXjBfURBSS8LWVW9C3jsc6+ac+tY1lXrQEOTp0lVj+a4OlO1Tmqb36GgnEUDv92DGC9VI1HNXwJinWpgA==}
     engines: {node: '>= 14'}
 
-  electron-menubar@10.0.2:
-    resolution: {integrity: sha512-KXe+tAqjGrxj7Dp/YpF6+0L7qiO3DiMht26wG+yqUJKhcthib7K0GpORWLz7KQRYWNh40t3RqQwc99fg+X+U/Q==}
-    peerDependencies:
-      electron: 42.4.0
+  electron-positioner@4.1.0:
+    resolution: {integrity: sha512-726DfbI9ZNoCg+Fcu6XLuTKTnzf+6nFqv7h+K/V6Ug7IbaPMI7s9S8URnGtWFCy5N5PL4HSzRFF2mXuinftDdg==}
 
   electron-publish@26.15.3:
     resolution: {integrity: sha512-g/2bn8YTavY4cuS5F+jOS7zmZbXXBV8KZ8yHKfJjFPoKtzBqrpCdNPxBd3tqdBwP7BVd0lGzf7Bk2s0KesWZ4Q==}
@@ -3365,6 +3363,11 @@ packages:
 
   memoize-one@6.0.0:
     resolution: {integrity: sha512-rkpe71W0N0c0Xz6QD0eJETuWAJGnJ9afsl1srmwPrI+yBCkge5EycXXbYRyvL29zZVUWQCY7InPRCv3GDXuZNw==}
+
+  menubar@9.5.2:
+    resolution: {integrity: sha512-yUn4jCMPOiNuqxplEE+SITlTX+Wy92ZNZaG5tsTczEvVT1El8plHR3kinOTfUPwfQcAYcWE0SLiBM41z/hS6pg==}
+    peerDependencies:
+      electron: 42.4.0
 
   merge-stream@2.0.0:
     resolution: {integrity: sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==}
@@ -7742,9 +7745,7 @@ snapshots:
 
   electron-log@5.4.4: {}
 
-  electron-menubar@10.0.2(electron@42.4.0):
-    dependencies:
-      electron: 42.4.0
+  electron-positioner@4.1.0: {}
 
   electron-publish@26.15.3:
     dependencies:
@@ -8649,6 +8650,11 @@ snapshots:
   mdn-data@2.0.14: {}
 
   memoize-one@6.0.0: {}
+
+  menubar@9.5.2(electron@42.4.0):
+    dependencies:
+      electron: 42.4.0
+      electron-positioner: 4.1.0
 
   merge-stream@2.0.0: {}
 

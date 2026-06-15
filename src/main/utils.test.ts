@@ -1,6 +1,6 @@
 import path from 'node:path';
 
-import type { Menubar } from 'electron-menubar';
+import type { Menubar } from 'menubar';
 
 const isPackagedMock = vi.fn();
 vi.mock('electron', () => ({

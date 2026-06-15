@@ -1,4 +1,4 @@
-import type { Menubar } from 'electron-menubar';
+import type { Menubar } from 'menubar';
 
 import { EVENTS } from '../../shared/events';
 
@@ -10,6 +10,10 @@ vi.mock('electron', () => ({
   ipcMain: {
     on: (...args: unknown[]) => onMock(...args),
   } satisfies Pick<Electron.IpcMain, 'on'>,
+  globalShortcut: {
+    register: vi.fn(),
+    unregister: vi.fn(),
+  } satisfies Pick<Electron.GlobalShortcut, 'register' | 'unregister'>,
   app: {
     setLoginItemSettings: vi.fn(),
   } satisfies Pick<Electron.App, 'setLoginItemSettings'>,

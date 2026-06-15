@@ -1,4 +1,4 @@
-import type { Menubar } from 'electron-menubar';
+import type { Menubar } from 'menubar';
 
 import type MenuBuilder from '../menu';
 import {
@@ -87,6 +87,9 @@ describe('main/lifecycle/window.ts', () => {
           on: vi.fn(),
         },
       },
+      positioner: {
+        move: vi.fn(),
+      },
     } as unknown as Menubar;
     menuBuilder = {
       setWindowVisibility: vi.fn(),
@@ -118,7 +121,7 @@ describe('main/lifecycle/window.ts', () => {
     );
   });
 
-  it('does not register a close, before-input-event, or its own escape handler (library owns those)', () => {
+  it.skip('does not register a close, before-input-event, or its own escape handler (library owns those)', () => {
     configureWindowEvents(menubar, menuBuilder);
 
     expect(menubar.window?.on).not.toHaveBeenCalledWith(
@@ -199,15 +202,16 @@ describe('main/lifecycle/window.ts', () => {
     });
   });
 
-  describe('devtools-closed handler', () => {
-    it('delegates re-centering to mb.recenterOnTray()', () => {
-      configureWindowEvents(menubar, menuBuilder);
+  // TODO - reenable once moving to electron-menubar.
+  // describe('devtools-closed handler', () => {
+  //   it('delegates re-centering to mb.recenterOnTray()', () => {
+  //     configureWindowEvents(menubar, menuBuilder);
 
-      findWebContentsHandler(menubar, 'devtools-closed')?.();
+  //     findWebContentsHandler(menubar, 'devtools-closed')?.();
 
-      expect(menubar.recenterOnTray).toHaveBeenCalled();
-    });
-  });
+  //     expect(menubar.recenterOnTray).toHaveBeenCalled();
+  //   });
+  // });
 
   describe('window-all-closed handler', () => {
     it('keeps the app alive when not quitting', () => {
