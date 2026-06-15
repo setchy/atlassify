@@ -1,6 +1,6 @@
 import { Menu, MenuItem, shell } from 'electron';
-import type { Menubar } from 'electron-menubar';
 import { autoUpdater } from 'electron-updater';
+import type { Menubar } from 'menubar';
 
 import { APPLICATION } from '../shared/constants';
 import { isMacOS } from '../shared/platform';

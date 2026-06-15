@@ -1,5 +1,5 @@
 import { app } from 'electron';
-import type { Menubar } from 'electron-menubar';
+import type { Menubar } from 'menubar';
 
 import { isMacOS } from '../../shared/platform';
 
@@ -69,6 +69,16 @@ export function configureWindowEvents(
   });
 
   /**
+   * Listen for 'before-input-event' to detect Escape key presses and hide the window.
+   */
+  mb.window.webContents.on('before-input-event', (event, input) => {
+    if (input.key === 'Escape') {
+      mb.hideWindow();
+      event.preventDefault();
+    }
+  });
+
+  /**
    * Safety net: if the WM tears down the window despite our `hideOnClose`
    * preventDefault (a known Wayland edge case), suppress the default
    * Electron quit so the tray icon stays put and `menubar` can recreate
@@ -109,8 +119,12 @@ export function configureWindowEvents(
       return;
     }
 
+    const trayBounds = mb.tray.getBounds();
+    mb.window.setSize(WindowConfig.width, WindowConfig.height);
+    mb.positioner.move('trayCenter', trayBounds);
+
     mb.window.setSize(WindowConfig.width!, WindowConfig.height!);
-    mb.recenterOnTray();
+    // mb.recenterOnTray();
     mb.window.resizable = false;
     mb.window.setAlwaysOnTop(keepWindowOnBlur);
   });

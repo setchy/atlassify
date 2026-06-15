@@ -1,5 +1,5 @@
 import { app, globalShortcut, powerMonitor, shell } from 'electron';
-import type { Menubar } from 'electron-menubar';
+import type { Menubar } from 'menubar';
 
 import {
   EVENTS,
