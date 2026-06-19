@@ -109,8 +109,8 @@ importers:
         specifier: 13.4.0
         version: 13.4.0(react@19.2.7)
       '@atlaskit/tooltip':
-        specifier: 22.6.3
-        version: 22.6.3(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        specifier: 22.6.5
+        version: 22.6.5(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@biomejs/biome':
         specifier: 2.4.16
         version: 2.4.16
@@ -496,6 +496,12 @@ packages:
 
   '@atlaskit/tooltip@22.6.3':
     resolution: {integrity: sha512-jzctgTSlOVz86NabEKVQGGL4cl45LnH5kS37hGAfmEotvYReFlRI5e/eQawnpMRI3ujAFU7Kyq6Gy44UWAANlQ==}
+    peerDependencies:
+      react: ^18.2.0
+      react-dom: ^18.2.0
+
+  '@atlaskit/tooltip@22.6.5':
+    resolution: {integrity: sha512-MXIsyhlqVW9JJRCQOBok2E52+HPvLEcIu31fG6eHWpVCQ7tH+fQK7YjfxBDCALJw8a8VzkotzPEUeVofeB/nhA==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -5525,6 +5531,26 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@atlaskit/tooltip@22.6.5(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+    dependencies:
+      '@atlaskit/analytics-next': 11.3.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
+      '@atlaskit/layering': 3.8.0(react@19.2.7)
+      '@atlaskit/motion': 6.2.5(react@19.2.7)
+      '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
+      '@atlaskit/popper': 7.2.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/portal': 5.5.6(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/theme': 25.0.0(react@19.2.7)
+      '@atlaskit/tokens': 13.4.0(react@19.2.7)
+      '@atlaskit/top-layer': 0.18.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@babel/runtime': 7.29.7
+      '@compiled/react': 0.20.0(react@19.2.7)
+      bind-event-listener: 3.0.0
+      react: 19.2.7
+      react-dom: 19.2.7(react@19.2.7)
+    transitivePeerDependencies:
+      - supports-color
+
   '@atlaskit/top-layer@0.16.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
       '@atlaskit/browser-apis': 0.0.2(react@19.2.7)
@@ -8120,7 +8146,7 @@ snapshots:
       es6-error: 4.1.1
       matcher: 3.0.0
       roarr: 2.15.4
-      semver: 7.7.4
+      semver: 7.8.4
       serialize-error: 7.0.1
     optional: true
 
@@ -8769,13 +8795,13 @@ snapshots:
 
   node-abi@4.31.0:
     dependencies:
-      semver: 7.7.4
+      semver: 7.8.4
 
   node-addon-api@7.1.1: {}
 
   node-api-version@0.2.1:
     dependencies:
-      semver: 7.7.4
+      semver: 7.8.4
 
   node-domexception@1.0.0: {}
 
@@ -8792,7 +8818,7 @@ snapshots:
       graceful-fs: 4.2.11
       nopt: 9.0.0
       proc-log: 6.1.0
-      semver: 7.7.4
+      semver: 7.8.4
       tar: 7.5.16
       tinyglobby: 0.2.17
       undici: 6.27.0
