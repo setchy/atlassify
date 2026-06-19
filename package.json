@@ -89,7 +89,7 @@
     "@atlaskit/theme": "25.0.0",
     "@atlaskit/toggle": "16.1.0",
     "@atlaskit/tokens": "13.4.0",
-    "@atlaskit/tooltip": "22.6.3",
+    "@atlaskit/tooltip": "22.6.5",
     "@biomejs/biome": "2.4.16",
     "@compiled/vite-plugin": "1.1.4",
     "@discordapp/twemoji": "16.0.1",
