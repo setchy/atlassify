@@ -84,7 +84,7 @@
     "@atlaskit/primitives": "19.0.2",
     "@atlaskit/radio": "8.6.2",
     "@atlaskit/select": "21.12.15",
-    "@atlaskit/spinner": "19.1.2",
+    "@atlaskit/spinner": "20.0.0",
     "@atlaskit/textfield": "9.0.0",
     "@atlaskit/theme": "25.0.0",
     "@atlaskit/toggle": "16.1.0",
