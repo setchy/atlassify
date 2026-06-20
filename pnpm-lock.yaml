@@ -46,8 +46,8 @@ importers:
         specifier: 0.3.1
         version: 0.3.1(electron@42.4.0)
       '@atlaskit/avatar':
-        specifier: 25.15.1
-        version: 25.15.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        specifier: 26.0.0
+        version: 26.0.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/avatar-group':
         specifier: 12.11.0
         version: 12.11.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -303,6 +303,11 @@ packages:
 
   '@atlaskit/avatar@25.15.1':
     resolution: {integrity: sha512-tWTdjed8UHD/nBC5jBPcoevrNbsHqriM4kmD2Z8OPdPUsy2ouFhbywXqA6Xol0ED7Du8Kd/TbeuUmwMpfn7V7g==}
+    peerDependencies:
+      react: ^18.2.0
+
+  '@atlaskit/avatar@26.0.0':
+    resolution: {integrity: sha512-AI0xUott5sQnZwBglw2pJWrTK/QxvrMs/FSlbMjB4juNR3BhLZq096y4NDHXhAvQEIVlzxJ/JdGC8j5DqS5O7A==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5075,6 +5080,23 @@ snapshots:
       '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
       '@atlaskit/primitives': 19.0.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/tokens': 13.4.0(react@19.2.7)
+      '@babel/runtime': 7.29.7
+      '@compiled/react': 0.20.0(react@19.2.7)
+      react: 19.2.7
+    transitivePeerDependencies:
+      - '@types/react'
+      - react-dom
+      - supports-color
+
+  '@atlaskit/avatar@26.0.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+    dependencies:
+      '@atlaskit/analytics-next': 12.0.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/css': 1.0.0(react@19.2.7)
+      '@atlaskit/ds-lib': 8.0.0(react@19.2.7)
+      '@atlaskit/icon': 36.0.0(react@19.2.7)
+      '@atlaskit/platform-feature-flags': 2.0.0(react@19.2.7)
+      '@atlaskit/primitives': 20.0.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/tokens': 14.0.0(react@19.2.7)
       '@babel/runtime': 7.29.7
       '@compiled/react': 0.20.0(react@19.2.7)
       react: 19.2.7
