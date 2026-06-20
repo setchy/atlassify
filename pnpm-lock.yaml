@@ -61,8 +61,8 @@ importers:
         specifier: 17.3.12
         version: 17.3.12(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/css-reset':
-        specifier: 7.4.5
-        version: 7.4.5(react@19.2.7)
+        specifier: 8.0.0
+        version: 8.0.0(react@19.2.7)
       '@atlaskit/form':
         specifier: 16.0.0
         version: 16.0.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -351,8 +351,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/css-reset@7.4.5':
-    resolution: {integrity: sha512-EhjZCQwobc/u56l68abWFmvyg2T2ImbsUdqtBj78oQA3qI4As159ilX6Vxr20bR26OYL6unN8Dk9K5uJRKRiBQ==}
+  '@atlaskit/css-reset@8.0.0':
+    resolution: {integrity: sha512-vQVRvpRmS1PwMjlJakrkKWrM+xmZvSdk7vpTH5fi5yHO0V5jYC/1i/vxPkumZRgbnZcFjh2mde6GcNnyTL7y4Q==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5237,9 +5237,9 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/css-reset@7.4.5(react@19.2.7)':
+  '@atlaskit/css-reset@8.0.0(react@19.2.7)':
     dependencies:
-      '@atlaskit/tokens': 13.4.0(react@19.2.7)
+      '@atlaskit/tokens': 14.0.0(react@19.2.7)
       '@babel/runtime': 7.29.7
       react: 19.2.7
     transitivePeerDependencies:
