@@ -79,8 +79,8 @@ importers:
         specifier: 15.6.14
         version: 15.6.14(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/logo':
-        specifier: 20.2.0
-        version: 20.2.0(react@19.2.7)
+        specifier: 21.0.0
+        version: 21.0.0(react@19.2.7)
       '@atlaskit/modal-dialog':
         specifier: 15.3.1
         version: 15.3.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -417,8 +417,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/logo@20.2.0':
-    resolution: {integrity: sha512-SKxR17k17O95BQCH5B8CW4XNPptJgu60rYg8C6WIAUpYoskC5IRpv6g/OlnuzgmYzg+pEK4w6eH8ntV4EyQ0Ng==}
+  '@atlaskit/logo@21.0.0':
+    resolution: {integrity: sha512-r/1SvHcgsTy1r7c0toHCiwp8hFWpYtgfHMbR3LLoHaaB7Koym4wQ8bnxtTznk/54wtY5bD3hOI2Kv+gRBj9RJw==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5292,13 +5292,13 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/logo@20.2.0(react@19.2.7)':
+  '@atlaskit/logo@21.0.0(react@19.2.7)':
     dependencies:
-      '@atlaskit/css': 0.19.4(react@19.2.7)
-      '@atlaskit/ds-lib': 7.0.0(react@19.2.7)
-      '@atlaskit/platform-feature-flags': 1.1.3(react@19.2.7)
-      '@atlaskit/theme': 25.0.0(react@19.2.7)
-      '@atlaskit/tokens': 13.4.0(react@19.2.7)
+      '@atlaskit/css': 1.0.0(react@19.2.7)
+      '@atlaskit/ds-lib': 8.0.0(react@19.2.7)
+      '@atlaskit/platform-feature-flags': 2.0.0(react@19.2.7)
+      '@atlaskit/theme': 26.0.0(react@19.2.7)
+      '@atlaskit/tokens': 14.0.0(react@19.2.7)
       '@babel/runtime': 7.29.7
       '@compiled/react': 0.20.0(react@19.2.7)
       react: 19.2.7
