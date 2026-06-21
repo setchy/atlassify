@@ -4,6 +4,36 @@ import type { Account, AtlassifyNotification, Link } from '../../types';
 
 import { openExternalLink, trackEvent } from './comms';
 
+const SECURITY_TOKEN_SCOPES = [
+  // 'read:assets:twg-cli',
+  // 'read:board-scope.admin:jira-software',
+  // 'read:3p-data:twg-cli',
+  // 'read:board-scope:jira-software',
+  // 'read:csm:twg-cli',
+  // 'read:confluence:twg-cli',
+  'read:account',
+  // 'read:loom:twg-cli',
+  // 'read:ops-alert:jira-service-management',
+  // 'read:jira-align:twg-cli',
+  // 'read:jsm:twg-cli',
+  // 'read:goal:townsquare',
+  // 'read:mercury:twg-cli',
+  'read:jira-work',
+  // 'read:jsw:twg-cli',
+  'read:jira-user',
+  // 'read:issue-details:jira',
+  // 'read:project:jira',
+  // 'read:project:townsquare',
+  // 'read:sprint:jira-software',
+  // 'read:trello:twg-cli',
+  // 'read:radar:twg-cli',
+  // 'read:teamwork-graph:twg-cli',
+] as const;
+
+const SECURITY_TOKEN_SELECTED_SCOPES = encodeURIComponent(
+  JSON.stringify(SECURITY_TOKEN_SCOPES),
+);
+
 export const URLs = {
   ATLASSIAN: {
     API: 'https://team.atlassian.net/gateway/api/graphql' as Link,
@@ -16,7 +46,7 @@ export const URLs = {
       MY_NOTIFICATIONS: 'https://team.atlassian.com/notifications' as Link,
       PEOPLE: 'https://team.atlassian.com/people' as Link,
       SECURITY_TOKENS:
-        'https://id.atlassian.com/manage-profile/security/api-tokens' as Link,
+        `https://id.atlassian.com/manage-profile/security/api-tokens?autofillToken=Atlassify&appId=twg&selectedScopes=${SECURITY_TOKEN_SELECTED_SCOPES}&expiryDays=365` as Link,
     },
   },
 };
