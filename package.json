@@ -135,7 +135,7 @@
     "vitest": "4.1.9",
     "zustand": "5.0.14"
   },
-  "packageManager": "pnpm@11.7.0",
+  "packageManager": "pnpm@11.8.0",
   "lint-staged": {
     "*": "biome check --fix --no-errors-on-unmatched",
     "*.{js,ts,tsx}": [
