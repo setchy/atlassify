@@ -115,8 +115,8 @@ importers:
         specifier: 2.4.16
         version: 2.4.16
       '@compiled/vite-plugin':
-        specifier: 1.1.5
-        version: 1.1.5(vite@8.0.16(@types/node@24.13.2)(jiti@2.7.0)(yaml@2.9.0))
+        specifier: 1.1.6
+        version: 1.1.6(vite@8.0.16(@types/node@24.13.2)(jiti@2.7.0)(yaml@2.9.0))
       '@discordapp/twemoji':
         specifier: 16.0.1
         version: 16.0.1
@@ -718,8 +718,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@compiled/babel-plugin-strip-runtime@0.40.0':
-    resolution: {integrity: sha512-HV0gN6k01MvEb10AG2NxUg0H5kLwgJoaYAU/sY3ESn16OZu7DZU19DY3jS+S//Y/sWHGKaioaTbD6NLCT4fIBg==}
+  '@compiled/babel-plugin-strip-runtime@0.40.1':
+    resolution: {integrity: sha512-SQ7fopcYKisaHh3nlBsAnt38FMDgiw5pjGxRAtsA08RVBakzWfLQhJ1wvIo9pmLz0s6+ew/sC3E9l7TDuxM3UQ==}
 
   '@compiled/babel-plugin@0.40.0':
     resolution: {integrity: sha512-tymVeQ4xXXQ1WwuMmVqG7D3clHAZo8d9tgRjJouZphiHrTI2+y1ZAcGMhoSM1NQD3A7Hy5UxLWcBrZP7jeY8IA==}
@@ -735,8 +735,8 @@ packages:
   '@compiled/utils@0.13.2':
     resolution: {integrity: sha512-UZZv/P+pKN78BSvyu8lHO18sYS2XC1qB/Afi9ggol0wAJFY8eWrAoLvWzXDC6Pt495KOLqUX6HpWXQPyGF9ojA==}
 
-  '@compiled/vite-plugin@1.1.5':
-    resolution: {integrity: sha512-vTsNLFGXjEWKIzxicfZfn2P1w9X84BBJSBVDwxHvhDHcAcUyXybnuKszvrGTV94gKnQOh/018X5kJZjuXT++Rw==}
+  '@compiled/vite-plugin@1.1.6':
+    resolution: {integrity: sha512-VDhXfJzo5WrR2pGPmKkMCVTIjh9WDp8tlZW4KUdtqEyZk+4ySuUXwJ9T7ewAMbxYbD1hJu1E0jF1UQ+pwMFyew==}
     peerDependencies:
       vite: '>= 4.0.0'
 
@@ -5843,7 +5843,7 @@ snapshots:
   '@biomejs/cli-win32-x64@2.4.16':
     optional: true
 
-  '@compiled/babel-plugin-strip-runtime@0.40.0':
+  '@compiled/babel-plugin-strip-runtime@0.40.1':
     dependencies:
       '@babel/core': 7.29.7
       '@babel/helper-plugin-utils': 7.29.7
@@ -5895,12 +5895,12 @@ snapshots:
       convert-source-map: 2.0.0
       source-map: 0.7.6
 
-  '@compiled/vite-plugin@1.1.5(vite@8.0.16(@types/node@24.13.2)(jiti@2.7.0)(yaml@2.9.0))':
+  '@compiled/vite-plugin@1.1.6(vite@8.0.16(@types/node@24.13.2)(jiti@2.7.0)(yaml@2.9.0))':
     dependencies:
       '@babel/core': 7.29.7
       '@babel/parser': 7.29.7
       '@compiled/babel-plugin': 0.40.0
-      '@compiled/babel-plugin-strip-runtime': 0.40.0
+      '@compiled/babel-plugin-strip-runtime': 0.40.1
       '@compiled/css': 0.22.0
       '@compiled/utils': 0.13.2
       enhanced-resolve: 5.24.0
