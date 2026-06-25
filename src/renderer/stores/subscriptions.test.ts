@@ -203,7 +203,7 @@ describe('renderer/stores/subscriptions.ts', () => {
       expect(tray.setTrayIconColorAndTitle).toHaveBeenCalledTimes(1);
     });
 
-    it('should trigger setTrayIconColorAndTitle when isError changes', () => {
+    it('should trigger setTrayIconColorAndTitle when hasAnyAccountError changes', () => {
       useRuntimeStore.getState().updateNotificationStatus(0, false, true);
 
       expect(tray.setTrayIconColorAndTitle).toHaveBeenCalledTimes(1);
