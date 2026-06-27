@@ -110,7 +110,7 @@
     "@types/react": "19.2.17",
     "@types/react-dom": "19.2.3",
     "@types/react-router-dom": "5.3.3",
-    "@vitejs/plugin-react": "6.0.2",
+    "@vitejs/plugin-react": "6.0.3",
     "@vitest/coverage-v8": "4.1.9",
     "@vitest/ui": "4.1.9",
     "axios": "1.18.1",
