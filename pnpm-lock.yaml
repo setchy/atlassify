@@ -235,8 +235,8 @@ importers:
         specifier: 0.14.4
         version: 0.14.4(@biomejs/biome@2.4.16)(typescript@6.0.3)(vite@8.0.16(@types/node@24.13.2)(jiti@2.7.0)(yaml@2.9.0))
       vite-plugin-electron:
-        specifier: 1.0.4
-        version: 1.0.4
+        specifier: 1.1.0
+        version: 1.1.0
       vitest:
         specifier: 4.1.9
         version: 4.1.9(@types/node@24.13.2)(@vitest/coverage-v8@4.1.9)(@vitest/ui@4.1.9)(happy-dom@20.10.6)(vite@8.0.16(@types/node@24.13.2)(jiti@2.7.0)(yaml@2.9.0))
@@ -4598,8 +4598,8 @@ packages:
       vue-tsc:
         optional: true
 
-  vite-plugin-electron@1.0.4:
-    resolution: {integrity: sha512-YBpc7l0gQMAhmt/aETr1Xa4IXEmPUFEoY+2FZK05wusfdsqtvAVcSGStfOPc/JpQBdtLPwFNERoxUB/brn8VLw==}
+  vite-plugin-electron@1.1.0:
+    resolution: {integrity: sha512-4qktNiYlRsaOp+n0vVknIA9m6Abjp6WDHLE9E/czElJgl8WRMJIqmw7ZvlYWflEK28hH5FHUuWEQLEwx9lMCWg==}
     peerDependencies:
       vite-plugin-electron-renderer: '*'
     peerDependenciesMeta:
@@ -9791,7 +9791,7 @@ snapshots:
       '@biomejs/biome': 2.4.16
       typescript: 6.0.3
 
-  vite-plugin-electron@1.0.4:
+  vite-plugin-electron@1.1.0:
     dependencies:
       local-pkg: 1.2.1
 
