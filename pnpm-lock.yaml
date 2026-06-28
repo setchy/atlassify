@@ -79,8 +79,8 @@ importers:
         specifier: 16.0.0
         version: 16.0.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/logo':
-        specifier: 21.1.0
-        version: 21.1.0(react@19.2.7)
+        specifier: 21.1.2
+        version: 21.1.2(react@19.2.7)
       '@atlaskit/modal-dialog':
         specifier: 16.0.0
         version: 16.0.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -393,8 +393,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/logo@21.1.0':
-    resolution: {integrity: sha512-5siQy+gCeMktaicR7YN6iFv27MOYOoFKI7W0xl97QUEM+rIriUZag6n8O6R8s0L9vlrD9oxEhuV9zNGaa+F6Jw==}
+  '@atlaskit/logo@21.1.2':
+    resolution: {integrity: sha512-ElYQkUFIkdJ2VLhHYH5Hfv8PFG7KREVviSo0tsW5C+JrOKBTy+MBWVWE2L1Yqhcw9HKLRTOEVheNqKlIcmN3zQ==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5243,13 +5243,14 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/logo@21.1.0(react@19.2.7)':
+  '@atlaskit/logo@21.1.2(react@19.2.7)':
     dependencies:
       '@atlaskit/css': 1.0.1(react@19.2.7)
       '@atlaskit/ds-lib': 8.0.0(react@19.2.7)
       '@atlaskit/platform-feature-flags': 2.0.0(react@19.2.7)
+      '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.7)
       '@atlaskit/theme': 26.0.0(react@19.2.7)
-      '@atlaskit/tokens': 14.0.0(react@19.2.7)
+      '@atlaskit/tokens': 15.1.0(react@19.2.7)
       '@babel/runtime': 7.29.7
       '@compiled/react': 0.20.0(react@19.2.7)
       react: 19.2.7
@@ -8287,7 +8288,7 @@ snapshots:
       es6-error: 4.1.1
       matcher: 3.0.0
       roarr: 2.15.4
-      semver: 7.7.4
+      semver: 7.8.5
       serialize-error: 7.0.1
     optional: true
 
@@ -8936,13 +8937,13 @@ snapshots:
 
   node-abi@4.31.0:
     dependencies:
-      semver: 7.7.4
+      semver: 7.8.5
 
   node-addon-api@7.1.1: {}
 
   node-api-version@0.2.1:
     dependencies:
-      semver: 7.7.4
+      semver: 7.8.5
 
   node-domexception@1.0.0: {}
 
@@ -8959,7 +8960,7 @@ snapshots:
       graceful-fs: 4.2.11
       nopt: 9.0.0
       proc-log: 6.1.0
-      semver: 7.7.4
+      semver: 7.8.5
       tar: 7.5.17
       tinyglobby: 0.2.17
       undici: 6.27.0
