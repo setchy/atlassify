@@ -49,8 +49,8 @@ importers:
         specifier: 26.1.0
         version: 26.1.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/avatar-group':
-        specifier: 13.0.0
-        version: 13.0.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        specifier: 13.1.0
+        version: 13.1.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/badge':
         specifier: 19.0.0
         version: 19.0.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -280,8 +280,8 @@ packages:
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
-  '@atlaskit/avatar-group@13.0.0':
-    resolution: {integrity: sha512-7QUVjTWwvOAgiFD00kyr6rCmqc6lC7hEjy8trF67JWZZzircJ9dzzy+7AUdzKllGbLZWO5nu5CY+sU580v5pTw==}
+  '@atlaskit/avatar-group@13.1.0':
+    resolution: {integrity: sha512-mFkyhK8/eaCw7qYaImsyIwqimduibbJqRSfGux3Gz0JmCHY1TRfD5n9WgAzP9lyGsmmisMQhdh3jDUCH6iltuw==}
     peerDependencies:
       react: ^18.2.0
 
@@ -4936,7 +4936,7 @@ snapshots:
       '@babel/runtime': 7.29.7
       react: 19.2.7
 
-  '@atlaskit/avatar-group@13.0.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@atlaskit/avatar-group@13.1.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
       '@atlaskit/avatar': 26.1.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/css': 1.0.1(react@19.2.7)
@@ -4945,7 +4945,8 @@ snapshots:
       '@atlaskit/motion': 7.2.0(react@19.2.7)
       '@atlaskit/platform-feature-flags': 2.0.0(react@19.2.7)
       '@atlaskit/popup': 5.1.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@atlaskit/tokens': 14.0.0(react@19.2.7)
+      '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.7)
+      '@atlaskit/tokens': 15.1.0(react@19.2.7)
       '@atlaskit/tooltip': 23.1.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/top-layer': 1.2.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@babel/runtime': 7.29.7
