@@ -88,8 +88,8 @@ importers:
         specifier: 20.0.0
         version: 20.0.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/radio':
-        specifier: 9.0.0
-        version: 9.0.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        specifier: 9.1.0
+        version: 9.1.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/select':
         specifier: 22.1.0
         version: 22.1.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -452,8 +452,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/radio@9.0.0':
-    resolution: {integrity: sha512-G10zKBEhDuQqCjb6YILvaNT2zmFF5DwKu0OaljqthMxrs+t7fUvos/KLrvsX448+TQVEJ+gGSN95SpTG4pDxnw==}
+  '@atlaskit/radio@9.1.0':
+    resolution: {integrity: sha512-5L8zYv5ZbDLDMmaAXr7fCeHVyUuE1CL1GSSWr8M6/fyIxTWKH5IFTOB3nYSA26YkG8HfXPYNNXzohAcNw+kOmw==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5451,14 +5451,15 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/radio@9.0.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@atlaskit/radio@9.1.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
       '@atlaskit/analytics-next': 12.1.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/css': 1.0.1(react@19.2.7)
       '@atlaskit/ds-lib': 8.0.0(react@19.2.7)
       '@atlaskit/platform-feature-flags': 2.0.0(react@19.2.7)
-      '@atlaskit/theme': 26.0.0(react@19.2.7)
-      '@atlaskit/tokens': 14.0.0(react@19.2.7)
+      '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.7)
+      '@atlaskit/theme': 26.1.0(react@19.2.7)
+      '@atlaskit/tokens': 15.1.0(react@19.2.7)
       '@babel/runtime': 7.29.7
       '@compiled/react': 0.20.0(react@19.2.7)
       react: 19.2.7
