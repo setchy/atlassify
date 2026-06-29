@@ -27,6 +27,9 @@
     "enabled": true,
     "rules": {
       "preset": "recommended",
+      "a11y": {
+        "noSvgWithoutTitle": "warn"
+      },
       "style": {
         "noInferrableTypes": "error",
         "noParameterAssign": "error",
