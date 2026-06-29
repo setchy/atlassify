@@ -58,7 +58,7 @@
       "test": "recommended"
     },
     "rules": {
-      "recommended": true,
+      "preset": "recommended",
       "correctness": {
         "noUnusedFunctionParameters": "error",
         "useExhaustiveDependencies": {
