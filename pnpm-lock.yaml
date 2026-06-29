@@ -97,8 +97,8 @@ importers:
         specifier: 20.0.0
         version: 20.0.0(react@19.2.7)
       '@atlaskit/textfield':
-        specifier: 9.0.0
-        version: 9.0.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        specifier: 9.1.0
+        version: 9.1.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/theme':
         specifier: 26.0.0
         version: 26.0.0(react@19.2.7)
@@ -497,8 +497,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/textfield@9.0.0':
-    resolution: {integrity: sha512-Nc0XrlP/MlXW/fgR7rBzBht1t3T9kixWInmkg6DfKC6mw8kXCg9S8YkfTa8UJYpNKkbKYy47YD0NcBSBIUk0pA==}
+  '@atlaskit/textfield@9.1.0':
+    resolution: {integrity: sha512-3M4R/qoJ60/KDpb9twTMpNV903jwILrZXyKoSQ2YnEHqWJ2ZV6gzCuWuOCogvhCvWwPtSuyfb4ZZVb+LeXao0g==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5595,11 +5595,12 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/textfield@9.0.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@atlaskit/textfield@9.1.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
       '@atlaskit/analytics-next': 12.1.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/platform-feature-flags': 2.0.0(react@19.2.7)
-      '@atlaskit/tokens': 14.0.0(react@19.2.7)
+      '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.7)
+      '@atlaskit/tokens': 15.1.0(react@19.2.7)
       '@babel/runtime': 7.29.7
       '@compiled/react': 0.20.0(react@19.2.7)
       react: 19.2.7
