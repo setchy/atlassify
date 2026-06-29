@@ -76,8 +76,8 @@ importers:
         specifier: 7.2.0
         version: 7.2.0(react@19.2.7)
       '@atlaskit/inline-message':
-        specifier: 16.0.0
-        version: 16.0.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        specifier: 16.1.0
+        version: 16.1.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/logo':
         specifier: 21.2.0
         version: 21.2.0(react@19.2.7)
@@ -315,6 +315,11 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
+  '@atlaskit/button@24.2.0':
+    resolution: {integrity: sha512-EwTy5RXucB9+Vjk20U+zS31P6GULNzhczt5hxqTKsLCubFrRWh69Wwz1vIYeBKARW+BJ/OC33k6JaDx6Sr/tRQ==}
+    peerDependencies:
+      react: ^18.2.0
+
   '@atlaskit/checkbox@18.0.0':
     resolution: {integrity: sha512-IriQJXC8JMCGu9eTAIIhYBsuQ0GTptOUlEXDqE74ELazzuNLgdN7D4Mg7ROh0uoHRpprbYv4NAyS7caFEzN7Kg==}
     peerDependencies:
@@ -368,8 +373,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/inline-message@16.0.0':
-    resolution: {integrity: sha512-J1BNoF6geDbkbxD0EKpY8k3pg48jGKW4Fq0bsvcMFe/6O+jFjtv25blInm9aWsdaIsxwq4XrTg7sObHnmzLLBQ==}
+  '@atlaskit/inline-message@16.1.0':
+    resolution: {integrity: sha512-I7+8MmS+X14wxbFumx6Z3Zdv3C4lz1ketdDgEiDwydl1aCW1sB+BQG0S7wTy2AgDHfnZrGmJiA4tOFzBv4cC0Q==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5046,6 +5051,31 @@ snapshots:
       - react-dom
       - supports-color
 
+  '@atlaskit/button@24.2.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+    dependencies:
+      '@atlaskit/analytics-next': 12.1.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/css': 1.0.1(react@19.2.7)
+      '@atlaskit/ds-lib': 8.0.0(react@19.2.7)
+      '@atlaskit/focus-ring': 4.1.0(@types/react@19.2.17)(react@19.2.7)
+      '@atlaskit/icon': 36.1.0(react@19.2.7)
+      '@atlaskit/interaction-context': 4.0.0(react@19.2.7)
+      '@atlaskit/platform-feature-flags': 2.0.0(react@19.2.7)
+      '@atlaskit/primitives': 20.1.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.7)
+      '@atlaskit/spinner': 20.1.0(react@19.2.7)
+      '@atlaskit/theme': 26.1.0(react@19.2.7)
+      '@atlaskit/tokens': 15.1.0(react@19.2.7)
+      '@atlaskit/tooltip': 23.1.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/visually-hidden': 4.1.0(react@19.2.7)
+      '@babel/runtime': 7.29.7
+      '@compiled/react': 0.20.0(react@19.2.7)
+      '@emotion/react': 11.14.0(@types/react@19.2.17)(react@19.2.7)
+      react: 19.2.7
+    transitivePeerDependencies:
+      - '@types/react'
+      - react-dom
+      - supports-color
+
   '@atlaskit/checkbox@18.0.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
       '@atlaskit/analytics-next': 12.1.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -5169,18 +5199,19 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@atlaskit/inline-message@16.0.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@atlaskit/inline-message@16.1.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
-      '@atlaskit/button': 24.1.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/button': 24.2.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/ds-lib': 8.0.0(react@19.2.7)
-      '@atlaskit/icon': 36.0.0(react@19.2.7)
+      '@atlaskit/icon': 36.1.0(react@19.2.7)
       '@atlaskit/link': 4.1.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/platform-feature-flags': 2.0.0(react@19.2.7)
       '@atlaskit/popper': 8.2.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/popup': 5.1.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@atlaskit/primitives': 20.0.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/primitives': 20.1.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.7)
       '@atlaskit/theme': 26.1.0(react@19.2.7)
-      '@atlaskit/tokens': 14.0.0(react@19.2.7)
+      '@atlaskit/tokens': 15.1.0(react@19.2.7)
       '@babel/runtime': 7.29.7
       '@compiled/react': 0.20.0(react@19.2.7)
       react: 19.2.7
