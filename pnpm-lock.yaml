@@ -46,8 +46,8 @@ importers:
         specifier: 0.3.1
         version: 0.3.1(electron@42.5.0)
       '@atlaskit/avatar':
-        specifier: 26.0.1
-        version: 26.0.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        specifier: 26.1.0
+        version: 26.1.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/avatar-group':
         specifier: 13.0.0
         version: 13.0.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -282,11 +282,6 @@ packages:
 
   '@atlaskit/avatar-group@13.0.0':
     resolution: {integrity: sha512-7QUVjTWwvOAgiFD00kyr6rCmqc6lC7hEjy8trF67JWZZzircJ9dzzy+7AUdzKllGbLZWO5nu5CY+sU580v5pTw==}
-    peerDependencies:
-      react: ^18.2.0
-
-  '@atlaskit/avatar@26.0.1':
-    resolution: {integrity: sha512-hMVKYl3EvgeDyAREAQ90yb/f+kli6vduf6yAhxGb5E/a3zp7QDPe0pW71KhfzR9jq+sk4qwokLr8wKP2aJ//bg==}
     peerDependencies:
       react: ^18.2.0
 
@@ -4948,7 +4943,7 @@ snapshots:
 
   '@atlaskit/avatar-group@13.0.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
-      '@atlaskit/avatar': 26.0.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@atlaskit/avatar': 26.1.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/css': 1.0.1(react@19.2.7)
       '@atlaskit/ds-lib': 8.0.0(react@19.2.7)
       '@atlaskit/menu': 9.1.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -4961,23 +4956,6 @@ snapshots:
       '@babel/runtime': 7.29.7
       '@compiled/react': 0.20.0(react@19.2.7)
       bind-event-listener: 3.0.0
-      react: 19.2.7
-    transitivePeerDependencies:
-      - '@types/react'
-      - react-dom
-      - supports-color
-
-  '@atlaskit/avatar@26.0.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
-    dependencies:
-      '@atlaskit/analytics-next': 12.1.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@atlaskit/css': 1.0.1(react@19.2.7)
-      '@atlaskit/ds-lib': 8.0.0(react@19.2.7)
-      '@atlaskit/icon': 36.0.0(react@19.2.7)
-      '@atlaskit/platform-feature-flags': 2.0.0(react@19.2.7)
-      '@atlaskit/primitives': 20.0.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@atlaskit/tokens': 14.0.0(react@19.2.7)
-      '@babel/runtime': 7.29.7
-      '@compiled/react': 0.20.0(react@19.2.7)
       react: 19.2.7
     transitivePeerDependencies:
       - '@types/react'
@@ -8288,7 +8266,7 @@ snapshots:
       es6-error: 4.1.1
       matcher: 3.0.0
       roarr: 2.15.4
-      semver: 7.7.4
+      semver: 7.8.5
       serialize-error: 7.0.1
     optional: true
 
@@ -8937,13 +8915,13 @@ snapshots:
 
   node-abi@4.31.0:
     dependencies:
-      semver: 7.7.4
+      semver: 7.8.5
 
   node-addon-api@7.1.1: {}
 
   node-api-version@0.2.1:
     dependencies:
-      semver: 7.7.4
+      semver: 7.8.5
 
   node-domexception@1.0.0: {}
 
@@ -8960,7 +8938,7 @@ snapshots:
       graceful-fs: 4.2.11
       nopt: 9.0.0
       proc-log: 6.1.0
-      semver: 7.7.4
+      semver: 7.8.5
       tar: 7.5.19
       tinyglobby: 0.2.17
       undici: 6.27.0
