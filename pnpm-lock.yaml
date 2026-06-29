@@ -52,8 +52,8 @@ importers:
         specifier: 13.1.0
         version: 13.1.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/badge':
-        specifier: 19.0.0
-        version: 19.0.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        specifier: 19.1.0
+        version: 19.1.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/button':
         specifier: 24.2.0
         version: 24.2.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -287,11 +287,6 @@ packages:
 
   '@atlaskit/avatar@26.1.0':
     resolution: {integrity: sha512-x+lX7i3Z4gxuz72hKWo205bakzu19aqNUJUAp4d1Uxmproz5zbUGeNrHKKaj0nNgUVZeA2lOLVjs9EE/cf/7tw==}
-    peerDependencies:
-      react: ^18.2.0
-
-  '@atlaskit/badge@19.0.0':
-    resolution: {integrity: sha512-VpvqyUeH2HdpDi1skhM3y6nD+B7ZJUXTyipYrNpgXZiCEvmajZZvU7jU8yWphfIkAnPV6dRofq8Pn0Y7d/M5lA==}
     peerDependencies:
       react: ^18.2.0
 
@@ -4958,19 +4953,6 @@ snapshots:
       '@atlaskit/primitives': 20.1.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.7)
       '@atlaskit/tokens': 15.1.0(react@19.2.7)
-      '@babel/runtime': 7.29.7
-      '@compiled/react': 0.20.0(react@19.2.7)
-      react: 19.2.7
-    transitivePeerDependencies:
-      - '@types/react'
-      - react-dom
-      - supports-color
-
-  '@atlaskit/badge@19.0.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
-    dependencies:
-      '@atlaskit/platform-feature-flags': 2.0.0(react@19.2.7)
-      '@atlaskit/primitives': 20.0.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@atlaskit/tokens': 14.0.0(react@19.2.7)
       '@babel/runtime': 7.29.7
       '@compiled/react': 0.20.0(react@19.2.7)
       react: 19.2.7
