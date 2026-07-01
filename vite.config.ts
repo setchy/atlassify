@@ -106,6 +106,33 @@ const reactDevToolsPlugin = (): Plugin => ({
   },
 });
 
+/**
+ * TODO: Remove this workaround once Rolldown/Vite handles this Atlaskit Popper
+ * re-export path correctly.
+ *
+ * Vite 8 (Rolldown) currently fails to resolve `placements` through
+ * `@atlaskit/popper -> @popperjs/core` re-exports.
+ *
+ * Patch the single problematic re-export to read from Popper's enums module.
+ */
+const atlaskitPopperCompatPlugin = (): Plugin => ({
+  name: 'atlaskit-popper-compat',
+  enforce: 'pre',
+  transform(code, id) {
+    if (!id.includes('/@atlaskit/popper/dist/esm/popper.js')) {
+      return null;
+    }
+
+    return {
+      code: code.replace(
+        "export { placements } from '@popperjs/core';",
+        "export { placements } from '@popperjs/core/lib/enums.js';",
+      ),
+      map: null,
+    };
+  },
+});
+
 export default defineConfig(({ command }) => {
   const isBuild = command === 'build';
 
@@ -121,6 +148,7 @@ export default defineConfig(({ command }) => {
             }),
           ]),
       reactDevToolsPlugin(),
+      atlaskitPopperCompatPlugin(),
       compiled(),
       react({
         plugins: [
