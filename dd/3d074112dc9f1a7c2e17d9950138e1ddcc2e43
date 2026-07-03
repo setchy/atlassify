@@ -1,0 +1,69 @@
+src/main/handlers/tray.test.ts
+  s_145e2fd1fcd7f8::t_bc6ba3872dc234 1
+src/main/index.ts
+  s_145e2fd1fcd7f8::t_97ec4d92577fcd 3,37-38
+src/main/lifecycle/startup.ts
+  s_145e2fd1fcd7f8::t_97ec4d92577fcd 2,24
+src/main/events.test.ts
+  s_145e2fd1fcd7f8::t_bc6ba3872dc234 13
+src/main/handlers/app.ts
+  s_145e2fd1fcd7f8::t_bc6ba3872dc234 2
+src/main/utils.ts
+  s_145e2fd1fcd7f8::t_bc6ba3872dc234 7
+src/main/lifecycle/startup.test.ts
+  s_145e2fd1fcd7f8::t_bc6ba3872dc234 1,67
+src/main/utils.test.ts
+  s_145e2fd1fcd7f8::t_bc6ba3872dc234 3
+src/main/handlers/system.test.ts
+  s_145e2fd1fcd7f8::t_bc6ba3872dc234 1
+src/main/updater.ts
+  s_145e2fd1fcd7f8::t_bc6ba3872dc234 2
+src/main/lifecycle/reset.test.ts
+  s_145e2fd1fcd7f8::t_bc6ba3872dc234 1
+src/main/lifecycle/reset.ts
+  s_145e2fd1fcd7f8::t_bc6ba3872dc234 2
+src/main/events.ts
+  s_145e2fd1fcd7f8::t_bc6ba3872dc234 2
+src/main/menu.ts
+  s_145e2fd1fcd7f8::t_bc6ba3872dc234 2
+package.json
+  h_ac004aadb63da9 60
+src/main/handlers/tray.ts
+  s_145e2fd1fcd7f8::t_bc6ba3872dc234 1
+src/main/updater.test.ts
+  s_145e2fd1fcd7f8::t_bc6ba3872dc234 2
+src/main/lifecycle/window.ts
+  h_ac004aadb63da9 113
+  s_145e2fd1fcd7f8::t_bc6ba3872dc234 28,74
+  s_145e2fd1fcd7f8::t_97ec4d92577fcd 2
+src/main/handlers/app.test.ts
+  s_145e2fd1fcd7f8::t_bc6ba3872dc234 1
+src/main/handlers/system.ts
+  s_145e2fd1fcd7f8::t_bc6ba3872dc234 2
+src/main/lifecycle/window.test.ts
+  s_145e2fd1fcd7f8::t_bc6ba3872dc234 1,124,205,207,209,212-213
+  h_ac004aadb63da9 206,211
+src/main/menu.test.ts
+  s_145e2fd1fcd7f8::t_bc6ba3872dc234 2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.9",
+  "base_commit_sha": "dd3d074112dc9f1a7c2e17d9950138e1ddcc2e43",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  },
+  "sessions": {
+    "s_145e2fd1fcd7f8": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "b98ad29e-3c84-43f7-b644-b72760ac2294",
+        "model": "gpt-5.3-codex"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
