@@ -1,4 +1,4 @@
-import type { Menubar } from 'menubar';
+import type { Menubar } from 'electron-menubar';
 
 import type MenuBuilder from '../menu';
 import {
@@ -121,7 +121,7 @@ describe('main/lifecycle/window.ts', () => {
     );
   });
 
-  it.skip('does not register a close, before-input-event, or its own escape handler (library owns those)', () => {
+  it('does not register a close, before-input-event, or its own escape handler (library owns those)', () => {
     configureWindowEvents(menubar, menuBuilder);
 
     expect(menubar.window?.on).not.toHaveBeenCalledWith(
@@ -202,16 +202,15 @@ describe('main/lifecycle/window.ts', () => {
     });
   });
 
-  // TODO - reenable once moving to electron-menubar.
-  // describe('devtools-closed handler', () => {
-  //   it('delegates re-centering to mb.recenterOnTray()', () => {
-  //     configureWindowEvents(menubar, menuBuilder);
+  describe('devtools-closed handler', () => {
+    it('delegates re-centering to mb.recenterOnTray()', () => {
+      configureWindowEvents(menubar, menuBuilder);
 
-  //     findWebContentsHandler(menubar, 'devtools-closed')?.();
+      findWebContentsHandler(menubar, 'devtools-closed')?.();
 
-  //     expect(menubar.recenterOnTray).toHaveBeenCalled();
-  //   });
-  // });
+      expect(menubar.recenterOnTray).toHaveBeenCalled();
+    });
+  });
 
   describe('window-all-closed handler', () => {
     it('keeps the app alive when not quitting', () => {

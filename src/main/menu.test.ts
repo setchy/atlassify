@@ -1,6 +1,6 @@
 import { Menu, shell } from 'electron';
+import type { Menubar } from 'electron-menubar';
 import { autoUpdater } from 'electron-updater';
-import type { Menubar } from 'menubar';
 
 import type { Mock } from 'vitest';
 

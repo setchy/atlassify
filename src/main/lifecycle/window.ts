@@ -1,5 +1,5 @@
 import { app } from 'electron';
-import type { Menubar } from 'menubar';
+import type { Menubar } from 'electron-menubar';
 
 import { isMacOS } from '../../shared/platform';
 
@@ -25,7 +25,7 @@ export function __resetWindowLifecycleForTests(): void {
  * Apply the user's "keep window open when it loses focus" preference.
  *
  * Implemented by toggling the window's `alwaysOnTop` flag, which the
- * `menubar` library checks to short-circuit its blur-driven hide. The
+ * `electron-menubar` library checks to short-circuit its blur-driven hide. The
  * value is also remembered so the `devtools-closed` handler can restore
  * it after DevTools temporarily forces it on.
  */
@@ -69,19 +69,9 @@ export function configureWindowEvents(
   });
 
   /**
-   * Listen for 'before-input-event' to detect Escape key presses and hide the window.
-   */
-  mb.window.webContents.on('before-input-event', (event, input) => {
-    if (input.key === 'Escape') {
-      mb.hideWindow();
-      event.preventDefault();
-    }
-  });
-
-  /**
    * Safety net: if the WM tears down the window despite our `hideOnClose`
    * preventDefault (a known Wayland edge case), suppress the default
-   * Electron quit so the tray icon stays put and `menubar` can recreate
+   * Electron quit so the tray icon stays put and `electron-menubar` can recreate
    * the window on the next tray click.
    */
   app.on('window-all-closed', () => {
@@ -119,12 +109,8 @@ export function configureWindowEvents(
       return;
     }
 
-    const trayBounds = mb.tray.getBounds();
-    mb.window.setSize(WindowConfig.width, WindowConfig.height);
-    mb.positioner.move('trayCenter', trayBounds);
-
     mb.window.setSize(WindowConfig.width!, WindowConfig.height!);
-    // mb.recenterOnTray();
+    mb.recenterOnTray();
     mb.window.resizable = false;
     mb.window.setAlwaysOnTop(keepWindowOnBlur);
   });
