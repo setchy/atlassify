@@ -1,0 +1,12 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.9",
+  "base_commit_sha": "df70f47ab55c932101dbc0f6b43fceec86a46866",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
