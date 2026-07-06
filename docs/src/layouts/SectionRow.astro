@@ -1,25 +1,25 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
-import { marked } from 'marked';
+import { marked } from "marked";
 
 export interface Props {
-  title: string;
-  description: string;
-  screenshot?: {
-    path: string;
-    alt: string;
-  };
-  isDark?: boolean;
-  isReversed?: boolean;
+	title: string;
+	description: string;
+	screenshot?: {
+		path: string;
+		alt: string;
+	};
+	isDark?: boolean;
+	isReversed?: boolean;
 }
 
 const {
-  title,
-  description,
-  screenshot,
-  isDark = false,
-  isReversed = false,
+	title,
+	description,
+	screenshot,
+	isDark = false,
+	isReversed = false,
 } = Astro.props;
 ---
 
