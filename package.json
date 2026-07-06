@@ -112,8 +112,8 @@
     "@types/react-dom": "19.2.3",
     "@types/react-router-dom": "5.3.3",
     "@vitejs/plugin-react": "6.0.3",
-    "@vitest/coverage-v8": "4.1.10",
-    "@vitest/ui": "4.1.10",
+    "@vitest/coverage-v8": "4.1.9",
+    "@vitest/ui": "4.1.9",
     "axios": "1.18.1",
     "clsx": "2.1.1",
     "concurrently": "10.0.3",
@@ -134,7 +134,7 @@
     "vite-plugin-checker": "0.14.4",
     "vite-plugin-electron": "1.1.0",
     "vite-plus": "0.2.2",
-    "vitest": "4.1.10",
+    "vitest": "4.1.9",
     "zustand": "5.0.14"
   },
   "lint-staged": {
