@@ -1,0 +1,25 @@
+vite.config.ts
+  s_ce0586edf4167a::t_d4ae2b7497d685 135
+  s_ce0586edf4167a::t_ea36000d5d1622 209
+  s_ce0586edf4167a::t_c05b9a7e798416 210-212
+src/renderer/hooks/useNotifications.ts
+  s_ce0586edf4167a::t_4caa391c5cf566 94
+pnpm-lock.yaml
+  s_ce0586edf4167a::t_2be7f758e51336 6202
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "24d40d11959acfe1c0a91c6d191a43352dae4315",
+  "prompts": {},
+  "sessions": {
+    "s_ce0586edf4167a": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "4ed38890-215d-4ca5-83fc-de9ad11aabf6",
+        "model": "gpt-5.3-codex"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
