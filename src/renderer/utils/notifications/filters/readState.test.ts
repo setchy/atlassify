@@ -27,13 +27,9 @@ describe('renderer/utils/notifications/filters/readState.ts', () => {
   });
 
   it('getReadStateFilterCount', () => {
-    expect(
-      readStateFilter.getFilterCount(mockAccountNotifications, 'read'),
-    ).toBe(0);
+    expect(readStateFilter.getFilterCount(mockAccountNotifications, 'read')).toBe(0);
 
-    expect(
-      readStateFilter.getFilterCount(mockAccountNotifications, 'unread'),
-    ).toBe(2);
+    expect(readStateFilter.getFilterCount(mockAccountNotifications, 'unread')).toBe(2);
   });
 
   it('filterNotificationByReadState', () => {
@@ -42,12 +38,8 @@ describe('renderer/utils/notifications/filters/readState.ts', () => {
       readState: 'unread',
     } as AtlassifyNotification;
 
-    expect(readStateFilter.filterNotification(mockNotification, 'read')).toBe(
-      false,
-    );
+    expect(readStateFilter.filterNotification(mockNotification, 'read')).toBe(false);
 
-    expect(readStateFilter.filterNotification(mockNotification, 'unread')).toBe(
-      true,
-    );
+    expect(readStateFilter.filterNotification(mockNotification, 'unread')).toBe(true);
   });
 });

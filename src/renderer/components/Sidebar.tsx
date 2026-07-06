@@ -43,15 +43,9 @@ const SidebarComponent: FC = () => {
   const isLoggedIn = useAccountsStore((s) => s.isLoggedIn());
 
   // Setting store values
-  const fetchOnlyUnreadNotifications = useSettingsStore(
-    (s) => s.fetchOnlyUnreadNotifications,
-  );
-  const groupNotificationsByProduct = useSettingsStore(
-    (s) => s.groupNotificationsByProduct,
-  );
-  const groupNotificationsByTitle = useSettingsStore(
-    (s) => s.groupNotificationsByTitle,
-  );
+  const fetchOnlyUnreadNotifications = useSettingsStore((s) => s.fetchOnlyUnreadNotifications);
+  const groupNotificationsByProduct = useSettingsStore((s) => s.groupNotificationsByProduct);
+  const groupNotificationsByTitle = useSettingsStore((s) => s.groupNotificationsByTitle);
 
   // Filter store values
   const hasFilters = useFiltersStore((s) => s.hasActiveFilters());
@@ -66,11 +60,7 @@ const SidebarComponent: FC = () => {
       <Stack grow="fill" spread="space-between">
         <Box paddingBlockStart="space.200">
           <Stack alignInline="center" space="space.100">
-            <Tooltip
-              content={t('sidebar.home')}
-              position="right"
-              shortcut={[shortcuts.home.key]}
-            >
+            <Tooltip content={t('sidebar.home')} position="right" shortcut={[shortcuts.home.key]}>
               <IconButton
                 appearance="subtle"
                 icon={() => <AtlassifyIcon size={32} />}
@@ -95,10 +85,7 @@ const SidebarComponent: FC = () => {
               <IconButton
                 appearance={hasNotifications ? 'primary' : 'subtle'}
                 icon={(iconProps) => (
-                  <NotificationIcon
-                    {...iconProps}
-                    color={sidebarIconColorToken}
-                  />
+                  <NotificationIcon {...iconProps} color={sidebarIconColorToken} />
                 )}
                 label={t('sidebar.notifications.label')}
                 onClick={() => shortcuts.myNotifications.action()}
@@ -131,14 +118,9 @@ const SidebarComponent: FC = () => {
                   shortcut={[shortcuts.groupByProduct.key]}
                 >
                   <IconButton
-                    appearance={
-                      groupNotificationsByProduct ? 'discovery' : 'subtle'
-                    }
+                    appearance={groupNotificationsByProduct ? 'discovery' : 'subtle'}
                     icon={() => (
-                      <ListBulletedIcon
-                        color={sidebarIconColorToken}
-                        label="groupByProduct"
-                      />
+                      <ListBulletedIcon color={sidebarIconColorToken} label="groupByProduct" />
                     )}
                     label={t('sidebar.toggles.groupByProduct.label')}
                     onClick={() => shortcuts.groupByProduct.action()}
@@ -154,14 +136,9 @@ const SidebarComponent: FC = () => {
                   shortcut={[shortcuts.groupByTitle.key]}
                 >
                   <IconButton
-                    appearance={
-                      groupNotificationsByTitle ? 'discovery' : 'subtle'
-                    }
+                    appearance={groupNotificationsByTitle ? 'discovery' : 'subtle'}
                     icon={() => (
-                      <CollapseVerticalIcon
-                        color={sidebarIconColorToken}
-                        label="groupByTitle"
-                      />
+                      <CollapseVerticalIcon color={sidebarIconColorToken} label="groupByTitle" />
                     )}
                     label={t('sidebar.toggles.groupByTitle.label')}
                     onClick={() => shortcuts.groupByTitle.action()}
@@ -179,10 +156,7 @@ const SidebarComponent: FC = () => {
                   <IconButton
                     appearance={hasFilters ? 'discovery' : 'subtle'}
                     icon={(iconProps) => (
-                      <FilterIcon
-                        {...iconProps}
-                        color={sidebarIconColorToken}
-                      />
+                      <FilterIcon {...iconProps} color={sidebarIconColorToken} />
                     )}
                     label={t('sidebar.filters.label')}
                     onClick={() => shortcuts.filters.action()}
@@ -215,10 +189,7 @@ const SidebarComponent: FC = () => {
                           size="medium"
                         />
                       ) : (
-                        <RefreshIcon
-                          {...iconProps}
-                          color={sidebarIconColorToken}
-                        />
+                        <RefreshIcon {...iconProps} color={sidebarIconColorToken} />
                       )
                     }
                     isDisabled={isFetching}
@@ -237,10 +208,7 @@ const SidebarComponent: FC = () => {
                   <IconButton
                     appearance="subtle"
                     icon={(iconProps) => (
-                      <SettingsIcon
-                        {...iconProps}
-                        color={sidebarIconColorToken}
-                      />
+                      <SettingsIcon {...iconProps} color={sidebarIconColorToken} />
                     )}
                     label={t('sidebar.settings.label')}
                     onClick={() => shortcuts.settings.action()}
@@ -260,10 +228,7 @@ const SidebarComponent: FC = () => {
                 <IconButton
                   appearance="subtle"
                   icon={(iconProps) => (
-                    <CrossCircleIcon
-                      {...iconProps}
-                      color={sidebarIconColorToken}
-                    />
+                    <CrossCircleIcon {...iconProps} color={sidebarIconColorToken} />
                   )}
                   label={t('sidebar.quit.label', {
                     appName: APPLICATION.NAME,

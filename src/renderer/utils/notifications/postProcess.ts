@@ -1,10 +1,6 @@
 import { useSettingsStore } from '../../stores';
 
-import type {
-  Account,
-  AccountNotifications,
-  AtlassifyNotification,
-} from '../../types';
+import type { Account, AccountNotifications, AtlassifyNotification } from '../../types';
 
 export type NotificationActionType = 'read' | 'unread';
 
@@ -15,9 +11,7 @@ export type NotificationActionType = 'read' | 'unread';
  */
 export function shouldRemoveNotificationsFromState(): boolean {
   const settings = useSettingsStore.getState();
-  return (
-    !settings.delayNotificationState && settings.fetchOnlyUnreadNotifications
-  );
+  return !settings.delayNotificationState && settings.fetchOnlyUnreadNotifications;
 }
 
 /**
@@ -97,9 +91,7 @@ export function postProcessNotifications(
   actionType: NotificationActionType,
 ): AccountNotifications[] {
   // Build a Set of affected notification IDs for fast lookup
-  const affectedNotificationIds = new Set(
-    affectedNotifications.map((n) => n.id),
-  );
+  const affectedNotificationIds = new Set(affectedNotifications.map((n) => n.id));
 
   // Immutably update readState for affected notifications in the account's notifications
   const updatedAccountNotifications = updateNotificationsReadState(

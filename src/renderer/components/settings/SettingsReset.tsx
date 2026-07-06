@@ -56,11 +56,7 @@ export const SettingsReset: FC = () => {
         {showResetSettingsModal && (
           <Modal onClose={actionCloseResetSettingsModal}>
             <ModalHeader>
-              <Grid
-                gap="space.200"
-                templateAreas={['title close']}
-                xcss={gridStyles}
-              >
+              <Grid gap="space.200" templateAreas={['title close']} xcss={gridStyles}>
                 <Flex justifyContent="end" xcss={closeContainerStyles}>
                   <IconButton
                     appearance="subtle"
@@ -71,16 +67,12 @@ export const SettingsReset: FC = () => {
                   />
                 </Flex>
                 <Flex justifyContent="start" xcss={titleContainerStyles}>
-                  <ModalTitle appearance="danger">
-                    {t('settings.reset.title')}
-                  </ModalTitle>
+                  <ModalTitle appearance="danger">{t('settings.reset.title')}</ModalTitle>
                 </Flex>
               </Grid>
             </ModalHeader>
             <ModalBody>
-              <p>
-                {t('settings.reset.confirm', { appName: APPLICATION.NAME })}
-              </p>
+              <p>{t('settings.reset.confirm', { appName: APPLICATION.NAME })}</p>
             </ModalBody>
             <ModalFooter>
               <Button

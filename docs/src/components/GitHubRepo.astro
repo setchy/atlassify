@@ -34,6 +34,7 @@ const loadRepoStats = async (): Promise<RepoStats> => {
       latestReleaseName: latestRelease.data.name?.replace('v', '') ?? '',
     };
   } catch (err) {
+    // oxlint-disable-next-line no-console
     console.error('Failed to load repo stats', err);
     return {
       forks: '',

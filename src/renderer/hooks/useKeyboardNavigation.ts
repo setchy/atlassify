@@ -4,10 +4,7 @@ import { keybindings } from '../constants/keybindings';
 
 import type { AccountNotifications, AtlassifyNotification } from '../types';
 
-import {
-  getNormalizedKey,
-  shouldIgnoreKeyboardEvent,
-} from '../utils/ui/keyboard';
+import { getNormalizedKey, shouldIgnoreKeyboardEvent } from '../utils/ui/keyboard';
 
 interface UseKeyboardNavigationOptions {
   notifications: AccountNotifications[];
@@ -28,9 +25,7 @@ export const useKeyboardNavigation = (
 ): UseKeyboardNavigationResult => {
   const { notifications } = options;
 
-  const [focusedNotificationId, setFocusedNotificationId] = useState<
-    string | null
-  >(null);
+  const [focusedNotificationId, setFocusedNotificationId] = useState<string | null>(null);
 
   // Map notification IDs to notification objects for quick lookup
   const notificationsById = useMemo(() => {
@@ -51,9 +46,7 @@ export const useKeyboardNavigation = (
       return [] as string[];
     }
 
-    return Array.from(
-      document.querySelectorAll<HTMLElement>('[data-notification-row="true"]'),
-    )
+    return Array.from(document.querySelectorAll<HTMLElement>('[data-notification-row="true"]'))
       .map((element) => element.dataset.notificationId)
       .filter((id): id is string => Boolean(id));
   }, []);
@@ -98,23 +91,16 @@ export const useKeyboardNavigation = (
         return;
       }
 
-      const currentIndex = focusedNotificationId
-        ? visibleIds.indexOf(focusedNotificationId)
-        : -1;
+      const currentIndex = focusedNotificationId ? visibleIds.indexOf(focusedNotificationId) : -1;
 
       if (direction === 'next') {
-        const nextIndex =
-          currentIndex < 0
-            ? 0
-            : Math.min(currentIndex + 1, visibleIds.length - 1);
+        const nextIndex = currentIndex < 0 ? 0 : Math.min(currentIndex + 1, visibleIds.length - 1);
         focusNotification(visibleIds[nextIndex]);
         return;
       }
 
       const previousIndex =
-        currentIndex < 0
-          ? visibleIds.length - 1
-          : Math.max(currentIndex - 1, 0);
+        currentIndex < 0 ? visibleIds.length - 1 : Math.max(currentIndex - 1, 0);
 
       focusNotification(visibleIds[previousIndex]);
     },
@@ -168,9 +154,7 @@ export const useKeyboardNavigation = (
     }
 
     const isUnread = notification.readState === 'unread';
-    const buttonTestId = isUnread
-      ? 'notification-mark-as-read'
-      : 'notification-mark-as-unread';
+    const buttonTestId = isUnread ? 'notification-mark-as-read' : 'notification-mark-as-unread';
 
     const button = notificationElement.querySelector<HTMLElement>(
       `[data-testid="${buttonTestId}"]`,
@@ -208,8 +192,7 @@ export const useKeyboardNavigation = (
       }
 
       const lowerKey = getNormalizedKey(event);
-      const toggleReadKey =
-        keybindings.notifications.toggleRead.eventKey.toLowerCase();
+      const toggleReadKey = keybindings.notifications.toggleRead.eventKey.toLowerCase();
 
       if (lowerKey === toggleReadKey) {
         event.preventDefault();

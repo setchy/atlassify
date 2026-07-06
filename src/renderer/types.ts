@@ -1,8 +1,9 @@
-import type { ButtonAppearance } from '@atlaskit/button/dist/types/new-button/variants/types';
 import type ChevronDownIcon from '@atlaskit/icon/core/chevron-down';
 import type ChevronLeftIcon from '@atlaskit/icon/core/chevron-left';
 import type ChevronRightIcon from '@atlaskit/icon/core/chevron-right';
 import type { LogoProps } from '@atlaskit/logo';
+
+import type { ButtonAppearance } from '@atlaskit/button/dist/types/new-button/variants/types';
 
 declare const __brand: unique symbol;
 
@@ -271,12 +272,7 @@ export interface AtlassifyErrorAction {
 /**
  * The different types of errors which may be encountered.
  */
-export type ErrorType =
-  | 'BAD_CREDENTIALS'
-  | 'BAD_REQUEST'
-  | 'NETWORK'
-  | 'OFFLINE'
-  | 'UNKNOWN';
+export type ErrorType = 'BAD_CREDENTIALS' | 'BAD_REQUEST' | 'NETWORK' | 'OFFLINE' | 'UNKNOWN';
 
 /**
  * Details for Chevron header accordion.
@@ -286,10 +282,7 @@ export interface Chevron {
    * The chevron icon.
    */
   // TODO improve these types
-  icon:
-    | typeof ChevronDownIcon
-    | typeof ChevronLeftIcon
-    | typeof ChevronRightIcon;
+  icon: typeof ChevronDownIcon | typeof ChevronLeftIcon | typeof ChevronRightIcon;
 
   /**
    * The chevron label.

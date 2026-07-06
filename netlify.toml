@@ -1,7 +1,6 @@
 [build]
-  base = "docs"
-  publish = "dist"
-  command = "pnpm build"
-  
-  # Only build when there are changes in docs/
-  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- docs/"
+base = "docs"
+publish = "dist"
+command = "pnpm build"
+# Only build when there are changes in docs/
+ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- docs/"

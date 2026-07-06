@@ -31,8 +31,7 @@ const KeybindingRow: FC<KeybindingRowProps> = ({ label, keys }) => {
   );
 };
 
-const getDisplayKeys = (entry: KeybindingEntry) =>
-  entry.display ?? [entry.eventKey];
+const getDisplayKeys = (entry: KeybindingEntry) => entry.display ?? [entry.eventKey];
 
 export const KeyboardShortcutsSettings: FC = () => {
   const { t } = useTranslation();
@@ -44,9 +43,7 @@ export const KeyboardShortcutsSettings: FC = () => {
       <Box paddingInlineStart="space.050">
         <Stack space="space.250">
           <Stack space="space.100">
-            <Text weight="bold">
-              {t('settings.keyboard_shortcuts.general')}
-            </Text>
+            <Text weight="bold">{t('settings.keyboard_shortcuts.general')}</Text>
             <Box paddingInlineStart="space.250">
               <Stack space="space.075">
                 <KeybindingRow
@@ -93,9 +90,7 @@ export const KeyboardShortcutsSettings: FC = () => {
             </Box>
           </Stack>
           <Stack space="space.100">
-            <Text weight="bold">
-              {t('settings.keyboard_shortcuts.notifications')}
-            </Text>
+            <Text weight="bold">{t('settings.keyboard_shortcuts.notifications')}</Text>
             <Box paddingInlineStart="space.250">
               <Stack space="space.075">
                 <KeybindingRow

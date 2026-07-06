@@ -1,10 +1,4 @@
-import {
-  cleanup,
-  fireEvent,
-  render,
-  screen,
-  waitFor,
-} from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import { mockAccountNotifications } from '../__mocks__/notifications-mocks';
 
@@ -93,21 +87,15 @@ describe('useKeyboardNavigation', () => {
 
     // ArrowDown -> first notification
     fireEvent.keyDown(document, { key: 'ArrowDown' });
-    await waitFor(() =>
-      expect(screen.getByTestId('focused').textContent).toBe('n1'),
-    );
+    await waitFor(() => expect(screen.getByTestId('focused').textContent).toBe('n1'));
 
     // ArrowDown -> second
     fireEvent.keyDown(document, { key: 'ArrowDown' });
-    await waitFor(() =>
-      expect(screen.getByTestId('focused').textContent).toBe('n2'),
-    );
+    await waitFor(() => expect(screen.getByTestId('focused').textContent).toBe('n2'));
 
     // ArrowUp -> back to first
     fireEvent.keyDown(document, { key: 'ArrowUp' });
-    await waitFor(() =>
-      expect(screen.getByTestId('focused').textContent).toBe('n1'),
-    );
+    await waitFor(() => expect(screen.getByTestId('focused').textContent).toBe('n1'));
   });
 
   it('opens the focused notification with Enter', async () => {
@@ -118,21 +106,15 @@ describe('useKeyboardNavigation', () => {
       { id: 'n3', readState: 'unread' },
     ];
 
-    render(
-      <TestHost notifications={notifications} onDetailsClick={detailsSpy} />,
-    );
+    render(<TestHost notifications={notifications} onDetailsClick={detailsSpy} />);
 
     // Move focus to first notification (n1)
     fireEvent.keyDown(document, { key: 'ArrowDown' });
-    await waitFor(() =>
-      expect(screen.getByTestId('focused').textContent).toBe('n1'),
-    );
+    await waitFor(() => expect(screen.getByTestId('focused').textContent).toBe('n1'));
 
     // Move focus to second
     fireEvent.keyDown(document, { key: 'ArrowDown' });
-    await waitFor(() =>
-      expect(screen.getByTestId('focused').textContent).toBe('n2'),
-    );
+    await waitFor(() => expect(screen.getByTestId('focused').textContent).toBe('n2'));
 
     // Press Enter to open
     fireEvent.keyDown(document, { key: 'Enter' });

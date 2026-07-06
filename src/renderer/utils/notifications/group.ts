@@ -12,9 +12,7 @@ import { rendererLogError } from '../core/logger';
  * @param notification
  * @returns true if group notification, false otherwise
  */
-export function isGroupNotification(
-  notification: AtlassifyNotification,
-): boolean {
+export function isGroupNotification(notification: AtlassifyNotification): boolean {
   return notification.notificationGroup.size > 1;
 }
 
@@ -73,9 +71,7 @@ export function groupNotificationsByProductEntries(
   notifications: AtlassifyNotification[],
   alphabetically: boolean,
 ): [string, AtlassifyNotification[]][] {
-  const entries = Array.from(
-    groupNotificationsByProduct(notifications).entries(),
-  );
+  const entries = Array.from(groupNotificationsByProduct(notifications).entries());
 
   if (alphabetically) {
     entries.sort((a, b) => a[0].localeCompare(b[0]));
@@ -125,10 +121,7 @@ export async function resolveNotificationIdsForGroup(
   const singleNotificationIDs = getNotificationIdsForNonGroups(notifications);
 
   // Resolve group notification IDs
-  const groupedNotificationIds = await getNotificationIdsForGroups(
-    account,
-    notifications,
-  );
+  const groupedNotificationIds = await getNotificationIdsForGroups(account, notifications);
 
   return [...singleNotificationIDs, ...groupedNotificationIds];
 }
@@ -139,9 +132,7 @@ export async function resolveNotificationIdsForGroup(
  * @param notifications - List of notifications (may include group notifications).
  * @returns Array of notification IDs for non-group notifications.
  */
-export function getNotificationIdsForNonGroups(
-  notifications: AtlassifyNotification[],
-): string[] {
+export function getNotificationIdsForNonGroups(notifications: AtlassifyNotification[]): string[] {
   const singleGroupNotifications = notifications.filter(
     (notification) => !isGroupNotification(notification),
   );

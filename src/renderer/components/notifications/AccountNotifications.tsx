@@ -22,20 +22,13 @@ import { Constants } from '../../constants';
 import { useAppContext } from '../../hooks/useAppContext';
 import { useSettingsStore } from '../../stores';
 
-import type {
-  Account,
-  AtlassifyError,
-  AtlassifyNotification,
-} from '../../types';
+import type { Account, AtlassifyError, AtlassifyNotification } from '../../types';
 
 import {
   groupNotificationsByProductEntries,
   sortNotificationsByOrder,
 } from '../../utils/notifications/group';
-import {
-  openAccountProfile,
-  openMyPullRequests,
-} from '../../utils/system/links';
+import { openAccountProfile, openMyPullRequests } from '../../utils/system/links';
 import { getChevronDetails } from '../../utils/ui/display';
 import { isLightMode } from '../../utils/ui/theme';
 import { AllRead } from '../AllRead';
@@ -54,18 +47,15 @@ export interface AccountNotificationsProps {
 export const AccountNotifications: FC<AccountNotificationsProps> = (
   props: AccountNotificationsProps,
 ) => {
-  const { account, notifications, hasMoreNotifications, showAccountHeader } =
-    props;
+  const { account, notifications, hasMoreNotifications, showAccountHeader } = props;
 
   const { t } = useTranslation();
 
   const { markNotificationsRead } = useAppContext();
 
-  const [isAccountNotificationsVisible, setIsAccountNotificationsVisible] =
-    useState(true);
+  const [isAccountNotificationsVisible, setIsAccountNotificationsVisible] = useState(true);
 
-  const [showMarkAccountAsReadModal, setShowMarkAccountAsReadModal] =
-    useState(false);
+  const [showMarkAccountAsReadModal, setShowMarkAccountAsReadModal] = useState(false);
 
   const actionOpenMarkAccountAsReadModal = () => {
     setShowMarkAccountAsReadModal(true);
@@ -147,10 +137,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
         >
           <Flex alignItems="center" justifyContent="space-between">
             <Inline alignBlock="center" space="space.100">
-              <Tooltip
-                content={t('notifications.account.open_profile')}
-                position="right"
-              >
+              <Tooltip content={t('notifications.account.open_profile')} position="right">
                 <AvatarItem
                   avatar={
                     <Avatar
@@ -177,15 +164,10 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
             </Inline>
 
             <Inline space="space.100">
-              <Tooltip
-                content={t('notifications.account.pull_requests')}
-                position="bottom"
-              >
+              <Tooltip content={t('notifications.account.pull_requests')} position="bottom">
                 <IconButton
                   appearance="subtle"
-                  icon={(iconProps) => (
-                    <BitbucketIcon {...iconProps} size="xxsmall" />
-                  )}
+                  icon={(iconProps) => <BitbucketIcon {...iconProps} size="xxsmall" />}
                   label={t('notifications.account.pull_requests')}
                   onClick={(event: MouseEvent<HTMLElement>) => {
                     event.stopPropagation();
@@ -197,10 +179,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
                 />
               </Tooltip>
 
-              <Tooltip
-                content={t('notifications.account.mark_all_read')}
-                position="bottom"
-              >
+              <Tooltip content={t('notifications.account.mark_all_read')} position="bottom">
                 <IconButton
                   appearance="subtle"
                   icon={() => <StrokeWeightLargeIcon label="" />}
@@ -217,9 +196,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
               <Tooltip content={Chevron.label} position="bottom">
                 <IconButton
                   appearance="subtle"
-                  icon={(iconProps) => (
-                    <ChevronIcon {...iconProps} size="small" />
-                  )}
+                  icon={(iconProps) => <ChevronIcon {...iconProps} size="small" />}
                   label={Chevron.label}
                   shape="circle"
                   spacing="compact"
@@ -238,14 +215,12 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
           {!hasAccountNotifications && !props.error && <AllRead />}
 
           {groupByProduct
-            ? groupedNotifications.map(
-                ([productType, productNotifications]) => (
-                  <ProductNotifications
-                    key={productType}
-                    productNotifications={productNotifications}
-                  />
-                ),
-              )
+            ? groupedNotifications.map(([productType, productNotifications]) => (
+                <ProductNotifications
+                  key={productType}
+                  productNotifications={productNotifications}
+                />
+              ))
             : sortedNotifications.map((notification) => (
                 <NotificationRow
                   isProductAnimatingExit={false}
@@ -260,11 +235,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
         {showMarkAccountAsReadModal && (
           <Modal onClose={actionCloseMarkAccountAsReadModal}>
             <ModalHeader>
-              <Grid
-                gap="space.200"
-                templateAreas={['title close']}
-                xcss={gridStyles}
-              >
+              <Grid gap="space.200" templateAreas={['title close']} xcss={gridStyles}>
                 <Flex justifyContent="end" xcss={closeContainerStyles}>
                   <IconButton
                     appearance="subtle"
@@ -275,18 +246,14 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
                   />
                 </Flex>
                 <Flex justifyContent="start" xcss={titleContainerStyles}>
-                  <ModalTitle appearance="warning">
-                    {t('common.are_you_sure')}
-                  </ModalTitle>
+                  <ModalTitle appearance="warning">{t('common.are_you_sure')}</ModalTitle>
                 </Flex>
               </Grid>
             </ModalHeader>
             <ModalBody>
               <p>
                 {t('notifications.account.mark_read_confirm.description1')}{' '}
-                <strong>
-                  {t('notifications.account.mark_read_confirm.description2')}
-                </strong>{' '}
+                <strong>{t('notifications.account.mark_read_confirm.description2')}</strong>{' '}
                 {t('notifications.account.mark_read_confirm.description3')}
               </p>
             </ModalBody>

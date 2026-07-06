@@ -2,11 +2,7 @@ import { EnvelopeIcon, EnvelopeOpenIcon } from '@heroicons/react/24/outline';
 
 import { useFiltersStore } from '../../../stores';
 
-import type {
-  AccountNotifications,
-  AtlassifyNotification,
-  ReadStateType,
-} from '../../../types';
+import type { AccountNotifications, AtlassifyNotification, ReadStateType } from '../../../types';
 import type { Filter, FilterDetails } from './types';
 
 import i18n from '../../../i18n';
@@ -41,10 +37,7 @@ export const readStateFilter: Filter<ReadStateType> = {
     return filters.readStates.includes(type);
   },
 
-  getFilterCount(
-    accountNotifications: AccountNotifications[],
-    readState: ReadStateType,
-  ) {
+  getFilterCount(accountNotifications: AccountNotifications[], readState: ReadStateType) {
     return accountNotifications.reduce(
       (memo, account) =>
         memo +
@@ -55,10 +48,7 @@ export const readStateFilter: Filter<ReadStateType> = {
     );
   },
 
-  filterNotification(
-    notification: AtlassifyNotification,
-    readState: ReadStateType,
-  ): boolean {
+  filterNotification(notification: AtlassifyNotification, readState: ReadStateType): boolean {
     return notification.readState === readState;
   },
 };

@@ -5,12 +5,12 @@ on:
     branches:
       - main
     paths-ignore:
-      - "docs/**"
+      - 'docs/**'
   pull_request:
     branches:
       - main
     paths-ignore:
-      - "docs/**"
+      - 'docs/**'
 
 permissions: {}
 
@@ -32,7 +32,7 @@ jobs:
     permissions:
       contents: read
     with:
-      directory: "."
+      directory: '.'
 
   tests:
     name: Tests

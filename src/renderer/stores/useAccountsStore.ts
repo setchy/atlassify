@@ -52,9 +52,7 @@ const useAccountsStore = create<AccountsStore>()(
 
           set((state) => ({
             accounts: state.accounts.map((a) =>
-              a.id === account.id || a.username === account.username
-                ? updatedAccount
-                : a,
+              a.id === account.id || a.username === account.username ? updatedAccount : a,
             ),
           }));
 
@@ -90,8 +88,7 @@ const useAccountsStore = create<AccountsStore>()(
       /** Returns `true` if the username already exists in the store (case-insensitive). */
       hasUsernameAlready: (username: Username) => {
         return get().accounts.some(
-          (a) =>
-            a.username.trim().toLowerCase() === username.trim().toLowerCase(),
+          (a) => a.username.trim().toLowerCase() === username.trim().toLowerCase(),
         );
       },
 

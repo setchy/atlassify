@@ -12,8 +12,7 @@ describe('renderer/hooks/useAppReset.ts', () => {
 
     renderHook(() => useAppReset());
 
-    const registeredCallback = vi.mocked(window.atlassify.onResetApp).mock
-      .calls[0][0];
+    const registeredCallback = vi.mocked(window.atlassify.onResetApp).mock.calls[0][0];
 
     act(() => {
       registeredCallback();

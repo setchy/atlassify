@@ -49,10 +49,7 @@ describe('main/handlers/analytics.ts', () => {
       await initializeAnalytics();
 
       expect(initializeMock).toHaveBeenCalledWith('test-key-123');
-      expect(logInfoMock).toHaveBeenCalledWith(
-        'analytics',
-        'Aptabase initialized successfully',
-      );
+      expect(logInfoMock).toHaveBeenCalledWith('analytics', 'Aptabase initialized successfully');
       expect(logErrorMock).not.toHaveBeenCalled();
     });
 
@@ -81,9 +78,7 @@ describe('main/handlers/analytics.ts', () => {
     it('registers the APTABASE_TRACK_EVENT handler', () => {
       registerAnalyticsHandlers();
 
-      const registeredEvents = onMock.mock.calls.map(
-        (call: [string]) => call[0],
-      );
+      const registeredEvents = onMock.mock.calls.map((call: [string]) => call[0]);
 
       expect(registeredEvents).toContain(EVENTS.APTABASE_TRACK_EVENT);
     });

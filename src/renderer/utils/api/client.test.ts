@@ -6,16 +6,10 @@ import { Constants } from '../../constants';
 import { useSettingsStore } from '../../stores';
 
 import type { CloudID, Hostname, JiraProjectKey } from '../../types';
-import type {
-  AtlassianGraphQLResponse,
-  JiraProjectRestResponse,
-} from './types';
+import type { AtlassianGraphQLResponse, JiraProjectRestResponse } from './types';
 
 import * as client from './client';
-import {
-  MeDocument,
-  MyNotificationsDocument,
-} from './graphql/generated/graphql';
+import { MeDocument, MyNotificationsDocument } from './graphql/generated/graphql';
 import * as request from './request';
 
 describe('renderer/utils/api/client.ts', () => {
@@ -149,10 +143,7 @@ describe('renderer/utils/api/client.ts', () => {
   it('getCloudIDsForHostnames - should fetch cloud ID for hostname', async () => {
     const mockHostnames = ['https://example.atlassian.net'] as Hostname[];
 
-    await client.getCloudIDsForHostnames(
-      mockAtlassianCloudAccount,
-      mockHostnames,
-    );
+    await client.getCloudIDsForHostnames(mockAtlassianCloudAccount, mockHostnames);
 
     expect(request.performRequestForAccount).toHaveBeenCalledWith(
       mockAtlassianCloudAccount,

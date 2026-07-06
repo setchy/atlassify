@@ -75,5 +75,6 @@ https://github.com/setchy/atlassify/issues
 This policy may be updated over time. Material changes will be reflected by updating the date at the top of this file.
 
 <!-- LINK LABELS -->
+
 [aptabase-website]: https://aptabase.com/
 [google-analytics-website]: https://developers.google.com/analytics

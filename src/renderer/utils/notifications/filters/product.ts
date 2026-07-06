@@ -30,10 +30,7 @@ export const productFilter: Filter<ProductType> = {
     return filters.products.includes(product);
   },
 
-  getFilterCount(
-    accountNotifications: AccountNotifications[],
-    product: ProductType,
-  ) {
+  getFilterCount(accountNotifications: AccountNotifications[], product: ProductType) {
     return accountNotifications.reduce(
       (memo, account) =>
         memo +
@@ -44,18 +41,13 @@ export const productFilter: Filter<ProductType> = {
     );
   },
 
-  filterNotification(
-    notification: AtlassifyNotification,
-    product: ProductType,
-  ): boolean {
+  filterNotification(notification: AtlassifyNotification, product: ProductType): boolean {
     // Match against the canonical product type (slug)
     return notification.product.type === product;
   },
 };
 
-function buildProductFilterDetails(
-  products: typeof PRODUCTS,
-): Record<ProductType, FilterDetails> {
+function buildProductFilterDetails(products: typeof PRODUCTS): Record<ProductType, FilterDetails> {
   return Object.fromEntries(
     (Object.keys(products) as ProductType[]).map((type) => {
       const p: AtlassianProduct = products[type];

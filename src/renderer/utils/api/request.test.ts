@@ -6,10 +6,7 @@ import type { Link, Token, Username } from '../../types';
 import type { AtlassianGraphQLResponse } from './types';
 
 import type { MeQuery, TypedDocumentString } from './graphql/generated/graphql';
-import {
-  performRequestForAccount,
-  performRequestForCredentials,
-} from './request';
+import { performRequestForAccount, performRequestForCredentials } from './request';
 
 const url = 'https://team.atlassian.net/gateway/api/graphql' as Link;
 

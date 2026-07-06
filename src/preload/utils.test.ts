@@ -32,10 +32,7 @@ describe('preload/utils', () => {
   it('sendMainEvent forwards to ipcRenderer.send', () => {
     sendMainEvent(EVENTS.WINDOW_SHOW);
 
-    expect(ipcRenderer.send).toHaveBeenCalledWith(
-      EVENTS.WINDOW_SHOW,
-      undefined,
-    );
+    expect(ipcRenderer.send).toHaveBeenCalledWith(EVENTS.WINDOW_SHOW, undefined);
   });
 
   it('invokeMainEvent forwards and resolves', async () => {
@@ -49,10 +46,7 @@ describe('preload/utils', () => {
     const handlerMock = vi.fn();
     onRendererEvent(
       EVENTS.UPDATE_ICON_TITLE,
-      handlerMock as unknown as (
-        e: Electron.IpcRendererEvent,
-        args: string,
-      ) => void,
+      handlerMock as unknown as (e: Electron.IpcRendererEvent, args: string) => void,
     );
     (
       ipcRenderer as unknown as {
@@ -60,10 +54,7 @@ describe('preload/utils', () => {
       }
     ).__emit(EVENTS.UPDATE_ICON_TITLE, 'payload');
 
-    expect(ipcRenderer.on).toHaveBeenCalledWith(
-      EVENTS.UPDATE_ICON_TITLE,
-      handlerMock,
-    );
+    expect(ipcRenderer.on).toHaveBeenCalledWith(EVENTS.UPDATE_ICON_TITLE, handlerMock);
     expect(handlerMock).toHaveBeenCalledWith({}, 'payload');
   });
 });

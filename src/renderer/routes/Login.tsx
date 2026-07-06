@@ -1,21 +1,10 @@
-import {
-  type ChangeEvent,
-  type FC,
-  Fragment,
-  useCallback,
-  useState,
-} from 'react';
+import { type ChangeEvent, type FC, Fragment, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 import ButtonGroup from '@atlaskit/button/button-group';
 import Button from '@atlaskit/button/new';
-import Form, {
-  ErrorMessage,
-  Field,
-  FormSection,
-  HelperMessage,
-} from '@atlaskit/form';
+import Form, { ErrorMessage, Field, FormSection, HelperMessage } from '@atlaskit/form';
 import LinkExternalIcon from '@atlaskit/icon/core/link-external';
 import LockLockedIcon from '@atlaskit/icon/core/lock-locked';
 import LogInIcon from '@atlaskit/icon/core/log-in';
@@ -34,10 +23,7 @@ import type { Token, Username } from '../types';
 
 import { checkIfCredentialsAreValid } from '../utils/api/client';
 import { rendererLogError } from '../utils/core/logger';
-import {
-  openAtlassianCreateToken,
-  openAtlassianSecurityDocs,
-} from '../utils/system/links';
+import { openAtlassianCreateToken, openAtlassianSecurityDocs } from '../utils/system/links';
 
 interface LoginProps {
   username: Username;
@@ -62,14 +48,11 @@ export const LoginRoute: FC = () => {
         await createAccount(data.username, data.token);
         navigate(-1);
       } catch (err) {
-        rendererLogError(
-          'loginUser',
-          'failed to login with provided credentials',
-          err,
-        );
+        rendererLogError('loginUser', 'failed to login with provided credentials', err);
         setIsValidCredentials(false);
       }
     },
+    // oxlint-disable-next-line react/exhaustive-deps -- navigate is stable
     [createAccount],
   );
 
@@ -86,9 +69,7 @@ export const LoginRoute: FC = () => {
                   {isDuplicateUsername && (
                     <ErrorMessage>{t('login.duplicate_username')}</ErrorMessage>
                   )}
-                  {!isValidCredentials && (
-                    <ErrorMessage>{t('login.error_message')}</ErrorMessage>
-                  )}
+                  {!isValidCredentials && <ErrorMessage>{t('login.error_message')}</ErrorMessage>}
                 </Box>
                 <form {...formProps} id="login-form">
                   <FormSection>
@@ -102,20 +83,12 @@ export const LoginRoute: FC = () => {
                       {({ fieldProps }) => {
                         const onChange = (e: ChangeEvent<HTMLInputElement>) => {
                           fieldProps.onChange(e);
-                          setIsDuplicateUsername(
-                            hasUsernameAlready(e.target.value as Username),
-                          );
+                          setIsDuplicateUsername(hasUsernameAlready(e.target.value as Username));
                         };
                         return (
                           <Fragment>
-                            <TextField
-                              autoComplete="off"
-                              {...fieldProps}
-                              onChange={onChange}
-                            />
-                            <HelperMessage>
-                              {t('login.username_helper')}
-                            </HelperMessage>
+                            <TextField autoComplete="off" {...fieldProps} onChange={onChange} />
+                            <HelperMessage>{t('login.username_helper')}</HelperMessage>
                           </Fragment>
                         );
                       }}
@@ -136,10 +109,7 @@ export const LoginRoute: FC = () => {
                                 <Button
                                   appearance="discovery"
                                   iconBefore={(iconProps) => (
-                                    <LockLockedIcon
-                                      {...iconProps}
-                                      size="small"
-                                    />
+                                    <LockLockedIcon {...iconProps} size="small" />
                                   )}
                                   onClick={() => openAtlassianCreateToken()}
                                   spacing="compact"
@@ -171,11 +141,7 @@ export const LoginRoute: FC = () => {
                 </Button>
               </Tooltip>
               <ButtonGroup label="Form submit options">
-                <Button
-                  appearance="subtle"
-                  onClick={() => navigate(-1)}
-                  testId="login-cancel"
-                >
+                <Button appearance="subtle" onClick={() => navigate(-1)} testId="login-cancel">
                   {t('common.cancel')}
                 </Button>
                 <Button

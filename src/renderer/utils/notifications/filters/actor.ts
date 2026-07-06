@@ -1,14 +1,10 @@
+import RovoIcon from '@atlaskit/icon-lab/core/rovo';
 import AutomationIcon from '@atlaskit/icon/core/automation';
 import PersonIcon from '@atlaskit/icon/core/person';
-import RovoIcon from '@atlaskit/icon-lab/core/rovo';
 
 import { useFiltersStore } from '../../../stores';
 
-import type {
-  AccountNotifications,
-  ActorType,
-  AtlassifyNotification,
-} from '../../../types';
+import type { AccountNotifications, ActorType, AtlassifyNotification } from '../../../types';
 import type { Filter, FilterDetails } from './types';
 
 import i18n from '../../../i18n';
@@ -52,24 +48,17 @@ export const actorFilter: Filter<ActorType> = {
     return filters.actors.includes(type);
   },
 
-  getFilterCount(
-    accountNotifications: AccountNotifications[],
-    actor: ActorType,
-  ) {
+  getFilterCount(accountNotifications: AccountNotifications[], actor: ActorType) {
     return accountNotifications.reduce(
       (memo, account) =>
         memo +
-        account.notifications.filter((notification) =>
-          this.filterNotification(notification, actor),
-        ).length,
+        account.notifications.filter((notification) => this.filterNotification(notification, actor))
+          .length,
       0,
     );
   },
 
-  filterNotification(
-    notification: AtlassifyNotification,
-    actor: ActorType,
-  ): boolean {
+  filterNotification(notification: AtlassifyNotification, actor: ActorType): boolean {
     return inferNotificationActor(notification) === actor;
   },
 };
@@ -80,9 +69,7 @@ export const actorFilter: Filter<ActorType> = {
  * @param notification - The notification to inspect.
  * @returns actor type based on notification heuristics
  */
-export function inferNotificationActor(
-  notification: AtlassifyNotification,
-): ActorType {
+export function inferNotificationActor(notification: AtlassifyNotification): ActorType {
   if (!notification.actor.displayName) {
     return 'automation';
   }

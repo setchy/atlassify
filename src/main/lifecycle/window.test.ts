@@ -44,15 +44,10 @@ const findWindowHandler = (
 ): ((event: { preventDefault: () => void }) => void) | undefined => {
   const onMock = menubar.window?.on as ReturnType<typeof vi.fn>;
   const call = onMock.mock.calls.find(([name]) => name === eventName);
-  return call?.[1] as
-    | ((event: { preventDefault: () => void }) => void)
-    | undefined;
+  return call?.[1] as ((event: { preventDefault: () => void }) => void) | undefined;
 };
 
-const findWebContentsHandler = (
-  menubar: Menubar,
-  eventName: string,
-): (() => void) | undefined => {
+const findWebContentsHandler = (menubar: Menubar, eventName: string): (() => void) | undefined => {
   const onMock = menubar.window?.webContents.on as ReturnType<typeof vi.fn>;
   const call = onMock.mock.calls.find(([name]) => name === eventName);
   return call?.[1] as (() => void) | undefined;
@@ -72,9 +67,7 @@ describe('main/lifecycle/window.ts', () => {
       hideWindow: vi.fn(),
       recenterOnTray: vi.fn(),
       tray: {
-        getBounds: vi
-          .fn()
-          .mockReturnValue({ x: 100, y: 100, width: 22, height: 22 }),
+        getBounds: vi.fn().mockReturnValue({ x: 100, y: 100, width: 22, height: 22 }),
       },
       window: {
         setSize: vi.fn(),
@@ -124,10 +117,7 @@ describe('main/lifecycle/window.ts', () => {
   it('does not register a close, before-input-event, or its own escape handler (library owns those)', () => {
     configureWindowEvents(menubar, menuBuilder);
 
-    expect(menubar.window?.on).not.toHaveBeenCalledWith(
-      'close',
-      expect.any(Function),
-    );
+    expect(menubar.window?.on).not.toHaveBeenCalledWith('close', expect.any(Function));
     expect(menubar.window?.webContents.on).not.toHaveBeenCalledWith(
       'before-input-event',
       expect.any(Function),
@@ -138,10 +128,7 @@ describe('main/lifecycle/window.ts', () => {
     configureWindowEvents(menubar, menuBuilder);
 
     expect(appOnMock).toHaveBeenCalledWith('before-quit', expect.any(Function));
-    expect(appOnMock).toHaveBeenCalledWith(
-      'window-all-closed',
-      expect.any(Function),
-    );
+    expect(appOnMock).toHaveBeenCalledWith('window-all-closed', expect.any(Function));
   });
 
   describe('window visibility forwarding', () => {
@@ -173,9 +160,7 @@ describe('main/lifecycle/window.ts', () => {
 
     it('skips the call when the window is destroyed', () => {
       // oxlint-disable-next-line no-unsafe-optional-chaining -- window is guaranteed defined in this test
-      (menubar.window?.isDestroyed as ReturnType<typeof vi.fn>).mockReturnValue(
-        true,
-      );
+      (menubar.window?.isDestroyed as ReturnType<typeof vi.fn>).mockReturnValue(true);
 
       applyKeepWindowOnBlur(menubar, true);
 

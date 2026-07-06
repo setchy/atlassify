@@ -21,9 +21,7 @@ export const TraySettings: FC = () => {
   const updateSetting = useSettingsStore((s) => s.updateSetting);
 
   // Setting store values
-  const showNotificationsCountInTray = useSettingsStore(
-    (s) => s.showNotificationsCountInTray,
-  );
+  const showNotificationsCountInTray = useSettingsStore((s) => s.showNotificationsCountInTray);
   const useUnreadActiveIcon = useSettingsStore((s) => s.useUnreadActiveIcon);
   const useAlternateIdleIcon = useSettingsStore((s) => s.useAlternateIdleIcon);
 
@@ -40,9 +38,7 @@ export const TraySettings: FC = () => {
             onChange={() => toggleSetting('showNotificationsCountInTray')}
           />
           <InlineMessage appearance="info">
-            <div className="settings-help-text">
-              {t('settings.tray.show_count_in_tray_help')}
-            </div>
+            <div className="settings-help-text">{t('settings.tray.show_count_in_tray_help')}</div>
           </InlineMessage>
         </Inline>
       )}
@@ -67,9 +63,7 @@ export const TraySettings: FC = () => {
             label={
               <span className="tray-icon-pill-dark">
                 <img alt="" className="tray-icon" src={trayIdleWhiteIcon} />
-                <span className="text-white">
-                  {t('settings.tray.idle_icon_alternate')}
-                </span>
+                <span className="text-white">{t('settings.tray.idle_icon_alternate')}</span>
               </span>
             }
             name="useAlternateIdleIcon"
@@ -77,9 +71,7 @@ export const TraySettings: FC = () => {
             value="true"
           />
           <InlineMessage appearance="info">
-            <div className="settings-help-text">
-              {t('settings.tray.alternate_icon_help')}
-            </div>
+            <div className="settings-help-text">{t('settings.tray.alternate_icon_help')}</div>
           </InlineMessage>
         </div>
       </Box>
@@ -112,9 +104,7 @@ export const TraySettings: FC = () => {
             value="false"
           />
           <InlineMessage appearance="info">
-            <div className="settings-help-text">
-              {t('settings.tray.unread_active_icon_help')}
-            </div>
+            <div className="settings-help-text">{t('settings.tray.unread_active_icon_help')}</div>
           </InlineMessage>
         </div>
       </Box>

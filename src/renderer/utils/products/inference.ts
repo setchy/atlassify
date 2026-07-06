@@ -1,16 +1,7 @@
-import type {
-  Account,
-  AtlassianProduct,
-  CloudID,
-  Hostname,
-  JiraProjectKey,
-} from '../../types';
+import type { Account, AtlassianProduct, CloudID, Hostname, JiraProjectKey } from '../../types';
 import type { JiraProjectType } from '../api/types';
 
-import {
-  getCloudIDsForHostnames,
-  getJiraProjectTypeByKey,
-} from '../api/client';
+import { getCloudIDsForHostnames, getJiraProjectTypeByKey } from '../api/client';
 import type { AtlassianHeadNotificationFragment } from '../api/graphql/generated/graphql';
 import { rendererLogError } from '../core/logger';
 import { PRODUCTS } from './catalog';
@@ -18,10 +9,7 @@ import { PRODUCTS } from './catalog';
 // Use a promise cache to avoid duplicate API calls for the same hostname
 const hostnameCloudIdCache = new Map<Hostname, Promise<CloudID>>();
 // Use a promise cache to avoid duplicate API calls for the same project key
-const jiraProjectTypeCache = new Map<
-  JiraProjectKey,
-  Promise<JiraProjectType>
->();
+const jiraProjectTypeCache = new Map<JiraProjectKey, Promise<JiraProjectType>>();
 
 // Test-only utility (tree-shakable) to clear caches between tests
 export function __resetProductInferenceCaches() {
@@ -67,18 +55,13 @@ export async function inferAtlassianProduct(
       return PRODUCTS.teams;
     case 'post-office':
       if (
-        headNotification.content.message ===
-          'Rovo Dev session is waiting for your input' ||
+        headNotification.content.message === 'Rovo Dev session is waiting for your input' ||
         headNotification.content.message.includes('AI generated code') // This may now be a legacy message mapping
       ) {
         return PRODUCTS.rovo_dev;
       }
 
-      if (
-        headNotification.content.message.startsWith(
-          'Rovo Dev has created a pull request',
-        )
-      ) {
+      if (headNotification.content.message.startsWith('Rovo Dev has created a pull request')) {
         return PRODUCTS.bitbucket;
       }
       return PRODUCTS.unknown;
@@ -111,8 +94,7 @@ async function lookupJiraProjectType(
   }
 
   try {
-    const hostName = new URL(headNotification.content.path[0].url)
-      .hostname as Hostname;
+    const hostName = new URL(headNotification.content.path[0].url).hostname as Hostname;
 
     // Check cache for cloudID (promise-aware)
     let cloudIdPromise = hostnameCloudIdCache.get(hostName);
@@ -132,11 +114,7 @@ async function lookupJiraProjectType(
     let jiraProjectTypePromise = jiraProjectTypeCache.get(projectKey);
     if (jiraProjectTypePromise === undefined) {
       jiraProjectTypePromise = (async () => {
-        const jiraProject = await getJiraProjectTypeByKey(
-          account,
-          cloudID,
-          projectKey,
-        );
+        const jiraProject = await getJiraProjectTypeByKey(account, cloudID, projectKey);
 
         return jiraProject;
       })();
@@ -154,11 +132,7 @@ async function lookupJiraProjectType(
         return PRODUCTS.jira;
     }
   } catch (err) {
-    rendererLogError(
-      'lookupJiraProjectType',
-      'Error fetching Jira project type:',
-      err,
-    );
+    rendererLogError('lookupJiraProjectType', 'Error fetching Jira project type:', err);
     return PRODUCTS.jira;
   }
 }

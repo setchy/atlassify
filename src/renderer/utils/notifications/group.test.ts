@@ -122,11 +122,7 @@ describe('renderer/utils/notifications/group.ts', () => {
 
       const result = groupNotificationsByProductEntries(notifications, true);
 
-      expect(result.map(([key]) => key)).toEqual([
-        'bitbucket',
-        'confluence',
-        'jira',
-      ]);
+      expect(result.map(([key]) => key)).toEqual(['bitbucket', 'confluence', 'jira']);
     });
 
     it('returns empty array when no notifications', () => {
@@ -260,10 +256,7 @@ describe('renderer/utils/notifications/group.ts', () => {
 
   describe('getNotificationIdsForGroups', () => {
     it('returns empty array if no notifications', async () => {
-      const result = await getNotificationIdsForGroups(
-        mockAtlassianCloudAccount,
-        [],
-      );
+      const result = await getNotificationIdsForGroups(mockAtlassianCloudAccount, []);
 
       expect(result).toEqual([]);
     });

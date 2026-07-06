@@ -38,8 +38,7 @@ vi.mock('../shared/logger', () => ({
 
 vi.mock('electron', () => ({
   contextBridge: {
-    exposeInMainWorld: (key: string, value: unknown) =>
-      exposeInMainWorldMock(key, value),
+    exposeInMainWorld: (key: string, value: unknown) => exposeInMainWorldMock(key, value),
   },
   webFrame: {
     getZoomLevel: () => getZoomLevelMock(),
@@ -63,8 +62,7 @@ class MockNotification {
 }
 
 // Attach to global before importing preload
-(global as unknown as { Notification: unknown }).Notification =
-  MockNotification;
+(global as unknown as { Notification: unknown }).Notification = MockNotification;
 
 interface TestApi {
   tray: {
@@ -107,16 +105,12 @@ describe('preload/index', () => {
 
     api.tray.updateColor(5, 'online', 'default', 'active');
 
-    expect(sendMainEventMock).toHaveBeenNthCalledWith(
-      1,
-      EVENTS.UPDATE_ICON_COLOR,
-      {
-        notificationsCount: 5,
-        appState: 'online',
-        idleIconVariant: 'default',
-        unreadIconVariant: 'active',
-      },
-    );
+    expect(sendMainEventMock).toHaveBeenNthCalledWith(1, EVENTS.UPDATE_ICON_COLOR, {
+      notificationsCount: 5,
+      appState: 'online',
+      idleIconVariant: 'default',
+      unreadIconVariant: 'active',
+    });
   });
 
   it('openExternalLink sends event with payload', async () => {
@@ -155,10 +149,7 @@ describe('preload/index', () => {
     const callback = vi.fn();
     api.onSystemThemeUpdate(callback);
 
-    expect(onRendererEventMock).toHaveBeenCalledWith(
-      EVENTS.UPDATE_THEME,
-      expect.any(Function),
-    );
+    expect(onRendererEventMock).toHaveBeenCalledWith(EVENTS.UPDATE_THEME, expect.any(Function));
 
     // Simulate event
     const listener = onRendererEventMock.mock.calls[0][1];
@@ -171,10 +162,7 @@ describe('preload/index', () => {
   it('raiseNativeNotification without url calls app.show', async () => {
     const api = getExposedApi();
 
-    const notification = api.raiseNativeNotification(
-      'Title',
-      'Body',
-    ) as MockNotification;
+    const notification = api.raiseNativeNotification('Title', 'Body') as MockNotification;
 
     notification.triggerClick();
 

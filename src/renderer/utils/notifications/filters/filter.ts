@@ -2,13 +2,7 @@ import { useFiltersStore } from '../../../stores';
 
 import type { AtlassifyNotification } from '../../../types';
 
-import {
-  actorFilter,
-  categoryFilter,
-  engagementFilter,
-  productFilter,
-  readStateFilter,
-} from '.';
+import { actorFilter, categoryFilter, engagementFilter, productFilter, readStateFilter } from '.';
 
 /**
  * Applies all active notification filters to a list of notifications.
@@ -37,33 +31,25 @@ export function filterNotifications(
     if (categoryFilter.hasFilters()) {
       passesFilters =
         passesFilters &&
-        filters.categories.some((c) =>
-          categoryFilter.filterNotification(notification, c),
-        );
+        filters.categories.some((c) => categoryFilter.filterNotification(notification, c));
     }
 
     if (actorFilter.hasFilters()) {
       passesFilters =
         passesFilters &&
-        filters.actors.some((c) =>
-          actorFilter.filterNotification(notification, c),
-        );
+        filters.actors.some((c) => actorFilter.filterNotification(notification, c));
     }
 
     if (readStateFilter.hasFilters()) {
       passesFilters =
         passesFilters &&
-        filters.readStates.some((rs) =>
-          readStateFilter.filterNotification(notification, rs),
-        );
+        filters.readStates.some((rs) => readStateFilter.filterNotification(notification, rs));
     }
 
     if (productFilter.hasFilters()) {
       passesFilters =
         passesFilters &&
-        filters.products.some((p) =>
-          productFilter.filterNotification(notification, p),
-        );
+        filters.products.some((p) => productFilter.filterNotification(notification, p));
     }
 
     return passesFilters;

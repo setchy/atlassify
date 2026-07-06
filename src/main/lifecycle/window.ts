@@ -47,10 +47,7 @@ export function applyKeepWindowOnBlur(mb: Menubar, value: boolean): void {
  * @param menuBuilder - The menu builder used to keep the Show / Hide tray
  *   menu items in sync with window visibility.
  */
-export function configureWindowEvents(
-  mb: Menubar,
-  menuBuilder: MenuBuilder,
-): void {
+export function configureWindowEvents(mb: Menubar, menuBuilder: MenuBuilder): void {
   const win = mb.window;
   if (!win) {
     return;

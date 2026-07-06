@@ -15,8 +15,7 @@ export const URLs = {
       BITBUCKET_HOME: 'https://bitbucket.org' as Link,
       MY_NOTIFICATIONS: 'https://team.atlassian.com/notifications' as Link,
       PEOPLE: 'https://team.atlassian.com/people' as Link,
-      SECURITY_TOKENS:
-        'https://id.atlassian.com/manage-profile/security/api-tokens' as Link,
+      SECURITY_TOKENS: 'https://id.atlassian.com/manage-profile/security/api-tokens' as Link,
     },
   },
 };
@@ -24,9 +23,7 @@ export const URLs = {
 // 1. Actual implementations (private)
 const _links = {
   openAtlassifyReleaseNotes(version: string) {
-    openExternalLink(
-      `https://github.com/${APPLICATION.REPO_SLUG}/releases/tag/${version}` as Link,
-    );
+    openExternalLink(`https://github.com/${APPLICATION.REPO_SLUG}/releases/tag/${version}` as Link);
   },
 
   openAtlassianSecurityDocs() {
@@ -60,10 +57,7 @@ const _links = {
 };
 
 // 2. Analytics wrapper
-function withAnalytics<F extends (...args: unknown[]) => unknown>(
-  fn: F,
-  actionName: string,
-): F {
+function withAnalytics<F extends (...args: unknown[]) => unknown>(fn: F, actionName: string): F {
   return ((...args: Parameters<F>): ReturnType<F> => {
     trackEvent('Action', { name: actionName });
     return fn(...args) as ReturnType<F>;
@@ -90,17 +84,8 @@ export const openMyNotifications = withAnalytics(
   _links.openMyNotifications,
   'Open My Notifications',
 );
-export const openMyPullRequests = withAnalytics(
-  _links.openMyPullRequests,
-  'Open My Pull Requests',
-);
+export const openMyPullRequests = withAnalytics(_links.openMyPullRequests, 'Open My Pull Requests');
 
-export const openAccountProfile = withAnalytics(
-  _links.openAccountProfile,
-  'Open Account Profile',
-);
+export const openAccountProfile = withAnalytics(_links.openAccountProfile, 'Open Account Profile');
 
-export const openNotification = withAnalytics(
-  _links.openNotification,
-  'Open Notification',
-);
+export const openNotification = withAnalytics(_links.openNotification, 'Open Notification');

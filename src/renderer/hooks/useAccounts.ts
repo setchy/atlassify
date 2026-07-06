@@ -25,10 +25,7 @@ export const useAccounts = (): UseAccountsResult => {
   const refreshAccount = useAccountsStore.getState().refreshAccount;
 
   // Query key
-  const accountsQueryKeys = useMemo(
-    () => accountsKeys.list(accounts.length),
-    [accounts.length],
-  );
+  const accountsQueryKeys = useMemo(() => accountsKeys.list(accounts.length), [accounts.length]);
 
   const { isLoading, error, refetch } = useQuery<boolean, Error>({
     queryKey: accountsQueryKeys,

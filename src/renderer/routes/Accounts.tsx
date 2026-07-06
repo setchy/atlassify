@@ -36,12 +36,17 @@ export const AccountsRoute: FC = () => {
       removeAccount(account);
       navigate(-1);
     },
+    // oxlint-disable-next-line react/exhaustive-deps -- removeAccount is stable
     [removeAccount],
   );
 
-  const login = useCallback(() => {
-    return navigate('/login', { replace: true });
-  }, []);
+  const login = useCallback(
+    () => {
+      return navigate('/login', { replace: true });
+    },
+    // oxlint-disable-next-line react/exhaustive-deps -- navigate is stable
+    [],
+  );
 
   const boxStyles = xcss({
     backgroundColor: isLightMode()

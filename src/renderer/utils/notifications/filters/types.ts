@@ -1,10 +1,7 @@
 import type { NewCoreIconProps } from '@atlaskit/icon';
 import type { LogoProps } from '@atlaskit/logo';
 
-import type {
-  AccountNotifications,
-  AtlassifyNotification,
-} from '../../../types';
+import type { AccountNotifications, AtlassifyNotification } from '../../../types';
 
 /**
  * Details for a specific notification filter.

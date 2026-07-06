@@ -1,9 +1,4 @@
-import type {
-  AccountNotifications,
-  AtlassifyNotification,
-  Link,
-  ProductType,
-} from '../types';
+import type { AccountNotifications, AtlassifyNotification, Link, ProductType } from '../types';
 
 import { PRODUCTS } from '../utils/products';
 import { mockAtlassianCloudAccount } from './account-mocks';
@@ -79,8 +74,7 @@ export const mockAtlassifyNotifications: AtlassifyNotification[] = [
   },
 ];
 
-export const mockSingleAtlassifyNotification: AtlassifyNotification =
-  mockAtlassifyNotifications[0];
+export const mockSingleAtlassifyNotification: AtlassifyNotification = mockAtlassifyNotifications[0];
 
 export const mockAccountNotifications: AccountNotifications[] = [
   {

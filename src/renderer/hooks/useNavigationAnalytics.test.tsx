@@ -14,10 +14,9 @@ describe('renderer/hooks/useNavigationAnalytics.ts', () => {
   it('tracks "Notifications" for the root route', () => {
     renderHook(() => useNavigationAnalytics(), { wrapper: makeWrapper('/') });
 
-    expect(window.atlassify.aptabase.trackEvent).toHaveBeenCalledWith(
-      'Navigate',
-      { to: 'Notifications' },
-    );
+    expect(window.atlassify.aptabase.trackEvent).toHaveBeenCalledWith('Navigate', {
+      to: 'Notifications',
+    });
   });
 
   it('tracks a proper-cased screen name for non-root routes', () => {
@@ -25,9 +24,8 @@ describe('renderer/hooks/useNavigationAnalytics.ts', () => {
       wrapper: makeWrapper('/settings'),
     });
 
-    expect(window.atlassify.aptabase.trackEvent).toHaveBeenCalledWith(
-      'Navigate',
-      { to: 'Settings' },
-    );
+    expect(window.atlassify.aptabase.trackEvent).toHaveBeenCalledWith('Navigate', {
+      to: 'Settings',
+    });
   });
 });

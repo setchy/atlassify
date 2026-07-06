@@ -1,9 +1,10 @@
 import ChevronDownIcon from '@atlaskit/icon/core/chevron-down';
 import ChevronLeftIcon from '@atlaskit/icon/core/chevron-left';
 import ChevronRightIcon from '@atlaskit/icon/core/chevron-right';
-import type { AlignBlock } from '@atlaskit/primitives/dist/types/components/types';
 
 import { Constants } from '../../constants';
+
+import type { AlignBlock } from '@atlaskit/primitives/dist/types/components/types';
 
 import type { Chevron } from '../../types';
 
@@ -57,7 +58,5 @@ export function getChevronDetails(
  * @returns `'start'` if the text exceeds the alignment threshold, `'center'` otherwise.
  */
 export function blockAlignmentByLength(text: string): AlignBlock {
-  return text?.length > Constants.BLOCK_ALIGNMENT_LENGTH_THRESHOLD
-    ? 'start'
-    : 'center';
+  return text?.length > Constants.BLOCK_ALIGNMENT_LENGTH_THRESHOLD ? 'start' : 'center';
 }

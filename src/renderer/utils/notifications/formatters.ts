@@ -28,9 +28,7 @@ export function formatProperCase(text: string) {
  * @param notification - The notification to format native footer text for.
  * @returns The formatted native footer text string.
  */
-export function formatNativeNotificationFooterText(
-  notification: AtlassifyNotification,
-): string {
+export function formatNativeNotificationFooterText(notification: AtlassifyNotification): string {
   let footer = getProductStrategy(notification).footerText(notification);
 
   if (notification.entity.title) {
@@ -46,9 +44,7 @@ export function formatNativeNotificationFooterText(
  * @param notification - The notification whose timestamp to format.
  * @returns A relative time string (e.g. `"2 hours ago"`), or an empty string if the date is absent or invalid.
  */
-export function formatNotificationUpdatedAt(
-  notification: AtlassifyNotification,
-): string {
+export function formatNotificationUpdatedAt(notification: AtlassifyNotification): string {
   const iso = notification.updated_at;
 
   if (!iso) {

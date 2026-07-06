@@ -2,9 +2,7 @@ import type { ActorType, AtlassifyNotification } from '../../../types';
 
 import { DefaultStrategy } from './default';
 
-export function extractRepositoryName(
-  notification: AtlassifyNotification,
-): string {
+export function extractRepositoryName(notification: AtlassifyNotification): string {
   return notification.entity.url.split('/').slice(3, 5).join('/');
 }
 

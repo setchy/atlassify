@@ -3,10 +3,7 @@ import { type FC, useEffect } from 'react';
 import { useAppContext } from '../hooks/useAppContext';
 import { useGlobalShortcuts } from '../hooks/useGlobalShortcuts';
 
-import {
-  getNormalizedKey,
-  shouldIgnoreKeyboardEvent,
-} from '../utils/ui/keyboard';
+import { getNormalizedKey, shouldIgnoreKeyboardEvent } from '../utils/ui/keyboard';
 
 /**
  * Component that registers global keyboard shortcuts for the renderer app.
@@ -19,10 +16,7 @@ export const GlobalShortcuts: FC = () => {
 
   useEffect(() => {
     const keyToName = new Map<string, keyof typeof shortcuts>(
-      Object.entries(shortcuts).map(([name, cfg]) => [
-        cfg.key,
-        name as keyof typeof shortcuts,
-      ]),
+      Object.entries(shortcuts).map(([name, cfg]) => [cfg.key, name as keyof typeof shortcuts]),
     );
 
     const handler = (event: KeyboardEvent) => {

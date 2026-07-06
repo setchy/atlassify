@@ -24,24 +24,20 @@ export const NotificationContent: FC<NotificationContentProps> = ({
 }: NotificationContentProps) => {
   const updatedAt = formatNotificationUpdatedAt(notification);
 
-  const avatarGroup: AvatarProps[] =
-    notification.notificationGroup.additionalActors.map((actor) => ({
+  const avatarGroup: AvatarProps[] = notification.notificationGroup.additionalActors.map(
+    (actor) => ({
       key: actor.displayName,
       name: actor.displayName,
       href: '#',
       src: actor.avatarURL,
-    }));
+    }),
+  );
 
   const displayGroupSize = notification.notificationGroup.size - 1;
   const displayUpdateVerbiage = displayGroupSize > 1 ? 'updates' : 'update';
 
   return (
-    <Box
-      as="div"
-      id="notification-details"
-      onClick={onClick}
-      testId="notification-details"
-    >
+    <Box as="div" id="notification-details" onClick={onClick} testId="notification-details">
       <div className="cursor-pointer">
         <Stack space="space.025">
           <Box as="div" id="notification-title">
@@ -58,15 +54,11 @@ export const NotificationContent: FC<NotificationContentProps> = ({
                 as="div"
                 hidden={!bodyText}
                 id="notification-entity"
-                paddingInlineStart={
-                  notification.entity.iconUrl ? 'space.0' : 'space.025'
-                }
+                paddingInlineStart={notification.entity.iconUrl ? 'space.0' : 'space.025'}
               >
                 <Inline
                   alignBlock={blockAlignmentByLength(bodyText)}
-                  space={
-                    notification.entity.iconUrl ? 'space.050' : 'space.075'
-                  }
+                  space={notification.entity.iconUrl ? 'space.050' : 'space.075'}
                 >
                   {notification.entity.iconUrl ? (
                     <Avatar
@@ -86,15 +78,8 @@ export const NotificationContent: FC<NotificationContentProps> = ({
                 </Inline>
               </Box>
 
-              <Box
-                as="div"
-                id="notification-product"
-                paddingInlineStart="space.025"
-              >
-                <Inline
-                  alignBlock={blockAlignmentByLength(footerText)}
-                  space="space.075"
-                >
+              <Box as="div" id="notification-product" paddingInlineStart="space.025">
+                <Inline alignBlock={blockAlignmentByLength(footerText)} space="space.075">
                   <notification.product.logo
                     appearance="brand"
                     shouldUseNewLogoDesign
@@ -107,19 +92,16 @@ export const NotificationContent: FC<NotificationContentProps> = ({
               <Box as="div" id="notification-group">
                 {notification.notificationGroup.size > 1 && (
                   <Inline alignBlock="center" space="space.050">
-                    {notification.notificationGroup.additionalActors.length >
-                      0 && (
+                    {notification.notificationGroup.additionalActors.length > 0 && (
                       // @ts-expect-error We're forcing the xsmall size for Avatar Groups
                       <AvatarGroup data={avatarGroup} size="xsmall" />
                     )}
                     <Text size="small">
                       +{displayGroupSize}{' '}
-                      {notification.notificationGroup.additionalActors.length >
-                      0
+                      {notification.notificationGroup.additionalActors.length > 0
                         ? `${displayUpdateVerbiage} from ${notification.notificationGroup.additionalActors[0].displayName}`
                         : `other ${displayUpdateVerbiage}`}
-                      {notification.notificationGroup.additionalActors.length >
-                        1 && ' and others'}
+                      {notification.notificationGroup.additionalActors.length > 1 && ' and others'}
                     </Text>
                   </Inline>
                 )}

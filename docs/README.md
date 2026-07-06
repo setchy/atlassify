@@ -1,4 +1,4 @@
-# atlassify.io 
+# atlassify.io
 
 > The source code for our atlassify.io website
 

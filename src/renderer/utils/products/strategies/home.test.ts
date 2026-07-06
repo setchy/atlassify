@@ -19,9 +19,7 @@ describe('renderer/utils/products/strategies/home', () => {
         },
       } as AtlassifyNotification;
 
-      expect(getProductStrategy(notification).footerText(notification)).toBe(
-        'ABC-123 • On track',
-      );
+      expect(getProductStrategy(notification).footerText(notification)).toBe('ABC-123 • On track');
     });
 
     it('footerText returns key + path title for project url', () => {
@@ -35,9 +33,7 @@ describe('renderer/utils/products/strategies/home', () => {
         },
       } as AtlassifyNotification;
 
-      expect(getProductStrategy(notification).footerText(notification)).toBe(
-        'ABC-123 • Pending',
-      );
+      expect(getProductStrategy(notification).footerText(notification)).toBe('ABC-123 • Pending');
     });
 
     it('footerText falls back to path title when no key', () => {
@@ -51,9 +47,7 @@ describe('renderer/utils/products/strategies/home', () => {
         },
       } as AtlassifyNotification;
 
-      expect(getProductStrategy(notification).footerText(notification)).toBe(
-        'Atlassian Home',
-      );
+      expect(getProductStrategy(notification).footerText(notification)).toBe('Atlassian Home');
     });
   });
 

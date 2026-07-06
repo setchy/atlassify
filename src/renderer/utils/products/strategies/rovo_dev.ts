@@ -2,9 +2,7 @@ import type { ActorType, AtlassifyNotification } from '../../../types';
 
 import { DefaultStrategy } from './default';
 
-export function extractRovoDevContextName(
-  notification: AtlassifyNotification,
-): string {
+export function extractRovoDevContextName(notification: AtlassifyNotification): string {
   const context = new URL(notification.url).pathname.split('/').pop();
   return `${notification.message} for ${context}`;
 }

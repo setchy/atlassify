@@ -13,11 +13,7 @@ export const Footer: FC<FooterProps> = (props: FooterProps) => {
   });
 
   return (
-    <Box
-      paddingBlock="space.050"
-      paddingInline="space.200"
-      xcss={footerBoxStyles}
-    >
+    <Box paddingBlock="space.050" paddingInline="space.200" xcss={footerBoxStyles}>
       <Flex justifyContent={props.justify}>{props.children}</Flex>
     </Box>
   );

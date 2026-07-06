@@ -47,11 +47,7 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
 
     await userEvent.click(screen.getByLabelText('Mentions'));
 
-    expect(updateFilterSpy).toHaveBeenCalledWith(
-      mockFilterSetting,
-      'mention',
-      true,
-    );
+    expect(updateFilterSpy).toHaveBeenCalledWith(mockFilterSetting, 'mention', true);
   });
 
   it('should be able to toggle filter value - some filters already set', async () => {
@@ -69,10 +65,6 @@ describe('renderer/components/filters/FilterSection.tsx', () => {
 
     await userEvent.click(screen.getByLabelText('Comments'));
 
-    expect(updateFilterSpy).toHaveBeenCalledWith(
-      mockFilterSetting,
-      'comment',
-      true,
-    );
+    expect(updateFilterSpy).toHaveBeenCalledWith(mockFilterSetting, 'comment', true);
   });
 });

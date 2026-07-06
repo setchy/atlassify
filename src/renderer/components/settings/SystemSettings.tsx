@@ -32,19 +32,11 @@ export const SystemSettings: FC = () => {
 
   // Setting store values
   const openLinks = useSettingsStore((s) => s.openLinks);
-  const keyboardShortcutEnabled = useSettingsStore(
-    (s) => s.keyboardShortcutEnabled,
-  );
-  const showSystemNotifications = useSettingsStore(
-    (s) => s.showSystemNotifications,
-  );
-  const playSoundNewNotifications = useSettingsStore(
-    (s) => s.playSoundNewNotifications,
-  );
+  const keyboardShortcutEnabled = useSettingsStore((s) => s.keyboardShortcutEnabled);
+  const showSystemNotifications = useSettingsStore((s) => s.showSystemNotifications);
+  const playSoundNewNotifications = useSettingsStore((s) => s.playSoundNewNotifications);
   const notificationVolume = useSettingsStore((s) => s.notificationVolume);
-  const enableAnonymousAnalytics = useSettingsStore(
-    (s) => s.enableAnonymousAnalytics,
-  );
+  const enableAnonymousAnalytics = useSettingsStore((s) => s.enableAnonymousAnalytics);
   const openAtStartup = useSettingsStore((s) => s.openAtStartup);
 
   const volumeBoxStyles = xcss({
@@ -64,18 +56,14 @@ export const SystemSettings: FC = () => {
             isChecked={openLinks === OpenPreference.FOREGROUND}
             label={t('settings.system.open_links_foreground')}
             name="openLinks"
-            onChange={() =>
-              updateSetting('openLinks', OpenPreference.FOREGROUND)
-            }
+            onChange={() => updateSetting('openLinks', OpenPreference.FOREGROUND)}
             value={OpenPreference.FOREGROUND}
           />
           <Radio
             isChecked={openLinks === OpenPreference.BACKGROUND}
             label={t('settings.system.open_links_background')}
             name="openLinks"
-            onChange={() =>
-              updateSetting('openLinks', OpenPreference.BACKGROUND)
-            }
+            onChange={() => updateSetting('openLinks', OpenPreference.BACKGROUND)}
             value={OpenPreference.BACKGROUND}
           />
         </Inline>
@@ -106,9 +94,7 @@ export const SystemSettings: FC = () => {
           onChange={() => toggleSetting('showSystemNotifications')}
         />
         <InlineMessage appearance="info">
-          <div className="settings-help-text">
-            {t('settings.system.system_notifications_help')}
-          </div>
+          <div className="settings-help-text">{t('settings.system.system_notifications_help')}</div>
         </InlineMessage>
       </Inline>
 
@@ -125,38 +111,26 @@ export const SystemSettings: FC = () => {
               <Box paddingInline="space.150">
                 <Text>{notificationVolume.toFixed(0)}%</Text>
               </Box>
-              <Tooltip
-                content={t('settings.system.volume_down')}
-                position="bottom"
-              >
+              <Tooltip content={t('settings.system.volume_down')} position="bottom">
                 <IconButton
                   icon={VolumeLowIcon}
                   isDisabled={!canDecreaseVolume(notificationVolume)}
                   label={t('settings.system.volume_down')}
                   onClick={() => {
-                    updateSetting(
-                      'notificationVolume',
-                      decreaseVolume(notificationVolume),
-                    );
+                    updateSetting('notificationVolume', decreaseVolume(notificationVolume));
                   }}
                   shape="circle"
                   spacing="compact"
                   testId="settings-volume-down"
                 />
               </Tooltip>
-              <Tooltip
-                content={t('settings.system.volume_up')}
-                position="bottom"
-              >
+              <Tooltip content={t('settings.system.volume_up')} position="bottom">
                 <IconButton
                   icon={VolumeHighIcon}
                   isDisabled={!canIncreaseVolume(notificationVolume)}
                   label={t('settings.system.volume_up')}
                   onClick={() => {
-                    updateSetting(
-                      'notificationVolume',
-                      increaseVolume(notificationVolume),
-                    );
+                    updateSetting('notificationVolume', increaseVolume(notificationVolume));
                   }}
                   shape="circle"
                   spacing="compact"
@@ -164,10 +138,7 @@ export const SystemSettings: FC = () => {
                 />
               </Tooltip>
             </Inline>
-            <Tooltip
-              content={t('settings.system.volume_reset')}
-              position="bottom"
-            >
+            <Tooltip content={t('settings.system.volume_reset')} position="bottom">
               <IconButton
                 icon={RetryIcon}
                 label={t('settings.system.volume_reset')}

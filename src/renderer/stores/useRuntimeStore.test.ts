@@ -2,12 +2,8 @@ import useRuntimeStore from './useRuntimeStore';
 
 describe('renderer/stores/useRuntimeStore.ts', () => {
   it('should have the correct default state', () => {
-    const {
-      notificationCount,
-      hasMoreAccountNotifications,
-      isError,
-      isOnline,
-    } = useRuntimeStore.getState();
+    const { notificationCount, hasMoreAccountNotifications, isError, isOnline } =
+      useRuntimeStore.getState();
 
     expect(notificationCount).toBe(0);
     expect(hasMoreAccountNotifications).toBe(false);
@@ -18,8 +14,7 @@ describe('renderer/stores/useRuntimeStore.ts', () => {
   it('should update notification status', () => {
     useRuntimeStore.getState().updateNotificationStatus(10, true, false);
 
-    const { notificationCount, hasMoreAccountNotifications, isError } =
-      useRuntimeStore.getState();
+    const { notificationCount, hasMoreAccountNotifications, isError } = useRuntimeStore.getState();
 
     expect(notificationCount).toBe(10);
     expect(hasMoreAccountNotifications).toBe(true);

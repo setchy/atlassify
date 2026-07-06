@@ -3,6 +3,27 @@
   "version": "latest",
   "private": true,
   "description": "The source code of atlassify.io",
+  "keywords": [
+    "astro",
+    "atlassian",
+    "atlassify",
+    "notifications",
+    "notifier",
+    "website"
+  ],
+  "homepage": "https://atlassify.io/",
+  "bugs": {
+    "url": "https://github.com/setchy/atlassify/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Adam Setch",
+    "url": "https://github.com/setchy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/setchy/atlassify"
+  },
   "type": "module",
   "scripts": {
     "prepare": "cd .. && husky",
@@ -10,30 +31,9 @@
     "start": "pnpm dev",
     "build": "astro build",
     "preview": "astro preview",
-    "lint": "biome check --fix",
-    "lint:check": "biome check"
+    "check": "biome check",
+    "check:fix": "biome check --fix"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/setchy/atlassify"
-  },
-  "keywords": [
-    "atlassify",
-    "atlassian",
-    "notifier",
-    "notifications",
-    "website",
-    "astro"
-  ],
-  "author": {
-    "name": "Adam Setch",
-    "url": "https://github.com/setchy"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/setchy/atlassify/issues"
-  },
-  "homepage": "https://atlassify.io/",
   "dependencies": {
     "@iconify-json/line-md": "1.2.16",
     "@iconify-json/mdi": "1.2.3",
@@ -56,8 +56,5 @@
     "@biomejs/biome": "2.5.2",
     "husky": "9.1.7"
   },
-  "packageManager": "pnpm@11.9.0",
-  "lint-staged": {
-    "*.{js,ts,cjs,mjs,astro}": "biome format --fix"
-  }
+  "packageManager": "pnpm@11.9.0"
 }

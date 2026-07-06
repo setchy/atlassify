@@ -7,8 +7,8 @@ import { useFiltersStore } from '../../../stores';
 
 import type { AtlassifyNotification } from '../../../types';
 
-import { PRODUCTS } from '../../products';
 import { actorFilter, inferNotificationActor } from '.';
+import { PRODUCTS } from '../../products';
 
 describe('renderer/utils/notifications/filters/actor.ts', () => {
   it('hasActorFilters', () => {
@@ -29,14 +29,11 @@ describe('renderer/utils/notifications/filters/actor.ts', () => {
 
   it('getActorFilterCount', () => {
     const mockAcctNotifications = mockAccountNotifications;
-    mockAccountNotifications[0].notifications[0].actor.displayName =
-      'Automation for Jira';
+    mockAccountNotifications[0].notifications[0].actor.displayName = 'Automation for Jira';
 
     expect(actorFilter.getFilterCount(mockAcctNotifications, 'user')).toBe(1);
 
-    expect(
-      actorFilter.getFilterCount(mockAcctNotifications, 'automation'),
-    ).toBe(1);
+    expect(actorFilter.getFilterCount(mockAcctNotifications, 'automation')).toBe(1);
   });
 
   it('filterNotificationByActor', () => {
@@ -47,13 +44,9 @@ describe('renderer/utils/notifications/filters/actor.ts', () => {
       },
     } as AtlassifyNotification;
 
-    expect(actorFilter.filterNotification(mockNotification, 'user')).toBe(
-      false,
-    );
+    expect(actorFilter.filterNotification(mockNotification, 'user')).toBe(false);
 
-    expect(actorFilter.filterNotification(mockNotification, 'automation')).toBe(
-      true,
-    );
+    expect(actorFilter.filterNotification(mockNotification, 'automation')).toBe(true);
   });
 
   describe('inferNotificationActor', () => {

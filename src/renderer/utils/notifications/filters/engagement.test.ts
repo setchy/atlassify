@@ -30,20 +30,13 @@ describe('renderer/utils/notifications/filters/engagement.ts', () => {
 
   it('getEngagementStateFilterCount', () => {
     const mockAcctNotifications = mockAccountNotifications;
-    mockAccountNotifications[0].notifications[0].message =
-      'someone mentioned you on a page';
+    mockAccountNotifications[0].notifications[0].message = 'someone mentioned you on a page';
 
-    expect(
-      engagementFilter.getFilterCount(mockAcctNotifications, 'comment'),
-    ).toBe(0);
+    expect(engagementFilter.getFilterCount(mockAcctNotifications, 'comment')).toBe(0);
 
-    expect(
-      engagementFilter.getFilterCount(mockAcctNotifications, 'mention'),
-    ).toBe(1);
+    expect(engagementFilter.getFilterCount(mockAcctNotifications, 'mention')).toBe(1);
 
-    expect(
-      engagementFilter.getFilterCount(mockAcctNotifications, 'reaction'),
-    ).toBe(0);
+    expect(engagementFilter.getFilterCount(mockAcctNotifications, 'reaction')).toBe(0);
   });
 
   it('filterNotificationByEngagementState', () => {
@@ -52,17 +45,11 @@ describe('renderer/utils/notifications/filters/engagement.ts', () => {
       message: 'someone mentioned you on a page',
     } as AtlassifyNotification;
 
-    expect(
-      engagementFilter.filterNotification(mockNotification, 'comment'),
-    ).toBe(false);
+    expect(engagementFilter.filterNotification(mockNotification, 'comment')).toBe(false);
 
-    expect(
-      engagementFilter.filterNotification(mockNotification, 'mention'),
-    ).toBe(true);
+    expect(engagementFilter.filterNotification(mockNotification, 'mention')).toBe(true);
 
-    expect(
-      engagementFilter.filterNotification(mockNotification, 'reaction'),
-    ).toBe(false);
+    expect(engagementFilter.filterNotification(mockNotification, 'reaction')).toBe(false);
   });
 
   describe('inferNotificationEngagementState', () => {
@@ -72,9 +59,7 @@ describe('renderer/utils/notifications/filters/engagement.ts', () => {
         message: 'someone mentioned you on a page',
       } as AtlassifyNotification;
 
-      expect(inferNotificationEngagementState(mockNotification)).toBe(
-        'mention',
-      );
+      expect(inferNotificationEngagementState(mockNotification)).toBe('mention');
     });
 
     it('should infer comment engagement state', () => {
@@ -83,9 +68,7 @@ describe('renderer/utils/notifications/filters/engagement.ts', () => {
         message: 'someone replied on a page',
       } as AtlassifyNotification;
 
-      expect(inferNotificationEngagementState(mockNotification)).toBe(
-        'comment',
-      );
+      expect(inferNotificationEngagementState(mockNotification)).toBe('comment');
     });
 
     it('should infer reaction engagement state', () => {
@@ -94,9 +77,7 @@ describe('renderer/utils/notifications/filters/engagement.ts', () => {
         message: 'someone reacted to your comment',
       } as AtlassifyNotification;
 
-      expect(inferNotificationEngagementState(mockNotification)).toBe(
-        'reaction',
-      );
+      expect(inferNotificationEngagementState(mockNotification)).toBe('reaction');
     });
 
     it('should infer reaction engagement state with emoji', () => {
@@ -105,9 +86,7 @@ describe('renderer/utils/notifications/filters/engagement.ts', () => {
         message: 'someone reacted 🍻 to your comment',
       } as AtlassifyNotification;
 
-      expect(inferNotificationEngagementState(mockNotification)).toBe(
-        'reaction',
-      );
+      expect(inferNotificationEngagementState(mockNotification)).toBe('reaction');
     });
 
     it('should return null if no engagement state can be inferred from message', () => {

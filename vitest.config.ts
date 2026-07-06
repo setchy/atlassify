@@ -18,11 +18,7 @@ export default defineConfig({
       }
 
       // suppress noisy i18next logs
-      if (
-        type === 'stdout' &&
-        typeof log === 'string' &&
-        log.includes('Locize')
-      ) {
+      if (type === 'stdout' && typeof log === 'string' && log.includes('Locize')) {
         return false;
       }
     },
@@ -31,12 +27,7 @@ export default defineConfig({
       reportOnFailure: true,
       reporter: ['html', 'lcovonly'],
       include: ['src/**/*'],
-      exclude: [
-        '**/*.html',
-        '**/*.graphql',
-        '**/graphql/generated/**',
-        '**/.DS_Store',
-      ],
+      exclude: ['**/*.html', '**/*.graphql', '**/graphql/generated/**', '**/.DS_Store'],
     },
     projects: [
       {
@@ -44,10 +35,7 @@ export default defineConfig({
         test: {
           name: 'happy-dom [preload, renderer]',
           environment: 'happy-dom',
-          include: [
-            'src/preload/**/*.test.{ts,tsx}',
-            'src/renderer/**/*.test.{ts,tsx}',
-          ],
+          include: ['src/preload/**/*.test.{ts,tsx}', 'src/renderer/**/*.test.{ts,tsx}'],
           setupFiles: ['./src/renderer/__helpers__/vitest.setup.ts'],
         },
       },
@@ -57,10 +45,7 @@ export default defineConfig({
         test: {
           name: 'node [main, shared]',
           environment: 'node',
-          include: [
-            'src/shared/**/*.test.{ts,tsx}',
-            'src/main/**/*.test.{ts,tsx}',
-          ],
+          include: ['src/shared/**/*.test.{ts,tsx}', 'src/main/**/*.test.{ts,tsx}'],
         },
       },
     ],

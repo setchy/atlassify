@@ -30,10 +30,7 @@ export function registerSystemHandlers(mb: Menubar): void {
    */
   powerMonitor.on('unlock-screen', () => {
     sendRendererEvent(mb, EVENTS.SYSTEM_WAKE);
-    logInfo(
-      'power-monitor',
-      'unlock-screen event triggered, will refetch data',
-    );
+    logInfo('power-monitor', 'unlock-screen event triggered, will refetch data');
   });
 
   /**

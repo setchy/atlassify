@@ -19,10 +19,7 @@ export function openExternalLink(url: Link): void {
   const openPreference = settings.openLinks;
 
   if (url.toLowerCase().startsWith('https://')) {
-    window.atlassify.openExternalLink(
-      url,
-      openPreference === OpenPreference.FOREGROUND,
-    );
+    window.atlassify.openExternalLink(url, openPreference === OpenPreference.FOREGROUND);
   }
 }
 

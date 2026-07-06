@@ -70,8 +70,7 @@ describe('main/lifecycle/startup.ts', () => {
 
       initializeAppLifecycle(mb as unknown as Menubar, contextMenu);
 
-      const readyHandler = (mb.on as unknown as ReturnType<typeof vi.fn>).mock
-        .calls[0]?.[1];
+      const readyHandler = (mb.on as unknown as ReturnType<typeof vi.fn>).mock.calls[0]?.[1];
       expect(readyHandler).toBeDefined();
       readyHandler?.();
 

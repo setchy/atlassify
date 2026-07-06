@@ -21,18 +21,14 @@ export interface ProductNotificationsProps {
   productNotifications: AtlassifyNotification[];
 }
 
-export const ProductNotifications: FC<ProductNotificationsProps> = ({
-  productNotifications,
-}) => {
+export const ProductNotifications: FC<ProductNotificationsProps> = ({ productNotifications }) => {
   const { t } = useTranslation();
 
   const { markNotificationsRead } = useAppContext();
 
-  const [shouldAnimateProductExit, setShouldAnimateProductExit] =
-    useState(false);
+  const [shouldAnimateProductExit, setShouldAnimateProductExit] = useState(false);
   const [pendingMarkAsRead, setPendingMarkAsRead] = useState(false);
-  const [isProductNotificationsVisible, setIsProductNotificationsVisible] =
-    useState(true);
+  const [isProductNotificationsVisible, setIsProductNotificationsVisible] = useState(true);
 
   // We assume that productNotifications are all of the same product-type, as grouped within AccountNotifications
   const productNotification = productNotifications[0].product;
@@ -65,11 +61,7 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
     setIsProductNotificationsVisible(!isProductNotificationsVisible);
   };
 
-  const Chevron = getChevronDetails(
-    true,
-    isProductNotificationsVisible,
-    'product',
-  );
+  const Chevron = getChevronDetails(true, isProductNotificationsVisible, 'product');
   const ChevronIcon = Chevron.icon;
 
   const boxStyles = xcss({
@@ -124,19 +116,14 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
                   shouldUseNewLogoDesign
                   size="xxsmall"
                 />
-                <span className="font-medium">
-                  {productNotification.display}
-                </span>
+                <span className="font-medium">{productNotification.display}</span>
                 <Badge max={false}>{productNotifications.length}</Badge>
               </Inline>
             </Button>
           </Tooltip>
 
           <Inline space="space.100">
-            <Tooltip
-              content={t('notifications.product.mark_all_read')}
-              position="bottom"
-            >
+            <Tooltip content={t('notifications.product.mark_all_read')} position="bottom">
               <IconButton
                 appearance="subtle"
                 icon={() => <StrokeWeightLargeIcon label="" />}
@@ -155,9 +142,7 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
             <Tooltip content={Chevron.label} position="bottom">
               <IconButton
                 appearance="subtle"
-                icon={(iconProps) => (
-                  <ChevronIcon {...iconProps} size="small" />
-                )}
+                icon={(iconProps) => <ChevronIcon {...iconProps} size="small" />}
                 label={Chevron.label}
                 shape="circle"
                 spacing="compact"

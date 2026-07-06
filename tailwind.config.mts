@@ -1,5 +1,4 @@
 import { token } from '@atlaskit/tokens';
-
 import type { Config } from 'tailwindcss';
 import plugin from 'tailwindcss/plugin';
 
@@ -43,12 +42,10 @@ const config: Config = {
           '@apply h-4 w-4': {},
         },
         '.tray-icon-pill': {
-          '@apply inline-flex items-center gap-1.5 rounded border-2 border-slate-300 px-1':
-            {},
+          '@apply inline-flex items-center gap-1.5 rounded border-2 border-slate-300 px-1': {},
         },
         '.tray-icon-pill-dark': {
-          '@apply inline-flex items-center gap-1.5 rounded bg-slate-700 px-1':
-            {},
+          '@apply inline-flex items-center gap-1.5 rounded bg-slate-700 px-1': {},
         },
         '.settings-help-text': {
           '@apply w-60 text-xs': {},
@@ -67,26 +64,16 @@ const config: Config = {
       addBase({
         ':root': {
           '--atlassify-background-sidebar': '#2684FF', //TODO update to token when available (formerly B200)
-          '--atlassify-scrollbar-track': token(
-            'color.background.accent.blue.subtlest',
-          ),
-          '--atlassify-scrollbar-thumb': token(
-            'color.background.accent.blue.subtler',
-          ),
+          '--atlassify-scrollbar-track': token('color.background.accent.blue.subtlest'),
+          '--atlassify-scrollbar-thumb': token('color.background.accent.blue.subtler'),
           '--atlassify-scrollbar-thumb-hover': token(
             'color.background.accent.blue.subtler.hovered',
           ),
         },
         '.dark': {
-          '--atlassify-background-sidebar': token(
-            'color.background.brand.subtlest',
-          ),
-          '--atlassify-scrollbar-track': token(
-            'color.background.accent.gray.subtlest',
-          ),
-          '--atlassify-scrollbar-thumb': token(
-            'color.background.accent.gray.subtler',
-          ),
+          '--atlassify-background-sidebar': token('color.background.brand.subtlest'),
+          '--atlassify-scrollbar-track': token('color.background.accent.gray.subtlest'),
+          '--atlassify-scrollbar-thumb': token('color.background.accent.gray.subtler'),
           '--atlassify-scrollbar-thumb-hover': token(
             'color.background.accent.gray.subtler.hovered',
           ),

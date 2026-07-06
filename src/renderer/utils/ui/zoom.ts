@@ -4,8 +4,7 @@ import type { Percentage } from '../../types';
 
 const MINIMUM_ZOOM_PERCENTAGE = 0 as Percentage;
 const MAXIMUM_ZOOM_PERCENTAGE = 120 as Percentage;
-const RECOMMENDED_ZOOM_PERCENTAGE =
-  useSettingsStore.getInitialState().zoomPercentage;
+const RECOMMENDED_ZOOM_PERCENTAGE = useSettingsStore.getInitialState().zoomPercentage;
 const MULTIPLIER = 2;
 const ZOOM_STEP = 10 as Percentage;
 
@@ -36,8 +35,7 @@ export function zoomLevelToPercentage(zoom: number): Percentage {
     return RECOMMENDED_ZOOM_PERCENTAGE;
   }
 
-  return ((zoom / MULTIPLIER) * 100 +
-    RECOMMENDED_ZOOM_PERCENTAGE) as Percentage;
+  return ((zoom / MULTIPLIER) * 100 + RECOMMENDED_ZOOM_PERCENTAGE) as Percentage;
 }
 
 /**
@@ -90,7 +88,5 @@ export function increaseZoom(zoomPercentage: Percentage) {
  * Resets the zoom level to the recommended default, then applies it via the Electron zoom bridge.
  */
 export function resetZoomLevel() {
-  window.atlassify.zoom.setLevel(
-    zoomPercentageToLevel(RECOMMENDED_ZOOM_PERCENTAGE),
-  );
+  window.atlassify.zoom.setLevel(zoomPercentageToLevel(RECOMMENDED_ZOOM_PERCENTAGE));
 }

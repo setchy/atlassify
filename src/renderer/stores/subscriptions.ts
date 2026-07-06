@@ -13,12 +13,7 @@ import { setAutoLaunch, setKeyboardShortcut } from '../utils/system/comms';
 import { setTrayIconColorAndTitle } from '../utils/system/tray';
 import { setTheme } from '../utils/ui/theme';
 import { zoomLevelToPercentage, zoomPercentageToLevel } from '../utils/ui/zoom';
-import {
-  useAccountsStore,
-  useFiltersStore,
-  useRuntimeStore,
-  useSettingsStore,
-} from './';
+import { useAccountsStore, useFiltersStore, useRuntimeStore, useSettingsStore } from './';
 
 /**
  * Initialize all store side-effect subscriptions and startup values for main.
@@ -100,15 +95,11 @@ export function initializeStoreSubscriptions(): () => void {
   const handleResize = () => {
     clearTimeout(timeout);
     timeout = setTimeout(() => {
-      const zoomPercentage = zoomLevelToPercentage(
-        window.atlassify.zoom.getLevel(),
-      );
+      const zoomPercentage = zoomLevelToPercentage(window.atlassify.zoom.getLevel());
       const currentZoomPercentage = useSettingsStore.getState().zoomPercentage;
 
       if (zoomPercentage !== currentZoomPercentage) {
-        useSettingsStore
-          .getState()
-          .updateSetting('zoomPercentage', zoomPercentage);
+        useSettingsStore.getState().updateSetting('zoomPercentage', zoomPercentage);
       }
     }, DELAY);
   };
@@ -127,10 +118,8 @@ export function initializeStoreSubscriptions(): () => void {
   const unsubFilters = useFiltersStore.subscribe(() => {
     // Build the query key to match useNotifications
     const accounts = useAccountsStore.getState().accounts;
-    const fetchOnlyUnreadNotifications =
-      useSettingsStore.getState().fetchOnlyUnreadNotifications;
-    const groupNotificationsByTitle =
-      useSettingsStore.getState().groupNotificationsByTitle;
+    const fetchOnlyUnreadNotifications = useSettingsStore.getState().fetchOnlyUnreadNotifications;
+    const groupNotificationsByTitle = useSettingsStore.getState().groupNotificationsByTitle;
 
     const queryKey = notificationsKeys.list(
       accounts.length,

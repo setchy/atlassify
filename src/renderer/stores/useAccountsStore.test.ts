@@ -97,9 +97,7 @@ describe('renderer/stores/useAccountsStore.ts', () => {
 
       const { result } = renderHook(() => useAccountsStore());
 
-      expect(
-        result.current.hasUsernameAlready(mockAtlassianCloudAccount.username),
-      ).toBe(true);
+      expect(result.current.hasUsernameAlready(mockAtlassianCloudAccount.username)).toBe(true);
     });
 
     test('should return false if username does not exist', () => {
@@ -107,9 +105,7 @@ describe('renderer/stores/useAccountsStore.ts', () => {
 
       const { result } = renderHook(() => useAccountsStore());
 
-      expect(
-        result.current.hasUsernameAlready('nonexistentuser' as Username),
-      ).toBe(false);
+      expect(result.current.hasUsernameAlready('nonexistentuser' as Username)).toBe(false);
     });
   });
 

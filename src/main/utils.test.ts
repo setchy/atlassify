@@ -51,8 +51,7 @@ import { openLogsDirectory, takeScreenshot } from './utils';
 function createMb() {
   return {
     window: {
-      capturePage: () =>
-        Promise.resolve({ toPNG: () => Buffer.from('image-bytes') }),
+      capturePage: () => Promise.resolve({ toPNG: () => Buffer.from('image-bytes') }),
     },
     app: { quit: vi.fn() },
   };

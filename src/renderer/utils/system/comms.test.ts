@@ -40,10 +40,7 @@ describe('renderer/utils/system/comms.ts', () => {
 
       openExternalLink('https://atlassify.io/' as Link);
 
-      expect(window.atlassify.openExternalLink).toHaveBeenCalledWith(
-        'https://atlassify.io/',
-        true,
-      );
+      expect(window.atlassify.openExternalLink).toHaveBeenCalledWith('https://atlassify.io/', true);
     });
 
     it('should ignore opening external local links file:///', () => {
@@ -144,9 +141,7 @@ describe('renderer/utils/system/comms.ts', () => {
       updateTrayTitle('Atlassify');
 
       expect(window.atlassify.tray.updateTitle).toHaveBeenCalledTimes(1);
-      expect(window.atlassify.tray.updateTitle).toHaveBeenCalledWith(
-        'Atlassify',
-      );
+      expect(window.atlassify.tray.updateTitle).toHaveBeenCalledWith('Atlassify');
     });
   });
 
@@ -159,10 +154,9 @@ describe('renderer/utils/system/comms.ts', () => {
       trackEvent('Action', { name: 'Refresh' });
 
       expect(window.atlassify.aptabase.trackEvent).toHaveBeenCalledTimes(1);
-      expect(window.atlassify.aptabase.trackEvent).toHaveBeenCalledWith(
-        'Action',
-        { name: 'Refresh' },
-      );
+      expect(window.atlassify.aptabase.trackEvent).toHaveBeenCalledWith('Action', {
+        name: 'Refresh',
+      });
     });
 
     it('does not track events when anonymous analytics are disabled', () => {

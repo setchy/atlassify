@@ -7,9 +7,7 @@ import type { AtlassianAPIError } from './types';
 
 import { Errors } from '../core/errors';
 
-export function determineFailureType(
-  err: AxiosError<AtlassianAPIError>,
-): AtlassifyError {
+export function determineFailureType(err: AxiosError<AtlassianAPIError>): AtlassifyError {
   const { isOnline } = useRuntimeStore.getState();
   if (!isOnline) {
     return Errors.OFFLINE;
@@ -25,11 +23,7 @@ export function determineFailureType(
 
   const status = err.response?.status;
 
-  if (
-    status === 401 ||
-    status === 404 ||
-    err.message?.includes('safeStorage')
-  ) {
+  if (status === 401 || status === 404 || err.message?.includes('safeStorage')) {
     return Errors.BAD_CREDENTIALS;
   }
 

@@ -33,9 +33,7 @@ const FilterSectionComponent = <K extends keyof FiltersState>({
   // Memoize filter counts to avoid recalculating on every render
   const filterCounts = useMemo(() => {
     const counts = new Map<FiltersState[K][number], number>();
-    for (const type of Object.keys(
-      filter.FILTER_TYPES,
-    ) as FiltersState[K][number][]) {
+    for (const type of Object.keys(filter.FILTER_TYPES) as FiltersState[K][number][]) {
       counts.set(type, filter.getFilterCount(notifications, type));
     }
     return counts;
@@ -45,67 +43,56 @@ const FilterSectionComponent = <K extends keyof FiltersState>({
     <Stack space="space.050">
       <Heading size="small">{title}</Heading>
       <Box>
-        {(Object.keys(filter.FILTER_TYPES) as FiltersState[K][number][]).map(
-          (type) => {
-            const typeDetails = filter.getTypeDetails(type);
-            const typeLabel = formatProperCase(typeDetails.name);
-            const isChecked = filter.isFilterSet(type);
-            const count = filterCounts.get(type) ?? 0;
+        {(Object.keys(filter.FILTER_TYPES) as FiltersState[K][number][]).map((type) => {
+          const typeDetails = filter.getTypeDetails(type);
+          const typeLabel = formatProperCase(typeDetails.name);
+          const isChecked = filter.isFilterSet(type);
+          const count = filterCounts.get(type) ?? 0;
 
-            return (
-              <Inline
-                alignBlock="center"
-                key={typeDetails.name}
-                space="space.050"
-              >
-                <Checkbox
-                  aria-label={typeDetails.name}
-                  isChecked={isChecked}
-                  label={typeLabel}
-                  onChange={() => updateFilter(filterSetting, type, !isChecked)}
+          return (
+            <Inline alignBlock="center" key={typeDetails.name} space="space.050">
+              <Checkbox
+                aria-label={typeDetails.name}
+                isChecked={isChecked}
+                label={typeLabel}
+                onChange={() => updateFilter(filterSetting, type, !isChecked)}
+              />
+              {typeDetails.icon && (
+                <IconTile
+                  appearance={isChecked ? 'blue' : 'gray'}
+                  icon={typeDetails.icon}
+                  label=""
+                  /** Use xxsmall size for consistency with logos */
+                  size={'xxsmall' as 'xsmall'}
                 />
-                {typeDetails.icon && (
-                  <IconTile
-                    appearance={isChecked ? 'blue' : 'gray'}
-                    icon={typeDetails.icon}
-                    label=""
-                    /** Use xxsmall size for consistency with logos */
-                    size={'xxsmall' as 'xsmall'}
-                  />
-                )}
-                {typeDetails.logo && (
-                  <typeDetails.logo
-                    appearance={isChecked ? 'brand' : 'neutral'}
-                    shouldUseNewLogoDesign
-                    size="xxsmall"
-                  />
-                )}
-                {typeDetails.heroicon && (
-                  <typeDetails.heroicon
-                    className={cn(
-                      'size-4 p-px rounded border',
-                      isChecked
-                        ? 'text-atlassify-heroicon-selected-outline bg-atlassify-heroicon-selected-background border-atlassify-heroicon-selected-background'
-                        : 'text-atlassify-heroicon-neutral-outline bg-atlassify-heroicon-neutral-background border-atlassify-heroicon-neutral-background',
-                    )}
-                  />
-                )}
-                <Badge
-                  appearance={isChecked ? 'information' : null}
-                  max={false}
-                >
-                  {count}
-                </Badge>
-              </Inline>
-            );
-          },
-        )}
+              )}
+              {typeDetails.logo && (
+                <typeDetails.logo
+                  appearance={isChecked ? 'brand' : 'neutral'}
+                  shouldUseNewLogoDesign
+                  size="xxsmall"
+                />
+              )}
+              {typeDetails.heroicon && (
+                <typeDetails.heroicon
+                  className={cn(
+                    'size-4 p-px rounded border',
+                    isChecked
+                      ? 'text-atlassify-heroicon-selected-outline bg-atlassify-heroicon-selected-background border-atlassify-heroicon-selected-background'
+                      : 'text-atlassify-heroicon-neutral-outline bg-atlassify-heroicon-neutral-background border-atlassify-heroicon-neutral-background',
+                  )}
+                />
+              )}
+              <Badge appearance={isChecked ? 'information' : null} max={false}>
+                {count}
+              </Badge>
+            </Inline>
+          );
+        })}
       </Box>
     </Stack>
   );
 };
 
 // Memoize the component to prevent unnecessary re-renders
-export const FilterSection = memo(
-  FilterSectionComponent,
-) as typeof FilterSectionComponent;
+export const FilterSection = memo(FilterSectionComponent) as typeof FilterSectionComponent;

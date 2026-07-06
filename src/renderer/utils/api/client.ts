@@ -4,19 +4,8 @@ import { Constants } from '../../constants';
 
 import { useSettingsStore } from '../../stores';
 
-import type {
-  Account,
-  CloudID,
-  Hostname,
-  JiraProjectKey,
-  Token,
-  Username,
-} from '../../types';
-import type {
-  AtlassianGraphQLResponse,
-  JiraProjectRestResponse,
-  JiraProjectType,
-} from './types';
+import type { Account, CloudID, Hostname, JiraProjectKey, Token, Username } from '../../types';
+import type { AtlassianGraphQLResponse, JiraProjectRestResponse, JiraProjectType } from './types';
 
 import {
   InfluentsNotificationReadState,
@@ -75,9 +64,7 @@ export function checkIfCredentialsAreValid(
  *
  * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
  */
-export function getAuthenticatedUser(
-  account: Account,
-): Promise<AtlassianGraphQLResponse<MeQuery>> {
+export function getAuthenticatedUser(account: Account): Promise<AtlassianGraphQLResponse<MeQuery>> {
   return performRequestForAccount(account, MeDocument);
 }
 
@@ -97,9 +84,7 @@ export function getNotificationsForUser(
   return performRequestForAccount(account, MyNotificationsDocument, {
     first: Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
     flat: !settings.groupNotificationsByTitle,
-    readState: settings.fetchOnlyUnreadNotifications
-      ? InfluentsNotificationReadState.Unread
-      : null,
+    readState: settings.fetchOnlyUnreadNotifications ? InfluentsNotificationReadState.Unread : null,
   });
 }
 
@@ -155,17 +140,11 @@ export function getNotificationsByGroupId(
   notificationGroupSize: number,
 ): Promise<AtlassianGraphQLResponse<RetrieveNotificationsByGroupIdQuery>> {
   const settings = useSettingsStore.getState();
-  return performRequestForAccount(
-    account,
-    RetrieveNotificationsByGroupIdDocument,
-    {
-      groupId: notificationGroupId,
-      first: notificationGroupSize,
-      readState: settings.fetchOnlyUnreadNotifications
-        ? InfluentsNotificationReadState.Unread
-        : null,
-    },
-  );
+  return performRequestForAccount(account, RetrieveNotificationsByGroupIdDocument, {
+    groupId: notificationGroupId,
+    first: notificationGroupSize,
+    readState: settings.fetchOnlyUnreadNotifications ? InfluentsNotificationReadState.Unread : null,
+  });
 }
 
 /**
@@ -181,13 +160,9 @@ export function getCloudIDsForHostnames(
   account: Account,
   hostnames: Hostname[],
 ): Promise<AtlassianGraphQLResponse<RetrieveCloudIDsForHostnamesQuery>> {
-  return performRequestForAccount(
-    account,
-    RetrieveCloudIDsForHostnamesDocument,
-    {
-      hostNames: hostnames,
-    },
-  );
+  return performRequestForAccount(account, RetrieveCloudIDsForHostnamesDocument, {
+    hostNames: hostnames,
+  });
 }
 
 /**
@@ -207,10 +182,7 @@ export async function getJiraProjectTypeByKey(
 ): Promise<JiraProjectType> {
   const url = `https://api.atlassian.com/ex/jira/${cloudId}/rest/api/3/project/${projectKey}`;
 
-  const response = await performRESTRequestForAccount<JiraProjectRestResponse>(
-    url,
-    account,
-  );
+  const response = await performRESTRequestForAccount<JiraProjectRestResponse>(url, account);
 
   return response.projectTypeKey;
 }

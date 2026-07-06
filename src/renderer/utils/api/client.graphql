@@ -26,11 +26,7 @@ query RetrieveNotificationsByGroupId(
   $readState: InfluentsNotificationReadState
 ) {
   notifications {
-    notificationGroup(
-      groupId: $groupId
-      first: $first
-      filter: { readStateFilter: $readState }
-    ) {
+    notificationGroup(groupId: $groupId, first: $first, filter: { readStateFilter: $readState }) {
       nodes {
         ...GroupNotificationDetails
       }
@@ -50,11 +46,7 @@ query MyNotifications(
 ) {
   notifications {
     unseenNotificationCount
-    notificationFeed(
-      flat: $flat
-      first: $first
-      filter: { readStateFilter: $readState }
-    ) {
+    notificationFeed(flat: $flat, first: $first, filter: { readStateFilter: $readState }) {
       pageInfo {
         hasNextPage
       }

@@ -6,18 +6,13 @@ import { mockAtlassifyNotifications } from '../../__mocks__/notifications-mocks'
 
 import * as comms from '../../utils/system/comms';
 import * as theme from '../../utils/ui/theme';
-import {
-  ProductNotifications,
-  type ProductNotificationsProps,
-} from './ProductNotifications';
+import { ProductNotifications, type ProductNotificationsProps } from './ProductNotifications';
 
 vi.mock('./NotificationRow', () => ({
   NotificationRow: () => <div>NotificationRow</div>,
 }));
 
-const openExternalLinkSpy = vi
-  .spyOn(comms, 'openExternalLink')
-  .mockImplementation(vi.fn());
+const openExternalLinkSpy = vi.spyOn(comms, 'openExternalLink').mockImplementation(vi.fn());
 
 describe('renderer/components/notifications/ProductNotifications.tsx', () => {
   it('should render itself & its children - light mode', () => {
@@ -69,9 +64,7 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
 
     await act(async () => {
       renderWithProviders(
-        <ProductNotifications
-          productNotifications={[mockConfluenceNotification]}
-        />,
+        <ProductNotifications productNotifications={[mockConfluenceNotification]} />,
       );
     });
 

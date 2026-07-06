@@ -71,9 +71,7 @@ describe('components/GlobalShortcuts.tsx', () => {
 
         await userEvent.keyboard('u');
 
-        expect(toggleSettingsSpy).toHaveBeenCalledWith(
-          'fetchOnlyUnreadNotifications',
-        );
+        expect(toggleSettingsSpy).toHaveBeenCalledWith('fetchOnlyUnreadNotifications');
       });
 
       it('does not toggle read/unread when logged out', async () => {
@@ -105,9 +103,7 @@ describe('components/GlobalShortcuts.tsx', () => {
 
         await userEvent.keyboard('p');
 
-        expect(toggleSettingsSpy).toHaveBeenCalledWith(
-          'groupNotificationsByProduct',
-        );
+        expect(toggleSettingsSpy).toHaveBeenCalledWith('groupNotificationsByProduct');
       });
 
       it('does not toggle group by product when logged out', async () => {
@@ -129,9 +125,7 @@ describe('components/GlobalShortcuts.tsx', () => {
 
         await userEvent.keyboard('t');
 
-        expect(toggleSettingsSpy).toHaveBeenCalledWith(
-          'groupNotificationsByTitle',
-        );
+        expect(toggleSettingsSpy).toHaveBeenCalledWith('groupNotificationsByTitle');
       });
 
       it('does not toggle group by title when logged out', async () => {
@@ -268,9 +262,7 @@ describe('components/GlobalShortcuts.tsx', () => {
           </div>,
         );
 
-        const input = document.getElementById(
-          'test-input',
-        ) as HTMLTextAreaElement;
+        const input = document.getElementById('test-input') as HTMLTextAreaElement;
         input.focus();
         await userEvent.type(input, 'h');
 
@@ -285,9 +277,7 @@ describe('components/GlobalShortcuts.tsx', () => {
           </div>,
         );
 
-        const textarea = document.getElementById(
-          'test-textarea',
-        ) as HTMLTextAreaElement;
+        const textarea = document.getElementById('test-textarea') as HTMLTextAreaElement;
         textarea.focus();
         await userEvent.type(textarea, 'h');
 

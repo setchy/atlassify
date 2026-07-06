@@ -1,8 +1,4 @@
-import {
-  type RenderHookOptions,
-  render,
-  renderHook,
-} from '@testing-library/react';
+import { type RenderHookOptions, render, renderHook } from '@testing-library/react';
 import { type ReactElement, type ReactNode, useMemo } from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
@@ -11,11 +7,7 @@ import axios from 'axios';
 
 import { AppContext, type AppContextState } from '../context/AppContext';
 import { useAccountsStore, useFiltersStore, useSettingsStore } from '../stores';
-import type {
-  AccountsStore,
-  FiltersStore,
-  SettingsStore,
-} from '../stores/types';
+import type { AccountsStore, FiltersStore, SettingsStore } from '../stores/types';
 
 export { navigateMock } from './vitest.setup';
 
@@ -64,9 +56,7 @@ function AppContextProvider({
 
   return (
     <MemoryRouter initialEntries={initialEntries}>
-      <AppContext.Provider value={defaultValue as AppContextState}>
-        {children}
-      </AppContext.Provider>
+      <AppContext.Provider value={defaultValue as AppContextState}>{children}</AppContext.Provider>
     </MemoryRouter>
   );
 }
@@ -113,13 +103,7 @@ export function renderHookWithProviders<T>(
  */
 export function renderWithProviders(
   ui: ReactElement,
-  {
-    initialEntries,
-    accounts,
-    settings,
-    filters,
-    ...context
-  }: RenderOptions = {},
+  { initialEntries, accounts, settings, filters, ...context }: RenderOptions = {},
 ) {
   if (accounts) {
     useAccountsStore.setState(accounts);

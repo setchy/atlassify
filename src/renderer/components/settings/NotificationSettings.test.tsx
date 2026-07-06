@@ -30,14 +30,10 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
       settings: { groupNotificationsByProduct: true },
     });
 
-    await userEvent.click(
-      screen.getByLabelText('Sort product groups alphabetically'),
-    );
+    await userEvent.click(screen.getByLabelText('Sort product groups alphabetically'));
 
     expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
-    expect(toggleSettingSpy).toHaveBeenCalledWith(
-      'groupNotificationsByProductAlphabetically',
-    );
+    expect(toggleSettingSpy).toHaveBeenCalledWith('groupNotificationsByProductAlphabetically');
   });
 
   it('should not toggle the sortGroupedNotificationsByProductAlphabetically checkbox when groupNotificationsByProduct is false', async () => {
@@ -45,14 +41,10 @@ describe('renderer/components/settings/NotificationSettings.tsx', () => {
       settings: { groupNotificationsByProduct: false },
     });
 
-    await userEvent.click(
-      screen.getByLabelText('Sort product groups alphabetically'),
-    );
+    await userEvent.click(screen.getByLabelText('Sort product groups alphabetically'));
 
     expect(toggleSettingSpy).toHaveBeenCalledTimes(0);
-    expect(toggleSettingSpy).not.toHaveBeenCalledWith(
-      'groupNotificationsByProductAlphabetically',
-    );
+    expect(toggleSettingSpy).not.toHaveBeenCalledWith('groupNotificationsByProductAlphabetically');
   });
 
   it('should toggle the delayNotificationState checkbox', async () => {

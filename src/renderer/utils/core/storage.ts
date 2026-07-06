@@ -60,10 +60,6 @@ export async function migrateLegacyStoreToZustand() {
       'Successfully migrated from legacy storage state to Zustand stores',
     );
   } catch (err) {
-    rendererLogError(
-      'migrateLegacyStoreToZustand',
-      'Error during storage migration',
-      err,
-    );
+    rendererLogError('migrateLegacyStoreToZustand', 'Error during storage migration', err);
   }
 }

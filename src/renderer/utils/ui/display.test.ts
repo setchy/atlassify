@@ -30,9 +30,7 @@ describe('renderer/utils/ui/display.ts', () => {
     expect(blockAlignmentByLength('Some short string')).toEqual('center');
 
     expect(
-      blockAlignmentByLength(
-        'Some much longer string that should trigger a different format',
-      ),
+      blockAlignmentByLength('Some much longer string that should trigger a different format'),
     ).toEqual('start');
   });
 });

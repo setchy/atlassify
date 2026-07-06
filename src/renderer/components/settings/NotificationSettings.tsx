@@ -21,12 +21,8 @@ export const NotificationSettings: FC = () => {
   const groupNotificationsByProductAlphabetically = useSettingsStore(
     (s) => s.groupNotificationsByProductAlphabetically,
   );
-  const groupNotificationsByProduct = useSettingsStore(
-    (s) => s.groupNotificationsByProduct,
-  );
-  const delayNotificationState = useSettingsStore(
-    (s) => s.delayNotificationState,
-  );
+  const groupNotificationsByProduct = useSettingsStore((s) => s.groupNotificationsByProduct);
+  const delayNotificationState = useSettingsStore((s) => s.delayNotificationState);
 
   return (
     <Stack space="space.100">
@@ -45,9 +41,7 @@ export const NotificationSettings: FC = () => {
           isDisabled={!groupNotificationsByProduct}
           label={t('settings.notifications.group_alphabetically')}
           name="groupNotificationsByProductAlphabetically"
-          onChange={() =>
-            toggleSetting('groupNotificationsByProductAlphabetically')
-          }
+          onChange={() => toggleSetting('groupNotificationsByProductAlphabetically')}
         />
         <InlineMessage appearance="info">
           <div className="settings-help-text">

@@ -49,14 +49,10 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
     it('should toggle the playSoundNewNotifications checkbox', async () => {
       renderWithProviders(<SystemSettings />);
 
-      await userEvent.click(
-        screen.getByLabelText('Play sound for new notifications'),
-      );
+      await userEvent.click(screen.getByLabelText('Play sound for new notifications'));
 
       expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
-      expect(toggleSettingSpy).toHaveBeenCalledWith(
-        'playSoundNewNotifications',
-      );
+      expect(toggleSettingSpy).toHaveBeenCalledWith('playSoundNewNotifications');
     });
 
     it('volume controls should not be shown if playSound checkbox is false', async () => {
@@ -108,9 +104,7 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
   it('should toggle the enableAnonymousAnalytics checkbox', async () => {
     renderWithProviders(<SystemSettings />);
 
-    await userEvent.click(
-      screen.getByLabelText('Share anonymous usage analytics'),
-    );
+    await userEvent.click(screen.getByLabelText('Share anonymous usage analytics'));
 
     expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
     expect(toggleSettingSpy).toHaveBeenCalledWith('enableAnonymousAnalytics');

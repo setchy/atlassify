@@ -2,10 +2,7 @@ import { renderWithProviders } from '../../__helpers__/test-utils';
 import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
 
 import { PRODUCTS } from '../../utils/products';
-import {
-  NotificationAvatar,
-  type NotificationAvatarProps,
-} from './NotificationAvatar';
+import { NotificationAvatar, type NotificationAvatarProps } from './NotificationAvatar';
 
 describe('renderer/components/notifications/NotificationAvatar.tsx', () => {
   it('renders actor avatar with circle appearance', () => {

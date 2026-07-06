@@ -27,13 +27,9 @@ describe('renderer/utils/notifications/filters/category.ts', () => {
   });
 
   it('getCategoryFilterCount', () => {
-    expect(
-      categoryFilter.getFilterCount(mockAccountNotifications, 'watching'),
-    ).toBe(0);
+    expect(categoryFilter.getFilterCount(mockAccountNotifications, 'watching')).toBe(0);
 
-    expect(
-      categoryFilter.getFilterCount(mockAccountNotifications, 'direct'),
-    ).toBe(2);
+    expect(categoryFilter.getFilterCount(mockAccountNotifications, 'direct')).toBe(2);
   });
 
   it('filterNotificationByCategory', () => {
@@ -42,12 +38,8 @@ describe('renderer/utils/notifications/filters/category.ts', () => {
       category: 'direct',
     } as AtlassifyNotification;
 
-    expect(
-      categoryFilter.filterNotification(mockNotification, 'watching'),
-    ).toBe(false);
+    expect(categoryFilter.filterNotification(mockNotification, 'watching')).toBe(false);
 
-    expect(categoryFilter.filterNotification(mockNotification, 'direct')).toBe(
-      true,
-    );
+    expect(categoryFilter.filterNotification(mockNotification, 'direct')).toBe(true);
   });
 });

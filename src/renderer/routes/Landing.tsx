@@ -40,6 +40,7 @@ export const LandingRoute: FC = () => {
       showWindow();
       navigate('/', { replace: true });
     }
+    // oxlint-disable-next-line react/exhaustive-deps -- navigate is stable
   }, [isLoggedIn]);
 
   const commonLogoProps: LogoProps = {
@@ -71,9 +72,7 @@ export const LandingRoute: FC = () => {
         <Tooltip content={t('landing.login.tooltip')}>
           <Button
             appearance="primary"
-            iconBefore={(iconProps) => (
-              <AtlassianIcon {...iconProps} size="small" />
-            )}
+            iconBefore={(iconProps) => <AtlassianIcon {...iconProps} size="small" />}
             onClick={() => navigate('/login')}
             spacing="default"
             testId="login"

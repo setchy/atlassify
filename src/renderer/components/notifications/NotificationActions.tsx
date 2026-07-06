@@ -26,18 +26,10 @@ export const NotificationActions: FC<NotificationActionsProps> = ({
     <Box as="div" id="notification-actions">
       {!isAnimatingExit &&
         (isUnread ? (
-          <Tooltip
-            content={t('notifications.interactions.mark_as_read')}
-            position="left"
-          >
+          <Tooltip content={t('notifications.interactions.mark_as_read')} position="left">
             <IconButton
               appearance="subtle"
-              icon={() => (
-                <StrokeWeightLargeIcon
-                  color={token('color.icon.brand')}
-                  label=""
-                />
-              )}
+              icon={() => <StrokeWeightLargeIcon color={token('color.icon.brand')} label="" />}
               label={t('notifications.interactions.mark_as_read')}
               onClick={onMarkAsRead}
               shape="circle"
@@ -46,10 +38,7 @@ export const NotificationActions: FC<NotificationActionsProps> = ({
             />
           </Tooltip>
         ) : (
-          <Tooltip
-            content={t('notifications.interactions.mark_as_unread')}
-            position="left"
-          >
+          <Tooltip content={t('notifications.interactions.mark_as_unread')} position="left">
             <IconButton
               appearance="subtle"
               icon={() => null}

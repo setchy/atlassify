@@ -23,9 +23,7 @@ describe('renderer/utils/api/errors.ts', () => {
         response: createMockResponse(401, 'Bad credentials'),
       };
 
-      const result = determineFailureType(
-        mockError as AxiosError<AtlassianAPIError>,
-      );
+      const result = determineFailureType(mockError as AxiosError<AtlassianAPIError>);
 
       expect(result).toBe(Errors.BAD_CREDENTIALS);
     });
@@ -37,9 +35,7 @@ describe('renderer/utils/api/errors.ts', () => {
         response: createMockResponse(404, 'Bad credentials'),
       };
 
-      const result = determineFailureType(
-        mockError as AxiosError<AtlassianAPIError>,
-      );
+      const result = determineFailureType(mockError as AxiosError<AtlassianAPIError>);
 
       expect(result).toBe(Errors.BAD_CREDENTIALS);
     });
@@ -51,9 +47,7 @@ describe('renderer/utils/api/errors.ts', () => {
         message: `Error invoking remote method '${EVENTS.SAFE_STORAGE_DECRYPT}': Error: Error while decrypting the ciphertext provided to safeStorage.decryptString. Ciphertext does not appear to be encrypted.`,
       };
 
-      const result = determineFailureType(
-        mockError as AxiosError<AtlassianAPIError>,
-      );
+      const result = determineFailureType(mockError as AxiosError<AtlassianAPIError>);
 
       expect(result).toBe(Errors.BAD_CREDENTIALS);
     });
@@ -64,9 +58,7 @@ describe('renderer/utils/api/errors.ts', () => {
       message: Errors.BAD_REQUEST.title,
     };
 
-    const result = determineFailureType(
-      mockError as AxiosError<AtlassianAPIError>,
-    );
+    const result = determineFailureType(mockError as AxiosError<AtlassianAPIError>);
 
     expect(result).toBe(Errors.BAD_REQUEST);
   });
@@ -76,9 +68,7 @@ describe('renderer/utils/api/errors.ts', () => {
       code: AxiosError.ERR_NETWORK,
     };
 
-    const result = determineFailureType(
-      mockError as AxiosError<AtlassianAPIError>,
-    );
+    const result = determineFailureType(mockError as AxiosError<AtlassianAPIError>);
 
     expect(result).toBe(Errors.NETWORK);
   });
@@ -89,9 +79,7 @@ describe('renderer/utils/api/errors.ts', () => {
       code: AxiosError.ERR_NETWORK,
     };
 
-    const result = determineFailureType(
-      mockError as AxiosError<AtlassianAPIError>,
-    );
+    const result = determineFailureType(mockError as AxiosError<AtlassianAPIError>);
 
     expect(result).toBe(Errors.OFFLINE);
   });
@@ -101,18 +89,13 @@ describe('renderer/utils/api/errors.ts', () => {
       code: 'anything',
     };
 
-    const result = determineFailureType(
-      mockError as AxiosError<AtlassianAPIError>,
-    );
+    const result = determineFailureType(mockError as AxiosError<AtlassianAPIError>);
 
     expect(result).toBe(Errors.UNKNOWN);
   });
 });
 
-function createMockResponse(
-  status: number,
-  message: string,
-): AxiosResponse<AtlassianAPIError> {
+function createMockResponse(status: number, message: string): AxiosResponse<AtlassianAPIError> {
   return {
     data: {
       code: status,

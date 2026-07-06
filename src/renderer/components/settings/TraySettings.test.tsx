@@ -19,14 +19,10 @@ describe('renderer/components/settings/TraySettings.tsx', () => {
   });
 
   it('should toggle the showNotificationsCountInTray checkbox', async () => {
-    await userEvent.click(
-      screen.getByLabelText('Show notifications count in tray'),
-    );
+    await userEvent.click(screen.getByLabelText('Show notifications count in tray'));
 
     expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
-    expect(toggleSettingSpy).toHaveBeenCalledWith(
-      'showNotificationsCountInTray',
-    );
+    expect(toggleSettingSpy).toHaveBeenCalledWith('showNotificationsCountInTray');
   });
 
   it('should set useUnreadActiveIcon to false when Stealth radio is selected', async () => {
@@ -59,10 +55,7 @@ describe('renderer/components/settings/TraySettings.tsx', () => {
     await userEvent.click(screen.getByRole('radio', { name: 'Default' }));
 
     expect(updateSettingSpy).toHaveBeenCalledTimes(1);
-    expect(updateSettingSpy).toHaveBeenCalledWith(
-      'useAlternateIdleIcon',
-      false,
-    );
+    expect(updateSettingSpy).toHaveBeenCalledWith('useAlternateIdleIcon', false);
   });
 
   it('should set useAlternateIdleIcon to true when Alternate radio is selected', async () => {

@@ -17,13 +17,9 @@ import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
 
 import type { JiraProjectType } from '../api/types';
 
+import { __resetProductInferenceCaches, inferAtlassianProduct, PRODUCTS } from '.';
 import type { AtlassianHeadNotificationFragment } from '../api/graphql/generated/graphql';
 import { rendererLogError } from '../core/logger';
-import {
-  __resetProductInferenceCaches,
-  inferAtlassianProduct,
-  PRODUCTS,
-} from '.';
 
 describe('renderer/utils/products/inference.ts', () => {
   describe('inferAtlassianProduct', () => {
@@ -94,10 +90,7 @@ describe('renderer/utils/products/inference.ts', () => {
 
     describe('lookupJiraProjectType', () => {
       const host = 'somehost';
-      const makeJiraNotif = (
-        key: string,
-        issue = 123,
-      ): AtlassianHeadNotificationFragment =>
+      const makeJiraNotif = (key: string, issue = 123): AtlassianHeadNotificationFragment =>
         ({
           ...createProductNotificationMock('jira'),
           content: {
@@ -113,9 +106,7 @@ describe('renderer/utils/products/inference.ts', () => {
       const setProjectType = (t: JiraProjectType) =>
         vi.mocked(getJiraProjectTypeByKey).mockResolvedValueOnce(t);
 
-      test.each<
-        [JiraProjectType, string, (typeof PRODUCTS)[keyof typeof PRODUCTS]]
-      >([
+      test.each<[JiraProjectType, string, (typeof PRODUCTS)[keyof typeof PRODUCTS]]>([
         ['product_discovery', 'PDD', PRODUCTS.jira_product_discovery],
         ['service_desk', 'SVC', PRODUCTS.jira_service_management],
         ['business', 'BUS', PRODUCTS.jira],
@@ -124,9 +115,7 @@ describe('renderer/utils/products/inference.ts', () => {
       ])('project type %s maps', async (projType, key, expected) => {
         setProjectType(projType);
         const notif = makeJiraNotif(key);
-        expect(
-          await inferAtlassianProduct(mockAtlassianCloudAccount, notif),
-        ).toBe(expected);
+        expect(await inferAtlassianProduct(mockAtlassianCloudAccount, notif)).toBe(expected);
       });
 
       it('falls back to jira when empty path', async () => {
@@ -134,12 +123,9 @@ describe('renderer/utils/products/inference.ts', () => {
           ...createProductNotificationMock('jira'),
           content: { path: [] },
         } as AtlassianHeadNotificationFragment;
-        expect(
-          await inferAtlassianProduct(
-            mockAtlassianCloudAccount,
-            mockNotification,
-          ),
-        ).toBe(PRODUCTS.jira);
+        expect(await inferAtlassianProduct(mockAtlassianCloudAccount, mockNotification)).toBe(
+          PRODUCTS.jira,
+        );
       });
 
       it('falls back to jira on invalid URL', async () => {
@@ -147,50 +133,32 @@ describe('renderer/utils/products/inference.ts', () => {
           ...createProductNotificationMock('jira'),
           content: { path: [{ title: 'ABC-1', url: 'not-a-valid-url' }] },
         } as unknown as AtlassianHeadNotificationFragment;
-        expect(
-          await inferAtlassianProduct(
-            mockAtlassianCloudAccount,
-            mockNotification,
-          ),
-        ).toBe(PRODUCTS.jira);
+        expect(await inferAtlassianProduct(mockAtlassianCloudAccount, mockNotification)).toBe(
+          PRODUCTS.jira,
+        );
       });
 
       it('caches cloud id + project type lookups', async () => {
         setProjectType('software');
-        await inferAtlassianProduct(
-          mockAtlassianCloudAccount,
-          makeJiraNotif('AAA'),
-        );
+        await inferAtlassianProduct(mockAtlassianCloudAccount, makeJiraNotif('AAA'));
         // Second same key
-        await inferAtlassianProduct(
-          mockAtlassianCloudAccount,
-          makeJiraNotif('AAA'),
-        );
+        await inferAtlassianProduct(mockAtlassianCloudAccount, makeJiraNotif('AAA'));
         // Different key reuses cloud id but new project type fetch
         setProjectType('service_desk');
-        await inferAtlassianProduct(
-          mockAtlassianCloudAccount,
-          makeJiraNotif('BBB'),
-        );
+        await inferAtlassianProduct(mockAtlassianCloudAccount, makeJiraNotif('BBB'));
 
         const cloudCalls = vi.mocked(getCloudIDsForHostnames).mock.calls;
         expect(cloudCalls.length).toBe(1);
         const projCalls = vi.mocked(getJiraProjectTypeByKey).mock.calls;
         // 1st key fetch + 2nd key fetch = 2
-        expect(
-          projCalls.filter((c) => ['AAA', 'BBB'].includes(c[2])).length,
-        ).toBe(2);
+        expect(projCalls.filter((c) => ['AAA', 'BBB'].includes(c[2])).length).toBe(2);
       });
 
       it('logs and falls back when cloud id retrieval fails', async () => {
         __resetProductInferenceCaches();
-        vi.mocked(getCloudIDsForHostnames).mockRejectedValueOnce(
-          new Error('cloud boom'),
-        );
+        vi.mocked(getCloudIDsForHostnames).mockRejectedValueOnce(new Error('cloud boom'));
         const notif = makeJiraNotif('ERR1');
-        expect(
-          await inferAtlassianProduct(mockAtlassianCloudAccount, notif),
-        ).toBe(PRODUCTS.jira);
+        expect(await inferAtlassianProduct(mockAtlassianCloudAccount, notif)).toBe(PRODUCTS.jira);
         expect(rendererLogError).toHaveBeenCalled();
       });
 
@@ -199,13 +167,9 @@ describe('renderer/utils/products/inference.ts', () => {
         vi.mocked(getCloudIDsForHostnames).mockResolvedValueOnce({
           data: { tenantContexts: [{ cloudId: 'cloud-2' }] },
         });
-        vi.mocked(getJiraProjectTypeByKey).mockRejectedValueOnce(
-          new Error('project boom'),
-        );
+        vi.mocked(getJiraProjectTypeByKey).mockRejectedValueOnce(new Error('project boom'));
         const notif = makeJiraNotif('ERR2');
-        expect(
-          await inferAtlassianProduct(mockAtlassianCloudAccount, notif),
-        ).toBe(PRODUCTS.jira);
+        expect(await inferAtlassianProduct(mockAtlassianCloudAccount, notif)).toBe(PRODUCTS.jira);
         expect(rendererLogError).toHaveBeenCalled();
       });
     });
