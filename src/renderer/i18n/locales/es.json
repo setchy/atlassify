@@ -206,6 +206,8 @@
       "title": "Restablecer configuración"
     },
     "system": {
+      "anonymous_analytics": "Compartir análisis de uso anónimos",
+      "anonymous_analytics_help": "Ayuda a mejorar {{appName}} enviando eventos de uso anónimos (por ejemplo: pantallas visitadas y acciones usadas). Nunca se envían tokens API de Atlassian ni contenido de notificaciones.",
       "keyboard_shortcut": "Habilitar atajo de teclado",
       "keyboard_shortcut_help": "Cuando está habilitado, puede usar las teclas de acceso rápido {{shortcut}} para mostrar u ocultar {{appName}}.",
       "open_links": "Enlaces abiertos",

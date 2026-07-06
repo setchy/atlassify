@@ -94,189 +94,227 @@ const reactDevToolsPlugin = (): Plugin => ({
   },
 });
 
-const isBuild = process.argv.includes('build');
+/**
+ * TODO: Remove this workaround once Rolldown/Vite handles this Atlaskit Popper
+ * re-export path correctly.
+ *
+ * Vite 8 (Rolldown) currently fails to resolve `placements` through
+ * `@atlaskit/popper -> @popperjs/core` re-exports.
+ *
+ * Patch the single problematic re-export to read from Popper's enums module.
+ */
+const atlaskitPopperCompatPlugin = (): Plugin => ({
+  name: 'atlaskit-popper-compat',
+  enforce: 'pre',
+  transform(code, id) {
+    if (!id.includes('/@atlaskit/popper/dist/esm/popper.js')) {
+      return null;
+    }
 
-export default defineConfig({
-  plugins: [
-    // only run the checker plugin in dev (not during `vite build`)
-    ...(isBuild
-      ? []
-      : [
-          checker({
-            typescript: true,
-            biome: { dev: { logLevel: ['error'] } },
-          }),
-        ]),
-    reactDevToolsPlugin(),
-    compiled(),
-    react({
-      plugins: [
-        [
-          '@swc-contrib/plugin-graphql-codegen-client-preset',
-          {
-            artifactDirectory: './src/renderer/utils/api/graphql/generated',
-            gqlTagName: 'graphql',
-          },
+    return {
+      code: code.replace(
+        "export { placements } from '@popperjs/core';",
+        "export { placements } from '@popperjs/core/lib/enums.js';",
+      ),
+      map: null,
+    };
+  },
+});
+
+export default defineConfig(({ command }) => {
+  const isBuild = command === 'build';
+
+  return {
+    plugins: [
+      // only run the checker plugin in dev (not during `vite build`)
+      ...(isBuild
+        ? []
+        : [
+            checker({
+              typescript: true,
+              biome: { dev: { logLevel: ['error'] } },
+            }),
+          ]),
+      reactDevToolsPlugin(),
+      atlaskitPopperCompatPlugin(),
+      compiled(),
+      react({
+        plugins: [
+          [
+            '@swc-contrib/plugin-graphql-codegen-client-preset',
+            {
+              artifactDirectory: './src/renderer/utils/api/graphql/generated',
+              gqlTagName: 'graphql',
+            },
+          ],
         ],
-      ],
-    }),
-    tailwindcss(),
-    electron({
-      main: {
-        entry: fileURLToPath(new URL('src/main/index.ts', import.meta.url)),
-        vite: {
-          // The outer Vite config sets root:'src/renderer', so we must
-          // explicitly tell the main-process sub-build where to find .env files.
-          envDir: fileURLToPath(new URL('.', import.meta.url)),
-          build: {
-            outDir: fileURLToPath(new URL('build', import.meta.url)),
-            rollupOptions: {
-              output: { entryFileNames: 'main.js' },
-              external: [
-                'electron',
-                // TODO - how many of these are truly needed?
-                'electron-log',
-                'electron-updater',
-                'menubar',
-                '@aptabase/electron',
-              ],
+      }),
+      tailwindcss(),
+      electron({
+        main: {
+          entry: fileURLToPath(new URL('src/main/index.ts', import.meta.url)),
+          onstart: async ({ startup }) => {
+            // vite-plugin-electron v1 starts Electron with `cwd: server.config.root`.
+            // Our Vite root is `src/renderer`, so we must override `cwd` back to the
+            // repository root or Electron will try to boot from `src/renderer`.
+            await startup(undefined, {
+              cwd: fileURLToPath(new URL('.', import.meta.url)),
+            });
+          },
+          vite: {
+            // The outer Vite config sets root:'src/renderer', so we must
+            // explicitly tell the main-process sub-build where to find .env files.
+            envDir: fileURLToPath(new URL('.', import.meta.url)),
+            build: {
+              outDir: fileURLToPath(new URL('build', import.meta.url)),
+              rolldownOptions: {
+                output: { entryFileNames: 'main.js' },
+                external: [
+                  'electron',
+                  // TODO - how many of these are truly needed?
+                  'electron-log',
+                  'electron-updater',
+                  'menubar',
+                  '@aptabase/electron',
+                ],
+              },
             },
           },
         },
-      },
-      preload: {
-        input: fileURLToPath(new URL('src/preload/index.ts', import.meta.url)),
-        vite: {
-          build: {
-            outDir: fileURLToPath(new URL('build', import.meta.url)),
-            rollupOptions: { output: { entryFileNames: 'preload.js' } },
+        preload: {
+          input: fileURLToPath(new URL('src/preload/index.ts', import.meta.url)),
+          vite: {
+            build: {
+              outDir: fileURLToPath(new URL('build', import.meta.url)),
+              rolldownOptions: { output: { entryFileNames: 'preload.js' } },
+            },
+            resolve: { conditions: ['node'] },
           },
-          resolve: { conditions: ['node'] },
         },
-      },
-    }),
-    copyStaticAssetsPlugin(),
-  ],
-  root: 'src/renderer',
-  publicDir: false as const,
-  base: './',
-  build: {
-    outDir: fileURLToPath(new URL('build', import.meta.url)),
-    emptyOutDir: true,
-  },
-  lint: {
-    plugins: ['typescript', 'react', 'unicorn', 'oxc', 'import'],
-    categories: {
-      correctness: 'error',
-    },
-    ignorePatterns: ['**/generated/**', 'build/**', 'dist/**', 'coverage/**', 'node_modules/**'],
-    rules: {
-      'no-console': 'error',
-      'no-unused-vars': [
-        'error',
-        {
-          args: 'after-used',
-          argsIgnorePattern: '^_',
-          varsIgnorePattern: '^_',
-          caughtErrorsIgnorePattern: '^_',
-        },
-      ],
-      'no-param-reassign': 'error',
-      'default-param-last': 'error',
-      'default-case': 'error',
-      curly: 'error',
-      'react/exhaustive-deps': 'warn',
-      'react/rules-of-hooks': 'error',
-      'react/self-closing-comp': 'error',
-      'typescript/no-inferrable-types': 'error',
-      'typescript/prefer-as-const': 'error',
-      'typescript/prefer-enum-initializers': 'error',
-      'unicorn/prefer-number-properties': 'error',
-    },
-    overrides: [
-      {
-        files: ['**/*.test.ts', '**/*.test.tsx', '**/__mocks__/**', '**/__helpers__/**'],
-        rules: {
-          'typescript/no-explicit-any': 'off',
-          'no-console': 'off',
-        },
-      },
-      {
-        files: ['scripts/**', 'codegen.ts', 'vite.config.ts', 'vitest.config.ts'],
-        rules: {
-          'no-console': 'off',
-        },
-      },
+      }),
+      copyStaticAssetsPlugin(),
     ],
-  },
-  fmt: {
-    tabWidth: 2,
-    useTabs: false,
-    singleQuote: true,
-    jsxSingleQuote: false,
-    ignorePatterns: [
-      '**/generated/**',
-      'build/**',
-      'dist/**',
-      'coverage/**',
-      '.context/**',
-      'index.html',
-    ],
-    sortImports: {
-      newlinesBetween: true,
-      customGroups: [
-        { groupName: 'react', elementNamePattern: ['react', 'react-*', '@testing-library/**'] },
-        { groupName: 'electron', elementNamePattern: ['*electron*', 'menubar'] },
-        { groupName: 'primer', elementNamePattern: ['@primer/**'] },
-        { groupName: 'octokit', elementNamePattern: ['@octokit/**'] },
+    root: 'src/renderer',
+    publicDir: false as const,
+    base: './',
+    build: {
+      outDir: fileURLToPath(new URL('build', import.meta.url)),
+      emptyOutDir: true,
+    },
+    lint: {
+      plugins: ['typescript', 'react', 'unicorn', 'oxc', 'import'],
+      categories: {
+        correctness: 'error',
+      },
+      ignorePatterns: ['**/generated/**', 'build/**', 'dist/**', 'coverage/**', 'node_modules/**'],
+      rules: {
+        'no-console': 'error',
+        'no-unused-vars': [
+          'error',
+          {
+            args: 'after-used',
+            argsIgnorePattern: '^_',
+            varsIgnorePattern: '^_',
+            caughtErrorsIgnorePattern: '^_',
+          },
+        ],
+        'no-param-reassign': 'error',
+        'default-param-last': 'error',
+        'default-case': 'error',
+        curly: 'error',
+        'react/exhaustive-deps': 'warn',
+        'react/rules-of-hooks': 'error',
+        'react/self-closing-comp': 'error',
+        'typescript/no-inferrable-types': 'error',
+        'typescript/prefer-as-const': 'error',
+        'typescript/prefer-enum-initializers': 'error',
+        'unicorn/prefer-number-properties': 'error',
+      },
+      overrides: [
         {
-          groupName: 'mocks-helpers',
-          elementNamePattern: ['**/__mocks__/**', '**/__helpers__/**'],
-        },
-        { groupName: 'shared', elementNamePattern: ['**/shared/**'] },
-        { groupName: 'constants', elementNamePattern: ['**/constants', '**/constants/**'] },
-        {
-          groupName: 'state',
-          elementNamePattern: [
-            '**/context/**',
-            '**/hooks/**',
-            '**/routes/**',
-            '**/stores',
-            '**/stores/**',
-          ],
+          files: ['**/*.test.ts', '**/*.test.tsx', '**/__mocks__/**', '**/__helpers__/**'],
+          rules: {
+            'typescript/no-explicit-any': 'off',
+            'no-console': 'off',
+          },
         },
         {
-          groupName: 'ui',
-          elementNamePattern: [
-            '**/layout/**',
-            '**/components/**',
-            '**/fields/**',
-            '**/primitives/**',
-          ],
+          files: ['scripts/**', 'codegen.ts', 'vite.config.ts', 'vitest.config.ts'],
+          rules: {
+            'no-console': 'off',
+          },
         },
-        { groupName: 'types', elementNamePattern: ['**/types'] },
-      ],
-      groups: [
-        'builtin',
-        'react',
-        'electron',
-        'primer',
-        'octokit',
-        'external',
-        'mocks-helpers',
-        'shared',
-        'constants',
-        'state',
-        'ui',
-        'types',
-        ['internal', 'parent', 'sibling', 'index', 'subpath'],
-        'unknown',
       ],
     },
-  },
-  staged: {
-    '*': 'vp fmt --no-error-on-unmatched-pattern',
-    '*.{js,jsx,ts,tsx}': 'vp lint --fix --no-error-on-unmatched-pattern',
-    '*.{js,ts,tsx}': ['bash -c "tsc --noEmit"', 'vp test --changed --passWithNoTests --update'],
-  },
+    fmt: {
+      tabWidth: 2,
+      useTabs: false,
+      singleQuote: true,
+      jsxSingleQuote: false,
+      ignorePatterns: [
+        '**/generated/**',
+        'build/**',
+        'dist/**',
+        'coverage/**',
+        '.context/**',
+        'index.html',
+      ],
+      sortImports: {
+        newlinesBetween: true,
+        customGroups: [
+          { groupName: 'react', elementNamePattern: ['react', 'react-*', '@testing-library/**'] },
+          { groupName: 'electron', elementNamePattern: ['*electron*', 'menubar'] },
+          { groupName: 'primer', elementNamePattern: ['@primer/**'] },
+          { groupName: 'octokit', elementNamePattern: ['@octokit/**'] },
+          {
+            groupName: 'mocks-helpers',
+            elementNamePattern: ['**/__mocks__/**', '**/__helpers__/**'],
+          },
+          { groupName: 'shared', elementNamePattern: ['**/shared/**'] },
+          { groupName: 'constants', elementNamePattern: ['**/constants', '**/constants/**'] },
+          {
+            groupName: 'state',
+            elementNamePattern: [
+              '**/context/**',
+              '**/hooks/**',
+              '**/routes/**',
+              '**/stores',
+              '**/stores/**',
+            ],
+          },
+          {
+            groupName: 'ui',
+            elementNamePattern: [
+              '**/layout/**',
+              '**/components/**',
+              '**/fields/**',
+              '**/primitives/**',
+            ],
+          },
+          { groupName: 'types', elementNamePattern: ['**/types'] },
+        ],
+        groups: [
+          'builtin',
+          'react',
+          'electron',
+          'primer',
+          'octokit',
+          'external',
+          'mocks-helpers',
+          'shared',
+          'constants',
+          'state',
+          'ui',
+          'types',
+          ['internal', 'parent', 'sibling', 'index', 'subpath'],
+          'unknown',
+        ],
+      },
+    },
+    staged: {
+      '*': 'vp fmt --no-error-on-unmatched-pattern',
+      '*.{js,jsx,ts,tsx}': 'vp lint --fix --no-error-on-unmatched-pattern',
+      '*.{js,ts,tsx}': ['bash -c "tsc --noEmit"', 'vp test --changed --passWithNoTests --update'],
+    },
+  };
 });

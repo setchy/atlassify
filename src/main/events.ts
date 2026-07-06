@@ -1,7 +1,7 @@
 import { ipcMain } from 'electron';
-import type { Menubar } from 'menubar';
+import type { Menubar } from 'electron-menubar';
 
-import type { EventData, EventType } from '../shared/events';
+import type { EventArgs, EventRequest, EventResponse, EventType } from '../shared/events';
 
 /**
  * Register a fire-and-forget IPC listener on the main process (ipcMain.on).
@@ -10,11 +10,11 @@ import type { EventData, EventType } from '../shared/events';
  * @param event - The IPC channel/event name to listen on.
  * @param listener - Callback invoked when the event is received.
  */
-export function onMainEvent(
-  event: EventType,
-  listener: (event: Electron.IpcMainEvent, args: EventData) => void,
-) {
-  ipcMain.on(event, listener);
+export function onMainEvent<E extends EventType>(
+  event: E,
+  listener: (event: Electron.IpcMainEvent, args: EventRequest<E>) => void,
+): void {
+  ipcMain.on(event, listener as Parameters<typeof ipcMain.on>[1]);
 }
 
 /**
@@ -24,20 +24,32 @@ export function onMainEvent(
  * @param event - The IPC channel/event name to handle.
  * @param listener - Callback whose return value is sent back to the renderer.
  */
-export function handleMainEvent(
-  event: EventType,
-  listener: (event: Electron.IpcMainInvokeEvent, data: EventData) => void,
-) {
-  ipcMain.handle(event, listener);
+export function handleMainEvent<E extends EventType>(
+  event: E,
+  listener: (
+    event: Electron.IpcMainInvokeEvent,
+    data: EventRequest<E>,
+  ) => EventResponse<E> | Promise<EventResponse<E>>,
+): void {
+  ipcMain.handle(event, listener as Parameters<typeof ipcMain.handle>[1]);
 }
 
 /**
  * Push an event from the main process to the renderer via webContents.
- *
+* Variadic so events without a payload can be called as `sendRendererEvent(mb, event)`.
+
  * @param mb - The menubar instance whose window receives the event.
  * @param event - The IPC channel/event name to emit.
  * @param data - Optional payload sent with the event.
  */
-export function sendRendererEvent(mb: Menubar, event: EventType, data?: string) {
-  mb.window.webContents.send(event, data);
+export function sendRendererEvent<E extends EventType>(
+  mb: Menubar,
+  event: E,
+  ...args: EventArgs<E>
+): void {
+  if (!mb.window) {
+    return;
+  }
+
+  mb.window.webContents.send(event, ...args);
 }

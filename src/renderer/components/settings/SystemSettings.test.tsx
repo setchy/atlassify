@@ -101,6 +101,15 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
     });
   });
 
+  it('should toggle the enableAnonymousAnalytics checkbox', async () => {
+    renderWithProviders(<SystemSettings />);
+
+    await userEvent.click(screen.getByLabelText('Share anonymous usage analytics'));
+
+    expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
+    expect(toggleSettingSpy).toHaveBeenCalledWith('enableAnonymousAnalytics');
+  });
+
   it('should toggle the openAtStartup checkbox', async () => {
     renderWithProviders(<SystemSettings />);
 

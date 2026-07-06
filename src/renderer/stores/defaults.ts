@@ -84,6 +84,7 @@ const DEFAULT_SYSTEM_SETTINGS: SystemSettingsState = {
   showSystemNotifications: true,
   playSoundNewNotifications: true,
   notificationVolume: 20 as Percentage,
+  enableAnonymousAnalytics: true,
   openAtStartup: true,
 };
 

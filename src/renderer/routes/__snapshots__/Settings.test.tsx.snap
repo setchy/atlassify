@@ -511,7 +511,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
             class="css-xxi07b"
           >
             <label
-              class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwnby5v _f0grby5v _1c53glyw _1e9d1j28 _syaz1gmx _80om13gf _ljcgdfik _1vj5by5v _dh4gby5v _cz1uby5v _jom5wc43 _1s0718qt _106f18qt _zulp1nu5 _yv0ey09t _q29qby5v"
+              class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwn187o _f0gr187o _1c53glyw _1e9d1j28 _syaz1gmx _80om13gf _ljcgdfik _1vj5187o _dh4g187o _cz1u187o _jom5wc43 _1s0718qt _106f18qt _zulp1nu5 _yv0ey09t _q29q187o"
               data-disabled="true"
             >
               <input
@@ -1461,6 +1461,99 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
               <input
                 checked=""
                 class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf"
+                name="enableAnonymousAnalytics"
+                tabindex="0"
+                type="checkbox"
+              />
+              <svg
+                class="_nd5lfibj _1reo15vq _18m915vq _v5641mn3 _2rko12b0 _1a3742bt _lcxvglyw _syazmov0 _lswu1kgh _1cwg1i6y"
+                height="24"
+                role="presentation"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <g
+                  fill-rule="evenodd"
+                >
+                  <rect
+                    class="_v56411so _1snbe4h9 _1s17hteq"
+                    fill="currentColor"
+                    height="13"
+                    rx="1.5"
+                    width="13"
+                    x="5.5"
+                    y="5.5"
+                  />
+                  <path
+                    clip-rule="evenodd"
+                    d="M16.3262 9.48011L15.1738 8.51984L10.75 13.8284L8.82616 11.5198L7.67383 12.4801L10.1738 15.4801C10.3163 15.6511 10.5274 15.75 10.75 15.75C10.9726 15.75 11.1837 15.6511 11.3262 15.4801L16.3262 9.48011Z"
+                    fill="inherit"
+                    fill-rule="evenodd"
+                  />
+                </g>
+              </svg>
+              <span
+                class="_nd5l11ig _1wpz1h6o"
+              >
+                Share anonymous usage analytics
+              </span>
+            </label>
+            <div
+              class="_1e0c1o8l _p12f1osq _1yyu1kum _y2mv1w7i _x5v9qm1h"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1qi0 _11c8fhey _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
+                data-ds--inline-message--button="true"
+                id="_r_s_"
+                type="button"
+              >
+                <span
+                  class="_1e0c1txw _vchhusvi _gy1p1b66 _1p571b66 _4cvr1h6o _2lx2vrvc"
+                >
+                  <span
+                    class="_16jlidpf _1o9zidpf _i0dl1wug _1e0c1txw _4cvr1h6o _syazqm1h"
+                    data-ds--inline-message--icon="true"
+                  >
+                    <span
+                      aria-label="info inline message"
+                      class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                      data-testid="inline-message-icon"
+                      role="img"
+                      style="color: currentcolor;"
+                    >
+                      <svg
+                        class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1ejb _4t3i1ejb"
+                        fill="none"
+                        role="presentation"
+                        viewBox="-4 -4 24 24"
+                      >
+                        <path
+                          clip-rule="evenodd"
+                          d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M6.5 6.75v1.5h.75v4.25h1.5v-5A.75.75 0 0 0 8 6.75zM8 3.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2"
+                          fill="currentcolor"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  <span
+                    class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
+                  />
+                </span>
+              </button>
+            </div>
+          </div>
+          <div
+            class="css-xxi07b"
+          >
+            <label
+              class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwnjmqp _f0grjmqp _1c53glyw _1e9d5w2r _syazi7uo _80om73ad _ljcgdfik _1vj51q28 _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t _q29q1q28 _zoo95w2r"
+            >
+              <input
+                checked=""
+                class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf"
                 name="openAtStartUp"
                 tabindex="0"
                 type="checkbox"
@@ -1506,7 +1599,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 aria-haspopup="true"
                 class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1qi0 _11c8fhey _1rjcze3t _18zrze3t _1e0c116y _bfhksm61 _syazazsu _o5721q9c _kqswh2mm _4cvr1q9y _p12f1osq _4t3i1wug _1bsb1wug _s7n41q9y _9oik1r31 _1bnx8stv _jf4cnqa1"
                 data-ds--inline-message--button="true"
-                id="_r_s_"
+                id="_r_u_"
                 type="button"
               >
                 <span

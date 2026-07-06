@@ -1,17 +1,31 @@
 allowBuilds:
+  '@biomejs/biome': true
   '@parcel/watcher': true
   '@swc/core': true
+  '@tailwindcss/oxide': true
   electron: true
   electron-winstaller: true
-  '@biomejs/biome': true
-  '@tailwindcss/oxide': true
   esbuild: true
   unrs-resolver: true
+catalog:
+  electron: '43.0.0'
+minimumReleaseAgeExclude:
+  - '@vitest/coverage-v8@4.1.10'
+  - '@vitest/expect@4.1.10'
+  - '@vitest/mocker@4.1.10'
+  - '@vitest/pretty-format@4.1.10'
+  - '@vitest/runner@4.1.10'
+  - '@vitest/snapshot@4.1.10'
+  - '@vitest/spy@4.1.10'
+  - '@vitest/ui@4.1.10'
+  - '@vitest/utils@4.1.10'
+  - vitest@4.1.10
 overrides:
-  react-is: '19.2.6'
+  react-is: '19.2.7'
   # Force patched versions of transitive dev-tooling deps pulled in by
   # react-devtools (old electron/got/cross-spawn) so they don't trip security
   # scanners. None of these ship in the packaged app.
-  cross-spawn: '^7.0.6'
-  got: '^11.8.5'
-  electron: '$electron'
+  cross-spawn: '7.0.6'
+  got: '11.8.6'
+  electron: 'catalog:'
+savePrefix: ''

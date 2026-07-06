@@ -38,26 +38,26 @@
     "@iconify-json/line-md": "1.2.16",
     "@iconify-json/mdi": "1.2.3",
     "@octokit/openapi-types": "27.0.0",
-    "@tailwindcss/vite": "4.3.0",
+    "@tailwindcss/vite": "4.3.2",
     "accessible-astro-components": "5.3.1",
-    "astro": "6.4.4",
+    "astro": "7.0.6",
     "astro-icon": "1.1.5",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "date-fns": "4.4.0",
     "marked": "18.0.5",
     "octokit": "5.0.5",
-    "sharp": "0.34.5",
+    "sharp": "0.35.3",
     "tailwind-merge": "3.6.0",
-    "tailwindcss": "4.3.0",
+    "tailwindcss": "4.3.2",
     "tailwindcss-motion": "1.1.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.16",
+    "@biomejs/biome": "2.5.2",
     "husky": "9.1.7"
   },
   "lint-staged": {
     "*.{js,ts,cjs,mjs,astro}": "biome format --fix"
   },
-  "packageManager": "pnpm@11.5.2"
+  "packageManager": "pnpm@11.9.0"
 }

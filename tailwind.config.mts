@@ -1,4 +1,3 @@
-import { B200, DN40, DN50, N10, R300 } from '@atlaskit/theme/colors';
 import { token } from '@atlaskit/tokens';
 import type { Config } from 'tailwindcss';
 import plugin from 'tailwindcss/plugin';
@@ -21,8 +20,7 @@ const config: Config = {
       colors: {
         atlassify: {
           sidebar: 'var(--atlassify-background-sidebar)',
-          notifications: 'var(--atlassify-background-notifications)',
-          attention: R300,
+          notifications: token('color.background.neutral.subtle.hovered'),
           heroicon: {
             neutral: {
               background: token('color.background.accent.gray.subtler'),
@@ -65,9 +63,7 @@ const config: Config = {
       });
       addBase({
         ':root': {
-          '--atlassify-background-sidebar': B200,
-          '--atlassify-background-notifications': N10,
-
+          '--atlassify-background-sidebar': '#2684FF', //TODO update to token when available (formerly B200)
           '--atlassify-scrollbar-track': token('color.background.accent.blue.subtlest'),
           '--atlassify-scrollbar-thumb': token('color.background.accent.blue.subtler'),
           '--atlassify-scrollbar-thumb-hover': token(
@@ -75,9 +71,7 @@ const config: Config = {
           ),
         },
         '.dark': {
-          '--atlassify-background-sidebar': DN50,
-          '--atlassify-background-notifications': DN40,
-
+          '--atlassify-background-sidebar': token('color.background.brand.subtlest'),
           '--atlassify-scrollbar-track': token('color.background.accent.gray.subtlest'),
           '--atlassify-scrollbar-thumb': token('color.background.accent.gray.subtler'),
           '--atlassify-scrollbar-thumb-hover': token(

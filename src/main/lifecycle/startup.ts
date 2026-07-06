@@ -1,5 +1,5 @@
 import { app, nativeTheme } from 'electron';
-import type { Menubar } from 'menubar';
+import type { Menubar } from 'electron-menubar';
 
 import { APPLICATION } from '../../shared/constants';
 import { EVENTS } from '../../shared/events';
@@ -17,14 +17,8 @@ import { sendRendererEvent } from '../events';
 export function initializeAppLifecycle(mb: Menubar, contextMenu: Electron.Menu): void {
   mb.on('ready', () => {
     mb.app.setAppUserModelId(APPLICATION.ID);
-
     mb.tray.setToolTip(APPLICATION.NAME);
-
-    mb.tray.setIgnoreDoubleClickEvents(true);
-
-    mb.tray.on('right-click', (_event, bounds) => {
-      mb.tray.popUpContextMenu(contextMenu, { x: bounds.x, y: bounds.y });
-    });
+    mb.setContextMenu(contextMenu);
   });
 
   /**

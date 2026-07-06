@@ -129,5 +129,9 @@ export function trackEvent(
   eventName: string,
   props?: Record<string, string | number | boolean>,
 ): void {
+  if (!useSettingsStore.getState().enableAnonymousAnalytics) {
+    return;
+  }
+
   window.atlassify.aptabase.trackEvent(eventName, props);
 }

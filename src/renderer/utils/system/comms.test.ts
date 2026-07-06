@@ -12,6 +12,7 @@ import {
   setAutoLaunch,
   setKeyboardShortcut,
   showWindow,
+  trackEvent,
   updateTrayColor,
   updateTrayTitle,
 } from './comms';
@@ -141,6 +142,31 @@ describe('renderer/utils/system/comms.ts', () => {
 
       expect(window.atlassify.tray.updateTitle).toHaveBeenCalledTimes(1);
       expect(window.atlassify.tray.updateTitle).toHaveBeenCalledWith('Atlassify');
+    });
+  });
+
+  describe('analytics helpers', () => {
+    it('tracks events when anonymous analytics are enabled', () => {
+      useSettingsStore.setState({
+        enableAnonymousAnalytics: true,
+      });
+
+      trackEvent('Action', { name: 'Refresh' });
+
+      expect(window.atlassify.aptabase.trackEvent).toHaveBeenCalledTimes(1);
+      expect(window.atlassify.aptabase.trackEvent).toHaveBeenCalledWith('Action', {
+        name: 'Refresh',
+      });
+    });
+
+    it('does not track events when anonymous analytics are disabled', () => {
+      useSettingsStore.setState({
+        enableAnonymousAnalytics: false,
+      });
+
+      trackEvent('Action', { name: 'Refresh' });
+
+      expect(window.atlassify.aptabase.trackEvent).not.toHaveBeenCalled();
     });
   });
 });
