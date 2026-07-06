@@ -31,8 +31,8 @@
     "start": "pnpm dev",
     "build": "astro build",
     "preview": "astro preview",
-    "lint": "biome check --fix",
-    "lint:check": "biome check"
+    "check": "biome check",
+    "check:fix": "biome check --fix"
   },
   "dependencies": {
     "@iconify-json/line-md": "1.2.16",
