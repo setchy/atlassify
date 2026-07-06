@@ -1459,7 +1459,7 @@ exports[`renderer/routes/Filters.tsx > General > should render itself & its chil
                 </label>
                 <span
                   aria-label="Rovo"
-                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01 _17031e01 _1evo1e01 _epb51e01 _1osd1e01"
                   role="img"
                   style="--themed-icon-color: initial;"
                 >
@@ -1470,20 +1470,34 @@ exports[`renderer/routes/Filters.tsx > General > should render itself & its chil
                     
     
                     <path
-                      d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
-                      fill="var(--tile-color,#1868db)"
+                      clip-rule="evenodd"
+                      d="m13.227 16.789-7.154 4.169-3.403-1.96a2.72 2.72 0 0 1-1.362-2.355V7.366c0-.973.518-1.87 1.361-2.354l6.044-3.487-.038.114a3.6 3.6 0 0 0-.172 1.088v9.278c0 1.274.68 2.45 1.786 3.085z"
+                      fill="var(--rovo-blue-color, #1868db)"
+                      fill-rule="evenodd"
                     />
                     
     
                     <path
-                      d="M11.057 5.257a1.57 1.57 0 0 1 1.539.015l4.621 2.668c.484.279.783.797.783 1.354v5.336a1.56 1.56 0 0 1-.782 1.355l-3.474 2.005a2 2 0 0 0 .12-.691v-5.337c0-.733-.39-1.409-1.026-1.774l-2.59-1.495V6.626q.001-.246.074-.473c.117-.364.366-.68.707-.877z"
-                      fill="var(--icon-color, white)"
+                      clip-rule="evenodd"
+                      d="m11.296 15.671-7.193 4.153 6.607 3.812a2.73 2.73 0 0 0 2.676.026l.048-.033a2.73 2.73 0 0 0 1.232-1.525 2.7 2.7 0 0 0 .127-.822v-3.594z"
+                      fill="var(--rovo-green-color, #6a9a23)"
+                      fill-rule="evenodd"
                     />
                     
     
                     <path
-                      d="M9.881 5.94 6.408 7.945A1.56 1.56 0 0 0 5.625 9.3v5.337c0 .557.3 1.075.783 1.354l4.621 2.668c.475.274 1.06.279 1.539.015l.027-.019a1.57 1.57 0 0 0 .781-1.35v-2.067l-2.589-1.495a2.05 2.05 0 0 1-1.026-1.775V6.631a2 2 0 0 1 .12-.691"
-                      fill="var(--icon-color, white)"
+                      clip-rule="evenodd"
+                      d="m21.477 5.003-4.404-2.539-5.904 4.89 2.69 1.556a3.56 3.56 0 0 1 1.785 3.086v9.277a3.6 3.6 0 0 1-.21 1.202l6.044-3.486a2.71 2.71 0 0 0 1.362-2.355V7.357c0-.97-.521-1.87-1.363-2.354"
+                      fill="var(--rovo-purple-color, #af59e1)"
+                      fill-rule="evenodd"
+                    />
+                    
+    
+                    <path
+                      clip-rule="evenodd"
+                      d="M12.74 8.266 9.353 6.312V2.718c0-.283.044-.56.127-.821A2.73 2.73 0 0 1 10.71.372V.37a.4.4 0 0 0 .048-.033 2.73 2.73 0 0 1 2.676.026l6.499 3.75z"
+                      fill="var(--rovo-yellow-color, #fca700)"
+                      fill-rule="evenodd"
                     />
                     
 
@@ -3223,7 +3237,7 @@ exports[`renderer/routes/Filters.tsx > filters > product filters > should filter
                 </label>
                 <span
                   aria-label="Rovo"
-                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01 _17031e01 _1evo1e01 _epb51e01 _1osd1e01"
                   role="img"
                   style="--themed-icon-color: initial;"
                 >
@@ -3234,20 +3248,34 @@ exports[`renderer/routes/Filters.tsx > filters > product filters > should filter
                     
     
                     <path
-                      d="M0 6a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6H6a6 6 0 0 1-6-6z"
-                      fill="var(--tile-color,#1868db)"
+                      clip-rule="evenodd"
+                      d="m13.227 16.789-7.154 4.169-3.403-1.96a2.72 2.72 0 0 1-1.362-2.355V7.366c0-.973.518-1.87 1.361-2.354l6.044-3.487-.038.114a3.6 3.6 0 0 0-.172 1.088v9.278c0 1.274.68 2.45 1.786 3.085z"
+                      fill="var(--rovo-blue-color, #1868db)"
+                      fill-rule="evenodd"
                     />
                     
     
                     <path
-                      d="M11.057 5.257a1.57 1.57 0 0 1 1.539.015l4.621 2.668c.484.279.783.797.783 1.354v5.336a1.56 1.56 0 0 1-.782 1.355l-3.474 2.005a2 2 0 0 0 .12-.691v-5.337c0-.733-.39-1.409-1.026-1.774l-2.59-1.495V6.626q.001-.246.074-.473c.117-.364.366-.68.707-.877z"
-                      fill="var(--icon-color, white)"
+                      clip-rule="evenodd"
+                      d="m11.296 15.671-7.193 4.153 6.607 3.812a2.73 2.73 0 0 0 2.676.026l.048-.033a2.73 2.73 0 0 0 1.232-1.525 2.7 2.7 0 0 0 .127-.822v-3.594z"
+                      fill="var(--rovo-green-color, #6a9a23)"
+                      fill-rule="evenodd"
                     />
                     
     
                     <path
-                      d="M9.881 5.94 6.408 7.945A1.56 1.56 0 0 0 5.625 9.3v5.337c0 .557.3 1.075.783 1.354l4.621 2.668c.475.274 1.06.279 1.539.015l.027-.019a1.57 1.57 0 0 0 .781-1.35v-2.067l-2.589-1.495a2.05 2.05 0 0 1-1.026-1.775V6.631a2 2 0 0 1 .12-.691"
-                      fill="var(--icon-color, white)"
+                      clip-rule="evenodd"
+                      d="m21.477 5.003-4.404-2.539-5.904 4.89 2.69 1.556a3.56 3.56 0 0 1 1.785 3.086v9.277a3.6 3.6 0 0 1-.21 1.202l6.044-3.486a2.71 2.71 0 0 0 1.362-2.355V7.357c0-.97-.521-1.87-1.363-2.354"
+                      fill="var(--rovo-purple-color, #af59e1)"
+                      fill-rule="evenodd"
+                    />
+                    
+    
+                    <path
+                      clip-rule="evenodd"
+                      d="M12.74 8.266 9.353 6.312V2.718c0-.283.044-.56.127-.821A2.73 2.73 0 0 1 10.71.372V.37a.4.4 0 0 0 .048-.033 2.73 2.73 0 0 1 2.676.026l6.499 3.75z"
+                      fill="var(--rovo-yellow-color, #fca700)"
+                      fill-rule="evenodd"
                     />
                     
 
