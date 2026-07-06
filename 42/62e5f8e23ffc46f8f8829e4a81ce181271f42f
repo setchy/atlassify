@@ -1,0 +1,55 @@
+docs/src/components/Hero.astro
+  s_ce0586edf4167a::t_df733a5b3e633b 2-8
+docs/src/components/LatestRelease.astro
+  s_ce0586edf4167a::t_df733a5b3e633b 2,4-9,11-15,20-23,25-64,66-68,70-72,74-79,83-87,89,91-107
+docs/src/layouts/SectionRow.astro
+  s_ce0586edf4167a::t_df733a5b3e633b 2,4,7-14,18-22
+docs/src/components/DownloadButton.astro
+  s_ce0586edf4167a::t_df733a5b3e633b 2,5-8
+docs/astro.config.ts
+  s_ce0586edf4167a::t_df733a5b3e633b 2-4
+docs/src/components/GitHubRepo.astro
+  s_ce0586edf4167a::t_df733a5b3e633b 2,4,6,8,13-16,20-44
+docs/src/pages/index.astro
+  s_ce0586edf4167a::t_df733a5b3e633b 2-9
+docs/.gitignore
+  s_ce0586edf4167a::t_576ee032a087cb 1-6
+docs/src/components/GoogleAnalytics.astro
+  s_ce0586edf4167a::t_df733a5b3e633b 2
+vite.config.ts
+  s_ce0586edf4167a::t_39d085620f1697 326
+  s_ce0586edf4167a::t_7de19f210beac6 323-324,332-334
+  s_ce0586edf4167a::t_9f4f36075db4da 267
+docs/src/components/Navbar.astro
+  s_ce0586edf4167a::t_df733a5b3e633b 2-6,9
+docs/src/pages/faq.astro
+  s_ce0586edf4167a::t_df733a5b3e633b 2,4,7,11-14
+docs/tailwind.config.ts
+  s_ce0586edf4167a::t_df733a5b3e633b 3
+docs/src/layouts/Layout.astro
+  s_ce0586edf4167a::t_df733a5b3e633b 2,4-8,11
+docs/src/pages/404.astro
+  s_ce0586edf4167a::t_df733a5b3e633b 2
+docs/biome.json
+  s_ce0586edf4167a::t_df733a5b3e633b 2
+docs/src/components/Footer.astro
+  s_ce0586edf4167a::t_df733a5b3e633b 2,4,7
+docs/src/styles/app.css
+  s_ce0586edf4167a::t_696bed9f1c0bc0 2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "4262e5f8e23ffc46f8f8829e4a81ce181271f42f",
+  "prompts": {},
+  "sessions": {
+    "s_ce0586edf4167a": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "4ed38890-215d-4ca5-83fc-de9ad11aabf6",
+        "model": "gpt-5.3-codex"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
