@@ -1,0 +1,34 @@
+docs/package.json
+  h_ac004aadb63da9 41,43,50,52,56
+tailwind.config.mts
+  h_ac004aadb63da9 23,66
+pnpm-workspace.yaml
+  h_ac004aadb63da9 2,5,10-11,24,28-31
+package.json
+  h_ac004aadb63da9 3,61,63,68,72-95,98,100,104-106,110,114,117,121-124,126-127,131,133-135,140-146
+vite.config.ts
+  s_ce0586edf4167a::t_65af37ff0b1837 97-112,114-149,151-180,184-191,194-202,204-207,209-231,233,235-239,242-245,248-260,262-312,314-319
+src/main/events.test.ts
+  s_ce0586edf4167a::t_5075d31bb50fab 10,13,25,33,53
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "39ddab1cf86819fe05c2120ec29a1e31df8ab227",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  },
+  "sessions": {
+    "s_ce0586edf4167a": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "4ed38890-215d-4ca5-83fc-de9ad11aabf6",
+        "model": "gpt-5.3-codex"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
