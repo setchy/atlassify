@@ -91,7 +91,7 @@ export const useNotifications = (): UseNotificationsResult => {
   );
 
   // Create select function that depends on filter state
-  // biome-ignore lint/correctness/useExhaustiveDependencies: Recreate selection function on filter store changes
+  // oxlint-disable-next-line react/exhaustive-deps -- Recreate selection function on filter store changes
   const selectFilteredNotifications = useMemo(
     () => (data: AccountNotifications[]) =>
       data.map((accountNotifications) => ({

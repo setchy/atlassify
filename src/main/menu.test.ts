@@ -115,14 +115,12 @@ describe('main/menu.ts', () => {
     it('should enable menu item', () => {
       menuBuilder.setCheckForUpdatesMenuEnabled(true);
 
-      // biome-ignore lint/complexity/useLiteralKeys: This is a test
       expect(menuBuilder['checkForUpdatesMenuItem'].enabled).toBe(true);
     });
 
     it('should disable menu item', () => {
       menuBuilder.setCheckForUpdatesMenuEnabled(false);
 
-      // biome-ignore lint/complexity/useLiteralKeys: This is a test
       expect(menuBuilder['checkForUpdatesMenuItem'].enabled).toBe(false);
     });
   });
@@ -140,14 +138,12 @@ describe('main/menu.ts', () => {
     it('should show menu item', () => {
       menuBuilder.setNoUpdateAvailableMenuVisibility(true);
 
-      // biome-ignore lint/complexity/useLiteralKeys: This is a test
       expect(menuBuilder['noUpdateAvailableMenuItem'].visible).toBe(true);
     });
 
     it('should hide menu item', () => {
       menuBuilder.setNoUpdateAvailableMenuVisibility(false);
 
-      // biome-ignore lint/complexity/useLiteralKeys: This is a test
       expect(menuBuilder['noUpdateAvailableMenuItem'].visible).toBe(false);
     });
   });
@@ -165,14 +161,12 @@ describe('main/menu.ts', () => {
     it('should show menu item', () => {
       menuBuilder.setUpdateAvailableMenuVisibility(true);
 
-      // biome-ignore lint/complexity/useLiteralKeys: This is a test
       expect(menuBuilder['updateAvailableMenuItem'].visible).toBe(true);
     });
 
     it('should hide menu item', () => {
       menuBuilder.setUpdateAvailableMenuVisibility(false);
 
-      // biome-ignore lint/complexity/useLiteralKeys: This is a test
       expect(menuBuilder['updateAvailableMenuItem'].visible).toBe(false);
     });
   });
@@ -191,14 +185,12 @@ describe('main/menu.ts', () => {
     it('should show menu item', () => {
       menuBuilder.setUpdateReadyForInstallMenuVisibility(true);
 
-      // biome-ignore lint/complexity/useLiteralKeys: This is a test
       expect(menuBuilder['updateReadyForInstallMenuItem'].visible).toBe(true);
     });
 
     it('should hide menu item', () => {
       menuBuilder.setUpdateReadyForInstallMenuVisibility(false);
 
-      // biome-ignore lint/complexity/useLiteralKeys: This is a test
       expect(menuBuilder['updateReadyForInstallMenuItem'].visible).toBe(false);
     });
   });
@@ -215,9 +207,7 @@ describe('main/menu.ts', () => {
     it('setWindowVisibility(true) shows hide item, hides show item', () => {
       menuBuilder.setWindowVisibility(true);
 
-      // biome-ignore lint/complexity/useLiteralKeys: This is a test
       expect(menuBuilder['showWindowMenuItem'].visible).toBe(false);
-      // biome-ignore lint/complexity/useLiteralKeys: This is a test
       expect(menuBuilder['hideWindowMenuItem'].visible).toBe(true);
     });
 
@@ -225,9 +215,7 @@ describe('main/menu.ts', () => {
       menuBuilder.setWindowVisibility(true);
       menuBuilder.setWindowVisibility(false);
 
-      // biome-ignore lint/complexity/useLiteralKeys: This is a test
       expect(menuBuilder['showWindowMenuItem'].visible).toBe(true);
-      // biome-ignore lint/complexity/useLiteralKeys: This is a test
       expect(menuBuilder['hideWindowMenuItem'].visible).toBe(false);
     });
 

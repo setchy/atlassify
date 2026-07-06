@@ -91,7 +91,6 @@
     "@atlaskit/toggle": "17.1.0",
     "@atlaskit/tokens": "15.3.1",
     "@atlaskit/tooltip": "23.1.0",
-    "@biomejs/biome": "2.5.2",
     "@compiled/vite-plugin": "1.1.6",
     "@discordapp/twemoji": "16.0.1",
     "@electron/notarize": "3.1.1",
@@ -136,14 +135,6 @@
     "vite-plus": "0.2.2",
     "vitest": "4.1.9",
     "zustand": "5.0.14"
-  },
-  "lint-staged": {
-    "*": "biome check --fix --no-errors-on-unmatched",
-    "*.{js,ts,tsx}": [
-      "bash -c 'tsc --noEmit'",
-      "bash -c 'pnpm i18n:lint'",
-      "pnpm test --changed --passWithNoTests --update"
-    ]
   },
   "packageManager": "pnpm@11.9.0"
 }

@@ -132,7 +132,7 @@ export default defineConfig(({ command }) => {
         : [
             checker({
               typescript: true,
-              biome: { dev: { logLevel: ['error'] } },
+              oxlint: { dev: { logLevel: ['error'] } },
             }),
           ]),
       reactDevToolsPlugin(),
@@ -206,7 +206,14 @@ export default defineConfig(({ command }) => {
       categories: {
         correctness: 'error',
       },
-      ignorePatterns: ['**/generated/**', 'build/**', 'dist/**', 'coverage/**', 'node_modules/**'],
+      ignorePatterns: [
+        '**/generated/**',
+        'build/**',
+        'dist/**',
+        'coverage/**',
+        'node_modules/**',
+        'docs/**',
+      ],
       rules: {
         'no-console': 'error',
         'no-unused-vars': [
@@ -313,8 +320,12 @@ export default defineConfig(({ command }) => {
     },
     staged: {
       '*': 'vp fmt --no-error-on-unmatched-pattern',
-      '*.{js,jsx,ts,tsx}': 'vp lint --fix --no-error-on-unmatched-pattern',
-      '*.{js,ts,tsx}': ['bash -c "tsc --noEmit"', 'vp test --changed --passWithNoTests --update'],
+      '*.{js,jsx,ts,tsx}': [
+        'vp lint --fix --no-error-on-unmatched-pattern',
+        'bash -c "tsc --noEmit"',
+        'bash -c "pnpm i18n:lint"',
+        'vp test --changed --passWithNoTests --update',
+      ],
     },
   };
 });

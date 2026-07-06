@@ -9,17 +9,6 @@ allowBuilds:
   unrs-resolver: true
 catalog:
   electron: '43.0.0'
-minimumReleaseAgeExclude:
-  - '@vitest/coverage-v8@4.1.10'
-  - '@vitest/expect@4.1.10'
-  - '@vitest/mocker@4.1.10'
-  - '@vitest/pretty-format@4.1.10'
-  - '@vitest/runner@4.1.10'
-  - '@vitest/snapshot@4.1.10'
-  - '@vitest/spy@4.1.10'
-  - '@vitest/ui@4.1.10'
-  - '@vitest/utils@4.1.10'
-  - vitest@4.1.10
 overrides:
   react-is: '19.2.7'
   # Force patched versions of transitive dev-tooling deps pulled in by
