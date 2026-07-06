@@ -56,8 +56,5 @@
     "@biomejs/biome": "2.5.2",
     "husky": "9.1.7"
   },
-  "lint-staged": {
-    "*.{js,ts,cjs,mjs,astro}": "biome format --fix"
-  },
   "packageManager": "pnpm@11.9.0"
 }

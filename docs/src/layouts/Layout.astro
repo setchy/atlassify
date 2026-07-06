@@ -1,13 +1,14 @@
 ---
-import "~/styles/app.css";
+import '~/styles/app.css';
 
-import Footer from "~/components/Footer.astro";
-import GoogleAnalytics from "~/components/GoogleAnalytics.astro";
-import Navbar from "~/components/Navbar.astro";
-import { siteMetadata } from "~/constants";
+import { siteMetadata } from '~/constants';
+
+import Footer from '~/components/Footer.astro';
+import GoogleAnalytics from '~/components/GoogleAnalytics.astro';
+import Navbar from '~/components/Navbar.astro';
 
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;

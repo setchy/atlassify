@@ -264,6 +264,7 @@ export default defineConfig(({ command }) => {
         'dist/**',
         'coverage/**',
         '.context/**',
+        'docs/**',
         'index.html',
       ],
       sortImports: {
@@ -319,13 +320,18 @@ export default defineConfig(({ command }) => {
       },
     },
     staged: {
+      // vp fmt honors fmt.ignorePatterns (docs/** excluded) even for explicit
+      // files, so docs files passed here are skipped automatically.
       '*': 'vp fmt --no-error-on-unmatched-pattern',
-      '*.{js,jsx,ts,tsx}': [
+      'src/**/*.{js,jsx,ts,tsx}': [
         'vp lint --fix --no-error-on-unmatched-pattern',
         'bash -c "tsc --noEmit"',
         'bash -c "pnpm i18n:lint"',
         'vp test --changed --passWithNoTests --update',
       ],
+      // docs is a standalone pnpm project linted by biome; check the whole
+      // project (appended paths are ignored by the bash -c script).
+      'docs/**': 'bash -c "cd docs && pnpm check"',
     },
   };
 });
