@@ -127,7 +127,7 @@
     "heading": "Loading"
   },
   "login": {
-    "create_token": "Create API token",
+    "create_token": "Create API token with scopes",
     "duplicate_username": "This username has already been added. Please use a different username.",
     "error_message": "Oops! The username + token combination provided are not valid. Please try again.",
     "security_docs": "See Atlassian documentation",
