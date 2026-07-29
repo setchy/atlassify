@@ -9,7 +9,7 @@ const config: CodegenConfig = {
       plugins: ['typescript-operations', 'typed-document-node'],
       config: {
         documentMode: 'string',
-        skipDocumentsValidation: true,
+        skipDocumentsValidation: true, // FIXME - ideally re-enable validation
         enumType: 'native',
         scalars: {
           DateTime: 'string',
