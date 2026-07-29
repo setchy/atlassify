@@ -1,0 +1,16 @@
+codegen.ts
+  h_ac004aadb63da9 12
+src/renderer/utils/api/client.graphql
+  h_ac004aadb63da9 89-91
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "aa3825a8d59aada28abbf7835b60ef86082d1193",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
