@@ -1,0 +1,14 @@
+tsconfig.json
+  h_ac004aadb63da9 16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "3531601b2b49626d153ab55c8a0d88c6e5106733",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
