@@ -1,0 +1,22 @@
+src/renderer/utils/system/links.ts
+  h_ac004aadb63da9 9,17
+src/renderer/utils/api/request.test.ts
+  h_ac004aadb63da9 14
+src/renderer/hooks/useNotifications.test.tsx
+  h_ac004aadb63da9 23,63,103,134,154,157,197,217,220
+src/renderer/components/Sidebar.test.tsx
+  h_ac004aadb63da9 92
+src/renderer/utils/system/links.test.ts
+  h_ac004aadb63da9 63
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "be491ad002a63adbed1fed994f0b085be736592d",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
