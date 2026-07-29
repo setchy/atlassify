@@ -1,0 +1,27 @@
+.github/workflows/docs.yml
+  s_08ba3f79095a69::t_1b96b100318a19 15-18
+.github/workflows/ci.yml
+  s_08ba3f79095a69::t_1b96b100318a19 17-20
+.github/workflows/release.yml
+  s_08ba3f79095a69::t_1b96b100318a19 10-13
+.github/workflows/renovate.yml
+  s_08ba3f79095a69::t_1b96b100318a19 15-18
+.github/workflows/zizmor.yml
+  s_08ba3f79095a69::t_1b96b100318a19 13-16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "e240b7fe53fe9c891fc2383859f6d9c71081a766",
+  "prompts": {},
+  "sessions": {
+    "s_08ba3f79095a69": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "061e1139-f04c-4250-a95b-3a74032726ee",
+        "model": "claude-sonnet-4.6"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
