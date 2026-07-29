@@ -12,13 +12,9 @@ import {
 import * as comms from '../utils/system/comms';
 import { Sidebar } from './Sidebar';
 
-vi.mock('@atlaskit/tokens', async () => {
-  const actual = await vi.importActual('@atlaskit/tokens');
-  return {
-    ...actual,
-    useThemeObserver: vi.fn(() => ({ colorMode: 'light' })),
-  };
-});
+vi.mock('@atlaskit/tokens/use-theme-observer', () => ({
+  useThemeObserver: vi.fn(() => ({ colorMode: 'light' })),
+}));
 
 const mockThemeObserverColorMode = (mode: 'light' | 'dark') => {
   vi.mocked(useThemeObserver).mockReturnValue({ colorMode: mode });
