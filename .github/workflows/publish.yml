@@ -48,13 +48,17 @@ jobs:
           echo "RELEASE_TAG=$tag" >> "$GITHUB_ENV"
         shell: bash
 
-      - name: Create draft release
+      - name: Create or reuse draft release
         run: |
-          gh release create "${RELEASE_TAG}" \
-            --title "${RELEASE_TAG}" \
-            --draft \
-            --notes "# <img src=\"https://github.com/setchy/atlasify/blob/ac7b51e293912203cbd7e37457dab4fe57e4c19f/assets/images/tray-active%402x.png\" /> Atlassify ${RELEASE_TAG}" \
-            --generate-notes
+          if gh release view "${RELEASE_TAG}" --json isDraft --jq '.isDraft' 2>/dev/null | grep -q true; then
+            echo "Draft release for ${RELEASE_TAG} already exists, reusing it"
+          else
+            gh release create "${RELEASE_TAG}" \
+              --title "${RELEASE_TAG}" \
+              --draft \
+              --notes "# <img src=\"https://github.com/setchy/atlasify/blob/ac7b51e293912203cbd7e37457dab4fe57e4c19f/assets/images/tray-active%402x.png\" /> Atlassify ${RELEASE_TAG}" \
+              --generate-notes
+          fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RELEASE_TAG: ${{ env.RELEASE_TAG }}
