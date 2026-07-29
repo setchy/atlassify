@@ -119,11 +119,7 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
               testId="product-home"
             >
               <Inline alignBlock="center" space="space.100">
-                <productNotification.logo
-                  appearance="brand"
-                  shouldUseNewLogoDesign
-                  size="xxsmall"
-                />
+                <productNotification.logo appearance="brand" size="xxsmall" />
                 <span className="font-medium">
                   {productNotification.display}
                 </span>
