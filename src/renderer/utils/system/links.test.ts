@@ -82,5 +82,17 @@ describe('renderer/utils/system/links.ts', () => {
 
       expect(openExternalLinkSpy).toHaveBeenCalledWith(mockNotificationUrl);
     });
+
+    it('openNotification should fallback to my notifications when both entity url and notification url are not available', async () => {
+      const mockNotif = { ...mockSingleAtlassifyNotification };
+      mockNotif.entity = { ...mockNotif.entity, url: null };
+      mockNotif.url = null;
+
+      await openNotification(mockNotif);
+
+      expect(openExternalLinkSpy).toHaveBeenCalledWith(
+        URLs.ATLASSIAN.WEB.MY_NOTIFICATIONS,
+      );
+    });
   });
 });

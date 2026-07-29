@@ -86,6 +86,22 @@ fragment AtlassianHeadNotification on InfluentsNotificationItem {
     type
     message
     url
+    #FIXME - For some unknown reason, adding bodyItems fixes
+    # - missing notification results for Confluence "shared a page with you" based notifications
+    # - populates content.url and entity.url for Confluence "Live Document" based notifications.
+    bodyItems {
+      appearance
+      author {
+        actorType
+        ari
+        avatarURL
+        displayName
+      }
+      document {
+        data
+        format
+      }
+    }
     entity {
       title
       iconUrl
