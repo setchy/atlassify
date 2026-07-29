@@ -1,0 +1,19 @@
+src/main/lifecycle/window.test.ts
+  s_08ba3f79095a69::t_1bf3863b41ca3c 175,188
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "630a726d4556d56788a830d1a6cd70258b705aa4",
+  "prompts": {},
+  "sessions": {
+    "s_08ba3f79095a69": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "061e1139-f04c-4250-a95b-3a74032726ee",
+        "model": "claude-sonnet-4.6"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
