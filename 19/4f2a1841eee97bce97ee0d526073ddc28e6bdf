@@ -1,0 +1,24 @@
+src/renderer/components/notifications/ProductNotifications.tsx
+  s_08ba3f79095a69::t_8bc24ebccfd28d 122
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "194f2a1841eee97bce97ee0d526073ddc28e6bdf",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  },
+  "sessions": {
+    "s_08ba3f79095a69": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "061e1139-f04c-4250-a95b-3a74032726ee",
+        "model": "unknown"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
