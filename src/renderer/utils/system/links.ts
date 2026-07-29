@@ -13,7 +13,7 @@ export const URLs = {
     },
     WEB: {
       BITBUCKET_HOME: 'https://bitbucket.org' as Link,
-      MY_NOTIFICATIONS: 'https://team.atlassian.com/notifications' as Link,
+      MY_NOTIFICATIONS: 'https://home.atlassian.com/notifications' as Link,
       PEOPLE: 'https://team.atlassian.com/people' as Link,
       SECURITY_TOKENS:
         'https://id.atlassian.com/manage-profile/security/api-tokens' as Link,
@@ -55,7 +55,11 @@ const _links = {
   },
 
   async openNotification(notification: AtlassifyNotification) {
-    openExternalLink(notification.entity.url ?? notification.url);
+    openExternalLink(
+      notification.entity.url ??
+        notification.url ??
+        URLs.ATLASSIAN.WEB.MY_NOTIFICATIONS,
+    );
   },
 };
 

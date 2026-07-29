@@ -14,7 +14,7 @@ import type { Link } from '../../types';
  *
  * @param url - The HTTPS URL to open.
  */
-export function openExternalLink(url: Link): void {
+export function openExternalLink(url: Link): void {  
   const settings = useSettingsStore.getState();
   const openPreference = settings.openLinks;
 
