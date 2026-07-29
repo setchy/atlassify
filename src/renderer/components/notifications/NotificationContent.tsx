@@ -78,7 +78,6 @@ export const NotificationContent: FC<NotificationContentProps> = ({
                   ) : (
                     <notification.product.logo
                       appearance="brand"
-                      shouldUseNewLogoDesign
                       size="xxsmall"
                     />
                   )}
@@ -97,7 +96,6 @@ export const NotificationContent: FC<NotificationContentProps> = ({
                 >
                   <notification.product.logo
                     appearance="brand"
-                    shouldUseNewLogoDesign
                     size="xxsmall"
                   />
                   <Text size="small">{footerText}</Text>
