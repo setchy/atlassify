@@ -1,11 +1,15 @@
-import { getGlobalTheme, setGlobalTheme } from '@atlaskit/tokens';
+import { getGlobalTheme } from '@atlaskit/tokens/get-global-theme';
+import { setGlobalTheme } from '@atlaskit/tokens/set-global-theme';
 
 import { Theme } from '../../../shared/theme';
 
 import { getTheme, isLightMode, setTheme } from './theme';
 
-vi.mock('@atlaskit/tokens', () => ({
+vi.mock('@atlaskit/tokens/get-global-theme', () => ({
   getGlobalTheme: vi.fn(),
+}));
+
+vi.mock('@atlaskit/tokens/set-global-theme', () => ({
   setGlobalTheme: vi.fn(),
 }));
 

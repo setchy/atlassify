@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { useThemeObserver } from '@atlaskit/tokens';
+import { useThemeObserver } from '@atlaskit/tokens/use-theme-observer';
 
 import { navigateMock, renderWithProviders } from '../__helpers__/test-utils';
 import {
@@ -12,13 +12,9 @@ import {
 import * as comms from '../utils/system/comms';
 import { Sidebar } from './Sidebar';
 
-vi.mock('@atlaskit/tokens', async () => {
-  const actual = await vi.importActual('@atlaskit/tokens');
-  return {
-    ...actual,
-    useThemeObserver: vi.fn(() => ({ colorMode: 'light' })),
-  };
-});
+vi.mock('@atlaskit/tokens/use-theme-observer', () => ({
+  useThemeObserver: vi.fn(() => ({ colorMode: 'light' })),
+}));
 
 const mockThemeObserverColorMode = (mode: 'light' | 'dark') => {
   vi.mocked(useThemeObserver).mockReturnValue({ colorMode: mode });
