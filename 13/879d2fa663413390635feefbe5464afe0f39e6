@@ -1,0 +1,26 @@
+src/renderer/utils/api/transform.test.ts
+  s_08ba3f79095a69::t_1110720405cd2a 25
+src/renderer/utils/api/graphql/generated/graphql.ts
+  s_08ba3f79095a69::t_bb255e70523912 7-11,77,79,81,146-158,201-213,265,284,315-327
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "13879d2fa663413390635feefbe5464afe0f39e6",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  },
+  "sessions": {
+    "s_08ba3f79095a69": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "061e1139-f04c-4250-a95b-3a74032726ee",
+        "model": "claude-sonnet-4.6"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
