@@ -70,8 +70,8 @@ importers:
         specifier: 6.2.3
         version: 6.2.3(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(supports-color@10.2.2)
       '@atlaskit/icon':
-        specifier: 36.2.0
-        version: 36.2.0(react@19.2.7)(supports-color@10.2.2)
+        specifier: 37.1.0
+        version: 37.1.0(react@19.2.7)(supports-color@10.2.2)
       '@atlaskit/icon-lab':
         specifier: 7.4.0
         version: 7.4.0(react@19.2.7)(supports-color@10.2.2)
@@ -360,6 +360,11 @@ packages:
 
   '@atlaskit/icon@36.2.0':
     resolution: {integrity: sha512-BGvjtncELsUlEvkHQSVY7VSs5S3dFwqdpgVu4yOUnU/jB93Lp8QhehMRsBTQjLHH3A0Ktaeu9TodTZ5O6QVWuw==}
+    peerDependencies:
+      react: ^18.2.0
+
+  '@atlaskit/icon@37.1.0':
+    resolution: {integrity: sha512-gcfcXdcwVJxeinJWUPZ2UzV+p1qYL0oFe0QpgbeMI8oXthRERDuefgmp2/JuMGf7vRyIUYS92TSG9dsqJI4KbQ==}
     peerDependencies:
       react: ^18.2.0
 
@@ -714,6 +719,11 @@ packages:
 
   '@compiled/react@0.20.0':
     resolution: {integrity: sha512-mEJuYGFxIDST1H7CpksyE6a3HRVRQmeDal26O+bCHTEZlPp7iKvs5KD1FOmd2palng+S60dPFFG+UuoZDRILwA==}
+    peerDependencies:
+      react: '>=18.0.0'
+
+  '@compiled/react@0.22.2':
+    resolution: {integrity: sha512-ZxNiCr3XTEeu+pb5SSsmJ4TWH5C92aUDlcVUQEHB4Fp6/2tmL9uJt+4wWtJnBMF7/BZ6+EU49M8fw7nBORZCBg==}
     peerDependencies:
       react: '>=18.0.0'
 
@@ -5240,6 +5250,17 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@atlaskit/icon@37.1.0(react@19.2.7)(supports-color@10.2.2)':
+    dependencies:
+      '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.7)
+      '@atlaskit/tile': 2.3.1(react@19.2.7)(supports-color@10.2.2)
+      '@atlaskit/tokens': 16.3.0(react@19.2.7)(supports-color@10.2.2)
+      '@babel/runtime': 7.29.7
+      '@compiled/react': 0.22.2(react@19.2.7)
+      react: 19.2.7
+    transitivePeerDependencies:
+      - supports-color
+
   '@atlaskit/icon@37.2.0(react@19.2.7)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.7)
@@ -5998,6 +6019,11 @@ snapshots:
       postcss-values-parser: 6.0.2(postcss@8.5.23)
 
   '@compiled/react@0.20.0(react@19.2.7)':
+    dependencies:
+      csstype: 3.2.3
+      react: 19.2.7
+
+  '@compiled/react@0.22.2(react@19.2.7)':
     dependencies:
       csstype: 3.2.3
       react: 19.2.7
