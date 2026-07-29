@@ -55,7 +55,11 @@ const _links = {
   },
 
   async openNotification(notification: AtlassifyNotification) {
-    openExternalLink(notification.entity.url ?? notification.url);
+    openExternalLink(
+      notification.entity.url ??
+        notification.url ??
+        URLs.ATLASSIAN.WEB.MY_NOTIFICATIONS,
+    );
   },
 };
 

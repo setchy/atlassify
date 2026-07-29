@@ -22,6 +22,7 @@ const mockRawNotification: AtlassianNotificationFragment = {
       type: 'comment',
       message: 'Test notification message',
       url: 'https://example.atlassian.net/browse/TEST-1',
+      bodyItems: [],
       entity: {
         title: 'TEST-1 Summary',
         iconUrl: 'https://example.atlassian.net/favicon.ico',
