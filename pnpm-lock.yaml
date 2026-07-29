@@ -91,8 +91,8 @@ importers:
         specifier: 9.1.1
         version: 9.1.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/select':
-        specifier: 22.5.7
-        version: 22.5.7(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
+        specifier: 22.6.0
+        version: 22.6.0(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/spinner':
         specifier: 20.1.1
         version: 20.1.1(react@19.2.8)(supports-color@10.2.2)
@@ -451,8 +451,8 @@ packages:
       react: ^18.2.0 || ^19.0.0
       react-dom: ^18.2.0 || ^19.0.0
 
-  '@atlaskit/select@22.5.7':
-    resolution: {integrity: sha512-peyW0ymQzh0sz5La0IhytF+5wXxUzIrbuhfhbwZ8iWvh2It6Q8lNzoz6BVXx5V8bEt7/z2L25CNRt/fX+RhzYQ==}
+  '@atlaskit/select@22.6.0':
+    resolution: {integrity: sha512-AiaFbPQGJU9z76uMYuoJCUnjeF62zLhW8btChOd4aaSFnAl9iDCmWlKhWRPf4udw6HY23DOKnjXXv468+Sxjjg==}
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
       react-dom: ^18.2.0 || ^19.0.0
@@ -5511,7 +5511,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/select@22.5.7(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)':
+  '@atlaskit/select@22.6.0(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/analytics-next': 12.3.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@atlaskit/ds-lib': 8.0.0(react@19.2.8)
@@ -5523,7 +5523,7 @@ snapshots:
       '@atlaskit/react-select': 4.6.1(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/theme': 26.1.1(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/tokens': 16.3.0(react@19.2.8)(supports-color@10.2.2)
-      '@atlaskit/top-layer': 1.10.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
+      '@atlaskit/top-layer': 2.0.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/visually-hidden': 4.2.0(react@19.2.8)
       '@babel/runtime': 7.29.7
       '@compiled/react': 1.0.0(react@19.2.8)
