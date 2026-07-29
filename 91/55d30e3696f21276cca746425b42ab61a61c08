@@ -1,0 +1,21 @@
+src/renderer/components/Sidebar.test.tsx
+  s_08ba3f79095a69::t_a71cd548008bbc 15-17
+src/renderer/utils/ui/theme.test.ts
+  s_08ba3f79095a69::t_a71cd548008bbc 8,10-12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "9155d30e3696f21276cca746425b42ab61a61c08",
+  "prompts": {},
+  "sessions": {
+    "s_08ba3f79095a69": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "061e1139-f04c-4250-a95b-3a74032726ee",
+        "model": "claude-sonnet-4.6"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
