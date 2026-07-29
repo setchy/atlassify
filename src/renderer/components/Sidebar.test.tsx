@@ -89,7 +89,7 @@ describe('renderer/components/Sidebar.tsx', () => {
       await userEvent.click(screen.getByTestId('sidebar-notifications'));
 
       expect(openExternalLinkSpy).toHaveBeenCalledWith(
-        'https://team.atlassian.com/notifications',
+        'https://home.atlassian.com/notifications',
       );
     });
 

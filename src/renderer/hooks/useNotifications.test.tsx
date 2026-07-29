@@ -20,7 +20,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
 
   describe('fetchNotifications', () => {
     it('fetchNotifications - unread only', async () => {
-      nock('https://team.atlassian.net')
+      nock('https://home.atlassian.com')
         .post('/gateway/api/graphql')
         .reply(200, {
           data: {
@@ -60,7 +60,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
         fetchOnlyUnreadNotifications: false,
       });
 
-      nock('https://team.atlassian.net')
+      nock('https://home.atlassian.com')
         .post('/gateway/api/graphql')
         .reply(200, {
           data: {
@@ -100,7 +100,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
         fetchOnlyUnreadNotifications: false,
       });
 
-      nock('https://team.atlassian.net')
+      nock('https://home.atlassian.com')
         .post('/gateway/api/graphql')
         .reply(200, {
           data: {
@@ -131,7 +131,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
 
   it('markNotificationsRead', async () => {
     // Mock initial fetch
-    nock('https://team.atlassian.net')
+    nock('https://home.atlassian.com')
       .post('/gateway/api/graphql')
       .reply(200, {
         data: {
@@ -151,10 +151,10 @@ describe('renderer/hooks/useNotifications.ts', () => {
       });
 
     // Mock the markNotificationsAsRead mutation
-    nock('https://team.atlassian.net').post('/gateway/api/graphql').reply(200);
+    nock('https://home.atlassian.com').post('/gateway/api/graphql').reply(200);
 
     // Mock the automatic refetch after mutation
-    nock('https://team.atlassian.net')
+    nock('https://home.atlassian.com')
       .post('/gateway/api/graphql')
       .reply(200, {
         data: {
@@ -194,7 +194,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
 
   it('markNotificationsUnread', async () => {
     // Mock initial fetch
-    nock('https://team.atlassian.net')
+    nock('https://home.atlassian.com')
       .post('/gateway/api/graphql')
       .reply(200, {
         data: {
@@ -214,10 +214,10 @@ describe('renderer/hooks/useNotifications.ts', () => {
       });
 
     // Mock the markNotificationsAsUnread mutation
-    nock('https://team.atlassian.net').post('/gateway/api/graphql').reply(200);
+    nock('https://home.atlassian.com').post('/gateway/api/graphql').reply(200);
 
     // Mock the automatic refetch after mutation
-    nock('https://team.atlassian.net')
+    nock('https://home.atlassian.com')
       .post('/gateway/api/graphql')
       .reply(200, {
         data: {

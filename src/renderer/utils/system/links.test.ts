@@ -60,7 +60,7 @@ describe('renderer/utils/system/links.ts', () => {
     openAccountProfile(mockAtlassianCloudAccount);
 
     expect(openExternalLinkSpy).toHaveBeenCalledWith(
-      'https://team.atlassian.com/people/123456789',
+      'https://home.atlassian.com/people/123456789',
     );
   });
 

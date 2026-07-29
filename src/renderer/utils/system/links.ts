@@ -6,7 +6,7 @@ import { openExternalLink, trackEvent } from './comms';
 
 export const URLs = {
   ATLASSIAN: {
-    API: 'https://team.atlassian.net/gateway/api/graphql' as Link,
+    API: 'https://home.atlassian.com/gateway/api/graphql' as Link,
     DOCS: {
       API_TOKEN:
         'https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/#Create-an-API-token-with-scopes' as Link,
@@ -14,7 +14,7 @@ export const URLs = {
     WEB: {
       BITBUCKET_HOME: 'https://bitbucket.org' as Link,
       MY_NOTIFICATIONS: 'https://home.atlassian.com/notifications' as Link,
-      PEOPLE: 'https://team.atlassian.com/people' as Link,
+      PEOPLE: 'https://home.atlassian.com/people' as Link,
       SECURITY_TOKENS:
         'https://id.atlassian.com/manage-profile/security/api-tokens' as Link,
     },

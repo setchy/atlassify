@@ -11,7 +11,7 @@ import {
   performRequestForCredentials,
 } from './request';
 
-const url = 'https://team.atlassian.net/gateway/api/graphql' as Link;
+const url = 'https://home.atlassian.com/gateway/api/graphql' as Link;
 
 describe('renderer/utils/api/request.ts', () => {
   beforeEach(() => {
