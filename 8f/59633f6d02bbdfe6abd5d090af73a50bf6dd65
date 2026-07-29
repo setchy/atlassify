@@ -1,0 +1,24 @@
+src/renderer/components/settings/AppearanceSettings.tsx
+  h_ac004aadb63da9 13
+src/renderer/utils/ui/theme.test.ts
+  h_ac004aadb63da9 1-2
+src/renderer/components/Sidebar.tsx
+  h_ac004aadb63da9 15-16
+src/renderer/utils/ui/theme.ts
+  h_ac004aadb63da9 1-2
+src/renderer/index.tsx
+  h_ac004aadb63da9 1
+src/renderer/components/Sidebar.test.tsx
+  h_ac004aadb63da9 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "8f59633f6d02bbdfe6abd5d090af73a50bf6dd65",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
