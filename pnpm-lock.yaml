@@ -141,9 +141,6 @@ importers:
       '@parcel/watcher':
         specifier: 2.6.0
         version: 2.6.0
-      '@swc-contrib/plugin-graphql-codegen-client-preset':
-        specifier: 0.27.0
-        version: 0.27.0
       '@tailwindcss/vite':
         specifier: 4.3.3
         version: 4.3.3(vite@8.1.5(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0))
@@ -1517,10 +1514,6 @@ packages:
 
   '@statsig/js-client@3.30.2':
     resolution: {integrity: sha512-Cjs4uzyAxt1sw44oa6qSNWuZdO11jmgrpOVBC2NajtpA55GBmAfjZ3vQdXizUffUZMRmFiEpGwxi9zmjFEG7Sw==}
-
-  '@swc-contrib/plugin-graphql-codegen-client-preset@0.27.0':
-    resolution: {integrity: sha512-6kAF8RQ35cME6Mk+Kd4rErN+gxrPcnSwhDjD1dhpAdKzn5BTEUGKxdCdvrMTIziRW364vEMlP3+0nmBP3eVd4Q==}
-    engines: {node: '>=16'}
 
   '@swc/core-darwin-arm64@1.15.46':
     resolution: {integrity: sha512-IsISIT22EfktVJrlvIpnAxG2u/A9aob9l99HMlx80x72WlFmFPk1V3UhkEzx86eJP8hw049KTFv/RISho2cq2Q==}
@@ -7058,8 +7051,6 @@ snapshots:
     dependencies:
       '@statsig/client-core': 3.30.2
 
-  '@swc-contrib/plugin-graphql-codegen-client-preset@0.27.0': {}
-
   '@swc/core-darwin-arm64@1.15.46':
     optional: true
 
@@ -8480,7 +8471,7 @@ snapshots:
       es6-error: 4.1.1
       matcher: 3.0.0
       roarr: 2.15.4
-      semver: 7.7.4
+      semver: 7.8.5
       serialize-error: 7.0.1
     optional: true
 
@@ -9171,13 +9162,13 @@ snapshots:
 
   node-abi@4.33.0:
     dependencies:
-      semver: 7.7.4
+      semver: 7.8.5
 
   node-addon-api@7.1.1: {}
 
   node-api-version@0.2.1:
     dependencies:
-      semver: 7.7.4
+      semver: 7.8.5
 
   node-domexception@1.0.0: {}
 
@@ -9194,7 +9185,7 @@ snapshots:
       graceful-fs: 4.2.11
       nopt: 9.0.0
       proc-log: 6.1.0
-      semver: 7.7.4
+      semver: 7.8.5
       tar: 7.5.22
       tinyglobby: 0.2.17
       undici: 6.28.0
