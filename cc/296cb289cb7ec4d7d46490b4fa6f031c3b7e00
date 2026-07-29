@@ -1,0 +1,14 @@
+package.json
+  h_ac004aadb63da9 132
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "cc296cb289cb7ec4d7d46490b4fa6f031c3b7e00",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
