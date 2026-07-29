@@ -9,6 +9,7 @@ const config: CodegenConfig = {
       plugins: ['typescript-operations', 'typed-document-node'],
       config: {
         documentMode: 'string',
+        skipDocumentsValidation: true,
         enumType: 'native',
         scalars: {
           DateTime: 'string',
