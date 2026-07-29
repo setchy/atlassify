@@ -87,7 +87,7 @@ fragment AtlassianHeadNotification on InfluentsNotificationItem {
     message
     url
     # FIXME - For some reason, adding this populates content.url and entity.url for Confluence Live Document based notifications.
-    bodyItems { 
+    bodyItems {
       appearance
       author {
         actorType
