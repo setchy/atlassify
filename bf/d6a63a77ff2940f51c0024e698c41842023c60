@@ -1,0 +1,14 @@
+vite.config.ts
+  h_ac004aadb63da9 187
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "bfd6a63a77ff2940f51c0024e698c41842023c60",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
