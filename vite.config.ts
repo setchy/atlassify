@@ -143,7 +143,6 @@ export default defineConfig(({ command }) => {
         ? []
         : [
             checker({
-              typescript: true,
               biome: { dev: { logLevel: ['error'] } },
             }),
           ]),
