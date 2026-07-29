@@ -16,12 +16,15 @@
     "editor.defaultFormatter": "biomejs.biome"
   },
   "cSpell.words": [
+    "aptabase",
     "atlassify",
     "codegen",
+    "heroicon",
     "partialize",
     "rovo",
     "xcss",
-    "aptabase"
+    "xsmall",
+    "xxsmall"
   ],
   "i18n-ally.translate.engines": ["google"],
   "i18n-ally.localesPaths": ["src/renderer/i18n/locales"],

@@ -76,7 +76,6 @@ const FilterSectionComponent = <K extends keyof FiltersState>({
                 {typeDetails.logo && (
                   <typeDetails.logo
                     appearance={isChecked ? 'brand' : 'neutral'}
-                    shouldUseNewLogoDesign
                     size="xxsmall"
                   />
                 )}

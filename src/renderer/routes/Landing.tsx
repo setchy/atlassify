@@ -45,7 +45,6 @@ export const LandingRoute: FC = () => {
   const commonLogoProps: LogoProps = {
     size: 'small',
     appearance: 'brand',
-    shouldUseNewLogoDesign: true,
   };
 
   return (
