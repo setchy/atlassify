@@ -184,8 +184,8 @@ export default defineConfig(({ command }) => {
                   'electron',
                   // TODO - how many of these are truly needed?
                   'electron-log',
+                  'electron-menubar',
                   'electron-updater',
-                  'menubar',
                   '@aptabase/electron',
                 ],
               },
