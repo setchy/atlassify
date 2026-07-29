@@ -1,0 +1,14 @@
+src/renderer/utils/ui/zoom.test.ts
+  h_ac004aadb63da9 31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "f31d67b9bc34dc90a2f60a188bea57acdcf5a3eb",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
