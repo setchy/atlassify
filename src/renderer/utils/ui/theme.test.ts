@@ -1,4 +1,5 @@
-import { getGlobalTheme, setGlobalTheme } from '@atlaskit/tokens';
+import { getGlobalTheme } from '@atlaskit/tokens/get-global-theme';
+import { setGlobalTheme } from '@atlaskit/tokens/set-global-theme';
 
 import { Theme } from '../../../shared/theme';
 

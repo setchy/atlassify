@@ -10,7 +10,7 @@ import ZoomOutIcon from '@atlaskit/icon/core/zoom-out';
 import { Box, Inline, Stack, Text, xcss } from '@atlaskit/primitives';
 import { Radio } from '@atlaskit/radio';
 import Select from '@atlaskit/select';
-import { setGlobalTheme } from '@atlaskit/tokens';
+import { setGlobalTheme } from '@atlaskit/tokens/set-global-theme';
 import Tooltip from '@atlaskit/tooltip';
 
 import { Theme } from '../../../shared/theme';

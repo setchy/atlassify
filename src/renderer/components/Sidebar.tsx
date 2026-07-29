@@ -12,7 +12,8 @@ import SettingsIcon from '@atlaskit/icon/core/settings';
 import { Box, Stack } from '@atlaskit/primitives';
 import Spinner from '@atlaskit/spinner';
 import Toggle from '@atlaskit/toggle';
-import { token, useThemeObserver } from '@atlaskit/tokens';
+import { token } from '@atlaskit/tokens';
+import { useThemeObserver } from '@atlaskit/tokens/use-theme-observer';
 import Tooltip from '@atlaskit/tooltip';
 
 import { APPLICATION } from '../../shared/constants';
