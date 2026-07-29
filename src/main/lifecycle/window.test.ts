@@ -172,7 +172,7 @@ describe('main/lifecycle/window.ts', () => {
     });
 
     it('skips the call when the window is destroyed', () => {
-      // oxlint-disable-next-line no-unsafe-optional-chaining -- window is guaranteed defined in this test
+      // biome-ignore lint/correctness/noUnsafeOptionalChaining: window is guaranteed defined in this test
       (menubar.window?.isDestroyed as ReturnType<typeof vi.fn>).mockReturnValue(
         true,
       );
@@ -185,7 +185,7 @@ describe('main/lifecycle/window.ts', () => {
     it('is restored after DevTools closes', () => {
       configureWindowEvents(menubar, menuBuilder);
       applyKeepWindowOnBlur(menubar, true);
-      // oxlint-disable-next-line no-unsafe-optional-chaining -- window is guaranteed defined in this test
+      // biome-ignore lint/correctness/noUnsafeOptionalChaining: window is guaranteed defined in this test
       (menubar.window?.setAlwaysOnTop as ReturnType<typeof vi.fn>).mockClear();
 
       findWebContentsHandler(menubar, 'devtools-closed')?.();
