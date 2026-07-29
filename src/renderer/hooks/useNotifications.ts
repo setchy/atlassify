@@ -165,6 +165,9 @@ export const useNotifications = (): UseNotificationsResult => {
   const notificationCount = getNotificationCount(notifications);
   const hasNotifications = notificationCount > 0;
   const hasMoreAccountNotifications = hasMoreNotifications(notifications);
+  const hasAnyAccountError = notifications.some(
+    (account) => account.error !== null,
+  );
 
   const isErrorOrPaused = isError || isPaused;
 
@@ -211,9 +214,9 @@ export const useNotifications = (): UseNotificationsResult => {
       .updateNotificationStatus(
         notificationCount,
         hasMoreAccountNotifications,
-        isErrorOrPaused,
+        hasAnyAccountError,
       );
-  }, [notificationCount, hasMoreAccountNotifications, isErrorOrPaused]);
+  }, [notificationCount, hasMoreAccountNotifications, hasAnyAccountError]);
 
   const refetchNotifications = useCallback(async () => {
     await refetch();

@@ -154,7 +154,7 @@ export function initializeStoreSubscriptions(): () => void {
     (state) => ({
       notificationCount: state.notificationCount,
       hasMoreAccountNotifications: state.hasMoreAccountNotifications,
-      isError: state.isError,
+      hasAnyAccountError: state.hasAnyAccountError,
       isOnline: state.isOnline,
     }),
     setTrayIconColorAndTitle,

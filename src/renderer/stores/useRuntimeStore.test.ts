@@ -5,31 +5,34 @@ describe('renderer/stores/useRuntimeStore.ts', () => {
     const {
       notificationCount,
       hasMoreAccountNotifications,
-      isError,
+      hasAnyAccountError,
       isOnline,
     } = useRuntimeStore.getState();
 
     expect(notificationCount).toBe(0);
     expect(hasMoreAccountNotifications).toBe(false);
-    expect(isError).toBe(false);
+    expect(hasAnyAccountError).toBe(false);
     expect(isOnline).toBe(true);
   });
 
   it('should update notification status', () => {
-    useRuntimeStore.getState().updateNotificationStatus(10, true, false);
+    useRuntimeStore.getState().updateNotificationStatus(10, true, true);
 
-    const { notificationCount, hasMoreAccountNotifications, isError } =
-      useRuntimeStore.getState();
+    const {
+      notificationCount,
+      hasMoreAccountNotifications,
+      hasAnyAccountError,
+    } = useRuntimeStore.getState();
 
     expect(notificationCount).toBe(10);
     expect(hasMoreAccountNotifications).toBe(true);
-    expect(isError).toBe(false);
+    expect(hasAnyAccountError).toBe(true);
   });
 
-  it('should reflect error state', () => {
+  it('should reflect hasAnyAccountError state', () => {
     useRuntimeStore.getState().updateNotificationStatus(0, false, true);
 
-    expect(useRuntimeStore.getState().isError).toBe(true);
+    expect(useRuntimeStore.getState().hasAnyAccountError).toBe(true);
   });
 
   it('should update online status', () => {

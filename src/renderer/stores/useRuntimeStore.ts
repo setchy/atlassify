@@ -19,13 +19,17 @@ const useRuntimeStore = create<RuntimeStore>()(
   subscribeWithSelector((set) => ({
     ...DEFAULT_RUNTIME_STATE,
 
-    /** Updates the notification count, hasMore flag, and error flag from the latest fetch result. */
+    /** Updates the notification count, hasMore flag, and account error flag from the latest fetch result. */
     updateNotificationStatus: (
       notificationCount: number,
       hasMoreAccountNotifications: boolean,
-      isError: boolean,
+      hasAnyAccountError: boolean,
     ) => {
-      set({ notificationCount, hasMoreAccountNotifications, isError });
+      set({
+        notificationCount,
+        hasMoreAccountNotifications,
+        hasAnyAccountError,
+      });
     },
 
     /** Updates the online/offline connectivity status. */
