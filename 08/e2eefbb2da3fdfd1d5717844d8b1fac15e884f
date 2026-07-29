@@ -1,0 +1,30 @@
+src/renderer/utils/system/links.ts
+  s_08ba3f79095a69::t_e7dde3b1ac0b28 58-62
+  s_08ba3f79095a69::t_718c4f65e6bfeb 16
+src/renderer/utils/system/links.test.ts
+  s_08ba3f79095a69::t_43d72269b3d510 85-96
+src/renderer/utils/api/client.graphql
+  s_08ba3f79095a69::t_422a24352e1a3e 91-102
+  h_ac004aadb63da9 89-90
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "08e2eefbb2da3fdfd1d5717844d8b1fac15e884f",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  },
+  "sessions": {
+    "s_08ba3f79095a69": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "061e1139-f04c-4250-a95b-3a74032726ee",
+        "model": "claude-sonnet-4.6"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
