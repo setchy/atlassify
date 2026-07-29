@@ -50,18 +50,17 @@ describe('renderer/utils/notifications/postProcess.ts', () => {
         description:
           'both delayNotificationState and fetchOnlyUnreadNotifications are true',
       },
-    ])('should return $expected when read action and $description', ({
-      delayNotificationState,
-      fetchOnlyUnreadNotifications,
-      expected,
-    }) => {
-      useSettingsStore.setState({
-        delayNotificationState,
-        fetchOnlyUnreadNotifications,
-      });
+    ])(
+      'should return $expected when read action and $description',
+      ({ delayNotificationState, fetchOnlyUnreadNotifications, expected }) => {
+        useSettingsStore.setState({
+          delayNotificationState,
+          fetchOnlyUnreadNotifications,
+        });
 
-      expect(shouldRemoveNotificationsFromState()).toBe(expected);
-    });
+        expect(shouldRemoveNotificationsFromState()).toBe(expected);
+      },
+    );
   });
 
   describe('removeNotificationsForAccount', () => {
