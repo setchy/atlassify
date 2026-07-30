@@ -30,5 +30,9 @@
   "i18n-ally.localesPaths": ["src/renderer/i18n/locales"],
   "i18n-ally.sourceLanguage": "en",
   "i18n-ally.keystyle": "nested",
-  "i18n-ally.sortKeys": true
+  "i18n-ally.sortKeys": true,
+  "sonarlint.connectedMode.project": {
+    "connectionId": "setchy",
+    "projectKey": "setchy_atlassify"
+  }
 }
