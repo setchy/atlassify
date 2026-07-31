@@ -35,7 +35,10 @@ export const Constants = {
   // Query garbage collection time in milliseconds - how long unused cache data stays in memory
   QUERY_GC_TIME_MS: 10 * 60 * 1000, // 10 minutes
 
-  // Maximum number of notifications to fetch per account
+  // Maximum number of notifications returned per GraphQL request (API-enforced limit)
+  NOTIFICATIONS_PAGE_SIZE: 100,
+
+  // Maximum number of notifications to fetch per account, across paginated requests
   MAX_NOTIFICATIONS_PER_ACCOUNT: 999,
 
   // Threshold for determining if a notification content block is "long" and needs truncating

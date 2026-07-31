@@ -84,18 +84,24 @@ export function getAuthenticatedUser(
 /**
  * List all notifications for the current user.
  *
+ * The Atlassian GraphQL API limits each request to `Constants.NOTIFICATIONS_PAGE_SIZE`
+ * notifications, so callers should page through results using the `after` cursor.
+ *
  * @param account - The account to fetch notifications for.
+ * @param after - The cursor to fetch the next page of notifications from.
  * @returns Promise resolving to the GraphQL response containing the notification feed.
  *
  * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
  */
 export function getNotificationsForUser(
   account: Account,
+  after?: string,
 ): Promise<AtlassianGraphQLResponse<MyNotificationsQuery>> {
   const settings = useSettingsStore.getState();
 
   return performRequestForAccount(account, MyNotificationsDocument, {
-    first: Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
+    first: Constants.NOTIFICATIONS_PAGE_SIZE,
+    after,
     flat: !settings.groupNotificationsByTitle,
     readState: settings.fetchOnlyUnreadNotifications
       ? InfluentsNotificationReadState.Unread

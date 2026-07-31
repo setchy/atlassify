@@ -47,16 +47,19 @@ query MyNotifications(
   $readState: InfluentsNotificationReadState
   $flat: Boolean = true
   $first: Int
+  $after: String
 ) {
   notifications {
     unseenNotificationCount
     notificationFeed(
       flat: $flat
       first: $first
+      after: $after
       filter: { readStateFilter: $readState }
     ) {
       pageInfo {
         hasNextPage
+        endCursor
       }
       nodes {
         ...AtlassianNotification
