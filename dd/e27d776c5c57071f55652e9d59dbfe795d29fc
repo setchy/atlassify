@@ -1,0 +1,45 @@
+src/renderer/routes/Accounts.tsx
+  s_8e39093c4550c1::t_a72254f0f9ed92 28,31,71
+src/renderer/components/notifications/ProductNotifications.tsx
+  s_8e39093c4550c1::t_a72254f0f9ed92 27,29-31,103
+src/renderer/components/settings/AppearanceSettings.tsx
+  s_8e39093c4550c1::t_51cbcfed7bf3b2 33,36-41,81,101,131,136,139
+src/renderer/components/primitives/Footer.tsx
+  s_8e39093c4550c1::t_51cbcfed7bf3b2 15-16,22
+src/renderer/components/settings/SystemSettings.tsx
+  s_8e39093c4550c1::t_a72254f0f9ed92 29,38-43,74,139,145
+src/renderer/components/notifications/AccountNotifications.tsx
+  s_8e39093c4550c1::t_a72254f0f9ed92 69-70
+  s_8e39093c4550c1::t_6bd0d9f6363418 156
+  s_8e39093c4550c1::t_687d23be1b3bd3 67
+src/renderer/components/notifications/__snapshots__/AccountNotifications.test.tsx.snap
+  s_8e39093c4550c1::t_022827a7f1c8a8 11,14,225,228,439,442,1197,1200
+src/renderer/components/notifications/__snapshots__/ProductNotifications.test.tsx.snap
+  s_8e39093c4550c1::t_e227b4ee64c9ac 11,14,182,185,353,356
+src/renderer/components/primitives/__snapshots__/Footer.test.tsx.snap
+  s_8e39093c4550c1::t_a5c540049306fc 8,11,27,30
+src/renderer/routes/__snapshots__/Accounts.test.tsx.snap
+  s_8e39093c4550c1::t_0575bda9418c01 65,68,210,213,321,324,466,469
+src/renderer/routes/__snapshots__/Filters.test.tsx.snap
+  s_8e39093c4550c1::t_31fc9cff2c1787 1760,1763,3543,3546
+src/renderer/routes/__snapshots__/Login.test.tsx.snap
+  s_8e39093c4550c1::t_3114fe7a0c5c3c 206,209
+src/renderer/routes/__snapshots__/Settings.test.tsx.snap
+  s_8e39093c4550c1::t_84a5c10a359940 76-80,189-193,263-267,294,1042-1046,1329,1345,2100,2103
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.18",
+  "base_commit_sha": "dde27d776c5c57071f55652e9d59dbfe795d29fc",
+  "prompts": {},
+  "sessions": {
+    "s_8e39093c4550c1": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "37e1bb0d-ebb6-4209-907f-1b666c5e3d58",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
