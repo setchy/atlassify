@@ -9,6 +9,8 @@ allowBuilds:
   unrs-resolver: true
 catalog:
   electron: '43.2.0'
+minimumReleaseAgeExclude:
+  - electron-menubar
 overrides:
   react-is: '19.2.8'
   # Force patched versions of transitive dev-tooling deps pulled in by
