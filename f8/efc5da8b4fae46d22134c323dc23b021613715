@@ -1,0 +1,19 @@
+src/renderer/types.ts
+  s_8e39093c4550c1::t_e883f25439105b 278-282,288,290
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.18",
+  "base_commit_sha": "f8efc5da8b4fae46d22134c323dc23b021613715",
+  "prompts": {},
+  "sessions": {
+    "s_8e39093c4550c1": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "37e1bb0d-ebb6-4209-907f-1b666c5e3d58",
+        "model": "unknown"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
