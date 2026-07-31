@@ -36,6 +36,11 @@
       "description": "Hold got on the v11 line. The override only exists to satisfy security scanners for dev tooling (@electron/get via electron-builder, react-devtools), which was built against the non-ESM v11 API. v11.8.5+ already includes the security fix, and v12+ is ESM-only.",
       "matchPackageNames": ["got"],
       "allowedVersions": "<12"
+    },
+    {
+      "description": "electron-menubar is a first-party dependency, so skip the minimum release age gate applied to other packages",
+      "matchPackageNames": ["electron-menubar"],
+      "minimumReleaseAge": "0 days"
     }
   ],
   "customManagers": [
