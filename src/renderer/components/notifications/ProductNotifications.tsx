@@ -24,8 +24,11 @@ export interface ProductNotificationsProps {
 }
 
 const styles = cssMap({
-  box: {
+  root: {
     transitionDuration: '200ms',
+    paddingBlock: token('space.050'),
+    paddingInlineStart: token('space.050'),
+    paddingInlineEnd: token('space.100'),
   },
   light: {
     backgroundColor: token('color.background.accent.blue.subtlest'),
@@ -97,10 +100,7 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
       <Box
         as="div"
         onClick={actionToggleProductNotifications}
-        paddingBlock="space.050"
-        paddingInlineEnd="space.100"
-        paddingInlineStart="space.050"
-        xcss={cx(styles.box, isLightMode() ? styles.light : styles.dark)}
+        xcss={cx(styles.root, isLightMode() ? styles.light : styles.dark)}
       >
         <Flex alignItems="center" justifyContent="space-between">
           <Tooltip

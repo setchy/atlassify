@@ -26,7 +26,7 @@ import {
 } from '../../utils/ui/volume';
 
 const styles = cssMap({
-  volumeBox: {
+  root: {
     backgroundColor: token('color.background.accent.gray.subtlest'),
   },
   visible: {
@@ -34,6 +34,12 @@ const styles = cssMap({
   },
   hidden: {
     visibility: 'hidden',
+  },
+  row: {
+    paddingInlineStart: token('space.050'),
+  },
+  count: {
+    paddingInline: token('space.150'),
   },
 });
 
@@ -65,7 +71,7 @@ export const SystemSettings: FC = () => {
     <Stack space="space.100">
       <Heading size="small">{t('settings.system.title')}</Heading>
 
-      <Box paddingInlineStart="space.050">
+      <Box xcss={styles.row}>
         <Inline alignBlock="center" space="space.100">
           <Text weight="medium">{t('settings.system.open_links')}:</Text>
           <Radio
@@ -130,13 +136,13 @@ export const SystemSettings: FC = () => {
         <Inline
           testId="settings-volume-group"
           xcss={cx(
-            styles.volumeBox,
+            styles.root,
             playSoundNewNotifications ? styles.visible : styles.hidden,
           )}
         >
           <SplitButton spacing="compact">
             <Inline alignBlock="center">
-              <Box paddingInline="space.150">
+              <Box xcss={styles.count}>
                 <Text>{notificationVolume.toFixed(0)}%</Text>
               </Box>
               <Tooltip

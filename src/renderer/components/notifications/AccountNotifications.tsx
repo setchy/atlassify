@@ -64,8 +64,10 @@ const styles = cssMap({
   titleContainer: {
     gridArea: 'title',
   },
-  box: {
+  root: {
     transitionDuration: '200ms',
+    paddingBlock: token('space.050'),
+    paddingInline: token('space.100'),
   },
   error: {
     backgroundColor: token('color.background.accent.red.subtler'),
@@ -150,10 +152,8 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
         <Box
           as="div"
           onClick={actionToggleAccountNotifications}
-          paddingBlock="space.050"
-          paddingInline="space.100"
           xcss={cx(
-            styles.box,
+            styles.root,
             props.error
               ? styles.error
               : isLightMode()

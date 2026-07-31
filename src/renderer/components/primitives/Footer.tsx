@@ -12,12 +12,14 @@ interface FooterProps {
 const styles = cssMap({
   root: {
     backgroundColor: token('color.background.accent.gray.subtlest'),
+    paddingBlock: token('space.050'),
+    paddingInline: token('space.200'),
   },
 });
 
 export const Footer: FC<FooterProps> = (props: FooterProps) => {
   return (
-    <Box paddingBlock="space.050" paddingInline="space.200" xcss={styles.root}>
+    <Box xcss={styles.root}>
       <Flex justifyContent={props.justify}>{props.children}</Flex>
     </Box>
   );

@@ -73,6 +73,11 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
           >
             Appearance
           </h4>
+          <style
+            data-cmpld="true"
+          >
+            ._18zrutpp{padding-inline:var(--ds-space-150,9pt)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}._bozg1b66{padding-inline-start:var(--ds-space-050,4px)}
+          </style>
           <div
             class="_19itglyw _vchhusvi _r06hglyw _bozg1b66"
           >
@@ -181,6 +186,11 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
               </div>
             </div>
           </div>
+          <style
+            data-cmpld="true"
+          >
+            ._18zrutpp{padding-inline:var(--ds-space-150,9pt)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}._bozg1b66{padding-inline-start:var(--ds-space-050,4px)}
+          </style>
           <div
             class="_19itglyw _vchhusvi _r06hglyw _bozg1b66"
           >
@@ -250,6 +260,11 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
               </label>
             </div>
           </div>
+          <style
+            data-cmpld="true"
+          >
+            ._18zrutpp{padding-inline:var(--ds-space-150,9pt)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}._bozg1b66{padding-inline-start:var(--ds-space-050,4px)}
+          </style>
           <div
             class="_19itglyw _vchhusvi _r06hglyw _bozg1b66"
           >
@@ -263,11 +278,6 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 Zoom
                 :
               </span>
-              <style
-                data-cmpld="true"
-              >
-                ._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}
-              </style>
               <div
                 class="_1e0c1txw _vchhusvi _4cvrv2br _2lx2vrvc _bfhkysee"
               >
@@ -281,7 +291,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                       class="_1e0c1txw _vchhusvi _4cvr1h6o _2lx2vrvc"
                     >
                       <div
-                        class="_19itglyw _vchhusvi _r06hglyw _bozgutpp _y4tiutpp"
+                        class="_19itglyw _vchhusvi _r06hglyw _18zrutpp"
                       >
                         <span
                           class="_19pkidpf _2hwxidpf _otyridpf _18u0idpf _1i4qfg65 _11c8fhey _syazi7uo"
@@ -1029,6 +1039,11 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
           >
             System
           </h4>
+          <style
+            data-cmpld="true"
+          >
+            ._18zrutpp{padding-inline:var(--ds-space-150,9pt)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}._3um0ewfl{visibility:visible}._3um015vq{visibility:hidden}._bozg1b66{padding-inline-start:var(--ds-space-050,4px)}
+          </style>
           <div
             class="_19itglyw _vchhusvi _r06hglyw _bozg1b66"
           >
@@ -1311,7 +1326,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
             <style
               data-cmpld="true"
             >
-              ._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}._3um0ewfl{visibility:visible}._3um015vq{visibility:hidden}
+              ._18zrutpp{padding-inline:var(--ds-space-150,9pt)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}._3um0ewfl{visibility:visible}._3um015vq{visibility:hidden}._bozg1b66{padding-inline-start:var(--ds-space-050,4px)}
             </style>
             <div
               class="_1e0c1txw _vchhusvi _4cvrv2br _2lx2vrvc _bfhkysee _3um0ewfl"
@@ -1327,7 +1342,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                     class="_1e0c1txw _vchhusvi _4cvr1h6o _2lx2vrvc"
                   >
                     <div
-                      class="_19itglyw _vchhusvi _r06hglyw _bozgutpp _y4tiutpp"
+                      class="_19itglyw _vchhusvi _r06hglyw _18zrutpp"
                     >
                       <span
                         class="_19pkidpf _2hwxidpf _otyridpf _18u0idpf _1i4qfg65 _11c8fhey _syazi7uo"
@@ -2082,10 +2097,10 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
   <style
     data-cmpld="true"
   >
-    ._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}
+    ._1rjc1b66{padding-block:var(--ds-space-050,4px)}._18zrpxbi{padding-inline:var(--ds-space-200,1pc)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}
   </style>
   <div
-    class="_19itglyw _vchhusvi _r06hglyw _1q511b66 _85i51b66 _bozgpxbi _y4tipxbi _bfhkysee"
+    class="_19itglyw _vchhusvi _r06hglyw _1rjc1b66 _18zrpxbi _bfhkysee"
   >
     <div
       class="_1e0c1txw _vchhusvi _1bah1yb4"

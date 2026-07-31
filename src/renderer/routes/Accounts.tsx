@@ -25,9 +25,10 @@ import { openAccountProfile } from '../utils/system/links';
 import { isLightMode } from '../utils/ui/theme';
 
 const styles = cssMap({
-  box: {
+  root: {
     borderRadius: token('radius.large'),
     marginInline: token('space.250'),
+    padding: token('space.150'),
   },
   light: {
     backgroundColor: token('color.background.accent.blue.subtlest'),
@@ -67,8 +68,7 @@ export const AccountsRoute: FC = () => {
           return (
             <Box
               key={account.id}
-              padding="space.150"
-              xcss={cx(styles.box, isLightMode() ? styles.light : styles.dark)}
+              xcss={cx(styles.root, isLightMode() ? styles.light : styles.dark)}
             >
               <Inline alignBlock="center" grow="fill" spread="space-between">
                 <Tooltip content={t('accounts.open_profile')} position="bottom">

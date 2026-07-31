@@ -30,8 +30,14 @@ import {
 } from '../../utils/ui/zoom';
 
 const styles = cssMap({
-  zoomBox: {
+  root: {
     backgroundColor: token('color.background.accent.gray.subtlest'),
+  },
+  row: {
+    paddingInlineStart: token('space.050'),
+  },
+  count: {
+    paddingInline: token('space.150'),
   },
 });
 
@@ -72,7 +78,7 @@ export const AppearanceSettings: FC = () => {
     <Stack space="space.100">
       <Heading size="small">{t('settings.appearance.title')}</Heading>
 
-      <Box paddingInlineStart="space.050">
+      <Box xcss={styles.row}>
         <Inline alignBlock="start" space="space.100">
           <Text id="language-label" weight="medium">
             {t('settings.appearance.language')}:
@@ -92,7 +98,7 @@ export const AppearanceSettings: FC = () => {
         </Inline>
       </Box>
 
-      <Box paddingInlineStart="space.050">
+      <Box xcss={styles.row}>
         <Inline alignBlock="center" space="space.100">
           <Text weight="medium">{t('settings.appearance.theme')}:</Text>
           <Radio
@@ -122,15 +128,15 @@ export const AppearanceSettings: FC = () => {
         </Inline>
       </Box>
 
-      <Box paddingInlineStart="space.050">
+      <Box xcss={styles.row}>
         <Inline alignBlock="center" space="space.100">
           <Text id="zoom-label" weight="medium">
             {t('settings.appearance.zoom')}:
           </Text>
-          <Inline xcss={styles.zoomBox}>
+          <Inline xcss={styles.root}>
             <SplitButton spacing="compact">
               <Inline alignBlock="center">
-                <Box paddingInline="space.150">
+                <Box xcss={styles.count}>
                   <Text>{zoomPercentage.toFixed(0)}%</Text>
                 </Box>
                 <Tooltip

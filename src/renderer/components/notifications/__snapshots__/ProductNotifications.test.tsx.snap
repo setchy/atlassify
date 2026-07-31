@@ -8,10 +8,10 @@ exports[`renderer/components/notifications/ProductNotifications.tsx > should ren
     <style
       data-cmpld="true"
     >
-      ._1oecfnf5{transition-duration:.2s}._bfhk1s93{background-color:var(--ds-background-accent-blue-subtlest,#e9f2fe)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}._irr3daj9:hover{background-color:var(--ds-background-accent-blue-subtlest-hovered,#cfe1fd)}._irr3wejn:hover{background-color:var(--ds-background-accent-gray-subtlest-hovered,#dddee1)}
+      ._1rjc1b66{padding-block:var(--ds-space-050,4px)}._1oecfnf5{transition-duration:.2s}._bozg1b66{padding-inline-start:var(--ds-space-050,4px)}._y4tiu2gc{padding-inline-end:var(--ds-space-100,8px)}._bfhk1s93{background-color:var(--ds-background-accent-blue-subtlest,#e9f2fe)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}._irr3daj9:hover{background-color:var(--ds-background-accent-blue-subtlest-hovered,#cfe1fd)}._irr3wejn:hover{background-color:var(--ds-background-accent-gray-subtlest-hovered,#dddee1)}
     </style>
     <div
-      class="_19itglyw _vchhusvi _r06hglyw _1q511b66 _85i51b66 _bozg1b66 _y4tiu2gc _1oecfnf5 _bfhkysee _irr3wejn"
+      class="_19itglyw _vchhusvi _r06hglyw _1rjc1b66 _1oecfnf5 _bozg1b66 _y4tiu2gc _bfhkysee _irr3wejn"
     >
       <div
         class="_1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4"
@@ -179,10 +179,10 @@ exports[`renderer/components/notifications/ProductNotifications.tsx > should ren
     <style
       data-cmpld="true"
     >
-      ._1oecfnf5{transition-duration:.2s}._bfhk1s93{background-color:var(--ds-background-accent-blue-subtlest,#e9f2fe)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}._irr3daj9:hover{background-color:var(--ds-background-accent-blue-subtlest-hovered,#cfe1fd)}._irr3wejn:hover{background-color:var(--ds-background-accent-gray-subtlest-hovered,#dddee1)}
+      ._1rjc1b66{padding-block:var(--ds-space-050,4px)}._1oecfnf5{transition-duration:.2s}._bozg1b66{padding-inline-start:var(--ds-space-050,4px)}._y4tiu2gc{padding-inline-end:var(--ds-space-100,8px)}._bfhk1s93{background-color:var(--ds-background-accent-blue-subtlest,#e9f2fe)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}._irr3daj9:hover{background-color:var(--ds-background-accent-blue-subtlest-hovered,#cfe1fd)}._irr3wejn:hover{background-color:var(--ds-background-accent-gray-subtlest-hovered,#dddee1)}
     </style>
     <div
-      class="_19itglyw _vchhusvi _r06hglyw _1q511b66 _85i51b66 _bozg1b66 _y4tiu2gc _1oecfnf5 _bfhk1s93 _irr3daj9"
+      class="_19itglyw _vchhusvi _r06hglyw _1rjc1b66 _1oecfnf5 _bozg1b66 _y4tiu2gc _bfhk1s93 _irr3daj9"
     >
       <div
         class="_1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4"
@@ -350,10 +350,10 @@ exports[`renderer/components/notifications/ProductNotifications.tsx > should tog
     <style
       data-cmpld="true"
     >
-      ._1oecfnf5{transition-duration:.2s}._bfhk1s93{background-color:var(--ds-background-accent-blue-subtlest,#e9f2fe)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}._irr3daj9:hover{background-color:var(--ds-background-accent-blue-subtlest-hovered,#cfe1fd)}._irr3wejn:hover{background-color:var(--ds-background-accent-gray-subtlest-hovered,#dddee1)}
+      ._1rjc1b66{padding-block:var(--ds-space-050,4px)}._1oecfnf5{transition-duration:.2s}._bozg1b66{padding-inline-start:var(--ds-space-050,4px)}._y4tiu2gc{padding-inline-end:var(--ds-space-100,8px)}._bfhk1s93{background-color:var(--ds-background-accent-blue-subtlest,#e9f2fe)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}._irr3daj9:hover{background-color:var(--ds-background-accent-blue-subtlest-hovered,#cfe1fd)}._irr3wejn:hover{background-color:var(--ds-background-accent-gray-subtlest-hovered,#dddee1)}
     </style>
     <div
-      class="_19itglyw _vchhusvi _r06hglyw _1q511b66 _85i51b66 _bozg1b66 _y4tiu2gc _1oecfnf5 _bfhkysee _irr3wejn"
+      class="_19itglyw _vchhusvi _r06hglyw _1rjc1b66 _1oecfnf5 _bozg1b66 _y4tiu2gc _bfhkysee _irr3wejn"
     >
       <div
         class="_1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4"
