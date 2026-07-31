@@ -3,13 +3,15 @@ import { useTranslation } from 'react-i18next';
 
 import { IconButton, SplitButton } from '@atlaskit/button/new';
 import Checkbox from '@atlaskit/checkbox';
+import { cssMap } from '@atlaskit/css';
 import Heading from '@atlaskit/heading';
 import RetryIcon from '@atlaskit/icon/core/retry';
 import ZoomInIcon from '@atlaskit/icon/core/zoom-in';
 import ZoomOutIcon from '@atlaskit/icon/core/zoom-out';
-import { Box, Inline, Stack, Text, xcss } from '@atlaskit/primitives';
+import { Box, Inline, Stack, Text } from '@atlaskit/primitives/compiled';
 import { Radio } from '@atlaskit/radio';
 import Select from '@atlaskit/select';
+import { token } from '@atlaskit/tokens';
 import { setGlobalTheme } from '@atlaskit/tokens/set-global-theme';
 import Tooltip from '@atlaskit/tooltip';
 
@@ -27,6 +29,18 @@ import {
   resetZoomLevel,
 } from '../../utils/ui/zoom';
 
+const styles = cssMap({
+  root: {
+    backgroundColor: token('color.background.accent.gray.subtlest'),
+  },
+  row: {
+    paddingInlineStart: token('space.050'),
+  },
+  count: {
+    paddingInline: token('space.150'),
+  },
+});
+
 export const AppearanceSettings: FC = () => {
   const { t, i18n } = useTranslation();
 
@@ -41,10 +55,6 @@ export const AppearanceSettings: FC = () => {
   const theme = useSettingsStore((s) => s.theme);
   const showAccountHeader = useSettingsStore((s) => s.showAccountHeader);
   const zoomPercentage = useSettingsStore((s) => s.zoomPercentage);
-
-  const zoomBoxStyles = xcss({
-    backgroundColor: 'color.background.accent.gray.subtlest',
-  });
 
   useEffect(() => {
     window.atlassify.onSystemThemeUpdate((updatedTheme: Theme) => {
@@ -68,7 +78,7 @@ export const AppearanceSettings: FC = () => {
     <Stack space="space.100">
       <Heading size="small">{t('settings.appearance.title')}</Heading>
 
-      <Box paddingInlineStart="space.050">
+      <Box xcss={styles.row}>
         <Inline alignBlock="start" space="space.100">
           <Text id="language-label" weight="medium">
             {t('settings.appearance.language')}:
@@ -88,7 +98,7 @@ export const AppearanceSettings: FC = () => {
         </Inline>
       </Box>
 
-      <Box paddingInlineStart="space.050">
+      <Box xcss={styles.row}>
         <Inline alignBlock="center" space="space.100">
           <Text weight="medium">{t('settings.appearance.theme')}:</Text>
           <Radio
@@ -118,15 +128,15 @@ export const AppearanceSettings: FC = () => {
         </Inline>
       </Box>
 
-      <Box paddingInlineStart="space.050">
+      <Box xcss={styles.row}>
         <Inline alignBlock="center" space="space.100">
           <Text id="zoom-label" weight="medium">
             {t('settings.appearance.zoom')}:
           </Text>
-          <Inline xcss={zoomBoxStyles}>
+          <Inline xcss={styles.root}>
             <SplitButton spacing="compact">
               <Inline alignBlock="center">
-                <Box paddingInline="space.150">
+                <Box xcss={styles.count}>
                   <Text>{zoomPercentage.toFixed(0)}%</Text>
                 </Box>
                 <Tooltip

@@ -59,11 +59,16 @@ exports[`renderer/routes/Accounts.tsx > General > should render itself & its chi
   <div
     class="grow overflow-x-hidden overflow-y-auto"
   >
+    <style
+      data-cmpld="true"
+    >
+      ._2rko1mok{border-radius:var(--ds-radius-large,8px)}._1yt4utpp{padding:var(--ds-space-150,9pt)}._195gv47k{margin-inline:var(--ds-space-250,20px)}._bfhk1s93{background-color:var(--ds-background-accent-blue-subtlest,#e9f2fe)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}
+    </style>
     <div
-      class="css-x41h1"
+      class="_19itglyw _vchhusvi _r06hglyw _2rko1mok _1yt4utpp _195gv47k _bfhkysee"
     >
       <div
-        class="css-1ja375h"
+        class="_1e0c1txw _vchhusvi _4cvr1h6o _2lx2vrvc _1bah1yb4 _1bsb1osq _16jlkb7n"
       >
         <div
           role="presentation"
@@ -117,7 +122,7 @@ exports[`renderer/routes/Accounts.tsx > General > should render itself & its chi
           </button>
         </div>
         <div
-          class="css-iay813"
+          class="_1e0c1txw _vchhusvi _4cvrv2br _2lx2vrvc"
         >
           <div
             role="presentation"
@@ -199,11 +204,16 @@ exports[`renderer/routes/Accounts.tsx > General > should render itself & its chi
       </div>
     </div>
   </div>
+  <style
+    data-cmpld="true"
+  >
+    ._1rjc1b66{padding-block:var(--ds-space-050,4px)}._18zrpxbi{padding-inline:var(--ds-space-200,1pc)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}
+  </style>
   <div
-    class="css-ujmiwr"
+    class="_19itglyw _vchhusvi _r06hglyw _1rjc1b66 _18zrpxbi _bfhkysee"
   >
     <div
-      class="css-11bvkc9"
+      class="_1e0c1txw _vchhusvi _1bahh9n0"
     >
       <div
         role="presentation"
@@ -305,11 +315,16 @@ exports[`renderer/routes/Accounts.tsx > General > should render itself & its chi
   <div
     class="grow overflow-x-hidden overflow-y-auto"
   >
+    <style
+      data-cmpld="true"
+    >
+      ._2rko1mok{border-radius:var(--ds-radius-large,8px)}._1yt4utpp{padding:var(--ds-space-150,9pt)}._195gv47k{margin-inline:var(--ds-space-250,20px)}._bfhk1s93{background-color:var(--ds-background-accent-blue-subtlest,#e9f2fe)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}
+    </style>
     <div
-      class="css-pixoan"
+      class="_19itglyw _vchhusvi _r06hglyw _2rko1mok _1yt4utpp _195gv47k _bfhk1s93"
     >
       <div
-        class="css-1ja375h"
+        class="_1e0c1txw _vchhusvi _4cvr1h6o _2lx2vrvc _1bah1yb4 _1bsb1osq _16jlkb7n"
       >
         <div
           role="presentation"
@@ -363,7 +378,7 @@ exports[`renderer/routes/Accounts.tsx > General > should render itself & its chi
           </button>
         </div>
         <div
-          class="css-iay813"
+          class="_1e0c1txw _vchhusvi _4cvrv2br _2lx2vrvc"
         >
           <div
             role="presentation"
@@ -445,11 +460,16 @@ exports[`renderer/routes/Accounts.tsx > General > should render itself & its chi
       </div>
     </div>
   </div>
+  <style
+    data-cmpld="true"
+  >
+    ._1rjc1b66{padding-block:var(--ds-space-050,4px)}._18zrpxbi{padding-inline:var(--ds-space-200,1pc)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}
+  </style>
   <div
-    class="css-ujmiwr"
+    class="_19itglyw _vchhusvi _r06hglyw _1rjc1b66 _18zrpxbi _bfhkysee"
   >
     <div
-      class="css-11bvkc9"
+      class="_1e0c1txw _vchhusvi _1bahh9n0"
     >
       <div
         role="presentation"

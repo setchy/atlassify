@@ -85,7 +85,9 @@ export const NotificationRow: FC<NotificationRowProps> = ({
   const focusedStyles = isFocused
     ? {
         backgroundColor: token('color.background.selected'),
-        boxShadow: `inset 0 0 0 2px ${token('color.border.focused')}`,
+        outlineColor: token('color.border.information.subtle'),
+        outlineStyle: 'solid' as const,
+        outlineWidth: token('border.width.focused'),
       }
     : undefined;
 

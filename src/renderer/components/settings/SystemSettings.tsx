@@ -3,13 +3,15 @@ import { useTranslation } from 'react-i18next';
 
 import { IconButton, SplitButton } from '@atlaskit/button/new';
 import { Checkbox } from '@atlaskit/checkbox';
+import { cssMap, cx } from '@atlaskit/css';
 import Heading from '@atlaskit/heading';
 import RetryIcon from '@atlaskit/icon/core/retry';
 import VolumeHighIcon from '@atlaskit/icon/core/volume-high';
 import VolumeLowIcon from '@atlaskit/icon/core/volume-low';
 import InlineMessage from '@atlaskit/inline-message';
-import { Box, Inline, Stack, Text, xcss } from '@atlaskit/primitives';
+import { Box, Inline, Stack, Text } from '@atlaskit/primitives/compiled';
 import { Radio } from '@atlaskit/radio';
+import { token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
 import { APPLICATION } from '../../../shared/constants';
@@ -22,6 +24,24 @@ import {
   decreaseVolume,
   increaseVolume,
 } from '../../utils/ui/volume';
+
+const styles = cssMap({
+  root: {
+    backgroundColor: token('color.background.accent.gray.subtlest'),
+  },
+  visible: {
+    visibility: 'visible',
+  },
+  hidden: {
+    visibility: 'hidden',
+  },
+  row: {
+    paddingInlineStart: token('space.050'),
+  },
+  count: {
+    paddingInline: token('space.150'),
+  },
+});
 
 export const SystemSettings: FC = () => {
   const { t } = useTranslation();
@@ -47,17 +67,11 @@ export const SystemSettings: FC = () => {
   );
   const openAtStartup = useSettingsStore((s) => s.openAtStartup);
 
-  const volumeBoxStyles = xcss({
-    backgroundColor: 'color.background.accent.gray.subtlest',
-
-    visibility: playSoundNewNotifications ? 'visible' : 'hidden',
-  });
-
   return (
     <Stack space="space.100">
       <Heading size="small">{t('settings.system.title')}</Heading>
 
-      <Box paddingInlineStart="space.050">
+      <Box xcss={styles.row}>
         <Inline alignBlock="center" space="space.100">
           <Text weight="medium">{t('settings.system.open_links')}:</Text>
           <Radio
@@ -119,10 +133,16 @@ export const SystemSettings: FC = () => {
           name="playSoundNewNotifications"
           onChange={() => toggleSetting('playSoundNewNotifications')}
         />
-        <Inline testId="settings-volume-group" xcss={volumeBoxStyles}>
+        <Inline
+          testId="settings-volume-group"
+          xcss={cx(
+            styles.root,
+            playSoundNewNotifications ? styles.visible : styles.hidden,
+          )}
+        >
           <SplitButton spacing="compact">
             <Inline alignBlock="center">
-              <Box paddingInline="space.150">
+              <Box xcss={styles.count}>
                 <Text>{notificationVolume.toFixed(0)}%</Text>
               </Box>
               <Tooltip

@@ -1,8 +1,15 @@
+import tokensBabelPlugin from '@atlaskit/tokens/babel-plugin';
+
+import compiled from '@compiled/vite-plugin';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
-  plugins: [react()],
+  // pre-compile token() calls to literal CSS var strings so cssMap() can statically evaluate them
+  plugins: [
+    compiled({ transformerBabelPlugins: [tokensBabelPlugin] }),
+    react(),
+  ],
   test: {
     globals: true,
     pool: 'vmThreads',

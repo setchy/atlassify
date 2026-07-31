@@ -4,10 +4,12 @@ import { useNavigate } from 'react-router-dom';
 
 import Avatar, { AvatarItem } from '@atlaskit/avatar';
 import { IconButton } from '@atlaskit/button/new';
+import { cssMap, cx } from '@atlaskit/css';
 import LogOutIcon from '@atlaskit/icon/core/log-out';
 import PersonAddIcon from '@atlaskit/icon/core/person-add';
 import RefreshIcon from '@atlaskit/icon/core/refresh';
-import { Box, Inline, xcss } from '@atlaskit/primitives';
+import { Box, Inline } from '@atlaskit/primitives/compiled';
+import { token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
 import { useAccountsStore } from '../stores';
@@ -21,6 +23,20 @@ import type { Account } from '../types';
 
 import { openAccountProfile } from '../utils/system/links';
 import { isLightMode } from '../utils/ui/theme';
+
+const styles = cssMap({
+  root: {
+    borderRadius: token('radius.large'),
+    marginInline: token('space.250'),
+    padding: token('space.150'),
+  },
+  light: {
+    backgroundColor: token('color.background.accent.blue.subtlest'),
+  },
+  dark: {
+    backgroundColor: token('color.background.accent.gray.subtlest'),
+  },
+});
 
 export const AccountsRoute: FC = () => {
   const { t } = useTranslation();
@@ -43,16 +59,6 @@ export const AccountsRoute: FC = () => {
     return navigate('/login', { replace: true });
   }, []);
 
-  const boxStyles = xcss({
-    backgroundColor: isLightMode()
-      ? 'color.background.accent.blue.subtlest'
-      : 'color.background.accent.gray.subtlest',
-
-    borderRadius: 'radius.large',
-
-    marginInline: 'space.250',
-  });
-
   return (
     <Page testId="accounts">
       <Header>{t('accounts.title')}</Header>
@@ -60,7 +66,10 @@ export const AccountsRoute: FC = () => {
       <Contents>
         {accounts.map((account) => {
           return (
-            <Box key={account.id} padding="space.150" xcss={boxStyles}>
+            <Box
+              key={account.id}
+              xcss={cx(styles.root, isLightMode() ? styles.light : styles.dark)}
+            >
               <Inline alignBlock="center" grow="fill" spread="space-between">
                 <Tooltip content={t('accounts.open_profile')} position="bottom">
                   <AvatarItem

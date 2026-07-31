@@ -3,8 +3,10 @@ import { useTranslation } from 'react-i18next';
 
 import Badge from '@atlaskit/badge/new';
 import Button, { IconButton } from '@atlaskit/button/new';
+import { cssMap, cx } from '@atlaskit/css';
 import StrokeWeightLargeIcon from '@atlaskit/icon/core/stroke-weight-large';
-import { Box, Flex, Inline, Stack, xcss } from '@atlaskit/primitives';
+import { Box, Flex, Inline, Stack } from '@atlaskit/primitives/compiled';
+import { token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
 import { useAppContext } from '../../hooks/useAppContext';
@@ -13,13 +15,34 @@ import type { AtlassifyNotification } from '../../types';
 
 import { shouldRemoveNotificationsFromState } from '../../utils/notifications/postProcess';
 import { openExternalLink } from '../../utils/system/comms';
-import { getChevronDetails } from '../../utils/ui/display';
+import { CHEVRON_ICONS, getChevronDetails } from '../../utils/ui/display';
 import { isLightMode } from '../../utils/ui/theme';
 import { NotificationRow } from './NotificationRow';
 
 export interface ProductNotificationsProps {
   productNotifications: AtlassifyNotification[];
 }
+
+const styles = cssMap({
+  root: {
+    transitionDuration: '200ms',
+    paddingBlock: token('space.050'),
+    paddingInlineStart: token('space.050'),
+    paddingInlineEnd: token('space.100'),
+  },
+  light: {
+    backgroundColor: token('color.background.accent.blue.subtlest'),
+    '&:hover': {
+      backgroundColor: token('color.background.accent.blue.subtlest.hovered'),
+    },
+  },
+  dark: {
+    backgroundColor: token('color.background.accent.gray.subtlest'),
+    '&:hover': {
+      backgroundColor: token('color.background.accent.gray.subtlest.hovered'),
+    },
+  },
+});
 
 export const ProductNotifications: FC<ProductNotificationsProps> = ({
   productNotifications,
@@ -70,31 +93,14 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
     isProductNotificationsVisible,
     'product',
   );
-  const ChevronIcon = Chevron.icon;
-
-  const boxStyles = xcss({
-    transitionDuration: '200ms',
-
-    backgroundColor: isLightMode()
-      ? 'color.background.accent.blue.subtlest'
-      : 'color.background.accent.gray.subtlest',
-
-    ':hover': {
-      backgroundColor: isLightMode()
-        ? 'color.background.accent.blue.subtlest.hovered'
-        : 'color.background.accent.gray.subtlest.hovered',
-    },
-  });
+  const ChevronIcon = CHEVRON_ICONS[Chevron.icon];
 
   return (
     <Stack>
       <Box
         as="div"
         onClick={actionToggleProductNotifications}
-        paddingBlock="space.050"
-        paddingInlineEnd="space.100"
-        paddingInlineStart="space.050"
-        xcss={boxStyles}
+        xcss={cx(styles.root, isLightMode() ? styles.light : styles.dark)}
       >
         <Flex alignItems="center" justifyContent="space-between">
           <Tooltip

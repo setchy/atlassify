@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import Avatar, { AvatarItem } from '@atlaskit/avatar';
 import Badge from '@atlaskit/badge/new';
 import Button, { IconButton } from '@atlaskit/button/new';
+import { cssMap, cx } from '@atlaskit/css';
 import CrossIcon from '@atlaskit/icon/core/cross';
 import StrokeWeightLargeIcon from '@atlaskit/icon/core/stroke-weight-large';
 import { BitbucketIcon } from '@atlaskit/logo';
@@ -14,7 +15,8 @@ import Modal, {
   ModalTitle,
   ModalTransition,
 } from '@atlaskit/modal-dialog';
-import { Box, Flex, Grid, Inline, Stack, xcss } from '@atlaskit/primitives';
+import { Box, Flex, Grid, Inline, Stack } from '@atlaskit/primitives/compiled';
+import { token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
 import { Constants } from '../../constants';
@@ -36,7 +38,7 @@ import {
   openAccountProfile,
   openMyPullRequests,
 } from '../../utils/system/links';
-import { getChevronDetails } from '../../utils/ui/display';
+import { CHEVRON_ICONS, getChevronDetails } from '../../utils/ui/display';
 import { isLightMode } from '../../utils/ui/theme';
 import { AllRead } from '../AllRead';
 import { Oops } from '../Oops';
@@ -50,6 +52,43 @@ export interface AccountNotificationsProps {
   error: AtlassifyError | null;
   showAccountHeader: boolean;
 }
+
+const styles = cssMap({
+  grid: {
+    width: '100%',
+    gridTemplateAreas: '"title close"',
+  },
+  closeContainer: {
+    gridArea: 'close',
+  },
+  titleContainer: {
+    gridArea: 'title',
+  },
+  root: {
+    transitionDuration: '200ms',
+    paddingBlock: token('space.050'),
+    paddingInline: token('space.100'),
+  },
+  error: {
+    backgroundColor: token('color.background.accent.red.subtler'),
+  },
+  light: {
+    backgroundColor: token('color.background.accent.blue.subtler'),
+  },
+  dark: {
+    backgroundColor: token('color.background.accent.gray.subtler'),
+  },
+  hoverLight: {
+    '&:hover': {
+      backgroundColor: token('color.background.accent.blue.subtler.hovered'),
+    },
+  },
+  hoverDark: {
+    '&:hover': {
+      backgroundColor: token('color.background.accent.gray.subtler.hovered'),
+    },
+  },
+});
 
 export const AccountNotifications: FC<AccountNotificationsProps> = (
   props: AccountNotificationsProps,
@@ -74,18 +113,6 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
   const actionCloseMarkAccountAsReadModal = () => {
     setShowMarkAccountAsReadModal(false);
   };
-
-  const gridStyles = xcss({
-    width: '100%',
-  });
-
-  const closeContainerStyles = xcss({
-    gridArea: 'close',
-  });
-
-  const titleContainerStyles = xcss({
-    gridArea: 'title',
-  });
 
   const sortedNotifications = useMemo(
     () => sortNotificationsByOrder(notifications),
@@ -117,23 +144,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
     isAccountNotificationsVisible,
     'account',
   );
-  const ChevronIcon = Chevron.icon;
-
-  const boxStyles = xcss({
-    transitionDuration: '200ms',
-
-    backgroundColor: props.error
-      ? 'color.background.accent.red.subtler'
-      : isLightMode()
-        ? 'color.background.accent.blue.subtler'
-        : 'color.background.accent.gray.subtler',
-
-    ':hover': {
-      backgroundColor: isLightMode()
-        ? 'color.background.accent.blue.subtler.hovered'
-        : 'color.background.accent.gray.subtler.hovered',
-    },
-  });
+  const ChevronIcon = CHEVRON_ICONS[Chevron.icon];
 
   return (
     <Stack>
@@ -141,9 +152,15 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
         <Box
           as="div"
           onClick={actionToggleAccountNotifications}
-          paddingBlock="space.050"
-          paddingInline="space.100"
-          xcss={boxStyles}
+          xcss={cx(
+            styles.root,
+            props.error
+              ? styles.error
+              : isLightMode()
+                ? styles.light
+                : styles.dark,
+            isLightMode() ? styles.hoverLight : styles.hoverDark,
+          )}
         >
           <Flex alignItems="center" justifyContent="space-between">
             <Inline alignBlock="center" space="space.100">
@@ -184,7 +201,11 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
                 <IconButton
                   appearance="subtle"
                   icon={(iconProps) => (
-                    <BitbucketIcon {...iconProps} size="xxsmall" />
+                    <BitbucketIcon
+                      {...iconProps}
+                      appearance="neutral"
+                      size="xxsmall"
+                    />
                   )}
                   label={t('notifications.account.pull_requests')}
                   onClick={(event: MouseEvent<HTMLElement>) => {
@@ -260,12 +281,8 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
         {showMarkAccountAsReadModal && (
           <Modal onClose={actionCloseMarkAccountAsReadModal}>
             <ModalHeader>
-              <Grid
-                gap="space.200"
-                templateAreas={['title close']}
-                xcss={gridStyles}
-              >
-                <Flex justifyContent="end" xcss={closeContainerStyles}>
+              <Grid gap="space.200" xcss={styles.grid}>
+                <Flex justifyContent="end" xcss={styles.closeContainer}>
                   <IconButton
                     appearance="subtle"
                     icon={CrossIcon}
@@ -274,7 +291,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
                     testId="account-mark-as-read-close"
                   />
                 </Flex>
-                <Flex justifyContent="start" xcss={titleContainerStyles}>
+                <Flex justifyContent="start" xcss={styles.titleContainer}>
                   <ModalTitle appearance="warning">
                     {t('common.are_you_sure')}
                   </ModalTitle>

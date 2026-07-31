@@ -3,16 +3,21 @@
 exports[`renderer/components/notifications/AccountNotifications.tsx > account view types > should render itself - group notifications by products - ordered by datetime 1`] = `
 <div>
   <div
-    class="css-18nlz2h"
+    class="_1e0c1txw _vchhusvi _2lx21bp4 _1bah1fhb"
   >
+    <style
+      data-cmpld="true"
+    >
+      ._nd5l1bvj{grid-area:close}._nd5l1cy2{grid-area:title}._1rjc1b66{padding-block:var(--ds-space-050,4px)}._18zru2gc{padding-inline:var(--ds-space-100,8px)}._1bsb1osq{width:100%}._1lmcg5aa{grid-template-areas:"title close"}._1oecfnf5{transition-duration:.2s}._bfhk1rtt{background-color:var(--ds-background-accent-red-subtler,#ffd5d2)}._bfhk1dy8{background-color:var(--ds-background-accent-blue-subtler,#cfe1fd)}._bfhk7qp0{background-color:var(--ds-background-accent-gray-subtler,#dddee1)}._irr3815t:hover{background-color:var(--ds-background-accent-blue-subtler-hovered,#adcbfb)}._irr310ef:hover{background-color:var(--ds-background-accent-gray-subtler-hovered,#b7b9be)}
+    </style>
     <div
-      class="css-e8vej0"
+      class="_19itglyw _vchhusvi _r06hglyw _1rjc1b66 _18zru2gc _1oecfnf5 _bfhk7qp0 _irr310ef"
     >
       <div
-        class="css-58xle2"
+        class="_1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4"
       >
         <div
-          class="css-gdhcj"
+          class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvr1h6o _2lx2vrvc"
         >
           <div
             role="presentation"
@@ -74,7 +79,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
           </span>
         </div>
         <div
-          class="css-xxi07b"
+          class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
         >
           <div
             role="presentation"
@@ -89,7 +94,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
               >
                 <span
                   aria-hidden="true"
-                  class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv _3wu01fkg"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01"
                   style="--themed-icon-color: initial;"
                 >
                   <svg
@@ -212,16 +217,21 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
 exports[`renderer/components/notifications/AccountNotifications.tsx > account view types > should render itself - group notifications by products - ordered by products alphabetically 1`] = `
 <div>
   <div
-    class="css-18nlz2h"
+    class="_1e0c1txw _vchhusvi _2lx21bp4 _1bah1fhb"
   >
+    <style
+      data-cmpld="true"
+    >
+      ._nd5l1bvj{grid-area:close}._nd5l1cy2{grid-area:title}._1rjc1b66{padding-block:var(--ds-space-050,4px)}._18zru2gc{padding-inline:var(--ds-space-100,8px)}._1bsb1osq{width:100%}._1lmcg5aa{grid-template-areas:"title close"}._1oecfnf5{transition-duration:.2s}._bfhk1rtt{background-color:var(--ds-background-accent-red-subtler,#ffd5d2)}._bfhk1dy8{background-color:var(--ds-background-accent-blue-subtler,#cfe1fd)}._bfhk7qp0{background-color:var(--ds-background-accent-gray-subtler,#dddee1)}._irr3815t:hover{background-color:var(--ds-background-accent-blue-subtler-hovered,#adcbfb)}._irr310ef:hover{background-color:var(--ds-background-accent-gray-subtler-hovered,#b7b9be)}
+    </style>
     <div
-      class="css-e8vej0"
+      class="_19itglyw _vchhusvi _r06hglyw _1rjc1b66 _18zru2gc _1oecfnf5 _bfhk7qp0 _irr310ef"
     >
       <div
-        class="css-58xle2"
+        class="_1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4"
       >
         <div
-          class="css-gdhcj"
+          class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvr1h6o _2lx2vrvc"
         >
           <div
             role="presentation"
@@ -283,7 +293,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
           </span>
         </div>
         <div
-          class="css-xxi07b"
+          class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
         >
           <div
             role="presentation"
@@ -298,7 +308,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
               >
                 <span
                   aria-hidden="true"
-                  class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv _3wu01fkg"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01"
                   style="--themed-icon-color: initial;"
                 >
                   <svg
@@ -421,16 +431,21 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
 exports[`renderer/components/notifications/AccountNotifications.tsx > account view types > should render itself - sort by date - dark mode 1`] = `
 <div>
   <div
-    class="css-18nlz2h"
+    class="_1e0c1txw _vchhusvi _2lx21bp4 _1bah1fhb"
   >
+    <style
+      data-cmpld="true"
+    >
+      ._nd5l1bvj{grid-area:close}._nd5l1cy2{grid-area:title}._1rjc1b66{padding-block:var(--ds-space-050,4px)}._18zru2gc{padding-inline:var(--ds-space-100,8px)}._1bsb1osq{width:100%}._1lmcg5aa{grid-template-areas:"title close"}._1oecfnf5{transition-duration:.2s}._bfhk1rtt{background-color:var(--ds-background-accent-red-subtler,#ffd5d2)}._bfhk1dy8{background-color:var(--ds-background-accent-blue-subtler,#cfe1fd)}._bfhk7qp0{background-color:var(--ds-background-accent-gray-subtler,#dddee1)}._irr3815t:hover{background-color:var(--ds-background-accent-blue-subtler-hovered,#adcbfb)}._irr310ef:hover{background-color:var(--ds-background-accent-gray-subtler-hovered,#b7b9be)}
+    </style>
     <div
-      class="css-e8vej0"
+      class="_19itglyw _vchhusvi _r06hglyw _1rjc1b66 _18zru2gc _1oecfnf5 _bfhk7qp0 _irr310ef"
     >
       <div
-        class="css-58xle2"
+        class="_1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4"
       >
         <div
-          class="css-gdhcj"
+          class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvr1h6o _2lx2vrvc"
         >
           <div
             role="presentation"
@@ -492,7 +507,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
           </span>
         </div>
         <div
-          class="css-xxi07b"
+          class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
         >
           <div
             role="presentation"
@@ -507,7 +522,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
               >
                 <span
                   aria-hidden="true"
-                  class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv _3wu01fkg"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01"
                   style="--themed-icon-color: initial;"
                 >
                   <svg
@@ -1174,16 +1189,21 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
 exports[`renderer/components/notifications/AccountNotifications.tsx > account view types > should render itself - sort by date - light mode 1`] = `
 <div>
   <div
-    class="css-18nlz2h"
+    class="_1e0c1txw _vchhusvi _2lx21bp4 _1bah1fhb"
   >
+    <style
+      data-cmpld="true"
+    >
+      ._nd5l1bvj{grid-area:close}._nd5l1cy2{grid-area:title}._1rjc1b66{padding-block:var(--ds-space-050,4px)}._18zru2gc{padding-inline:var(--ds-space-100,8px)}._1bsb1osq{width:100%}._1lmcg5aa{grid-template-areas:"title close"}._1oecfnf5{transition-duration:.2s}._bfhk1rtt{background-color:var(--ds-background-accent-red-subtler,#ffd5d2)}._bfhk1dy8{background-color:var(--ds-background-accent-blue-subtler,#cfe1fd)}._bfhk7qp0{background-color:var(--ds-background-accent-gray-subtler,#dddee1)}._irr3815t:hover{background-color:var(--ds-background-accent-blue-subtler-hovered,#adcbfb)}._irr310ef:hover{background-color:var(--ds-background-accent-gray-subtler-hovered,#b7b9be)}
+    </style>
     <div
-      class="css-1b8wful"
+      class="_19itglyw _vchhusvi _r06hglyw _1rjc1b66 _18zru2gc _1oecfnf5 _bfhk1dy8 _irr3815t"
     >
       <div
-        class="css-58xle2"
+        class="_1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4"
       >
         <div
-          class="css-gdhcj"
+          class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvr1h6o _2lx2vrvc"
         >
           <div
             role="presentation"
@@ -1245,7 +1265,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
           </span>
         </div>
         <div
-          class="css-xxi07b"
+          class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
         >
           <div
             role="presentation"
@@ -1260,7 +1280,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
               >
                 <span
                   aria-hidden="true"
-                  class="_1e0c1o8l _4t3i7vkz _1b3i18uv _9aea18uv _3wu01fkg"
+                  class="_1e0c1o8l _4t3i7vkz _1b3i1e01 _9aea1fkg _3wu01e01"
                   style="--themed-icon-color: initial;"
                 >
                   <svg

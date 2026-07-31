@@ -66,7 +66,7 @@ const config: Config = {
       });
       addBase({
         ':root': {
-          '--atlassify-background-sidebar': '#2684FF', //TODO update to token when available (formerly B200)
+          '--atlassify-background-sidebar': '#2684FF', //TODO - update to token when available (formerly B200)
           '--atlassify-scrollbar-track': token(
             'color.background.accent.blue.subtlest',
           ),

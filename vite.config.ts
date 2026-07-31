@@ -2,6 +2,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import tokensBabelPlugin from '@atlaskit/tokens/babel-plugin';
+
 import compiled from '@compiled/vite-plugin';
 import twemoji from '@discordapp/twemoji';
 import tailwindcss from '@tailwindcss/vite';
@@ -117,7 +119,8 @@ export default defineConfig(({ command }) => {
             }),
           ]),
       reactDevToolsPlugin(),
-      compiled(),
+      // pre-compile token() calls to literal CSS var strings so cssMap() can statically evaluate them
+      compiled({ transformerBabelPlugins: [tokensBabelPlugin] }),
       react(),
       tailwindcss(),
       electron({
