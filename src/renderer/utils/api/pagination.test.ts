@@ -1,0 +1,122 @@
+import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
+
+import { Constants } from '../../constants';
+
+import type { AtlassianGraphQLResponse } from './types';
+
+import * as client from './client';
+import type {
+  AtlassianNotificationFragment,
+  MyNotificationsQuery,
+} from './graphql/generated/graphql';
+import { fetchAccountNotificationFeed } from './pagination';
+
+function createMockNode(groupId: string): AtlassianNotificationFragment {
+  return {
+    groupId,
+    groupSize: 1,
+    additionalActors: [],
+    headNotification: null,
+  } as unknown as AtlassianNotificationFragment;
+}
+
+function createMockPage(
+  nodes: AtlassianNotificationFragment[],
+  endCursor: string | null,
+  unseenNotificationCount = 0,
+): AtlassianGraphQLResponse<MyNotificationsQuery> {
+  return {
+    data: {
+      notifications: {
+        unseenNotificationCount,
+        notificationFeed: {
+          pageInfo: { hasNextPage: true, endCursor },
+          nodes,
+        },
+      },
+    },
+  } as unknown as AtlassianGraphQLResponse<MyNotificationsQuery>;
+}
+
+describe('renderer/utils/api/pagination.ts', () => {
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it('should return all nodes and stop when a partial page is returned', async () => {
+    const fullPage = Array.from(
+      { length: Constants.NOTIFICATIONS_PAGE_SIZE },
+      (_, i) => createMockNode(`full-${i}`),
+    );
+    const partialPage = [createMockNode('partial-0')];
+
+    vi.spyOn(client, 'getNotificationsForUser')
+      .mockResolvedValueOnce(createMockPage(fullPage, 'cursor-1', 5))
+      .mockResolvedValueOnce(createMockPage(partialPage, null, 5));
+
+    const result = await fetchAccountNotificationFeed(
+      mockAtlassianCloudAccount,
+    );
+
+    expect(client.getNotificationsForUser).toHaveBeenCalledTimes(2);
+    expect(client.getNotificationsForUser).toHaveBeenNthCalledWith(
+      2,
+      mockAtlassianCloudAccount,
+      'cursor-1',
+    );
+    expect(result.nodes).toHaveLength(Constants.NOTIFICATIONS_PAGE_SIZE + 1);
+    expect(result.unseenNotificationCount).toBe(5);
+    expect(result.hasMoreNotifications).toBe(false);
+  });
+
+  it('should stop paginating once the account cap is reached', async () => {
+    const pageCount = Math.ceil(
+      Constants.MAX_NOTIFICATIONS_PER_ACCOUNT /
+        Constants.NOTIFICATIONS_PAGE_SIZE,
+    );
+    const fullPage = Array.from(
+      { length: Constants.NOTIFICATIONS_PAGE_SIZE },
+      (_, i) => createMockNode(`node-${i}`),
+    );
+
+    const spy = vi.spyOn(client, 'getNotificationsForUser');
+    for (let i = 0; i < pageCount; i++) {
+      spy.mockResolvedValueOnce(createMockPage(fullPage, `cursor-${i}`));
+    }
+
+    const result = await fetchAccountNotificationFeed(
+      mockAtlassianCloudAccount,
+    );
+
+    expect(client.getNotificationsForUser).toHaveBeenCalledTimes(pageCount);
+    expect(result.hasMoreNotifications).toBe(true);
+  });
+
+  it('should throw when the GraphQL response contains errors', async () => {
+    vi.spyOn(client, 'getNotificationsForUser').mockResolvedValueOnce({
+      errors: [{ message: 'Something went wrong' }],
+    } as unknown as AtlassianGraphQLResponse<MyNotificationsQuery>);
+
+    await expect(
+      fetchAccountNotificationFeed(mockAtlassianCloudAccount),
+    ).rejects.toThrow();
+  });
+
+  it('should handle a response missing pageInfo/nodes gracefully', async () => {
+    vi.spyOn(client, 'getNotificationsForUser').mockResolvedValueOnce({
+      data: {
+        notifications: {
+          unseenNotificationCount: 0,
+          notificationFeed: {},
+        },
+      },
+    } as unknown as AtlassianGraphQLResponse<MyNotificationsQuery>);
+
+    const result = await fetchAccountNotificationFeed(
+      mockAtlassianCloudAccount,
+    );
+
+    expect(result.nodes).toEqual([]);
+    expect(result.hasMoreNotifications).toBe(false);
+  });
+});

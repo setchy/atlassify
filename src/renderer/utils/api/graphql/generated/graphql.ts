@@ -71,10 +71,11 @@ export type MyNotificationsQueryVariables = Exact<{
   readState?: InfluentsNotificationReadState | null | undefined;
   flat?: boolean | null | undefined;
   first?: number | null | undefined;
+  after?: string | null | undefined;
 }>;
 
 
-export type MyNotificationsQuery = { notifications: { unseenNotificationCount: number, notificationFeed: { pageInfo: { hasNextPage: boolean }, nodes: Array<{ groupId: string, groupSize: number, additionalActors: Array<{ displayName: string | null, avatarURL: string | null }>, headNotification: { notificationId: string, timestamp: string, readState: InfluentsNotificationReadState, category: InfluentsNotificationCategory, content: { type: string, message: string, url: string | null, bodyItems: Array<{ appearance: string | null, author: { actorType: InfluentsNotificationActorType | null, ari: string | null, avatarURL: string | null, displayName: string | null } | null, document: { data: string | null, format: string | null } | null }> | null, entity: { title: string | null, iconUrl: string | null, url: string | null } | null, path: Array<{ title: string | null, iconUrl: string | null, url: string | null }> | null, actor: { displayName: string | null, avatarURL: string | null } }, analyticsAttributes: Array<{ key: string | null, value: string | null }> | null } }> } } | null };
+export type MyNotificationsQuery = { notifications: { unseenNotificationCount: number, notificationFeed: { pageInfo: { hasNextPage: boolean, endCursor: string | null }, nodes: Array<{ groupId: string, groupSize: number, additionalActors: Array<{ displayName: string | null, avatarURL: string | null }>, headNotification: { notificationId: string, timestamp: string, readState: InfluentsNotificationReadState, category: InfluentsNotificationCategory, content: { type: string, message: string, url: string | null, bodyItems: Array<{ appearance: string | null, author: { actorType: InfluentsNotificationActorType | null, ari: string | null, avatarURL: string | null, displayName: string | null } | null, document: { data: string | null, format: string | null } | null }> | null, entity: { title: string | null, iconUrl: string | null, url: string | null } | null, path: Array<{ title: string | null, iconUrl: string | null, url: string | null }> | null, actor: { displayName: string | null, avatarURL: string | null } }, analyticsAttributes: Array<{ key: string | null, value: string | null }> | null } }> } } | null };
 
 export type AtlassianNotificationFragment = { groupId: string, groupSize: number, additionalActors: Array<{ displayName: string | null, avatarURL: string | null }>, headNotification: { notificationId: string, timestamp: string, readState: InfluentsNotificationReadState, category: InfluentsNotificationCategory, content: { type: string, message: string, url: string | null, bodyItems: Array<{ appearance: string | null, author: { actorType: InfluentsNotificationActorType | null, ari: string | null, avatarURL: string | null, displayName: string | null } | null, document: { data: string | null, format: string | null } | null }> | null, entity: { title: string | null, iconUrl: string | null, url: string | null } | null, path: Array<{ title: string | null, iconUrl: string | null, url: string | null }> | null, actor: { displayName: string | null, avatarURL: string | null } }, analyticsAttributes: Array<{ key: string | null, value: string | null }> | null } };
 
@@ -275,16 +276,18 @@ export const RetrieveNotificationsByGroupIdDocument = new TypedDocumentString(`
   readState
 }`) as unknown as TypedDocumentString<RetrieveNotificationsByGroupIdQuery, RetrieveNotificationsByGroupIdQueryVariables>;
 export const MyNotificationsDocument = new TypedDocumentString(`
-    query MyNotifications($readState: InfluentsNotificationReadState, $flat: Boolean = true, $first: Int) {
+    query MyNotifications($readState: InfluentsNotificationReadState, $flat: Boolean = true, $first: Int, $after: String) {
   notifications {
     unseenNotificationCount
     notificationFeed(
       flat: $flat
       first: $first
+      after: $after
       filter: { readStateFilter: $readState }
     ) {
       pageInfo {
         hasNextPage
+        endCursor
       }
       nodes {
         ...AtlassianNotification

@@ -61,7 +61,8 @@ describe('renderer/utils/api/client.ts', () => {
       mockAtlassianCloudAccount,
       MyNotificationsDocument,
       {
-        first: Constants.MAX_NOTIFICATIONS_PER_ACCOUNT,
+        first: Constants.NOTIFICATIONS_PAGE_SIZE,
+        after: undefined,
         flat: false,
         readState: 'unread',
       },

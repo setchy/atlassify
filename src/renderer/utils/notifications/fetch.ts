@@ -1,14 +1,10 @@
-import { AxiosError } from 'axios';
-
 import { useAccountsStore } from '../../stores';
 
 import type { AccountNotifications, AtlassifyNotification } from '../../types';
 
-import { getNotificationsForUser } from '../api/client';
 import { determineFailureType } from '../api/errors';
-import { determineIfMorePagesAvailable } from '../api/pagination';
+import { fetchAccountNotificationFeed } from '../api/pagination';
 import { transformNotifications } from '../api/transform';
-import { Errors } from '../core/errors';
 import { rendererLogError } from '../core/logger';
 import { getFlattenedNotificationsByProduct } from './group';
 
@@ -44,7 +40,7 @@ function getNotifications() {
   return accounts.map((account) => {
     return {
       account,
-      notifications: getNotificationsForUser(account),
+      notifications: fetchAccountNotificationFeed(account),
     };
   });
 }
@@ -68,22 +64,15 @@ export async function getAllNotifications(): Promise<AccountNotifications[]> {
         try {
           const res = await accountNotifications.notifications;
 
-          if (res.errors) {
-            throw new AxiosError(Errors.BAD_REQUEST.title);
-          }
-
-          const rawNotifications =
-            res.data.notifications.notificationFeed.nodes;
-
           const notifications = await transformNotifications(
-            rawNotifications,
+            res.nodes,
             accountNotifications.account,
           );
 
           return {
             account: accountNotifications.account,
             notifications: notifications,
-            hasMoreNotifications: determineIfMorePagesAvailable(res),
+            hasMoreNotifications: res.hasMoreNotifications,
             error: null,
           };
         } catch (err) {
