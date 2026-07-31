@@ -10,7 +10,7 @@ export const AtlassifyIcon: FC<AtlassifyIconProps> = ({
   size = 48,
   color = 'default',
 }: AtlassifyIconProps) => {
-  const fillColor = color === 'brand' ? token('color.icon.brand') : '#FFFFFF'; //TODO update to token when available (formerly N0)
+  const fillColor = color === 'brand' ? token('color.icon.brand') : '#FFFFFF'; //TODO - update to token when available (formerly N0)
 
   return (
     <svg

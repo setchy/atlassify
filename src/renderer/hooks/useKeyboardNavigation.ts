@@ -147,7 +147,7 @@ export const useKeyboardNavigation = (
   /**
    * Toggle the read state of the focused notification.
    *
-   * TODO: Set focus for next notification after removing current one.
+   * TODO - Set focus for next notification after removing current one.
    */
   const toggleFocusedReadState = useCallback(() => {
     if (!focusedNotificationId) {

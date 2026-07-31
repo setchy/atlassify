@@ -1,7 +1,4 @@
 import type { ButtonAppearance } from '@atlaskit/button/dist/types/new-button/variants/types';
-import type ChevronDownIcon from '@atlaskit/icon/core/chevron-down';
-import type ChevronLeftIcon from '@atlaskit/icon/core/chevron-left';
-import type ChevronRightIcon from '@atlaskit/icon/core/chevron-right';
 import type { LogoProps } from '@atlaskit/logo';
 
 declare const __brand: unique symbol;
@@ -279,17 +276,18 @@ export type ErrorType =
   | 'UNKNOWN';
 
 /**
+ * The direction of a chevron icon used in a header accordion.
+ */
+export type ChevronIconType = 'down' | 'left' | 'right';
+
+/**
  * Details for Chevron header accordion.
  */
 export interface Chevron {
   /**
-   * The chevron icon.
+   * The chevron icon direction. Resolve to a component via `CHEVRON_ICONS`.
    */
-  // TODO improve these types
-  icon:
-    | typeof ChevronDownIcon
-    | typeof ChevronLeftIcon
-    | typeof ChevronRightIcon;
+  icon: ChevronIconType;
 
   /**
    * The chevron label.
