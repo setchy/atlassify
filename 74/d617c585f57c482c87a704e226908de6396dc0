@@ -1,0 +1,82 @@
+src/renderer/components/settings/SystemSettings.tsx
+  s_8e39093c4550c1::t_9ebf929e68aa2b 130-136
+  s_8e39093c4550c1::t_ebd0fb6dd30e9b 14,30
+  s_8e39093c4550c1::t_f591eeeaba28e6 28-29,31-39
+  s_8e39093c4550c1::t_c829330db54755 6,12
+src/renderer/routes/Accounts.tsx
+  s_8e39093c4550c1::t_51c4636dd22fab 68-72
+  s_8e39093c4550c1::t_f850bbff0f6e4a 27-28,31-32,34-35,37-39
+  s_8e39093c4550c1::t_ebd0fb6dd30e9b 12,29-30,33,36
+  s_8e39093c4550c1::t_6957bbeab7d674 11
+  s_8e39093c4550c1::t_dee85e173fb7cf 7
+src/renderer/components/notifications/AccountNotifications.tsx
+  s_8e39093c4550c1::t_c7c6d4cd256ebe 59,284
+  s_8e39093c4550c1::t_ebd0fb6dd30e9b 19,71-86
+  s_8e39093c4550c1::t_3be1043ab5ad25 285,294
+  s_8e39093c4550c1::t_babd973f8a7484 204-208
+  s_8e39093c4550c1::t_3fe31eba02040f 155-163
+  s_8e39093c4550c1::t_22479ffb7249dd 18
+  s_8e39093c4550c1::t_3e749512d3a5d4 56-58
+  s_8e39093c4550c1::t_4abf6dfbdb66e7 60-62,68-70
+  s_8e39093c4550c1::t_38f85331296d43 87-89
+  s_8e39093c4550c1::t_7ed9b10ace7a90 7,63-67,90
+package.json
+  s_8e39093c4550c1::t_4a324d383ac702 95
+  s_8e39093c4550c1::t_9d0c465efa8b7d 76
+vite.config.ts
+  s_8e39093c4550c1::t_a77b72852e8358 5,122-123
+  s_8e39093c4550c1::t_729f8213e67fb7 6
+src/renderer/components/settings/SettingsReset.tsx
+  s_8e39093c4550c1::t_3d45a0171517e2 62,71
+  s_8e39093c4550c1::t_57685d1357dddc 23-30,61
+  s_8e39093c4550c1::t_a417b3c0ee143d 20-22
+  s_8e39093c4550c1::t_004ba9b4a53e2a 5,14
+src/renderer/components/notifications/ProductNotifications.tsx
+  s_8e39093c4550c1::t_ebd0fb6dd30e9b 9,31,33,37,39
+  s_8e39093c4550c1::t_882721e7e23c45 26-30,32,34-36,38,40-43,103
+  s_8e39093c4550c1::t_7a570e03d2a627 8
+  s_8e39093c4550c1::t_56559f1d090f61 6
+src/renderer/components/primitives/Footer.tsx
+  s_8e39093c4550c1::t_0fb76f9d8865c2 3-5,12-16,18,20
+src/renderer/components/settings/AppearanceSettings.tsx
+  s_8e39093c4550c1::t_ebd0fb6dd30e9b 14,34
+  s_8e39093c4550c1::t_38b01136e2a0c9 130
+  s_8e39093c4550c1::t_7b3b82622e5c18 6,11
+  s_8e39093c4550c1::t_1dc9ef3e4887d4 32-33,35-37
+vitest.config.ts
+  s_8e39093c4550c1::t_a77b72852e8358 1,8
+  s_8e39093c4550c1::t_729f8213e67fb7 2,9-12
+  s_8e39093c4550c1::t_027fa65bda9d05 3
+pnpm-lock.yaml
+  s_8e39093c4550c1::t_9c729b5a5feaff 63-65,120-122
+src/renderer/components/notifications/__snapshots__/AccountNotifications.test.tsx.snap
+  s_8e39093c4550c1::t_f47f3910761ece 6,8-12,14,17,20,82,97,220,222-226,228,231,234,296,311,434,436-440,442,445,448,510,525,1192,1194-1198,1200,1203,1206,1268,1283
+src/renderer/components/notifications/__snapshots__/ProductNotifications.test.tsx.snap
+  s_8e39093c4550c1::t_a22151c2642d31 6,8-12,14,17,31,80,177,179-183,185,188,202,251,348,350-354,356,359,373,422
+src/renderer/components/primitives/__snapshots__/Footer.test.tsx.snap
+  s_8e39093c4550c1::t_9c7c699b7c3226 5-9,11,14,24-28,30,33
+src/renderer/routes/__snapshots__/Accounts.test.tsx.snap
+  s_8e39093c4550c1::t_6a78f37513b90b 62-66,68,71,125,207-211,213,216,318-322,324,327,381,463-467,469,472
+src/renderer/routes/__snapshots__/Filters.test.tsx.snap
+  s_8e39093c4550c1::t_9baf25ce286999 1757-1761,1763,1766,3540-3544,3546,3549
+src/renderer/routes/__snapshots__/Login.test.tsx.snap
+  s_8e39093c4550c1::t_c9275763ef0257 203-207,209,212
+src/renderer/routes/__snapshots__/Settings.test.tsx.snap
+  s_8e39093c4550c1::t_057af379830463 69,77,80,83,185,188,191,254,257,260,266-270,272,281,284,287,1025,1033,1036,1039,1080,1173,1266,1311-1315,1317,1327,1330,1333,1466,1559,2064,2082-2086,2088,2091
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.18",
+  "base_commit_sha": "74d617c585f57c482c87a704e226908de6396dc0",
+  "prompts": {},
+  "sessions": {
+    "s_8e39093c4550c1": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "37e1bb0d-ebb6-4209-907f-1b666c5e3d58",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
