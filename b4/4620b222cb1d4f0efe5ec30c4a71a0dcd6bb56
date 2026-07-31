@@ -1,0 +1,36 @@
+src/renderer/utils/api/client.graphql
+  s_61e8ea6968a71a::t_22cce878fb9ef0 50,57,62
+src/renderer/utils/notifications/fetch.ts
+  s_61e8ea6968a71a::t_bce9c655d86dd2 6,43,68,75
+src/renderer/utils/api/client.test.ts
+  s_61e8ea6968a71a::t_5a385773e221c5 64-65
+src/renderer/utils/api/pagination.test.ts
+  s_61e8ea6968a71a::t_46e7ad36deb45a 1-46,50-66,68-73,76,80-122
+  s_61e8ea6968a71a::t_6f497c96e39d69 47-49,67,74-75,77-79
+src/renderer/utils/api/pagination.ts
+  s_61e8ea6968a71a::t_9da0dd976b02d4 48,50-51
+  s_61e8ea6968a71a::t_93502e30dc6d44 1-2,5-9,11-15,18-29,31-47,49,56-61
+  s_61e8ea6968a71a::t_6f497c96e39d69 52-55
+src/renderer/utils/api/client.ts
+  s_61e8ea6968a71a::t_72475a52625812 87-89,91,98,103-104
+src/renderer/utils/api/graphql/generated/graphql.ts
+  s_61e8ea6968a71a::t_f6bef7752d6fc4 74,78,279,285,290
+src/renderer/constants.ts
+  s_61e8ea6968a71a::t_052a78b9cda225 38-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.18",
+  "base_commit_sha": "b44620b222cb1d4f0efe5ec30c4a71a0dcd6bb56",
+  "prompts": {},
+  "sessions": {
+    "s_61e8ea6968a71a": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "878e4900-96e9-4e67-bbf7-06c11495fc8f",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
