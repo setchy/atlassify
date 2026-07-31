@@ -1,24 +1,20 @@
-import ChevronDownIcon from '@atlaskit/icon/core/chevron-down';
-import ChevronLeftIcon from '@atlaskit/icon/core/chevron-left';
-import ChevronRightIcon from '@atlaskit/icon/core/chevron-right';
-
 import { blockAlignmentByLength, getChevronDetails } from './display';
 
 describe('renderer/utils/ui/display.ts', () => {
   describe('getChevronDetails', () => {
     it('should return correct chevron details', () => {
       expect(getChevronDetails(true, true, 'account')).toEqual({
-        icon: ChevronDownIcon,
+        icon: 'down',
         label: 'Hide account notifications',
       });
 
       expect(getChevronDetails(true, false, 'account')).toEqual({
-        icon: ChevronRightIcon,
+        icon: 'right',
         label: 'Show account notifications',
       });
 
       expect(getChevronDetails(false, false, 'product')).toEqual({
-        icon: ChevronLeftIcon,
+        icon: 'left',
         label: 'No notifications for product',
       });
     });

@@ -38,7 +38,7 @@ import {
   openAccountProfile,
   openMyPullRequests,
 } from '../../utils/system/links';
-import { getChevronDetails } from '../../utils/ui/display';
+import { CHEVRON_ICONS, getChevronDetails } from '../../utils/ui/display';
 import { isLightMode } from '../../utils/ui/theme';
 import { AllRead } from '../AllRead';
 import { Oops } from '../Oops';
@@ -144,7 +144,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
     isAccountNotificationsVisible,
     'account',
   );
-  const ChevronIcon = Chevron.icon;
+  const ChevronIcon = CHEVRON_ICONS[Chevron.icon];
 
   return (
     <Stack>

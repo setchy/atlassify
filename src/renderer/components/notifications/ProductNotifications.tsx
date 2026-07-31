@@ -15,7 +15,7 @@ import type { AtlassifyNotification } from '../../types';
 
 import { shouldRemoveNotificationsFromState } from '../../utils/notifications/postProcess';
 import { openExternalLink } from '../../utils/system/comms';
-import { getChevronDetails } from '../../utils/ui/display';
+import { CHEVRON_ICONS, getChevronDetails } from '../../utils/ui/display';
 import { isLightMode } from '../../utils/ui/theme';
 import { NotificationRow } from './NotificationRow';
 
@@ -93,7 +93,7 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
     isProductNotificationsVisible,
     'product',
   );
-  const ChevronIcon = Chevron.icon;
+  const ChevronIcon = CHEVRON_ICONS[Chevron.icon];
 
   return (
     <Stack>

@@ -1,3 +1,6 @@
+import type { ComponentType } from 'react';
+
+import type { NewCoreIconProps } from '@atlaskit/icon/base-new';
 import ChevronDownIcon from '@atlaskit/icon/core/chevron-down';
 import ChevronLeftIcon from '@atlaskit/icon/core/chevron-left';
 import ChevronRightIcon from '@atlaskit/icon/core/chevron-right';
@@ -5,9 +8,23 @@ import type { AlignBlock } from '@atlaskit/primitives/dist/types/components/type
 
 import { Constants } from '../../constants';
 
-import type { Chevron } from '../../types';
+import type { Chevron, ChevronIconType } from '../../types';
 
 import i18n from '../../i18n';
+
+/**
+ * Maps each `ChevronIconType` to its icon component. Guarantees `Chevron.icon`
+ * can only ever resolve to one of these three, since the component types
+ * themselves are structurally identical and can't be used to restrict this.
+ */
+export const CHEVRON_ICONS: Record<
+  ChevronIconType,
+  ComponentType<NewCoreIconProps>
+> = {
+  down: ChevronDownIcon,
+  left: ChevronLeftIcon,
+  right: ChevronRightIcon,
+};
 
 /**
  * Returns the appropriate chevron icon and accessible label for a collapsible section.
@@ -31,20 +48,20 @@ export function getChevronDetails(
 
   if (!hasNotifications) {
     return {
-      icon: ChevronLeftIcon,
+      icon: 'left',
       label: i18n.t('chevron.none', { type: typeLocale }),
     };
   }
 
   if (isVisible) {
     return {
-      icon: ChevronDownIcon,
+      icon: 'down',
       label: i18n.t('chevron.hide', { type: typeLocale }),
     };
   }
 
   return {
-    icon: ChevronRightIcon,
+    icon: 'right',
     label: i18n.t('chevron.show', { type: typeLocale }),
   };
 }
