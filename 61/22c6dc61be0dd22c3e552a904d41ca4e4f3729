@@ -1,0 +1,19 @@
+docs/src/components/Hero.astro
+  s_8e39093c4550c1::t_13893a86ac0efd 16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.18",
+  "base_commit_sha": "6122c6dc61be0dd22c3e552a904d41ca4e4f3729",
+  "prompts": {},
+  "sessions": {
+    "s_8e39093c4550c1": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "37e1bb0d-ebb6-4209-907f-1b666c5e3d58",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
