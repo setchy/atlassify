@@ -2,11 +2,16 @@
 
 exports[`renderer/components/primitives/Footer.tsx > should render itself & its children - end 1`] = `
 <div>
+  <style
+    data-cmpld="true"
+  >
+    ._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}
+  </style>
   <div
-    class="css-ujmiwr"
+    class="_19itglyw _vchhusvi _r06hglyw _1q511b66 _85i51b66 _bozgpxbi _y4tipxbi _bfhkysee"
   >
     <div
-      class="css-11bvkc9"
+      class="_1e0c1txw _vchhusvi _1bahh9n0"
     >
       Test
     </div>
@@ -16,11 +21,16 @@ exports[`renderer/components/primitives/Footer.tsx > should render itself & its 
 
 exports[`renderer/components/primitives/Footer.tsx > should render itself & its children - space-between 1`] = `
 <div>
+  <style
+    data-cmpld="true"
+  >
+    ._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}
+  </style>
   <div
-    class="css-ujmiwr"
+    class="_19itglyw _vchhusvi _r06hglyw _1q511b66 _85i51b66 _bozgpxbi _y4tipxbi _bfhkysee"
   >
     <div
-      class="css-1fxbet0"
+      class="_1e0c1txw _vchhusvi _1bah1yb4"
     >
       Test
     </div>

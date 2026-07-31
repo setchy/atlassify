@@ -3,13 +3,18 @@
 exports[`renderer/components/notifications/ProductNotifications.tsx > should render itself & its children - dark mode 1`] = `
 <div>
   <div
-    class="css-18nlz2h"
+    class="_1e0c1txw _vchhusvi _2lx21bp4 _1bah1fhb"
   >
+    <style
+      data-cmpld="true"
+    >
+      ._1oecfnf5{transition-duration:.2s}._bfhk1s93{background-color:var(--ds-background-accent-blue-subtlest,#e9f2fe)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}._irr3daj9:hover{background-color:var(--ds-background-accent-blue-subtlest-hovered,#cfe1fd)}._irr3wejn:hover{background-color:var(--ds-background-accent-gray-subtlest-hovered,#dddee1)}
+    </style>
     <div
-      class="css-1e0djde"
+      class="_19itglyw _vchhusvi _r06hglyw _1q511b66 _85i51b66 _bozg1b66 _y4tiu2gc _1oecfnf5 _bfhkysee _irr3wejn"
     >
       <div
-        class="css-58xle2"
+        class="_1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4"
       >
         <div
           role="presentation"
@@ -23,7 +28,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx > should ren
               class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
             >
               <div
-                class="css-gdhcj"
+                class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvr1h6o _2lx2vrvc"
               >
                 <span
                   aria-label="Bitbucket"
@@ -72,7 +77,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx > should ren
           </button>
         </div>
         <div
-          class="css-xxi07b"
+          class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
         >
           <div
             role="presentation"
@@ -169,13 +174,18 @@ exports[`renderer/components/notifications/ProductNotifications.tsx > should ren
 exports[`renderer/components/notifications/ProductNotifications.tsx > should render itself & its children - light mode 1`] = `
 <div>
   <div
-    class="css-18nlz2h"
+    class="_1e0c1txw _vchhusvi _2lx21bp4 _1bah1fhb"
   >
+    <style
+      data-cmpld="true"
+    >
+      ._1oecfnf5{transition-duration:.2s}._bfhk1s93{background-color:var(--ds-background-accent-blue-subtlest,#e9f2fe)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}._irr3daj9:hover{background-color:var(--ds-background-accent-blue-subtlest-hovered,#cfe1fd)}._irr3wejn:hover{background-color:var(--ds-background-accent-gray-subtlest-hovered,#dddee1)}
+    </style>
     <div
-      class="css-m8ydth"
+      class="_19itglyw _vchhusvi _r06hglyw _1q511b66 _85i51b66 _bozg1b66 _y4tiu2gc _1oecfnf5 _bfhk1s93 _irr3daj9"
     >
       <div
-        class="css-58xle2"
+        class="_1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4"
       >
         <div
           role="presentation"
@@ -189,7 +199,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx > should ren
               class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
             >
               <div
-                class="css-gdhcj"
+                class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvr1h6o _2lx2vrvc"
               >
                 <span
                   aria-label="Bitbucket"
@@ -238,7 +248,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx > should ren
           </button>
         </div>
         <div
-          class="css-xxi07b"
+          class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
         >
           <div
             role="presentation"
@@ -335,13 +345,18 @@ exports[`renderer/components/notifications/ProductNotifications.tsx > should ren
 exports[`renderer/components/notifications/ProductNotifications.tsx > should toggle product notifications visibility 1`] = `
 <div>
   <div
-    class="css-18nlz2h"
+    class="_1e0c1txw _vchhusvi _2lx21bp4 _1bah1fhb"
   >
+    <style
+      data-cmpld="true"
+    >
+      ._1oecfnf5{transition-duration:.2s}._bfhk1s93{background-color:var(--ds-background-accent-blue-subtlest,#e9f2fe)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}._irr3daj9:hover{background-color:var(--ds-background-accent-blue-subtlest-hovered,#cfe1fd)}._irr3wejn:hover{background-color:var(--ds-background-accent-gray-subtlest-hovered,#dddee1)}
+    </style>
     <div
-      class="css-1e0djde"
+      class="_19itglyw _vchhusvi _r06hglyw _1q511b66 _85i51b66 _bozg1b66 _y4tiu2gc _1oecfnf5 _bfhkysee _irr3wejn"
     >
       <div
-        class="css-58xle2"
+        class="_1e0c1txw _vchhusvi _4cvr1h6o _1bah1yb4"
       >
         <div
           role="presentation"
@@ -355,7 +370,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx > should tog
               class="_v564g17y _1reo15vq _18m915vq _16jlkb7n _1o9zkb7n _1bto1l2s _o5721q9c"
             >
               <div
-                class="css-gdhcj"
+                class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvr1h6o _2lx2vrvc"
               >
                 <span
                   aria-label="Bitbucket"
@@ -404,7 +419,7 @@ exports[`renderer/components/notifications/ProductNotifications.tsx > should tog
           </button>
         </div>
         <div
-          class="css-xxi07b"
+          class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
         >
           <div
             role="presentation"

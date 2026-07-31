@@ -200,11 +200,16 @@ exports[`renderer/routes/Login.tsx > should render itself & its children 1`] = `
         </form>
       </div>
     </div>
+    <style
+      data-cmpld="true"
+    >
+      ._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}
+    </style>
     <div
-      class="css-ujmiwr"
+      class="_19itglyw _vchhusvi _r06hglyw _1q511b66 _85i51b66 _bozgpxbi _y4tipxbi _bfhkysee"
     >
       <div
-        class="css-1fxbet0"
+        class="_1e0c1txw _vchhusvi _1bah1yb4"
       >
         <div
           role="presentation"

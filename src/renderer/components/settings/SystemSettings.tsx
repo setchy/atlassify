@@ -3,13 +3,15 @@ import { useTranslation } from 'react-i18next';
 
 import { IconButton, SplitButton } from '@atlaskit/button/new';
 import { Checkbox } from '@atlaskit/checkbox';
+import { cssMap, cx } from '@atlaskit/css';
 import Heading from '@atlaskit/heading';
 import RetryIcon from '@atlaskit/icon/core/retry';
 import VolumeHighIcon from '@atlaskit/icon/core/volume-high';
 import VolumeLowIcon from '@atlaskit/icon/core/volume-low';
 import InlineMessage from '@atlaskit/inline-message';
-import { Box, Inline, Stack, Text, xcss } from '@atlaskit/primitives';
+import { Box, Inline, Stack, Text } from '@atlaskit/primitives/compiled';
 import { Radio } from '@atlaskit/radio';
+import { token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
 import { APPLICATION } from '../../../shared/constants';
@@ -22,6 +24,18 @@ import {
   decreaseVolume,
   increaseVolume,
 } from '../../utils/ui/volume';
+
+const styles = cssMap({
+  volumeBox: {
+    backgroundColor: token('color.background.accent.gray.subtlest'),
+  },
+  visible: {
+    visibility: 'visible',
+  },
+  hidden: {
+    visibility: 'hidden',
+  },
+});
 
 export const SystemSettings: FC = () => {
   const { t } = useTranslation();
@@ -46,12 +60,6 @@ export const SystemSettings: FC = () => {
     (s) => s.enableAnonymousAnalytics,
   );
   const openAtStartup = useSettingsStore((s) => s.openAtStartup);
-
-  const volumeBoxStyles = xcss({
-    backgroundColor: 'color.background.accent.gray.subtlest',
-
-    visibility: playSoundNewNotifications ? 'visible' : 'hidden',
-  });
 
   return (
     <Stack space="space.100">
@@ -119,7 +127,13 @@ export const SystemSettings: FC = () => {
           name="playSoundNewNotifications"
           onChange={() => toggleSetting('playSoundNewNotifications')}
         />
-        <Inline testId="settings-volume-group" xcss={volumeBoxStyles}>
+        <Inline
+          testId="settings-volume-group"
+          xcss={cx(
+            styles.volumeBox,
+            playSoundNewNotifications ? styles.visible : styles.hidden,
+          )}
+        >
           <SplitButton spacing="compact">
             <Inline alignBlock="center">
               <Box paddingInline="space.150">

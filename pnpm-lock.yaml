@@ -60,6 +60,9 @@ importers:
       '@atlaskit/checkbox':
         specifier: 18.2.1
         version: 18.2.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
+      '@atlaskit/css':
+        specifier: 1.0.2
+        version: 1.0.2(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/css-reset':
         specifier: 8.1.1
         version: 8.1.1(react@19.2.8)(supports-color@10.2.2)
@@ -114,6 +117,9 @@ importers:
       '@biomejs/biome':
         specifier: 2.5.5
         version: 2.5.5
+      '@compiled/react':
+        specifier: 1.0.0
+        version: 1.0.0(react@19.2.8)
       '@compiled/vite-plugin':
         specifier: 2.0.0
         version: 2.0.0(supports-color@10.2.2)(vite@8.1.5(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0))

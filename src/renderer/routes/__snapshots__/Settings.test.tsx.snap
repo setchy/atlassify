@@ -66,7 +66,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
         class="css-1f88b8t"
       >
         <div
-          class="css-u5wwvt"
+          class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _2lx21bp4 _1bah1fhb"
         >
           <h4
             class="_dxsyidpf _1i144jg8 _nmk4glyw _fqox1e3o _1w90i7uo"
@@ -74,13 +74,13 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
             Appearance
           </h4>
           <div
-            class="css-5shg4o"
+            class="_19itglyw _vchhusvi _r06hglyw _bozg1b66"
           >
             <div
-              class="css-xxi07b"
+              class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
             >
               <span
-                class="css-1w9vgw2"
+                class="_19pkidpf _2hwxidpf _otyridpf _18u0idpf _1i4qfg65 _11c8fhey _syazi7uo _k48p1wq8"
                 id="language-label"
               >
                 Language
@@ -182,13 +182,13 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
             </div>
           </div>
           <div
-            class="css-5shg4o"
+            class="_19itglyw _vchhusvi _r06hglyw _bozg1b66"
           >
             <div
-              class="css-gdhcj"
+              class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvr1h6o _2lx2vrvc"
             >
               <span
-                class="css-1w9vgw2"
+                class="_19pkidpf _2hwxidpf _otyridpf _18u0idpf _1i4qfg65 _11c8fhey _syazi7uo _k48p1wq8"
               >
                 Theme
                 :
@@ -251,20 +251,25 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
             </div>
           </div>
           <div
-            class="css-5shg4o"
+            class="_19itglyw _vchhusvi _r06hglyw _bozg1b66"
           >
             <div
-              class="css-gdhcj"
+              class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvr1h6o _2lx2vrvc"
             >
               <span
-                class="css-1w9vgw2"
+                class="_19pkidpf _2hwxidpf _otyridpf _18u0idpf _1i4qfg65 _11c8fhey _syazi7uo _k48p1wq8"
                 id="zoom-label"
               >
                 Zoom
                 :
               </span>
+              <style
+                data-cmpld="true"
+              >
+                ._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}
+              </style>
               <div
-                class="css-onzy6r"
+                class="_1e0c1txw _vchhusvi _4cvrv2br _2lx2vrvc _bfhkysee"
               >
                 <div
                   class="_2rkofajl _12ji1l7x _1cwg1n1a _1qu2nqa1 _12y3t94y _1e0c116y _kqswh2mm _4cvr1h6o _o5721q9c"
@@ -273,13 +278,13 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                     class="_traeidpf _anlpidpf _p9ykidpf _bepvidpf"
                   >
                     <div
-                      class="css-3p0rff"
+                      class="_1e0c1txw _vchhusvi _4cvr1h6o _2lx2vrvc"
                     >
                       <div
-                        class="css-13secbl"
+                        class="_19itglyw _vchhusvi _r06hglyw _bozgutpp _y4tiutpp"
                       >
                         <span
-                          class="css-1y3vbql"
+                          class="_19pkidpf _2hwxidpf _otyridpf _18u0idpf _1i4qfg65 _11c8fhey _syazi7uo"
                         >
                           100
                           %
@@ -1017,7 +1022,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
           </div>
         </div>
         <div
-          class="css-u5wwvt"
+          class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _2lx21bp4 _1bah1fhb"
         >
           <h4
             class="_dxsyidpf _1i144jg8 _nmk4glyw _fqox1e3o _1w90i7uo"
@@ -1025,13 +1030,13 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
             System
           </h4>
           <div
-            class="css-5shg4o"
+            class="_19itglyw _vchhusvi _r06hglyw _bozg1b66"
           >
             <div
-              class="css-gdhcj"
+              class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvr1h6o _2lx2vrvc"
             >
               <span
-                class="css-1w9vgw2"
+                class="_19pkidpf _2hwxidpf _otyridpf _18u0idpf _1i4qfg65 _11c8fhey _syazi7uo _k48p1wq8"
               >
                 Open Links
                 :
@@ -1072,7 +1077,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
             </div>
           </div>
           <div
-            class="css-xxi07b"
+            class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
           >
             <label
               class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwnjmqp _f0grjmqp _1c53glyw _1e9d5w2r _syazi7uo _80om73ad _ljcgdfik _1vj51q28 _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t _q29q1q28 _zoo95w2r"
@@ -1165,7 +1170,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
             </div>
           </div>
           <div
-            class="css-xxi07b"
+            class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
           >
             <label
               class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwnjmqp _f0grjmqp _1c53glyw _1e9d5w2r _syazi7uo _80om73ad _ljcgdfik _1vj51q28 _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t _q29q1q28 _zoo95w2r"
@@ -1258,7 +1263,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
             </div>
           </div>
           <div
-            class="css-gdhcj"
+            class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvr1h6o _2lx2vrvc"
           >
             <label
               class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwnjmqp _f0grjmqp _1c53glyw _1e9d5w2r _syazi7uo _80om73ad _ljcgdfik _1vj51q28 _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t _q29q1q28 _zoo95w2r"
@@ -1303,8 +1308,13 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 Play sound for new notifications
               </span>
             </label>
+            <style
+              data-cmpld="true"
+            >
+              ._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}._3um0ewfl{visibility:visible}._3um015vq{visibility:hidden}
+            </style>
             <div
-              class="css-z626nj"
+              class="_1e0c1txw _vchhusvi _4cvrv2br _2lx2vrvc _bfhkysee _3um0ewfl"
               data-testid="settings-volume-group"
             >
               <div
@@ -1314,13 +1324,13 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                   class="_traeidpf _anlpidpf _p9ykidpf _bepvidpf"
                 >
                   <div
-                    class="css-3p0rff"
+                    class="_1e0c1txw _vchhusvi _4cvr1h6o _2lx2vrvc"
                   >
                     <div
-                      class="css-13secbl"
+                      class="_19itglyw _vchhusvi _r06hglyw _bozgutpp _y4tiutpp"
                     >
                       <span
-                        class="css-1y3vbql"
+                        class="_19pkidpf _2hwxidpf _otyridpf _18u0idpf _1i4qfg65 _11c8fhey _syazi7uo"
                       >
                         20
                         %
@@ -1453,7 +1463,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
             </div>
           </div>
           <div
-            class="css-xxi07b"
+            class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
           >
             <label
               class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwnjmqp _f0grjmqp _1c53glyw _1e9d5w2r _syazi7uo _80om73ad _ljcgdfik _1vj51q28 _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t _q29q1q28 _zoo95w2r"
@@ -1546,7 +1556,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
             </div>
           </div>
           <div
-            class="css-xxi07b"
+            class="_1e0c1txw _vchhusvi _gy1pu2gc _1p57u2gc _4cvrv2br _2lx2vrvc"
           >
             <label
               class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwnjmqp _f0grjmqp _1c53glyw _1e9d5w2r _syazi7uo _80om73ad _ljcgdfik _1vj51q28 _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t _q29q1q28 _zoo95w2r"
@@ -2051,7 +2061,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
           </div>
         </div>
         <div
-          class="css-1ubxutt"
+          class="_1e0c1txw _vchhusvi _4cvrv2br _2lx2vrvc _1bah1h6o"
         >
           <button
             aria-haspopup="dialog"
@@ -2069,11 +2079,16 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
       </div>
     </div>
   </div>
+  <style
+    data-cmpld="true"
+  >
+    ._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}
+  </style>
   <div
-    class="css-ujmiwr"
+    class="_19itglyw _vchhusvi _r06hglyw _1q511b66 _85i51b66 _bozgpxbi _y4tipxbi _bfhkysee"
   >
     <div
-      class="css-1fxbet0"
+      class="_1e0c1txw _vchhusvi _1bah1yb4"
     >
       <div
         role="presentation"

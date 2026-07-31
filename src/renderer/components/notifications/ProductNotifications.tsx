@@ -3,8 +3,10 @@ import { useTranslation } from 'react-i18next';
 
 import Badge from '@atlaskit/badge/new';
 import Button, { IconButton } from '@atlaskit/button/new';
+import { cssMap, cx } from '@atlaskit/css';
 import StrokeWeightLargeIcon from '@atlaskit/icon/core/stroke-weight-large';
-import { Box, Flex, Inline, Stack, xcss } from '@atlaskit/primitives';
+import { Box, Flex, Inline, Stack } from '@atlaskit/primitives/compiled';
+import { token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
 import { useAppContext } from '../../hooks/useAppContext';
@@ -20,6 +22,24 @@ import { NotificationRow } from './NotificationRow';
 export interface ProductNotificationsProps {
   productNotifications: AtlassifyNotification[];
 }
+
+const styles = cssMap({
+  box: {
+    transitionDuration: '200ms',
+  },
+  light: {
+    backgroundColor: token('color.background.accent.blue.subtlest'),
+    '&:hover': {
+      backgroundColor: token('color.background.accent.blue.subtlest.hovered'),
+    },
+  },
+  dark: {
+    backgroundColor: token('color.background.accent.gray.subtlest'),
+    '&:hover': {
+      backgroundColor: token('color.background.accent.gray.subtlest.hovered'),
+    },
+  },
+});
 
 export const ProductNotifications: FC<ProductNotificationsProps> = ({
   productNotifications,
@@ -72,20 +92,6 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
   );
   const ChevronIcon = Chevron.icon;
 
-  const boxStyles = xcss({
-    transitionDuration: '200ms',
-
-    backgroundColor: isLightMode()
-      ? 'color.background.accent.blue.subtlest'
-      : 'color.background.accent.gray.subtlest',
-
-    ':hover': {
-      backgroundColor: isLightMode()
-        ? 'color.background.accent.blue.subtlest.hovered'
-        : 'color.background.accent.gray.subtlest.hovered',
-    },
-  });
-
   return (
     <Stack>
       <Box
@@ -94,7 +100,7 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
         paddingBlock="space.050"
         paddingInlineEnd="space.100"
         paddingInlineStart="space.050"
-        xcss={boxStyles}
+        xcss={cx(styles.box, isLightMode() ? styles.light : styles.dark)}
       >
         <Flex alignItems="center" justifyContent="space-between">
           <Tooltip
