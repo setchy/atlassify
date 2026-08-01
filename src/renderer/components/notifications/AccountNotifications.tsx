@@ -174,7 +174,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
                       appearance="circle"
                       borderColor={isLightMode() ? 'white' : 'gray'}
                       name={account.name}
-                      size="xsmall"
+                      size="xxsmall"
                       src={account.avatar}
                     />
                   }
