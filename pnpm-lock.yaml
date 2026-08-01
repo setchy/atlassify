@@ -121,8 +121,8 @@ importers:
         specifier: 1.0.0
         version: 1.0.0(react@19.2.8)
       '@compiled/vite-plugin':
-        specifier: 2.0.0
-        version: 2.0.0(supports-color@10.2.2)(vite@8.1.5(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0))
+        specifier: 2.0.1
+        version: 2.0.1(@compiled/react@1.0.0(react@19.2.8))(supports-color@10.2.2)(vite@8.1.5(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0))
       '@discordapp/twemoji':
         specifier: 16.0.1
         version: 16.0.1
@@ -685,14 +685,18 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@compiled/babel-plugin-strip-runtime@1.0.0':
-    resolution: {integrity: sha512-xt/30MjoD6fSw9cJWkmnr2/OgcVB8xyWmZCztk0yOpJESlai2YMcrOyAmbJuYG8Ny23Ae4v+Hkms7glqoqT70Q==}
+  '@compiled/babel-plugin-strip-runtime@2.0.0':
+    resolution: {integrity: sha512-226APcB/GXsMxw0jmz8W8RTWn7AJ2coy4u47M3Sv79RXZR0OMBc/5la1foyqHv0hoUyT+YdvLgN+PbkMsvf50A==}
 
-  '@compiled/babel-plugin@1.0.0':
-    resolution: {integrity: sha512-gTzYzptX+wri0YV+gUWiKyU/DYIROdR4F8jeks8K6GMGKw9aUdeE/eJ8U+GUoEi78HWqct0zKkvArYvA+6Vg5g==}
+  '@compiled/babel-plugin@2.0.0':
+    resolution: {integrity: sha512-AkV32XiOXeGyeopsPjwcaDBIkphaSd4X/qV/PsqSzPP1WiaStVRGSuPwF2j1qZqywxIdki04G1QHIU6a+5rRwQ==}
+    peerDependencies:
+      '@compiled/react': '>=1.0.0'
 
-  '@compiled/css@1.0.0':
-    resolution: {integrity: sha512-ELT934vYH3LDS8GRd7ouIUsTDXAdIDZnHop/6oNsgcH0Z1cqMtsbcg+6poN4n1j/NQ6H0QMvcyDcwoG0sLXaLg==}
+  '@compiled/css@2.0.0':
+    resolution: {integrity: sha512-RoA34KuxcqDSISkYBeqpfMjse7hbXtWHFfge2TUDc/StOB1TR1moUXoWNLKpF6zx6rpLh3nZRi5/Nrb5lnvmCg==}
+    peerDependencies:
+      '@compiled/react': '>=1.0.0'
 
   '@compiled/react@0.20.0':
     resolution: {integrity: sha512-mEJuYGFxIDST1H7CpksyE6a3HRVRQmeDal26O+bCHTEZlPp7iKvs5KD1FOmd2palng+S60dPFFG+UuoZDRILwA==}
@@ -704,11 +708,11 @@ packages:
     peerDependencies:
       react: '>=18.0.0'
 
-  '@compiled/utils@0.13.2':
-    resolution: {integrity: sha512-UZZv/P+pKN78BSvyu8lHO18sYS2XC1qB/Afi9ggol0wAJFY8eWrAoLvWzXDC6Pt495KOLqUX6HpWXQPyGF9ojA==}
+  '@compiled/utils@0.14.0':
+    resolution: {integrity: sha512-WngOT+6F8odtp5Sz5FxQbJGCm61wsIHdqaMHit7TwYq9rbreBDk/eGka+mhanczzaX5q9GxlG8+yZEQ5qrv82g==}
 
-  '@compiled/vite-plugin@2.0.0':
-    resolution: {integrity: sha512-60PlHfn4n7Viho0Y0urcjIn5dgStt7WagGqCAY1HF0T6yY3KcJ4ObEGq4onloXBF5x6X/r9S78oU5nHKQW5oaw==}
+  '@compiled/vite-plugin@2.0.1':
+    resolution: {integrity: sha512-HJ912Di8Gw97eM8i0mSh04tYly6fHrjUcm0UisKIDIOXoDhUpvV58apfNc99hUs19ZqQh/A4j7tWd+htO0fyZA==}
     peerDependencies:
       vite: '>= 4.0.0'
 
@@ -5989,19 +5993,20 @@ snapshots:
   '@biomejs/cli-win32-x64@2.5.5':
     optional: true
 
-  '@compiled/babel-plugin-strip-runtime@1.0.0(supports-color@10.2.2)':
+  '@compiled/babel-plugin-strip-runtime@2.0.0(@compiled/react@1.0.0(react@19.2.8))(supports-color@10.2.2)':
     dependencies:
       '@babel/core': 7.29.7(supports-color@10.2.2)
       '@babel/helper-plugin-utils': 7.29.7
       '@babel/template': 7.29.7
       '@babel/traverse': 7.29.7(supports-color@10.2.2)
       '@babel/types': 7.29.7
-      '@compiled/css': 1.0.0
-      '@compiled/utils': 0.13.2
+      '@compiled/css': 2.0.0(@compiled/react@1.0.0(react@19.2.8))
+      '@compiled/utils': 0.14.0
     transitivePeerDependencies:
+      - '@compiled/react'
       - supports-color
 
-  '@compiled/babel-plugin@1.0.0(supports-color@10.2.2)':
+  '@compiled/babel-plugin@2.0.0(@compiled/react@1.0.0(react@19.2.8))(supports-color@10.2.2)':
     dependencies:
       '@babel/core': 7.29.7(supports-color@10.2.2)
       '@babel/generator': 7.29.7
@@ -6012,16 +6017,18 @@ snapshots:
       '@babel/template': 7.29.7
       '@babel/traverse': 7.29.7(supports-color@10.2.2)
       '@babel/types': 7.29.7
-      '@compiled/css': 1.0.0
-      '@compiled/utils': 0.13.2
+      '@compiled/css': 2.0.0(@compiled/react@1.0.0(react@19.2.8))
+      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/utils': 0.14.0
       '@emotion/is-prop-valid': 1.4.0
       resolve: 1.22.12
     transitivePeerDependencies:
       - supports-color
 
-  '@compiled/css@1.0.0':
+  '@compiled/css@2.0.0(@compiled/react@1.0.0(react@19.2.8))':
     dependencies:
-      '@compiled/utils': 0.13.2
+      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/utils': 0.14.0
       autoprefixer: 10.5.4(postcss@8.5.23)
       cssnano-preset-default: 5.2.14(postcss@8.5.23)
       postcss: 8.5.23
@@ -6041,22 +6048,23 @@ snapshots:
       csstype: 3.2.3
       react: 19.2.8
 
-  '@compiled/utils@0.13.2':
+  '@compiled/utils@0.14.0':
     dependencies:
       convert-source-map: 2.0.0
       source-map: 0.7.6
 
-  '@compiled/vite-plugin@2.0.0(supports-color@10.2.2)(vite@8.1.5(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0))':
+  '@compiled/vite-plugin@2.0.1(@compiled/react@1.0.0(react@19.2.8))(supports-color@10.2.2)(vite@8.1.5(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0))':
     dependencies:
       '@babel/core': 7.29.7(supports-color@10.2.2)
       '@babel/parser': 7.29.7
-      '@compiled/babel-plugin': 1.0.0(supports-color@10.2.2)
-      '@compiled/babel-plugin-strip-runtime': 1.0.0(supports-color@10.2.2)
-      '@compiled/css': 1.0.0
-      '@compiled/utils': 0.13.2
+      '@compiled/babel-plugin': 2.0.0(@compiled/react@1.0.0(react@19.2.8))(supports-color@10.2.2)
+      '@compiled/babel-plugin-strip-runtime': 2.0.0(@compiled/react@1.0.0(react@19.2.8))(supports-color@10.2.2)
+      '@compiled/css': 2.0.0(@compiled/react@1.0.0(react@19.2.8))
+      '@compiled/utils': 0.14.0
       enhanced-resolve: 5.24.3
       vite: 8.1.5(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0)
     transitivePeerDependencies:
+      - '@compiled/react'
       - supports-color
 
   '@croct/json5-parser@0.2.2':
