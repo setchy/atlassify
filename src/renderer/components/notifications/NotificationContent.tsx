@@ -72,7 +72,7 @@ export const NotificationContent: FC<NotificationContentProps> = ({
                     <Avatar
                       appearance="square"
                       name={bodyText}
-                      size="xsmall"
+                      size="xxsmall"
                       src={notification.entity.iconUrl}
                     />
                   ) : (
