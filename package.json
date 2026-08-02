@@ -114,7 +114,7 @@
     "@vitejs/plugin-react": "6.0.4",
     "@vitest/coverage-v8": "4.1.10",
     "@vitest/ui": "4.1.10",
-    "axios": "1.18.1",
+    "axios": "1.19.0",
     "clsx": "2.1.1",
     "concurrently": "10.0.4",
     "date-fns": "4.4.0",
