@@ -76,8 +76,8 @@ importers:
         specifier: 37.2.2
         version: 37.2.2(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/icon-lab':
-        specifier: 7.4.0
-        version: 7.4.0(react@19.2.8)(supports-color@10.2.2)
+        specifier: 7.4.1
+        version: 7.4.1(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/inline-message':
         specifier: 16.2.3
         version: 16.2.3(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
@@ -356,8 +356,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/icon-lab@7.4.0':
-    resolution: {integrity: sha512-iaPF9ueKNo+0TqPst3LPcPcd58pd9NPjQOgViNlFf4/UnB6RKjqIyISNqnXO1Xqsb4HXoPcMRGdZhy5W3Ic1MA==}
+  '@atlaskit/icon-lab@7.4.1':
+    resolution: {integrity: sha512-fpvMvFMejVchyqiAniGu70a1yw32s0b7yPZHaUmgKZ+D9ElGA759JQtU6zp28g28y9jfqQEZKysXbyz0oxZcNw==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5327,7 +5327,7 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/icon-lab@7.4.0(react@19.2.8)(supports-color@10.2.2)':
+  '@atlaskit/icon-lab@7.4.1(react@19.2.8)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/icon': 37.2.2(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.8)
