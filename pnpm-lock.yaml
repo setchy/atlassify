@@ -46,8 +46,8 @@ importers:
         specifier: 0.3.1
         version: 0.3.1(electron@43.2.0(supports-color@10.2.2))
       '@atlaskit/avatar':
-        specifier: 26.4.0
-        version: 26.4.0(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
+        specifier: 26.4.1
+        version: 26.4.1(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/avatar-group':
         specifier: 13.2.4
         version: 13.2.4(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
@@ -288,8 +288,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/avatar@26.4.0':
-    resolution: {integrity: sha512-uhNCMKHJkAuvfeqMWdJ4+Qo/uAATeZZLz9hpNCK8pkapiLYF0CYlhv9MpciuyTun/uKHGeAaWh4j6x5qcWIriw==}
+  '@atlaskit/avatar@26.4.1':
+    resolution: {integrity: sha512-Qqc+QkaEo+I4lx2UczzdUBEZ41uB2rxwUNyYwQreK46ameUBv5FU8fTzrvEciaeR+P+gC+/Axh181Nr7T6c9pA==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5107,7 +5107,7 @@ snapshots:
 
   '@atlaskit/avatar-group@13.2.4(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)':
     dependencies:
-      '@atlaskit/avatar': 26.4.0(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
+      '@atlaskit/avatar': 26.4.1(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/css': 1.0.2(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/ds-lib': 8.0.0(react@19.2.8)
       '@atlaskit/menu': 9.2.5(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
@@ -5127,7 +5127,7 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/avatar@26.4.0(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)':
+  '@atlaskit/avatar@26.4.1(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/analytics-next': 12.3.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@atlaskit/css': 1.0.2(react@19.2.8)(supports-color@10.2.2)
@@ -5656,7 +5656,7 @@ snapshots:
   '@atlaskit/tag@15.4.4(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/analytics-next': 12.3.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
-      '@atlaskit/avatar': 26.4.0(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
+      '@atlaskit/avatar': 26.4.1(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/css': 1.0.2(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/ds-lib': 8.0.0(react@19.2.8)
       '@atlaskit/icon': 37.2.2(react@19.2.8)(supports-color@10.2.2)
@@ -5679,7 +5679,7 @@ snapshots:
 
   '@atlaskit/teams-avatar@4.0.0(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)':
     dependencies:
-      '@atlaskit/avatar': 26.4.0(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
+      '@atlaskit/avatar': 26.4.1(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/css': 1.0.2(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/platform-feature-flags': 2.1.1(react@19.2.8)
       '@atlaskit/primitives': 22.2.0(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
@@ -8437,7 +8437,7 @@ snapshots:
       es6-error: 4.1.1
       matcher: 3.0.0
       roarr: 2.15.4
-      semver: 7.7.4
+      semver: 7.8.5
       serialize-error: 7.0.1
     optional: true
 
@@ -9128,13 +9128,13 @@ snapshots:
 
   node-abi@4.33.0:
     dependencies:
-      semver: 7.7.4
+      semver: 7.8.5
 
   node-addon-api@7.1.1: {}
 
   node-api-version@0.2.1:
     dependencies:
-      semver: 7.7.4
+      semver: 7.8.5
 
   node-domexception@1.0.0: {}
 
@@ -9151,7 +9151,7 @@ snapshots:
       graceful-fs: 4.2.11
       nopt: 9.0.0
       proc-log: 6.1.0
-      semver: 7.7.4
+      semver: 7.8.5
       tar: 7.5.22
       tinyglobby: 0.2.17
       undici: 6.28.0
