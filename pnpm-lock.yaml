@@ -121,8 +121,8 @@ importers:
         specifier: 1.0.0
         version: 1.0.0(react@19.2.8)
       '@compiled/vite-plugin':
-        specifier: 2.0.1
-        version: 2.0.1(@compiled/react@1.0.0(react@19.2.8))(supports-color@10.2.2)(vite@8.2.0(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0))
+        specifier: 2.0.2
+        version: 2.0.2(@compiled/react@1.0.0(react@19.2.8))(supports-color@10.2.2)(vite@8.2.0(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0))
       '@discordapp/twemoji':
         specifier: 16.0.1
         version: 16.0.1
@@ -706,8 +706,8 @@ packages:
   '@compiled/utils@0.14.0':
     resolution: {integrity: sha512-WngOT+6F8odtp5Sz5FxQbJGCm61wsIHdqaMHit7TwYq9rbreBDk/eGka+mhanczzaX5q9GxlG8+yZEQ5qrv82g==}
 
-  '@compiled/vite-plugin@2.0.1':
-    resolution: {integrity: sha512-HJ912Di8Gw97eM8i0mSh04tYly6fHrjUcm0UisKIDIOXoDhUpvV58apfNc99hUs19ZqQh/A4j7tWd+htO0fyZA==}
+  '@compiled/vite-plugin@2.0.2':
+    resolution: {integrity: sha512-BOJIvBdzjOpEd2/ke6yPavYh29X89N/kELOtapbmcKpJwc41lANV2a665NtKsYCFi6ovSlNNlrnLKheGtmizBg==}
     peerDependencies:
       vite: '>= 4.0.0'
 
@@ -6031,7 +6031,7 @@ snapshots:
       convert-source-map: 2.0.0
       source-map: 0.7.6
 
-  '@compiled/vite-plugin@2.0.1(@compiled/react@1.0.0(react@19.2.8))(supports-color@10.2.2)(vite@8.2.0(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0))':
+  '@compiled/vite-plugin@2.0.2(@compiled/react@1.0.0(react@19.2.8))(supports-color@10.2.2)(vite@8.2.0(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0))':
     dependencies:
       '@babel/core': 7.29.7(supports-color@10.2.2)
       '@babel/parser': 7.29.8
@@ -8437,7 +8437,7 @@ snapshots:
       es6-error: 4.1.1
       matcher: 3.0.0
       roarr: 2.15.4
-      semver: 7.7.4
+      semver: 7.8.5
       serialize-error: 7.0.1
     optional: true
 
@@ -9128,13 +9128,13 @@ snapshots:
 
   node-abi@4.33.0:
     dependencies:
-      semver: 7.7.4
+      semver: 7.8.5
 
   node-addon-api@7.1.1: {}
 
   node-api-version@0.2.1:
     dependencies:
-      semver: 7.7.4
+      semver: 7.8.5
 
   node-domexception@1.0.0: {}
 
@@ -9151,7 +9151,7 @@ snapshots:
       graceful-fs: 4.2.11
       nopt: 9.0.0
       proc-log: 6.1.0
-      semver: 7.7.4
+      semver: 7.8.5
       tar: 7.5.22
       tinyglobby: 0.2.17
       undici: 6.28.0
