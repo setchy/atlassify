@@ -48,14 +48,16 @@ query MyNotifications(
   $flat: Boolean = true
   $first: Int
   $after: String
+  $collabContextRoutingAri: String
 ) {
   notifications {
-    unseenNotificationCount
+    unseenNotificationCount(collabContextRoutingAri: $collabContextRoutingAri)
     notificationFeed(
       flat: $flat
       first: $first
       after: $after
       filter: { readStateFilter: $readState }
+      collabContextRoutingAri: $collabContextRoutingAri
     ) {
       pageInfo {
         hasNextPage

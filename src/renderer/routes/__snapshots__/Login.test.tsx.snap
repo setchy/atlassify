@@ -50,11 +50,15 @@ exports[`renderer/routes/Login.tsx > should render itself & its children 1`] = `
             </span>
           </button>
         </div>
-        <h3
-          class="_dxsyidpf _1i144jg8 _nmk4glyw _fqox1af2 _1w90i7uo"
+        <div
+          class="css-1qldnan"
         >
-          Login with Atlassian
-        </h3>
+          <h3
+            class="_dxsyidpf _1i144jg8 _nmk4glyw _fqox1af2 _1w90i7uo"
+          >
+            Login with Atlassian
+          </h3>
+        </div>
       </div>
     </div>
     <div

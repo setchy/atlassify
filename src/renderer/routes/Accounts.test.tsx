@@ -96,4 +96,17 @@ describe('renderer/routes/Accounts.tsx', () => {
       replace: true,
     });
   });
+
+  describe('Account configuration', () => {
+    it('should navigate to the manage account route', async () => {
+      renderWithProviders(<AccountsRoute />);
+
+      await userEvent.click(screen.getByTestId('account-hostname-hints'));
+
+      expect(navigateMock).toHaveBeenCalledTimes(1);
+      expect(navigateMock).toHaveBeenCalledWith(
+        `/accounts/manage?accountId=${mockAtlassianCloudAccount.id}`,
+      );
+    });
+  });
 });

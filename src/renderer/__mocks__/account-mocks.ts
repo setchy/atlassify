@@ -13,6 +13,7 @@ export const mockAtlassianCloudAccount: Account = {
   token: 'token-123-456' as EncryptedToken,
   name: 'Atlassify',
   avatar: 'https://avatar.atlassify.io' as Link,
+  hostnameHints: [],
 };
 
 export const mockAtlassianCloudAccountTwo: Account = {
@@ -21,6 +22,7 @@ export const mockAtlassianCloudAccountTwo: Account = {
   token: 'token-abc-xyz' as EncryptedToken,
   name: 'Another One',
   avatar: 'https://avatar.atlassify.io' as Link,
+  hostnameHints: [],
 };
 
 export function createMockAccountWithError(

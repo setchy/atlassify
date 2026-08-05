@@ -69,6 +69,28 @@ describe('renderer/utils/api/client.ts', () => {
     );
   });
 
+  it('listNotificationsForAuthenticatedUser - should scope to a cloud ID when provided', async () => {
+    const mockCloudID = 'mock-cloud-id' as CloudID;
+
+    await client.getNotificationsForUser(
+      mockAtlassianCloudAccount,
+      undefined,
+      mockCloudID,
+    );
+
+    expect(request.performRequestForAccount).toHaveBeenCalledWith(
+      mockAtlassianCloudAccount,
+      MyNotificationsDocument,
+      {
+        first: Constants.NOTIFICATIONS_PAGE_SIZE,
+        after: undefined,
+        flat: false,
+        readState: 'unread',
+        collabContextRoutingAri: `ari:cloud:platform::site/${mockCloudID}`,
+      },
+    );
+  });
+
   it('markNotificationsAsRead - should mark notifications as read', async () => {
     await client.markNotificationsAsRead(mockAtlassianCloudAccount, [
       mockSingleAtlassifyNotification.id,

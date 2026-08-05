@@ -89,6 +89,7 @@ export function getAuthenticatedUser(
  *
  * @param account - The account to fetch notifications for.
  * @param after - The cursor to fetch the next page of notifications from.
+ * @param cloudId - When provided, scopes the request to that site via `collabContextRoutingAri`.
  * @returns Promise resolving to the GraphQL response containing the notification feed.
  *
  * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
@@ -96,6 +97,7 @@ export function getAuthenticatedUser(
 export function getNotificationsForUser(
   account: Account,
   after?: string,
+  cloudId?: CloudID,
 ): Promise<AtlassianGraphQLResponse<MyNotificationsQuery>> {
   const settings = useSettingsStore.getState();
 
@@ -106,6 +108,9 @@ export function getNotificationsForUser(
     readState: settings.fetchOnlyUnreadNotifications
       ? InfluentsNotificationReadState.Unread
       : null,
+    collabContextRoutingAri: cloudId
+      ? `ari:cloud:platform::site/${cloudId}`
+      : undefined,
   });
 }
 

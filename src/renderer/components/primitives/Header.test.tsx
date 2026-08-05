@@ -17,6 +17,23 @@ describe('renderer/components/primitives/Header.tsx', () => {
     expect(tree.container).toMatchSnapshot();
   });
 
+  it('should render a subheading when provided', () => {
+    const tree = renderWithProviders(
+      <Header subheading="Test Subheading">Test Header</Header>,
+    );
+
+    expect(screen.getByText('Test Header')).toBeInTheDocument();
+    expect(screen.getByText('Test Subheading')).toBeInTheDocument();
+    expect(tree.container).toMatchSnapshot();
+  });
+
+  it('should not render a subheading when not provided', () => {
+    renderWithProviders(<Header>Test Header</Header>);
+
+    expect(screen.getByText('Test Header')).toBeInTheDocument();
+    expect(screen.queryByText('Test Subheading')).not.toBeInTheDocument();
+  });
+
   it('should navigate back', async () => {
     renderWithProviders(<Header>Test Header</Header>);
 

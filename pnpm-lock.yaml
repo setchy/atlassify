@@ -99,6 +99,12 @@ importers:
       '@atlaskit/spinner':
         specifier: 20.1.1
         version: 20.1.1(react@19.2.8)(supports-color@10.2.2)
+      '@atlaskit/tag':
+        specifier: 15.4.1
+        version: 15.4.1(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
+      '@atlaskit/tag-group':
+        specifier: 13.1.0
+        version: 13.1.0(react@19.2.8)
       '@atlaskit/textfield':
         specifier: 9.1.1
         version: 9.1.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
@@ -467,6 +473,11 @@ packages:
 
   '@atlaskit/spinner@20.1.1':
     resolution: {integrity: sha512-3LPbGR1RkNEePJmL1KnxnCbFIASlr78ncYxPNJneecHzhnjIP2THQWID8iGje4ddISufMB71W4McZyj6sRdjoQ==}
+    peerDependencies:
+      react: ^18.2.0
+
+  '@atlaskit/tag-group@13.1.0':
+    resolution: {integrity: sha512-zcY4dxmcSxs2G+PvH/MFcShJZpAnZsZj9uQoCQcnCAdefhtb2VXMCOzBBpjihi2VE1T1avsN45+KMnAz55Vr8g==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5670,6 +5681,13 @@ snapshots:
       react: 19.2.8
     transitivePeerDependencies:
       - supports-color
+
+  '@atlaskit/tag-group@13.1.0(react@19.2.8)':
+    dependencies:
+      '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.8)
+      '@babel/runtime': 7.29.7
+      '@compiled/react': 0.20.0(react@19.2.8)
+      react: 19.2.8
 
   '@atlaskit/tag@15.4.1(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)':
     dependencies:

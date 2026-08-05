@@ -3,6 +3,21 @@
     "add_new": "Neues Konto hinzufügen",
     "logout_account": "Abmelden {{username}}",
     "manage": "Konten verwalten",
+    "manage_account": {
+      "title": "Konto verwalten",
+      "hostname": {
+        "add_hostname": "Hostnamen hinzufügen",
+        "configured_hostnames": "Konfigurierte Hostnamen",
+        "description_1": "{{appName}} ruft Ihren Benachrichtigungsfeed über Ihre Mandantenanwendungen, wie Jira und Confluence, normalerweise automatisch ab.",
+        "description_2": "Bei einigen Konten müssen Sie jedoch Ihre Hostnamen explizit konfigurieren, damit die Daten des Benachrichtigungsfeeds korrekt weitergeleitet und zurückgegeben werden.",
+        "description_warning": "Konfigurieren Sie nur die absolut notwendigen Hostnamen, da zusätzliche Hostnamen die Benachrichtigungsprüfungen verlangsamen können.",
+        "hostname_helper": "z. B. ihre-domain.atlassian.net",
+        "invalid_hint": "Dieser Hostname konnte keiner Website zugeordnet werden",
+        "remove_hint": "Entfernen",
+        "resolution_error": "Dieser Hostname konnte keiner Website zugeordnet werden. Überprüfen Sie den Hostnamen und versuchen Sie es erneut.",
+        "title": "Konto-Hostnamen"
+      }
+    },
     "open_profile": "Kontoprofil öffnen ↗",
     "refresh_account": "{{username}} aktualisieren",
     "title": "Konten"
@@ -18,6 +33,7 @@
   },
   "common": {
     "account": "Konto",
+    "add": "Hinzufügen",
     "are_you_sure": "Bist du sicher?",
     "cancel": "Stornieren",
     "close": "Schließen",

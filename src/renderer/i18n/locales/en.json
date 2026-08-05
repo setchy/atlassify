@@ -3,6 +3,21 @@
     "add_new": "Add new account",
     "logout_account": "Logout {{username}}",
     "manage": "Manage accounts",
+    "manage_account": {
+      "title": "Manage account",
+      "hostname": {
+        "add_hostname": "Add host name",
+        "configured_hostnames": "Configured host names",
+        "description_1": "{{appName}} usually fetches your notification feed across your tenanted applications, such as Jira and Confluence, automatically.",
+        "description_2": "However, for some accounts you may need to explicitly configure your host names for notification feed data to be correctly routed and returned.",
+        "description_warning": "Only configure the absolute minimum host names required, as adding unnecessary host names can slow down notification checks.",
+        "hostname_helper": "e.g. your-domain.atlassian.net",
+        "invalid_hint": "Could not resolve this host name to a site",
+        "remove_hint": "Remove",
+        "resolution_error": "Could not resolve this host name to a site. Check the host name and try again.",
+        "title": "Account host names"
+      }
+    },
     "open_profile": "Open account profile ↗",
     "refresh_account": "Refresh {{username}}",
     "title": "Accounts"
@@ -18,6 +33,7 @@
   },
   "common": {
     "account": "account",
+    "add": "Add",
     "are_you_sure": "Are you sure?",
     "cancel": "Cancel",
     "close": "Close",

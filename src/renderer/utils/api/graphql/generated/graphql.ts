@@ -72,6 +72,7 @@ export type MyNotificationsQueryVariables = Exact<{
   flat?: boolean | null | undefined;
   first?: number | null | undefined;
   after?: string | null | undefined;
+  collabContextRoutingAri?: string | null | undefined;
 }>;
 
 
@@ -276,14 +277,15 @@ export const RetrieveNotificationsByGroupIdDocument = new TypedDocumentString(`
   readState
 }`) as unknown as TypedDocumentString<RetrieveNotificationsByGroupIdQuery, RetrieveNotificationsByGroupIdQueryVariables>;
 export const MyNotificationsDocument = new TypedDocumentString(`
-    query MyNotifications($readState: InfluentsNotificationReadState, $flat: Boolean = true, $first: Int, $after: String) {
+    query MyNotifications($readState: InfluentsNotificationReadState, $flat: Boolean = true, $first: Int, $after: String, $collabContextRoutingAri: String) {
   notifications {
-    unseenNotificationCount
+    unseenNotificationCount(collabContextRoutingAri: $collabContextRoutingAri)
     notificationFeed(
       flat: $flat
       first: $first
       after: $after
       filter: { readStateFilter: $readState }
+      collabContextRoutingAri: $collabContextRoutingAri
     ) {
       pageInfo {
         hasNextPage

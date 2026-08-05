@@ -3,6 +3,21 @@
     "add_new": "Ajouter un nouveau compte",
     "logout_account": "Déconnexion {{username}}",
     "manage": "Gérer les comptes",
+    "manage_account": {
+      "title": "Gérer le compte",
+      "hostname": {
+        "add_hostname": "Ajouter un nom d'hôte",
+        "configured_hostnames": "Noms d'hôte configurés",
+        "description_1": "{{appName}} récupère généralement automatiquement votre flux de notifications sur vos applications locataires, telles que Jira et Confluence.",
+        "description_2": "Cependant, pour certains comptes, vous devrez peut-être configurer explicitement vos noms d'hôte afin que les données du flux de notifications soient correctement acheminées et renvoyées.",
+        "description_warning": "Ne configurez que le strict minimum de noms d'hôte requis, car l'ajout de noms d'hôte inutiles peut ralentir les vérifications des notifications.",
+        "hostname_helper": "ex. votre-domaine.atlassian.net",
+        "invalid_hint": "Impossible de résoudre ce nom d'hôte vers un site",
+        "remove_hint": "Supprimer",
+        "resolution_error": "Impossible de résoudre ce nom d'hôte vers un site. Vérifiez le nom d'hôte et réessayez.",
+        "title": "Noms d'hôte du compte"
+      }
+    },
     "open_profile": "Ouvrir un profil de compte ↗",
     "refresh_account": "Actualiser {{username}}",
     "title": "Comptes"
@@ -18,6 +33,7 @@
   },
   "common": {
     "account": "compte",
+    "add": "Ajouter",
     "are_you_sure": "Es-tu sûr?",
     "cancel": "Annuler",
     "close": "Fermer",

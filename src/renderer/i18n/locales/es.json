@@ -3,6 +3,21 @@
     "add_new": "Agregar nueva cuenta",
     "logout_account": "Cerrar sesión {{username}}",
     "manage": "Administrar cuentas",
+    "manage_account": {
+      "title": "Administrar cuenta",
+      "hostname": {
+        "add_hostname": "Agregar nombre de host",
+        "configured_hostnames": "Nombres de host configurados",
+        "description_1": "{{appName}} normalmente obtiene su feed de notificaciones en todas sus aplicaciones inquilinas, como Jira y Confluence, automáticamente.",
+        "description_2": "Sin embargo, para algunas cuentas es posible que deba configurar explícitamente sus nombres de host para que los datos del feed de notificaciones se enruten y devuelvan correctamente.",
+        "description_warning": "Configure solo el mínimo absoluto de nombres de host necesarios, ya que agregar nombres de host innecesarios puede ralentizar las comprobaciones de notificaciones.",
+        "hostname_helper": "p. ej. su-dominio.atlassian.net",
+        "invalid_hint": "No se pudo resolver este nombre de host a un sitio",
+        "remove_hint": "Eliminar",
+        "resolution_error": "No se pudo resolver este nombre de host a un sitio. Compruebe el nombre de host e inténtelo de nuevo.",
+        "title": "Nombres de host de la cuenta"
+      }
+    },
     "open_profile": "Abrir perfil de cuenta ↗",
     "refresh_account": "Actualizar {{username}}",
     "title": "Cuentas"
@@ -18,6 +33,7 @@
   },
   "common": {
     "account": "cuenta",
+    "add": "Agregar",
     "are_you_sure": "¿Está seguro?",
     "cancel": "Cancelar",
     "close": "Cerca",
