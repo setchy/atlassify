@@ -24,9 +24,13 @@ import { performRequestForAccount } from '../request';
 export function markNotificationGroupAsRead(
   account: Account,
   notificationGroupId: string,
+  cloudId?: CloudID,
 ): Promise<AtlassianGraphQLResponse<MarkGroupAsReadMutation>> {
   return performRequestForAccount(account, MarkGroupAsReadDocument, {
     groupId: notificationGroupId,
+    collabContextRoutingAri: cloudId
+      ? `ari:cloud:platform::site/${cloudId}`
+      : undefined,
   });
 }
 
@@ -39,9 +43,13 @@ export function markNotificationGroupAsRead(
 export function markNotificationGroupAsUnread(
   account: Account,
   notificationGroupId: string,
+  cloudId?: CloudID,
 ): Promise<AtlassianGraphQLResponse<MarkGroupAsUnreadMutation>> {
   return performRequestForAccount(account, MarkGroupAsUnreadDocument, {
     groupId: notificationGroupId,
+    collabContextRoutingAri: cloudId
+      ? `ari:cloud:platform::site/${cloudId}`
+      : undefined,
   });
 }
 

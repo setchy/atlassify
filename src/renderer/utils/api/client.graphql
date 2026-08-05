@@ -8,15 +8,27 @@ query Me {
   }
 }
 
-mutation MarkAsRead($notificationIDs: [String!]!) {
+mutation MarkAsRead(
+  $notificationIDs: [String!]!
+  $collabContextRoutingAri: String
+) {
   notifications {
-    markNotificationsByIdsAsRead(ids: $notificationIDs)
+    markNotificationsByIdsAsRead(
+      ids: $notificationIDs
+      collabContextRoutingAri: $collabContextRoutingAri
+    )
   }
 }
 
-mutation MarkAsUnread($notificationIDs: [String!]!) {
+mutation MarkAsUnread(
+  $notificationIDs: [String!]!
+  $collabContextRoutingAri: String
+) {
   notifications {
-    markNotificationsByIdsAsUnread(ids: $notificationIDs)
+    markNotificationsByIdsAsUnread(
+      ids: $notificationIDs
+      collabContextRoutingAri: $collabContextRoutingAri
+    )
   }
 }
 

@@ -20,6 +20,7 @@ import type {
   AccountNotifications,
   AtlassifyError,
   AtlassifyNotification,
+  CloudID,
 } from '../types';
 
 import {
@@ -332,12 +333,43 @@ export const useNotifications = (): UseNotificationsResult => {
         throw new Error('All notifications must belong to the same account');
       }
 
-      const notificationIDs = await resolveNotificationIdsForGroup(
-        account,
-        targetNotifications,
+      const cloudIdByHostname = new Map(
+        (account.hostnameHints ?? [])
+          .filter((hint) => hint.cloudId !== null)
+          .map((hint) => [hint.hostname.toLowerCase(), hint.cloudId]),
       );
 
-      await markAsApiFn(account, notificationIDs);
+      const notificationsByCloudId = new Map<
+        CloudID | undefined,
+        AtlassifyNotification[]
+      >();
+      for (const notification of targetNotifications) {
+        let cloudIdForNotification: CloudID | undefined;
+
+        try {
+          const hostName = new URL(notification.url).hostname.toLowerCase();
+          cloudIdForNotification = cloudIdByHostname.get(hostName);
+        } catch {
+          cloudIdForNotification = undefined;
+        }
+
+        const existingBatch = notificationsByCloudId.get(
+          cloudIdForNotification,
+        );
+        if (existingBatch) {
+          existingBatch.push(notification);
+        } else {
+          notificationsByCloudId.set(cloudIdForNotification, [notification]);
+        }
+      }
+
+      for (const [cloudId, scopedNotifications] of notificationsByCloudId) {
+        const notificationIDs = await resolveNotificationIdsForGroup(
+          account,
+          scopedNotifications,
+        );
+        await markAsApiFn(account, notificationIDs, cloudId);
+      }
 
       // Return data needed for post-processing
       return { account, targetNotifications, action };

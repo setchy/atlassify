@@ -1,12 +1,21 @@
-mutation MarkGroupAsRead($groupId: String!) {
+mutation MarkGroupAsRead($groupId: String!, $collabContextRoutingAri: String) {
   notifications {
-    markNotificationsByGroupIdAsRead(groupId: $groupId)
+    markNotificationsByGroupIdAsRead(
+      groupId: $groupId
+      collabContextRoutingAri: $collabContextRoutingAri
+    )
   }
 }
 
-mutation MarkGroupAsUnread($groupId: String!) {
+mutation MarkGroupAsUnread(
+  $groupId: String!
+  $collabContextRoutingAri: String
+) {
   notifications {
-    markNotificationsByGroupIdAsUnread(groupId: $groupId)
+    markNotificationsByGroupIdAsUnread(
+      groupId: $groupId
+      collabContextRoutingAri: $collabContextRoutingAri
+    )
   }
 }
 

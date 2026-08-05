@@ -126,9 +126,13 @@ export function getNotificationsForUser(
 export function markNotificationsAsRead(
   account: Account,
   notificationIds: string[],
+  cloudId?: CloudID,
 ): Promise<AtlassianGraphQLResponse<MarkAsReadMutation>> {
   return performRequestForAccount(account, MarkAsReadDocument, {
     notificationIDs: notificationIds,
+    collabContextRoutingAri: cloudId
+      ? `ari:cloud:platform::site/${cloudId}`
+      : undefined,
   });
 }
 
@@ -144,9 +148,13 @@ export function markNotificationsAsRead(
 export function markNotificationsAsUnread(
   account: Account,
   notificationIds: string[],
+  cloudId?: CloudID,
 ): Promise<AtlassianGraphQLResponse<MarkAsUnreadMutation>> {
   return performRequestForAccount(account, MarkAsUnreadDocument, {
     notificationIDs: notificationIds,
+    collabContextRoutingAri: cloudId
+      ? `ari:cloud:platform::site/${cloudId}`
+      : undefined,
   });
 }
 
