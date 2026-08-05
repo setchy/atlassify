@@ -15,8 +15,8 @@ importers:
         specifier: 1.2.3
         version: 1.2.3
       '@octokit/openapi-types':
-        specifier: 27.0.0
-        version: 27.0.0
+        specifier: 28.0.0
+        version: 28.0.0
       '@tailwindcss/vite':
         specifier: 4.3.3
         version: 4.3.3(vite@8.2.0(@types/node@26.1.2)(esbuild@0.28.1)(jiti@2.7.0))
