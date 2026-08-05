@@ -64,7 +64,7 @@ export function registerSystemHandlers(mb: Menubar): void {
     },
   );
 
-    /**
+  /**
    * Update the application's auto-launch setting based on the provided configuration.
    *
    * Skipped in development: the unsigned dev Electron binary cannot register as a
