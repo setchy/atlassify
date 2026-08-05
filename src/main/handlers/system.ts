@@ -10,6 +10,7 @@ import {
 import { logInfo } from '../../shared/logger';
 
 import { onMainEvent, sendRendererEvent } from '../events';
+import { isDevMode } from '../utils';
 
 /**
  * Register IPC handlers for OS-level system operations.
@@ -70,7 +71,7 @@ export function registerSystemHandlers(mb: Menubar): void {
    * Skipped in development: the unsigned dev Electron binary cannot register as a
    * macOS login item, so calling this would only emit a Chromium error log.
    */
-  onMainEvent(EVENTS.UPDATE_AUTO_LAUNCH, (_, settings) => {
+  onMainEvent(EVENTS.UPDATE_AUTO_LAUNCH, (_, settings: IAutoLaunch) => {
     if (isDevMode()) {
       return;
     }
