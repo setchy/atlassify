@@ -1,0 +1,14 @@
+src/main/handlers/system.ts
+  h_ac004aadb63da9 13,74
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "1b863aeb177344b39be91fde7a33b9c4b6b2e14b",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
