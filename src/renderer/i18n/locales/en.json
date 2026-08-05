@@ -4,7 +4,6 @@
     "logout_account": "Logout {{username}}",
     "manage": "Manage accounts",
     "manage_account": {
-      "title": "Manage account",
       "hostname": {
         "add_hostname": "Add host name",
         "configured_hostnames": "Configured host names",
@@ -16,7 +15,8 @@
         "remove_hint": "Remove",
         "resolution_error": "Could not resolve this host name to a site. Check the host name and try again.",
         "title": "Account host names"
-      }
+      },
+      "title": "Manage account"
     },
     "open_profile": "Open account profile ↗",
     "refresh_account": "Refresh {{username}}",

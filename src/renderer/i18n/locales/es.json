@@ -4,7 +4,6 @@
     "logout_account": "Cerrar sesión {{username}}",
     "manage": "Administrar cuentas",
     "manage_account": {
-      "title": "Administrar cuenta",
       "hostname": {
         "add_hostname": "Agregar nombre de host",
         "configured_hostnames": "Nombres de host configurados",
@@ -16,7 +15,8 @@
         "remove_hint": "Eliminar",
         "resolution_error": "No se pudo resolver este nombre de host a un sitio. Compruebe el nombre de host e inténtelo de nuevo.",
         "title": "Nombres de host de la cuenta"
-      }
+      },
+      "title": "Administrar cuenta"
     },
     "open_profile": "Abrir perfil de cuenta ↗",
     "refresh_account": "Actualizar {{username}}",

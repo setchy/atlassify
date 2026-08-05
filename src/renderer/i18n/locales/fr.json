@@ -4,7 +4,6 @@
     "logout_account": "Déconnexion {{username}}",
     "manage": "Gérer les comptes",
     "manage_account": {
-      "title": "Gérer le compte",
       "hostname": {
         "add_hostname": "Ajouter un nom d'hôte",
         "configured_hostnames": "Noms d'hôte configurés",
@@ -16,7 +15,8 @@
         "remove_hint": "Supprimer",
         "resolution_error": "Impossible de résoudre ce nom d'hôte vers un site. Vérifiez le nom d'hôte et réessayez.",
         "title": "Noms d'hôte du compte"
-      }
+      },
+      "title": "Gérer le compte"
     },
     "open_profile": "Ouvrir un profil de compte ↗",
     "refresh_account": "Actualiser {{username}}",
