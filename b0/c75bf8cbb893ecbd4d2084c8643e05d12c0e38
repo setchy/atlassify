@@ -1,0 +1,140 @@
+src/renderer/i18n/locales/fr.json
+  s_eed128acee650f::t_e29a8f53a5061e 6-20
+  s_eed128acee650f::t_8792d050828e73 36
+src/renderer/components/settings/SettingsReset.tsx
+  s_eed128acee650f::t_128a9313c37ad8 14,21,54-69
+src/renderer/utils/api/client.test.ts
+  s_eed128acee650f::t_99b2a4269ccd6e 72-93
+src/renderer/components/accounts/AccountHostnames.test.tsx
+  s_eed128acee650f::t_9555e87501b789 49-51,74-76
+  s_eed128acee650f::t_8a0d8e6e366a17 9,24-25,27,101-102,104
+  s_eed128acee650f::t_94a427276ddf3f 1-8,10-23,28-36,38-39,41-48,52,54-73,77-78,80-85,87-100,105-110,112-119
+  s_eed128acee650f::t_05f0e7fc57ac3b 37,111
+  s_eed128acee650f::t_96d7ffe3c1ce48 40,53,79,86
+  s_eed128acee650f::t_82c61c2c5ba6e0 26
+  s_eed128acee650f::t_8671402aad1f9e 103
+src/renderer/i18n/locales/es.json
+  s_eed128acee650f::t_8792d050828e73 36
+  s_eed128acee650f::t_e29a8f53a5061e 6-20
+src/renderer/stores/useAccountsStore.test.ts
+  s_eed128acee650f::t_762df36f7ec893 8,199-202,230-233,288-295
+  s_eed128acee650f::t_cb3fc3232aec43 24,140-198,203-229,234-252,259-271,284-287,296-307,312-317
+  s_eed128acee650f::t_7201cf630a11e8 10,22-23
+  s_eed128acee650f::t_44034d117de2f7 14-16,253-258,308-311
+  s_eed128acee650f::t_1fc31f1a5e361e 272-283
+  s_eed128acee650f::t_013d7722ac9ec3 25
+src/renderer/stores/useAccountsStore.ts
+  s_eed128acee650f::t_1dc2fa4c9b71cb 67
+  s_eed128acee650f::t_84cfc92288fa3e 6-13,24-48,78,82-87,93,123-127,130-132,134-175
+  s_eed128acee650f::t_ef7920d86415ab 16-19
+  s_eed128acee650f::t_f3700eae8cabb0 128-129,133
+  s_eed128acee650f::t_28cb6f71950a26 176
+src/renderer/components/primitives/Header.test.tsx
+  s_eed128acee650f::t_9b42a0310e4fa8 20-36
+src/renderer/utils/api/pagination.test.ts
+  s_eed128acee650f::t_9386faa9c3528a 66,123-179,183-204
+  s_eed128acee650f::t_f009698b3eb023 180-182
+  s_eed128acee650f::t_062cb6a2b610de 205
+src/renderer/components/accounts/AccountHostnames.tsx
+  s_eed128acee650f::t_6ec5f2c50f090c 17-18,69-71,77-79,82,90,107,118,120,129,146,162,177,179
+  s_eed128acee650f::t_36c9155ced2773 75-76,80-81,83-89,91-92
+  s_eed128acee650f::t_8d03ddb347c677 106,130,137
+  s_eed128acee650f::t_11c35d1bcb4522 29-35,139,193
+  s_eed128acee650f::t_d32274c4844a4a 12-13
+  s_eed128acee650f::t_71d47d6c6f09e6 5,23-28,97
+  s_eed128acee650f::t_420b9efa313a4e 11,98-105,108-117,121-128,131-136,138,189-190
+  s_eed128acee650f::t_6182d1ed99c865 140-145,147-161,163-176,180-188
+  s_eed128acee650f::t_f3ba7192078a52 10,73-74,93-94
+  s_eed128acee650f::t_de2d3c591f917f 72,95
+  s_eed128acee650f::t_ed04a18466529e 2-4
+  s_eed128acee650f::t_bb22c3937ee0d4 6-9
+  s_eed128acee650f::t_da95a2ed7c898b 14-16
+  s_eed128acee650f::t_a6e7fe014649e4 19-22
+  s_eed128acee650f::t_1e1147083b94de 36-38,66-68
+  s_eed128acee650f::t_58507fd06a6e77 96
+  s_eed128acee650f::t_c081661e8eff8f 119
+  s_eed128acee650f::t_09a93385f6ea08 178
+  s_eed128acee650f::t_83db99b1b58209 191-192
+src/renderer/__mocks__/account-mocks.ts
+  s_eed128acee650f::t_1dc2fa4c9b71cb 16,25
+src/renderer/App.tsx
+  s_eed128acee650f::t_fb1c23ed9e11ca 98-105
+  s_eed128acee650f::t_79db701328d3e2 19
+docs/src/faqs/6.md
+  s_eed128acee650f::t_62a911c018e4a0 1-12
+src/renderer/routes/Accounts.test.tsx
+  s_eed128acee650f::t_8765fd2184a8ff 99,102-103,105
+  s_eed128acee650f::t_32ec1090887f0d 101,106-109
+  s_eed128acee650f::t_558228252849e3 100,104
+  s_eed128acee650f::t_7ab86cfee7f310 110-111
+src/renderer/utils/api/client.ts
+  s_eed128acee650f::t_1d77e38326e1ed 92,100,111-113
+src/renderer/stores/types.ts
+  s_eed128acee650f::t_e709920029aa33 61-71
+  s_eed128acee650f::t_7e4d176db2954c 8
+src/renderer/routes/ManageAccount.test.tsx
+  s_eed128acee650f::t_9555e87501b789 3
+  s_eed128acee650f::t_cf5951fd6874a1 24
+  s_eed128acee650f::t_0ea0531b8386e1 1-2,4-23,25-34
+src/renderer/utils/api/client.graphql
+  s_eed128acee650f::t_e034a583d4988f 51,54,60
+src/renderer/i18n/locales/en.json
+  s_eed128acee650f::t_997b5ed8d30590 6
+  s_eed128acee650f::t_b3fd1fd928de98 12-13
+  s_eed128acee650f::t_2d26ba69b87ab4 18
+  s_eed128acee650f::t_e101fe37cfc5b8 36
+  s_eed128acee650f::t_a703134e420b10 9-10,14
+  s_eed128acee650f::t_99d149e647ec75 7-8
+  s_eed128acee650f::t_a2c7449d21cf5e 11
+  s_eed128acee650f::t_50a78771b10bf3 15-17
+  s_eed128acee650f::t_5c57ad9bc4c8cd 19-20
+src/renderer/routes/ManageAccount.tsx
+  s_eed128acee650f::t_d75baea597a9ef 27
+  s_eed128acee650f::t_b5ceaaf969ff61 1-26,28-34,37-48
+  s_eed128acee650f::t_e67921c6f3c768 36
+  s_eed128acee650f::t_2cea1e63ddf5de 35
+src/renderer/utils/api/pagination.ts
+  s_eed128acee650f::t_f009698b3eb023 113
+  s_eed128acee650f::t_221948576ea57c 5,18,29,32,34,42,65-112
+  s_eed128acee650f::t_d6ece830680d37 114-115
+src/renderer/routes/Accounts.tsx
+  s_eed128acee650f::t_b7edf6adf696df 75,80-94,98-99,116,119-166,168
+  s_eed128acee650f::t_48fdf707827091 11
+  s_eed128acee650f::t_1c22fbff668123 77
+  s_eed128acee650f::t_965b77f06efba6 74
+  s_eed128acee650f::t_b94030b8e7a785 107-109
+  s_eed128acee650f::t_cfec3d6b56a740 101-105,110-115
+  s_eed128acee650f::t_24920ad4143f7b 12
+  s_eed128acee650f::t_e67921c6f3c768 100,106
+package.json
+  s_eed128acee650f::t_7d2ddc1131c8b2 89-90
+src/renderer/components/primitives/Header.tsx
+  s_eed128acee650f::t_a7f86d12bc0e88 46
+  s_eed128acee650f::t_47901f6fc4d9b6 47-49
+src/renderer/types.ts
+  s_eed128acee650f::t_4bb2a813cfc9fe 78-98
+src/renderer/i18n/locales/de.json
+  s_eed128acee650f::t_e29a8f53a5061e 6-20
+  s_eed128acee650f::t_8792d050828e73 36
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "b0c75bf8cbb893ecbd4d2084c8643e05d12c0e38",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  },
+  "sessions": {
+    "s_eed128acee650f": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "194d9953-e533-403f-a5be-1d29f1902246",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
