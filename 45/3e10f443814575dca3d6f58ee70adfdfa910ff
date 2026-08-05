@@ -1,0 +1,30 @@
+src/renderer/i18n/locales/en.json
+  s_eed128acee650f::t_5582b1ce2e8e5b 18-19
+src/renderer/i18n/locales/de.json
+  s_eed128acee650f::t_5582b1ce2e8e5b 18-19
+src/renderer/i18n/locales/fr.json
+  s_eed128acee650f::t_5582b1ce2e8e5b 18-19
+src/renderer/i18n/locales/es.json
+  s_eed128acee650f::t_5582b1ce2e8e5b 18-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "453e10f443814575dca3d6f58ee70adfdfa910ff",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  },
+  "sessions": {
+    "s_eed128acee650f": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "194d9953-e533-403f-a5be-1d29f1902246",
+        "model": "gpt-5.3-codex"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
