@@ -8,7 +8,8 @@ import { cssMap, cx } from '@atlaskit/css';
 import LogOutIcon from '@atlaskit/icon/core/log-out';
 import PersonAddIcon from '@atlaskit/icon/core/person-add';
 import RefreshIcon from '@atlaskit/icon/core/refresh';
-import { Box, Inline } from '@atlaskit/primitives/compiled';
+import SettingsIcon from '@atlaskit/icon/core/settings';
+import { Box, Inline, Stack } from '@atlaskit/primitives/compiled';
 import { token } from '@atlaskit/tokens';
 import Tooltip from '@atlaskit/tooltip';
 
@@ -70,80 +71,101 @@ export const AccountsRoute: FC = () => {
               key={account.id}
               xcss={cx(styles.root, isLightMode() ? styles.light : styles.dark)}
             >
-              <Inline alignBlock="center" grow="fill" spread="space-between">
-                <Tooltip content={t('accounts.open_profile')} position="bottom">
-                  <AvatarItem
-                    avatar={
-                      <Avatar
-                        appearance="circle"
-                        borderColor={isLightMode() ? 'white' : 'gray'}
-                        name={account.name}
-                        size="medium"
-                        src={account.avatar}
+              <Stack space="space.100">
+                <Inline alignBlock="center" grow="fill" spread="space-between">
+                  <Tooltip
+                    content={t('accounts.open_profile')}
+                    position="bottom"
+                  >
+                    <AvatarItem
+                      avatar={
+                        <Avatar
+                          appearance="circle"
+                          borderColor={isLightMode() ? 'white' : 'gray'}
+                          name={account.name}
+                          size="medium"
+                          src={account.avatar}
+                        />
+                      }
+                      label={t('accounts.open_profile')}
+                      onClick={() => openAccountProfile(account)}
+                      primaryText={account.name}
+                      secondaryText={account.username}
+                      testId="account-profile"
+                    />
+                  </Tooltip>
+
+                  <Inline>
+                    <Tooltip
+                      content={t('accounts.manage_account.title')}
+                      position="bottom"
+                    >
+                      <IconButton
+                        appearance="subtle"
+                        icon={SettingsIcon}
+                        label={t('accounts.manage_account.title')}
+                        onClick={() =>
+                          navigate(`/accounts/manage?accountId=${account.id}`)
+                        }
+                        shape="circle"
+                        testId="account-hostname-hints"
                       />
-                    }
-                    label={t('accounts.open_profile')}
-                    onClick={() => openAccountProfile(account)}
-                    primaryText={account.name}
-                    secondaryText={account.username}
-                    testId="account-profile"
-                  />
-                </Tooltip>
+                    </Tooltip>
 
-                <Inline>
-                  <Tooltip
-                    content={t('accounts.refresh_account', {
-                      username: account.username,
-                    })}
-                    position="bottom"
-                  >
-                    <IconButton
-                      appearance="subtle"
-                      icon={RefreshIcon}
-                      label={t('accounts.refresh_account', {
+                    <Tooltip
+                      content={t('accounts.refresh_account', {
                         username: account.username,
                       })}
-                      onClick={async (e) => {
-                        const button = e.currentTarget;
-                        button.classList.add('animate-spin');
+                      position="bottom"
+                    >
+                      <IconButton
+                        appearance="subtle"
+                        icon={RefreshIcon}
+                        label={t('accounts.refresh_account', {
+                          username: account.username,
+                        })}
+                        onClick={async (e) => {
+                          const button = e.currentTarget;
+                          button.classList.add('animate-spin');
 
-                        await refreshAccount(account);
-                        navigate('/accounts', {
-                          replace: true,
-                        });
+                          await refreshAccount(account);
+                          navigate('/accounts', {
+                            replace: true,
+                          });
 
-                        /**
-                         * Typically the above refresh API call completes very quickly,
-                         * so we add an brief artificial delay to allow the icon to spin a few times
-                         */
-                        setTimeout(() => {
-                          button.classList.remove('animate-spin');
-                        }, 250);
-                      }}
-                      shape="circle"
-                      testId="account-refresh"
-                    />
-                  </Tooltip>
+                          /**
+                           * Typically the above refresh API call completes very quickly,
+                           * so we add an brief artificial delay to allow the icon to spin a few times
+                           */
+                          setTimeout(() => {
+                            button.classList.remove('animate-spin');
+                          }, 250);
+                        }}
+                        shape="circle"
+                        testId="account-refresh"
+                      />
+                    </Tooltip>
 
-                  <Tooltip
-                    content={t('accounts.logout_account', {
-                      username: account.username,
-                    })}
-                    position="bottom"
-                  >
-                    <IconButton
-                      appearance="subtle"
-                      icon={LogOutIcon}
-                      label={t('accounts.logout_account', {
+                    <Tooltip
+                      content={t('accounts.logout_account', {
                         username: account.username,
                       })}
-                      onClick={() => logoutAccount(account)}
-                      shape="circle"
-                      testId="account-logout"
-                    />
-                  </Tooltip>
+                      position="bottom"
+                    >
+                      <IconButton
+                        appearance="subtle"
+                        icon={LogOutIcon}
+                        label={t('accounts.logout_account', {
+                          username: account.username,
+                        })}
+                        onClick={() => logoutAccount(account)}
+                        shape="circle"
+                        testId="account-logout"
+                      />
+                    </Tooltip>
+                  </Inline>
                 </Inline>
-              </Inline>
+              </Stack>
             </Box>
           );
         })}

@@ -11,22 +11,15 @@ import Modal, {
   ModalTitle,
   ModalTransition,
 } from '@atlaskit/modal-dialog';
-import { Flex, Grid, Inline } from '@atlaskit/primitives/compiled';
+import { Flex, Inline } from '@atlaskit/primitives/compiled';
 
 import { APPLICATION } from '../../../shared/constants';
 
 import { useSettingsStore } from '../../stores';
 
 const styles = cssMap({
-  grid: {
+  header: {
     width: '100%',
-    gridTemplateAreas: '"title close"',
-  },
-  closeContainer: {
-    gridArea: 'close',
-  },
-  titleContainer: {
-    gridArea: 'title',
   },
 });
 
@@ -58,22 +51,22 @@ export const SettingsReset: FC = () => {
         {showResetSettingsModal && (
           <Modal onClose={actionCloseResetSettingsModal}>
             <ModalHeader>
-              <Grid gap="space.200" xcss={styles.grid}>
-                <Flex justifyContent="end" xcss={styles.closeContainer}>
-                  <IconButton
-                    appearance="subtle"
-                    icon={CrossIcon}
-                    label={t('common.close')}
-                    onClick={actionCloseResetSettingsModal}
-                    testId="settings-reset-close"
-                  />
-                </Flex>
-                <Flex justifyContent="start" xcss={styles.titleContainer}>
-                  <ModalTitle appearance="danger">
-                    {t('settings.reset.title')}
-                  </ModalTitle>
-                </Flex>
-              </Grid>
+              <Flex
+                alignItems="center"
+                justifyContent="space-between"
+                xcss={styles.header}
+              >
+                <ModalTitle appearance="danger">
+                  {t('settings.reset.title')}
+                </ModalTitle>
+                <IconButton
+                  appearance="subtle"
+                  icon={CrossIcon}
+                  label={t('common.close')}
+                  onClick={actionCloseResetSettingsModal}
+                  testId="settings-reset-close"
+                />
+              </Flex>
             </ModalHeader>
             <ModalBody>
               <p>

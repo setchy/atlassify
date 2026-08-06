@@ -5,6 +5,7 @@ import type {
   ActorType,
   CategoryType,
   EngagementStateType,
+  Hostname,
   Percentage,
   ProductType,
   ReadStateType,
@@ -56,6 +57,17 @@ export interface AccountsActions {
    * Removes an account.
    */
   removeAccount: (account: Account) => void;
+
+  /**
+   * Adds a hostname hint to an account and resolves its Cloud ID.
+   * Returns `true` if the hostname resolved successfully and the hint was saved.
+   */
+  addHostnameHint: (account: Account, hostname: Hostname) => Promise<boolean>;
+
+  /**
+   * Removes a hostname hint from an account.
+   */
+  removeHostnameHint: (account: Account, hostname: Hostname) => void;
 
   /**
    * Checks if the user is logged in (has at least one account).

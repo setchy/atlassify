@@ -75,6 +75,27 @@ export interface Account {
    * The avatar for the account user.
    */
   avatar: Link | null;
+
+  /**
+   * Optional user-provided hostname hints, used to resolve accessible Atlassian sites
+   * and scope notification fetching per site.
+   */
+  hostnameHints: AccountHostnameHint[];
+}
+
+/**
+ * A user-provided hostname hint used to resolve an account's accessible Atlassian sites.
+ */
+export interface AccountHostnameHint {
+  /**
+   * The hostname the user entered (e.g. "mycompany.atlassian.net").
+   */
+  hostname: Hostname;
+
+  /**
+   * The resolved cloud ID, or `null` if resolution has not succeeded (yet, or anymore).
+   */
+  cloudId: CloudID | null;
 }
 
 /**

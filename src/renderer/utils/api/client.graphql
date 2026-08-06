@@ -8,15 +8,27 @@ query Me {
   }
 }
 
-mutation MarkAsRead($notificationIDs: [String!]!) {
+mutation MarkAsRead(
+  $notificationIDs: [String!]!
+  $collabContextRoutingAri: String
+) {
   notifications {
-    markNotificationsByIdsAsRead(ids: $notificationIDs)
+    markNotificationsByIdsAsRead(
+      ids: $notificationIDs
+      collabContextRoutingAri: $collabContextRoutingAri
+    )
   }
 }
 
-mutation MarkAsUnread($notificationIDs: [String!]!) {
+mutation MarkAsUnread(
+  $notificationIDs: [String!]!
+  $collabContextRoutingAri: String
+) {
   notifications {
-    markNotificationsByIdsAsUnread(ids: $notificationIDs)
+    markNotificationsByIdsAsUnread(
+      ids: $notificationIDs
+      collabContextRoutingAri: $collabContextRoutingAri
+    )
   }
 }
 
@@ -48,14 +60,16 @@ query MyNotifications(
   $flat: Boolean = true
   $first: Int
   $after: String
+  $collabContextRoutingAri: String
 ) {
   notifications {
-    unseenNotificationCount
+    unseenNotificationCount(collabContextRoutingAri: $collabContextRoutingAri)
     notificationFeed(
       flat: $flat
       first: $first
       after: $after
       filter: { readStateFilter: $readState }
+      collabContextRoutingAri: $collabContextRoutingAri
     ) {
       pageInfo {
         hasNextPage

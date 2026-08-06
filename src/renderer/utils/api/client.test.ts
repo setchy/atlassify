@@ -69,6 +69,28 @@ describe('renderer/utils/api/client.ts', () => {
     );
   });
 
+  it('listNotificationsForAuthenticatedUser - should scope to a cloud ID when provided', async () => {
+    const mockCloudID = 'mock-cloud-id' as CloudID;
+
+    await client.getNotificationsForUser(
+      mockAtlassianCloudAccount,
+      undefined,
+      mockCloudID,
+    );
+
+    expect(request.performRequestForAccount).toHaveBeenCalledWith(
+      mockAtlassianCloudAccount,
+      MyNotificationsDocument,
+      {
+        first: Constants.NOTIFICATIONS_PAGE_SIZE,
+        after: undefined,
+        flat: false,
+        readState: 'unread',
+        collabContextRoutingAri: `ari:cloud:platform::site/${mockCloudID}`,
+      },
+    );
+  });
+
   it('markNotificationsAsRead - should mark notifications as read', async () => {
     await client.markNotificationsAsRead(mockAtlassianCloudAccount, [
       mockSingleAtlassifyNotification.id,
@@ -83,6 +105,25 @@ describe('renderer/utils/api/client.ts', () => {
     );
   });
 
+  it('markNotificationsAsRead - should scope mutation to cloud ID when provided', async () => {
+    const mockCloudID = 'mock-cloud-id' as CloudID;
+
+    await client.markNotificationsAsRead(
+      mockAtlassianCloudAccount,
+      [mockSingleAtlassifyNotification.id],
+      mockCloudID,
+    );
+
+    expect(request.performRequestForAccount).toHaveBeenCalledWith(
+      mockAtlassianCloudAccount,
+      expect.stringContaining('mutation MarkAsRead'),
+      {
+        notificationIDs: [mockSingleAtlassifyNotification.id],
+        collabContextRoutingAri: `ari:cloud:platform::site/${mockCloudID}`,
+      },
+    );
+  });
+
   it('markNotificationsAsUnread - should mark notifications as unread', async () => {
     await client.markNotificationsAsUnread(mockAtlassianCloudAccount, [
       mockSingleAtlassifyNotification.id,
@@ -93,6 +134,25 @@ describe('renderer/utils/api/client.ts', () => {
       expect.stringContaining('mutation MarkAsUnread'),
       {
         notificationIDs: [mockSingleAtlassifyNotification.id],
+      },
+    );
+  });
+
+  it('markNotificationsAsUnread - should scope mutation to cloud ID when provided', async () => {
+    const mockCloudID = 'mock-cloud-id' as CloudID;
+
+    await client.markNotificationsAsUnread(
+      mockAtlassianCloudAccount,
+      [mockSingleAtlassifyNotification.id],
+      mockCloudID,
+    );
+
+    expect(request.performRequestForAccount).toHaveBeenCalledWith(
+      mockAtlassianCloudAccount,
+      expect.stringContaining('mutation MarkAsUnread'),
+      {
+        notificationIDs: [mockSingleAtlassifyNotification.id],
+        collabContextRoutingAri: `ari:cloud:platform::site/${mockCloudID}`,
       },
     );
   });

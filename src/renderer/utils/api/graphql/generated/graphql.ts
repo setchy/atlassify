@@ -44,6 +44,7 @@ export type MeQuery = { me: { user:
 
 export type MarkAsReadMutationVariables = Exact<{
   notificationIDs: Array<string> | string;
+  collabContextRoutingAri?: string | null | undefined;
 }>;
 
 
@@ -51,6 +52,7 @@ export type MarkAsReadMutation = { notifications: { markNotificationsByIdsAsRead
 
 export type MarkAsUnreadMutationVariables = Exact<{
   notificationIDs: Array<string> | string;
+  collabContextRoutingAri?: string | null | undefined;
 }>;
 
 
@@ -72,6 +74,7 @@ export type MyNotificationsQueryVariables = Exact<{
   flat?: boolean | null | undefined;
   first?: number | null | undefined;
   after?: string | null | undefined;
+  collabContextRoutingAri?: string | null | undefined;
 }>;
 
 
@@ -90,6 +93,7 @@ export type RetrieveCloudIDsForHostnamesQuery = { tenantContexts: Array<{ cloudI
 
 export type MarkGroupAsReadMutationVariables = Exact<{
   groupId: string;
+  collabContextRoutingAri?: string | null | undefined;
 }>;
 
 
@@ -97,6 +101,7 @@ export type MarkGroupAsReadMutation = { notifications: { markNotificationsByGrou
 
 export type MarkGroupAsUnreadMutationVariables = Exact<{
   groupId: string;
+  collabContextRoutingAri?: string | null | undefined;
 }>;
 
 
@@ -244,16 +249,22 @@ export const MeDocument = new TypedDocumentString(`
 }
     `) as unknown as TypedDocumentString<MeQuery, MeQueryVariables>;
 export const MarkAsReadDocument = new TypedDocumentString(`
-    mutation MarkAsRead($notificationIDs: [String!]!) {
+    mutation MarkAsRead($notificationIDs: [String!]!, $collabContextRoutingAri: String) {
   notifications {
-    markNotificationsByIdsAsRead(ids: $notificationIDs)
+    markNotificationsByIdsAsRead(
+      ids: $notificationIDs
+      collabContextRoutingAri: $collabContextRoutingAri
+    )
   }
 }
     `) as unknown as TypedDocumentString<MarkAsReadMutation, MarkAsReadMutationVariables>;
 export const MarkAsUnreadDocument = new TypedDocumentString(`
-    mutation MarkAsUnread($notificationIDs: [String!]!) {
+    mutation MarkAsUnread($notificationIDs: [String!]!, $collabContextRoutingAri: String) {
   notifications {
-    markNotificationsByIdsAsUnread(ids: $notificationIDs)
+    markNotificationsByIdsAsUnread(
+      ids: $notificationIDs
+      collabContextRoutingAri: $collabContextRoutingAri
+    )
   }
 }
     `) as unknown as TypedDocumentString<MarkAsUnreadMutation, MarkAsUnreadMutationVariables>;
@@ -276,14 +287,15 @@ export const RetrieveNotificationsByGroupIdDocument = new TypedDocumentString(`
   readState
 }`) as unknown as TypedDocumentString<RetrieveNotificationsByGroupIdQuery, RetrieveNotificationsByGroupIdQueryVariables>;
 export const MyNotificationsDocument = new TypedDocumentString(`
-    query MyNotifications($readState: InfluentsNotificationReadState, $flat: Boolean = true, $first: Int, $after: String) {
+    query MyNotifications($readState: InfluentsNotificationReadState, $flat: Boolean = true, $first: Int, $after: String, $collabContextRoutingAri: String) {
   notifications {
-    unseenNotificationCount
+    unseenNotificationCount(collabContextRoutingAri: $collabContextRoutingAri)
     notificationFeed(
       flat: $flat
       first: $first
       after: $after
       filter: { readStateFilter: $readState }
+      collabContextRoutingAri: $collabContextRoutingAri
     ) {
       pageInfo {
         hasNextPage
@@ -357,16 +369,22 @@ export const RetrieveCloudIDsForHostnamesDocument = new TypedDocumentString(`
 }
     `) as unknown as TypedDocumentString<RetrieveCloudIDsForHostnamesQuery, RetrieveCloudIDsForHostnamesQueryVariables>;
 export const MarkGroupAsReadDocument = new TypedDocumentString(`
-    mutation MarkGroupAsRead($groupId: String!) {
+    mutation MarkGroupAsRead($groupId: String!, $collabContextRoutingAri: String) {
   notifications {
-    markNotificationsByGroupIdAsRead(groupId: $groupId)
+    markNotificationsByGroupIdAsRead(
+      groupId: $groupId
+      collabContextRoutingAri: $collabContextRoutingAri
+    )
   }
 }
     `) as unknown as TypedDocumentString<MarkGroupAsReadMutation, MarkGroupAsReadMutationVariables>;
 export const MarkGroupAsUnreadDocument = new TypedDocumentString(`
-    mutation MarkGroupAsUnread($groupId: String!) {
+    mutation MarkGroupAsUnread($groupId: String!, $collabContextRoutingAri: String) {
   notifications {
-    markNotificationsByGroupIdAsUnread(groupId: $groupId)
+    markNotificationsByGroupIdAsUnread(
+      groupId: $groupId
+      collabContextRoutingAri: $collabContextRoutingAri
+    )
   }
 }
     `) as unknown as TypedDocumentString<MarkGroupAsUnreadMutation, MarkGroupAsUnreadMutationVariables>;

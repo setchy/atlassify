@@ -86,6 +86,8 @@
     "@atlaskit/radio": "9.1.1",
     "@atlaskit/select": "22.6.1",
     "@atlaskit/spinner": "20.1.1",
+    "@atlaskit/tag": "15.4.1",
+    "@atlaskit/tag-group": "13.1.0",
     "@atlaskit/textfield": "9.1.1",
     "@atlaskit/theme": "26.1.1",
     "@atlaskit/toggle": "17.1.4",

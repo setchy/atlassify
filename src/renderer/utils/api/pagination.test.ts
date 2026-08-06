@@ -63,6 +63,7 @@ describe('renderer/utils/api/pagination.ts', () => {
       2,
       mockAtlassianCloudAccount,
       'cursor-1',
+      undefined,
     );
     expect(result.nodes).toHaveLength(Constants.NOTIFICATIONS_PAGE_SIZE + 1);
     expect(result.unseenNotificationCount).toBe(5);
@@ -118,5 +119,88 @@ describe('renderer/utils/api/pagination.ts', () => {
 
     expect(result.nodes).toEqual([]);
     expect(result.hasMoreNotifications).toBe(false);
+  });
+
+  describe('with hostname hints resolved to Cloud IDs', () => {
+    function createMockNodeWithId(
+      notificationId: string,
+      timestamp: string,
+    ): AtlassianNotificationFragment {
+      return {
+        groupId: notificationId,
+        groupSize: 1,
+        additionalActors: [],
+        headNotification: { notificationId, timestamp },
+      } as unknown as AtlassianNotificationFragment;
+    }
+
+    const accountWithHints = {
+      ...mockAtlassianCloudAccount,
+      hostnameHints: [
+        { hostname: 'site-a.atlassian.net', cloudId: 'cloud-a' },
+        { hostname: 'site-b.atlassian.net', cloudId: 'cloud-b' },
+      ],
+    } as typeof mockAtlassianCloudAccount;
+
+    it('fetches one scoped request per resolved Cloud ID and merges results', async () => {
+      vi.spyOn(client, 'getNotificationsForUser').mockImplementation(
+        async (_account, _after, cloudId) => {
+          if (cloudId === 'cloud-a') {
+            return createMockPage(
+              [createMockNodeWithId('shared', '2026-07-01T00:00:00.000Z')],
+              null,
+              1,
+            );
+          }
+          return createMockPage(
+            [
+              createMockNodeWithId('shared', '2026-07-01T00:00:00.000Z'),
+              createMockNodeWithId('newer', '2026-07-02T00:00:00.000Z'),
+            ],
+            null,
+            2,
+          );
+        },
+      );
+
+      const result = await fetchAccountNotificationFeed(accountWithHints);
+
+      expect(client.getNotificationsForUser).toHaveBeenCalledTimes(2);
+      expect(client.getNotificationsForUser).toHaveBeenCalledWith(
+        accountWithHints,
+        undefined,
+        'cloud-a',
+      );
+      expect(client.getNotificationsForUser).toHaveBeenCalledWith(
+        accountWithHints,
+        undefined,
+        'cloud-b',
+      );
+      // de-duplicated by notificationId, sorted newest first
+      expect(
+        result.nodes.map((n) => n.headNotification.notificationId),
+      ).toEqual(['newer', 'shared']);
+      expect(result.unseenNotificationCount).toBe(3);
+    });
+
+    it('falls back to a single unscoped request when no hint has a resolved Cloud ID', async () => {
+      const accountWithUnresolvedHint = {
+        ...mockAtlassianCloudAccount,
+        hostnameHints: [{ hostname: 'site-a.atlassian.net', cloudId: null }],
+      } as typeof mockAtlassianCloudAccount;
+
+      vi.spyOn(client, 'getNotificationsForUser').mockResolvedValueOnce(
+        createMockPage([createMockNode('n1')], null, 0),
+      );
+
+      await fetchAccountNotificationFeed(accountWithUnresolvedHint);
+
+      expect(client.getNotificationsForUser).toHaveBeenCalledTimes(1);
+      expect(client.getNotificationsForUser).toHaveBeenCalledWith(
+        accountWithUnresolvedHint,
+        undefined,
+        undefined,
+      );
+    });
   });
 });

@@ -4,13 +4,14 @@ import { useNavigate } from 'react-router-dom';
 import { IconButton } from '@atlaskit/button/new';
 import Heading from '@atlaskit/heading';
 import ArrowLeftIcon from '@atlaskit/icon/core/arrow-left';
-import { Box, Inline } from '@atlaskit/primitives';
+import { Box, Inline, Stack } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
 
 import { useAppContext } from '../../hooks/useAppContext';
 
 interface HeaderProps {
   children: string;
+  subheading?: string;
   fetchOnBack?: boolean;
 }
 
@@ -42,7 +43,12 @@ export const Header: FC<HeaderProps> = (props: HeaderProps) => {
           />
         </Tooltip>
 
-        <Heading size="medium">{props.children}</Heading>
+        <Stack alignBlock="end" alignInline="end">
+          <Heading size="medium">{props.children}</Heading>
+          {props.subheading && (
+            <Heading size="xxsmall">{props.subheading}</Heading>
+          )}
+        </Stack>
       </Inline>
     </Box>
   );
