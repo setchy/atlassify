@@ -118,8 +118,8 @@ importers:
         specifier: 16.3.0
         version: 16.3.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/tooltip':
-        specifier: 24.0.2
-        version: 24.0.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
+        specifier: 24.0.3
+        version: 24.0.3(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@biomejs/biome':
         specifier: 2.5.6
         version: 2.5.6
@@ -522,8 +522,8 @@ packages:
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
-  '@atlaskit/tooltip@24.0.2':
-    resolution: {integrity: sha512-Nx/7rLYQuGNrqSUJfksKtsqgrtrc3moyZwBXspnJi4r+YvB1Rv6lDhSQVcX7D6n3fFUmEboc8kes8j4x8gmM4A==}
+  '@atlaskit/tooltip@24.0.3':
+    resolution: {integrity: sha512-4hZe1KQEv3k0dlRW865TfSXtNmvZtoem2nCnCBwJuAOXud+aj+IqMK65d2e2e/hX5NhvppAesZeREVMsGW0Bnw==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -5138,7 +5138,7 @@ snapshots:
       '@atlaskit/popup': 5.2.3(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.8)
       '@atlaskit/tokens': 16.3.0(react@19.2.8)(supports-color@10.2.2)
-      '@atlaskit/tooltip': 24.0.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
+      '@atlaskit/tooltip': 24.0.3(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/top-layer': 3.0.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
       '@compiled/react': 1.0.0(react@19.2.8)
@@ -5215,7 +5215,7 @@ snapshots:
       '@atlaskit/spinner': 20.1.1(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/theme': 26.1.1(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/tokens': 16.3.0(react@19.2.8)(supports-color@10.2.2)
-      '@atlaskit/tooltip': 24.0.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
+      '@atlaskit/tooltip': 24.0.3(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/visually-hidden': 4.2.0(react@19.2.8)
       '@babel/runtime': 7.29.7
       '@compiled/react': 1.0.0(react@19.2.8)
@@ -5834,14 +5834,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@atlaskit/tooltip@24.0.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)':
+  '@atlaskit/tooltip@24.0.3(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/analytics-next': 12.3.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@atlaskit/ds-lib': 8.0.0(react@19.2.8)
       '@atlaskit/layering': 5.0.0(react@19.2.8)
       '@atlaskit/motion': 8.0.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/platform-feature-flags': 2.1.1(react@19.2.8)
-      '@atlaskit/popper': 8.5.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
+      '@atlaskit/popper': 9.0.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/portal': 6.1.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.8)
       '@atlaskit/theme': 26.1.1(react@19.2.8)(supports-color@10.2.2)
