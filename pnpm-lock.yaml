@@ -52,8 +52,8 @@ importers:
         specifier: 13.2.4
         version: 13.2.4(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/badge':
-        specifier: 20.0.0
-        version: 20.0.0(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
+        specifier: 21.0.0
+        version: 21.0.0(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/button':
         specifier: 25.0.0
         version: 25.0.0(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
@@ -301,6 +301,11 @@ packages:
 
   '@atlaskit/badge@20.0.0':
     resolution: {integrity: sha512-RX2iP4dgF2lcVc1eAFBYg5UJZ00sqaPn0nQpBv0t8WRzwCQerj+DJvm7CFbPXOhRjB/QrAE87r087QuWiNdKOw==}
+    peerDependencies:
+      react: ^18.2.0
+
+  '@atlaskit/badge@21.0.0':
+    resolution: {integrity: sha512-cOakv22vJe6fTBPnJEbZhtvV2nmgSQKJWxQ/sF2ewU5jOpBwNiqLmfkYrahZk6K0ujroTI2GXj1mTBGCQk8+LA==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5168,6 +5173,20 @@ snapshots:
       - supports-color
 
   '@atlaskit/badge@20.0.0(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)':
+    dependencies:
+      '@atlaskit/platform-feature-flags': 2.1.1(react@19.2.8)
+      '@atlaskit/primitives': 22.2.0(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
+      '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.8)
+      '@atlaskit/tokens': 16.3.0(react@19.2.8)(supports-color@10.2.2)
+      '@babel/runtime': 7.29.7
+      '@compiled/react': 1.0.0(react@19.2.8)
+      react: 19.2.8
+    transitivePeerDependencies:
+      - '@types/react'
+      - react-dom
+      - supports-color
+
+  '@atlaskit/badge@21.0.0(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/platform-feature-flags': 2.1.1(react@19.2.8)
       '@atlaskit/primitives': 22.2.0(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
