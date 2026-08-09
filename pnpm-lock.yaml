@@ -94,8 +94,8 @@ importers:
         specifier: 10.0.0
         version: 10.0.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/select':
-        specifier: 22.6.3
-        version: 22.6.3(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
+        specifier: 22.6.4
+        version: 22.6.4(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/spinner':
         specifier: 20.1.2
         version: 20.1.2(react@19.2.8)(supports-color@10.2.2)
@@ -460,8 +460,8 @@ packages:
       react: ^18.2.0 || ^19.0.0
       react-dom: ^18.2.0 || ^19.0.0
 
-  '@atlaskit/select@22.6.3':
-    resolution: {integrity: sha512-wMPotj3a1bSR7pGc+sd0QxygriE3sB4LEIIWujQfcvnzh50FnBKmKVjPQY4M4NVqNgXoaT2I8chY4lzTX7rE3g==}
+  '@atlaskit/select@22.6.4':
+    resolution: {integrity: sha512-n4lZfYIWxf7HVR1ax7Rh6nj5hSKYFSIanNi5kOXivRETGBEjHPBsD7XGbhoFHMfVV6bEmgyvw+eR8fdXmYAGnQ==}
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
       react-dom: ^18.2.0 || ^19.0.0
@@ -5616,18 +5616,18 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/select@22.6.3(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)':
+  '@atlaskit/select@22.6.4(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/analytics-next': 12.3.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@atlaskit/ds-lib': 8.0.0(react@19.2.8)
-      '@atlaskit/icon': 37.2.4(react@19.2.8)(supports-color@10.2.2)
+      '@atlaskit/icon': 37.3.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/layering': 5.0.0(react@19.2.8)
       '@atlaskit/platform-feature-flags': 2.1.1(react@19.2.8)
       '@atlaskit/popper': 9.0.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/primitives': 22.2.1(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.8)
       '@atlaskit/react-select': 4.7.2(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
-      '@atlaskit/theme': 26.1.1(react@19.2.8)(supports-color@10.2.2)
+      '@atlaskit/theme': 27.0.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/top-layer': 3.1.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/visually-hidden': 4.2.1(react@19.2.8)
