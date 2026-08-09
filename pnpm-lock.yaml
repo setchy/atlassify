@@ -109,8 +109,8 @@ importers:
         specifier: 10.0.1
         version: 10.0.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/theme':
-        specifier: 26.1.1
-        version: 26.1.1(react@19.2.8)(supports-color@10.2.2)
+        specifier: 27.0.0
+        version: 27.0.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/toggle':
         specifier: 17.1.4
         version: 17.1.4(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
