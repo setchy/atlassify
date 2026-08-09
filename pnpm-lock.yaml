@@ -103,8 +103,8 @@ importers:
         specifier: 15.4.4
         version: 15.4.4(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/tag-group':
-        specifier: 13.1.0
-        version: 13.1.0(react@19.2.8)
+        specifier: 13.1.1
+        version: 13.1.1(react@19.2.8)
       '@atlaskit/textfield':
         specifier: 10.0.1
         version: 10.0.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
@@ -476,10 +476,10 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/tag-group@13.1.0':
-    resolution: {integrity: sha512-zcY4dxmcSxs2G+PvH/MFcShJZpAnZsZj9uQoCQcnCAdefhtb2VXMCOzBBpjihi2VE1T1avsN45+KMnAz55Vr8g==}
+  '@atlaskit/tag-group@13.1.1':
+    resolution: {integrity: sha512-tCPSDwjRzsyyvgGpxNREy3PlBJ0M7kqhWH2yKqZWknuX7C4eUyTnc6jXFTXJzcjpuOU9eoRcbi9uwiVTxL4MdA==}
     peerDependencies:
-      react: ^18.2.0
+      react: ^18.2.0 || ^19.0.0
 
   '@atlaskit/tag@15.4.4':
     resolution: {integrity: sha512-tIkjV2Xt7FFb9aIlo4a09Q+rtu3ecrxtUtsqSafUqjQhmIdBXztk8RSGPD9hDV/AGuILpLeCy/NjDUPV1wy1ig==}
@@ -5667,11 +5667,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@atlaskit/tag-group@13.1.0(react@19.2.8)':
+  '@atlaskit/tag-group@13.1.1(react@19.2.8)':
     dependencies:
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.8)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 0.20.0(react@19.2.8)
+      '@compiled/react': 1.0.0(react@19.2.8)
       react: 19.2.8
 
   '@atlaskit/tag@15.4.4(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)':
