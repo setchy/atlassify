@@ -40,7 +40,7 @@
     "@octokit/openapi-types": "28.0.0",
     "@tailwindcss/vite": "4.3.3",
     "accessible-astro-components": "5.4.0",
-    "astro": "7.1.6",
+    "astro": "7.2.0",
     "astro-icon": "1.1.5",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
