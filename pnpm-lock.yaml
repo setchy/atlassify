@@ -85,8 +85,8 @@ importers:
         specifier: 21.4.2
         version: 21.4.2(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/modal-dialog':
-        specifier: 16.3.0
-        version: 16.3.0(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
+        specifier: 16.3.1
+        version: 16.3.1(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/primitives':
         specifier: 22.2.1
         version: 22.2.1(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
@@ -413,8 +413,8 @@ packages:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@atlaskit/modal-dialog@16.3.0':
-    resolution: {integrity: sha512-k9D3gpCqk08X07ORzhSJA81rrDT26ED0PZQuA35A8M9oGw1p6PTwKiKDWVaLgaMrA0zdMol/+nelPTPQ/yXniw==}
+  '@atlaskit/modal-dialog@16.3.1':
+    resolution: {integrity: sha512-0OEcM/qplCEi1xkOWl51uJEldgiN4/MWVnOMJuB3usV3VI2x7iCV0A0xwTyIlNX8LerPU8boAanqW7BazpnoLA==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5462,7 +5462,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/modal-dialog@16.3.0(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)':
+  '@atlaskit/modal-dialog@16.3.1(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/analytics-next': 12.3.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@atlaskit/blanket': 16.2.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
@@ -5477,9 +5477,9 @@ snapshots:
       '@atlaskit/pragmatic-drag-and-drop': 2.0.2
       '@atlaskit/primitives': 22.2.1(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.8)
-      '@atlaskit/theme': 27.0.0(react@19.2.8)(supports-color@10.2.2)
+      '@atlaskit/theme': 28.0.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
-      '@atlaskit/top-layer': 3.1.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
+      '@atlaskit/top-layer': 3.2.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
       '@compiled/react': 1.0.0(react@19.2.8)
       bind-event-listener: 3.0.0
