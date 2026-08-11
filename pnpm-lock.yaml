@@ -124,11 +124,11 @@ importers:
         specifier: 2.5.6
         version: 2.5.6
       '@compiled/react':
-        specifier: 1.0.0
-        version: 1.0.0(react@19.2.8)
+        specifier: 1.0.1
+        version: 1.0.1(react@19.2.8)
       '@compiled/vite-plugin':
         specifier: 2.0.2
-        version: 2.0.2(@compiled/react@1.0.0(react@19.2.8))(supports-color@10.2.2)(vite@8.2.1(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0))
+        version: 2.0.2(@compiled/react@1.0.1(react@19.2.8))(supports-color@10.2.2)(vite@8.2.1(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0))
       '@discordapp/twemoji':
         specifier: 16.0.1
         version: 16.0.1
@@ -730,8 +730,8 @@ packages:
     peerDependencies:
       react: '>=18.0.0'
 
-  '@compiled/react@1.0.0':
-    resolution: {integrity: sha512-yKjhV/0BeuffhKYpe7ZOu5HwZsWOVQRrxaj0L9SEqFJUKH03qOml+rMUNwxht41KrOHhOmDQeAuwVud7fsnYaw==}
+  '@compiled/react@1.0.1':
+    resolution: {integrity: sha512-WNdQt1vhO9k15KnKRyz0BxLYN1n/EBhhyQEV8gXHIB8uyxgkME4cGbFRjQog4fvejeK2AI8z7eeVcabrxpF5YQ==}
     peerDependencies:
       react: '>=18.0.0'
 
@@ -5128,7 +5128,7 @@ snapshots:
       '@atlaskit/tooltip': 24.0.6(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/top-layer': 3.2.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       bind-event-listener: 3.0.0
       react: 19.2.8
     transitivePeerDependencies:
@@ -5147,7 +5147,7 @@ snapshots:
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.8)
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       react: 19.2.8
     transitivePeerDependencies:
       - '@types/react'
@@ -5165,7 +5165,7 @@ snapshots:
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.8)
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       react: 19.2.8
     transitivePeerDependencies:
       - '@types/react'
@@ -5179,7 +5179,7 @@ snapshots:
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.8)
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       react: 19.2.8
     transitivePeerDependencies:
       - '@types/react'
@@ -5195,7 +5195,7 @@ snapshots:
       '@atlaskit/theme': 27.0.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       react: 19.2.8
     transitivePeerDependencies:
       - react-dom
@@ -5223,7 +5223,7 @@ snapshots:
       '@atlaskit/tooltip': 24.0.6(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/visually-hidden': 4.2.1(react@19.2.8)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       '@emotion/react': 11.14.0(@types/react@19.2.18)(react@19.2.8)(supports-color@10.2.2)
       react: 19.2.8
     transitivePeerDependencies:
@@ -5239,7 +5239,7 @@ snapshots:
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.8)
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       react: 19.2.8
     transitivePeerDependencies:
       - react-dom
@@ -5302,7 +5302,7 @@ snapshots:
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/visually-hidden': 4.2.1(react@19.2.8)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       final-form: 4.20.10
       final-form-focus: 1.1.2(final-form@4.20.10)
       lodash: 4.18.1
@@ -5318,7 +5318,7 @@ snapshots:
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.8)
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       react: 19.2.8
     transitivePeerDependencies:
       - '@types/react'
@@ -5340,7 +5340,7 @@ snapshots:
       '@atlaskit/tile': 4.0.1(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       react: 19.2.8
     transitivePeerDependencies:
       - supports-color
@@ -5351,7 +5351,7 @@ snapshots:
       '@atlaskit/tile': 4.0.1(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       react: 19.2.8
     transitivePeerDependencies:
       - supports-color
@@ -5370,7 +5370,7 @@ snapshots:
       '@atlaskit/theme': 28.0.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       react: 19.2.8
     transitivePeerDependencies:
       - '@types/react'
@@ -5398,7 +5398,7 @@ snapshots:
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.8)
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       react: 19.2.8
     transitivePeerDependencies:
       - '@types/react'
@@ -5414,7 +5414,7 @@ snapshots:
       '@atlaskit/theme': 28.0.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       react: 19.2.8
     transitivePeerDependencies:
       - supports-color
@@ -5433,7 +5433,7 @@ snapshots:
       '@atlaskit/spinner': 20.1.2(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       react: 19.2.8
     transitivePeerDependencies:
       - '@types/react'
@@ -5450,7 +5450,7 @@ snapshots:
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.8)
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
     transitivePeerDependencies:
@@ -5476,7 +5476,7 @@ snapshots:
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/top-layer': 3.2.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       bind-event-listener: 3.0.0
       raf-schd: 4.0.3
       react: 19.2.8
@@ -5496,7 +5496,7 @@ snapshots:
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.8)
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       bind-event-listener: 3.0.0
       react: 19.2.8
     transitivePeerDependencies:
@@ -5518,7 +5518,7 @@ snapshots:
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/top-layer': 3.2.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       '@popperjs/core': 2.11.8
       bind-event-listener: 3.0.0
       react: 19.2.8
@@ -5536,7 +5536,7 @@ snapshots:
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/top-layer': 3.2.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       '@popperjs/core': 2.11.8
       bind-event-listener: 3.0.0
       react: 19.2.8
@@ -5559,7 +5559,7 @@ snapshots:
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/top-layer': 3.2.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       bind-event-listener: 3.0.0
       focus-trap: 2.4.6
       memoize-one: 6.0.0
@@ -5599,7 +5599,7 @@ snapshots:
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/visually-hidden': 4.2.1(react@19.2.8)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       '@emotion/react': 11.14.0(@types/react@19.2.18)(react@19.2.8)(supports-color@10.2.2)
       '@emotion/serialize': 1.3.3
       bind-event-listener: 3.0.0
@@ -5620,7 +5620,7 @@ snapshots:
       '@atlaskit/theme': 28.0.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       react: 19.2.8
     transitivePeerDependencies:
       - react-dom
@@ -5647,7 +5647,7 @@ snapshots:
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/top-layer': 3.2.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       '@floating-ui/dom': 1.8.0
       bind-event-listener: 3.0.0
       memoize-one: 6.0.0
@@ -5674,7 +5674,7 @@ snapshots:
       '@atlaskit/top-layer': 3.2.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/visually-hidden': 4.2.1(react@19.2.8)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       '@popperjs/core': 2.11.8
       bind-event-listener: 3.0.0
       react: 19.2.8
@@ -5704,7 +5704,7 @@ snapshots:
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.8)
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       react: 19.2.8
     transitivePeerDependencies:
       - supports-color
@@ -5713,7 +5713,7 @@ snapshots:
     dependencies:
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.8)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       react: 19.2.8
 
   '@atlaskit/tag@15.4.7(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)':
@@ -5733,7 +5733,7 @@ snapshots:
       '@atlaskit/teams-avatar': 4.1.0(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       react: 19.2.8
     transitivePeerDependencies:
       - '@types/react'
@@ -5749,7 +5749,7 @@ snapshots:
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.8)
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       react: 19.2.8
     transitivePeerDependencies:
       - '@types/react'
@@ -5763,7 +5763,7 @@ snapshots:
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.8)
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       react: 19.2.8
     transitivePeerDependencies:
       - react-dom
@@ -5795,7 +5795,7 @@ snapshots:
       '@atlaskit/skeleton': 4.2.2(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       bind-event-listener: 3.0.0
       react: 19.2.8
     transitivePeerDependencies:
@@ -5814,7 +5814,7 @@ snapshots:
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/visually-hidden': 4.2.1(react@19.2.8)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       bind-event-listener: 3.0.0
       react: 19.2.8
     transitivePeerDependencies:
@@ -5849,7 +5849,7 @@ snapshots:
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/top-layer': 3.2.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       bind-event-listener: 3.0.0
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
@@ -5865,7 +5865,7 @@ snapshots:
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.8)
       '@atlaskit/tokens': 16.4.0(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       bind-event-listener: 3.0.0
       raf-schd: 4.0.3
       react: 19.2.8
@@ -5877,7 +5877,7 @@ snapshots:
     dependencies:
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.8)
       '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       react: 19.2.8
 
   '@babel/code-frame@7.29.7':
@@ -6044,20 +6044,20 @@ snapshots:
   '@biomejs/cli-win32-x64@2.5.6':
     optional: true
 
-  '@compiled/babel-plugin-strip-runtime@2.0.0(@compiled/react@1.0.0(react@19.2.8))(supports-color@10.2.2)':
+  '@compiled/babel-plugin-strip-runtime@2.0.0(@compiled/react@1.0.1(react@19.2.8))(supports-color@10.2.2)':
     dependencies:
       '@babel/core': 7.29.7(supports-color@10.2.2)
       '@babel/helper-plugin-utils': 7.29.7
       '@babel/template': 7.29.7
       '@babel/traverse': 7.29.8(supports-color@10.2.2)
       '@babel/types': 7.29.8
-      '@compiled/css': 2.0.0(@compiled/react@1.0.0(react@19.2.8))
+      '@compiled/css': 2.0.0(@compiled/react@1.0.1(react@19.2.8))
       '@compiled/utils': 0.14.0
     transitivePeerDependencies:
       - '@compiled/react'
       - supports-color
 
-  '@compiled/babel-plugin@2.0.0(@compiled/react@1.0.0(react@19.2.8))(supports-color@10.2.2)':
+  '@compiled/babel-plugin@2.0.0(@compiled/react@1.0.1(react@19.2.8))(supports-color@10.2.2)':
     dependencies:
       '@babel/core': 7.29.7(supports-color@10.2.2)
       '@babel/generator': 7.29.8
@@ -6068,17 +6068,17 @@ snapshots:
       '@babel/template': 7.29.7
       '@babel/traverse': 7.29.8(supports-color@10.2.2)
       '@babel/types': 7.29.8
-      '@compiled/css': 2.0.0(@compiled/react@1.0.0(react@19.2.8))
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/css': 2.0.0(@compiled/react@1.0.1(react@19.2.8))
+      '@compiled/react': 1.0.1(react@19.2.8)
       '@compiled/utils': 0.14.0
       '@emotion/is-prop-valid': 1.4.0
       resolve: 1.22.12
     transitivePeerDependencies:
       - supports-color
 
-  '@compiled/css@2.0.0(@compiled/react@1.0.0(react@19.2.8))':
+  '@compiled/css@2.0.0(@compiled/react@1.0.1(react@19.2.8))':
     dependencies:
-      '@compiled/react': 1.0.0(react@19.2.8)
+      '@compiled/react': 1.0.1(react@19.2.8)
       '@compiled/utils': 0.14.0
       autoprefixer: 10.5.4(postcss@8.5.25)
       cssnano-preset-default: 5.2.14(postcss@8.5.25)
@@ -6094,7 +6094,7 @@ snapshots:
       csstype: 3.2.3
       react: 19.2.8
 
-  '@compiled/react@1.0.0(react@19.2.8)':
+  '@compiled/react@1.0.1(react@19.2.8)':
     dependencies:
       csstype: 3.2.3
       react: 19.2.8
@@ -6104,13 +6104,13 @@ snapshots:
       convert-source-map: 2.0.0
       source-map: 0.7.6
 
-  '@compiled/vite-plugin@2.0.2(@compiled/react@1.0.0(react@19.2.8))(supports-color@10.2.2)(vite@8.2.1(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0))':
+  '@compiled/vite-plugin@2.0.2(@compiled/react@1.0.1(react@19.2.8))(supports-color@10.2.2)(vite@8.2.1(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0))':
     dependencies:
       '@babel/core': 7.29.7(supports-color@10.2.2)
       '@babel/parser': 7.29.8
-      '@compiled/babel-plugin': 2.0.0(@compiled/react@1.0.0(react@19.2.8))(supports-color@10.2.2)
-      '@compiled/babel-plugin-strip-runtime': 2.0.0(@compiled/react@1.0.0(react@19.2.8))(supports-color@10.2.2)
-      '@compiled/css': 2.0.0(@compiled/react@1.0.0(react@19.2.8))
+      '@compiled/babel-plugin': 2.0.0(@compiled/react@1.0.1(react@19.2.8))(supports-color@10.2.2)
+      '@compiled/babel-plugin-strip-runtime': 2.0.0(@compiled/react@1.0.1(react@19.2.8))(supports-color@10.2.2)
+      '@compiled/css': 2.0.0(@compiled/react@1.0.1(react@19.2.8))
       '@compiled/utils': 0.14.0
       enhanced-resolve: 5.24.5
       vite: 8.2.1(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0)
