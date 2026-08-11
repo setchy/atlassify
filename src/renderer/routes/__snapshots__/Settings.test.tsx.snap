@@ -2198,7 +2198,7 @@ exports[`renderer/routes/Settings.tsx > should render itself & its children 1`] 
                 >
                   <path
                     clip-rule="evenodd"
-                    d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m4.03 5.03L9.06 8l2.97 2.97-1.06 1.06L8 9.06l-2.97 2.97-1.06-1.06L6.94 8 3.97 5.03l1.06-1.06L8 6.94l2.97-2.97z"
+                    d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0m0 6.94L5.03 3.97 3.97 5.03 6.94 8l-2.97 2.97 1.06 1.06L8 9.06l2.97 2.97 1.06-1.06L9.06 8l2.97-2.97-1.06-1.06z"
                     fill="currentcolor"
                     fill-rule="evenodd"
                   />
