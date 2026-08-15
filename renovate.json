@@ -24,7 +24,7 @@
     {
       "description": "Fetch changelog details for Atlassian atlaskit packages",
       "extends": ["packages:atlaskit"],
-      "sourceUrl": "https://bitbucket.org/atlassian/atlassian-frontend-mirror/src/HEAD",
+      "sourceUrl": "https://bitbucket.org/atlassian/atlassian-frontend-mirror",
       "sourceDirectory": "design-system/{{ lookup (split packageName '/') 1 }}"
     },
     {
