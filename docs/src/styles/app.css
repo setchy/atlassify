@@ -12,12 +12,53 @@ a:not(.atlassify-repo) {
   @apply hover:underline;
 }
 
+.faq p {
+  @apply mb-3;
+}
+
+.faq p:last-child {
+  @apply mb-0;
+}
+
+.faq a {
+  @apply underline decoration-atlassify-docs-navbar hover:decoration-atlassify-docs-navbar underline-offset-4 text-atlassify-docs-navbar;
+  cursor: pointer;
+}
+
 .faq ul {
-  @apply list-disc ml-4;
+  @apply list-disc ml-4 mb-3;
 }
 
 .faq ul > li {
-  @apply m-2;
+  @apply ml-2;
+}
+
+.faq ol {
+  @apply list-decimal ml-4 mb-3;
+}
+
+.faq ol > li {
+  @apply ml-2;
+}
+
+.faq h3 {
+  @apply mt-4 mb-2 text-base font-semibold;
+}
+
+.faq code {
+  @apply bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded px-1.5 py-0.5 text-sm font-mono;
+}
+
+.faq pre code {
+  @apply bg-transparent p-0 text-inherit;
+}
+
+.faq blockquote {
+  @apply border-l-4 border-blue-400 bg-blue-50 dark:bg-blue-950 dark:border-blue-500 pl-4 pr-3 py-2 my-3 rounded-r-sm not-italic text-gray-700 dark:text-gray-300;
+}
+
+.faq pre {
+  @apply my-3;
 }
 
 .accordion__title {
@@ -28,4 +69,43 @@ a:not(.atlassify-repo) {
 
 .accordion__content {
   @apply text-base;
+}
+
+.faq-item .faq-copy-link {
+  position: absolute;
+  right: 2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.375rem;
+  border-radius: 0.375rem;
+  color: inherit;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.faq-item details[open] .faq-copy-link {
+  opacity: 0.4;
+}
+
+.faq-item details[open]:hover .faq-copy-link,
+.faq-item .faq-copy-link:focus-visible {
+  opacity: 1;
+}
+
+.faq-item .faq-copy-link--copied {
+  opacity: 1;
+  color: #36b37e;
+}
+
+.faq-item .faq-copy-link--failed {
+  opacity: 1;
+  color: #ff5630;
+}
+
+/* Firefox ignores cursor on <summary>; apply to the title heading instead */
+.faq-item summary .heading {
+  cursor: pointer;
 }
