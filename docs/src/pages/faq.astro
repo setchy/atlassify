@@ -3,16 +3,54 @@ import { Accordion, AccordionItem } from 'accessible-astro-components';
 
 import Layout from '~/layouts/Layout.astro';
 
-const faqs: FAQFrontmatter[] = Object.values(
-  import.meta.glob('~/faqs/*.md', { eager: true }),
-);
-
 interface FAQFrontmatter {
   frontmatter: {
     title: string;
+    category: string;
+    order: number;
   };
   compiledContent: () => string;
 }
+
+interface FAQ extends FAQFrontmatter {
+  slug: string;
+  content: string;
+}
+
+const CATEGORY_ORDER = [
+  'Getting Started',
+  'Using Atlassify',
+  'Troubleshooting',
+  'Contributing',
+];
+
+function externalizeLinks(html: string): string {
+  return html.replace(/<a href="([^"]+)"/g, (match, href) =>
+    /^https?:\/\//i.test(href) && !href.startsWith('https://atlassify.io')
+      ? `<a href="${href}" target="_blank" rel="noopener noreferrer"`
+      : match,
+  );
+}
+
+const allFaqs: FAQ[] = await Promise.all(
+  Object.entries(import.meta.glob('~/faqs/**/*.md', { eager: true })).map(
+    async ([path, mod]) => {
+      const faq = mod as FAQFrontmatter;
+      return {
+        ...faq,
+        slug: (path.split('/').pop() ?? '').replace(/\.md$/, ''),
+        content: externalizeLinks(await faq.compiledContent()),
+      };
+    },
+  ),
+);
+
+const grouped = CATEGORY_ORDER.map((category) => ({
+  category,
+  faqs: allFaqs
+    .filter((f) => f.frontmatter.category === category)
+    .sort((a, b) => a.frontmatter.order - b.frontmatter.order),
+}));
 ---
 
 <Layout title="Frequently Asked Questions">
@@ -20,13 +58,77 @@ interface FAQFrontmatter {
     <div class="text-3xl text-center mt-12 mb-8">
       Frequently Asked Questions
     </div>
-
-    <Accordion>
-      {faqs.map((faq) => (
-          <AccordionItem title={faq.frontmatter.title} variant="chevron">
-            <div class="faq" set:html={faq.compiledContent()} />
-          </AccordionItem>
-        ))}
-    </Accordion>
+    {grouped.map(({ category, faqs }) => (
+        <div class="mb-10">
+          <h2 class="text-xl font-semibold mb-4">{category}</h2>
+          <Accordion>
+            {faqs.map((faq) => (
+              <div id={faq.slug} class="faq-item">
+                <AccordionItem title={faq.frontmatter.title} variant="chevron">
+                  <div class="faq" set:html={faq.content} />
+                </AccordionItem>
+              </div>
+            ))}
+          </Accordion>
+        </div>
+      ))}
   </div>
 </Layout>
+
+<script>
+// Inject a copy-link button into each accordion <summary>
+document.querySelectorAll<HTMLElement>('.faq-item').forEach((item) => {
+  const slug = item.id;
+  const summary = item.querySelector<HTMLElement>('summary');
+  if (!summary || !slug) {
+    return;
+  }
+
+  summary.style.position = 'relative';
+
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.title = 'Copy link';
+  btn.setAttribute('aria-label', 'Copy link to this question');
+  btn.className = 'faq-copy-link';
+  btn.innerHTML =
+    '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
+
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const url = `${window.location.origin}${window.location.pathname}#${slug}`;
+    navigator.clipboard.writeText(url).then(() => {
+      btn.classList.add('faq-copy-link--copied');
+      btn.title = 'Copied!';
+      setTimeout(() => {
+        btn.classList.remove('faq-copy-link--copied');
+        btn.title = 'Copy link';
+      }, 2000);
+    });
+  });
+
+  summary.appendChild(btn);
+});
+
+// Open + scroll to item matching the URL hash
+function openFromHash() {
+  const hash = window.location.hash.slice(1);
+  if (!hash) {
+    return;
+  }
+
+  const wrapper = document.getElementById(hash);
+  if (!wrapper) {
+    return;
+  }
+
+  const details = wrapper.querySelector<HTMLDetailsElement>('details');
+  if (details) {
+    details.open = true;
+    wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+openFromHash();
+window.addEventListener('hashchange', openFromHash);
+</script>
