@@ -6,8 +6,11 @@ import {
 
 import { useSettingsStore } from '../../stores';
 
-import type { AtlassifyNotification } from '../../types';
+import type { AtlassifyNotification, CloudID } from '../../types';
+import type { AtlassianGraphQLResponse } from '../api/types';
 
+import * as client from '../api/client';
+import type { RetrieveNotificationsByGroupIdQuery } from '../api/graphql/generated/graphql';
 import {
   getFlattenedNotificationsByProduct,
   getNotificationIdsForGroups,
@@ -266,6 +269,46 @@ describe('renderer/utils/notifications/group.ts', () => {
       );
 
       expect(result).toEqual([]);
+    });
+
+    it('should scope group lookup to the provided cloud ID', async () => {
+      const cloudId = 'mock-cloud-id' as unknown as CloudID;
+      const groupNotification: AtlassifyNotification = {
+        ...mockSingleAtlassifyNotification,
+        notificationGroup: {
+          ...mockSingleAtlassifyNotification.notificationGroup,
+          size: 3,
+        },
+      };
+
+      const getNotificationsByGroupIdSpy = vi
+        .spyOn(client, 'getNotificationsByGroupId')
+        .mockResolvedValue({
+          data: {
+            notifications: {
+              notificationGroup: {
+                nodes: [
+                  { notificationId: 'member-1', readState: 'unread' },
+                  { notificationId: 'member-2', readState: 'unread' },
+                ],
+              },
+            },
+          },
+        } as unknown as AtlassianGraphQLResponse<RetrieveNotificationsByGroupIdQuery>);
+
+      const result = await getNotificationIdsForGroups(
+        mockAtlassianCloudAccount,
+        [groupNotification],
+        cloudId,
+      );
+
+      expect(getNotificationsByGroupIdSpy).toHaveBeenCalledWith(
+        mockAtlassianCloudAccount,
+        groupNotification.notificationGroup.id,
+        groupNotification.notificationGroup.size,
+        cloudId,
+      );
+      expect(result).toEqual(['member-1', 'member-2']);
     });
   });
 });

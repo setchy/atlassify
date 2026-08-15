@@ -62,6 +62,7 @@ export type RetrieveNotificationsByGroupIdQueryVariables = Exact<{
   groupId: string;
   first?: number | null | undefined;
   readState?: InfluentsNotificationReadState | null | undefined;
+  collabContextRoutingAri?: string | null | undefined;
 }>;
 
 
@@ -269,12 +270,13 @@ export const MarkAsUnreadDocument = new TypedDocumentString(`
 }
     `) as unknown as TypedDocumentString<MarkAsUnreadMutation, MarkAsUnreadMutationVariables>;
 export const RetrieveNotificationsByGroupIdDocument = new TypedDocumentString(`
-    query RetrieveNotificationsByGroupId($groupId: String!, $first: Int, $readState: InfluentsNotificationReadState) {
+    query RetrieveNotificationsByGroupId($groupId: String!, $first: Int, $readState: InfluentsNotificationReadState, $collabContextRoutingAri: String) {
   notifications {
     notificationGroup(
       groupId: $groupId
       first: $first
       filter: { readStateFilter: $readState }
+      collabContextRoutingAri: $collabContextRoutingAri
     ) {
       nodes {
         ...GroupNotificationDetails

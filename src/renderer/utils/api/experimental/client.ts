@@ -1,6 +1,7 @@
 import type { Account, CloudID, JiraProjectKey } from '../../../types';
 import type { AtlassianGraphQLResponse } from '../types';
 
+import { getCollabContextRoutingAri } from '../collabContextRouting';
 import {
   MarkGroupAsReadDocument,
   type MarkGroupAsReadMutation,
@@ -28,9 +29,7 @@ export function markNotificationGroupAsRead(
 ): Promise<AtlassianGraphQLResponse<MarkGroupAsReadMutation>> {
   return performRequestForAccount(account, MarkGroupAsReadDocument, {
     groupId: notificationGroupId,
-    collabContextRoutingAri: cloudId
-      ? `ari:cloud:platform::site/${cloudId}`
-      : undefined,
+    collabContextRoutingAri: getCollabContextRoutingAri(cloudId),
   });
 }
 
@@ -47,9 +46,7 @@ export function markNotificationGroupAsUnread(
 ): Promise<AtlassianGraphQLResponse<MarkGroupAsUnreadMutation>> {
   return performRequestForAccount(account, MarkGroupAsUnreadDocument, {
     groupId: notificationGroupId,
-    collabContextRoutingAri: cloudId
-      ? `ari:cloud:platform::site/${cloudId}`
-      : undefined,
+    collabContextRoutingAri: getCollabContextRoutingAri(cloudId),
   });
 }
 

@@ -1,6 +1,6 @@
 import { useSettingsStore } from '../../stores';
 
-import type { Account, AtlassifyNotification } from '../../types';
+import type { Account, AtlassifyNotification, CloudID } from '../../types';
 
 import { getNotificationsByGroupId } from '../api/client';
 import type { GroupNotificationDetailsFragment } from '../api/graphql/generated/graphql';
@@ -114,11 +114,13 @@ export function getFlattenedNotificationsByProduct(
  *
  * @param account The account to use for fetching group notifications
  * @param notifications List of notifications (may include group notifications)
+ * @param cloudId When provided, scopes the group lookup to that site via `collabContextRoutingAri`
  * @returns Promise resolving to a flat array of notification IDs
  */
 export async function resolveNotificationIdsForGroup(
   account: Account,
   notifications: AtlassifyNotification[],
+  cloudId?: CloudID,
 ): Promise<string[]> {
   // Separate single and group notifications
 
@@ -128,6 +130,7 @@ export async function resolveNotificationIdsForGroup(
   const groupedNotificationIds = await getNotificationIdsForGroups(
     account,
     notifications,
+    cloudId,
   );
 
   return [...singleNotificationIDs, ...groupedNotificationIds];
@@ -154,11 +157,13 @@ export function getNotificationIdsForNonGroups(
  *
  * @param account - The account to use for fetching group notifications.
  * @param notifications - List of notifications (may include group notifications).
+ * @param cloudId - When provided, scopes the group lookup to that site via `collabContextRoutingAri`.
  * @returns Promise resolving to a flat array of notification IDs for all group notifications.
  */
 export async function getNotificationIdsForGroups(
   account: Account,
   notifications: AtlassifyNotification[],
+  cloudId?: CloudID,
 ): Promise<string[]> {
   const notificationIDs: string[] = [];
 
@@ -172,6 +177,7 @@ export async function getNotificationIdsForGroups(
         account,
         group.notificationGroup.id,
         group.notificationGroup.size,
+        cloudId,
       );
 
       const nodes = res.data.notifications.notificationGroup
