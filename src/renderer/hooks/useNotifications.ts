@@ -367,6 +367,7 @@ export const useNotifications = (): UseNotificationsResult => {
         const notificationIDs = await resolveNotificationIdsForGroup(
           account,
           scopedNotifications,
+          cloudId,
         );
         await markAsApiFn(account, notificationIDs, cloudId);
       }

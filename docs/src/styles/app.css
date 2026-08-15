@@ -100,6 +100,11 @@ a:not(.atlassify-repo) {
   color: #36b37e;
 }
 
+.faq-item .faq-copy-link--failed {
+  opacity: 1;
+  color: #ff5630;
+}
+
 /* Firefox ignores cursor on <summary>; apply to the title heading instead */
 .faq-item summary .heading {
   cursor: pointer;

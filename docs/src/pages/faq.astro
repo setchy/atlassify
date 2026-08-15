@@ -76,6 +76,37 @@ const grouped = CATEGORY_ORDER.map((category) => ({
 </Layout>
 
 <script>
+// Copy text to the clipboard with a fallback for denied/unsupported cases.
+function copyToClipboard(text: string): Promise<void> {
+  if (navigator.clipboard?.writeText) {
+    return navigator.clipboard.writeText(text);
+  }
+
+  return new Promise((resolve, reject) => {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'absolute';
+    textarea.style.left = '-9999px';
+    document.body.appendChild(textarea);
+    textarea.select();
+
+    let copied = false;
+    try {
+      copied = document.execCommand('copy');
+    } catch {
+      copied = false;
+    }
+    textarea.remove();
+
+    if (copied) {
+      resolve();
+    } else {
+      reject(new Error('Clipboard write failed'));
+    }
+  });
+}
+
 // Inject a copy-link button into each accordion <summary>
 document.querySelectorAll<HTMLElement>('.faq-item').forEach((item) => {
   const slug = item.id;
@@ -97,14 +128,23 @@ document.querySelectorAll<HTMLElement>('.faq-item').forEach((item) => {
   btn.addEventListener('click', (e) => {
     e.stopPropagation();
     const url = `${window.location.origin}${window.location.pathname}#${slug}`;
-    navigator.clipboard.writeText(url).then(() => {
-      btn.classList.add('faq-copy-link--copied');
-      btn.title = 'Copied!';
-      setTimeout(() => {
-        btn.classList.remove('faq-copy-link--copied');
-        btn.title = 'Copy link';
-      }, 2000);
-    });
+    copyToClipboard(url)
+      .then(() => {
+        btn.classList.add('faq-copy-link--copied');
+        btn.title = 'Copied!';
+        setTimeout(() => {
+          btn.classList.remove('faq-copy-link--copied');
+          btn.title = 'Copy link';
+        }, 2000);
+      })
+      .catch(() => {
+        btn.classList.add('faq-copy-link--failed');
+        btn.title = 'Could not copy link';
+        setTimeout(() => {
+          btn.classList.remove('faq-copy-link--failed');
+          btn.title = 'Copy link';
+        }, 2000);
+      });
   });
 
   summary.appendChild(btn);

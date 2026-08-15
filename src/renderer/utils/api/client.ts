@@ -18,6 +18,7 @@ import type {
   JiraProjectType,
 } from './types';
 
+import { getCollabContextRoutingAri } from './collabContextRouting';
 import {
   InfluentsNotificationReadState,
   MarkAsReadDocument,
@@ -108,9 +109,7 @@ export function getNotificationsForUser(
     readState: settings.fetchOnlyUnreadNotifications
       ? InfluentsNotificationReadState.Unread
       : null,
-    collabContextRoutingAri: cloudId
-      ? `ari:cloud:platform::site/${cloudId}`
-      : undefined,
+    collabContextRoutingAri: getCollabContextRoutingAri(cloudId),
   });
 }
 
@@ -130,9 +129,7 @@ export function markNotificationsAsRead(
 ): Promise<AtlassianGraphQLResponse<MarkAsReadMutation>> {
   return performRequestForAccount(account, MarkAsReadDocument, {
     notificationIDs: notificationIds,
-    collabContextRoutingAri: cloudId
-      ? `ari:cloud:platform::site/${cloudId}`
-      : undefined,
+    collabContextRoutingAri: getCollabContextRoutingAri(cloudId),
   });
 }
 
@@ -152,9 +149,7 @@ export function markNotificationsAsUnread(
 ): Promise<AtlassianGraphQLResponse<MarkAsUnreadMutation>> {
   return performRequestForAccount(account, MarkAsUnreadDocument, {
     notificationIDs: notificationIds,
-    collabContextRoutingAri: cloudId
-      ? `ari:cloud:platform::site/${cloudId}`
-      : undefined,
+    collabContextRoutingAri: getCollabContextRoutingAri(cloudId),
   });
 }
 
@@ -164,6 +159,7 @@ export function markNotificationsAsUnread(
  * @param account - The account to fetch notifications for.
  * @param notificationGroupId - The ID of the notification group.
  * @param notificationGroupSize - The total number of notifications in the group (used to set page size).
+ * @param cloudId - When provided, scopes the request to that site via `collabContextRoutingAri`.
  * @returns Promise resolving to the GraphQL response containing notification group details.
  *
  * Endpoint documentation: https://developer.atlassian.com/platform/atlassian-graphql-api/graphql
@@ -172,6 +168,7 @@ export function getNotificationsByGroupId(
   account: Account,
   notificationGroupId: string,
   notificationGroupSize: number,
+  cloudId?: CloudID,
 ): Promise<AtlassianGraphQLResponse<RetrieveNotificationsByGroupIdQuery>> {
   const settings = useSettingsStore.getState();
   return performRequestForAccount(
@@ -183,6 +180,7 @@ export function getNotificationsByGroupId(
       readState: settings.fetchOnlyUnreadNotifications
         ? InfluentsNotificationReadState.Unread
         : null,
+      collabContextRoutingAri: getCollabContextRoutingAri(cloudId),
     },
   );
 }

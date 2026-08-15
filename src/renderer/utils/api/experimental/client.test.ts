@@ -4,6 +4,7 @@ import { mockSingleAtlassifyNotification } from '../../../__mocks__/notification
 import type { CloudID, JiraProjectKey } from '../../../types';
 import type { AtlassianGraphQLResponse } from '../types';
 
+import { getCollabContextRoutingAri } from '../collabContextRouting';
 import * as request from '../request';
 import * as client from './client';
 
@@ -47,7 +48,7 @@ describe('renderer/utils/api/experimental/client.ts', () => {
       expect.stringContaining('mutation MarkGroupAsRead'),
       {
         groupId: mockSingleAtlassifyNotification.notificationGroup.id,
-        collabContextRoutingAri: `ari:cloud:platform::site/${mockCloudID}`,
+        collabContextRoutingAri: getCollabContextRoutingAri(mockCloudID),
       },
     );
   });
@@ -81,7 +82,7 @@ describe('renderer/utils/api/experimental/client.ts', () => {
       expect.stringContaining('mutation MarkGroupAsUnread'),
       {
         groupId: mockSingleAtlassifyNotification.notificationGroup.id,
-        collabContextRoutingAri: `ari:cloud:platform::site/${mockCloudID}`,
+        collabContextRoutingAri: getCollabContextRoutingAri(mockCloudID),
       },
     );
   });
