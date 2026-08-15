@@ -12,6 +12,7 @@ import type {
 } from './types';
 
 import * as client from './client';
+import { getCollabContextRoutingAri } from './collabContextRouting';
 import {
   MeDocument,
   MyNotificationsDocument,
@@ -86,7 +87,7 @@ describe('renderer/utils/api/client.ts', () => {
         after: undefined,
         flat: false,
         readState: 'unread',
-        collabContextRoutingAri: `ari:cloud:platform::site/${mockCloudID}`,
+        collabContextRoutingAri: getCollabContextRoutingAri(mockCloudID),
       },
     );
   });
@@ -119,7 +120,7 @@ describe('renderer/utils/api/client.ts', () => {
       expect.stringContaining('mutation MarkAsRead'),
       {
         notificationIDs: [mockSingleAtlassifyNotification.id],
-        collabContextRoutingAri: `ari:cloud:platform::site/${mockCloudID}`,
+        collabContextRoutingAri: getCollabContextRoutingAri(mockCloudID),
       },
     );
   });
@@ -152,7 +153,7 @@ describe('renderer/utils/api/client.ts', () => {
       expect.stringContaining('mutation MarkAsUnread'),
       {
         notificationIDs: [mockSingleAtlassifyNotification.id],
-        collabContextRoutingAri: `ari:cloud:platform::site/${mockCloudID}`,
+        collabContextRoutingAri: getCollabContextRoutingAri(mockCloudID),
       },
     );
   });
@@ -202,6 +203,33 @@ describe('renderer/utils/api/client.ts', () => {
           groupId: mockSingleAtlassifyNotification.notificationGroup.id,
           first: mockGroupSize,
           readState: null,
+        },
+      );
+    });
+
+    it('getNotificationsByGroupId - should scope mutation to cloud ID when provided', async () => {
+      const mockGroupSize = 5;
+      const mockCloudID = 'mock-cloud-id' as CloudID;
+
+      useSettingsStore.setState({
+        fetchOnlyUnreadNotifications: false,
+      });
+
+      await client.getNotificationsByGroupId(
+        mockAtlassianCloudAccount,
+        mockSingleAtlassifyNotification.notificationGroup.id,
+        mockGroupSize,
+        mockCloudID,
+      );
+
+      expect(request.performRequestForAccount).toHaveBeenCalledWith(
+        mockAtlassianCloudAccount,
+        expect.stringContaining('query RetrieveNotificationsByGroupId'),
+        {
+          groupId: mockSingleAtlassifyNotification.notificationGroup.id,
+          first: mockGroupSize,
+          readState: null,
+          collabContextRoutingAri: getCollabContextRoutingAri(mockCloudID),
         },
       );
     });

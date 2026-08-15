@@ -36,12 +36,14 @@ query RetrieveNotificationsByGroupId(
   $groupId: String!
   $first: Int
   $readState: InfluentsNotificationReadState
+  $collabContextRoutingAri: String
 ) {
   notifications {
     notificationGroup(
       groupId: $groupId
       first: $first
       filter: { readStateFilter: $readState }
+      collabContextRoutingAri: $collabContextRoutingAri
     ) {
       nodes {
         ...GroupNotificationDetails
