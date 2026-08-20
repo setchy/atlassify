@@ -21,8 +21,8 @@ importers:
         specifier: 4.3.3
         version: 4.3.3(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(jiti@2.7.0))
       accessible-astro-components:
-        specifier: 5.6.1
-        version: 5.6.1
+        specifier: 5.7.1
+        version: 5.7.1(astro@7.2.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0))
       astro:
         specifier: 7.2.2
         version: 7.2.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)
@@ -1034,8 +1034,11 @@ packages:
   '@ungap/structured-clone@1.3.3':
     resolution: {integrity: sha512-60YRaenCQcVjYEKOcG824+DRGGIQ3VKErcBoAEDJZz5bKIs2ZG+X/H9Nk+Q6EVkwJk5QNApxbrc5QtBSwtrXAg==}
 
-  accessible-astro-components@5.6.1:
-    resolution: {integrity: sha512-Pa7QlsbcdhHHi+duh6q5R5JRhk1wwz8pahjIPJK7rUxL/+vRb/EPsDlBQ4Z6Lwnv5EnD4ytlZ6j2kwvbKH41hw==}
+  accessible-astro-components@5.7.1:
+    resolution: {integrity: sha512-X3FR+k6YOcQQ3a4ti5h4U0TyjB1irDYOA+1NdKniOsBb4abptQ6C+0bQbE7Wa8lC22HyVS2shVoJD82mfX/QMg==}
+    engines: {node: ^18.20.8 || ^20.3.0 || >=22.0.0}
+    peerDependencies:
+      astro: ^5.0.0 || ^6.0.0 || ^7.0.0
 
   acorn@8.18.0:
     resolution: {integrity: sha512-lGq+9yr1/GuAWaVYIHRjvvySG5/4VfKIvC8EWxStPdcDh/Ka7FG3twP6v4d5BkravUilhIAsG4Qj83t02LWUPQ==}
@@ -2932,7 +2935,9 @@ snapshots:
 
   '@ungap/structured-clone@1.3.3': {}
 
-  accessible-astro-components@5.6.1: {}
+  accessible-astro-components@5.7.1(astro@7.2.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)):
+    dependencies:
+      astro: 7.2.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.2.0)(jiti@2.7.0)
 
   acorn@8.18.0: {}
 
