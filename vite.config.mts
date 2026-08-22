@@ -13,7 +13,7 @@ import { defineConfig } from 'vite';
 import checker from 'vite-plugin-checker';
 import electron from 'vite-plugin-electron/simple';
 
-import { Constants } from './src/renderer/constants';
+import { Constants } from './src/renderer/constants.ts';
 
 /**
  * Vite plugin that copies static assets to disk on startup.
