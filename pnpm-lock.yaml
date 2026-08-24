@@ -73,8 +73,8 @@ importers:
         specifier: 7.1.0
         version: 7.1.0(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/icon':
-        specifier: 37.4.0
-        version: 37.4.0(react@19.2.8)(supports-color@10.2.2)
+        specifier: 37.5.0
+        version: 37.5.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/icon-lab':
         specifier: 7.7.0
         version: 7.7.0(react@19.2.8)(supports-color@10.2.2)
@@ -367,11 +367,6 @@ packages:
 
   '@atlaskit/icon-lab@7.7.0':
     resolution: {integrity: sha512-6f7Mb7PNvsqJzc2g2+R+xeuPxeUDFZJIcc2AR89yLALjIQz7yqgnS5ecwmTRDnG0QtUofyyg2tbTIMhuyVX1gQ==}
-    peerDependencies:
-      react: ^18.2.0
-
-  '@atlaskit/icon@37.4.0':
-    resolution: {integrity: sha512-T/n2txptw0tQyYBiABllVvwIWvXbz0bsBXz+Prj60xEiJdIx2W6umq93cxxlNJkV94XeCQbmFq3gk1HCGEvlCg==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5352,17 +5347,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@atlaskit/icon@37.4.0(react@19.2.8)(supports-color@10.2.2)':
-    dependencies:
-      '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.8)
-      '@atlaskit/tile': 4.1.0(react@19.2.8)(supports-color@10.2.2)
-      '@atlaskit/tokens': 16.8.0(react@19.2.8)(supports-color@10.2.2)
-      '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.2(react@19.2.8)
-      react: 19.2.8
-    transitivePeerDependencies:
-      - supports-color
-
   '@atlaskit/icon@37.5.0(react@19.2.8)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.2.8)
@@ -5662,7 +5646,7 @@ snapshots:
     dependencies:
       '@atlaskit/analytics-next': 12.3.3(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@atlaskit/ds-lib': 8.0.0(react@19.2.8)
-      '@atlaskit/icon': 37.4.0(react@19.2.8)(supports-color@10.2.2)
+      '@atlaskit/icon': 37.5.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/layering': 5.1.0(react@19.2.8)
       '@atlaskit/platform-feature-flags': 2.1.1(react@19.2.8)
       '@atlaskit/popper': 9.3.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
