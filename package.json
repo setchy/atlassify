@@ -93,7 +93,7 @@
     "@atlaskit/theme": "28.0.0",
     "@atlaskit/toggle": "17.2.0",
     "@atlaskit/tokens": "16.7.0",
-    "@atlaskit/tooltip": "24.1.0",
+    "@atlaskit/tooltip": "24.2.0",
     "@biomejs/biome": "2.5.9",
     "@compiled/react": "1.0.2",
     "@compiled/vite-plugin": "2.0.2",
