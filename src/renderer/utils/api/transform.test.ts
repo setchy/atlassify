@@ -208,6 +208,28 @@ describe('renderer/utils/api/transform.ts', () => {
       expect(inferAtlassianProductSpy).toHaveBeenCalledTimes(2);
     });
 
+    it('skips a notification whose upstream content entity is null', async () => {
+      const malformedNotification: AtlassianNotificationFragment = {
+        ...mockRawNotification,
+        headNotification: {
+          ...mockRawNotification.headNotification,
+          notificationId: 'notif-without-entity',
+          content: {
+            ...mockRawNotification.headNotification.content,
+            entity: null,
+          },
+        },
+      };
+
+      const result = await transformNotifications(
+        [mockRawNotification, malformedNotification],
+        mockAtlassianCloudAccount,
+      );
+
+      expect(result).toHaveLength(1);
+      expect(result[0].id).toBe('notif-1');
+    });
+
     it('sets order to 0 for all notifications (stabilized later)', async () => {
       const secondRaw: AtlassianNotificationFragment = {
         ...mockRawNotification,

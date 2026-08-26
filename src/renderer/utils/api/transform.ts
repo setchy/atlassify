@@ -1,3 +1,5 @@
+import { logWarn } from '../../../shared/logger';
+
 import type {
   Account,
   AtlassifyNotification,
@@ -22,9 +24,21 @@ export async function transformNotifications(
   account: Account,
 ): Promise<AtlassifyNotification[]> {
   return Promise.all(
-    rawNotifications?.map((raw) =>
-      mapAtlassianNotificationToAtlassifyNotification(raw, account),
-    ),
+    rawNotifications
+      .filter((raw) => {
+        if (raw.headNotification.content?.entity) {
+          return true;
+        }
+
+        logWarn(
+          'transformNotifications',
+          'Skipping malformed upstream notification: missing headNotification.content.entity',
+        );
+        return false;
+      })
+      .map((raw) =>
+        mapAtlassianNotificationToAtlassifyNotification(raw, account),
+      ),
   );
 }
 
