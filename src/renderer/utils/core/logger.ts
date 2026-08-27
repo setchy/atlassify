@@ -55,5 +55,5 @@ function buildContexts(notification?: AtlassifyNotification): string[] {
   if (!notification) {
     return [];
   }
-  return [notification.entity.title, notification.message];
+  return [notification.entity?.title, notification.message].filter(Boolean);
 }

@@ -1,4 +1,7 @@
-import { mockSingleAtlassifyNotification } from '../../../__mocks__/notifications-mocks';
+import {
+  mockSingleAtlassifyNotification,
+  mockSystemAtlassifyNotification,
+} from '../../../__mocks__/notifications-mocks';
 
 import type { AtlassifyNotification } from '../../../types';
 
@@ -17,6 +20,15 @@ describe('renderer/utils/products/strategies/bitbucket', () => {
     expect(getProductStrategy(notification).footerText(notification)).toBe(
       'myorg/notifications-test',
     );
+  });
+
+  it('footerText returns empty text when entity is absent', () => {
+    const notification = {
+      ...mockSystemAtlassifyNotification,
+      product: PRODUCTS.bitbucket,
+    } as AtlassifyNotification;
+
+    expect(getProductStrategy(notification).footerText(notification)).toBe('');
   });
 
   describe('actorType', () => {

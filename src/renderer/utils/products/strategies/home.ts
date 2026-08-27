@@ -5,7 +5,9 @@ import { DefaultStrategy } from './default';
 export function extractGoalOrProjectKey(
   notification: AtlassifyNotification,
 ): string | null {
-  const match = notification.path.url.match(/\/(goal|project)\/([^/]+)\/about/);
+  const match = notification.path?.url?.match(
+    /\/(goal|project)\/([^/]+)\/about/,
+  );
   return match ? match[2] : null;
 }
 

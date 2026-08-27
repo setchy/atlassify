@@ -44,17 +44,17 @@ async function mapAtlassianNotificationToAtlassifyNotification(
   account: Account,
 ): Promise<AtlassifyNotification> {
   const path = raw.headNotification.content.path?.[0];
+  const entity = raw.headNotification.content.entity;
 
   const headNotification = raw.headNotification;
 
-  let notificationPath: AtlassifyNotificationPath;
-  if (path) {
-    notificationPath = {
-      title: path.title,
-      url: path.url as Link,
-      iconUrl: path.iconUrl as Link,
-    };
-  }
+  const notificationPath: AtlassifyNotificationPath | null = path
+    ? {
+        title: path.title,
+        url: path.url as Link,
+        iconUrl: path.iconUrl as Link,
+      }
+    : null;
 
   return {
     id: headNotification.notificationId,
@@ -64,11 +64,13 @@ async function mapAtlassianNotificationToAtlassifyNotification(
     type: headNotification.content.type,
     url: headNotification.content.url as Link,
     path: notificationPath,
-    entity: {
-      title: headNotification.content.entity.title,
-      url: headNotification.content.entity.url as Link,
-      iconUrl: headNotification.content.entity.iconUrl as Link,
-    },
+    entity: entity
+      ? {
+          title: entity.title,
+          url: entity.url as Link,
+          iconUrl: entity.iconUrl as Link,
+        }
+      : null,
     category: headNotification.category as CategoryType,
     actor: {
       displayName: headNotification.content.actor.displayName,

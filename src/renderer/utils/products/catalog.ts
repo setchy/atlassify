@@ -14,10 +14,14 @@ import {
 
 import type { AtlassianProduct, ProductType } from '../../types';
 
-import i18n from '../../i18n';
 import { URLs } from '../system/links';
 
 export const PRODUCTS: Record<ProductType, AtlassianProduct> = {
+  atlassian: {
+    type: 'atlassian',
+    display: 'Atlassian',
+    logo: AtlassianIcon,
+  },
   bitbucket: {
     type: 'bitbucket',
     display: 'Bitbucket',
@@ -68,10 +72,5 @@ export const PRODUCTS: Record<ProductType, AtlassianProduct> = {
     type: 'teams',
     display: 'Teams',
     logo: TeamsIcon,
-  },
-  unknown: {
-    type: 'unknown',
-    display: i18n.t('products.unknown'),
-    logo: AtlassianIcon,
   },
 };

@@ -884,6 +884,79 @@ exports[`renderer/routes/Filters.tsx > General > should render itself & its chil
                   class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwn1j9a _f0grrsbi _1c53glyw _1e9d1j28 _syazi7uo _80om73ad _ljcgdfik _1vj5l4ek _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t"
                 >
                   <input
+                    aria-label="Atlassian"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf"
+                    tabindex="0"
+                    type="checkbox"
+                  />
+                  <svg
+                    class="_nd5lfibj _1reo15vq _18m915vq _v5641mn3 _2rko12b0 _1a3742bt _lcxvglyw _syazmov0 _lswu1kgh _1cwg1i6y"
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <g
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        class="_v56411so _1snbe4h9 _1s17hteq"
+                        fill="currentColor"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
+                      />
+                    </g>
+                  </svg>
+                  <span
+                    class="_nd5l11ig _1wpz1h6o"
+                  >
+                    Atlassian
+                  </span>
+                </label>
+                <span
+                  aria-label="Atlassian"
+                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
+                  role="img"
+                  style="--logo-color: inherit; --logo-fill: currentColor;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="none"
+                    focusable="false"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    
+      
+                    <path
+                      d="M27.545 24.378 16.96 3.208c-.208-.458-.417-.541-.667-.541-.208 0-.458.083-.708.5-1.5 2.375-2.167 5.125-2.167 8 0 4.001 2.042 7.752 5.042 13.795.334.666.584.791 1.167.791h7.335c.541 0 .833-.208.833-.625 0-.208-.042-.333-.25-.75M12.168 14.377c-.834-1.25-1.084-1.334-1.292-1.334s-.333.083-.708.834L4.875 24.46c-.167.334-.208.459-.208.625 0 .334.291.667.916.667h7.46c.5 0 .875-.416 1.083-1.208.25-1 .334-1.876.334-2.917 0-2.917-1.292-5.751-2.292-7.251"
+                      fill="#6C6F77"
+                    />
+                    
+    
+                  </svg>
+                </span>
+                <span
+                  class="_2rkolb4i _18zr1b66 _1rjcidpf _1e0c116y _vchhusvi _1ul91ejb _1bah1h6o _1o9zidpf _1kz6184x"
+                >
+                  <span
+                    class="_19pkidpf _2hwxidpf _otyridpf _18u0idpf _1i4qfg65 _11c8wadc _y3gn1h6o"
+                  >
+                    0
+                  </span>
+                </span>
+              </div>
+              <div
+                class="css-5fz2td"
+              >
+                <label
+                  class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwn1j9a _f0grrsbi _1c53glyw _1e9d1j28 _syazi7uo _80om73ad _ljcgdfik _1vj5l4ek _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t"
+                >
+                  <input
                     aria-label="Bitbucket"
                     class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf"
                     tabindex="0"
@@ -1668,79 +1741,6 @@ exports[`renderer/routes/Filters.tsx > General > should render itself & its chil
                   </svg>
                   
 
-                </span>
-                <span
-                  class="_2rkolb4i _18zr1b66 _1rjcidpf _1e0c116y _vchhusvi _1ul91ejb _1bah1h6o _1o9zidpf _1kz6184x"
-                >
-                  <span
-                    class="_19pkidpf _2hwxidpf _otyridpf _18u0idpf _1i4qfg65 _11c8wadc _y3gn1h6o"
-                  >
-                    0
-                  </span>
-                </span>
-              </div>
-              <div
-                class="css-5fz2td"
-              >
-                <label
-                  class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwn1j9a _f0grrsbi _1c53glyw _1e9d1j28 _syazi7uo _80om73ad _ljcgdfik _1vj5l4ek _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t"
-                >
-                  <input
-                    aria-label="Unknown"
-                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf"
-                    tabindex="0"
-                    type="checkbox"
-                  />
-                  <svg
-                    class="_nd5lfibj _1reo15vq _18m915vq _v5641mn3 _2rko12b0 _1a3742bt _lcxvglyw _syazmov0 _lswu1kgh _1cwg1i6y"
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
-                  >
-                    <g
-                      fill-rule="evenodd"
-                    >
-                      <rect
-                        class="_v56411so _1snbe4h9 _1s17hteq"
-                        fill="currentColor"
-                        height="13"
-                        rx="1.5"
-                        width="13"
-                        x="5.5"
-                        y="5.5"
-                      />
-                    </g>
-                  </svg>
-                  <span
-                    class="_nd5l11ig _1wpz1h6o"
-                  >
-                    Unknown
-                  </span>
-                </label>
-                <span
-                  aria-label="Atlassian"
-                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
-                  role="img"
-                  style="--logo-color: inherit; --logo-fill: currentColor;"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="none"
-                    focusable="false"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    
-      
-                    <path
-                      d="M27.545 24.378 16.96 3.208c-.208-.458-.417-.541-.667-.541-.208 0-.458.083-.708.5-1.5 2.375-2.167 5.125-2.167 8 0 4.001 2.042 7.752 5.042 13.795.334.666.584.791 1.167.791h7.335c.541 0 .833-.208.833-.625 0-.208-.042-.333-.25-.75M12.168 14.377c-.834-1.25-1.084-1.334-1.292-1.334s-.333.083-.708.834L4.875 24.46c-.167.334-.208.459-.208.625 0 .334.291.667.916.667h7.46c.5 0 .875-.416 1.083-1.208.25-1 .334-1.876.334-2.917 0-2.917-1.292-5.751-2.292-7.251"
-                      fill="#6C6F77"
-                    />
-                    
-    
-                  </svg>
                 </span>
                 <span
                   class="_2rkolb4i _18zr1b66 _1rjcidpf _1e0c116y _vchhusvi _1ul91ejb _1bah1h6o _1o9zidpf _1kz6184x"
@@ -2670,6 +2670,79 @@ exports[`renderer/routes/Filters.tsx > filters > product filters > should filter
                   class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwn1j9a _f0grrsbi _1c53glyw _1e9d1j28 _syazi7uo _80om73ad _ljcgdfik _1vj5l4ek _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t"
                 >
                   <input
+                    aria-label="Atlassian"
+                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf"
+                    tabindex="0"
+                    type="checkbox"
+                  />
+                  <svg
+                    class="_nd5lfibj _1reo15vq _18m915vq _v5641mn3 _2rko12b0 _1a3742bt _lcxvglyw _syazmov0 _lswu1kgh _1cwg1i6y"
+                    height="24"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <g
+                      fill-rule="evenodd"
+                    >
+                      <rect
+                        class="_v56411so _1snbe4h9 _1s17hteq"
+                        fill="currentColor"
+                        height="13"
+                        rx="1.5"
+                        width="13"
+                        x="5.5"
+                        y="5.5"
+                      />
+                    </g>
+                  </svg>
+                  <span
+                    class="_nd5l11ig _1wpz1h6o"
+                  >
+                    Atlassian
+                  </span>
+                </label>
+                <span
+                  aria-label="Atlassian"
+                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
+                  role="img"
+                  style="--logo-color: inherit; --logo-fill: currentColor;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="none"
+                    focusable="false"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    
+      
+                    <path
+                      d="M27.545 24.378 16.96 3.208c-.208-.458-.417-.541-.667-.541-.208 0-.458.083-.708.5-1.5 2.375-2.167 5.125-2.167 8 0 4.001 2.042 7.752 5.042 13.795.334.666.584.791 1.167.791h7.335c.541 0 .833-.208.833-.625 0-.208-.042-.333-.25-.75M12.168 14.377c-.834-1.25-1.084-1.334-1.292-1.334s-.333.083-.708.834L4.875 24.46c-.167.334-.208.459-.208.625 0 .334.291.667.916.667h7.46c.5 0 .875-.416 1.083-1.208.25-1 .334-1.876.334-2.917 0-2.917-1.292-5.751-2.292-7.251"
+                      fill="#6C6F77"
+                    />
+                    
+    
+                  </svg>
+                </span>
+                <span
+                  class="_2rkolb4i _18zr1b66 _1rjcidpf _1e0c116y _vchhusvi _1ul91ejb _1bah1h6o _1o9zidpf _1kz6184x"
+                >
+                  <span
+                    class="_19pkidpf _2hwxidpf _otyridpf _18u0idpf _1i4qfg65 _11c8wadc _y3gn1h6o"
+                  >
+                    0
+                  </span>
+                </span>
+              </div>
+              <div
+                class="css-5fz2td"
+              >
+                <label
+                  class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwn1j9a _f0grrsbi _1c53glyw _1e9d1j28 _syazi7uo _80om73ad _ljcgdfik _1vj5l4ek _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t"
+                >
+                  <input
                     aria-label="Bitbucket"
                     checked=""
                     class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf"
@@ -3455,79 +3528,6 @@ exports[`renderer/routes/Filters.tsx > filters > product filters > should filter
                   </svg>
                   
 
-                </span>
-                <span
-                  class="_2rkolb4i _18zr1b66 _1rjcidpf _1e0c116y _vchhusvi _1ul91ejb _1bah1h6o _1o9zidpf _1kz6184x"
-                >
-                  <span
-                    class="_19pkidpf _2hwxidpf _otyridpf _18u0idpf _1i4qfg65 _11c8wadc _y3gn1h6o"
-                  >
-                    0
-                  </span>
-                </span>
-              </div>
-              <div
-                class="css-5fz2td"
-              >
-                <label
-                  class="_11c8fhey _1e0c11p5 _1ejihkll _umai184x _1qwn1j9a _f0grrsbi _1c53glyw _1e9d1j28 _syazi7uo _80om73ad _ljcgdfik _1vj5l4ek _dh4gr01l _cz1u1l7x _jom5wc43 _1s071onz _106f1onz _zulp1nu5 _yv0ey09t"
-                >
-                  <input
-                    aria-label="Unknown"
-                    class="_19itglyw _nd5lfibj _12ji1r31 _1qu2glyw _12y31o36 _1bsb1osq _4t3i1osq _r06hglyw _6rthze3t _1pfhze3t _12l2ze3t _ahbqze3t _tzy4idpf"
-                    tabindex="0"
-                    type="checkbox"
-                  />
-                  <svg
-                    class="_nd5lfibj _1reo15vq _18m915vq _v5641mn3 _2rko12b0 _1a3742bt _lcxvglyw _syazmov0 _lswu1kgh _1cwg1i6y"
-                    height="24"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                    width="24"
-                  >
-                    <g
-                      fill-rule="evenodd"
-                    >
-                      <rect
-                        class="_v56411so _1snbe4h9 _1s17hteq"
-                        fill="currentColor"
-                        height="13"
-                        rx="1.5"
-                        width="13"
-                        x="5.5"
-                        y="5.5"
-                      />
-                    </g>
-                  </svg>
-                  <span
-                    class="_nd5l11ig _1wpz1h6o"
-                  >
-                    Unknown
-                  </span>
-                </label>
-                <span
-                  aria-label="Atlassian"
-                  class="_1e0c1o8l _kqswh2mm _syaz1vry _lswu1xf6 _vwz4kb7n _uiztglyw _o5724jg8 _zbji1osq _3se11kw7 _4t3i7vkz"
-                  role="img"
-                  style="--logo-color: inherit; --logo-fill: currentColor;"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="none"
-                    focusable="false"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    
-      
-                    <path
-                      d="M27.545 24.378 16.96 3.208c-.208-.458-.417-.541-.667-.541-.208 0-.458.083-.708.5-1.5 2.375-2.167 5.125-2.167 8 0 4.001 2.042 7.752 5.042 13.795.334.666.584.791 1.167.791h7.335c.541 0 .833-.208.833-.625 0-.208-.042-.333-.25-.75M12.168 14.377c-.834-1.25-1.084-1.334-1.292-1.334s-.333.083-.708.834L4.875 24.46c-.167.334-.208.459-.208.625 0 .334.291.667.916.667h7.46c.5 0 .875-.416 1.083-1.208.25-1 .334-1.876.334-2.917 0-2.917-1.292-5.751-2.292-7.251"
-                      fill="#6C6F77"
-                    />
-                    
-    
-                  </svg>
                 </span>
                 <span
                   class="_2rkolb4i _18zr1b66 _1rjcidpf _1e0c116y _vchhusvi _1ul91ejb _1bah1h6o _1o9zidpf _1kz6184x"

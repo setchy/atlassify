@@ -2,7 +2,10 @@ import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { renderWithProviders } from '../../__helpers__/test-utils';
-import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
+import {
+  mockSingleAtlassifyNotification,
+  mockSystemAtlassifyNotification,
+} from '../../__mocks__/notifications-mocks';
 
 import {
   NotificationContent,
@@ -117,6 +120,22 @@ describe('renderer/components/notifications/NotificationContent.tsx', () => {
     const tree = renderWithProviders(<NotificationContent {...props} />);
 
     expect(tree.container).toMatchSnapshot();
+  });
+
+  it('hides the entity row and shows the product logo when there is no entity', () => {
+    const props: NotificationContentProps = {
+      notification: mockSystemAtlassifyNotification,
+      bodyText: '',
+      footerText: 'Atlassian',
+      onClick: vi.fn(),
+    };
+
+    const tree = renderWithProviders(<NotificationContent {...props} />);
+
+    expect(
+      tree.container.querySelector('#notification-entity'),
+    ).not.toBeVisible();
+    expect(tree.container.querySelector('#notification-product')).toBeVisible();
   });
 
   it('calls onClick when content is clicked', async () => {

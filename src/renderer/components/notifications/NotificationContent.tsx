@@ -59,16 +59,16 @@ export const NotificationContent: FC<NotificationContentProps> = ({
                 hidden={!bodyText}
                 id="notification-entity"
                 paddingInlineStart={
-                  notification.entity.iconUrl ? 'space.0' : 'space.025'
+                  notification.entity?.iconUrl ? 'space.0' : 'space.025'
                 }
               >
                 <Inline
                   alignBlock={blockAlignmentByLength(bodyText)}
                   space={
-                    notification.entity.iconUrl ? 'space.050' : 'space.075'
+                    notification.entity?.iconUrl ? 'space.050' : 'space.075'
                   }
                 >
-                  {notification.entity.iconUrl ? (
+                  {notification.entity?.iconUrl ? (
                     <Avatar
                       appearance="square"
                       name={bodyText}

@@ -173,9 +173,6 @@
       "open_product": "Abrir {{name}} ↗"
     }
   },
-  "products": {
-    "unknown": "Desconocido"
-  },
   "settings": {
     "accounts": "Cuentas",
     "appearance": {

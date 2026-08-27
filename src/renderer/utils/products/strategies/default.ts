@@ -3,7 +3,7 @@ import type { ProductNotificationStrategy } from './types';
 
 export class DefaultStrategy implements ProductNotificationStrategy {
   bodyText(notification: AtlassifyNotification): string {
-    return notification.entity.title;
+    return notification.entity?.title ?? '';
   }
 
   footerText(notification: AtlassifyNotification): string {

@@ -12,7 +12,9 @@ export default defineConfig({
   ],
   test: {
     globals: true,
-    pool: 'vmThreads',
+    // vmThreads' node:vm ESM/CJS interop breaks packages like react-router that ship
+    // an .mjs file inside a CommonJS package
+    pool: 'threads',
     clearMocks: true,
     onConsoleLog(log, type) {
       // suppress noisy Atlaskit feature-gate/platform-feature-flags errors
@@ -32,6 +34,11 @@ export default defineConfig({
       ) {
         return false;
       }
+    },
+    experimental: {
+      importDurations: {
+        print: true,
+      },
     },
     coverage: {
       enabled: false,

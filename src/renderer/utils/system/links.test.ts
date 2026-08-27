@@ -1,5 +1,8 @@
 import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
-import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
+import {
+  mockSingleAtlassifyNotification,
+  mockSystemAtlassifyNotification,
+} from '../../__mocks__/notifications-mocks';
 
 import * as comms from './comms';
 import {
@@ -10,6 +13,7 @@ import {
   openMyNotifications,
   openMyPullRequests,
   openNotification,
+  resolveNotificationUrl,
   URLs,
 } from './links';
 
@@ -62,6 +66,31 @@ describe('renderer/utils/system/links.ts', () => {
     expect(openExternalLinkSpy).toHaveBeenCalledWith(
       'https://home.atlassian.com/people/123456789',
     );
+  });
+
+  describe('resolveNotificationUrl', () => {
+    it('uses entity url when available', () => {
+      expect(resolveNotificationUrl(mockSingleAtlassifyNotification)).toBe(
+        mockSingleAtlassifyNotification.entity.url,
+      );
+    });
+
+    it('falls back to content url when entity is absent', () => {
+      expect(resolveNotificationUrl(mockSystemAtlassifyNotification)).toBe(
+        mockSystemAtlassifyNotification.url,
+      );
+    });
+
+    it('falls back to my-notifications when neither entity url nor content url is available', () => {
+      const notification = {
+        ...mockSystemAtlassifyNotification,
+        url: null,
+      };
+
+      expect(resolveNotificationUrl(notification)).toBe(
+        URLs.ATLASSIAN.WEB.MY_NOTIFICATIONS,
+      );
+    });
   });
 
   describe('openNotification', () => {
