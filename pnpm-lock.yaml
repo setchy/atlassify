@@ -87,9 +87,6 @@ importers:
       '@atlaskit/modal-dialog':
         specifier: 16.5.1
         version: 16.5.1(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
-      '@atlaskit/motion':
-        specifier: 8.4.0
-        version: 8.4.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/primitives':
         specifier: 22.4.0
         version: 22.4.0(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
@@ -111,9 +108,6 @@ importers:
       '@atlaskit/textfield':
         specifier: 10.1.0
         version: 10.1.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
-      '@atlaskit/theme':
-        specifier: 28.1.0
-        version: 28.1.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/toggle':
         specifier: 17.2.0
         version: 17.2.0(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
