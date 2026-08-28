@@ -1,6 +1,7 @@
 import {
   mockAtlassifyNotifications,
   mockSingleAtlassifyNotification,
+  mockSystemAtlassifyNotification,
 } from '../../../__mocks__/notifications-mocks';
 
 import type { AtlassifyNotification } from '../../../types';
@@ -12,6 +13,10 @@ describe('renderer/utils/products/strategies/default', () => {
     expect(defaultStrategy.bodyText(mockSingleAtlassifyNotification)).toBe(
       mockSingleAtlassifyNotification.entity.title,
     );
+  });
+
+  it('bodyText returns empty text when entity is absent', () => {
+    expect(defaultStrategy.bodyText(mockSystemAtlassifyNotification)).toBe('');
   });
 
   it('footerText returns path title when path exists', () => {

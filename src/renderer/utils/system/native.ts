@@ -4,6 +4,7 @@ import type { AtlassifyNotification } from '../../types';
 
 import i18n from '../../i18n';
 import { formatNativeNotificationFooterText } from '../notifications/formatters';
+import { resolveNotificationUrl } from './links';
 
 /**
  * Raises a native OS notification.
@@ -25,7 +26,7 @@ export const raiseNativeNotification = (
     const notification = notifications[0];
     title = window.atlassify.platform.isWindows() ? '' : notification.message;
     body = formatNativeNotificationFooterText(notification);
-    url = notification.entity.url;
+    url = resolveNotificationUrl(notification);
   } else {
     title = APPLICATION.NAME;
     body = i18n.t('notifications.native_count', {

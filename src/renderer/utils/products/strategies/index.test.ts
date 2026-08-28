@@ -19,7 +19,7 @@ describe('renderer/utils/products/strategies/index', () => {
       { productKey: 'jira_product_discovery' as const },
       { productKey: 'jira_service_management' as const },
       { productKey: 'teams' as const },
-      { productKey: 'unknown' as const },
+      { productKey: 'atlassian' as const },
     ])('for $productKey', ({ productKey }) => {
       const notification = {
         ...mockSingleAtlassifyNotification,

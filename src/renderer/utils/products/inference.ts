@@ -12,7 +12,7 @@ import {
   getJiraProjectTypeByKey,
 } from '../api/client';
 import type { AtlassianHeadNotificationFragment } from '../api/graphql/generated/graphql';
-import { rendererLogError } from '../core/logger';
+import { rendererLogError, rendererLogWarn } from '../core/logger';
 import { PRODUCTS } from './catalog';
 
 // Use a promise cache to avoid duplicate API calls for the same hostname
@@ -81,13 +81,21 @@ export async function inferAtlassianProduct(
       ) {
         return PRODUCTS.bitbucket;
       }
-      return PRODUCTS.unknown;
+      return PRODUCTS.atlassian;
     case 'rovo':
       return PRODUCTS.rovo;
     case 'team-central':
       return PRODUCTS.home;
     default:
-      return PRODUCTS.unknown;
+      // An absent registrationProduct is the expected shape for system notifications;
+      // only an unrecognized value signals a gap in the mapping above.
+      if (registrationProduct) {
+        rendererLogWarn(
+          'inferAtlassianProduct',
+          `unmapped registrationProduct '${registrationProduct}', falling back to Atlassian`,
+        );
+      }
+      return PRODUCTS.atlassian;
   }
 }
 

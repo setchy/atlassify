@@ -175,12 +175,13 @@ export interface AtlassifyNotification {
   /**
    * The parent details for the notification entity
    */
-  path: AtlassifyNotificationPath;
+  path: AtlassifyNotificationPath | null;
 
   /**
    * The entity for which the notification is for.
+   * Absent for system notifications, which reference no specific object.
    */
-  entity: AtlassifyNotificationEntity;
+  entity: AtlassifyNotificationEntity | null;
 
   /**
    * The actor who created the notification.
@@ -236,9 +237,9 @@ export interface AtlassifyNotificationPath {
  * The entity for which the notification is for.
  */
 export interface AtlassifyNotificationEntity {
-  title: string;
-  iconUrl: Link;
-  url: Link;
+  title: string | null;
+  iconUrl: Link | null;
+  url: Link | null;
 }
 
 /**
@@ -354,6 +355,7 @@ export type ActorType = 'user' | 'rovo' | 'automation';
  * Atlassian products which are currently supported by Atlassify.
  */
 export type ProductType =
+  | 'atlassian'
   | 'bitbucket'
   | 'confluence'
   | 'compass'
@@ -363,8 +365,7 @@ export type ProductType =
   | 'jira_service_management'
   | 'rovo'
   | 'rovo_dev'
-  | 'teams'
-  | 'unknown';
+  | 'teams';
 
 /**
  * Details for a specific Atlassian product.

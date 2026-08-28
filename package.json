@@ -145,7 +145,7 @@
     "*.{js,ts,tsx}": [
       "bash -c 'tsc --noEmit'",
       "bash -c 'pnpm i18n:lint'",
-      "pnpm test --changed --passWithNoTests --update"
+      "pnpm test --changed --passWithNoTests --update=true"
     ]
   }
 }

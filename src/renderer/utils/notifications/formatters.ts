@@ -33,7 +33,7 @@ export function formatNativeNotificationFooterText(
 ): string {
   let footer = getProductStrategy(notification).footerText(notification);
 
-  if (notification.entity.title) {
+  if (notification.entity?.title) {
     footer += `: ${notification.entity.title}`;
   }
 

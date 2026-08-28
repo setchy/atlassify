@@ -21,6 +21,24 @@ export const URLs = {
   },
 };
 
+/**
+ * Resolves the destination URL for a notification.
+ *
+ * System notifications have no entity, so they fall back to the content URL.
+ *
+ * @param notification - The notification to resolve a URL for.
+ * @returns The best available URL for the notification.
+ */
+export function resolveNotificationUrl(
+  notification: AtlassifyNotification,
+): Link {
+  return (
+    notification.entity?.url ??
+    notification.url ??
+    URLs.ATLASSIAN.WEB.MY_NOTIFICATIONS
+  );
+}
+
 // 1. Actual implementations (private)
 const _links = {
   openAtlassifyReleaseNotes(version: string) {
@@ -55,11 +73,7 @@ const _links = {
   },
 
   async openNotification(notification: AtlassifyNotification) {
-    openExternalLink(
-      notification.entity.url ??
-        notification.url ??
-        URLs.ATLASSIAN.WEB.MY_NOTIFICATIONS,
-    );
+    openExternalLink(resolveNotificationUrl(notification));
   },
 };
 

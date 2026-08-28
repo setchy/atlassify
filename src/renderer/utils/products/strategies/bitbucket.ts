@@ -5,7 +5,13 @@ import { DefaultStrategy } from './default';
 export function extractRepositoryName(
   notification: AtlassifyNotification,
 ): string {
-  return notification.entity.url.split('/').slice(3, 5).join('/');
+  const url = notification.entity?.url;
+
+  if (!url) {
+    return '';
+  }
+
+  return url.split('/').slice(3, 5).join('/');
 }
 
 class BitbucketStrategy extends DefaultStrategy {

@@ -82,6 +82,35 @@ export const mockAtlassifyNotifications: AtlassifyNotification[] = [
 export const mockSingleAtlassifyNotification: AtlassifyNotification =
   mockAtlassifyNotifications[0];
 
+/**
+ * A system notification with no entity or path, e.g. an Atlassian product
+ * announcement served by post-office with a null `registrationProduct`.
+ */
+export const mockSystemAtlassifyNotification: AtlassifyNotification = {
+  id: '198765432',
+  order: 2,
+  notificationGroup: {
+    id: '198765432',
+    size: 1,
+    additionalActors: [],
+  },
+  message: 'Atlassian has an important announcement',
+  updated_at: '2024-01-01T00:00:00.000Z',
+  entity: null,
+  path: null,
+  product: PRODUCTS.atlassian,
+  actor: {
+    displayName: 'Atlassian',
+    avatarURL:
+      'https://home-static.us-east-1.prod.public.atl-paas.net/favicon.ico' as Link,
+  },
+  category: 'direct',
+  readState: 'unread',
+  account: mockAtlassianCloudAccount,
+  url: 'https://home.atlassian.com/notifications' as Link,
+  type: 'unknown',
+};
+
 export const mockAccountNotifications: AccountNotifications[] = [
   {
     account: mockAtlassianCloudAccount,

@@ -173,13 +173,81 @@ describe('renderer/utils/api/transform.ts', () => {
       });
     });
 
-    it('sets path to undefined when path is null', async () => {
+    it('sets path to null when path is null', async () => {
       const result = await transformNotifications(
         [mockRawNotification],
         mockAtlassianCloudAccount,
       );
 
-      expect(result[0].path).toBeUndefined();
+      expect(result[0].path).toBeNull();
+    });
+
+    it('transforms a notification with a null entity without throwing', async () => {
+      const rawWithNullEntity: AtlassianNotificationFragment = {
+        ...mockRawNotification,
+        headNotification: {
+          ...mockRawNotification.headNotification,
+          content: {
+            ...mockRawNotification.headNotification.content,
+            entity: null,
+          },
+        },
+      };
+
+      const result = await transformNotifications(
+        [rawWithNullEntity],
+        mockAtlassianCloudAccount,
+      );
+
+      expect(result[0].entity).toBeNull();
+      expect(result[0].message).toBe('Test notification message');
+    });
+
+    it('transforms a notification with an entity present but null fields', async () => {
+      const rawWithNullEntityFields: AtlassianNotificationFragment = {
+        ...mockRawNotification,
+        headNotification: {
+          ...mockRawNotification.headNotification,
+          content: {
+            ...mockRawNotification.headNotification.content,
+            entity: { title: null, iconUrl: null, url: null },
+          },
+        },
+      };
+
+      const result = await transformNotifications(
+        [rawWithNullEntityFields],
+        mockAtlassianCloudAccount,
+      );
+
+      expect(result[0].entity).toEqual({
+        title: null,
+        iconUrl: null,
+        url: null,
+      });
+    });
+
+    it('transforms a mixed batch without one null-entity notification failing the others', async () => {
+      const rawWithNullEntity: AtlassianNotificationFragment = {
+        ...mockRawNotification,
+        headNotification: {
+          ...mockRawNotification.headNotification,
+          notificationId: 'notif-2',
+          content: {
+            ...mockRawNotification.headNotification.content,
+            entity: null,
+          },
+        },
+      };
+
+      const result = await transformNotifications(
+        [mockRawNotification, rawWithNullEntity],
+        mockAtlassianCloudAccount,
+      );
+
+      expect(result).toHaveLength(2);
+      expect(result[0].entity).not.toBeNull();
+      expect(result[1].entity).toBeNull();
     });
 
     it('transforms multiple notifications and calls inferAtlassianProduct for each', async () => {
@@ -236,6 +304,51 @@ describe('renderer/utils/api/transform.ts', () => {
         mockAtlassianCloudAccount,
         mockRawNotification.headNotification,
       );
+    });
+  });
+
+  describe('system notification scenario (issue #3486)', () => {
+    it('transforms a null-entity, post-office system notification with a null registrationProduct', async () => {
+      inferAtlassianProductSpy.mockRestore();
+
+      const systemNotificationRaw: AtlassianNotificationFragment = {
+        groupId: 'group-system',
+        groupSize: 1,
+        additionalActors: [],
+        headNotification: {
+          notificationId: 'notif-system',
+          timestamp: '2024-01-01T00:00:00.000Z',
+          readState: InfluentsNotificationReadState.Unread,
+          category: InfluentsNotificationCategory.Direct,
+          content: {
+            type: 'announcement',
+            message: 'message title here',
+            url: 'https://home.atlassian.com/notifications',
+            bodyItems: [],
+            entity: null,
+            path: [],
+            actor: {
+              displayName: 'Atlassian',
+              avatarURL: 'https://example.com/favicon.ico',
+            },
+          },
+          analyticsAttributes: [
+            { key: 'registrationProduct', value: null },
+            { key: 'servedBy', value: 'post-office' },
+          ],
+        },
+      };
+
+      const result = await transformNotifications(
+        [systemNotificationRaw],
+        mockAtlassianCloudAccount,
+      );
+
+      expect(result).toHaveLength(1);
+      expect(result[0].entity).toBeNull();
+      expect(result[0].path).toBeNull();
+      expect(result[0].message).toBe('message title here');
+      expect(result[0].product).toBe(PRODUCTS.atlassian);
     });
   });
 });

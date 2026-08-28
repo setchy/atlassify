@@ -11,6 +11,7 @@ vi.mock('../api/client', () => ({
 }));
 vi.mock('../core/logger', () => ({
   rendererLogError: vi.fn(),
+  rendererLogWarn: vi.fn(),
 }));
 
 import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
@@ -18,7 +19,7 @@ import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
 import type { JiraProjectType } from '../api/types';
 
 import type { AtlassianHeadNotificationFragment } from '../api/graphql/generated/graphql';
-import { rendererLogError } from '../core/logger';
+import { rendererLogError, rendererLogWarn } from '../core/logger';
 import {
   __resetProductInferenceCaches,
   inferAtlassianProduct,
@@ -35,7 +36,7 @@ describe('renderer/utils/products/inference.ts', () => {
       ['people-and-teams-collective', PRODUCTS.teams],
       ['rovo', PRODUCTS.rovo],
       ['team-central', PRODUCTS.home],
-      ['unmapped', PRODUCTS.unknown],
+      ['unmapped', PRODUCTS.atlassian],
     ])('%s maps correctly', async (registrationProduct, expected) => {
       expect(
         await inferAtlassianProduct(
@@ -43,6 +44,35 @@ describe('renderer/utils/products/inference.ts', () => {
           createProductNotificationMock(registrationProduct),
         ),
       ).toBe(expected);
+    });
+
+    it('warns when registrationProduct is an unrecognised non-empty value', async () => {
+      await inferAtlassianProduct(
+        mockAtlassianCloudAccount,
+        createProductNotificationMock('unmapped'),
+      );
+
+      expect(rendererLogWarn).toHaveBeenCalledWith(
+        'inferAtlassianProduct',
+        expect.stringContaining('unmapped'),
+      );
+    });
+
+    it('stays silent when registrationProduct is absent', async () => {
+      const mockHeadNotification: Partial<AtlassianHeadNotificationFragment> = {
+        analyticsAttributes: [],
+        content: {
+          message: '',
+        } as AtlassianHeadNotificationFragment['content'],
+      };
+
+      const inferredProduct = await inferAtlassianProduct(
+        mockAtlassianCloudAccount,
+        mockHeadNotification as AtlassianHeadNotificationFragment,
+      );
+
+      expect(inferredProduct).toBe(PRODUCTS.atlassian);
+      expect(rendererLogWarn).not.toHaveBeenCalled();
     });
 
     describe('jira analytics subProduct direct mapping', () => {
@@ -76,7 +106,7 @@ describe('renderer/utils/products/inference.ts', () => {
         expect(inferredProduct).toBe(PRODUCTS.rovo_dev);
       });
 
-      it('should return unknown is unsure', async () => {
+      it('should return atlassian if unsure', async () => {
         const mockNotification = {
           ...createProductNotificationMock('post-office'),
           content: {
@@ -88,7 +118,7 @@ describe('renderer/utils/products/inference.ts', () => {
           mockAtlassianCloudAccount,
           mockNotification,
         );
-        expect(inferredProduct).toBe(PRODUCTS.unknown);
+        expect(inferredProduct).toBe(PRODUCTS.atlassian);
       });
     });
 

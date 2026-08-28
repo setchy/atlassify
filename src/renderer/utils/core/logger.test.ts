@@ -1,4 +1,7 @@
-import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
+import {
+  mockSingleAtlassifyNotification,
+  mockSystemAtlassifyNotification,
+} from '../../__mocks__/notifications-mocks';
 
 import * as logger from '../../../shared/logger';
 
@@ -36,6 +39,20 @@ describe('renderer/utils/core/logger.ts', () => {
     expect(logErrorSpy).toHaveBeenCalledWith('foo', 'bar', mockError, [
       '#103: chore(deps): update dependency eslint',
       '#103: chore(deps): update dependency eslint',
+    ]);
+  });
+
+  it('does not throw when logging a notification with no entity', () => {
+    expect(() =>
+      rendererLogError(
+        'foo',
+        'bar',
+        mockError,
+        mockSystemAtlassifyNotification,
+      ),
+    ).not.toThrow();
+    expect(logErrorSpy).toHaveBeenCalledWith('foo', 'bar', mockError, [
+      mockSystemAtlassifyNotification.message,
     ]);
   });
 });

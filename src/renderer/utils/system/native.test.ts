@@ -1,8 +1,10 @@
 import {
   mockAccountNotifications,
   mockSingleAccountNotifications,
+  mockSystemAtlassifyNotification,
 } from '../../__mocks__/notifications-mocks';
 
+import { resolveNotificationUrl } from './links';
 import * as native from './native';
 
 describe('renderer/utils/system/native.ts', () => {
@@ -33,6 +35,18 @@ describe('renderer/utils/system/native.ts', () => {
       'Atlassify',
       'You have 2 notifications',
       null,
+    );
+  });
+
+  it('should raise a native notification for a null-entity notification using the same URL as in-app clicks, without throwing', () => {
+    expect(() =>
+      native.raiseNativeNotification([mockSystemAtlassifyNotification]),
+    ).not.toThrow();
+
+    expect(window.atlassify.raiseNativeNotification).toHaveBeenCalledWith(
+      expect.any(String),
+      expect.any(String),
+      resolveNotificationUrl(mockSystemAtlassifyNotification),
     );
   });
 });
