@@ -121,11 +121,11 @@ importers:
         specifier: 2.5.10
         version: 2.5.10
       '@compiled/react':
-        specifier: 1.0.2
-        version: 1.0.2(react@19.2.8)
+        specifier: 2.0.0
+        version: 2.0.0(react@19.2.8)
       '@compiled/vite-plugin':
         specifier: 2.0.3
-        version: 2.0.3(@compiled/react@1.0.2(react@19.2.8))(supports-color@10.2.2)(vite@8.2.2(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0))
+        version: 2.0.3(@compiled/react@2.0.0(react@19.2.8))(supports-color@10.2.2)(vite@8.2.2(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0))
       '@discordapp/twemoji':
         specifier: 16.0.1
         version: 16.0.1
@@ -719,6 +719,11 @@ packages:
 
   '@compiled/react@1.0.2':
     resolution: {integrity: sha512-xGOChqGDvoJON+1QOgV4cYmy1W3oonJw43TQ7KR8TuPTlIAHuFBgfckmyMPG4WppF0FYem518LZknySU0uQhlg==}
+    peerDependencies:
+      react: '>=18.0.0'
+
+  '@compiled/react@2.0.0':
+    resolution: {integrity: sha512-dYLzz9K1tlDklC9/00c0b0HdyL3JPYyW42CwiPPrufS083ZKd6kgq6wfyh6M2VvsoVVQWl+e1Zag4qS+lO2yYA==}
     peerDependencies:
       react: '>=18.0.0'
 
@@ -6036,20 +6041,20 @@ snapshots:
   '@biomejs/cli-win32-x64@2.5.10':
     optional: true
 
-  '@compiled/babel-plugin-strip-runtime@3.0.0(@compiled/react@1.0.2(react@19.2.8))(supports-color@10.2.2)':
+  '@compiled/babel-plugin-strip-runtime@3.0.0(@compiled/react@2.0.0(react@19.2.8))(supports-color@10.2.2)':
     dependencies:
       '@babel/core': 7.29.7(supports-color@10.2.2)
       '@babel/helper-plugin-utils': 7.29.7
       '@babel/template': 7.29.7
       '@babel/traverse': 7.29.8(supports-color@10.2.2)
       '@babel/types': 7.29.8
-      '@compiled/css': 3.0.0(@compiled/react@1.0.2(react@19.2.8))
+      '@compiled/css': 3.0.0(@compiled/react@2.0.0(react@19.2.8))
       '@compiled/utils': 0.14.0
     transitivePeerDependencies:
       - '@compiled/react'
       - supports-color
 
-  '@compiled/babel-plugin@3.0.0(@compiled/react@1.0.2(react@19.2.8))(supports-color@10.2.2)':
+  '@compiled/babel-plugin@3.0.0(@compiled/react@2.0.0(react@19.2.8))(supports-color@10.2.2)':
     dependencies:
       '@babel/core': 7.29.7(supports-color@10.2.2)
       '@babel/generator': 7.29.8
@@ -6060,17 +6065,17 @@ snapshots:
       '@babel/template': 7.29.7
       '@babel/traverse': 7.29.8(supports-color@10.2.2)
       '@babel/types': 7.29.8
-      '@compiled/css': 3.0.0(@compiled/react@1.0.2(react@19.2.8))
-      '@compiled/react': 1.0.2(react@19.2.8)
+      '@compiled/css': 3.0.0(@compiled/react@2.0.0(react@19.2.8))
+      '@compiled/react': 2.0.0(react@19.2.8)
       '@compiled/utils': 0.14.0
       '@emotion/is-prop-valid': 1.4.0
       resolve: 1.22.12
     transitivePeerDependencies:
       - supports-color
 
-  '@compiled/css@3.0.0(@compiled/react@1.0.2(react@19.2.8))':
+  '@compiled/css@3.0.0(@compiled/react@2.0.0(react@19.2.8))':
     dependencies:
-      '@compiled/react': 1.0.2(react@19.2.8)
+      '@compiled/react': 2.0.0(react@19.2.8)
       '@compiled/utils': 0.14.0
       autoprefixer: 10.5.4(postcss@8.5.26)
       cssnano-preset-default: 5.2.14(postcss@8.5.26)
@@ -6091,18 +6096,23 @@ snapshots:
       csstype: 3.2.3
       react: 19.2.8
 
+  '@compiled/react@2.0.0(react@19.2.8)':
+    dependencies:
+      csstype: 3.2.3
+      react: 19.2.8
+
   '@compiled/utils@0.14.0':
     dependencies:
       convert-source-map: 2.0.0
       source-map: 0.7.6
 
-  '@compiled/vite-plugin@2.0.3(@compiled/react@1.0.2(react@19.2.8))(supports-color@10.2.2)(vite@8.2.2(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0))':
+  '@compiled/vite-plugin@2.0.3(@compiled/react@2.0.0(react@19.2.8))(supports-color@10.2.2)(vite@8.2.2(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0))':
     dependencies:
       '@babel/core': 7.29.7(supports-color@10.2.2)
       '@babel/parser': 7.29.8
-      '@compiled/babel-plugin': 3.0.0(@compiled/react@1.0.2(react@19.2.8))(supports-color@10.2.2)
-      '@compiled/babel-plugin-strip-runtime': 3.0.0(@compiled/react@1.0.2(react@19.2.8))(supports-color@10.2.2)
-      '@compiled/css': 3.0.0(@compiled/react@1.0.2(react@19.2.8))
+      '@compiled/babel-plugin': 3.0.0(@compiled/react@2.0.0(react@19.2.8))(supports-color@10.2.2)
+      '@compiled/babel-plugin-strip-runtime': 3.0.0(@compiled/react@2.0.0(react@19.2.8))(supports-color@10.2.2)
+      '@compiled/css': 3.0.0(@compiled/react@2.0.0(react@19.2.8))
       '@compiled/utils': 0.14.0
       enhanced-resolve: 5.24.5
       vite: 8.2.2(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0)
