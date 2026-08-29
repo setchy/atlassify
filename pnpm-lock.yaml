@@ -82,8 +82,8 @@ importers:
         specifier: 16.3.0
         version: 16.3.0(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/logo':
-        specifier: 21.5.0
-        version: 21.5.0(react@19.2.8)(supports-color@10.2.2)
+        specifier: 21.5.1
+        version: 21.5.1(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/modal-dialog':
         specifier: 16.5.1
         version: 16.5.1(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
@@ -389,8 +389,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/logo@21.5.0':
-    resolution: {integrity: sha512-lbh87mlgJK5vxzvfZ1kF740z+Ki7FYbq5F5Eh1j+s6zjTQLc7bpkLijrqF6l8+hhzBlRbNbi4j53/16WdxnBYQ==}
+  '@atlaskit/logo@21.5.1':
+    resolution: {integrity: sha512-lRBV3V9anHP36yXjGKNbC42sOt1m4lyU0mZi7nD2d/kqYyqd9Pfe9eQ3116uMAMS1NP+CYpMsq7seCvWQIxcUA==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5400,7 +5400,7 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/logo@21.5.0(react@19.2.8)(supports-color@10.2.2)':
+  '@atlaskit/logo@21.5.1(react@19.2.8)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/css': 1.0.2(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/ds-lib': 8.0.0(react@19.2.8)
