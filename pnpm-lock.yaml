@@ -94,8 +94,8 @@ importers:
         specifier: 10.1.0
         version: 10.1.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/select':
-        specifier: 22.8.1
-        version: 22.8.1(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
+        specifier: 22.9.1
+        version: 22.9.1(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/spinner':
         specifier: 20.3.0
         version: 20.3.0(react@19.2.8)(supports-color@10.2.2)
@@ -458,8 +458,8 @@ packages:
       react: ^18.2.0 || ^19.0.0
       react-dom: ^18.2.0 || ^19.0.0
 
-  '@atlaskit/select@22.8.1':
-    resolution: {integrity: sha512-mDvDm2luTuaFVA7Od4wbSO95Uqg7Ak3qDxo9QSwcOSZAeL5qq9c3c9j0azkcIhtVyxxu5ulIVWqBRsBkCLb68A==}
+  '@atlaskit/select@22.9.1':
+    resolution: {integrity: sha512-wEwEAvSLTphbcbyfY1YV1Ll7fN5eonaRKDnIeSIEsO8rnKB6iP/JSTpGzqutFTRmvgZ80WKRK+mtjKbA5w01nQ==}
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
       react-dom: ^18.2.0 || ^19.0.0
@@ -5636,7 +5636,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/select@22.8.1(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)':
+  '@atlaskit/select@22.9.1(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/analytics-next': 12.4.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@atlaskit/ds-lib': 8.0.0(react@19.2.8)
@@ -8480,7 +8480,7 @@ snapshots:
       es6-error: 4.1.1
       matcher: 3.0.0
       roarr: 2.15.4
-      semver: 7.7.4
+      semver: 7.8.5
       serialize-error: 7.0.1
     optional: true
 
@@ -9175,13 +9175,13 @@ snapshots:
 
   node-abi@4.34.0:
     dependencies:
-      semver: 7.7.4
+      semver: 7.8.5
 
   node-addon-api@7.1.1: {}
 
   node-api-version@0.2.1:
     dependencies:
-      semver: 7.7.4
+      semver: 7.8.5
 
   node-domexception@1.0.0: {}
 
@@ -9198,7 +9198,7 @@ snapshots:
       graceful-fs: 4.2.11
       nopt: 9.0.0
       proc-log: 6.1.0
-      semver: 7.7.4
+      semver: 7.8.5
       tar: 7.5.22
       tinyglobby: 0.2.17
       undici: 6.28.0
