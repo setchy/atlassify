@@ -82,8 +82,8 @@ importers:
         specifier: 16.3.0
         version: 16.3.0(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/logo':
-        specifier: 21.5.0
-        version: 21.5.0(react@19.2.8)(supports-color@10.2.2)
+        specifier: 21.5.1
+        version: 21.5.1(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/modal-dialog':
         specifier: 16.5.1
         version: 16.5.1(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
@@ -389,8 +389,8 @@ packages:
     peerDependencies:
       react: ^18.2.0
 
-  '@atlaskit/logo@21.5.0':
-    resolution: {integrity: sha512-lbh87mlgJK5vxzvfZ1kF740z+Ki7FYbq5F5Eh1j+s6zjTQLc7bpkLijrqF6l8+hhzBlRbNbi4j53/16WdxnBYQ==}
+  '@atlaskit/logo@21.5.1':
+    resolution: {integrity: sha512-lRBV3V9anHP36yXjGKNbC42sOt1m4lyU0mZi7nD2d/kqYyqd9Pfe9eQ3116uMAMS1NP+CYpMsq7seCvWQIxcUA==}
     peerDependencies:
       react: ^18.2.0
 
@@ -5400,7 +5400,7 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/logo@21.5.0(react@19.2.8)(supports-color@10.2.2)':
+  '@atlaskit/logo@21.5.1(react@19.2.8)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/css': 1.0.2(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/ds-lib': 8.0.0(react@19.2.8)
@@ -8480,7 +8480,7 @@ snapshots:
       es6-error: 4.1.1
       matcher: 3.0.0
       roarr: 2.15.4
-      semver: 7.7.4
+      semver: 7.8.5
       serialize-error: 7.0.1
     optional: true
 
@@ -9175,13 +9175,13 @@ snapshots:
 
   node-abi@4.34.0:
     dependencies:
-      semver: 7.7.4
+      semver: 7.8.5
 
   node-addon-api@7.1.1: {}
 
   node-api-version@0.2.1:
     dependencies:
-      semver: 7.7.4
+      semver: 7.8.5
 
   node-domexception@1.0.0: {}
 
@@ -9198,7 +9198,7 @@ snapshots:
       graceful-fs: 4.2.11
       nopt: 9.0.0
       proc-log: 6.1.0
-      semver: 7.7.4
+      semver: 7.8.5
       tar: 7.5.22
       tinyglobby: 0.2.17
       undici: 6.28.0
