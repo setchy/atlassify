@@ -124,8 +124,8 @@ importers:
         specifier: 1.0.2
         version: 1.0.2(react@19.2.8)
       '@compiled/vite-plugin':
-        specifier: 2.0.2
-        version: 2.0.2(@compiled/react@1.0.2(react@19.2.8))(supports-color@10.2.2)(vite@8.2.2(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0))
+        specifier: 2.0.3
+        version: 2.0.3(@compiled/react@1.0.2(react@19.2.8))(supports-color@10.2.2)(vite@8.2.2(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0))
       '@discordapp/twemoji':
         specifier: 16.0.1
         version: 16.0.1
@@ -699,18 +699,18 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@compiled/babel-plugin-strip-runtime@2.0.0':
-    resolution: {integrity: sha512-226APcB/GXsMxw0jmz8W8RTWn7AJ2coy4u47M3Sv79RXZR0OMBc/5la1foyqHv0hoUyT+YdvLgN+PbkMsvf50A==}
+  '@compiled/babel-plugin-strip-runtime@3.0.0':
+    resolution: {integrity: sha512-9/NDatPMZFnUlnE0XlRxLg2P5j46gHyGA3sxYiAthwj9nT9cPGcegbciRDnQ5PMw5cPgLDr9hohRyVVfi07eaA==}
 
-  '@compiled/babel-plugin@2.0.0':
-    resolution: {integrity: sha512-AkV32XiOXeGyeopsPjwcaDBIkphaSd4X/qV/PsqSzPP1WiaStVRGSuPwF2j1qZqywxIdki04G1QHIU6a+5rRwQ==}
+  '@compiled/babel-plugin@3.0.0':
+    resolution: {integrity: sha512-TygIFz5ko7pVSrdX2iYcsIvGtAteJt2dEqWmDcfYp+uimW/BAfHvkrN0Y+TIM8jbv6C9/SHDd5FFaR8RACy9gA==}
     peerDependencies:
-      '@compiled/react': '>=1.0.0'
+      '@compiled/react': '>=2.0.0'
 
-  '@compiled/css@2.0.0':
-    resolution: {integrity: sha512-RoA34KuxcqDSISkYBeqpfMjse7hbXtWHFfge2TUDc/StOB1TR1moUXoWNLKpF6zx6rpLh3nZRi5/Nrb5lnvmCg==}
+  '@compiled/css@3.0.0':
+    resolution: {integrity: sha512-bqifk2cm/mNjpnMNjyhhybCmBDUrwzNqs8VdmFMUSyKePJPoe/vPfo/9HmDlu5V4xeGgTyWF4Vq7gpqbTxZ7yw==}
     peerDependencies:
-      '@compiled/react': '>=1.0.0'
+      '@compiled/react': '>=2.0.0'
 
   '@compiled/react@0.20.0':
     resolution: {integrity: sha512-mEJuYGFxIDST1H7CpksyE6a3HRVRQmeDal26O+bCHTEZlPp7iKvs5KD1FOmd2palng+S60dPFFG+UuoZDRILwA==}
@@ -725,8 +725,8 @@ packages:
   '@compiled/utils@0.14.0':
     resolution: {integrity: sha512-WngOT+6F8odtp5Sz5FxQbJGCm61wsIHdqaMHit7TwYq9rbreBDk/eGka+mhanczzaX5q9GxlG8+yZEQ5qrv82g==}
 
-  '@compiled/vite-plugin@2.0.2':
-    resolution: {integrity: sha512-BOJIvBdzjOpEd2/ke6yPavYh29X89N/kELOtapbmcKpJwc41lANV2a665NtKsYCFi6ovSlNNlrnLKheGtmizBg==}
+  '@compiled/vite-plugin@2.0.3':
+    resolution: {integrity: sha512-O1VRCI9uxFWMbVVjfM9ve1FF4JdraUG4X9DW5w5UYxyZ12DEmB9pd+wfwBs2g2yGkjkNZPrHIk53nwW2DYH5Ow==}
     peerDependencies:
       vite: '>= 4.0.0'
 
@@ -6036,20 +6036,20 @@ snapshots:
   '@biomejs/cli-win32-x64@2.5.10':
     optional: true
 
-  '@compiled/babel-plugin-strip-runtime@2.0.0(@compiled/react@1.0.2(react@19.2.8))(supports-color@10.2.2)':
+  '@compiled/babel-plugin-strip-runtime@3.0.0(@compiled/react@1.0.2(react@19.2.8))(supports-color@10.2.2)':
     dependencies:
       '@babel/core': 7.29.7(supports-color@10.2.2)
       '@babel/helper-plugin-utils': 7.29.7
       '@babel/template': 7.29.7
       '@babel/traverse': 7.29.8(supports-color@10.2.2)
       '@babel/types': 7.29.8
-      '@compiled/css': 2.0.0(@compiled/react@1.0.2(react@19.2.8))
+      '@compiled/css': 3.0.0(@compiled/react@1.0.2(react@19.2.8))
       '@compiled/utils': 0.14.0
     transitivePeerDependencies:
       - '@compiled/react'
       - supports-color
 
-  '@compiled/babel-plugin@2.0.0(@compiled/react@1.0.2(react@19.2.8))(supports-color@10.2.2)':
+  '@compiled/babel-plugin@3.0.0(@compiled/react@1.0.2(react@19.2.8))(supports-color@10.2.2)':
     dependencies:
       '@babel/core': 7.29.7(supports-color@10.2.2)
       '@babel/generator': 7.29.8
@@ -6060,7 +6060,7 @@ snapshots:
       '@babel/template': 7.29.7
       '@babel/traverse': 7.29.8(supports-color@10.2.2)
       '@babel/types': 7.29.8
-      '@compiled/css': 2.0.0(@compiled/react@1.0.2(react@19.2.8))
+      '@compiled/css': 3.0.0(@compiled/react@1.0.2(react@19.2.8))
       '@compiled/react': 1.0.2(react@19.2.8)
       '@compiled/utils': 0.14.0
       '@emotion/is-prop-valid': 1.4.0
@@ -6068,7 +6068,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@compiled/css@2.0.0(@compiled/react@1.0.2(react@19.2.8))':
+  '@compiled/css@3.0.0(@compiled/react@1.0.2(react@19.2.8))':
     dependencies:
       '@compiled/react': 1.0.2(react@19.2.8)
       '@compiled/utils': 0.14.0
@@ -6096,13 +6096,13 @@ snapshots:
       convert-source-map: 2.0.0
       source-map: 0.7.6
 
-  '@compiled/vite-plugin@2.0.2(@compiled/react@1.0.2(react@19.2.8))(supports-color@10.2.2)(vite@8.2.2(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0))':
+  '@compiled/vite-plugin@2.0.3(@compiled/react@1.0.2(react@19.2.8))(supports-color@10.2.2)(vite@8.2.2(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0))':
     dependencies:
       '@babel/core': 7.29.7(supports-color@10.2.2)
       '@babel/parser': 7.29.8
-      '@compiled/babel-plugin': 2.0.0(@compiled/react@1.0.2(react@19.2.8))(supports-color@10.2.2)
-      '@compiled/babel-plugin-strip-runtime': 2.0.0(@compiled/react@1.0.2(react@19.2.8))(supports-color@10.2.2)
-      '@compiled/css': 2.0.0(@compiled/react@1.0.2(react@19.2.8))
+      '@compiled/babel-plugin': 3.0.0(@compiled/react@1.0.2(react@19.2.8))(supports-color@10.2.2)
+      '@compiled/babel-plugin-strip-runtime': 3.0.0(@compiled/react@1.0.2(react@19.2.8))(supports-color@10.2.2)
+      '@compiled/css': 3.0.0(@compiled/react@1.0.2(react@19.2.8))
       '@compiled/utils': 0.14.0
       enhanced-resolve: 5.24.5
       vite: 8.2.2(@types/node@24.13.3)(jiti@2.7.0)(yaml@2.9.0)
@@ -8480,7 +8480,7 @@ snapshots:
       es6-error: 4.1.1
       matcher: 3.0.0
       roarr: 2.15.4
-      semver: 7.7.4
+      semver: 7.8.5
       serialize-error: 7.0.1
     optional: true
 
@@ -9175,13 +9175,13 @@ snapshots:
 
   node-abi@4.34.0:
     dependencies:
-      semver: 7.7.4
+      semver: 7.8.5
 
   node-addon-api@7.1.1: {}
 
   node-api-version@0.2.1:
     dependencies:
-      semver: 7.7.4
+      semver: 7.8.5
 
   node-domexception@1.0.0: {}
 
@@ -9198,7 +9198,7 @@ snapshots:
       graceful-fs: 4.2.11
       nopt: 9.0.0
       proc-log: 6.1.0
-      semver: 7.7.4
+      semver: 7.8.5
       tar: 7.5.22
       tinyglobby: 0.2.17
       undici: 6.28.0
