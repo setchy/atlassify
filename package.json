@@ -91,7 +91,7 @@
     "@atlaskit/textfield": "10.1.0",
     "@atlaskit/toggle": "17.2.0",
     "@atlaskit/tokens": "16.8.1",
-    "@atlaskit/tooltip": "24.2.0",
+    "@atlaskit/tooltip": "24.2.1",
     "@biomejs/biome": "2.5.10",
     "@compiled/react": "2.0.0",
     "@compiled/vite-plugin": "2.0.3",
