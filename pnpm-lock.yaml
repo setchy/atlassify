@@ -100,8 +100,8 @@ importers:
         specifier: 20.3.0
         version: 20.3.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/tag':
-        specifier: 15.7.3
-        version: 15.7.3(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
+        specifier: 15.7.4
+        version: 15.7.4(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/tag-group':
         specifier: 13.3.0
         version: 13.3.0(react@19.2.8)(supports-color@10.2.2)
@@ -474,8 +474,8 @@ packages:
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
-  '@atlaskit/tag@15.7.3':
-    resolution: {integrity: sha512-lyDPTGXS48TxoBYhIxKzy+3HjaJ0xRzeGrJbve/DIhZ9MQueISo8wGK7Ni6FGUn/LElT3dK2+n5KoMXdkVra7Q==}
+  '@atlaskit/tag@15.7.4':
+    resolution: {integrity: sha512-mFC7X6JJ7Mg7n9xz9xz45Sf8MYL8PB7joGmnsCwFxX05A/+GdB2yDprO82B/o7XC4D/fsM4C1o0HiCTOK+45xg==}
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
@@ -5602,7 +5602,7 @@ snapshots:
       '@atlaskit/platform-feature-flags': 2.1.1(react@19.2.8)
       '@atlaskit/primitives': 22.4.1(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/spinner': 20.3.0(react@19.2.8)(supports-color@10.2.2)
-      '@atlaskit/tag': 15.7.3(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
+      '@atlaskit/tag': 15.7.4(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/tokens': 16.8.1(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/top-layer': 4.4.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
@@ -5679,7 +5679,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@atlaskit/tag@15.7.3(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)':
+  '@atlaskit/tag@15.7.4(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/analytics-next': 12.4.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@atlaskit/avatar': 27.2.1(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
