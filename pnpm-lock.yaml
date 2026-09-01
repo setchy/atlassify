@@ -85,8 +85,8 @@ importers:
         specifier: 21.5.1
         version: 21.5.1(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/modal-dialog':
-        specifier: 16.5.3
-        version: 16.5.3(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
+        specifier: 16.5.4
+        version: 16.5.4(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/primitives':
         specifier: 22.4.1
         version: 22.4.1(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
@@ -410,10 +410,10 @@ packages:
       react: ^18.2.0 || ^19.0.0
       react-dom: ^18.2.0 || ^19.0.0
 
-  '@atlaskit/modal-dialog@16.5.3':
-    resolution: {integrity: sha512-Yu3lpBx00ImBs0CjtY/O0dpQDd9nD8p1AIsNn4p0D/gG/VMmzVvK5vUpz26rRlk0LJ6tuN9w65LRAZ5ALdoKaA==}
+  '@atlaskit/modal-dialog@16.5.4':
+    resolution: {integrity: sha512-ngVjBxvFo8LkZ0znvaW+7PtDlFTajH7WRaHs+Chmr+Q7JG5xJ3TqFLK8gpbILHpOkxFBEw3Rb8J7gos1H1iUmg==}
     peerDependencies:
-      react: ^18.2.0
+      react: ^18.2.0 || ^19.0.0
 
   '@atlaskit/motion@8.6.0':
     resolution: {integrity: sha512-Rwc++J2DtFjYDzfNHVogYh5UcK88T4HuSQEmWtkqZkjTdBHz4Iianu8NViQOTkFp6wyn1ugmccDT83TDIzFhpQ==}
@@ -5483,7 +5483,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/modal-dialog@16.5.3(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)':
+  '@atlaskit/modal-dialog@16.5.4(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/analytics-next': 12.5.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@atlaskit/blanket': 16.4.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
