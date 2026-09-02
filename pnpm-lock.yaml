@@ -103,8 +103,8 @@ importers:
         specifier: 15.7.4
         version: 15.7.4(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/tag-group':
-        specifier: 13.3.0
-        version: 13.3.0(react@19.2.8)(supports-color@10.2.2)
+        specifier: 13.4.0
+        version: 13.4.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/textfield':
         specifier: 10.1.0
         version: 10.1.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
@@ -489,8 +489,8 @@ packages:
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
-  '@atlaskit/tag-group@13.3.0':
-    resolution: {integrity: sha512-q4Wd7LGYqw6FLZ/Zksqo4EiishjSpzJAUUacavu8/B0Vp76OEb0cIIzJTARUhuOYBaWq+Q8u+/fDNMdPzZnzJQ==}
+  '@atlaskit/tag-group@13.4.0':
+    resolution: {integrity: sha512-Ko53GZzQs5sV6Ib4g3Qp1YY3L7mzeLTN0JvKwLfDezhowvt9uAhSl65heR7CsZQ4zy+9i2bLzXUsaHzVNnFlOA==}
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
@@ -5752,7 +5752,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@atlaskit/tag-group@13.3.0(react@19.2.8)(supports-color@10.2.2)':
+  '@atlaskit/tag-group@13.4.0(react@19.2.8)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/motion': 8.6.0(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/platform-feature-flags': 2.2.0(react@19.2.8)
