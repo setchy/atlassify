@@ -3,6 +3,8 @@ import { type FC, useState } from 'react';
 import { Box, Inline } from '@atlaskit/primitives';
 import { token } from '@atlaskit/tokens';
 
+import { cn } from 'cn';
+
 import { useAppContext } from '../../hooks/useAppContext';
 import { useSettingsStore } from '../../stores';
 
@@ -12,7 +14,6 @@ import { readStateFilter } from '../../utils/notifications/filters';
 import { shouldRemoveNotificationsFromState } from '../../utils/notifications/postProcess';
 import { getProductStrategy } from '../../utils/products';
 import { openNotification } from '../../utils/system/links';
-import { cn } from '../../utils/ui/cn';
 import { NotificationActions } from './NotificationActions';
 import { NotificationAvatar } from './NotificationAvatar';
 import { NotificationContent } from './NotificationContent';

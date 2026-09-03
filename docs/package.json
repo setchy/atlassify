@@ -42,13 +42,10 @@
     "accessible-astro-components": "5.7.1",
     "astro": "7.2.9",
     "astro-icon": "1.2.0",
-    "class-variance-authority": "0.7.1",
-    "clsx": "2.1.1",
     "date-fns": "4.4.0",
     "marked": "18.0.11",
     "octokit": "5.0.5",
     "sharp": "0.35.4",
-    "tailwind-merge": "3.6.0",
     "tailwindcss": "4.3.3",
     "tailwindcss-motion": "1.1.1"
   },
