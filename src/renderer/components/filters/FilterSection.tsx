@@ -6,12 +6,13 @@ import Heading from '@atlaskit/heading';
 import { IconTile } from '@atlaskit/icon';
 import { Box, Inline, Stack } from '@atlaskit/primitives';
 
+import { cn } from 'cn';
+
 import { useAppContext } from '../../hooks/useAppContext';
 import { type FiltersState, useFiltersStore } from '../../stores';
 
 import type { Filter } from '../../utils/notifications/filters';
 import { formatProperCase } from '../../utils/notifications/formatters';
-import { cn } from '../../utils/ui/cn';
 
 export interface FilterSectionProps<K extends keyof FiltersState> {
   title: string;
