@@ -532,6 +532,7 @@ exports[`renderer/components/notifications/NotificationContent.tsx > renders gro
                             <span
                               aria-hidden="true"
                               class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                              style="color: var(--ds-icon-subtle, #505258);"
                             >
                               <svg
                                 class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1ejb _4t3i1ejb"
@@ -574,6 +575,7 @@ exports[`renderer/components/notifications/NotificationContent.tsx > renders gro
                             <span
                               aria-hidden="true"
                               class="_1e0c1o8l _vchhusvi _1o9zidpf _vwz4kb7n _y4ti1igz _bozg1mb9 _12va1onz _jcxd1r8n"
+                              style="color: var(--ds-icon-subtle, #505258);"
                             >
                               <svg
                                 class="_1reo15vq _18m915vq _syaz1r31 _lcxvglyw _s7n4yfq0 _vc881r31 _1bsb1ejb _4t3i1ejb"
