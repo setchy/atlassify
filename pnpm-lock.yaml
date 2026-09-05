@@ -214,8 +214,8 @@ importers:
         specifier: 9.1.7
         version: 9.1.7
       i18next-cli:
-        specifier: 1.72.1
-        version: 1.72.1(@types/node@24.13.3)(react-dom@19.2.8(react@19.2.8))(typescript@7.0.2)
+        specifier: 1.72.2
+        version: 1.72.2(@types/node@24.13.3)(react-dom@19.2.8(react@19.2.8))(typescript@7.0.2)
       nock:
         specifier: 14.0.17
         version: 14.0.17
@@ -3042,8 +3042,8 @@ packages:
   i18next-browser-languagedetector@8.2.1:
     resolution: {integrity: sha512-bZg8+4bdmaOiApD7N7BPT9W8MLZG+nPTOFlLiJiT8uzKXFjhxw4v2ierCXOwB5sFDMtuA5G4kgYZ0AznZxQ/cw==}
 
-  i18next-cli@1.72.1:
-    resolution: {integrity: sha512-4ryXcgNas4HGIh4aztnfichnbcbfI268T6KGHBgotSQ+DHYa1ULMN7QMOYbPwMtkxda2wqBHzjFY3DhD6Pm8AA==}
+  i18next-cli@1.72.2:
+    resolution: {integrity: sha512-2QuSwIiKy1GKkOKZutv1iXhwQuNe6Rzl+KpNqdw9smOsle+bVHlHvy1JhkCfTCjAJO3c0sxgQVnC5enu3u3sEQ==}
     engines: {node: '>=22'}
     hasBin: true
 
@@ -8595,7 +8595,7 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.29.7
 
-  i18next-cli@1.72.1(@types/node@24.13.3)(react-dom@19.2.8(react@19.2.8))(typescript@7.0.2):
+  i18next-cli@1.72.2(@types/node@24.13.3)(react-dom@19.2.8(react@19.2.8))(typescript@7.0.2):
     dependencies:
       '@croct/json5-parser': 0.2.2
       '@swc/core': 1.16.1
