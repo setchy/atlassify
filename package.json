@@ -58,7 +58,7 @@
   "dependencies": {
     "cn": "0.2.5",
     "electron-log": "5.4.4",
-    "electron-menubar": "10.2.1",
+    "electron-menubar": "11.0.0",
     "electron-updater": "6.8.9",
     "i18next": "26.4.2",
     "i18next-browser-languagedetector": "8.2.1",
