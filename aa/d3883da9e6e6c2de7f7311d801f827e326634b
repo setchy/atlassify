@@ -1,0 +1,19 @@
+sonar-project.properties
+  s_4fa9429ac67199::t_713091f9a40b82 7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "aad3883da9e6e6c2de7f7311d801f827e326634b",
+  "prompts": {},
+  "sessions": {
+    "s_4fa9429ac67199": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "10a81558-23c8-4081-ac2b-f7052c4a723f",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
