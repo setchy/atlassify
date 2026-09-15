@@ -1,0 +1,118 @@
+src/renderer/components/settings/AppearanceSettings.test.tsx
+  s_9af714536e0fb1::t_29f76b1e6fa8ce 79-90
+src/renderer/hooks/useOnlineSync.ts
+  s_9af714536e0fb1::t_4165e8e837f086 10,25,29-32
+  s_9af714536e0fb1::t_69cecd623af1f7 18
+src/renderer/components/settings/AppearanceSettings.tsx
+  s_9af714536e0fb1::t_4165e8e837f086 60
+src/renderer/hooks/useNotifications.test.tsx
+  s_9af714536e0fb1::t_0c5c4148de031a 10-13,18,20-24,159-194,320,511,519,534,541,560
+  s_9af714536e0fb1::t_1152371fd038a3 98,100-101
+  s_9af714536e0fb1::t_2435ec1922c592 49-86
+  s_9af714536e0fb1::t_df2b20aaa97dd1 35,134,136,142-145
+  s_9af714536e0fb1::t_7e0dc5b87268fc 97,111-113,129-131,146-148
+  s_9af714536e0fb1::t_29f76b1e6fa8ce 3,41-45,87-96,99,102-110,114-128,132-133,135,137-141,149-158
+  s_9af714536e0fb1::t_efa8c2024a9b73 303-319
+  s_9af714536e0fb1::t_666c0e9ddcc7d4 16,19,26-32
+  s_9af714536e0fb1::t_6aae69af09b4ec 25
+  s_9af714536e0fb1::t_576eb9f90070fe 508-510
+  s_9af714536e0fb1::t_d5c496c0f641a8 512-514,516-518
+  s_9af714536e0fb1::t_5211af754055c9 520-522,531-533
+  s_9af714536e0fb1::t_a047a1c090f6e7 535-540
+  s_9af714536e0fb1::t_0ee386264cd0d0 542-544,557-559
+  s_9af714536e0fb1::t_e8b2b2b0e30b63 561-563
+src/renderer/hooks/useNotifications.ts
+  s_9af714536e0fb1::t_b1ea8fe83cfe7e 126,130
+  s_9af714536e0fb1::t_666c0e9ddcc7d4 147,241-251,396-408,411,414-446,450
+  s_9af714536e0fb1::t_4165e8e837f086 169,210
+  s_9af714536e0fb1::t_e715dcc639370b 238-240
+  s_9af714536e0fb1::t_8dbe57e80f52a8 447-449
+  s_9af714536e0fb1::t_8e09b20e5f0ab5 451-453
+src/renderer/components/notifications/NotificationRow.test.tsx
+  s_9af714536e0fb1::t_e03ac65070b993 155,173,177-186
+  s_9af714536e0fb1::t_666c0e9ddcc7d4 156-165
+  s_9af714536e0fb1::t_2dab92b2d032a2 152-154
+  s_9af714536e0fb1::t_c707f75c59798b 166-168,170-172
+  s_9af714536e0fb1::t_bb2b377ba79c9e 174-176
+  s_9af714536e0fb1::t_57d7f9bc6c3afd 187-189
+src/renderer/utils/notifications/mutations.test.ts
+  s_9af714536e0fb1::t_666c0e9ddcc7d4 4-8,53-66,117
+  s_9af714536e0fb1::t_27c02eaf8dd8e0 3,9-12,21,27,36,45-46,49-50,52,78-116
+  s_9af714536e0fb1::t_ea0b9aa11b62f4 1-2
+  s_9af714536e0fb1::t_038aaf2982ca8d 13-15,18-20
+  s_9af714536e0fb1::t_1cb3e2195c7150 22-26
+  s_9af714536e0fb1::t_b53548b3a5222a 28-30,33-35
+  s_9af714536e0fb1::t_d1c1f20a43a55a 37-39,42-44
+  s_9af714536e0fb1::t_6f2fc377fee005 47-48
+  s_9af714536e0fb1::t_7ce42fd2d67335 51
+  s_9af714536e0fb1::t_4c065f14a94751 67-69,75-77
+src/preload/utils.ts
+  s_9af714536e0fb1::t_4165e8e837f086 44,46-49
+src/renderer/stores/useNotificationActionFailuresStore.ts
+  s_9af714536e0fb1::t_666c0e9ddcc7d4 1-62
+src/renderer/constants.ts
+  s_9af714536e0fb1::t_4165e8e837f086 31-32
+ARCHITECTURE.md
+  s_9af714536e0fb1::t_c0db8d9c4c32f7 62,65,80-83
+src/renderer/stores/types.ts
+  s_9af714536e0fb1::t_666c0e9ddcc7d4 6
+  s_9af714536e0fb1::t_64dc8f9e6e81a8 362-383
+src/renderer/hooks/useAppReset.test.ts
+  s_9af714536e0fb1::t_29f76b1e6fa8ce 26-35
+src/renderer/utils/notifications/mutations.ts
+  s_9af714536e0fb1::t_27c02eaf8dd8e0 1-75,80-114,116-118,120-121
+  s_9af714536e0fb1::t_666c0e9ddcc7d4 76-79,115,119,122
+src/renderer/stores/index.ts
+  s_9af714536e0fb1::t_64dc8f9e6e81a8 6,9
+  s_9af714536e0fb1::t_666c0e9ddcc7d4 7-8
+src/renderer/hooks/useAccounts.test.ts
+  s_9af714536e0fb1::t_29f76b1e6fa8ce 1-4,6,8-16,20,24-40
+  s_9af714536e0fb1::t_666c0e9ddcc7d4 5,7,17-19,21-23,41
+src/preload/index.ts
+  s_9af714536e0fb1::t_4165e8e837f086 195,204,213
+src/renderer/hooks/useAppReset.ts
+  s_9af714536e0fb1::t_4165e8e837f086 19
+src/renderer/utils/api/queryKeys.ts
+  s_9af714536e0fb1::t_b1ea8fe83cfe7e 21,23,42,48
+  s_9af714536e0fb1::t_666c0e9ddcc7d4 37
+src/renderer/utils/api/errors.ts
+  s_9af714536e0fb1::t_c0e87c1bbb9c27 11,17,25
+  s_9af714536e0fb1::t_666c0e9ddcc7d4 10
+src/renderer/__helpers__/test-utils.tsx
+  s_9af714536e0fb1::t_29f76b1e6fa8ce 99-107
+  s_9af714536e0fb1::t_2542a986208f53 108-109
+src/renderer/stores/useNotificationActionFailuresStore.test.ts
+  s_9af714536e0fb1::t_666c0e9ddcc7d4 1-52
+src/renderer/stores/subscriptions.ts
+  s_9af714536e0fb1::t_b1ea8fe83cfe7e 158
+src/renderer/utils/api/queryKeys.test.ts
+  s_9af714536e0fb1::t_b1ea8fe83cfe7e 1,4-11,23-28,32-33,35-36
+  s_9af714536e0fb1::t_666c0e9ddcc7d4 18-22,41-50
+src/renderer/stores/useAccountsStore.ts
+  s_9af714536e0fb1::t_64dc8f9e6e81a8 23,119-121,201
+src/renderer/utils/api/client.ts
+  s_9af714536e0fb1::t_4165e8e837f086 1,43-48,53-54
+src/renderer/components/notifications/NotificationActions.tsx
+  s_9af714536e0fb1::t_666c0e9ddcc7d4 20-22,28,36,39-41,48-52,57-64,73-77,82
+  s_9af714536e0fb1::t_16dd81090d99a2 17-19
+  s_9af714536e0fb1::t_95b4ec611d921b 83-85
+src/renderer/hooks/useAccounts.ts
+  s_9af714536e0fb1::t_b1ea8fe83cfe7e 29-30
+  s_9af714536e0fb1::t_4165e8e837f086 50,65
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "dfdf555c427a7171b5067cad48423aa61ed715e3",
+  "prompts": {},
+  "sessions": {
+    "s_9af714536e0fb1": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "9383fea0-ddc5-491a-a4fe-7c26286e291b",
+        "model": "copilot/gpt-5.6-sol"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
