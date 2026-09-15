@@ -57,7 +57,7 @@ export const AppearanceSettings: FC = () => {
   const zoomPercentage = useSettingsStore((s) => s.zoomPercentage);
 
   useEffect(() => {
-    window.atlassify.onSystemThemeUpdate((updatedTheme: Theme) => {
+    return window.atlassify.onSystemThemeUpdate((updatedTheme: Theme) => {
       if (theme === Theme.SYSTEM) {
         setTheme(updatedTheme);
         setGlobalTheme({ colorMode: 'auto' });

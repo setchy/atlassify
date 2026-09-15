@@ -14,9 +14,22 @@ describe('renderer/routes/Login.tsx', () => {
   });
 
   it('should render itself & its children', () => {
-    const tree = renderWithProviders(<LoginRoute />);
+    renderWithProviders(<LoginRoute />);
 
-    expect(tree.container).toMatchSnapshot();
+    expect(screen.getByLabelText('Username')).toHaveAttribute(
+      'name',
+      'username',
+    );
+    expect(screen.getByLabelText('API Token')).toHaveAttribute(
+      'type',
+      'password',
+    );
+    expect(screen.getByTestId('login-submit')).toHaveAttribute(
+      'form',
+      'login-form',
+    );
+    expect(screen.getByTestId('login-cancel')).toBeVisible();
+    expect(screen.getByTestId('login-docs')).toBeVisible();
   });
 
   describe('login web pages', () => {

@@ -96,12 +96,17 @@ export function renderHookWithProviders<T>(
 ) {
   const queryClient = createTestQueryClient();
 
-  return renderHook(hook, {
-    ...options,
-    wrapper: ({ children }: { children: ReactNode }) => (
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-    ),
-  });
+  return {
+    ...renderHook(hook, {
+      ...options,
+      wrapper: ({ children }: { children: ReactNode }) => (
+        <QueryClientProvider client={queryClient}>
+          {children}
+        </QueryClientProvider>
+      ),
+    }),
+    queryClient,
+  };
 }
 
 /**

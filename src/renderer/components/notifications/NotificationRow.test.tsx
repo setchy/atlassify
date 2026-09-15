@@ -4,6 +4,11 @@ import userEvent from '@testing-library/user-event';
 import { renderWithProviders } from '../../__helpers__/test-utils';
 import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
 
+import {
+  getNotificationFailureKey,
+  useNotificationActionFailuresStore,
+} from '../../stores';
+
 import type { ReadStateType } from '../../types';
 
 import * as comms from '../../utils/system/comms';
@@ -140,6 +145,49 @@ describe('renderer/components/notifications/NotificationRow.tsx', () => {
       await userEvent.click(screen.getByTestId('notification-mark-as-unread'));
 
       expect(markNotificationsUnreadMock).toHaveBeenCalledTimes(1);
+    });
+
+    it('shows an accessible warning that retries the failed action', async () => {
+      const markNotificationsReadMock = vi.fn().mockResolvedValue(undefined);
+      const notificationKey = getNotificationFailureKey(
+        mockSingleAtlassifyNotification.account,
+        mockSingleAtlassifyNotification.id,
+      );
+      useNotificationActionFailuresStore
+        .getState()
+        .setFailure(notificationKey, {
+          action: 'read',
+          error: {
+            title: 'Request failed',
+            descriptions: ['Try again.'],
+            emojis: [],
+          },
+        });
+
+      renderWithProviders(
+        <NotificationRow
+          isProductAnimatingExit={false}
+          notification={mockSingleAtlassifyNotification}
+        />,
+        { markNotificationsRead: markNotificationsReadMock },
+      );
+
+      const retryButton = screen.getByRole('button', {
+        name: /Request failed.*Mark as read/,
+      });
+      const notificationElement = retryButton.closest(
+        '[data-notification-row="true"]',
+      );
+      await userEvent.click(retryButton);
+      await act(async () => {
+        notificationElement?.dispatchEvent(
+          new Event('transitionend', { bubbles: true }),
+        );
+      });
+
+      expect(markNotificationsReadMock).toHaveBeenCalledWith([
+        mockSingleAtlassifyNotification,
+      ]);
     });
   });
 });

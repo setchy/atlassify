@@ -6,7 +6,11 @@ import { token } from '@atlaskit/tokens';
 import { cn } from 'cn';
 
 import { useAppContext } from '../../hooks/useAppContext';
-import { useSettingsStore } from '../../stores';
+import {
+  getNotificationFailureKey,
+  useNotificationActionFailuresStore,
+  useSettingsStore,
+} from '../../stores';
 
 import type { AtlassifyNotification } from '../../types';
 
@@ -40,6 +44,12 @@ export const NotificationRow: FC<NotificationRowProps> = ({
   const [pendingMarkAsRead, setPendingMarkAsRead] = useState(false);
 
   const isFocused = focusedNotificationId === notification.id;
+  const failure = useNotificationActionFailuresStore(
+    (state) =>
+      state.failures[
+        getNotificationFailureKey(notification.account, notification.id)
+      ],
+  );
 
   const shouldAnimateExit = shouldRemoveNotificationsFromState();
 
@@ -127,6 +137,7 @@ export const NotificationRow: FC<NotificationRowProps> = ({
           </Inline>
 
           <NotificationActions
+            failure={failure}
             isAnimatingExit={shouldAnimateNotificationExit}
             isUnread={isNotificationUnread}
             onMarkAsRead={actionMarkAsRead}

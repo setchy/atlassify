@@ -16,7 +16,7 @@ export function useAppReset(): void {
   const resetSettings = useSettingsStore((s) => s.reset);
 
   useEffect(() => {
-    window.atlassify.onResetApp(() => {
+    return window.atlassify.onResetApp(() => {
       resetAccounts();
       resetSettings();
       resetFilters();
