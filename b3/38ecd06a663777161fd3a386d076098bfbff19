@@ -1,0 +1,49 @@
+.github/labeler.yml
+  s_9af714536e0fb1::t_6062237eaa3bbb 43
+biome.json
+  s_9af714536e0fb1::t_9a34ff7dd2136a 4
+release-please-config.json
+  s_9af714536e0fb1::t_a5a908ba5173a5 1-6,8-40
+  s_9af714536e0fb1::t_f699603fc780fe 7
+  s_9af714536e0fb1::t_9a34ff7dd2136a 41
+.github/workflows/release.yml
+  s_9af714536e0fb1::t_fdb37ccae201bd 85-92
+  s_9af714536e0fb1::t_df1ffd202f3ef7 6,11-12,15-45,47,49-50,68-72
+.github/workflows/website.yml
+  s_9af714536e0fb1::t_fdb37ccae201bd 4-7,21-24
+.release-please-manifest.json
+  s_9af714536e0fb1::t_9a34ff7dd2136a 3
+  s_9af714536e0fb1::t_a5a908ba5173a5 1-2
+.github/workflows/publish.yml
+  s_9af714536e0fb1::t_df1ffd202f3ef7 5-9,30-34,99-107,117-118,120-127,132-138,141-162
+  s_9af714536e0fb1::t_f2e51f3949eb4a 108-116,119,128-131,139-140
+CONTRIBUTING.md
+  s_9af714536e0fb1::t_6062237eaa3bbb 54-57,59-69,85,92
+  s_9af714536e0fb1::t_fdb37ccae201bd 58
+.github/workflows/triage.yml
+  s_9af714536e0fb1::t_6062237eaa3bbb 13-22,48-50,63-65
+  s_9af714536e0fb1::t_28a7f28c632174 4-12,23-28,59
+renovate.json
+  s_9af714536e0fb1::t_6062237eaa3bbb 41-50
+  s_9af714536e0fb1::t_752163f49dfc96 40
+CHANGELOG.md
+  s_9af714536e0fb1::t_a5a908ba5173a5 1-9
+sonar-project.properties
+  s_9af714536e0fb1::t_a5a908ba5173a5 7-9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "b338ecd06a663777161fd3a386d076098bfbff19",
+  "prompts": {},
+  "sessions": {
+    "s_9af714536e0fb1": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "9383fea0-ddc5-491a-a4fe-7c26286e291b",
+        "model": "copilot/gpt-5.6-sol"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
