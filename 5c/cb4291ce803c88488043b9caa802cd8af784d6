@@ -1,0 +1,19 @@
+release-please-config.json
+  s_9af714536e0fb1::t_b553dfe66a54bb 10
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "5ccb4291ce803c88488043b9caa802cd8af784d6",
+  "prompts": {},
+  "sessions": {
+    "s_9af714536e0fb1": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "9383fea0-ddc5-491a-a4fe-7c26286e291b",
+        "model": "copilot/gpt-5.6-sol"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
