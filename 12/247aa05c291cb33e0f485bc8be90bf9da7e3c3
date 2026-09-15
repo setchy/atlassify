@@ -1,0 +1,25 @@
+.github/workflows/publish.yml
+  s_9af714536e0fb1::t_a647dca572bc48 163-179,196-197
+  s_9af714536e0fb1::t_a37b37fc5f9a3e 180-195
+.github/scripts/notify-release-pull-requests.mjs
+  s_9af714536e0fb1::t_40872fe6ad6af9 1-65,67-98,100-125
+  s_9af714536e0fb1::t_003abd92b031db 66,99,126
+CONTRIBUTING.md
+  s_9af714536e0fb1::t_2b63f1977ad392 59,69
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "12247aa05c291cb33e0f485bc8be90bf9da7e3c3",
+  "prompts": {},
+  "sessions": {
+    "s_9af714536e0fb1": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "9383fea0-ddc5-491a-a4fe-7c26286e291b",
+        "model": "copilot/gpt-5.6-sol"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
