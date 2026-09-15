@@ -160,3 +160,38 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAG_NAME: ${{ inputs.tag_name }}
           REPO: ${{ github.repository }}
+
+  notify-pull-requests:
+    name: Notify included pull requests
+    needs: publish-release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: read
+    steps:
+      - name: Checkout trusted release automation
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          ref: ${{ github.sha }}
+
+      - name: Notify pull requests included in the release
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { pathToFileURL } = await import('node:url');
+            const scriptUrl = pathToFileURL(
+              `${process.env.GITHUB_WORKSPACE}/.github/scripts/notify-release-pull-requests.mjs`,
+            );
+            const { notifyReleasedPullRequests } = await import(scriptUrl);
+            const result = await notifyReleasedPullRequests(github, {
+              ...context.repo,
+              tag: process.env.TAG_NAME,
+            });
+            core.info(
+              `Release ${process.env.TAG_NAME}: notified ${result.notified} pull request(s), skipped ${result.skipped}`,
+            );
+        env:
+          TAG_NAME: ${{ inputs.tag_name }}
