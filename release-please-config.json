@@ -21,8 +21,8 @@
         { "type": "docs", "section": "Documentation" },
         { "type": "build", "section": "Build System" },
         { "type": "ci", "section": "Continuous Integration" },
-        { "type": "test", "section": "Testing", "hidden": true },
-        { "type": "style", "section": "Styles", "hidden": true },
+        { "type": "test", "section": "Testing" },
+        { "type": "style", "section": "Styles" },
         {
           "type": "chore",
           "scope": "deps-core",
@@ -31,10 +31,9 @@
         {
           "type": "chore",
           "scope": "deps",
-          "section": "Dependency Updates (Other)",
-          "hidden": true
+          "section": "Dependency Updates (Other)"
         },
-        { "type": "chore", "section": "Chore", "hidden": true }
+        { "type": "chore", "section": "Chore" }
       ]
     }
   }
