@@ -14,26 +14,26 @@
         }
       ],
       "changelog-sections": [
-        { "type": "feat", "section": "Features" },
-        { "type": "fix", "section": "Bug Fixes" },
-        { "type": "perf", "section": "Performance" },
-        { "type": "refactor", "section": "Code Refactoring" },
-        { "type": "docs", "section": "Documentation" },
-        { "type": "build", "section": "Build System" },
-        { "type": "ci", "section": "Continuous Integration" },
-        { "type": "test", "section": "Testing" },
-        { "type": "style", "section": "Styles" },
+        { "type": "feat", "section": "🚀 Features" },
+        { "type": "fix", "section": "🐛 Bug Fixes" },
+        { "type": "perf", "section": "⚡️ Performance" },
+        { "type": "refactor", "section": "🧼 Code Refactoring" },
+        { "type": "docs", "section": "📚 Documentation" },
+        { "type": "build", "section": "🏗️ Build System" },
+        { "type": "ci", "section": "🤖 Continuous Integration" },
+        { "type": "test", "section": "🧪 Testing" },
+        { "type": "style", "section": "🎨 Styles" },
         {
           "type": "chore",
           "scope": "deps-core",
-          "section": "Dependency Updates (Core)"
+          "section": "📦 Dependency Updates (Core)"
         },
         {
           "type": "chore",
           "scope": "deps",
-          "section": "Dependency Updates (Other)"
+          "section": "📦 Dependency Updates (Other)"
         },
-        { "type": "chore", "section": "Chore" }
+        { "type": "chore", "section": "🧹 Chore" }
       ]
     }
   }
