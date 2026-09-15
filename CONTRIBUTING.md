@@ -51,28 +51,22 @@ If you encounter a bug or have a feature request, please [open an issue][github-
 
 ### Releases
 
-The release process is automated. Follow the steps below.
+Releases are automated with [release-please][release-please]. There is no release branch and no manual version bump.
 
-1. **Verify features:** Ensure all features and fixes you want included in the release are merged into `main`.
-2. **Check dependencies:** Review the [Renovate Dependency Dashboard][github-dependency-dashboard] for any dependency updates you want to include.
-3. **Create a release branch:**
-  - Name your branch `release/vX.X.X` (e.g., `release/v1.2.3`).
-  - Run `pnpm version <new-version-number>` to **bump the version** in `package.json` and create a version commit/tag.
-  - Update `sonar.projectVersion` within `sonar-project.properties`
-  - Commit and push these changes.
-  - Open a Pull Request (PR) from your release branch. 
-4. **GitHub release:** GitHub Actions will automatically build, sign, and upload release assets to a new draft release with automated release notes.
-5. **Merge the release branch:** Once the PR is approved and checks pass, merge your release branch into `main`.
-6. **Publish the release:**
-  - Finalize the release notes in the draft release on GitHub.
-  - Confirm all assets are present and correct.
-  - Publish the release.
-7. **Update milestones:**
-  - Edit the current [Milestone][github-milestones]:
-    - Add a link to the release notes in the description.
-    - Set the due date to the release date.
-    - Close the milestone.
-  - Create a [New Milestone][github-new-milestone] for the next release cycle.
+1. **Merge changes into `main`.** Use [Conventional Commits][conventional-commits] for PR titles (`feat:`, `fix:`, `docs:`, `chore(deps):`, and so on). The title determines the version bump and changelog section.
+2. **Review the release PR.** Release-please keeps a `chore: release X.Y.Z` pull request current as changes land. It updates `package.json`, `.release-please-manifest.json`, `CHANGELOG.md`, and `sonar.projectVersion`. Review the [Renovate Dependency Dashboard][github-dependency-dashboard] for updates to include before shipping.
+3. **Merge the release PR when ready to ship.** GitHub Actions creates a draft release, validates the app, builds and signs macOS, Windows, and Linux artifacts, and publishes only after every platform succeeds. Publication creates the `vX.Y.Z` tag, then the release workflow redeploys the website and allows update clients to discover the release.
+4. **Optionally update milestones.** Add the release link and date to the current [Milestone][github-milestones], close it, and create a [New Milestone][github-new-milestone] for the next cycle.
+
+#### Release automation prerequisites
+
+- Repository Actions permissions must allow GitHub Actions to create and approve pull requests.
+- The `release` label must exist, and the semantic-title and auto-label checks must be allowed on release-please PRs.
+- Branch protection for `main` must require the normal CI and triage checks; it must not require a `release/v*` branch.
+- Repository secrets must include `APTABASE_KEY`, `SONAR_TOKEN`, `CSC_LINK`, `CSC_KEY_PASSWORD`, `WIN_CSC_LINK`, `WIN_CSC_KEY_PASSWORD`, `APPLE_ID_USERNAME`, `APPLE_ID_PASSWORD`, `APPLE_ID_TEAM_ID`, and `NETLIFY_BUILD_HOOK_URL`.
+- The release and publish jobs use least-privilege `contents: write` and `pull-requests: write` permissions; validation jobs remain read-only.
+
+For a signing-only check, manually run the Publish workflow with an empty tag. Supplying a tag publishes that existing draft after all platform jobs succeed.
 
 
 ### Locales
@@ -88,11 +82,13 @@ To add a new locale:
 
 <!-- LINK LABELS -->
 [biome-website]: https://biomejs.dev/
+[conventional-commits]: https://www.conventionalcommits.org
 [github-dependency-dashboard]: https://github.com/setchy/atlassify/issues/1
 [github-issues]: https://github.com/setchy/atlassify/issues
 [github-milestones]: https://github.com/setchy/atlassify/milestones
 [github-new-milestone]: https://github.com/setchy/atlassify/milestones/new
 [github-new-release]: https://github.com/setchy/atlassify/releases/new
 [homebrew-cask-autobump-workflow]: https://github.com/Homebrew/homebrew-cask/actions/workflows/autobump.yml
+[release-please]: https://github.com/googleapis/release-please
 [vitest-website]: https://vitest.dev/
 

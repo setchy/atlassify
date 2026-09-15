@@ -38,6 +38,17 @@
       "allowedVersions": "<12"
     },
     {
+      "description": "Surface core runtime dependency updates in release-please changelogs while keeping routine dependency churn hidden",
+      "matchPackageNames": [
+        "electron",
+        "electron-menubar",
+        "electron-updater",
+        "@atlaskit/**",
+        "@tanstack/react-query"
+      ],
+      "semanticCommitScope": "deps-core"
+    },
+    {
       "description": "electron-menubar is a first-party dependency, so skip the minimum release age gate and weekly schedule applied to other packages",
       "matchPackageNames": ["electron-menubar"],
       "minimumReleaseAge": "0 days",

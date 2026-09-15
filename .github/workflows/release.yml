@@ -3,18 +3,51 @@ name: Release
 on:
   push:
     branches:
-      - release/v*.*.* # macOS code-signing only works on `push` events and not `pull_request` events
+      - main
 
 permissions: {}
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  group: release
+  cancel-in-progress: false
 
 jobs:
+  release-please:
+    name: Release Please
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
+    steps:
+      - name: Run release-please (releases)
+        id: release
+        uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5.0.0
+        with:
+          skip-github-pull-request: true
+
+      - name: Check for unpublished draft releases
+        id: drafts
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          count=$(gh api "repos/${REPO}/releases?per_page=20" --jq '[.[] | select(.draft)] | length')
+          echo "count=${count}" >> "$GITHUB_OUTPUT"
+
+      - name: Run release-please (release PR)
+        if: ${{ steps.release.outputs.release_created != 'true' && steps.drafts.outputs.count == '0' }}
+        uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5.0.0
+        with:
+          skip-github-release: true
+
   lint:
-    name: Lint
+    name: Lint App
     uses: ./.github/workflows/lint.yml
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created == 'true' }}
     permissions:
       contents: read
     with:
@@ -32,7 +65,11 @@ jobs:
   publish:
     name: Publish
     uses: ./.github/workflows/publish.yml
-    needs: tests
+    needs: [release-please, tests]
+    permissions:
+      contents: write
+    with:
+      tag_name: ${{ needs.release-please.outputs.tag_name }}
     secrets:
       APTABASE_KEY: ${{ secrets.APTABASE_KEY }}
       # Signing certificates
@@ -45,5 +82,11 @@ jobs:
       APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
       APPLE_ID_TEAM_ID: ${{ secrets.APPLE_ID_TEAM_ID }}
 
-    permissions:
-      contents: write
+  website:
+    name: Deploy Website
+    uses: ./.github/workflows/website.yml
+    needs: [release-please, publish]
+    if: ${{ needs.release-please.outputs.release_created == 'true' && needs.publish.result == 'success' }}
+    permissions: {}
+    secrets:
+      NETLIFY_BUILD_HOOK_URL: ${{ secrets.NETLIFY_BUILD_HOOK_URL }}

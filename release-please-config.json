@@ -1,0 +1,41 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "packages": {
+    ".": {
+      "release-type": "node",
+      "changelog-path": "CHANGELOG.md",
+      "include-commit-authors": true,
+      "include-component-in-tag": false,
+      "draft": true,
+      "extra-files": [
+        {
+          "type": "generic",
+          "path": "sonar-project.properties"
+        }
+      ],
+      "changelog-sections": [
+        { "type": "feat", "section": "Features" },
+        { "type": "fix", "section": "Bug Fixes" },
+        { "type": "perf", "section": "Performance" },
+        { "type": "refactor", "section": "Code Refactoring" },
+        { "type": "docs", "section": "Documentation" },
+        { "type": "build", "section": "Build System" },
+        { "type": "ci", "section": "Continuous Integration" },
+        { "type": "test", "section": "Testing", "hidden": true },
+        { "type": "style", "section": "Styles", "hidden": true },
+        {
+          "type": "chore",
+          "scope": "deps-core",
+          "section": "Dependency Updates (Core)"
+        },
+        {
+          "type": "chore",
+          "scope": "deps",
+          "section": "Dependency Updates (Other)",
+          "hidden": true
+        },
+        { "type": "chore", "section": "Chore", "hidden": true }
+      ]
+    }
+  }
+}
