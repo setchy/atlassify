@@ -15,6 +15,11 @@ vi.mock('electron', () => {
         }
         listeners[channel].push(listener);
       }),
+      removeListener: vi.fn((channel: string, listener: Listener) => {
+        listeners[channel] = (listeners[channel] || []).filter(
+          (candidate) => candidate !== listener,
+        );
+      }),
       __emit: (channel: string, ...args: unknown[]) => {
         const list = listeners[channel] || [];
         for (const l of list) {
@@ -65,5 +70,23 @@ describe('preload/utils', () => {
       handlerMock,
     );
     expect(handlerMock).toHaveBeenCalledWith({}, 'payload');
+  });
+
+  it('onRendererEvent returns a function that removes the listener', () => {
+    const handlerMock = vi.fn();
+    const unsubscribe = onRendererEvent(
+      EVENTS.UPDATE_ICON_TITLE,
+      handlerMock as unknown as (
+        e: Electron.IpcRendererEvent,
+        args: string,
+      ) => void,
+    );
+
+    unsubscribe();
+
+    expect(ipcRenderer.removeListener).toHaveBeenCalledWith(
+      EVENTS.UPDATE_ICON_TITLE,
+      handlerMock,
+    );
   });
 });

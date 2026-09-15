@@ -18,10 +18,9 @@ export const accountsKeys = {
 
   /**
    * Key for listing accounts with specific parameters
-   * @param accountsLength - Number of accounts
+   * @param accountIds - Ordered stable account identifiers
    */
-  list: (accountsLength: number) =>
-    [...accountsKeys.all, accountsLength] as const,
+  list: (accountIds: string[]) => [...accountsKeys.all, accountIds] as const,
 };
 
 /**
@@ -35,18 +34,18 @@ export const notificationsKeys = {
 
   /**
    * Key for listing notifications with specific parameters
-   * @param accountsLength - Number of accounts
+   * @param accountIds - Ordered stable account identifiers
    * @param fetchOnlyUnread - Whether to fetch only unread notifications
    * @param groupByTitle - Whether to group notifications by title
    */
   list: (
-    accountsLength: number,
+    accountIds: string[],
     fetchOnlyUnread: boolean,
     groupByTitle: boolean,
   ) =>
     [
       ...notificationsKeys.all,
-      accountsLength,
+      accountIds,
       fetchOnlyUnread,
       groupByTitle,
     ] as const,

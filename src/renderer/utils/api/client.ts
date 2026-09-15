@@ -1,4 +1,4 @@
-import { QueryClient } from '@tanstack/react-query';
+import { onlineManager, QueryClient } from '@tanstack/react-query';
 
 import { Constants } from '../../constants';
 
@@ -40,14 +40,18 @@ import {
   performRequestForCredentials,
 } from './request';
 
-/**
- * Tanstack Query Client
- */
+export function syncOnlineManagerWithBrowser(): void {
+  onlineManager.setOnline(navigator.onLine);
+}
+
+syncOnlineManagerWithBrowser();
+
 export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       retry: 1,
-      staleTime: Constants.QUERY_STALE_TIME_MS,
+      retryDelay: Constants.QUERY_RETRY_DELAY_MS,
+      refetchIntervalInBackground: true,
       gcTime: Constants.QUERY_GC_TIME_MS,
       networkMode: 'online',
     },

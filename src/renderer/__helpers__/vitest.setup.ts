@@ -2,7 +2,12 @@ import '@testing-library/jest-dom/vitest';
 
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 
-import { useAccountsStore, useFiltersStore, useSettingsStore } from '../stores';
+import {
+  useAccountsStore,
+  useFiltersStore,
+  useNotificationActionFailuresStore,
+  useSettingsStore,
+} from '../stores';
 
 /**
  * Shared navigate mock — import from test-utils in any test that needs to assert on navigation
@@ -41,6 +46,7 @@ beforeEach(() => {
   useAccountsStore.getState().reset();
   useSettingsStore.getState().reset();
   useFiltersStore.getState().reset();
+  useNotificationActionFailuresStore.getState().reset();
   useAccountsStore.setState({
     accounts: [mockAtlassianCloudAccount],
     refreshAccount: vi.fn(async (account) => account),
@@ -51,7 +57,7 @@ beforeEach(() => {
  * Atlassify context bridge API
  */
 window.atlassify = {
-  onSystemWake: vi.fn(),
+  onSystemWake: vi.fn(() => vi.fn()),
   app: {
     version: vi.fn().mockResolvedValue('v0.0.1'),
     hide: vi.fn(),
@@ -76,8 +82,8 @@ window.atlassify = {
     updateTitle: vi.fn(),
   },
   notificationSoundPath: vi.fn().mockResolvedValue('/mock/assets/sounds'),
-  onResetApp: vi.fn(),
-  onSystemThemeUpdate: vi.fn(),
+  onResetApp: vi.fn(() => vi.fn()),
+  onSystemThemeUpdate: vi.fn(() => vi.fn()),
   setAutoLaunch: vi.fn(),
   setKeepWindowOnBlur: vi.fn(),
   setKeyboardShortcut: vi.fn(),

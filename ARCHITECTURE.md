@@ -59,16 +59,15 @@ All hooks live in `src/renderer/hooks`. Each hook has a single, named responsibi
 
 **Data fetching**:
 - `useNotifications` — Fetches, filters, and caches notifications via React Query. Applies `useFiltersStore` values as a `select` transformer (instant filtering, no re-fetch). Writes filtered counts into `useRuntimeStore` for tray updates.
-- `useAccounts` — Periodically refreshes authenticated account profiles (1hr interval).
+- `useAccounts` — Periodically refreshes authenticated account profiles through TanStack Query (1hr interval).
 
 **Lifecycle & side-effects** (called inside `AppProvider`):
-- `useOnlineSync` — Subscribes to TanStack Query's `onlineManager` and keeps `useRuntimeStore.isOnline` in sync. Also corrects `onlineManager`'s initial state from `navigator.onLine` on mount.
+- `useOnlineSync` — Subscribes to TanStack Query's `onlineManager` and keeps `useRuntimeStore.isOnline` in sync. The query client corrects `onlineManager`'s initial state from `navigator.onLine` before construction.
 - `useAppReset` — Listens for the `onResetApp` IPC event and calls `reset()` on every persisted store. Add new persisted stores here.
 - `useKeyboardNavigation` — Tracks the focused notification ID for keyboard traversal.
 - `useGlobalShortcuts` — Registers system-level keyboard shortcuts from settings.
 
 **Utilities**:
-- `useIntervalTimer` — Wraps `setInterval` for reliable background polling regardless of window visibility (see polling strategy below).
 - `useNavigationAnalytics` — Tracks route transitions.
 - `useAppContext` — Type-safe accessor for `AppContext`; throws if used outside `AppProvider`.
 
@@ -78,11 +77,10 @@ All hooks live in `src/renderer/hooks`. Each hook has a single, named responsibi
 ## Data Flow
 
 - **Background Polling Strategy**:
-  - **Manual Interval Polling**: Uses `useIntervalTimer` with `refetch()` instead of TanStack Query's `refetchInterval` for reliable background updates.
-  - **Why**: Electron tray apps have `document.hidden === true` when the window is hidden (normal state for menubar apps). TanStack Query's Page Visibility API would pause `refetchInterval`, breaking background updates.
-  - **Solution**: JavaScript `setInterval` continues running regardless of window visibility, ensuring data stays fresh even when the app is hidden in the system tray.
-  - **Benefits**: Survives system sleep/wake cycles and provides consistent polling (60s for notifications, 1hr for accounts) regardless of app state.
-  - **Implementation**: Applied in both `useNotifications` (60s interval) and `useAccounts` (1hr interval) hooks.
+  - **TanStack Query Polling**: Account and notification observers configure fixed `refetchInterval` and matching `staleTime` values.
+  - **Hidden Window Support**: The query client enables `refetchIntervalInBackground`, so polling continues while the Electron popup is hidden.
+  - **Sleep/Wake Recovery**: Preload wake subscriptions trigger an immediate refetch after system sleep and return cleanup callbacks to their React owners.
+  - **Intervals**: Notifications poll every 60 seconds and accounts refresh every hour.
 - **Mutation Optimizations**:
   - **Optimistic Updates**: Cache updated immediately on user action (mark as read/unread) for instant UI feedback.
   - **Multi-Query Sync**: Uses `setQueriesData` with `notificationsKeys.all` to update all cached query variations simultaneously.

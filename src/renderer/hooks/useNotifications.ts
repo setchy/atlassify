@@ -10,8 +10,10 @@ import {
 import { Constants } from '../constants';
 
 import {
+  getNotificationFailureKey,
   useAccountsStore,
   useFiltersStore,
+  useNotificationActionFailuresStore,
   useRuntimeStore,
   useSettingsStore,
 } from '../stores';
@@ -42,6 +44,10 @@ import {
 } from '../utils/notifications/fetch';
 import { filterNotifications } from '../utils/notifications/filters';
 import { resolveNotificationIdsForGroup } from '../utils/notifications/group';
+import {
+  restoreFailedNotifications,
+  settleNotificationActionBatches,
+} from '../utils/notifications/mutations';
 import {
   type NotificationActionType,
   postProcessNotifications,
@@ -117,11 +123,11 @@ export const useNotifications = (): UseNotificationsResult => {
   const notificationsQueryKey = useMemo(
     () =>
       notificationsKeys.list(
-        accounts.length,
+        accounts.map((account) => account.id),
         fetchOnlyUnreadNotifications,
         groupNotificationsByTitle,
       ),
-    [accounts.length, fetchOnlyUnreadNotifications, groupNotificationsByTitle],
+    [accounts, fetchOnlyUnreadNotifications, groupNotificationsByTitle],
   );
 
   // Create select function that depends on filter state
@@ -138,6 +144,7 @@ export const useNotifications = (): UseNotificationsResult => {
   // Query for fetching notifications - React Query handles polling and refetching
   const {
     data: notifications = [],
+    dataUpdatedAt,
     isLoading,
     isFetching,
     isError,
@@ -159,8 +166,8 @@ export const useNotifications = (): UseNotificationsResult => {
     refetchOnReconnect: true,
     refetchOnWindowFocus: true,
 
+    staleTime: Constants.FETCH_NOTIFICATIONS_INTERVAL_MS,
     refetchInterval: Constants.FETCH_NOTIFICATIONS_INTERVAL_MS,
-    refetchIntervalInBackground: true,
   });
 
   const notificationCount = getNotificationCount(notifications);
@@ -200,7 +207,7 @@ export const useNotifications = (): UseNotificationsResult => {
    * Refetch notifications when system wakes from sleep to ensure data is fresh.
    */
   useEffect(() => {
-    window.atlassify.onSystemWake(() => {
+    return window.atlassify.onSystemWake(() => {
       refetchRef.current();
     });
   }, []);
@@ -218,6 +225,29 @@ export const useNotifications = (): UseNotificationsResult => {
         hasAnyAccountError,
       );
   }, [notificationCount, hasMoreAccountNotifications, hasAnyAccountError]);
+
+  useEffect(() => {
+    if (dataUpdatedAt === 0) {
+      return;
+    }
+
+    const cachedNotifications = queryClient.getQueryData<
+      AccountNotifications[]
+    >(notificationsQueryKey);
+    if (!cachedNotifications) {
+      return;
+    }
+
+    useNotificationActionFailuresStore
+      .getState()
+      .pruneFailures(
+        cachedNotifications.flatMap((accountNotifications) =>
+          accountNotifications.notifications.map((notification) =>
+            getNotificationFailureKey(notification.account, notification.id),
+          ),
+        ),
+      );
+  }, [dataUpdatedAt, notificationsQueryKey, queryClient]);
 
   const refetchNotifications = useCallback(async () => {
     await refetch();
@@ -363,20 +393,67 @@ export const useNotifications = (): UseNotificationsResult => {
         }
       }
 
-      for (const [cloudId, scopedNotifications] of notificationsByCloudId) {
-        const notificationIDs = await resolveNotificationIdsForGroup(
-          account,
-          scopedNotifications,
-          cloudId,
-        );
-        await markAsApiFn(account, notificationIDs, cloudId);
-      }
+      const result = await settleNotificationActionBatches(
+        [...notificationsByCloudId].map(([cloudId, scopedNotifications]) => ({
+          notifications: scopedNotifications,
+          execute: async () => {
+            const notificationIDs = await resolveNotificationIdsForGroup(
+              account,
+              scopedNotifications,
+              cloudId,
+            );
+            await markAsApiFn(account, notificationIDs, cloudId);
+          },
+        })),
+      );
 
       // Return data needed for post-processing
-      return { account, targetNotifications, action };
+      return { account, action, ...result };
     },
 
-    onSuccess: () => {
+    onSuccess: ({ succeeded, failed, action }, _variables, context) => {
+      useNotificationActionFailuresStore
+        .getState()
+        .clearFailures(
+          succeeded.map((notification) =>
+            getNotificationFailureKey(notification.account, notification.id),
+          ),
+        );
+
+      if (failed.length > 0 && context?.previousQueriesData) {
+        const failedNotifications = failed.map(
+          ({ notification }) => notification,
+        );
+        for (const [queryKey, snapshotData] of context.previousQueriesData) {
+          queryClient.setQueryData<AccountNotifications[]>(
+            queryKey,
+            (currentData) =>
+              restoreFailedNotifications(
+                failedNotifications,
+                snapshotData ?? [],
+                currentData ?? [],
+              ),
+          );
+        }
+      }
+
+      for (const { notification, error, rawError } of failed) {
+        useNotificationActionFailuresStore
+          .getState()
+          .setFailure(
+            getNotificationFailureKey(notification.account, notification.id),
+            { action, error },
+          );
+        rendererLogError(
+          action === 'read'
+            ? 'markNotificationsRead'
+            : 'markNotificationsUnread',
+          `Error occurred while marking notification ${notification.id} as ${action}`,
+          rawError,
+          notification,
+        );
+      }
+
       // Invalidate all notification queries to mark them as stale.
       // This ensures fresh data is fetched on next access or when switching query parameters
       // (e.g., toggling fetchOnlyUnread setting).
@@ -387,7 +464,7 @@ export const useNotifications = (): UseNotificationsResult => {
       });
     },
 
-    onError: (err, { action }, context) => {
+    onError: (err: Error, { action }, context) => {
       // Rollback ALL notification queries to their snapshots on error
       if (context?.previousQueriesData) {
         for (const [queryKey, data] of context.previousQueriesData) {

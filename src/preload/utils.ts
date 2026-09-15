@@ -41,6 +41,10 @@ export async function invokeMainEvent<T = string>(
 export function onRendererEvent(
   event: EventType,
   listener: (event: Electron.IpcRendererEvent, args: string) => void,
-) {
+): () => void {
   ipcRenderer.on(event, listener);
+
+  return () => {
+    ipcRenderer.removeListener(event, listener);
+  };
 }

@@ -20,6 +20,7 @@ import {
 import { rendererLogError } from '../utils/core/logger';
 import { encryptValue } from '../utils/system/comms';
 import { DEFAULT_ACCOUNTS_STATE } from './defaults';
+import useNotificationActionFailuresStore from './useNotificationActionFailuresStore';
 
 /** Resolves Cloud IDs for a set of hostname hints via the Atlassian GraphQL API. */
 async function resolveHostnameHints(
@@ -115,6 +116,9 @@ const useAccountsStore = create<AccountsStore>()(
 
       /** Removes an account from the store by its ID. */
       removeAccount: (account) => {
+        useNotificationActionFailuresStore
+          .getState()
+          .clearAccountFailures(account.id);
         set((state) => ({
           accounts: state.accounts.filter((a) => a.id !== account.id),
         }));
@@ -194,6 +198,7 @@ const useAccountsStore = create<AccountsStore>()(
 
       /** Resets the store to its initial state, clearing all accounts. */
       reset: () => {
+        useNotificationActionFailuresStore.getState().reset();
         set(store.getInitialState());
       },
     }),

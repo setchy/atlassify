@@ -7,15 +7,14 @@ import type { AtlassianAPIError } from './types';
 
 import { Errors } from '../core/errors';
 
-export function determineFailureType(
-  err: AxiosError<AtlassianAPIError>,
-): AtlassifyError {
+export function determineFailureType(err: Error): AtlassifyError {
+  const axiosError = err as AxiosError<AtlassianAPIError>;
   const { isOnline } = useRuntimeStore.getState();
   if (!isOnline) {
     return Errors.OFFLINE;
   }
 
-  if (err.code === AxiosError.ERR_NETWORK) {
+  if (axiosError.code === AxiosError.ERR_NETWORK) {
     return Errors.NETWORK;
   }
 
@@ -23,7 +22,7 @@ export function determineFailureType(
     return Errors.BAD_REQUEST;
   }
 
-  const status = err.response?.status;
+  const status = axiosError.response?.status;
 
   if (
     status === 401 ||

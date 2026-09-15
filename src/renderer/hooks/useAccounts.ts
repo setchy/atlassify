@@ -26,8 +26,8 @@ export const useAccounts = (): UseAccountsResult => {
 
   // Query key
   const accountsQueryKeys = useMemo(
-    () => accountsKeys.list(accounts.length),
-    [accounts.length],
+    () => accountsKeys.list(accounts.map((account) => account.id)),
+    [accounts],
   );
 
   const { isLoading, error, refetch } = useQuery<boolean, Error>({
@@ -47,8 +47,8 @@ export const useAccounts = (): UseAccountsResult => {
     refetchOnWindowFocus: false,
     refetchOnReconnect: true,
 
+    staleTime: Constants.REFRESH_ACCOUNTS_INTERVAL_MS,
     refetchInterval: Constants.REFRESH_ACCOUNTS_INTERVAL_MS,
-    refetchIntervalInBackground: true,
   });
 
   const refreshAccounts = useCallback(async () => {
@@ -62,7 +62,7 @@ export const useAccounts = (): UseAccountsResult => {
    * Refetch accounts when system wakes from sleep to ensure data is fresh.
    */
   useEffect(() => {
-    window.atlassify.onSystemWake(() => {
+    return window.atlassify.onSystemWake(() => {
       refreshAccountsRef.current();
     });
   }, []);
