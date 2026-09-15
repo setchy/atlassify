@@ -40,7 +40,7 @@ labels:
   - label: 'release'
     sync: true
     matcher:
-      branch: '^release/.*'
+      branch: '^release-please--.*'
 
   - label: 'test'
     sync: true

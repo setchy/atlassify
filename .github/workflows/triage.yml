@@ -1,6 +1,31 @@
 name: Triage PR
 
 on:
+  # `pull_request_target` is required so the labeler/title-validator can
+  # write labels and statuses on PRs from forks (under `pull_request`,
+  # GitHub forces GITHUB_TOKEN to read-only for fork PRs). Safe here
+  # because this workflow:
+  #   - never checks out PR code (no actions/checkout),
+  #   - has no `run:` steps that interpolate PR fields,
+  #   - only invokes SHA-pinned actions that read PR metadata via the API,
+  #   - is locked behind required code-owner review (see .github/CODEOWNERS)
+  #     so future edits cannot quietly add privileged execution surface.
+  pull_request_target: # zizmor: ignore[dangerous-triggers]
+    branches:
+      - main
+    types:
+      - opened
+      - reopened
+      - edited
+      - synchronize
+      - ready_for_review
+
+  # release-please PRs are opened with `GITHUB_TOKEN`, for which GitHub does
+  # not create `pull_request_target` workflow runs at all (only `pull_request`
+  # runs). The steps below are guarded to the release-please head branch so the
+  # real work only happens there; for every other PR the `pull_request` run is
+  # a clean no-op (steps skipped -> job succeeds) so the required checks are
+  # still satisfied and no confusing "skipped" conclusions appear.
   pull_request:
     branches:
       - main
@@ -20,7 +45,9 @@ jobs:
     permissions:
       pull-requests: read
     steps:
-      - uses: amannn/action-semantic-pull-request@48f256284bd46cdaab1048c3721360e808335d50 # v6.1.1
+      - name: Validate semantic PR title
+        if: ${{ github.event_name == 'pull_request_target' || startsWith(github.head_ref, 'release-please--') }}
+        uses: amannn/action-semantic-pull-request@48f256284bd46cdaab1048c3721360e808335d50 # v6.1.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -29,8 +56,10 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read # the config file
-      pull-requests: write # for labeling pull requests (on: pull_request_target or on: pull_request)
+      pull-requests: write # for labeling pull requests
       statuses: write # to generate status
       checks: write # to generate status
     steps:
-      - uses: fuxingloh/multi-labeler@bcd50af464202999e57f556b4aefcf05a34abf85 # v5.0.0
+      - name: Auto-label PR
+        if: ${{ github.event_name == 'pull_request_target' || startsWith(github.head_ref, 'release-please--') }}
+        uses: fuxingloh/multi-labeler@bcd50af464202999e57f556b4aefcf05a34abf85 # v5.0.0

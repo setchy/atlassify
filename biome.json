@@ -1,7 +1,7 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.5.12/schema.json",
   "files": {
-    "includes": ["**", "!**/docs/**/*", "!**/generated/**/*"]
+    "includes": ["**", "!**/docs/**/*", "!**/generated/**/*", "!CHANGELOG.md"]
   },
   "assist": {
     "actions": {
