@@ -1,0 +1,23 @@
+pnpm-workspace.yaml
+  s_9af714536e0fb1::t_a911016d8d0c93 22-25
+patches/app-builder-lib@26.15.3.patch
+  s_9af714536e0fb1::t_a911016d8d0c93 1-24
+pnpm-lock.yaml
+  s_9af714536e0fb1::t_952c27c894bf46 171-173,7519,8042,8098,8107
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "98a1ffcab89546f2a6807da1addabbf3489ff54b",
+  "prompts": {},
+  "sessions": {
+    "s_9af714536e0fb1": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "9383fea0-ddc5-491a-a4fe-7c26286e291b",
+        "model": "copilot/gpt-5.6-sol"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
