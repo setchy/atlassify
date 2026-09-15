@@ -58,6 +58,8 @@ Releases are automated with [release-please][release-please]. There is no releas
 3. **Merge the release PR when ready to ship.** GitHub Actions creates a draft release, validates the app, builds and signs macOS, Windows, and Linux artifacts, and publishes only after every platform succeeds. Publication creates the `vX.Y.Z` tag, then the release workflow redeploys the website and allows update clients to discover the release.
 4. **Optionally update milestones.** Add the release link and date to the current [Milestone][github-milestones], close it, and create a [New Milestone][github-new-milestone] for the next cycle.
 
+Changes confined to `docs/` are excluded from desktop app releases. They are validated by the docs workflow and deployed independently by Netlify.
+
 #### Release automation prerequisites
 
 - Repository Actions permissions must allow GitHub Actions to create and approve pull requests.
