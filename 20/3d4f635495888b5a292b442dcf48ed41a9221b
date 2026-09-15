@@ -1,0 +1,97 @@
+src/main/index.test.ts
+  s_9af714536e0fb1::t_0fd547d4c323ab 2-83
+  s_9af714536e0fb1::t_49f432798da576 1
+src/main/lifecycle/window.ts
+  s_9af714536e0fb1::t_64298a9ee4060a 10-11,22-23,29-30,33,51-56,58-60,62-93
+src/renderer/stores/types.ts
+  s_9af714536e0fb1::t_45f31828a473c7 274-279
+src/renderer/components/settings/SystemSettings.test.tsx
+  s_9af714536e0fb1::t_45f31828a473c7 119-129,131-138,141-142
+  s_9af714536e0fb1::t_0ccc0b286393c4 130,139-140
+src/shared/events.ts
+  s_9af714536e0fb1::t_19dd602d606a08 22,140
+  s_9af714536e0fb1::t_e76116f6339b07 141-143
+src/renderer/components/settings/SystemSettings.tsx
+  s_9af714536e0fb1::t_45f31828a473c7 69-70,211-226,260-271
+  s_9af714536e0fb1::t_14df592cde1e45 272-274
+  s_9af714536e0fb1::t_c9df68f2dd06e0 275-277
+src/main/handlers/system.test.ts
+  s_9af714536e0fb1::t_64298a9ee4060a 8-18,71-84,87-88,90,92
+  s_9af714536e0fb1::t_2375fef704f6bb 85-86
+  s_9af714536e0fb1::t_b8ad21c8693247 89
+  s_9af714536e0fb1::t_ae99e0abc9ca94 91
+  s_9af714536e0fb1::t_c3883bd4c192e8 93-94
+src/renderer/i18n/locales/es.json
+  s_9af714536e0fb1::t_45f31828a473c7 224-225,237-238
+src/renderer/__helpers__/vitest.setup.ts
+  s_9af714536e0fb1::t_45f31828a473c7 82,84
+src/renderer/i18n/locales/de.json
+  s_9af714536e0fb1::t_45f31828a473c7 224-225,237-238
+src/renderer/i18n/locales/en.json
+  s_9af714536e0fb1::t_45f31828a473c7 224-225,237-238
+src/main/index.ts
+  s_9af714536e0fb1::t_19dd602d606a08 21,24
+  s_9af714536e0fb1::t_85fe0089ca9745 25
+src/main/ozone.test.ts
+  s_9af714536e0fb1::t_0fd547d4c323ab 1-96
+src/renderer/i18n/locales/fr.json
+  s_9af714536e0fb1::t_45f31828a473c7 224-225,237-238
+src/renderer/stores/defaults.ts
+  s_9af714536e0fb1::t_45f31828a473c7 88-89
+src/main/ozone.ts
+  s_9af714536e0fb1::t_0fd547d4c323ab 6,31,35,55,58,86
+  s_9af714536e0fb1::t_3058153aa87b4b 8-23,37-42,60-80
+  s_9af714536e0fb1::t_b8a8f826c1f4f0 3-5
+  s_9af714536e0fb1::t_bdda078159e0f2 7
+  s_9af714536e0fb1::t_3c34f16a91c547 24-26,28-30
+  s_9af714536e0fb1::t_c754218ca67275 32-34
+  s_9af714536e0fb1::t_8121fcdd651cf1 36
+  s_9af714536e0fb1::t_85678eff80587e 43-45,52-54
+  s_9af714536e0fb1::t_75820744152674 56-57
+  s_9af714536e0fb1::t_e570e5c9daf924 59
+  s_9af714536e0fb1::t_dc72556b3ee01b 81-85
+  s_9af714536e0fb1::t_0a2a9bc725ad75 1-2,27,46-51
+src/preload/index.ts
+  s_9af714536e0fb1::t_3058153aa87b4b 62-77
+  s_9af714536e0fb1::t_be40feafe89183 78-80
+src/main/lifecycle/window.test.ts
+  s_9af714536e0fb1::t_64298a9ee4060a 72,75,110-113,152-177
+  s_9af714536e0fb1::t_def0169bfcdb91 178-179
+  s_9af714536e0fb1::t_fdba769730015b 201,204,207-208,210
+src/renderer/stores/subscriptions.test.ts
+  s_9af714536e0fb1::t_45f31828a473c7 39,41,98-106,135-141
+  s_9af714536e0fb1::t_a686819b1d2f5d 142
+src/renderer/stores/subscriptions.ts
+  s_9af714536e0fb1::t_0ccc0b286393c4 70-72,78-80
+  s_9af714536e0fb1::t_45f31828a473c7 12-17,42,68-69,73-77,81-82
+  s_9af714536e0fb1::t_9a0ee4f3936eea 83
+package.json
+  s_9af714536e0fb1::t_cc0e51341ae266 139
+  s_9af714536e0fb1::t_1f738a48b60ae6 61
+src/main/handlers/system.ts
+  s_9af714536e0fb1::t_3058153aa87b4b 83-85,90-93
+  s_9af714536e0fb1::t_19dd602d606a08 14,88-89,94-96
+  s_9af714536e0fb1::t_64298a9ee4060a 13,82,86-87
+src/preload/index.test.ts
+  s_9af714536e0fb1::t_e435bf152e372e 79-80,135-150
+src/renderer/routes/__snapshots__/Settings.test.tsx.snap
+  s_9af714536e0fb1::t_fbb7eca11353f0 1491-1576,1631,1724
+src/renderer/utils/system/comms.ts
+  s_9af714536e0fb1::t_c968321d8ba251 88-97
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "203d4f635495888b5a292b442dcf48ed41a9221b",
+  "prompts": {},
+  "sessions": {
+    "s_9af714536e0fb1": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "9383fea0-ddc5-491a-a4fe-7c26286e291b",
+        "model": "copilot/gpt-5.6-sol"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
