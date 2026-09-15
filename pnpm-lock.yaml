@@ -255,8 +255,8 @@ importers:
         specifier: 10.2.0
         version: 10.2.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/select':
-        specifier: 22.11.1
-        version: 22.11.1(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
+        specifier: 22.11.2
+        version: 22.11.2(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)
       '@atlaskit/spinner':
         specifier: 20.4.0
         version: 20.4.0(react@19.2.8)(supports-color@10.2.2)
@@ -608,8 +608,8 @@ packages:
       react: ^18.2.0 || ^19.0.0
       react-dom: ^18.2.0 || ^19.0.0
 
-  '@atlaskit/select@22.11.1':
-    resolution: {integrity: sha512-8o2S6JJCyznW6CN2/BNDRtNauXGEBivyxj5wE2QCKu+xOOPWlmKtUAYRCx+OLrBpDyWkvjJ0VnukYT0wLH9HbQ==}
+  '@atlaskit/select@22.11.2':
+    resolution: {integrity: sha512-SWgtncH4Lajsx4L5wpASWSnI3Qt4k6hVhw7jHStM9AiLhUr8UB6Gvvvxq1eXke6THTCeCObOceuJxIkdXjuBWA==}
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
       react-dom: ^18.2.0 || ^19.0.0
@@ -5749,7 +5749,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/select@22.11.1(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)':
+  '@atlaskit/select@22.11.2(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/analytics-next': 12.5.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@atlaskit/ds-lib': 8.0.0(react@19.2.8)
