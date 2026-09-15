@@ -1,0 +1,24 @@
+.github/workflows/release.yml
+  s_9af714536e0fb1::t_0e5c1a437980c4 44
+  s_9af714536e0fb1::t_882b50c7dcaae1 42-43
+  s_9af714536e0fb1::t_8b979f64a50488 45
+renovate.json
+  s_9af714536e0fb1::t_0e5c1a437980c4 60-66
+  s_9af714536e0fb1::t_961df3a9cf0d0f 59
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "89908cc896a278977532aabe1b0421522aa542df",
+  "prompts": {},
+  "sessions": {
+    "s_9af714536e0fb1": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "9383fea0-ddc5-491a-a4fe-7c26286e291b",
+        "model": "copilot/gpt-5.6-sol"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
