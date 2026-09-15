@@ -69,6 +69,8 @@ jobs:
     needs: [release-please, tests]
     permissions:
       contents: write
+      issues: write
+      pull-requests: read
     with:
       tag_name: ${{ needs.release-please.outputs.tag_name }}
     secrets:
