@@ -179,8 +179,8 @@ importers:
         specifier: 4.3.3
         version: 4.3.3(vite@8.2.2(esbuild@0.28.2)(jiti@2.7.0))
       accessible-astro-components:
-        specifier: 5.7.1
-        version: 5.7.1(astro@7.3.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(jiti@2.7.0))
+        specifier: 5.8.0
+        version: 5.8.0(astro@7.3.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(jiti@2.7.0))
       astro:
         specifier: 7.3.2
         version: 7.3.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(jiti@2.7.0)
@@ -1185,8 +1185,8 @@ packages:
   '@ungap/structured-clone@1.4.0':
     resolution: {integrity: sha512-1mEZtMKPM09vDmQt5y7YvmN2+DFTP7Tg0EWXdic8/C6VRnpb33e4ghisCIE3WZjsE2N8mf+QV1Zqh7ZFYLWInQ==}
 
-  accessible-astro-components@5.7.1:
-    resolution: {integrity: sha512-X3FR+k6YOcQQ3a4ti5h4U0TyjB1irDYOA+1NdKniOsBb4abptQ6C+0bQbE7Wa8lC22HyVS2shVoJD82mfX/QMg==}
+  accessible-astro-components@5.8.0:
+    resolution: {integrity: sha512-TYGVy+u0pCRQJl4gp0r397YsNfM6R+ZTDj5sbatadFuxAdQ92qlhJg31S55nWUkFUre8zHoZvPIo4GWxCHVXTQ==}
     engines: {node: ^18.20.8 || ^20.3.0 || >=22.0.0}
     peerDependencies:
       astro: ^5.0.0 || ^6.0.0 || ^7.0.0
@@ -2856,7 +2856,7 @@ snapshots:
 
   '@ungap/structured-clone@1.4.0': {}
 
-  accessible-astro-components@5.7.1(astro@7.3.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(jiti@2.7.0)):
+  accessible-astro-components@5.8.0(astro@7.3.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(jiti@2.7.0)):
     dependencies:
       astro: 7.3.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(jiti@2.7.0)
 
