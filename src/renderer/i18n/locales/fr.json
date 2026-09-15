@@ -221,6 +221,8 @@
     "system": {
       "anonymous_analytics": "Partager des analyses d'utilisation anonymes",
       "anonymous_analytics_help": "Aidez a ameliorer {{appName}} en envoyant des evenements d'utilisation anonymes (par exemple : ecrans visites et actions utilisees). Les jetons API Atlassian et le contenu des notifications ne sont jamais envoyes.",
+      "keep_window_on_blur": "Garder la fenêtre ouverte lorsqu'elle perd le focus",
+      "keep_window_on_blur_help": "Empêche la fenêtre {{appName}} de se masquer automatiquement lorsque vous cliquez en dehors.",
       "keyboard_shortcut": "Activer le raccourci clavier",
       "keyboard_shortcut_help": "Lorsqu'il est activé, vous pouvez utiliser les raccourcis clavier {{shortcut}} pour afficher ou masquer {{appName}}.",
       "open_links": "Liens ouverts",
@@ -232,6 +234,8 @@
       "system_notifications": "Afficher les notifications du système",
       "system_notifications_help": "Affichez les notifications natives du système d'exploitation pour les nouvelles notifications non lues.",
       "title": "Système",
+      "use_x11_backend": "Utiliser le moteur X11 (redémarrage requis)",
+      "use_x11_backend_help": "Exécute l'application sous X11/XWayland afin que la fenêtre puisse s'ouvrir près de l'icône de la barre d'état. Cela peut adoucir le texte avec une mise à l'échelle fractionnaire et prend effet après le redémarrage de {{appName}}.",
       "volume_down": "Baisser le volume",
       "volume_reset": "Réinitialiser le volume",
       "volume_up": "Augmenter le volume"

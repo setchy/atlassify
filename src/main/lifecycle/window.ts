@@ -7,7 +7,8 @@ import { WindowConfig } from '../config';
 import type MenuBuilder from '../menu';
 
 let isQuitting = false;
-let keepWindowOnBlur = false;
+let appEventsConfigured = false;
+let configuredWindows = new WeakSet<Electron.BrowserWindow>();
 
 /**
  * Reset module-level lifecycle flags. Module-level state is unavoidable
@@ -18,22 +19,18 @@ let keepWindowOnBlur = false;
  */
 export function __resetWindowLifecycleForTests(): void {
   isQuitting = false;
-  keepWindowOnBlur = false;
+  appEventsConfigured = false;
+  configuredWindows = new WeakSet<Electron.BrowserWindow>();
 }
 
 /**
  * Apply the user's "keep window open when it loses focus" preference.
  *
- * Implemented by toggling the window's `alwaysOnTop` flag, which the
- * `electron-menubar` library checks to short-circuit its blur-driven hide. The
- * value is also remembered so the `devtools-closed` handler can restore
- * it after DevTools temporarily forces it on.
+ * Delegates blur behavior to `electron-menubar` without changing window
+ * z-order semantics.
  */
 export function applyKeepWindowOnBlur(mb: Menubar, value: boolean): void {
-  keepWindowOnBlur = value;
-  if (mb.window && !mb.window.isDestroyed()) {
-    mb.window.setAlwaysOnTop(value);
-  }
+  mb.setOption('hideOnBlur', !value);
 }
 
 /**
@@ -51,18 +48,49 @@ export function configureWindowEvents(
   mb: Menubar,
   menuBuilder: MenuBuilder,
 ): void {
-  const win = mb.window;
-  if (!win) {
+  const configureCurrentWindow = () => {
+    const win = mb.window;
+    if (!win || configuredWindows.has(win)) {
+      return;
+    }
+    configuredWindows.add(win);
+
+    win.on('show', () => {
+      menuBuilder.setWindowVisibility(true);
+    });
+
+    win.on('hide', () => {
+      menuBuilder.setWindowVisibility(false);
+    });
+
+    win.webContents.on('devtools-opened', () => {
+      if (!mb.window) {
+        return;
+      }
+
+      mb.window.setSize(800, 600);
+      mb.window.center();
+      mb.window.resizable = true;
+    });
+
+    win.webContents.on('devtools-closed', () => {
+      if (!mb.window) {
+        return;
+      }
+
+      mb.window.setSize(WindowConfig.width!, WindowConfig.height!);
+      mb.recenterOnTray();
+      mb.window.resizable = false;
+    });
+  };
+
+  mb.on('after-create-window', configureCurrentWindow);
+  configureCurrentWindow();
+
+  if (appEventsConfigured) {
     return;
   }
-
-  win.on('show', () => {
-    menuBuilder.setWindowVisibility(true);
-  });
-
-  win.on('hide', () => {
-    menuBuilder.setWindowVisibility(false);
-  });
+  appEventsConfigured = true;
 
   app.on('before-quit', () => {
     isQuitting = true;
@@ -81,37 +109,5 @@ export function configureWindowEvents(
     if (!isMacOS()) {
       app.quit();
     }
-  });
-
-  /**
-   * When DevTools is opened, resize and center the window for better visibility and allow resizing.
-   */
-  mb.window.webContents.on('devtools-opened', () => {
-    if (!mb.window) {
-      return;
-    }
-
-    mb.window.setSize(800, 600);
-    mb.window.center();
-    mb.window.resizable = true;
-    mb.window.setAlwaysOnTop(true);
-  });
-
-  /**
-   * When DevTools is closed, restore the window to its original size and position it centered on the tray icon.
-   *
-   * `devtools-opened` forces `alwaysOnTop` true for usability while
-   * debugging; restore it to the user's preference here so DevTools
-   * doesn't leave the flag stuck on.
-   */
-  mb.window.webContents.on('devtools-closed', () => {
-    if (!mb.window) {
-      return;
-    }
-
-    mb.window.setSize(WindowConfig.width!, WindowConfig.height!);
-    mb.recenterOnTray();
-    mb.window.resizable = false;
-    mb.window.setAlwaysOnTop(keepWindowOnBlur);
   });
 }

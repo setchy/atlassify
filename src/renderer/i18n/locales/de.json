@@ -221,6 +221,8 @@
     "system": {
       "anonymous_analytics": "Anonyme Nutzungsanalysen teilen",
       "anonymous_analytics_help": "Helfen Sie dabei, {{appName}} zu verbessern, indem Sie anonyme Nutzungsereignisse senden (zum Beispiel besuchte Ansichten und verwendete Aktionen). Atlassian-API-Token und Benachrichtigungsinhalte werden niemals gesendet.",
+      "keep_window_on_blur": "Fenster bei Fokusverlust geöffnet lassen",
+      "keep_window_on_blur_help": "Verhindert, dass das Fenster von {{appName}} automatisch ausgeblendet wird, wenn Sie außerhalb davon klicken.",
       "keyboard_shortcut": "Tastaturkürzel aktivieren",
       "keyboard_shortcut_help": "Wenn diese Option aktiviert ist, können Sie die Hotkeys {{shortcut}} verwenden, um {{appName}} anzuzeigen oder auszublenden.",
       "open_links": "Offene Links",
@@ -232,6 +234,8 @@
       "system_notifications": "Systembenachrichtigungen anzeigen",
       "system_notifications_help": "Zeigen Sie native Betriebssystembenachrichtigungen für neue ungelesene Benachrichtigungen an.",
       "title": "System",
+      "use_x11_backend": "X11-Backend verwenden (Neustart erforderlich)",
+      "use_x11_backend_help": "Unter X11/XWayland ausführen, damit das Fenster neben dem Taskleistensymbol geöffnet werden kann. Dies kann Text bei fraktionaler Skalierung unschärfer darstellen und wird nach einem Neustart von {{appName}} wirksam.",
       "volume_down": "Lautstärke verringern",
       "volume_reset": "Lautstärke zurücksetzen",
       "volume_up": "Lautstärke erhöhen"

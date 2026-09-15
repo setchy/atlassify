@@ -221,6 +221,8 @@
     "system": {
       "anonymous_analytics": "Compartir análisis de uso anónimos",
       "anonymous_analytics_help": "Ayuda a mejorar {{appName}} enviando eventos de uso anónimos (por ejemplo: pantallas visitadas y acciones usadas). Nunca se envían tokens API de Atlassian ni contenido de notificaciones.",
+      "keep_window_on_blur": "Mantener la ventana abierta cuando pierda el foco",
+      "keep_window_on_blur_help": "Evita que la ventana de {{appName}} se oculte automáticamente al hacer clic fuera de ella.",
       "keyboard_shortcut": "Habilitar atajo de teclado",
       "keyboard_shortcut_help": "Cuando está habilitado, puede usar las teclas de acceso rápido {{shortcut}} para mostrar u ocultar {{appName}}.",
       "open_links": "Enlaces abiertos",
@@ -232,6 +234,8 @@
       "system_notifications": "Mostrar notificaciones del sistema",
       "system_notifications_help": "Muestra notificaciones nativas del sistema operativo para nuevas notificaciones no leídas.",
       "title": "Sistema",
+      "use_x11_backend": "Usar el backend X11 (requiere reiniciar)",
+      "use_x11_backend_help": "Ejecutar con X11/XWayland para que la ventana pueda abrirse junto al icono de la bandeja. Esto puede suavizar el texto con escalado fraccionario y se aplica después de reiniciar {{appName}}.",
       "volume_down": "Bajar volumen",
       "volume_reset": "Restablecer volumen",
       "volume_up": "Subir volumen"

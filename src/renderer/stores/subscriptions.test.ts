@@ -36,7 +36,9 @@ vi.mock('../utils/ui/theme', () => ({
 
 vi.mock('../utils/system/comms', () => ({
   setAutoLaunch: vi.fn(),
+  setKeepWindowOnBlur: vi.fn(),
   setKeyboardShortcut: vi.fn(),
+  setUseX11Backend: vi.fn(),
 }));
 
 vi.mock('../utils/ui/zoom', () => ({
@@ -93,6 +95,15 @@ describe('renderer/stores/subscriptions.ts', () => {
 
       expect(tray.setTrayIconColorAndTitle).toHaveBeenCalledTimes(1);
     });
+
+    it('should initialize keep-window-on-blur on startup', () => {
+      useSettingsStore.setState({ keepWindowOnBlur: true });
+
+      cleanup = initializeStoreSubscriptions();
+
+      expect(comms.setKeepWindowOnBlur).toHaveBeenCalledWith(true);
+      expect(comms.setUseX11Backend).not.toHaveBeenCalled();
+    });
   });
 
   describe('Settings Store Subscriptions', () => {
@@ -119,6 +130,14 @@ describe('renderer/stores/subscriptions.ts', () => {
         .updateSetting('keyboardShortcutEnabled', false);
 
       expect(comms.setKeyboardShortcut).toHaveBeenCalledWith(false);
+    });
+
+    it('should forward popup lifecycle preference changes', () => {
+      useSettingsStore.getState().updateSetting('keepWindowOnBlur', true);
+      useSettingsStore.getState().updateSetting('useX11Backend', true);
+
+      expect(comms.setKeepWindowOnBlur).toHaveBeenCalledWith(true);
+      expect(comms.setUseX11Backend).toHaveBeenCalledWith(true);
     });
 
     it('should trigger setTrayIconColorAndTitle when useUnreadActiveIcon changes', () => {

@@ -60,6 +60,25 @@ export const api = {
     }),
 
   /**
+   * Enable or disable keeping the window open when it loses focus.
+   *
+   * Implemented through electron-menubar's runtime `hideOnBlur` option.
+   *
+   * @param value - `true` to keep the window open on blur, `false` to hide.
+   */
+  setKeepWindowOnBlur: (value: boolean) =>
+    sendMainEvent(EVENTS.UPDATE_KEEP_WINDOW_ON_BLUR, value),
+
+  /**
+   * Persist whether Linux should run under the X11 backend. Applied at startup,
+   * so the change only takes effect after the app is restarted.
+   *
+   * @param value - `true` to force X11/XWayland, `false` to let Electron pick.
+   */
+  setUseX11Backend: (value: boolean) =>
+    sendMainEvent(EVENTS.UPDATE_USE_X11_BACKEND, value),
+
+  /**
    * Register or unregister the global keyboard shortcut for toggling the app window.
    *
    * @param keyboardShortcut - `true` to register the shortcut, `false` to unregister.

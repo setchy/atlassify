@@ -9,7 +9,12 @@ import { shallow } from 'zustand/shallow';
 
 import { queryClient } from '../utils/api/client';
 import { notificationsKeys } from '../utils/api/queryKeys';
-import { setAutoLaunch, setKeyboardShortcut } from '../utils/system/comms';
+import {
+  setAutoLaunch,
+  setKeepWindowOnBlur,
+  setKeyboardShortcut,
+  setUseX11Backend,
+} from '../utils/system/comms';
 import { setTrayIconColorAndTitle } from '../utils/system/tray';
 import { setTheme } from '../utils/ui/theme';
 import { zoomLevelToPercentage, zoomPercentageToLevel } from '../utils/ui/zoom';
@@ -34,6 +39,7 @@ export function initializeStoreSubscriptions(): () => void {
   // ========================================================================
   setTheme(useSettingsStore.getState().theme);
   setAutoLaunch(useSettingsStore.getState().openAtStartup);
+  setKeepWindowOnBlur(useSettingsStore.getState().keepWindowOnBlur);
   setKeyboardShortcut(useSettingsStore.getState().keyboardShortcutEnabled);
   setTrayIconColorAndTitle();
 
@@ -58,6 +64,22 @@ export function initializeStoreSubscriptions(): () => void {
     },
   );
   unsubscribers.push(unsubAutoLaunch);
+
+  const unsubKeepWindowOnBlur = useSettingsStore.subscribe(
+    (state) => state.keepWindowOnBlur,
+    (keepWindowOnBlur) => {
+      setKeepWindowOnBlur(keepWindowOnBlur);
+    },
+  );
+  unsubscribers.push(unsubKeepWindowOnBlur);
+
+  const unsubUseX11Backend = useSettingsStore.subscribe(
+    (state) => state.useX11Backend,
+    (useX11Backend) => {
+      setUseX11Backend(useX11Backend);
+    },
+  );
+  unsubscribers.push(unsubUseX11Backend);
 
   // Keyboard shortcut
   const unsubKeyboard = useSettingsStore.subscribe(

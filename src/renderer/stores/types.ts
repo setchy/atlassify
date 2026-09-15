@@ -271,6 +271,12 @@ export interface SystemSettingsState {
    */
   enableAnonymousAnalytics: boolean;
 
+  /** Whether to keep the popup visible when it loses focus. */
+  keepWindowOnBlur: boolean;
+
+  /** Whether Linux should use X11/XWayland after the next restart. */
+  useX11Backend: boolean;
+
   /**
    * Whether to open the application on system startup.
    */

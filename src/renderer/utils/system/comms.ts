@@ -85,6 +85,16 @@ export function setAutoLaunch(value: boolean): void {
   window.atlassify.setAutoLaunch(value);
 }
 
+/** Keep the popup visible when it loses focus. */
+export function setKeepWindowOnBlur(value: boolean): void {
+  window.atlassify.setKeepWindowOnBlur(value);
+}
+
+/** Persist the Linux display backend preference for the next launch. */
+export function setUseX11Backend(value: boolean): void {
+  window.atlassify.setUseX11Backend(value);
+}
+
 /**
  * Registers or unregisters the global keyboard shortcut to toggle the application window.
  *

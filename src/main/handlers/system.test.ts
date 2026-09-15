@@ -5,6 +5,17 @@ import { EVENTS } from '../../shared/events';
 import { registerSystemHandlers } from './system';
 
 const onMock = vi.fn();
+const applyKeepWindowOnBlurMock = vi.fn();
+const setX11BackendMock = vi.fn();
+
+vi.mock('../lifecycle/window', () => ({
+  applyKeepWindowOnBlur: (...args: unknown[]) =>
+    applyKeepWindowOnBlurMock(...args),
+}));
+
+vi.mock('../ozone', () => ({
+  setX11Backend: (...args: unknown[]) => setX11BackendMock(...args),
+}));
 
 vi.mock('electron', () => ({
   ipcMain: {
@@ -57,6 +68,30 @@ describe('main/handlers/system.ts', () => {
       expect(registeredEvents).toContain(EVENTS.OPEN_EXTERNAL);
       expect(registeredEvents).toContain(EVENTS.UPDATE_KEYBOARD_SHORTCUT);
       expect(registeredEvents).toContain(EVENTS.UPDATE_AUTO_LAUNCH);
+      expect(registeredEvents).toContain(EVENTS.UPDATE_KEEP_WINDOW_ON_BLUR);
+      expect(registeredEvents).toContain(EVENTS.UPDATE_USE_X11_BACKEND);
+    });
+
+    it('forwards keep-window-on-blur changes to menubar', () => {
+      registerSystemHandlers(menubar);
+      const call = onMock.mock.calls.find(
+        ([eventName]) => eventName === EVENTS.UPDATE_KEEP_WINDOW_ON_BLUR,
+      );
+
+      call?.[1]({}, true);
+
+      expect(applyKeepWindowOnBlurMock).toHaveBeenCalledWith(menubar, true);
+    });
+
+    it('persists X11 backend changes', () => {
+      registerSystemHandlers(menubar);
+      const call = onMock.mock.calls.find(
+        ([eventName]) => eventName === EVENTS.UPDATE_USE_X11_BACKEND,
+      );
+
+      call?.[1]({}, true);
+
+      expect(setX11BackendMock).toHaveBeenCalledWith(true);
     });
   });
 });

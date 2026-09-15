@@ -66,6 +66,8 @@ export const SystemSettings: FC = () => {
     (s) => s.enableAnonymousAnalytics,
   );
   const openAtStartup = useSettingsStore((s) => s.openAtStartup);
+  const keepWindowOnBlur = useSettingsStore((s) => s.keepWindowOnBlur);
+  const useX11Backend = useSettingsStore((s) => s.useX11Backend);
 
   return (
     <Stack space="space.100">
@@ -208,6 +210,22 @@ export const SystemSettings: FC = () => {
 
       <Inline space="space.100">
         <Checkbox
+          isChecked={keepWindowOnBlur}
+          label={t('settings.system.keep_window_on_blur')}
+          name="keepWindowOnBlur"
+          onChange={() => toggleSetting('keepWindowOnBlur')}
+        />
+        <InlineMessage appearance="info">
+          <div className="settings-help-text">
+            {t('settings.system.keep_window_on_blur_help', {
+              appName: APPLICATION.NAME,
+            })}
+          </div>
+        </InlineMessage>
+      </Inline>
+
+      <Inline space="space.100">
+        <Checkbox
           isChecked={enableAnonymousAnalytics}
           label={t('settings.system.anonymous_analytics')}
           name="enableAnonymousAnalytics"
@@ -233,6 +251,24 @@ export const SystemSettings: FC = () => {
           <InlineMessage appearance="info">
             <div className="settings-help-text">
               {t('settings.system.startup_help', {
+                appName: APPLICATION.NAME,
+              })}
+            </div>
+          </InlineMessage>
+        </Inline>
+      )}
+
+      {window.atlassify.platform.isLinux() && (
+        <Inline space="space.100">
+          <Checkbox
+            isChecked={useX11Backend}
+            label={t('settings.system.use_x11_backend')}
+            name="useX11Backend"
+            onChange={() => toggleSetting('useX11Backend')}
+          />
+          <InlineMessage appearance="info">
+            <div className="settings-help-text">
+              {t('settings.system.use_x11_backend_help', {
                 appName: APPLICATION.NAME,
               })}
             </div>
