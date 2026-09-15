@@ -56,7 +56,7 @@ Releases are automated with [release-please][release-please]. There is no releas
 1. **Merge changes into `main`.** Use [Conventional Commits][conventional-commits] for PR titles (`feat:`, `fix:`, `docs:`, `chore(deps):`, and so on). The title determines the version bump and changelog section.
 2. **Review the release PR.** Release-please keeps a `chore: release X.Y.Z` pull request current as changes land. It updates `package.json`, `.release-please-manifest.json`, `CHANGELOG.md`, and `sonar.projectVersion`. Review the [Renovate Dependency Dashboard][github-dependency-dashboard] for updates to include before shipping.
 3. **Merge the release PR when ready to ship.** GitHub Actions creates a draft release, validates the app, builds and signs macOS, Windows, and Linux artifacts, and publishes only after every platform succeeds. Publication creates the `vX.Y.Z` tag, then the release workflow redeploys the website and allows update clients to discover the release.
-4. **Optionally update milestones.** Add the release link and date to the current [Milestone][github-milestones], close it, and create a [New Milestone][github-new-milestone] for the next cycle.
+4. **Let publication automation notify contributors.** The frozen `vX.Y.Z` [Milestone][github-milestones] identifies the merged pull requests included in the release. After signed artifacts are public, a separate job comments once on each included pull request with a link to the release. Notification retries are idempotent and do not reopen or delay milestone closure.
 
 Changes confined to `docs/` are excluded from desktop app releases. They are validated by the docs workflow and deployed independently by Netlify.
 
@@ -66,7 +66,7 @@ Changes confined to `docs/` are excluded from desktop app releases. They are val
 - The `release` label must exist, and the semantic-title and auto-label checks must be allowed on release-please PRs.
 - Branch protection for `main` must require the normal CI and triage checks; it must not require a `release/v*` branch.
 - Repository secrets must include `APTABASE_KEY`, `SONAR_TOKEN`, `CSC_LINK`, `CSC_KEY_PASSWORD`, `WIN_CSC_LINK`, `WIN_CSC_KEY_PASSWORD`, `APPLE_ID_USERNAME`, `APPLE_ID_PASSWORD`, `APPLE_ID_TEAM_ID`, and `NETLIFY_BUILD_HOOK_URL`.
-- The release and publish jobs use least-privilege `contents: write` and `pull-requests: write` permissions; validation jobs remain read-only.
+- Packaging and publication use `contents: write`; pull request notification separately uses `issues: write`, `pull-requests: read`, and `contents: read`. Validation jobs remain read-only.
 
 For a signing-only check, manually run the Publish workflow with an empty tag. Supplying a tag publishes that existing draft after all platform jobs succeed.
 
@@ -88,7 +88,6 @@ To add a new locale:
 [github-dependency-dashboard]: https://github.com/setchy/atlassify/issues/1
 [github-issues]: https://github.com/setchy/atlassify/issues
 [github-milestones]: https://github.com/setchy/atlassify/milestones
-[github-new-milestone]: https://github.com/setchy/atlassify/milestones/new
 [github-new-release]: https://github.com/setchy/atlassify/releases/new
 [homebrew-cask-autobump-workflow]: https://github.com/Homebrew/homebrew-cask/actions/workflows/autobump.yml
 [release-please]: https://github.com/googleapis/release-please
