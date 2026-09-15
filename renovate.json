@@ -57,6 +57,14 @@
   ],
   "customManagers": [
     {
+      "description": "Keep the release-please CLI workaround up to date",
+      "customType": "regex",
+      "datasourceTemplate": "npm",
+      "depNameTemplate": "release-please",
+      "managerFilePatterns": ["/\\.github/workflows/release\\.yml$/"],
+      "matchStrings": ["npx --yes release-please@(?<currentValue>[^\\s]+)"]
+    },
+    {
       "description": "Keep sonar.projectVersion variables in sonar-project.properties in-sync",
       "customType": "regex",
       "datasourceTemplate": "github-tags",

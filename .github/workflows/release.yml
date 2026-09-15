@@ -39,9 +39,10 @@ jobs:
 
       - name: Run release-please (release PR)
         if: ${{ steps.release.outputs.release_created != 'true' && steps.drafts.outputs.count == '0' }}
-        uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5.0.0
-        with:
-          skip-github-release: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # TODO: Switch back to googleapis/release-please-action when https://github.com/googleapis/release-please-action/pull/1166 is released.
+        run: npx --yes release-please@17.11.2 release-pr --repo-url="${GITHUB_REPOSITORY}" --token="${GH_TOKEN}"
 
   lint:
     name: Lint App
