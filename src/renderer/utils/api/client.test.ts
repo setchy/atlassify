@@ -1,3 +1,5 @@
+import { onlineManager } from '@tanstack/react-query';
+
 import { mockAtlassianCloudAccount } from '../../__mocks__/account-mocks';
 import { mockSingleAtlassifyNotification } from '../../__mocks__/notifications-mocks';
 
@@ -31,6 +33,35 @@ describe('renderer/utils/api/client.ts', () => {
 
   afterEach(() => {
     vi.restoreAllMocks();
+    onlineManager.setOnline(true);
+    Object.defineProperty(navigator, 'onLine', {
+      value: true,
+      configurable: true,
+    });
+  });
+
+  describe('query lifecycle', () => {
+    it('synchronizes onlineManager with the browser', () => {
+      onlineManager.setOnline(true);
+      Object.defineProperty(navigator, 'onLine', {
+        value: false,
+        configurable: true,
+      });
+
+      client.syncOnlineManagerWithBrowser();
+
+      expect(onlineManager.isOnline()).toBe(false);
+    });
+
+    it('configures retry cooldown and garbage collection globally', () => {
+      const { queries } = client.queryClient.getDefaultOptions();
+
+      expect(queries?.retry).toBe(1);
+      expect(queries?.retryDelay).toBe(Constants.QUERY_RETRY_DELAY_MS);
+      expect(queries?.gcTime).toBe(Constants.QUERY_GC_TIME_MS);
+      expect(queries?.refetchIntervalInBackground).toBe(true);
+      expect(queries?.staleTime).toBeUndefined();
+    });
   });
 
   it('checkIfCredentialsAreValid - should validate credentials', async () => {

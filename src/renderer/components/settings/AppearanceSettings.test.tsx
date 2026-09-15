@@ -76,4 +76,16 @@ describe('renderer/components/settings/AppearanceSettings.tsx', () => {
     expect(toggleSettingSpy).toHaveBeenCalledTimes(0);
     expect(useAccountsStore.getState().hasMultipleAccounts()).toBe(true);
   });
+
+  it('removes the theme listener on unmount', () => {
+    const unsubscribe = vi.fn();
+    vi.mocked(window.atlassify.onSystemThemeUpdate).mockReturnValueOnce(
+      unsubscribe,
+    );
+
+    const { unmount } = renderWithProviders(<AppearanceSettings />);
+    unmount();
+
+    expect(unsubscribe).toHaveBeenCalledOnce();
+  });
 });

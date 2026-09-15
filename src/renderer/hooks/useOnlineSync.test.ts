@@ -13,12 +13,12 @@ describe('renderer/hooks/useOnlineSync.ts', () => {
     onlineManager.setOnline(true);
   });
 
-  it('calls onlineManager.setOnline with navigator.onLine on mount', () => {
-    const setOnlineSpy = vi.spyOn(onlineManager, 'setOnline');
+  it('seeds runtime state from the online manager on mount', () => {
+    onlineManager.setOnline(false);
 
     renderHook(() => useOnlineSync());
 
-    expect(setOnlineSpy).toHaveBeenCalledWith(navigator.onLine);
+    expect(useRuntimeStore.getState().isOnline).toBe(false);
   });
 
   it('updates the runtime store when onlineManager state changes', () => {
@@ -33,13 +33,18 @@ describe('renderer/hooks/useOnlineSync.ts', () => {
 
   it('unsubscribes from onlineManager on unmount', () => {
     const unsubscribeMock = vi.fn();
+    const unsubscribeWakeMock = vi.fn();
     vi.spyOn(onlineManager, 'subscribe').mockReturnValueOnce(unsubscribeMock);
+    vi.mocked(window.atlassify.onSystemWake).mockReturnValueOnce(
+      unsubscribeWakeMock,
+    );
 
     const { unmount } = renderHook(() => useOnlineSync());
 
     unmount();
 
     expect(unsubscribeMock).toHaveBeenCalledOnce();
+    expect(unsubscribeWakeMock).toHaveBeenCalledOnce();
   });
 
   it('re-syncs onlineManager with navigator.onLine on system wake', () => {

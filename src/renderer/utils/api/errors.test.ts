@@ -17,42 +17,22 @@ describe('renderer/utils/api/errors.ts', () => {
 
   describe('bad credentials errors', () => {
     it('bad credentials - 401', async () => {
-      const mockError: Partial<AxiosError<AtlassianAPIError>> = {
-        code: AxiosError.ERR_BAD_REQUEST,
-        status: 401,
-        response: createMockResponse(401, 'Bad credentials'),
-      };
-
-      const result = determineFailureType(
-        mockError as AxiosError<AtlassianAPIError>,
-      );
+      const result = determineFailureType(createAxiosError(401));
 
       expect(result).toBe(Errors.BAD_CREDENTIALS);
     });
 
     it('bad credentials - 404', async () => {
-      const mockError: Partial<AxiosError<AtlassianAPIError>> = {
-        code: AxiosError.ERR_BAD_REQUEST,
-        status: 404,
-        response: createMockResponse(404, 'Bad credentials'),
-      };
-
-      const result = determineFailureType(
-        mockError as AxiosError<AtlassianAPIError>,
-      );
+      const result = determineFailureType(createAxiosError(404));
 
       expect(result).toBe(Errors.BAD_CREDENTIALS);
     });
 
     it('bad credentials - safe storage', async () => {
-      const mockError: Partial<AxiosError<AtlassianAPIError>> = {
-        code: AxiosError.ERR_BAD_REQUEST,
-        status: 404,
-        message: `Error invoking remote method '${EVENTS.SAFE_STORAGE_DECRYPT}': Error: Error while decrypting the ciphertext provided to safeStorage.decryptString. Ciphertext does not appear to be encrypted.`,
-      };
-
       const result = determineFailureType(
-        mockError as AxiosError<AtlassianAPIError>,
+        new Error(
+          `Error invoking remote method '${EVENTS.SAFE_STORAGE_DECRYPT}': Error: Error while decrypting the ciphertext provided to safeStorage.decryptString. Ciphertext does not appear to be encrypted.`,
+        ),
       );
 
       expect(result).toBe(Errors.BAD_CREDENTIALS);
@@ -60,24 +40,14 @@ describe('renderer/utils/api/errors.ts', () => {
   });
 
   it('bad request error', async () => {
-    const mockError: Partial<AxiosError<AtlassianAPIError>> = {
-      message: Errors.BAD_REQUEST.title,
-    };
-
-    const result = determineFailureType(
-      mockError as AxiosError<AtlassianAPIError>,
-    );
+    const result = determineFailureType(new Error(Errors.BAD_REQUEST.title));
 
     expect(result).toBe(Errors.BAD_REQUEST);
   });
 
   it('network error', async () => {
-    const mockError: Partial<AxiosError<AtlassianAPIError>> = {
-      code: AxiosError.ERR_NETWORK,
-    };
-
     const result = determineFailureType(
-      mockError as AxiosError<AtlassianAPIError>,
+      new AxiosError('Network failure', AxiosError.ERR_NETWORK),
     );
 
     expect(result).toBe(Errors.NETWORK);
@@ -85,29 +55,29 @@ describe('renderer/utils/api/errors.ts', () => {
 
   it('offline error', async () => {
     useRuntimeStore.getState().updateIsOnline(false);
-    const mockError: Partial<AxiosError<AtlassianAPIError>> = {
-      code: AxiosError.ERR_NETWORK,
-    };
-
     const result = determineFailureType(
-      mockError as AxiosError<AtlassianAPIError>,
+      new AxiosError('Network failure', AxiosError.ERR_NETWORK),
     );
 
     expect(result).toBe(Errors.OFFLINE);
   });
 
-  it('unknown error', async () => {
-    const mockError: Partial<AxiosError<AtlassianAPIError>> = {
-      code: 'anything',
-    };
-
-    const result = determineFailureType(
-      mockError as AxiosError<AtlassianAPIError>,
-    );
+  it('generic error', async () => {
+    const result = determineFailureType(new Error('anything'));
 
     expect(result).toBe(Errors.UNKNOWN);
   });
 });
+
+function createAxiosError(status: number): AxiosError<AtlassianAPIError> {
+  return new AxiosError(
+    'Bad credentials',
+    AxiosError.ERR_BAD_REQUEST,
+    undefined,
+    undefined,
+    createMockResponse(status, 'Bad credentials'),
+  );
+}
 
 function createMockResponse(
   status: number,

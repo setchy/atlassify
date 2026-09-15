@@ -155,7 +155,7 @@ export function initializeStoreSubscriptions(): () => void {
       useSettingsStore.getState().groupNotificationsByTitle;
 
     const queryKey = notificationsKeys.list(
-      accounts.length,
+      accounts.map((account) => account.id),
       fetchOnlyUnreadNotifications,
       groupNotificationsByTitle,
     );

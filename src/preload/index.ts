@@ -192,7 +192,7 @@ export const api = {
    * @param callback - Called when the system wakes from sleep or hibernation.
    */
   onSystemWake: (callback: () => void) => {
-    onRendererEvent(EVENTS.SYSTEM_WAKE, () => callback());
+    return onRendererEvent(EVENTS.SYSTEM_WAKE, () => callback());
   },
 
   /**
@@ -201,7 +201,7 @@ export const api = {
    * @param callback - Called when the reset event is received.
    */
   onResetApp: (callback: () => void) => {
-    onRendererEvent(EVENTS.RESET_APP, () => callback());
+    return onRendererEvent(EVENTS.RESET_APP, () => callback());
   },
 
   /**
@@ -210,7 +210,7 @@ export const api = {
    * @param callback - Called with the new theme name when a theme update event is received.
    */
   onSystemThemeUpdate: (callback: (theme: string) => void) => {
-    onRendererEvent(EVENTS.UPDATE_THEME, (_, theme) => callback(theme));
+    return onRendererEvent(EVENTS.UPDATE_THEME, (_, theme) => callback(theme));
   },
 
   /**

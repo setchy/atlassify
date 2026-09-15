@@ -3,6 +3,7 @@ import type { Theme } from '../../shared/theme';
 import type {
   Account,
   ActorType,
+  AtlassifyError,
   CategoryType,
   EngagementStateType,
   Hostname,
@@ -358,3 +359,25 @@ export interface RuntimeActions {
  * Complete runtime store type.
  */
 export type RuntimeStore = RuntimeState & RuntimeActions;
+
+// ============================================================================
+// Notification Action Failure Store Types
+// ============================================================================
+
+export interface NotificationActionFailure {
+  action: 'read' | 'unread';
+  error: AtlassifyError;
+}
+
+export interface NotificationActionFailuresStore {
+  failures: Record<string, NotificationActionFailure>;
+  setFailure: (
+    notificationKey: string,
+    failure: NotificationActionFailure,
+  ) => void;
+  clearFailure: (notificationKey: string) => void;
+  clearFailures: (notificationKeys: string[]) => void;
+  clearAccountFailures: (accountId: string) => void;
+  pruneFailures: (notificationKeys: string[]) => void;
+  reset: () => void;
+}

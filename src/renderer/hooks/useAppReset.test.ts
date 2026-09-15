@@ -23,4 +23,14 @@ describe('renderer/hooks/useAppReset.ts', () => {
     expect(resetSettings).toHaveBeenCalledOnce();
     expect(resetFilters).toHaveBeenCalledOnce();
   });
+
+  it('removes the reset listener on unmount', () => {
+    const unsubscribe = vi.fn();
+    vi.mocked(window.atlassify.onResetApp).mockReturnValueOnce(unsubscribe);
+
+    const { unmount } = renderHook(() => useAppReset());
+    unmount();
+
+    expect(unsubscribe).toHaveBeenCalledOnce();
+  });
 });
