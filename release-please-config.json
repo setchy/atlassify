@@ -7,7 +7,7 @@
       "include-commit-authors": true,
       "include-component-in-tag": false,
       "draft": true,
-      "exclude-paths": ["docs/**"],
+      "exclude-paths": ["docs"],
       "extra-files": [
         {
           "type": "generic",
