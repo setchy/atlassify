@@ -70,7 +70,7 @@ jobs:
     permissions:
       contents: write
       issues: write
-      pull-requests: read
+      pull-requests: write
     with:
       tag_name: ${{ needs.release-please.outputs.tag_name }}
     secrets:
