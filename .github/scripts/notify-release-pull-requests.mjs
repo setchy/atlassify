@@ -17,16 +17,19 @@ export function releaseNoticeBody(tag, releaseUrl) {
 }
 
 export async function findVersionMilestone(github, repository, tag) {
+  const milestoneTitle = `Release ${tag.replace(/^v/, '')}`;
   const milestones = await github.paginate(github.rest.issues.listMilestones, {
     ...repository,
     state: 'all',
     per_page: 100,
   });
-  const matches = milestones.filter((milestone) => milestone.title === tag);
+  const matches = milestones.filter(
+    (milestone) => milestone.title === milestoneTitle,
+  );
 
   if (matches.length !== 1) {
     throw new Error(
-      `Expected exactly one milestone titled ${tag}; found ${matches.length}`,
+      `Expected exactly one milestone titled ${milestoneTitle}; found ${matches.length}`,
     );
   }
 
