@@ -168,6 +168,9 @@ overrides:
   got: 11.8.6
   electron: 44.3.0
 
+patchedDependencies:
+  app-builder-lib@26.15.3: 1d0bcf7317ddfde2a1534cf28917d78d5ace7900cd3ef73d76d651b6e9e71cfb
+
 importers:
 
   .:
@@ -7513,7 +7516,7 @@ snapshots:
 
   ansi-styles@6.2.3: {}
 
-  app-builder-lib@26.15.3(dmg-builder@26.15.3)(electron-builder-squirrel-windows@26.15.3)(supports-color@10.2.2):
+  app-builder-lib@26.15.3(patch_hash=1d0bcf7317ddfde2a1534cf28917d78d5ace7900cd3ef73d76d651b6e9e71cfb)(dmg-builder@26.15.3)(electron-builder-squirrel-windows@26.15.3)(supports-color@10.2.2):
     dependencies:
       '@electron/asar': 3.4.1
       '@electron/fuses': 1.8.0
@@ -8036,7 +8039,7 @@ snapshots:
 
   dmg-builder@26.15.3(electron-builder-squirrel-windows@26.15.3)(supports-color@10.2.2):
     dependencies:
-      app-builder-lib: 26.15.3(dmg-builder@26.15.3)(electron-builder-squirrel-windows@26.15.3)(supports-color@10.2.2)
+      app-builder-lib: 26.15.3(patch_hash=1d0bcf7317ddfde2a1534cf28917d78d5ace7900cd3ef73d76d651b6e9e71cfb)(dmg-builder@26.15.3)(electron-builder-squirrel-windows@26.15.3)(supports-color@10.2.2)
       builder-util: 26.15.3(supports-color@10.2.2)
       fs-extra: 10.1.0
       js-yaml: 4.3.2
@@ -8092,7 +8095,7 @@ snapshots:
 
   electron-builder-squirrel-windows@26.15.3(dmg-builder@26.15.3)(supports-color@10.2.2):
     dependencies:
-      app-builder-lib: 26.15.3(dmg-builder@26.15.3)(electron-builder-squirrel-windows@26.15.3)(supports-color@10.2.2)
+      app-builder-lib: 26.15.3(patch_hash=1d0bcf7317ddfde2a1534cf28917d78d5ace7900cd3ef73d76d651b6e9e71cfb)(dmg-builder@26.15.3)(electron-builder-squirrel-windows@26.15.3)(supports-color@10.2.2)
       builder-util: 26.15.3(supports-color@10.2.2)
       electron-winstaller: 5.4.0(supports-color@10.2.2)
     transitivePeerDependencies:
@@ -8101,7 +8104,7 @@ snapshots:
 
   electron-builder@26.15.3(electron-builder-squirrel-windows@26.15.3)(supports-color@10.2.2):
     dependencies:
-      app-builder-lib: 26.15.3(dmg-builder@26.15.3)(electron-builder-squirrel-windows@26.15.3)(supports-color@10.2.2)
+      app-builder-lib: 26.15.3(patch_hash=1d0bcf7317ddfde2a1534cf28917d78d5ace7900cd3ef73d76d651b6e9e71cfb)(dmg-builder@26.15.3)(electron-builder-squirrel-windows@26.15.3)(supports-color@10.2.2)
       builder-util: 26.15.3(supports-color@10.2.2)
       builder-util-runtime: 9.7.0(supports-color@10.2.2)
       chalk: 4.1.2
