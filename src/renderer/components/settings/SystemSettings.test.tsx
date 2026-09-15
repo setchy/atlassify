@@ -116,6 +116,30 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
     expect(toggleSettingSpy).toHaveBeenCalledWith('enableAnonymousAnalytics');
   });
 
+  it('should toggle keepWindowOnBlur', async () => {
+    renderWithProviders(<SystemSettings />);
+
+    await userEvent.click(
+      screen.getByLabelText('Keep window open when it loses focus'),
+    );
+
+    expect(toggleSettingSpy).toHaveBeenCalledWith('keepWindowOnBlur');
+  });
+
+  it('should show and toggle the X11 backend only on Linux', async () => {
+    vi.mocked(window.atlassify.platform.isLinux).mockReturnValue(true);
+    renderWithProviders(<SystemSettings />);
+
+    await userEvent.click(
+      screen.getByLabelText('Use X11 backend (restart required)'),
+    );
+
+    expect(toggleSettingSpy).toHaveBeenCalledWith('useX11Backend');
+    expect(screen.queryByLabelText('Open at startup')).not.toBeInTheDocument();
+
+    vi.mocked(window.atlassify.platform.isLinux).mockReturnValue(false);
+  });
+
   it('should toggle the openAtStartup checkbox', async () => {
     renderWithProviders(<SystemSettings />);
 

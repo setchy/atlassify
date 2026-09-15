@@ -69,8 +69,10 @@ describe('main/lifecycle/window.ts', () => {
     setPlatform('linux');
 
     menubar = {
+      on: vi.fn(),
       hideWindow: vi.fn(),
       recenterOnTray: vi.fn(),
+      setOption: vi.fn(),
       tray: {
         getBounds: vi
           .fn()
@@ -79,7 +81,6 @@ describe('main/lifecycle/window.ts', () => {
       window: {
         setSize: vi.fn(),
         center: vi.fn(),
-        setAlwaysOnTop: vi.fn(),
         hide: vi.fn(),
         isDestroyed: vi.fn().mockReturnValue(false),
         on: vi.fn(),
@@ -106,6 +107,10 @@ describe('main/lifecycle/window.ts', () => {
     expect(() =>
       configureWindowEvents(mbNoWindow as unknown as Menubar, menuBuilder),
     ).not.toThrow();
+    expect(mbNoWindow.on).toHaveBeenCalledWith(
+      'after-create-window',
+      expect.any(Function),
+    );
   });
 
   it('configureWindowEvents registers webContents devtools listeners', () => {
@@ -144,6 +149,34 @@ describe('main/lifecycle/window.ts', () => {
     );
   });
 
+  it('binds a replacement window without duplicating app listeners', () => {
+    configureWindowEvents(menubar, menuBuilder);
+    const afterCreateHandler = (menubar.on as ReturnType<typeof vi.fn>).mock
+      .calls[0]?.[1] as (() => void) | undefined;
+    const replacementWindow = {
+      setSize: vi.fn(),
+      center: vi.fn(),
+      on: vi.fn(),
+      webContents: { on: vi.fn() },
+    };
+
+    Object.defineProperty(menubar, 'window', {
+      value: replacementWindow,
+      configurable: true,
+    });
+    afterCreateHandler?.();
+
+    expect(replacementWindow.on).toHaveBeenCalledWith(
+      'show',
+      expect.any(Function),
+    );
+    expect(replacementWindow.webContents.on).toHaveBeenCalledWith(
+      'devtools-closed',
+      expect.any(Function),
+    );
+    expect(appOnMock).toHaveBeenCalledTimes(2);
+  });
+
   describe('window visibility forwarding', () => {
     it('forwards window show events to menu builder', () => {
       configureWindowEvents(menubar, menuBuilder);
@@ -165,40 +198,16 @@ describe('main/lifecycle/window.ts', () => {
   });
 
   describe('applyKeepWindowOnBlur', () => {
-    it('forwards the value to the underlying window', () => {
+    it('keeps the window visible by disabling hide on blur', () => {
       applyKeepWindowOnBlur(menubar, true);
 
-      expect(menubar.window?.setAlwaysOnTop).toHaveBeenCalledWith(true);
+      expect(menubar.setOption).toHaveBeenCalledWith('hideOnBlur', false);
     });
 
-    it('skips the call when the window is destroyed', () => {
-      // biome-ignore lint/correctness/noUnsafeOptionalChaining: window is guaranteed defined in this test
-      (menubar.window?.isDestroyed as ReturnType<typeof vi.fn>).mockReturnValue(
-        true,
-      );
+    it('restores hide on blur when the window is not pinned', () => {
+      applyKeepWindowOnBlur(menubar, false);
 
-      applyKeepWindowOnBlur(menubar, true);
-
-      expect(menubar.window?.setAlwaysOnTop).not.toHaveBeenCalled();
-    });
-
-    it('is restored after DevTools closes', () => {
-      configureWindowEvents(menubar, menuBuilder);
-      applyKeepWindowOnBlur(menubar, true);
-      // biome-ignore lint/correctness/noUnsafeOptionalChaining: window is guaranteed defined in this test
-      (menubar.window?.setAlwaysOnTop as ReturnType<typeof vi.fn>).mockClear();
-
-      findWebContentsHandler(menubar, 'devtools-closed')?.();
-
-      expect(menubar.window?.setAlwaysOnTop).toHaveBeenCalledWith(true);
-    });
-
-    it('is cleared after DevTools closes when the user did not opt in', () => {
-      configureWindowEvents(menubar, menuBuilder);
-
-      findWebContentsHandler(menubar, 'devtools-closed')?.();
-
-      expect(menubar.window?.setAlwaysOnTop).toHaveBeenCalledWith(false);
+      expect(menubar.setOption).toHaveBeenCalledWith('hideOnBlur', true);
     });
   });
 

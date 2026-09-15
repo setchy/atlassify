@@ -79,7 +79,9 @@ window.atlassify = {
   onResetApp: vi.fn(),
   onSystemThemeUpdate: vi.fn(),
   setAutoLaunch: vi.fn(),
+  setKeepWindowOnBlur: vi.fn(),
   setKeyboardShortcut: vi.fn(),
+  setUseX11Backend: vi.fn(),
   raiseNativeNotification: vi.fn(),
   aptabase: {
     trackEvent: vi.fn(),

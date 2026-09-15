@@ -76,6 +76,8 @@ interface TestApi {
     ) => void;
   };
   openExternalLink: (u: string, f: boolean) => void;
+  setKeepWindowOnBlur: (value: boolean) => void;
+  setUseX11Backend: (value: boolean) => void;
   app: { version: () => Promise<string>; show?: () => void; hide?: () => void };
   onSystemThemeUpdate: (cb: (t: string) => void) => void;
   raiseNativeNotification: (t: string, b: string, u?: string) => unknown;
@@ -128,6 +130,22 @@ describe('preload/index', () => {
       url: 'https://example.com',
       activate: true,
     });
+  });
+
+  it('sends popup lifecycle preferences to main', () => {
+    const api = getExposedApi();
+
+    api.setKeepWindowOnBlur(true);
+    api.setUseX11Backend(true);
+
+    expect(sendMainEventMock).toHaveBeenCalledWith(
+      EVENTS.UPDATE_KEEP_WINDOW_ON_BLUR,
+      true,
+    );
+    expect(sendMainEventMock).toHaveBeenCalledWith(
+      EVENTS.UPDATE_USE_X11_BACKEND,
+      true,
+    );
   });
 
   it('app.version returns dev in development', async () => {

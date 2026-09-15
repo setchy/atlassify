@@ -221,6 +221,8 @@
     "system": {
       "anonymous_analytics": "Share anonymous usage analytics",
       "anonymous_analytics_help": "Help improve {{appName}} by sending anonymous usage events (for example: screens visited and actions used). Atlassian API tokens and notification content are never sent.",
+      "keep_window_on_blur": "Keep window open when it loses focus",
+      "keep_window_on_blur_help": "Prevent the {{appName}} window from automatically hiding when you click outside it.",
       "keyboard_shortcut": "Enable keyboard shortcut",
       "keyboard_shortcut_help": "When enabled, you can use the hotkeys {{shortcut}} to show or hide {{appName}}.",
       "open_links": "Open Links",
@@ -232,6 +234,8 @@
       "system_notifications": "Show system notifications",
       "system_notifications_help": "Display native operating system notifications for new unread notifications.",
       "title": "System",
+      "use_x11_backend": "Use X11 backend (restart required)",
+      "use_x11_backend_help": "Run under X11/XWayland so the window can open next to the tray icon. This may soften text on displays using fractional scaling and takes effect after restarting {{appName}}.",
       "volume_down": "Volume down",
       "volume_reset": "Reset volume",
       "volume_up": "Volume up"

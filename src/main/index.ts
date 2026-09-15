@@ -18,7 +18,10 @@ import {
   onFirstRunMaybe,
 } from './lifecycle';
 import MenuBuilder from './menu';
+import { applyOzonePlatform } from './ozone';
 import AppUpdater from './updater';
+
+applyOzonePlatform();
 
 log.initialize();
 
