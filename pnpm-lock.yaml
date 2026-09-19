@@ -213,8 +213,8 @@ importers:
         specifier: 28.0.2
         version: 28.0.2(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/avatar-group':
-        specifier: 14.3.3
-        version: 14.3.3(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
+        specifier: 14.3.5
+        version: 14.3.5(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/badge':
         specifier: 21.2.0
         version: 21.2.0(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
@@ -449,8 +449,8 @@ packages:
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
-  '@atlaskit/avatar-group@14.3.3':
-    resolution: {integrity: sha512-8z7sZcIuqFDMhAbkEvTHySBOCfXFORFGrwY10nfdyl/WCWG1D7Akgu0ZwJCBASItUOTDygrzfLGZRCBhR4jN9Q==}
+  '@atlaskit/avatar-group@14.3.5':
+    resolution: {integrity: sha512-tcSI7T1rlRhsJZ3UBLBvs8TYaeFhv6fykjFUqnRvtFhZ+MWJb8myd3iBfWOoPCOqni6kr5gIDmVF+AulmEwN8w==}
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
@@ -5240,7 +5240,7 @@ snapshots:
       '@babel/runtime': 7.29.7
       react: 19.3.0
 
-  '@atlaskit/avatar-group@14.3.3(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)':
+  '@atlaskit/avatar-group@14.3.5(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/avatar': 28.0.2(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/css': 1.1.2(react@19.3.0)(supports-color@10.2.2)
@@ -5250,9 +5250,9 @@ snapshots:
       '@atlaskit/platform-feature-flags': 2.2.0(react@19.3.0)
       '@atlaskit/popup': 6.3.4(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.3.0)
-      '@atlaskit/tokens': 16.12.0(react@19.3.0)(supports-color@10.2.2)
+      '@atlaskit/tokens': 17.0.1(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/tooltip': 24.3.3(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
-      '@atlaskit/top-layer': 4.4.5(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
+      '@atlaskit/top-layer': 5.0.4(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
       '@compiled/react': 1.0.2(react@19.3.0)
       bind-event-listener: 3.0.0
