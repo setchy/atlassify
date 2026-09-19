@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.16.2](https://github.com/setchy/atlassify/compare/v3.16.1...v3.16.2) (2026-09-19)
+
+
+### 🐛 Bug Fixes
+
+* release milestone steps ([102a193](https://github.com/setchy/atlassify/commit/102a19364c2c8a4fbbd755e99c7dd9b4a1769d72))
+
 ## [3.16.1](https://github.com/setchy/atlassify/compare/v3.16.0...v3.16.1) (2026-09-19)
 
 
