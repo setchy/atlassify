@@ -170,6 +170,33 @@ jobs:
       issues: write
       pull-requests: write
     steps:
+      - name: Close milestone for released version
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          TAG_NAME: ${{ inputs.tag_name }}
+        run: |
+          # The release is published, so the tag URL is definitively live. Finalize
+          # the milestone before notifying: description becomes the release URL, the
+          # due date becomes today, and the milestone is closed. The notification
+          # step queries milestones across all states, so a closed milestone still
+          # finds the pull requests it contains on re-runs.
+          version="${TAG_NAME#v}"
+          title="Release ${version}"
+          url="https://github.com/${REPO}/releases/tag/${TAG_NAME}"
+
+          number=$(gh api --method GET "repos/${REPO}/milestones?state=open&per_page=100" \
+            --jq ".[] | select(.title == \"${title}\") | .number" | head -1)
+          if [ -z "${number}" ]; then
+            echo "::warning::No open milestone titled '${title}' found; skipping finalize"
+            exit 0
+          fi
+
+          now=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          gh api --method PATCH "repos/${REPO}/milestones/${number}" \
+            -f "description=${url}" -f "due_on=${now}" -f state=closed
+          echo "Finalized milestone '${title}': ${url}"
+
       - name: Checkout trusted release automation
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
