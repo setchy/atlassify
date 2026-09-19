@@ -234,8 +234,8 @@ importers:
         specifier: 17.2.0
         version: 17.2.0(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/heading':
-        specifier: 7.2.0
-        version: 7.2.0(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
+        specifier: 7.2.1
+        version: 7.2.1(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/icon':
         specifier: 37.6.0
         version: 37.6.0(react@19.3.0)(supports-color@10.2.2)
@@ -507,8 +507,8 @@ packages:
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
-  '@atlaskit/heading@7.2.0':
-    resolution: {integrity: sha512-sQ2JTkeKgRx3jswmhkN3lDwFS9pC82aiUogp9qyDnl4jLGlLQ2UzYoqYxsd8buaDALMv1jqsH7dZY0utf6roSg==}
+  '@atlaskit/heading@7.2.1':
+    resolution: {integrity: sha512-bpXGfMp1YoFcps4ff2Jbq7RVt9QdB5u47ExY9Lq3X0BRu5G7LDyAnqZXNpwYveXfNpXjftbgvyK5Nh8IkCgH9Q==}
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
@@ -5378,7 +5378,7 @@ snapshots:
     dependencies:
       '@atlaskit/css': 1.1.2(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/ds-lib': 8.0.0(react@19.3.0)
-      '@atlaskit/heading': 7.2.0(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
+      '@atlaskit/heading': 7.2.1(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/icon': 37.6.0(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/platform-feature-flags': 2.2.0(react@19.3.0)
       '@atlaskit/primitives': 22.5.0(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
@@ -5396,11 +5396,11 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/heading@7.2.0(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)':
+  '@atlaskit/heading@7.2.1(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/primitives': 22.5.0(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.3.0)
-      '@atlaskit/tokens': 16.12.0(react@19.3.0)(supports-color@10.2.2)
+      '@atlaskit/tokens': 17.0.1(react@19.3.0)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
       '@compiled/react': 1.0.2(react@19.3.0)
       react: 19.3.0
