@@ -243,8 +243,8 @@ importers:
         specifier: 7.9.0
         version: 7.9.0(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/inline-message':
-        specifier: 16.4.1
-        version: 16.4.1(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
+        specifier: 16.4.2
+        version: 16.4.2(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/logo':
         specifier: 23.0.2
         version: 23.0.2(react@19.3.0)(supports-color@10.2.2)
@@ -527,8 +527,8 @@ packages:
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
-  '@atlaskit/inline-message@16.4.1':
-    resolution: {integrity: sha512-fMYpoQx1nEYOZ88M24nYMmKe740hv1qtIcEEahHcB80BvTfmKtNI6zvLkk8tajo8z+0zol27ZYpB0JsYVZ11lw==}
+  '@atlaskit/inline-message@16.4.2':
+    resolution: {integrity: sha512-ObS3z8nskNm8xUHI4ztRx2u7yIwuiLOgn34ByTVYvmlrGG48bnPwEb9qf305/vzAQNZlYez+jELTfL4+LayuKg==}
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
@@ -5431,7 +5431,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@atlaskit/inline-message@16.4.1(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)':
+  '@atlaskit/inline-message@16.4.2(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/button': 25.3.4(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/ds-lib': 8.0.0(react@19.3.0)
@@ -5443,7 +5443,7 @@ snapshots:
       '@atlaskit/primitives': 22.5.1(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.3.0)
       '@atlaskit/theme': 28.2.2(react@19.3.0)(supports-color@10.2.2)
-      '@atlaskit/tokens': 17.0.0(react@19.3.0)(supports-color@10.2.2)
+      '@atlaskit/tokens': 18.2.0(react@19.3.0)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
       '@compiled/react': 1.0.2(react@19.3.0)
       react: 19.3.0
