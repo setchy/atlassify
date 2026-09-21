@@ -276,8 +276,8 @@ importers:
         specifier: 17.3.2
         version: 17.3.2(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/tokens':
-        specifier: 17.0.0
-        version: 17.0.0(react@19.3.0)(supports-color@10.2.2)
+        specifier: 18.2.0
+        version: 18.2.0(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/tooltip':
         specifier: 24.3.4
         version: 24.3.4(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
