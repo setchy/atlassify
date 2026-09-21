@@ -64,11 +64,6 @@ exports[`renderer/routes/Accounts.tsx > General > should render itself & its chi
   <div
     class="grow overflow-x-hidden overflow-y-auto"
   >
-    <style
-      data-cmpld="true"
-    >
-      ._2rko1mok{border-radius:var(--ds-radius-large,8px)}._1yt4utpp{padding:var(--ds-space-150,9pt)}._195gv47k{margin-inline:var(--ds-space-250,20px)}._bfhk1s93{background-color:var(--ds-background-accent-blue-subtlest,#e9f2fe)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}
-    </style>
     <div
       class="_19itglyw _vchhusvi _r06hglyw _2rko1mok _1yt4utpp _195gv47k _bfhkysee"
     >
@@ -254,11 +249,6 @@ exports[`renderer/routes/Accounts.tsx > General > should render itself & its chi
       </div>
     </div>
   </div>
-  <style
-    data-cmpld="true"
-  >
-    ._1rjc1b66{padding-block:var(--ds-space-050,4px)}._18zrpxbi{padding-inline:var(--ds-space-200,1pc)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}
-  </style>
   <div
     class="_19itglyw _vchhusvi _r06hglyw _1rjc1b66 _18zrpxbi _bfhkysee"
   >
@@ -371,11 +361,6 @@ exports[`renderer/routes/Accounts.tsx > General > should render itself & its chi
   <div
     class="grow overflow-x-hidden overflow-y-auto"
   >
-    <style
-      data-cmpld="true"
-    >
-      ._2rko1mok{border-radius:var(--ds-radius-large,8px)}._1yt4utpp{padding:var(--ds-space-150,9pt)}._195gv47k{margin-inline:var(--ds-space-250,20px)}._bfhk1s93{background-color:var(--ds-background-accent-blue-subtlest,#e9f2fe)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}
-    </style>
     <div
       class="_19itglyw _vchhusvi _r06hglyw _2rko1mok _1yt4utpp _195gv47k _bfhk1s93"
     >
@@ -561,11 +546,6 @@ exports[`renderer/routes/Accounts.tsx > General > should render itself & its chi
       </div>
     </div>
   </div>
-  <style
-    data-cmpld="true"
-  >
-    ._1rjc1b66{padding-block:var(--ds-space-050,4px)}._18zrpxbi{padding-inline:var(--ds-space-200,1pc)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}
-  </style>
   <div
     class="_19itglyw _vchhusvi _r06hglyw _1rjc1b66 _18zrpxbi _bfhkysee"
   >

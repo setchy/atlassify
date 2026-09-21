@@ -5,11 +5,6 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
   <div
     class="_1e0c1txw _vchhusvi _2lx21bp4 _1bah1fhb"
   >
-    <style
-      data-cmpld="true"
-    >
-      ._nd5l1bvj{grid-area:close}._nd5l1cy2{grid-area:title}._1rjc1b66{padding-block:var(--ds-space-050,4px)}._18zru2gc{padding-inline:var(--ds-space-100,8px)}._1bsb1osq{width:100%}._1lmcg5aa{grid-template-areas:"title close"}._1oecfnf5{transition-duration:.2s}._bfhk1rtt{background-color:var(--ds-background-accent-red-subtler,#ffd5d2)}._bfhk1dy8{background-color:var(--ds-background-accent-blue-subtler,#cfe1fd)}._bfhk7qp0{background-color:var(--ds-background-accent-gray-subtler,#dddee1)}._irr3815t:hover{background-color:var(--ds-background-accent-blue-subtler-hovered,#adcbfb)}._irr310ef:hover{background-color:var(--ds-background-accent-gray-subtler-hovered,#b7b9be)}
-    </style>
     <div
       class="_19itglyw _vchhusvi _r06hglyw _1rjc1b66 _18zru2gc _1oecfnf5 _bfhk7qp0 _irr310ef"
     >
@@ -222,11 +217,6 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
   <div
     class="_1e0c1txw _vchhusvi _2lx21bp4 _1bah1fhb"
   >
-    <style
-      data-cmpld="true"
-    >
-      ._nd5l1bvj{grid-area:close}._nd5l1cy2{grid-area:title}._1rjc1b66{padding-block:var(--ds-space-050,4px)}._18zru2gc{padding-inline:var(--ds-space-100,8px)}._1bsb1osq{width:100%}._1lmcg5aa{grid-template-areas:"title close"}._1oecfnf5{transition-duration:.2s}._bfhk1rtt{background-color:var(--ds-background-accent-red-subtler,#ffd5d2)}._bfhk1dy8{background-color:var(--ds-background-accent-blue-subtler,#cfe1fd)}._bfhk7qp0{background-color:var(--ds-background-accent-gray-subtler,#dddee1)}._irr3815t:hover{background-color:var(--ds-background-accent-blue-subtler-hovered,#adcbfb)}._irr310ef:hover{background-color:var(--ds-background-accent-gray-subtler-hovered,#b7b9be)}
-    </style>
     <div
       class="_19itglyw _vchhusvi _r06hglyw _1rjc1b66 _18zru2gc _1oecfnf5 _bfhk7qp0 _irr310ef"
     >
@@ -439,11 +429,6 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
   <div
     class="_1e0c1txw _vchhusvi _2lx21bp4 _1bah1fhb"
   >
-    <style
-      data-cmpld="true"
-    >
-      ._nd5l1bvj{grid-area:close}._nd5l1cy2{grid-area:title}._1rjc1b66{padding-block:var(--ds-space-050,4px)}._18zru2gc{padding-inline:var(--ds-space-100,8px)}._1bsb1osq{width:100%}._1lmcg5aa{grid-template-areas:"title close"}._1oecfnf5{transition-duration:.2s}._bfhk1rtt{background-color:var(--ds-background-accent-red-subtler,#ffd5d2)}._bfhk1dy8{background-color:var(--ds-background-accent-blue-subtler,#cfe1fd)}._bfhk7qp0{background-color:var(--ds-background-accent-gray-subtler,#dddee1)}._irr3815t:hover{background-color:var(--ds-background-accent-blue-subtler-hovered,#adcbfb)}._irr310ef:hover{background-color:var(--ds-background-accent-gray-subtler-hovered,#b7b9be)}
-    </style>
     <div
       class="_19itglyw _vchhusvi _r06hglyw _1rjc1b66 _18zru2gc _1oecfnf5 _bfhk7qp0 _irr310ef"
     >
@@ -1202,11 +1187,6 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
   <div
     class="_1e0c1txw _vchhusvi _2lx21bp4 _1bah1fhb"
   >
-    <style
-      data-cmpld="true"
-    >
-      ._nd5l1bvj{grid-area:close}._nd5l1cy2{grid-area:title}._1rjc1b66{padding-block:var(--ds-space-050,4px)}._18zru2gc{padding-inline:var(--ds-space-100,8px)}._1bsb1osq{width:100%}._1lmcg5aa{grid-template-areas:"title close"}._1oecfnf5{transition-duration:.2s}._bfhk1rtt{background-color:var(--ds-background-accent-red-subtler,#ffd5d2)}._bfhk1dy8{background-color:var(--ds-background-accent-blue-subtler,#cfe1fd)}._bfhk7qp0{background-color:var(--ds-background-accent-gray-subtler,#dddee1)}._irr3815t:hover{background-color:var(--ds-background-accent-blue-subtler-hovered,#adcbfb)}._irr310ef:hover{background-color:var(--ds-background-accent-gray-subtler-hovered,#b7b9be)}
-    </style>
     <div
       class="_19itglyw _vchhusvi _r06hglyw _1rjc1b66 _18zru2gc _1oecfnf5 _bfhk1dy8 _irr3815t"
     >

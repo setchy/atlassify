@@ -5,11 +5,6 @@ exports[`renderer/components/notifications/ProductNotifications.tsx > should ren
   <div
     class="_1e0c1txw _vchhusvi _2lx21bp4 _1bah1fhb"
   >
-    <style
-      data-cmpld="true"
-    >
-      ._1rjc1b66{padding-block:var(--ds-space-050,4px)}._1oecfnf5{transition-duration:.2s}._bozg1b66{padding-inline-start:var(--ds-space-050,4px)}._y4tiu2gc{padding-inline-end:var(--ds-space-100,8px)}._bfhk1s93{background-color:var(--ds-background-accent-blue-subtlest,#e9f2fe)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}._irr3daj9:hover{background-color:var(--ds-background-accent-blue-subtlest-hovered,#cfe1fd)}._irr3wejn:hover{background-color:var(--ds-background-accent-gray-subtlest-hovered,#dddee1)}
-    </style>
     <div
       class="_19itglyw _vchhusvi _r06hglyw _1rjc1b66 _1oecfnf5 _bozg1b66 _y4tiu2gc _bfhkysee _irr3wejn"
     >
@@ -179,11 +174,6 @@ exports[`renderer/components/notifications/ProductNotifications.tsx > should ren
   <div
     class="_1e0c1txw _vchhusvi _2lx21bp4 _1bah1fhb"
   >
-    <style
-      data-cmpld="true"
-    >
-      ._1rjc1b66{padding-block:var(--ds-space-050,4px)}._1oecfnf5{transition-duration:.2s}._bozg1b66{padding-inline-start:var(--ds-space-050,4px)}._y4tiu2gc{padding-inline-end:var(--ds-space-100,8px)}._bfhk1s93{background-color:var(--ds-background-accent-blue-subtlest,#e9f2fe)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}._irr3daj9:hover{background-color:var(--ds-background-accent-blue-subtlest-hovered,#cfe1fd)}._irr3wejn:hover{background-color:var(--ds-background-accent-gray-subtlest-hovered,#dddee1)}
-    </style>
     <div
       class="_19itglyw _vchhusvi _r06hglyw _1rjc1b66 _1oecfnf5 _bozg1b66 _y4tiu2gc _bfhk1s93 _irr3daj9"
     >
@@ -353,11 +343,6 @@ exports[`renderer/components/notifications/ProductNotifications.tsx > should tog
   <div
     class="_1e0c1txw _vchhusvi _2lx21bp4 _1bah1fhb"
   >
-    <style
-      data-cmpld="true"
-    >
-      ._1rjc1b66{padding-block:var(--ds-space-050,4px)}._1oecfnf5{transition-duration:.2s}._bozg1b66{padding-inline-start:var(--ds-space-050,4px)}._y4tiu2gc{padding-inline-end:var(--ds-space-100,8px)}._bfhk1s93{background-color:var(--ds-background-accent-blue-subtlest,#e9f2fe)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}._irr3daj9:hover{background-color:var(--ds-background-accent-blue-subtlest-hovered,#cfe1fd)}._irr3wejn:hover{background-color:var(--ds-background-accent-gray-subtlest-hovered,#dddee1)}
-    </style>
     <div
       class="_19itglyw _vchhusvi _r06hglyw _1rjc1b66 _1oecfnf5 _bozg1b66 _y4tiu2gc _bfhkysee _irr3wejn"
     >
