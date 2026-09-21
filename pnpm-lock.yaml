@@ -288,8 +288,8 @@ importers:
         specifier: 2.0.0
         version: 2.0.0(react@19.3.0)
       '@compiled/vite-plugin':
-        specifier: 2.0.3
-        version: 2.0.3(@compiled/react@2.0.0(react@19.3.0))(supports-color@10.2.2)(vite@8.3.0(@types/node@24.13.5)(jiti@2.7.0)(yaml@2.9.1))
+        specifier: 2.0.4
+        version: 2.0.4(@compiled/react@2.0.0(react@19.3.0))(supports-color@10.2.2)(vite@8.3.0(@types/node@24.13.5)(jiti@2.7.0)(yaml@2.9.1))
       '@discordapp/twemoji':
         specifier: 16.0.1
         version: 16.0.1
@@ -877,8 +877,8 @@ packages:
   '@compiled/utils@0.14.0':
     resolution: {integrity: sha512-WngOT+6F8odtp5Sz5FxQbJGCm61wsIHdqaMHit7TwYq9rbreBDk/eGka+mhanczzaX5q9GxlG8+yZEQ5qrv82g==}
 
-  '@compiled/vite-plugin@2.0.3':
-    resolution: {integrity: sha512-O1VRCI9uxFWMbVVjfM9ve1FF4JdraUG4X9DW5w5UYxyZ12DEmB9pd+wfwBs2g2yGkjkNZPrHIk53nwW2DYH5Ow==}
+  '@compiled/vite-plugin@2.0.4':
+    resolution: {integrity: sha512-S7cMXfP2J3XI8yXJgXWCgJOs7boaxSktha4U4JhUNvC9BSLCDP2TdKQCpffLkh4JmvcY3yn/vXoSv3e0hFjERw==}
     peerDependencies:
       vite: '>= 4.0.0'
 
@@ -6164,7 +6164,7 @@ snapshots:
       convert-source-map: 2.0.0
       source-map: 0.7.6
 
-  '@compiled/vite-plugin@2.0.3(@compiled/react@2.0.0(react@19.3.0))(supports-color@10.2.2)(vite@8.3.0(@types/node@24.13.5)(jiti@2.7.0)(yaml@2.9.1))':
+  '@compiled/vite-plugin@2.0.4(@compiled/react@2.0.0(react@19.3.0))(supports-color@10.2.2)(vite@8.3.0(@types/node@24.13.5)(jiti@2.7.0)(yaml@2.9.1))':
     dependencies:
       '@babel/core': 7.29.7(supports-color@10.2.2)
       '@babel/parser': 7.29.8
