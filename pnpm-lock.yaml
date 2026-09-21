@@ -231,8 +231,8 @@ importers:
         specifier: 8.4.3
         version: 8.4.3(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/form':
-        specifier: 17.2.1
-        version: 17.2.1(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
+        specifier: 17.2.2
+        version: 17.2.2(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/heading':
         specifier: 7.2.2
         version: 7.2.2(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
@@ -507,8 +507,8 @@ packages:
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
-  '@atlaskit/form@17.2.1':
-    resolution: {integrity: sha512-L/GzziXyMRqzGG/BfrlGeyKQZrt9WaH0dsMor+nY+57xQz0bJQ/XtNlHInNFwLhvtGWbiYc1LBzGfTqOIeh9UQ==}
+  '@atlaskit/form@17.2.2':
+    resolution: {integrity: sha512-sw2mFohYvFqKYyrgqGc+8+zYa2YZEMidwZ01suzGJxAH4kkPSdGiGCxyoaWoQN1xtd7i8nr+YuCbJakMQrbyuQ==}
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
@@ -5376,7 +5376,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/form@17.2.1(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)':
+  '@atlaskit/form@17.2.2(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/css': 1.1.3(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/ds-lib': 8.0.0(react@19.3.0)
@@ -5385,7 +5385,7 @@ snapshots:
       '@atlaskit/platform-feature-flags': 2.2.0(react@19.3.0)
       '@atlaskit/primitives': 22.5.1(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.3.0)
-      '@atlaskit/tokens': 17.0.0(react@19.3.0)(supports-color@10.2.2)
+      '@atlaskit/tokens': 18.2.0(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/visually-hidden': 4.4.0(react@19.3.0)
       '@babel/runtime': 7.29.7
       '@compiled/react': 1.0.2(react@19.3.0)
