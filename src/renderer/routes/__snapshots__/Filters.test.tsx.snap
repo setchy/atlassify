@@ -1759,11 +1759,6 @@ exports[`renderer/routes/Filters.tsx > General > should render itself & its chil
       </div>
     </div>
   </div>
-  <style
-    data-cmpld="true"
-  >
-    ._1rjc1b66{padding-block:var(--ds-space-050,4px)}._18zrpxbi{padding-inline:var(--ds-space-200,1pc)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}
-  </style>
   <div
     class="_19itglyw _vchhusvi _r06hglyw _1rjc1b66 _18zrpxbi _bfhkysee"
   >
@@ -3548,11 +3543,6 @@ exports[`renderer/routes/Filters.tsx > filters > product filters > should filter
       </div>
     </div>
   </div>
-  <style
-    data-cmpld="true"
-  >
-    ._1rjc1b66{padding-block:var(--ds-space-050,4px)}._18zrpxbi{padding-inline:var(--ds-space-200,1pc)}._bfhkysee{background-color:var(--ds-background-accent-gray-subtlest,#f0f1f2)}
-  </style>
   <div
     class="_19itglyw _vchhusvi _r06hglyw _1rjc1b66 _18zrpxbi _bfhkysee"
   >
