@@ -8,7 +8,7 @@ allowBuilds:
   esbuild: true
   unrs-resolver: true
 catalog:
-  electron: '44.4.3'
+  electron: '44.4.4'
 minimumReleaseAgeExclude:
   - electron-menubar
 overrides:
