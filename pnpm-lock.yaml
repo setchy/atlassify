@@ -216,8 +216,8 @@ importers:
         specifier: 14.3.7
         version: 14.3.7(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/badge':
-        specifier: 21.2.2
-        version: 21.2.2(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
+        specifier: 22.0.0
+        version: 22.0.0(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/button':
         specifier: 25.4.0
         version: 25.4.0(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
@@ -461,6 +461,11 @@ packages:
 
   '@atlaskit/badge@21.2.2':
     resolution: {integrity: sha512-07I2dc0Ssi7HueVQOAKyQa1frb3JOXtmrMlLamkSqX8SMXUHm0Xj1YBahHZr1lHntnSLWJ2sjYv6crB1OHJU7g==}
+    peerDependencies:
+      react: ^18.2.0 || ^19.0.0
+
+  '@atlaskit/badge@22.0.0':
+    resolution: {integrity: sha512-KPIxx69KuKHAjWDT1ePVrAmUChpm8DfmEuPulPQR1qhzngoUswzbu+4nEmqGneKfrDMlNnMDYAuRkqYvYasd9w==}
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
@@ -5300,6 +5305,19 @@ snapshots:
       '@atlaskit/primitives': 22.5.2(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/react-compiler-gating': 0.2.3(react@19.3.0)
       '@atlaskit/tokens': 18.3.0(react@19.3.0)(supports-color@10.2.2)
+      '@babel/runtime': 7.29.7
+      '@compiled/react': 1.0.2(react@19.3.0)
+      react: 19.3.0
+    transitivePeerDependencies:
+      - '@types/react'
+      - react-dom
+      - supports-color
+
+  '@atlaskit/badge@22.0.0(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)':
+    dependencies:
+      '@atlaskit/primitives': 22.5.2(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
+      '@atlaskit/react-compiler-gating': 0.2.3(react@19.3.0)
+      '@atlaskit/tokens': 20.0.0(react@19.3.0)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
       '@compiled/react': 1.0.2(react@19.3.0)
       react: 19.3.0
