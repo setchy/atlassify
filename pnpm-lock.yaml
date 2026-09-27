@@ -237,8 +237,8 @@ importers:
         specifier: 7.2.2
         version: 7.2.2(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/icon':
-        specifier: 37.7.2
-        version: 37.7.2(react@19.3.0)(supports-color@10.2.2)
+        specifier: 38.0.1
+        version: 38.0.1(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/icon-lab':
         specifier: 7.9.0
         version: 7.9.0(react@19.3.0)(supports-color@10.2.2)
