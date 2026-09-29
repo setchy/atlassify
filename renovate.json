@@ -7,7 +7,7 @@
     ":semanticCommitTypeAll(chore)",
     ":separateMultipleMajorReleases",
     "customManagers:biomeVersions",
-    "schedule:daily"
+    "schedule:monthly"
   ],
   "labels": ["dependency"],
   "rangeStrategy": "pin",
