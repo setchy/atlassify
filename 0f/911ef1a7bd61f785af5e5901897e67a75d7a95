@@ -1,0 +1,22 @@
+.github/actions/setup-node/action.yml
+  s_9af107ad2949a5::t_dff5750a1004f9 23
+  s_9af107ad2949a5::t_105b77931ef90d 25
+  s_9af107ad2949a5::t_62390397692a77 20-21,24
+  s_9af107ad2949a5::t_4b17efb443dd5c 26-28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "0f911ef1a7bd61f785af5e5901897e67a75d7a95",
+  "prompts": {},
+  "sessions": {
+    "s_9af107ad2949a5": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_f11ae2c2bffejIPHGEY5BIoip0",
+        "model": "unknown"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
