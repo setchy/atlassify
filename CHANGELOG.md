@@ -1,5 +1,27 @@
 # Changelog
 
+## [3.16.3](https://github.com/setchy/atlassify/compare/v3.16.2...v3.16.3) (2026-10-01)
+
+
+### 🧼 Code Refactoring
+
+* migrate to `pnpm/setup` ([#3791](https://github.com/setchy/atlassify/issues/3791)) ([b35cb17](https://github.com/setchy/atlassify/commit/b35cb173ebe36517d187cd82da140d44467f1555))
+
+
+### 📦 Dependency Updates (Core)
+
+* **deps-core:** update @atlaskit/avatar to v29.1.0 ([#3788](https://github.com/setchy/atlassify/issues/3788)) ([5a164d7](https://github.com/setchy/atlassify/commit/5a164d7b539716a59c57b2b56a5f88daf63fba2d))
+* **deps-core:** update @atlaskit/avatar-group to v14.4.0 ([#3789](https://github.com/setchy/atlassify/issues/3789)) ([ee9e52e](https://github.com/setchy/atlassify/commit/ee9e52e0c2566f853d48b5ff76bcc3da75a0d3d3))
+* **deps-core:** update @atlaskit/tag-group to v13.4.2 ([#3786](https://github.com/setchy/atlassify/issues/3786)) ([92f9fba](https://github.com/setchy/atlassify/commit/92f9fba62d0b607e31e6a7675ea500a84e716e7c))
+* **deps-core:** update @tanstack/react-query to v5.103.3 ([#3787](https://github.com/setchy/atlassify/issues/3787)) ([11c6a21](https://github.com/setchy/atlassify/commit/11c6a21bbd073c5658aaf565756588f6c1aa26e9))
+* **deps-core:** update electron-menubar to v11.1.0 ([#3792](https://github.com/setchy/atlassify/issues/3792)) ([d9ef2f6](https://github.com/setchy/atlassify/commit/d9ef2f6e1f3cc7c083ea452f01f465a335410131))
+
+
+### 📦 Dependency Updates (Other)
+
+* **deps:** update @types/node to v24.19.0 ([#3790](https://github.com/setchy/atlassify/issues/3790)) ([db6095d](https://github.com/setchy/atlassify/commit/db6095d0e35ffe12e4285a396c6827e24c5fb63e))
+* **deps:** update vitest monorepo to v5.0.2 ([#3784](https://github.com/setchy/atlassify/issues/3784)) ([092a31e](https://github.com/setchy/atlassify/commit/092a31e351ee0535954a0fed3bc2922ee8bf4e8f))
+
 ## [3.16.2](https://github.com/setchy/atlassify/compare/v3.16.1...v3.16.2) (2026-09-28)
 
 
