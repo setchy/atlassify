@@ -17,7 +17,7 @@
     "package:macos": "electron-builder --mac",
     "package:win": "electron-builder --win",
     "i18n:extract": "i18next-cli extract --sync-all",
-    "i18n:check": "i18next-cli extract --ci --quiet && node ./scripts/check-en-locales.mjs",
+    "i18n:check": "i18next-cli extract --ci --quiet && node ./scripts/check-en-locales.mjs && node ./scripts/check-t-defaults.mts",
     "i18n:lint": "i18next-cli lint",
     "i18n:status": "i18next-cli status",
     "lint": "biome check --fix",
