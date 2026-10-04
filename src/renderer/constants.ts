@@ -1,8 +1,6 @@
 export const Constants = {
   // Local storage keys
   STORAGE: {
-    // Legacy storage key (deprecated - used for migration only)
-    LEGACY: 'atlassify-storage',
     ACCOUNTS: 'atlassify-accounts',
     FILTERS: 'atlassify-filters',
     SETTINGS: 'atlassify-settings',
