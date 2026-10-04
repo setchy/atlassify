@@ -1,16 +1,14 @@
-import {
-  AtlassianIcon,
-  BitbucketIcon,
-  CompassIcon,
-  ConfluenceIcon,
-  HomeIcon,
-  JiraIcon,
-  JiraProductDiscoveryIcon,
-  JiraServiceManagementIcon,
-  RovoDevIcon,
-  RovoIcon,
-  TeamsIcon,
-} from '@atlaskit/logo';
+import { AtlassianIcon } from '@atlaskit/logo/atlassian-icon';
+import { BitbucketIcon } from '@atlaskit/logo/bitbucket/icon';
+import { CompassIcon } from '@atlaskit/logo/compass/icon';
+import { ConfluenceIcon } from '@atlaskit/logo/confluence/icon';
+import { HomeIcon } from '@atlaskit/logo/home/icon';
+import { JiraIcon } from '@atlaskit/logo/jira/icon';
+import { JiraProductDiscoveryIcon } from '@atlaskit/logo/jira-product-discovery/icon';
+import { JiraServiceManagementIcon } from '@atlaskit/logo/jira-service-management/icon';
+import { RovoIcon } from '@atlaskit/logo/rovo/icon';
+import { RovoDevIcon } from '@atlaskit/logo/rovo-dev/icon';
+import { TeamsIcon } from '@atlaskit/logo/teams/icon';
 
 import type { AtlassianProduct, ProductType } from '../../types';
 

@@ -1,5 +1,5 @@
 import type { NewCoreIconProps } from '@atlaskit/icon';
-import type { LogoProps } from '@atlaskit/logo';
+import type { LogoProps } from '@atlaskit/logo/types';
 
 import type {
   AccountNotifications,

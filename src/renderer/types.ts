@@ -1,5 +1,5 @@
 import type { ButtonAppearance } from '@atlaskit/button/dist/types/new-button/variants/types';
-import type { LogoProps } from '@atlaskit/logo';
+import type { LogoProps } from '@atlaskit/logo/types';
 
 declare const __brand: unique symbol;
 
