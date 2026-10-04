@@ -1,9 +1,8 @@
 import { type FC, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
 import { Box, Stack } from '@atlaskit/primitives';
-
-import { t } from 'i18next';
 
 import { useAccountsStore } from '../stores';
 
@@ -13,6 +12,7 @@ import { Page } from '../components/layout/Page';
 import { Header } from '../components/primitives/Header';
 
 export const ManageAccountRoute: FC = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const accountId = searchParams.get('accountId');
