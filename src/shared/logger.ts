@@ -6,7 +6,12 @@ type AllowedLogFunction = typeof log.info | typeof log.warn | typeof log.error;
  * Safely coerce an unknown caught value into an Error instance.
  */
 export function toError(err: unknown): Error {
-  return err instanceof Error ? err : new Error(String(err));
+  if (err instanceof Error) {
+    return err;
+  }
+
+  const message = typeof err === 'string' ? err : JSON.stringify(err);
+  return new Error(message ?? 'Unknown error');
 }
 
 /**
