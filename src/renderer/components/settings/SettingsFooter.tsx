@@ -28,7 +28,7 @@ export const SettingsFooter: FC = () => {
   const [appVersion, setAppVersion] = useState<string | null>(null);
 
   useEffect(() => {
-    (async () => {
+    void (async () => {
       const result = await getAppVersion();
       setAppVersion(result);
     })();

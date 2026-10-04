@@ -3,6 +3,7 @@ import type { Menubar } from 'electron-menubar';
 import { autoUpdater } from 'electron-updater';
 
 import { APPLICATION } from '../shared/constants';
+import { logError } from '../shared/logger';
 import { isMacOS } from '../shared/platform';
 
 import { resetApp } from './lifecycle/reset';
@@ -32,7 +33,7 @@ export default class MenuBuilder {
       label: 'Check for updates',
       enabled: true,
       click: () => {
-        autoUpdater.checkForUpdatesAndNotify();
+        void autoUpdater.checkForUpdatesAndNotify();
       },
     });
 
@@ -61,7 +62,7 @@ export default class MenuBuilder {
       label: `Show ${APPLICATION.NAME}`,
       visible: true,
       click: () => {
-        this.menubar.showWindow();
+        void this.menubar.showWindow();
       },
     });
 
@@ -110,7 +111,11 @@ export default class MenuBuilder {
           {
             label: 'Visit Repository',
             click: () => {
-              shell.openExternal(`https://github.com/${APPLICATION.REPO_SLUG}`);
+              shell
+                .openExternal(`https://github.com/${APPLICATION.REPO_SLUG}`)
+                .catch((err) => {
+                  logError('menu', 'Failed to open repository URL', err);
+                });
             },
           },
           {
@@ -125,7 +130,9 @@ export default class MenuBuilder {
       {
         label: 'Visit Website',
         click: () => {
-          shell.openExternal(APPLICATION.WEBSITE);
+          shell.openExternal(APPLICATION.WEBSITE).catch((err) => {
+            logError('menu', 'Failed to open website URL', err);
+          });
         },
       },
       {

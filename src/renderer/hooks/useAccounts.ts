@@ -63,7 +63,7 @@ export const useAccounts = (): UseAccountsResult => {
    */
   useEffect(() => {
     return window.atlassify.onSystemWake(() => {
-      refreshAccountsRef.current();
+      void refreshAccountsRef.current();
     });
   }, []);
 

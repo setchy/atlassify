@@ -32,7 +32,7 @@ vi.mock('electron', () => {
     } satisfies Pick<typeof Electron.Menu, 'buildFromTemplate'>,
     MenuItem: MockMenuItem,
     shell: {
-      openExternal: vi.fn(),
+      openExternal: vi.fn(() => Promise.resolve()),
     } satisfies Pick<Electron.Shell, 'openExternal'>,
   };
 });

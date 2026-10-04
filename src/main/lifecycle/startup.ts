@@ -54,6 +54,6 @@ function preventSecondInstance(mb: Menubar): void {
   }
 
   app.on('second-instance', () => {
-    mb.showWindow();
+    void mb.showWindow();
   });
 }

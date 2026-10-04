@@ -139,7 +139,7 @@ export function useGlobalShortcuts({
             navigate('/', { replace: true });
           }
 
-          fetchNotifications();
+          void fetchNotifications();
         },
       },
       settings: {

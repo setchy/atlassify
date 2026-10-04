@@ -75,7 +75,7 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
       setPendingMarkAsRead(true);
     } else {
       // No animation needed, mark as read immediately
-      markNotificationsRead(productNotifications);
+      void markNotificationsRead(productNotifications);
     }
   };
 
@@ -83,7 +83,7 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
     // After animation completes, execute pending mutation if any
     if (pendingMarkAsRead) {
       setPendingMarkAsRead(false);
-      markNotificationsRead(productNotifications);
+      void markNotificationsRead(productNotifications);
     }
   };
 

@@ -61,7 +61,7 @@ export function registerSystemHandlers(mb: Menubar): void {
         if (mb.window.isVisible()) {
           mb.hideWindow();
         } else {
-          mb.showWindow();
+          void mb.showWindow();
         }
       });
     },

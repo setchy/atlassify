@@ -30,11 +30,16 @@ export function takeScreenshot(mb: Menubar) {
     `${dateStr}-${APPLICATION.NAME}-screenshot.png`,
   );
 
-  mb.window.capturePage().then((img) => {
-    fs.writeFile(capturedPicFilePath, img.toPNG(), () =>
-      logInfo('takeScreenshot', `Screenshot saved ${capturedPicFilePath}`),
-    );
-  });
+  mb.window
+    .capturePage()
+    .then((img) => {
+      fs.writeFile(capturedPicFilePath, img.toPNG(), () =>
+        logInfo('takeScreenshot', `Screenshot saved ${capturedPicFilePath}`),
+      );
+    })
+    .catch((err) => {
+      logError('takeScreenshot', 'Failed to capture screenshot', err);
+    });
 }
 
 /**
@@ -54,5 +59,5 @@ export function openLogsDirectory() {
   }
 
   const logDirectory = path.dirname(logFilePath);
-  shell.openPath(logDirectory);
+  void shell.openPath(logDirectory);
 }
