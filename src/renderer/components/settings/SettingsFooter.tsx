@@ -1,4 +1,4 @@
-import { type FC, useEffect, useState } from 'react';
+import { type FC, useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Button, { IconButton } from '@atlaskit/button/new';
@@ -34,6 +34,28 @@ export const SettingsFooter: FC = () => {
     })();
   }, []);
 
+  // Stable icon renderers (S6478: React components should not be defined
+  // during render) - recreated only when the translation instance changes.
+  const renderAccountsIcon = useCallback(
+    () => (
+      <PeopleGroupIcon
+        color={token('color.icon.accent.blue')}
+        label={t('settings.accounts')}
+      />
+    ),
+    [t],
+  );
+
+  const renderQuitIcon = useCallback(
+    () => (
+      <CrossCircleIcon
+        color={token('color.icon.accent.red')}
+        label={t('sidebar.quit.label', { appName: APPLICATION.NAME })}
+      />
+    ),
+    [t],
+  );
+
   return (
     <Footer justify="space-between">
       <Tooltip
@@ -61,12 +83,7 @@ export const SettingsFooter: FC = () => {
         >
           <IconButton
             appearance="subtle"
-            icon={() => (
-              <PeopleGroupIcon
-                color={token('color.icon.accent.blue')}
-                label={t('settings.accounts')}
-              />
-            )}
+            icon={renderAccountsIcon}
             label={t('settings.accounts')}
             onClick={() => shortcuts.accounts.action()}
             shape="circle"
@@ -81,12 +98,7 @@ export const SettingsFooter: FC = () => {
           <IconButton
             appearance="subtle"
             color="danger"
-            icon={() => (
-              <CrossCircleIcon
-                color={token('color.icon.accent.red')}
-                label={t('sidebar.quit.label', { appName: APPLICATION.NAME })}
-              />
-            )}
+            icon={renderQuitIcon}
             label={t('sidebar.quit.label', { appName: APPLICATION.NAME })}
             onClick={() => shortcuts.quit.action()}
             shape="circle"

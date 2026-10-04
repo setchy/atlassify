@@ -4,6 +4,13 @@ import { useNavigate } from 'react-router-dom';
 
 import Button from '@atlaskit/button/new';
 import Heading from '@atlaskit/heading';
+import type { IconProps, NewIconProps } from '@atlaskit/icon/types';
+
+// Props handed to Button icon renderers (S6478-stable renderer below).
+type ButtonIconProps =
+  | Omit<IconProps, 'size'>
+  | Omit<NewIconProps, 'spacing' | 'size'>;
+
 import {
   AtlassianIcon,
   BitbucketIcon,
@@ -27,6 +34,11 @@ import { AtlassifyIcon } from '../components/icons/AtlassifyIcon';
 import { Centered } from '../components/layout/Centered';
 
 import { showWindow } from '../utils/system/comms';
+
+// Hoisted so its identity is stable across re-renders (S6478).
+const LoginButtonIcon: FC<ButtonIconProps> = (iconProps) => (
+  <AtlassianIcon {...iconProps} size="small" />
+);
 
 export const LandingRoute: FC = () => {
   const { t } = useTranslation();
@@ -70,9 +82,7 @@ export const LandingRoute: FC = () => {
         <Tooltip content={t('landing.login.tooltip')}>
           <Button
             appearance="primary"
-            iconBefore={(iconProps) => (
-              <AtlassianIcon {...iconProps} size="small" />
-            )}
+            iconBefore={LoginButtonIcon}
             onClick={() => navigate('/login')}
             spacing="default"
             testId="login"

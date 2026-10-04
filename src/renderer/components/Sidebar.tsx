@@ -1,4 +1,4 @@
-import { type FC, Fragment, memo } from 'react';
+import { type FC, Fragment, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { IconButton } from '@atlaskit/button/new';
@@ -9,6 +9,13 @@ import ListBulletedIcon from '@atlaskit/icon/core/list-bulleted';
 import NotificationIcon from '@atlaskit/icon/core/notification';
 import RefreshIcon from '@atlaskit/icon/core/refresh';
 import SettingsIcon from '@atlaskit/icon/core/settings';
+import type { IconProps, NewIconProps } from '@atlaskit/icon/types';
+
+// Props handed to IconButton/Button icon renderers (S6478-stable renderers below).
+type ButtonIconProps =
+  | Omit<IconProps, 'size'>
+  | Omit<NewIconProps, 'spacing' | 'size'>;
+
 import { Box, Stack } from '@atlaskit/primitives';
 import Spinner from '@atlaskit/spinner';
 import Toggle from '@atlaskit/toggle';
@@ -23,6 +30,9 @@ import { useGlobalShortcuts } from '../hooks/useGlobalShortcuts';
 import { useAccountsStore, useFiltersStore, useSettingsStore } from '../stores';
 
 import { AtlassifyIcon } from './icons/AtlassifyIcon';
+
+// Hoisted so its identity is stable across re-renders (S6478).
+const SidebarHomeIcon: FC = () => <AtlassifyIcon size={32} />;
 
 const SidebarComponent: FC = () => {
   const { t } = useTranslation();
@@ -62,6 +72,50 @@ const SidebarComponent: FC = () => {
       ? token('color.text.accent.gray.bolder')
       : token('color.text.inverse');
 
+  // Stable icon renderers (S6478: React components should not be defined
+  // during render) - recreated only when their captured values change.
+  const renderNotificationsIcon = useCallback(
+    (iconProps: ButtonIconProps) => (
+      <NotificationIcon {...iconProps} color={sidebarIconColorToken} />
+    ),
+    [sidebarIconColorToken],
+  );
+
+  const renderGroupByProductIcon = useCallback(
+    () => (
+      <ListBulletedIcon color={sidebarIconColorToken} label="groupByProduct" />
+    ),
+    [sidebarIconColorToken],
+  );
+
+  const renderFilterIcon = useCallback(
+    (iconProps: ButtonIconProps) => (
+      <FilterIcon {...iconProps} color={sidebarIconColorToken} />
+    ),
+    [sidebarIconColorToken],
+  );
+
+  const renderRefreshIcon = useCallback(
+    (iconProps: ButtonIconProps) =>
+      isFetching ? (
+        <Spinner
+          appearance="invert"
+          label={t('sidebar.refresh.label')}
+          size="medium"
+        />
+      ) : (
+        <RefreshIcon {...iconProps} color={sidebarIconColorToken} />
+      ),
+    [isFetching, sidebarIconColorToken, t],
+  );
+
+  const renderSettingsIcon = useCallback(
+    (iconProps: ButtonIconProps) => (
+      <SettingsIcon {...iconProps} color={sidebarIconColorToken} />
+    ),
+    [sidebarIconColorToken],
+  );
+
   return (
     <div className="flex flex-col w-sidebar h-full bg-atlassify-sidebar">
       <Stack grow="fill" spread="space-between">
@@ -74,7 +128,7 @@ const SidebarComponent: FC = () => {
             >
               <IconButton
                 appearance="subtle"
-                icon={() => <AtlassifyIcon size={32} />}
+                icon={SidebarHomeIcon}
                 label={t('sidebar.home')}
                 onClick={() => shortcuts.home.action()}
                 shape="circle"
@@ -95,12 +149,7 @@ const SidebarComponent: FC = () => {
             >
               <IconButton
                 appearance={hasNotifications ? 'primary' : 'subtle'}
-                icon={(iconProps) => (
-                  <NotificationIcon
-                    {...iconProps}
-                    color={sidebarIconColorToken}
-                  />
-                )}
+                icon={renderNotificationsIcon}
                 label={t('sidebar.notifications.label')}
                 onClick={() => shortcuts.myNotifications.action()}
                 shape="circle"
@@ -135,12 +184,7 @@ const SidebarComponent: FC = () => {
                     appearance={
                       groupNotificationsByProduct ? 'discovery' : 'subtle'
                     }
-                    icon={() => (
-                      <ListBulletedIcon
-                        color={sidebarIconColorToken}
-                        label="groupByProduct"
-                      />
-                    )}
+                    icon={renderGroupByProductIcon}
                     label={t('sidebar.toggles.groupByProduct.label')}
                     onClick={() => shortcuts.groupByProduct.action()}
                     shape="circle"
@@ -179,12 +223,7 @@ const SidebarComponent: FC = () => {
                 >
                   <IconButton
                     appearance={hasFilters ? 'discovery' : 'subtle'}
-                    icon={(iconProps) => (
-                      <FilterIcon
-                        {...iconProps}
-                        color={sidebarIconColorToken}
-                      />
-                    )}
+                    icon={renderFilterIcon}
                     label={t('sidebar.filters.label')}
                     onClick={() => shortcuts.filters.action()}
                     shape="circle"
@@ -208,20 +247,7 @@ const SidebarComponent: FC = () => {
                 >
                   <IconButton
                     appearance="subtle"
-                    icon={(iconProps) =>
-                      isFetching ? (
-                        <Spinner
-                          appearance="invert"
-                          label={t('sidebar.refresh.label')}
-                          size="medium"
-                        />
-                      ) : (
-                        <RefreshIcon
-                          {...iconProps}
-                          color={sidebarIconColorToken}
-                        />
-                      )
-                    }
+                    icon={renderRefreshIcon}
                     isDisabled={isFetching}
                     label={t('sidebar.refresh.label')}
                     onClick={() => shortcuts.refresh.action()}
@@ -237,12 +263,7 @@ const SidebarComponent: FC = () => {
                 >
                   <IconButton
                     appearance="subtle"
-                    icon={(iconProps) => (
-                      <SettingsIcon
-                        {...iconProps}
-                        color={sidebarIconColorToken}
-                      />
-                    )}
+                    icon={renderSettingsIcon}
                     label={t('sidebar.settings.label')}
                     onClick={() => shortcuts.settings.action()}
                     shape="circle"
