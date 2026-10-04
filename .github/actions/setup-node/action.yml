@@ -18,7 +18,7 @@ runs:
   using: composite
   steps:
     - name: Setup pnpm and Node.js
-      uses: pnpm/setup@fbda4c85fc2e1e08721cd8763afea8f48d60f024 # v3
+      uses: pnpm/setup@fbda4c85fc2e1e08721cd8763afea8f48d60f024 # v3.0.0
       with:
         node-version-file: ${{ github.workspace }}/.nvmrc
         cache: true
