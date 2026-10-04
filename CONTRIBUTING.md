@@ -66,7 +66,7 @@ Changes confined to `docs/` are excluded from desktop app releases. They are val
 - The `release` label must exist, and the semantic-title and auto-label checks must be allowed on release-please PRs.
 - Branch protection for `main` must require the normal CI and triage checks; it must not require a `release/v*` branch.
 - Repository secrets must include `APTABASE_KEY`, `SONAR_TOKEN`, `CSC_LINK`, `CSC_KEY_PASSWORD`, `WIN_CSC_LINK`, `WIN_CSC_KEY_PASSWORD`, `APPLE_ID_USERNAME`, `APPLE_ID_PASSWORD`, `APPLE_ID_TEAM_ID`, and `NETLIFY_BUILD_HOOK_URL`.
-- Packaging and publication use `contents: write`; the Release workflow's milestone automation uses `issues: write`; pull request notification uses `issues: write`, `pull-requests: write`, and `contents: read`. Validation jobs remain read-only.
+- Packaging and publication use `contents: write`; the Release workflow's milestone automation uses `issues: write` and `pull-requests: write`; pull request notification uses `issues: write`, `pull-requests: write`, and `contents: read`. Validation jobs remain read-only.
 
 For a signing-only check, manually run the Publish workflow with an empty tag. Supplying a tag publishes that existing draft after all platform jobs succeed.
 
