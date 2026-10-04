@@ -120,7 +120,7 @@
     "concurrently": "10.0.5",
     "date-fns": "4.4.0",
     "electron": "44.4.5",
-    "electron-builder": "26.15.3",
+    "electron-builder": "26.17.0",
     "graphql": "17.0.2",
     "happy-dom": "20.14.5",
     "husky": "9.1.7",
