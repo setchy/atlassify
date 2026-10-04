@@ -42,11 +42,13 @@ export function setTrayIconColorAndTitle() {
     title = `${notificationCount.toString()}${hasMoreAccountNotifications ? '+' : ''}`;
   }
 
-  const appState: TrayAppState = !isOnline
-    ? 'offline'
-    : hasAnyAccountError
-      ? 'error'
-      : 'online';
+  let appState: TrayAppState = 'online';
+
+  if (!isOnline) {
+    appState = 'offline';
+  } else if (hasAnyAccountError) {
+    appState = 'error';
+  }
 
   const idleIconVariant: TrayIdleIconVariant = useAlternateIdleIcon
     ? 'alternative'
