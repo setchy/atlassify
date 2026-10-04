@@ -59,19 +59,19 @@ const grouped = CATEGORY_ORDER.map((category) => ({
       Frequently Asked Questions
     </div>
     {grouped.map(({ category, faqs }) => (
-        <div class="mb-10">
-          <h2 class="text-xl font-semibold mb-4">{category}</h2>
-          <Accordion>
-            {faqs.map((faq) => (
-              <div id={faq.slug} class="faq-item">
-                <AccordionItem title={faq.frontmatter.title} variant="chevron">
-                  <div class="faq" set:html={faq.content} />
-                </AccordionItem>
-              </div>
-            ))}
-          </Accordion>
-        </div>
-      ))}
+      <div class="mb-10">
+        <h2 class="text-xl font-semibold mb-4">{category}</h2>
+        <Accordion>
+          {faqs.map((faq) => (
+            <div id={faq.slug} class="faq-item">
+              <AccordionItem title={faq.frontmatter.title} variant="chevron">
+                <div class="faq" set:html={faq.content} />
+              </AccordionItem>
+            </div>
+          ))}
+        </Accordion>
+      </div>
+    ))}
   </div>
 </Layout>
 
