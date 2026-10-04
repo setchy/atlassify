@@ -3,7 +3,7 @@ import type { Menubar } from 'electron-menubar';
 import { autoUpdater } from 'electron-updater';
 
 import { APPLICATION } from '../shared/constants';
-import { logError, logInfo } from '../shared/logger';
+import { logError, logInfo, toError } from '../shared/logger';
 
 import type MenuBuilder from './menu';
 
@@ -213,7 +213,11 @@ export default class AppUpdater {
         }
       })
       .catch((err) => {
-        logError('auto updater', 'Failed to show update ready dialog', err);
+        logError(
+          'auto updater',
+          'Failed to show update ready dialog',
+          toError(err),
+        );
       });
   }
 }

@@ -2,8 +2,6 @@ import { app } from 'electron';
 import log from 'electron-log';
 import { menubar } from 'electron-menubar';
 
-import { logError } from '../shared/logger';
-
 import { Paths, WindowConfig } from './config';
 import {
   initializeAnalytics,
@@ -48,25 +46,20 @@ const contextMenu = menuBuilder.buildMenu();
 
 const appUpdater = new AppUpdater(mb, menuBuilder);
 
-app
-  .whenReady()
-  .then(async () => {
-    await onFirstRunMaybe();
+void app.whenReady().then(async () => {
+  await onFirstRunMaybe();
 
-    void appUpdater.start();
+  void appUpdater.start();
 
-    initializeAppLifecycle(mb, contextMenu);
+  initializeAppLifecycle(mb, contextMenu);
 
-    // Configure window event handlers (Escape key, DevTools resize)
-    configureWindowEvents(mb, menuBuilder);
+  // Configure window event handlers (Escape key, DevTools resize)
+  configureWindowEvents(mb, menuBuilder);
 
-    // Register IPC handlers for various channels
-    registerTrayHandlers(mb);
-    registerSystemHandlers(mb);
-    registerStorageHandlers();
-    registerAppHandlers(mb);
-    registerAnalyticsHandlers();
-  })
-  .catch((err) => {
-    logError('main', 'Failed to initialize application', err);
-  });
+  // Register IPC handlers for various channels
+  registerTrayHandlers(mb);
+  registerSystemHandlers(mb);
+  registerStorageHandlers();
+  registerAppHandlers(mb);
+  registerAnalyticsHandlers();
+});

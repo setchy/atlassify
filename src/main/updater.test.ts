@@ -7,6 +7,8 @@ import { logError, logInfo } from '../shared/logger';
 vi.mock('../shared/logger', () => ({
   logInfo: vi.fn(),
   logError: vi.fn(),
+  toError: (err: unknown) =>
+    err instanceof Error ? err : new Error(String(err)),
 }));
 
 import MenuBuilder from './menu';
