@@ -334,7 +334,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
               <Button
                 appearance="warning"
                 onClick={() => {
-                  markNotificationsRead(notifications);
+                  void markNotificationsRead(notifications);
                   actionCloseMarkAccountAsReadModal();
                 }}
                 testId="account-mark-as-read-confirm"

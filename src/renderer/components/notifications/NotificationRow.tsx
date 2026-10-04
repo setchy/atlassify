@@ -59,7 +59,7 @@ export const NotificationRow: FC<NotificationRowProps> = ({
         setShouldAnimateNotificationExit(true);
         setPendingMarkAsRead(true);
       } else {
-        markNotificationsRead([notification]);
+        void markNotificationsRead([notification]);
       }
     }
 
@@ -71,18 +71,18 @@ export const NotificationRow: FC<NotificationRowProps> = ({
       setShouldAnimateNotificationExit(true);
       setPendingMarkAsRead(true);
     } else {
-      markNotificationsRead([notification]);
+      void markNotificationsRead([notification]);
     }
   };
 
   const actionMarkAsUnread = () => {
-    markNotificationsUnread([notification]);
+    void markNotificationsUnread([notification]);
   };
 
   const handleTransitionEnd = () => {
     if (pendingMarkAsRead && !isProductAnimatingExit) {
       setPendingMarkAsRead(false);
-      markNotificationsRead([notification]);
+      void markNotificationsRead([notification]);
     }
   };
 

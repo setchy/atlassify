@@ -3,6 +3,18 @@ import log from 'electron-log';
 type AllowedLogFunction = typeof log.info | typeof log.warn | typeof log.error;
 
 /**
+ * Safely coerce an unknown caught value into an Error instance.
+ */
+export function toError(err: unknown): Error {
+  if (err instanceof Error) {
+    return err;
+  }
+
+  const message = typeof err === 'string' ? err : JSON.stringify(err);
+  return new Error(message ?? 'Unknown error');
+}
+
+/**
  * Logs an informational message via electron-log.
  *
  * @param type - A short label identifying the caller or module (e.g. `'getAllNotifications'`).

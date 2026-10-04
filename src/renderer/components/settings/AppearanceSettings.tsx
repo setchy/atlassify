@@ -60,14 +60,14 @@ export const AppearanceSettings: FC = () => {
     return window.atlassify.onSystemThemeUpdate((updatedTheme: Theme) => {
       if (theme === Theme.SYSTEM) {
         setTheme(updatedTheme);
-        setGlobalTheme({ colorMode: 'auto' });
+        void setGlobalTheme({ colorMode: 'auto' });
       }
     });
   }, [theme]);
 
   const handleLanguageChange = useCallback(
     (option) => {
-      i18n.changeLanguage(option.value);
+      void i18n.changeLanguage(option.value);
     },
     [i18n],
   );

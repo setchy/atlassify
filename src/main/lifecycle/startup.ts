@@ -3,7 +3,7 @@ import type { Menubar } from 'electron-menubar';
 
 import { APPLICATION } from '../../shared/constants';
 import { EVENTS } from '../../shared/events';
-import { logWarn } from '../../shared/logger';
+import { logError, logWarn, toError } from '../../shared/logger';
 import { Theme } from '../../shared/theme';
 
 import { sendRendererEvent } from '../events';
@@ -54,6 +54,12 @@ function preventSecondInstance(mb: Menubar): void {
   }
 
   app.on('second-instance', () => {
-    mb.showWindow();
+    mb.showWindow().catch((err) => {
+      logError(
+        'main',
+        'Failed to show window on second instance',
+        toError(err),
+      );
+    });
   });
 }

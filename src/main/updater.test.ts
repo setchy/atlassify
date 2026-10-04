@@ -7,6 +7,8 @@ import { logError, logInfo } from '../shared/logger';
 vi.mock('../shared/logger', () => ({
   logInfo: vi.fn(),
   logError: vi.fn(),
+  toError: (err: unknown) =>
+    err instanceof Error ? err : new Error(String(err)),
 }));
 
 import MenuBuilder from './menu';
@@ -149,6 +151,24 @@ describe('main/updater.ts', () => {
       await Promise.resolve();
 
       expect(autoUpdater.quitAndInstall).toHaveBeenCalled();
+    });
+
+    it('logs an error when the update ready dialog fails to show', async () => {
+      vi.mocked(dialog.showMessageBox).mockRejectedValue(
+        new Error('dialog-failed'),
+      );
+
+      await updater.start();
+
+      emit('update-downloaded', { releaseName: 'v1.2.3' });
+
+      await vi.waitFor(() =>
+        expect(logError).toHaveBeenCalledWith(
+          'auto updater',
+          'Failed to show update ready dialog',
+          expect.any(Error),
+        ),
+      );
     });
   });
 

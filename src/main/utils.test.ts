@@ -42,6 +42,8 @@ const logErrorMock = vi.fn();
 vi.mock('../shared/logger', () => ({
   logInfo: (...a: unknown[]) => logInfoMock(...a),
   logError: (...a: unknown[]) => logErrorMock(...a),
+  toError: (err: unknown) =>
+    err instanceof Error ? err : new Error(String(err)),
 }));
 
 import { shell } from 'electron';
@@ -75,6 +77,21 @@ describe('main/utils', () => {
     );
   });
 
+  it('takeScreenshot logs an error when capturing the page fails', async () => {
+    const mb = createMb();
+    mb.window.capturePage = () => Promise.reject(new Error('capture-failed'));
+
+    takeScreenshot(mb as unknown as Menubar);
+
+    await vi.waitFor(() =>
+      expect(logErrorMock).toHaveBeenCalledWith(
+        'takeScreenshot',
+        'Failed to capture window',
+        expect.any(Error),
+      ),
+    );
+  });
+
   it('openLogsDirectory opens directory when present', () => {
     openLogsDirectory();
     expect(shell.openPath).toHaveBeenCalledWith('/var/log/app');
@@ -88,6 +105,20 @@ describe('main/utils', () => {
       'openLogsDirectory',
       'Could not find log directory!',
       expect.any(Error),
+    );
+  });
+
+  it('openLogsDirectory logs an error when opening the directory fails', async () => {
+    vi.mocked(shell.openPath).mockRejectedValueOnce(new Error('open failed'));
+
+    openLogsDirectory();
+
+    await vi.waitFor(() =>
+      expect(logErrorMock).toHaveBeenCalledWith(
+        'openLogsDirectory',
+        'Failed to open logs directory',
+        expect.any(Error),
+      ),
     );
   });
 });

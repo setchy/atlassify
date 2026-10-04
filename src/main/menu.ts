@@ -3,6 +3,7 @@ import type { Menubar } from 'electron-menubar';
 import { autoUpdater } from 'electron-updater';
 
 import { APPLICATION } from '../shared/constants';
+import { logError, toError } from '../shared/logger';
 import { isMacOS } from '../shared/platform';
 
 import { resetApp } from './lifecycle/reset';
@@ -32,7 +33,9 @@ export default class MenuBuilder {
       label: 'Check for updates',
       enabled: true,
       click: () => {
-        autoUpdater.checkForUpdatesAndNotify();
+        autoUpdater.checkForUpdatesAndNotify().catch((err) => {
+          logError('menu', 'Failed to check for updates', toError(err));
+        });
       },
     });
 
@@ -61,7 +64,9 @@ export default class MenuBuilder {
       label: `Show ${APPLICATION.NAME}`,
       visible: true,
       click: () => {
-        this.menubar.showWindow();
+        this.menubar.showWindow().catch((err) => {
+          logError('menu', 'Failed to show window', toError(err));
+        });
       },
     });
 
@@ -110,7 +115,15 @@ export default class MenuBuilder {
           {
             label: 'Visit Repository',
             click: () => {
-              shell.openExternal(`https://github.com/${APPLICATION.REPO_SLUG}`);
+              shell
+                .openExternal(`https://github.com/${APPLICATION.REPO_SLUG}`)
+                .catch((err) => {
+                  logError(
+                    'menu',
+                    'Failed to open repository in browser',
+                    toError(err),
+                  );
+                });
             },
           },
           {
@@ -125,7 +138,9 @@ export default class MenuBuilder {
       {
         label: 'Visit Website',
         click: () => {
-          shell.openExternal(APPLICATION.WEBSITE);
+          shell.openExternal(APPLICATION.WEBSITE).catch((err) => {
+            logError('menu', 'Failed to open website in browser', toError(err));
+          });
         },
       },
       {

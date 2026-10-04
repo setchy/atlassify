@@ -1,3 +1,4 @@
+import { globalShortcut } from 'electron';
 import type { Menubar } from 'electron-menubar';
 
 import { EVENTS } from '../../shared/events';
@@ -44,7 +45,7 @@ describe('main/handlers/system.ts', () => {
     setGlobalShortcutMock = vi.fn().mockReturnValue(true);
 
     menubar = {
-      showWindow: vi.fn(),
+      showWindow: vi.fn(async () => undefined),
       hideWindow: vi.fn(),
       setGlobalShortcut: setGlobalShortcutMock,
       window: {
@@ -92,6 +93,31 @@ describe('main/handlers/system.ts', () => {
       call?.[1]({}, true);
 
       expect(setX11BackendMock).toHaveBeenCalledWith(true);
+    });
+
+    it('shows the menubar window when the shortcut toggles it from hidden', () => {
+      vi.mocked(globalShortcut.register).mockClear();
+
+      registerSystemHandlers(menubar);
+      const call = onMock.mock.calls.find(
+        ([eventName]) => eventName === EVENTS.UPDATE_KEYBOARD_SHORTCUT,
+      );
+      expect(call).toBeDefined();
+
+      call?.[1](
+        {},
+        {
+          enabled: true,
+          keyboardShortcut: 'CommandOrControl+A',
+        },
+      );
+
+      const shortcutHandler = vi.mocked(globalShortcut.register).mock
+        .calls[0]?.[1];
+      expect(shortcutHandler).toBeDefined();
+      shortcutHandler?.();
+
+      expect(menubar.showWindow).toHaveBeenCalled();
     });
   });
 });

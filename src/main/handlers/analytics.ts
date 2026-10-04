@@ -36,7 +36,7 @@ export function registerAnalyticsHandlers(): void {
    * Track an event in Aptabase with the given event name and properties.
    */
   onMainEvent(EVENTS.APTABASE_TRACK_EVENT, (_, event: IAptabaseEvent) => {
-    trackEvent(event.eventName, event.props);
+    void trackEvent(event.eventName, event.props);
   });
 }
 

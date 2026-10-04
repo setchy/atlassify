@@ -48,10 +48,10 @@ export function setTheme(mode?: Theme) {
 
 function setLightMode() {
   document.querySelector('html').classList.remove('dark');
-  setGlobalTheme({ colorMode: 'light' });
+  void setGlobalTheme({ colorMode: 'light' });
 }
 
 function setDarkMode() {
   document.querySelector('html').classList.add('dark');
-  setGlobalTheme({ colorMode: 'dark' });
+  void setGlobalTheme({ colorMode: 'dark' });
 }

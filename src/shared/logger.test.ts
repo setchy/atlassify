@@ -1,6 +1,6 @@
 import log from 'electron-log';
 
-import { logError, logInfo, logWarn } from './logger';
+import { logError, logInfo, logWarn, toError } from './logger';
 
 describe('shared/logger.ts', () => {
   const logInfoSpy = vi.spyOn(log, 'info').mockImplementation(vi.fn());
@@ -84,6 +84,26 @@ describe('shared/logger.ts', () => {
         '[ctx1 >> ctx2]',
         mockError,
       );
+    });
+  });
+
+  describe('toError', () => {
+    it('returns the same Error instance when passed an Error', () => {
+      const err = new Error('boom');
+      expect(toError(err)).toBe(err);
+    });
+
+    it('wraps a string value in an Error', () => {
+      expect(toError('boom')).toEqual(new Error('boom'));
+    });
+
+    it('stringifies non-string values for the error message', () => {
+      expect(toError(42).message).toBe('42');
+      expect(toError({ code: 1 }).message).toBe('{"code":1}');
+    });
+
+    it('falls back to a generic message for undefined', () => {
+      expect(toError(undefined).message).toBe('Unknown error');
     });
   });
 });

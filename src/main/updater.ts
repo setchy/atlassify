@@ -3,7 +3,7 @@ import type { Menubar } from 'electron-menubar';
 import { autoUpdater } from 'electron-updater';
 
 import { APPLICATION } from '../shared/constants';
-import { logError, logInfo } from '../shared/logger';
+import { logError, logInfo, toError } from '../shared/logger';
 
 import type MenuBuilder from './menu';
 
@@ -205,10 +205,19 @@ export default class AppUpdater {
         'Restart to apply the update. You can also restart later from the tray menu.',
     };
 
-    dialog.showMessageBox(dialogOpts).then((returnValue) => {
-      if (returnValue.response === 0) {
-        autoUpdater.quitAndInstall();
-      }
-    });
+    dialog
+      .showMessageBox(dialogOpts)
+      .then((returnValue) => {
+        if (returnValue.response === 0) {
+          autoUpdater.quitAndInstall();
+        }
+      })
+      .catch((err) => {
+        logError(
+          'auto updater',
+          'Failed to show update ready dialog',
+          toError(err),
+        );
+      });
   }
 }

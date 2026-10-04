@@ -5,6 +5,7 @@ import { autoUpdater } from 'electron-updater';
 import type { Mock } from 'vitest';
 
 import { APPLICATION } from '../shared/constants';
+import { logError } from '../shared/logger';
 import { isMacOS } from '../shared/platform';
 
 import { resetApp } from './lifecycle/reset';
@@ -32,14 +33,14 @@ vi.mock('electron', () => {
     } satisfies Pick<typeof Electron.Menu, 'buildFromTemplate'>,
     MenuItem: MockMenuItem,
     shell: {
-      openExternal: vi.fn(),
+      openExternal: vi.fn(() => Promise.resolve()),
     } satisfies Pick<Electron.Shell, 'openExternal'>,
   };
 });
 
 vi.mock('electron-updater', () => ({
   autoUpdater: {
-    checkForUpdatesAndNotify: vi.fn(),
+    checkForUpdatesAndNotify: vi.fn(async () => undefined),
     quitAndInstall: vi.fn(),
   },
 }));
@@ -55,6 +56,12 @@ vi.mock('./lifecycle/reset', () => ({
 
 vi.mock('../shared/platform', () => ({
   isMacOS: vi.fn(),
+}));
+
+vi.mock('../shared/logger', () => ({
+  logError: vi.fn(),
+  toError: (err: unknown) =>
+    err instanceof Error ? err : new Error(String(err)),
 }));
 
 describe('main/menu.ts', () => {
@@ -94,7 +101,7 @@ describe('main/menu.ts', () => {
     menuItemInstances.length = 0; // Clear tracked instances
     menubar = {
       app: { quit: vi.fn() },
-      showWindow: vi.fn(),
+      showWindow: vi.fn(async () => undefined),
       hideWindow: vi.fn(),
       refreshContextMenu: vi.fn(),
       tray: {
@@ -297,6 +304,86 @@ describe('main/menu.ts', () => {
       const item = template.find((i) => i.label === 'Visit Website');
       item.click();
       expect(shell.openExternal).toHaveBeenCalledWith(APPLICATION.WEBSITE);
+    });
+
+    it('show menu item shows the menubar window', () => {
+      const template = buildAndGetTemplate();
+      const item = template.find((i) => i.label === `Show ${APPLICATION.NAME}`);
+      item.click();
+      expect(menubar.showWindow).toHaveBeenCalled();
+    });
+
+    it('logs when the repository URL cannot be opened', async () => {
+      const template = buildAndGetTemplate();
+      const devEntry = template.find(
+        (item) => item?.label === 'Developer',
+      ) as TemplateItem;
+      const item = devEntry.submenu.find((i) => i.label === 'Visit Repository');
+      vi.mocked(shell.openExternal).mockRejectedValueOnce(
+        new Error('connection refused'),
+      );
+
+      item.click();
+
+      await vi.waitFor(() =>
+        expect(logError).toHaveBeenCalledWith(
+          'menu',
+          'Failed to open repository in browser',
+          expect.any(Error),
+        ),
+      );
+    });
+
+    it('logs when the website URL cannot be opened', async () => {
+      const template = buildAndGetTemplate();
+      const item = template.find((i) => i.label === 'Visit Website');
+      vi.mocked(shell.openExternal).mockRejectedValueOnce(
+        new Error('connection refused'),
+      );
+
+      item.click();
+
+      await vi.waitFor(() =>
+        expect(logError).toHaveBeenCalledWith(
+          'menu',
+          'Failed to open website in browser',
+          expect.any(Error),
+        ),
+      );
+    });
+
+    it('logs when checking for updates fails', async () => {
+      const cfg = getMenuItemConfigByLabel('Check for updates');
+      vi.mocked(autoUpdater.checkForUpdatesAndNotify).mockRejectedValueOnce(
+        new Error('update failed'),
+      );
+
+      cfg?.click?.();
+
+      await vi.waitFor(() =>
+        expect(logError).toHaveBeenCalledWith(
+          'menu',
+          'Failed to check for updates',
+          expect.any(Error),
+        ),
+      );
+    });
+
+    it('logs when showing the window fails', async () => {
+      const cfg = getMenuItemConfigByLabel(`Show ${APPLICATION.NAME}`);
+      vi.mocked(menubar.showWindow).mockRejectedValueOnce(
+        new Error('show failed'),
+      );
+
+      cfg?.click?.();
+
+      await vi.waitFor(() =>
+        expect(logError).toHaveBeenCalledWith(
+          'menu',
+          'Failed to show window',
+          expect.any(Error),
+        ),
+      );
     });
 
     it('quit menu item quits the app', () => {

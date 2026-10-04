@@ -35,7 +35,7 @@ export const Header: FC<HeaderProps> = (props: HeaderProps) => {
             onClick={() => {
               navigate(-1);
               if (props.fetchOnBack) {
-                fetchNotifications();
+                void fetchNotifications();
               }
             }}
             shape="circle"

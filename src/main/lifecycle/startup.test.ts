@@ -33,7 +33,7 @@ vi.mock('../../shared/logger', () => ({
 function createMb() {
   return {
     on: vi.fn(),
-    showWindow: vi.fn(),
+    showWindow: vi.fn(async () => undefined),
     setContextMenu: vi.fn(),
     app: { setAppUserModelId: vi.fn(), quit: vi.fn() },
     tray: {
@@ -76,6 +76,21 @@ describe('main/lifecycle/startup.ts', () => {
       readyHandler?.();
 
       expect(mb.setContextMenu).toHaveBeenCalledWith(contextMenu);
+    });
+
+    it('shows the window when a second instance is launched', () => {
+      const mb = createMb();
+      const contextMenu = {} as Electron.Menu;
+
+      initializeAppLifecycle(mb as unknown as Menubar, contextMenu);
+
+      const secondInstanceHandler = appOnMock.mock.calls
+        .filter(([eventName]) => eventName === 'second-instance')
+        .at(-1)?.[1];
+      expect(secondInstanceHandler).toBeDefined();
+      secondInstanceHandler?.();
+
+      expect(mb.showWindow).toHaveBeenCalled();
     });
   });
 });
