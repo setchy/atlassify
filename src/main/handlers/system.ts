@@ -7,7 +7,7 @@ import {
   type IKeyboardShortcut,
   type IOpenExternal,
 } from '../../shared/events';
-import { logInfo } from '../../shared/logger';
+import { logError, logInfo, toError } from '../../shared/logger';
 
 import { onMainEvent, sendRendererEvent } from '../events';
 import { applyKeepWindowOnBlur } from '../lifecycle/window';
@@ -61,7 +61,13 @@ export function registerSystemHandlers(mb: Menubar): void {
         if (mb.window.isVisible()) {
           mb.hideWindow();
         } else {
-          void mb.showWindow();
+          mb.showWindow().catch((err) => {
+            logError(
+              'system',
+              'Failed to show window from keyboard shortcut',
+              toError(err),
+            );
+          });
         }
       });
     },

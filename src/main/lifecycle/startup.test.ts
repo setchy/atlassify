@@ -33,7 +33,7 @@ vi.mock('../../shared/logger', () => ({
 function createMb() {
   return {
     on: vi.fn(),
-    showWindow: vi.fn(),
+    showWindow: vi.fn(async () => undefined),
     setContextMenu: vi.fn(),
     app: { setAppUserModelId: vi.fn(), quit: vi.fn() },
     tray: {

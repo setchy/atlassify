@@ -281,7 +281,7 @@ export const useNotifications = (): UseNotificationsResult => {
       if (filteredDiffNotifications.length > 0) {
         // Play sound and show system notifications for new filtered notifications
         if (playSoundNewNotifications) {
-          raiseSoundNotification(notificationVolume);
+          void raiseSoundNotification(notificationVolume);
         }
 
         if (showSystemNotifications) {

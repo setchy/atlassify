@@ -5,7 +5,7 @@ import { createRoot } from 'react-dom/client';
 import '@atlaskit/css-reset';
 import './i18n';
 
-setGlobalTheme({
+void setGlobalTheme({
   colorMode: 'light',
   light: 'light',
   dark: 'dark',

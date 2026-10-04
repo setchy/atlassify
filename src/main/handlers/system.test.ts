@@ -45,7 +45,7 @@ describe('main/handlers/system.ts', () => {
     setGlobalShortcutMock = vi.fn().mockReturnValue(true);
 
     menubar = {
-      showWindow: vi.fn(),
+      showWindow: vi.fn(async () => undefined),
       hideWindow: vi.fn(),
       setGlobalShortcut: setGlobalShortcutMock,
       window: {
