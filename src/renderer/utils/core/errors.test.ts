@@ -2,6 +2,7 @@ import { createMockAccountWithError } from '../../__mocks__/account-mocks';
 
 import type { AccountNotifications } from '../../types';
 
+import i18n from '../../i18n';
 import {
   areAllAccountErrorsSame,
   doesAllAccountsHaveErrors,
@@ -64,6 +65,29 @@ describe('renderer/utils/core/errors.ts', () => {
       ];
 
       expect(areAllAccountErrorsSame(items)).toBe(false);
+    });
+  });
+
+  describe('translation reactivity', () => {
+    afterEach(async () => {
+      await i18n.changeLanguage('en');
+    });
+
+    it('resolves translated strings in the current language at access time', async () => {
+      const enTitle = Errors.NETWORK.title;
+      await i18n.changeLanguage('de');
+      const deTitle = Errors.NETWORK.title;
+
+      expect(enTitle).toBe('Network Error');
+      expect(deTitle).toBe('Netzwerkfehler');
+      expect(deTitle).not.toBe(enTitle);
+    });
+
+    it('keeps stable object references across language changes', async () => {
+      const before = Errors.NETWORK;
+      await i18n.changeLanguage('de');
+
+      expect(Errors.NETWORK).toBe(before);
     });
   });
 });
