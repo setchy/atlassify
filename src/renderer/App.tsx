@@ -26,11 +26,7 @@ import { AppRouterEffects } from './components/AppRouterEffects';
 import { AppLayout } from './components/layout/AppLayout';
 
 import { queryClient } from './utils/api/client';
-import { migrateLegacyStoreToZustand } from './utils/core/storage';
 import { trackEvent } from './utils/system/comms';
-
-// Run migration from legacy local storage to Zustand stores (async)
-migrateLegacyStoreToZustand();
 
 function RequireAuth({ children }) {
   const location = useLocation();
