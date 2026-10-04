@@ -29,7 +29,7 @@ if (!app.isPackaged) {
   log.transports.file.fileName = 'main.dev.log';
 }
 
-void initializeAnalytics();
+initializeAnalytics();
 
 const mb = menubar({
   icon: TrayIcons.idle,
