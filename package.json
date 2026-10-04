@@ -17,7 +17,7 @@
     "package:macos": "electron-builder --mac",
     "package:win": "electron-builder --win",
     "i18n:extract": "i18next-cli extract --sync-all",
-    "i18n:check": "pnpm i18n:check:sync && pnpm i18n:check:values && pnpm i18n:check:defaults && pnpm i18n:check:coverage",
+    "i18n:check": "concurrently --kill-others-on-fail --names \"sync,values,defaults,coverage\" --prefix-colors \"yellow,green,cyan,magenta\" \"pnpm i18n:check:sync\" \"pnpm i18n:check:values\" \"pnpm i18n:check:defaults\" \"pnpm i18n:check:coverage\"",
     "i18n:check:sync": "i18next-cli extract --ci --quiet",
     "i18n:check:values": "node ./scripts/check-en-locales.mjs",
     "i18n:check:defaults": "node ./scripts/check-t-defaults.mts",
