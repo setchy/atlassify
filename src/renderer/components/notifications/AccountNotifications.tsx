@@ -8,7 +8,7 @@ import { cssMap, cx } from '@atlaskit/css';
 import CrossIcon from '@atlaskit/icon/core/cross';
 import StrokeWeightLargeIcon from '@atlaskit/icon/core/stroke-weight-large';
 import type { IconProps, NewIconProps } from '@atlaskit/icon/types';
-import { BitbucketIcon } from '@atlaskit/logo';
+import { BitbucketIcon } from '@atlaskit/logo/bitbucket/icon';
 
 // Props handed to IconButton icon renderers (S6478-stable renderers below).
 type ButtonIconProps =
