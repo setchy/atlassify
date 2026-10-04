@@ -63,7 +63,7 @@ export const NotificationRow: FC<NotificationRowProps> = ({
       }
     }
 
-    void openNotification(notification);
+    openNotification(notification);
   };
 
   const actionMarkAsRead = () => {
