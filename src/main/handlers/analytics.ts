@@ -8,7 +8,7 @@ import { onMainEvent } from '../events';
 /**
  * Initialize the Aptabase analytics SDK using the VITE_APTABASE_KEY environment variable.
  */
-export async function initializeAnalytics(): Promise<void> {
+export function initializeAnalytics(): void {
   const aptabaseKey = import.meta.env.VITE_APTABASE_KEY;
 
   if (!aptabaseKey) {
@@ -21,7 +21,7 @@ export async function initializeAnalytics(): Promise<void> {
   }
 
   try {
-    initialize(aptabaseKey);
+    void initialize(aptabaseKey);
     logInfo('analytics', 'Aptabase initialized successfully');
   } catch (err) {
     logError('analytics', 'Failed to initialize Aptabase', err);
