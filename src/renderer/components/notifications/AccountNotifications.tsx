@@ -187,7 +187,9 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
           <Flex alignItems="center" justifyContent="space-between">
             <Inline alignBlock="center" space="space.100">
               <Tooltip
-                content={t('notifications.account.open_profile')}
+                content={t('notifications.account.open_profile', {
+                  defaultValue: 'Open account profile ↗',
+                })}
                 position="right"
               >
                 <AvatarItem
@@ -217,13 +219,17 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
 
             <Inline space="space.100">
               <Tooltip
-                content={t('notifications.account.pull_requests')}
+                content={t('notifications.account.pull_requests', {
+                  defaultValue: 'My pull requests ↗',
+                })}
                 position="bottom"
               >
                 <IconButton
                   appearance="subtle"
                   icon={PullRequestsIcon}
-                  label={t('notifications.account.pull_requests')}
+                  label={t('notifications.account.pull_requests', {
+                    defaultValue: 'My pull requests ↗',
+                  })}
                   onClick={(event: MouseEvent<HTMLElement>) => {
                     event.stopPropagation();
                     openMyPullRequests();
@@ -235,13 +241,17 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
               </Tooltip>
 
               <Tooltip
-                content={t('notifications.account.mark_all_read')}
+                content={t('notifications.account.mark_all_read', {
+                  defaultValue: 'Mark all account notifications as read',
+                })}
                 position="bottom"
               >
                 <IconButton
                   appearance="subtle"
                   icon={MarkAllReadIcon}
-                  label={t('notifications.account.mark_all_read')}
+                  label={t('notifications.account.mark_all_read', {
+                    defaultValue: 'Mark all account notifications as read',
+                  })}
                   onClick={(event: MouseEvent<HTMLElement>) => {
                     event.stopPropagation();
                     actionOpenMarkAccountAsReadModal();
@@ -302,25 +312,33 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
                   <IconButton
                     appearance="subtle"
                     icon={CrossIcon}
-                    label={t('common.close')}
+                    label={t('common.close', { defaultValue: 'Close' })}
                     onClick={actionCloseMarkAccountAsReadModal}
                     testId="account-mark-as-read-close"
                   />
                 </Flex>
                 <Flex justifyContent="start" xcss={styles.titleContainer}>
                   <ModalTitle appearance="warning">
-                    {t('common.are_you_sure')}
+                    {t('common.are_you_sure', {
+                      defaultValue: 'Are you sure?',
+                    })}
                   </ModalTitle>
                 </Flex>
               </Grid>
             </ModalHeader>
             <ModalBody>
               <p>
-                {t('notifications.account.mark_read_confirm.description1')}{' '}
+                {t('notifications.account.mark_read_confirm.description1', {
+                  defaultValue: 'Please confirm that you want to',
+                })}{' '}
                 <strong>
-                  {t('notifications.account.mark_read_confirm.description2')}
+                  {t('notifications.account.mark_read_confirm.description2', {
+                    defaultValue: 'mark all account notifications',
+                  })}
                 </strong>{' '}
-                {t('notifications.account.mark_read_confirm.description3')}
+                {t('notifications.account.mark_read_confirm.description3', {
+                  defaultValue: 'as read',
+                })}
               </p>
             </ModalBody>
             <ModalFooter>
@@ -329,7 +347,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
                 onClick={actionCloseMarkAccountAsReadModal}
                 testId="account-mark-as-read-cancel"
               >
-                {t('common.cancel')}
+                {t('common.cancel', { defaultValue: 'Cancel' })}
               </Button>
               <Button
                 appearance="warning"
@@ -339,7 +357,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
                 }}
                 testId="account-mark-as-read-confirm"
               >
-                {t('common.proceed')}
+                {t('common.proceed', { defaultValue: 'Proceed' })}
               </Button>
             </ModalFooter>
           </Modal>

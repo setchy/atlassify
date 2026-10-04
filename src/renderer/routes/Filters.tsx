@@ -27,7 +27,7 @@ export const FiltersRoute: FC = () => {
 
   return (
     <Page testId="filters">
-      <Header>{t('filters.title')}</Header>
+      <Header>{t('filters.title', { defaultValue: 'Filters' })}</Header>
 
       <Contents>
         <Box paddingBlockEnd="space.200" paddingInlineStart="space.250">
@@ -36,25 +36,31 @@ export const FiltersRoute: FC = () => {
               <FilterSection
                 filter={engagementFilter}
                 filterSetting="engagementStates"
-                title={t('filters.engagement.title')}
+                title={t('filters.engagement.title', {
+                  defaultValue: 'Engagement',
+                })}
               />
 
               <FilterSection
                 filter={categoryFilter}
                 filterSetting="categories"
-                title={t('filters.category.title')}
+                title={t('filters.category.title', {
+                  defaultValue: 'Category',
+                })}
               />
 
               <FilterSection
                 filter={actorFilter}
                 filterSetting="actors"
-                title={t('filters.actors.title')}
+                title={t('filters.actors.title', { defaultValue: 'Actors' })}
               />
 
               <FilterSection
                 filter={readStateFilter}
                 filterSetting="readStates"
-                title={t('filters.read_state.title')}
+                title={t('filters.read_state.title', {
+                  defaultValue: 'Read State',
+                })}
               />
             </Stack>
 
@@ -62,7 +68,9 @@ export const FiltersRoute: FC = () => {
               <FilterSection
                 filter={productFilter}
                 filterSetting="products"
-                title={t('filters.products.title')}
+                title={t('filters.products.title', {
+                  defaultValue: 'Products',
+                })}
               />
             </Stack>
           </Inline>
@@ -75,9 +83,9 @@ export const FiltersRoute: FC = () => {
           onClick={clearFilters}
           spacing="compact"
           testId="filters-clear"
-          title={t('filters.actions.clear')}
+          title={t('filters.actions.clear', { defaultValue: 'Clear Filters' })}
         >
-          {t('filters.actions.clear')}
+          {t('filters.actions.clear', { defaultValue: 'Clear Filters' })}
         </Button>
       </Footer>
     </Page>

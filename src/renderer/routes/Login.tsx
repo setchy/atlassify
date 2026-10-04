@@ -75,7 +75,9 @@ export const LoginRoute: FC = () => {
 
   return (
     <Page testId="login">
-      <Header>{t('login.title')}</Header>
+      <Header>
+        {t('login.title', { defaultValue: 'Login with Atlassian' })}
+      </Header>
 
       <Form<LoginProps> onSubmit={loginUser}>
         {({ formProps, submitting }) => (
@@ -84,10 +86,20 @@ export const LoginRoute: FC = () => {
               <Box paddingInline="space.250">
                 <Box>
                   {isDuplicateUsername && (
-                    <ErrorMessage>{t('login.duplicate_username')}</ErrorMessage>
+                    <ErrorMessage>
+                      {t('login.duplicate_username', {
+                        defaultValue:
+                          'This username has already been added. Please use a different username.',
+                      })}
+                    </ErrorMessage>
                   )}
                   {!isValidCredentials && (
-                    <ErrorMessage>{t('login.error_message')}</ErrorMessage>
+                    <ErrorMessage>
+                      {t('login.error_message', {
+                        defaultValue:
+                          'Oops! The username + token combination provided are not valid. Please try again.',
+                      })}
+                    </ErrorMessage>
                   )}
                 </Box>
                 <form {...formProps} id="login-form">
@@ -95,7 +107,7 @@ export const LoginRoute: FC = () => {
                     <Field
                       defaultValue={''}
                       // isRequired={true} // Causes app crash on Windows.  Needs investigation.
-                      label={t('common.username')}
+                      label={t('common.username', { defaultValue: 'Username' })}
                       name="username"
                       testId="login-username"
                     >
@@ -114,7 +126,10 @@ export const LoginRoute: FC = () => {
                               onChange={onChange}
                             />
                             <HelperMessage>
-                              {t('login.username_helper')}
+                              {t('login.username_helper', {
+                                defaultValue:
+                                  'Your Atlassian username / email address',
+                              })}
                             </HelperMessage>
                           </Fragment>
                         );
@@ -123,7 +138,7 @@ export const LoginRoute: FC = () => {
                     <Field
                       defaultValue={''}
                       // isRequired={true} // Causes app crash on Windows.  Needs investigation.
-                      label={t('login.token')}
+                      label={t('login.token', { defaultValue: 'API Token' })}
                       name="token"
                       testId="login-token"
                     >
@@ -132,7 +147,11 @@ export const LoginRoute: FC = () => {
                           <TextField type="password" {...fieldProps} />
                           <HelperMessage>
                             <Inline alignBlock="center" space="space.050">
-                              <Tooltip content={t('login.create_token')}>
+                              <Tooltip
+                                content={t('login.create_token', {
+                                  defaultValue: 'Create API token',
+                                })}
+                              >
                                 <Button
                                   appearance="discovery"
                                   iconBefore={(iconProps) => (
@@ -145,10 +164,16 @@ export const LoginRoute: FC = () => {
                                   spacing="compact"
                                   testId="login-create-token"
                                 >
-                                  {t('login.create_token')}
+                                  {t('login.create_token', {
+                                    defaultValue: 'Create API token',
+                                  })}
                                 </Button>
                               </Tooltip>
-                              <Box>{t('login.token_helper')}</Box>
+                              <Box>
+                                {t('login.token_helper', {
+                                  defaultValue: 'and paste above',
+                                })}
+                              </Box>
                             </Inline>
                           </HelperMessage>
                         </Fragment>
@@ -160,14 +185,19 @@ export const LoginRoute: FC = () => {
             </Contents>
 
             <Footer justify="space-between">
-              <Tooltip content={t('login.security_docs')} position="top">
+              <Tooltip
+                content={t('login.security_docs', {
+                  defaultValue: 'See Atlassian documentation',
+                })}
+                position="top"
+              >
                 <Button
                   appearance="subtle"
                   iconBefore={LinkExternalIcon}
                   onClick={() => openAtlassianSecurityDocs()}
                   testId="login-docs"
                 >
-                  {t('common.docs')}
+                  {t('common.docs', { defaultValue: 'Docs' })}
                 </Button>
               </Tooltip>
               <ButtonGroup label="Form submit options">
@@ -176,7 +206,7 @@ export const LoginRoute: FC = () => {
                   onClick={() => navigate(-1)}
                   testId="login-cancel"
                 >
-                  {t('common.cancel')}
+                  {t('common.cancel', { defaultValue: 'Cancel' })}
                 </Button>
                 <Button
                   appearance="primary"
@@ -187,7 +217,7 @@ export const LoginRoute: FC = () => {
                   testId="login-submit"
                   type="submit"
                 >
-                  {t('common.login')}
+                  {t('common.login', { defaultValue: 'Login' })}
                 </Button>
               </ButtonGroup>
             </Footer>

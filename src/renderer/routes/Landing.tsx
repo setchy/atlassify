@@ -62,8 +62,13 @@ export const LandingRoute: FC = () => {
       <Stack alignBlock="center" alignInline="center" space="space.200">
         <AtlassifyIcon color="brand" size={64} />
         <Stack alignInline="center">
-          <Heading size="large">Atlassian {t('landing.notifications')}</Heading>
-          <Text size="large">{t('landing.subheading')}</Text>
+          <Heading size="large">
+            Atlassian{' '}
+            {t('landing.notifications', { defaultValue: 'notifications' })}
+          </Heading>
+          <Text size="large">
+            {t('landing.subheading', { defaultValue: 'on your menu bar' })}
+          </Text>
         </Stack>
         <Inline space="space.100">
           <JiraIcon {...commonLogoProps} />
@@ -77,7 +82,11 @@ export const LandingRoute: FC = () => {
           <HomeIcon {...commonLogoProps} />
           <TeamsIcon {...commonLogoProps} />
         </Inline>
-        <Tooltip content={t('landing.login.tooltip')}>
+        <Tooltip
+          content={t('landing.login.tooltip', {
+            defaultValue: 'Login with Atlassian',
+          })}
+        >
           <Button
             appearance="primary"
             iconBefore={LoginButtonIcon}
@@ -85,7 +94,7 @@ export const LandingRoute: FC = () => {
             spacing="default"
             testId="login"
           >
-            {t('landing.login.title')}
+            {t('landing.login.title', { defaultValue: 'Login' })}
           </Button>
         </Tooltip>
       </Stack>

@@ -41,28 +41,37 @@ export function getChevronDetails(
 ): Chevron {
   let typeLocale: string;
   if (type === 'account') {
-    typeLocale = i18n.t('common.account');
+    typeLocale = i18n.t('common.account', { defaultValue: 'account' });
   } else {
-    typeLocale = i18n.t('common.product');
+    typeLocale = i18n.t('common.product', { defaultValue: 'product' });
   }
 
   if (!hasNotifications) {
     return {
       icon: 'left',
-      label: i18n.t('chevron.none', { type: typeLocale }),
+      label: i18n.t('chevron.none', {
+        defaultValue: 'No notifications for {{type}}',
+        type: typeLocale,
+      }),
     };
   }
 
   if (isVisible) {
     return {
       icon: 'down',
-      label: i18n.t('chevron.hide', { type: typeLocale }),
+      label: i18n.t('chevron.hide', {
+        defaultValue: 'Hide {{type}} notifications',
+        type: typeLocale,
+      }),
     };
   }
 
   return {
     icon: 'right',
-    label: i18n.t('chevron.show', { type: typeLocale }),
+    label: i18n.t('chevron.show', {
+      defaultValue: 'Show {{type}} notifications',
+      type: typeLocale,
+    }),
   };
 }
 

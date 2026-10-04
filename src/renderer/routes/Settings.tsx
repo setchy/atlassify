@@ -19,7 +19,7 @@ export const SettingsRoute: FC = () => {
 
   return (
     <Page testId="settings">
-      <Header>{t('settings.title')}</Header>
+      <Header>{t('settings.title', { defaultValue: 'Settings' })}</Header>
 
       <Contents>
         <Box paddingBlockEnd="space.200" paddingInline="space.250">

@@ -12,5 +12,10 @@ export const Loading: FC = () => {
 
   const emoji = useMemo(() => randomElement(Constants.EMOJIS.LOADING), []);
 
-  return <EmojiSplash emoji={emoji} heading={t('loading.heading')} />;
+  return (
+    <EmojiSplash
+      emoji={emoji}
+      heading={t('loading.heading', { defaultValue: 'Loading' })}
+    />
+  );
 };

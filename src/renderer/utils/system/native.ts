@@ -30,6 +30,7 @@ export const raiseNativeNotification = (
   } else {
     title = APPLICATION.NAME;
     body = i18n.t('notifications.native_count', {
+      defaultValue: 'You have {{count}} notifications',
       count: notifications.length,
     });
   }

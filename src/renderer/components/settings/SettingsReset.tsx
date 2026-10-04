@@ -44,7 +44,7 @@ export const SettingsReset: FC = () => {
         onClick={actionOpenResetSettingsModal}
         testId="settings-reset-defaults"
       >
-        {t('settings.reset.title')}
+        {t('settings.reset.title', { defaultValue: 'Reset Settings' })}
       </Button>
 
       <ModalTransition>
@@ -57,12 +57,14 @@ export const SettingsReset: FC = () => {
                 xcss={styles.header}
               >
                 <ModalTitle appearance="danger">
-                  {t('settings.reset.title')}
+                  {t('settings.reset.title', {
+                    defaultValue: 'Reset Settings',
+                  })}
                 </ModalTitle>
                 <IconButton
                   appearance="subtle"
                   icon={CrossIcon}
-                  label={t('common.close')}
+                  label={t('common.close', { defaultValue: 'Close' })}
                   onClick={actionCloseResetSettingsModal}
                   testId="settings-reset-close"
                 />
@@ -70,7 +72,11 @@ export const SettingsReset: FC = () => {
             </ModalHeader>
             <ModalBody>
               <p>
-                {t('settings.reset.confirm', { appName: APPLICATION.NAME })}
+                {t('settings.reset.confirm', {
+                  defaultValue:
+                    'Please confirm that you want to reset all settings to the {{appName}} defaults.',
+                  appName: APPLICATION.NAME,
+                })}
               </p>
             </ModalBody>
             <ModalFooter>
@@ -79,7 +85,7 @@ export const SettingsReset: FC = () => {
                 onClick={actionCloseResetSettingsModal}
                 testId="settings-reset-cancel"
               >
-                {t('common.cancel')}
+                {t('common.cancel', { defaultValue: 'Cancel' })}
               </Button>
               <Button
                 appearance="danger"
@@ -89,7 +95,7 @@ export const SettingsReset: FC = () => {
                 }}
                 testId="settings-reset-confirm"
               >
-                {t('common.reset')}
+                {t('common.reset', { defaultValue: 'Reset' })}
               </Button>
             </ModalFooter>
           </Modal>

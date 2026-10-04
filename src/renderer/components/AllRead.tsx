@@ -17,8 +17,10 @@ export const AllRead: FC = () => {
   const emoji = useMemo(() => randomElement(Constants.EMOJIS.ALL_READ), []);
 
   const heading = hasFilters
-    ? t('allRead.headingFiltered')
-    : t('allRead.heading');
+    ? t('allRead.headingFiltered', {
+        defaultValue: 'No new filtered notifications',
+      })
+    : t('allRead.heading', { defaultValue: 'No new notifications' });
 
   return <EmojiSplash emoji={emoji} heading={heading} />;
 };

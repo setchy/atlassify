@@ -20,18 +20,30 @@ export const engagementFilter: Filter<EngagementStateType> = {
   get FILTER_TYPES(): Record<EngagementStateType, FilterDetails> {
     return {
       mention: {
-        name: i18n.t('filters.engagement.mention.title'),
-        description: i18n.t('filters.engagement.mention.description'),
+        name: i18n.t('filters.engagement.mention.title', {
+          defaultValue: 'Mentions',
+        }),
+        description: i18n.t('filters.engagement.mention.description', {
+          defaultValue: 'Mentions',
+        }),
         icon: MentionIcon,
       },
       comment: {
-        name: i18n.t('filters.engagement.comment.title'),
-        description: i18n.t('filters.engagement.comment.description'),
+        name: i18n.t('filters.engagement.comment.title', {
+          defaultValue: 'Comments',
+        }),
+        description: i18n.t('filters.engagement.comment.description', {
+          defaultValue: 'Comments',
+        }),
         icon: CommentIcon,
       },
       reaction: {
-        name: i18n.t('filters.engagement.reactions.title'),
-        description: i18n.t('filters.engagement.reactions.description'),
+        name: i18n.t('filters.engagement.reactions.title', {
+          defaultValue: 'Reactions',
+        }),
+        description: i18n.t('filters.engagement.reactions.description', {
+          defaultValue: 'Reactions',
+        }),
         icon: EmojiIcon,
       },
     };
