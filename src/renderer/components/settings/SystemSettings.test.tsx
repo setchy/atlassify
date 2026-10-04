@@ -18,31 +18,41 @@ describe('renderer/components/settings/SystemSettings.tsx', () => {
     updateSettingSpy = vi.spyOn(useSettingsStore.getState(), 'updateSetting');
   });
 
-  it('should change the open links radio group', async () => {
+  it.each([
+    [
+      'should change the open links radio group',
+      'Background',
+      'updateSetting',
+      'openLinks',
+      'BACKGROUND',
+    ],
+    [
+      'should toggle the keyboardShortcutEnabled checkbox',
+      'Enable keyboard shortcut',
+      'toggleSetting',
+      'keyboardShortcutEnabled',
+    ],
+    [
+      'should toggle the showSystemNotifications checkbox',
+      'Show system notifications',
+      'toggleSetting',
+      'showSystemNotifications',
+    ],
+  ])('%s', async (_name, label, method, setting, value) => {
     renderWithProviders(<SystemSettings />);
 
-    await userEvent.click(screen.getByLabelText('Background'));
+    await userEvent.click(screen.getByLabelText(label));
 
-    expect(updateSettingSpy).toHaveBeenCalledTimes(1);
-    expect(updateSettingSpy).toHaveBeenCalledWith('openLinks', 'BACKGROUND');
-  });
+    const settingSpy =
+      method === 'updateSetting' ? updateSettingSpy : toggleSettingSpy;
 
-  it('should toggle the keyboardShortcutEnabled checkbox', async () => {
-    renderWithProviders(<SystemSettings />);
+    expect(settingSpy).toHaveBeenCalledTimes(1);
 
-    await userEvent.click(screen.getByLabelText('Enable keyboard shortcut'));
-
-    expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
-    expect(toggleSettingSpy).toHaveBeenCalledWith('keyboardShortcutEnabled');
-  });
-
-  it('should toggle the showSystemNotifications checkbox', async () => {
-    renderWithProviders(<SystemSettings />);
-
-    await userEvent.click(screen.getByLabelText('Show system notifications'));
-
-    expect(toggleSettingSpy).toHaveBeenCalledTimes(1);
-    expect(toggleSettingSpy).toHaveBeenCalledWith('showSystemNotifications');
+    if (value !== undefined) {
+      expect(settingSpy).toHaveBeenCalledWith(setting, value);
+    } else {
+      expect(settingSpy).toHaveBeenCalledWith(setting);
+    }
   });
 
   describe('playSoundNewNotifications', () => {

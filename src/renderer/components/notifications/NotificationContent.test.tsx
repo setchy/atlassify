@@ -17,37 +17,27 @@ describe('renderer/components/notifications/NotificationContent.tsx', () => {
     new Date('2024').valueOf(),
   );
 
-  it('renders notification message, body and footer', () => {
+  it.each([
+    [
+      'renders notification message, body and footer',
+      'PR-123 Fix the bug',
+      'myorg/notifications-test',
+    ],
+    [
+      'hides entity section when bodyText is empty',
+      '',
+      'myorg/notifications-test',
+    ],
+    [
+      'renders entity iconUrl as avatar when present',
+      'PR-123 Fix the bug',
+      'myorg/notifications-test',
+    ],
+  ])('%s', (_description, bodyText, footerText) => {
     const props: NotificationContentProps = {
       notification: mockSingleAtlassifyNotification,
-      bodyText: 'PR-123 Fix the bug',
-      footerText: 'myorg/notifications-test',
-      onClick: vi.fn(),
-    };
-
-    const tree = renderWithProviders(<NotificationContent {...props} />);
-
-    expect(tree.container).toMatchSnapshot();
-  });
-
-  it('hides entity section when bodyText is empty', () => {
-    const props: NotificationContentProps = {
-      notification: mockSingleAtlassifyNotification,
-      bodyText: '',
-      footerText: 'myorg/notifications-test',
-      onClick: vi.fn(),
-    };
-
-    const tree = renderWithProviders(<NotificationContent {...props} />);
-
-    expect(tree.container).toMatchSnapshot();
-  });
-
-  it('renders entity iconUrl as avatar when present', () => {
-    const props: NotificationContentProps = {
-      notification: mockSingleAtlassifyNotification,
-      bodyText: 'PR-123 Fix the bug',
-      footerText: 'myorg/notifications-test',
+      bodyText,
+      footerText,
       onClick: vi.fn(),
     };
 
