@@ -78,8 +78,13 @@ Atlassify supports multiple languages/locales.
 To add a new locale:
 - Add a new locale file under `./src/renderer/i18n/locales`.
 - Import and update the resources in `./src/renderer/i18n/index.ts`.
-- Use the VSCode Extension `i18n Ally` to automatically translate the keys.
-- Carefully verify the translated values. **Do not translate placeholder variables** like `{{ }}`.  You may need to manually update these if needed.
+
+To add a new UI string:
+- Wrap it with `t('namespace.key', { defaultValue: 'English text' })` — the `defaultValue` is the canonical English string and the source for the primary locale; `i18n:extract` seeds `en.json` from it, so `en.json` never needs hand-authoring and never holds empty values.
+- Run `pnpm i18n:extract` to regenerate `en.json`, then use the VSCode Extension `i18n Ally` to translate the new key into the other locales.
+- Carefully verify the translated values. **Do not translate placeholder variables** like `{{ }}`. You may need to manually update these if needed.
+
+**Important:** never enable `--trust-derived` when extracting — it overwrites existing hand-authored English with dotted key paths for any key without an explicit `defaultValue` in code. `pnpm i18n:check` (CI) fails if `en.json` ever contains an empty or key-path value.
 
 
 <!-- LINK LABELS -->
