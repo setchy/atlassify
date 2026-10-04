@@ -13,7 +13,7 @@ import { rendererLogError, rendererLogInfo } from './logger';
  * once all users have migrated from the old Context-based storage format.
  * Migration was introduced in v2.17.0.
  */
-export async function migrateLegacyStoreToZustand() {
+export function migrateLegacyStoreToZustand() {
   const existing = localStorage.getItem(Constants.STORAGE.LEGACY);
 
   if (!existing) {

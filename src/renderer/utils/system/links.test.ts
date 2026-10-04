@@ -94,30 +94,30 @@ describe('renderer/utils/system/links.ts', () => {
   });
 
   describe('openNotification', () => {
-    it('openNotification should use entity url when available', async () => {
+    it('openNotification should use entity url when available', () => {
       const mockNotificationUrl = mockSingleAtlassifyNotification.entity.url;
 
-      await openNotification(mockSingleAtlassifyNotification);
+      openNotification(mockSingleAtlassifyNotification);
 
       expect(openExternalLinkSpy).toHaveBeenCalledWith(mockNotificationUrl);
     });
 
-    it('openNotification should fallback to notification url when entity url is not available', async () => {
+    it('openNotification should fallback to notification url when entity url is not available', () => {
       const mockNotif = mockSingleAtlassifyNotification;
       mockNotif.entity.url = null;
       const mockNotificationUrl = mockNotif.url;
 
-      await openNotification(mockNotif);
+      openNotification(mockNotif);
 
       expect(openExternalLinkSpy).toHaveBeenCalledWith(mockNotificationUrl);
     });
 
-    it('openNotification should fallback to my notifications when both entity url and notification url are not available', async () => {
+    it('openNotification should fallback to my notifications when both entity url and notification url are not available', () => {
       const mockNotif = { ...mockSingleAtlassifyNotification };
       mockNotif.entity = { ...mockNotif.entity, url: null };
       mockNotif.url = null;
 
-      await openNotification(mockNotif);
+      openNotification(mockNotif);
 
       expect(openExternalLinkSpy).toHaveBeenCalledWith(
         URLs.ATLASSIAN.WEB.MY_NOTIFICATIONS,

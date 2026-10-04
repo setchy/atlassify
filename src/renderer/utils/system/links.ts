@@ -72,7 +72,7 @@ const _links = {
     openExternalLink(url.toString() as Link);
   },
 
-  async openNotification(notification: AtlassifyNotification) {
+  openNotification(notification: AtlassifyNotification) {
     openExternalLink(resolveNotificationUrl(notification));
   },
 };
