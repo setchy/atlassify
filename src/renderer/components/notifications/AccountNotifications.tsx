@@ -137,6 +137,18 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
     setIsAccountNotificationsVisible(!isAccountNotificationsVisible);
   };
 
+  // Box background state: error overrides the light/dark theme styling.
+  let accountHeaderStyles:
+    | typeof styles.error
+    | typeof styles.light
+    | typeof styles.dark = styles.dark;
+
+  if (props.error) {
+    accountHeaderStyles = styles.error;
+  } else if (isLightMode()) {
+    accountHeaderStyles = styles.light;
+  }
+
   const hasAccountNotifications = notifications.length > 0;
 
   const Chevron = getChevronDetails(
@@ -154,11 +166,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
           onClick={actionToggleAccountNotifications}
           xcss={cx(
             styles.root,
-            props.error
-              ? styles.error
-              : isLightMode()
-                ? styles.light
-                : styles.dark,
+            accountHeaderStyles,
             isLightMode() ? styles.hoverLight : styles.hoverDark,
           )}
         >
