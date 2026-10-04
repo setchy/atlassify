@@ -237,8 +237,8 @@ importers:
         specifier: 38.0.2
         version: 38.0.2(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/icon-lab':
-        specifier: 7.10.0
-        version: 7.10.0(react@19.3.0)(supports-color@10.2.2)
+        specifier: 7.11.0
+        version: 7.11.0(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/inline-message':
         specifier: 16.4.7
         version: 16.4.7(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
@@ -514,8 +514,8 @@ packages:
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
-  '@atlaskit/icon-lab@7.10.0':
-    resolution: {integrity: sha512-sMa/JKrFknzs3QNtvX32HXRmwrxnUDZ8Lk2TPCEGCM5xAv0yoZwAkIkBkaKO+L6gLcEZKsvC2LUynGLR8YZLMw==}
+  '@atlaskit/icon-lab@7.11.0':
+    resolution: {integrity: sha512-LU+233TJGANbDd7IsDGaxtMXUoQHgHO07w9t5/x9c9ADPUMBTt6ojf/26M5Ii9QN9xikZvMM2GlMKxbECLAAUg==}
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
@@ -585,12 +585,6 @@ packages:
 
   '@atlaskit/popper@9.4.6':
     resolution: {integrity: sha512-+jXUilEE6SvFzMsECf4UJ8XI4uK16aqShjh+8BLOdpOcAZW1+pcO/c/62JgTvKGtW0OqdsJEaOBiYD9a2X4Opg==}
-    peerDependencies:
-      react: ^18.2.0 || ^19.0.0
-      react-dom: ^18.2.0 || ^19.0.0
-
-  '@atlaskit/popup@6.3.10':
-    resolution: {integrity: sha512-b7W0haI0bQhiAQhXD75GIyEI7pmPjPIE+CRMYbUaRvSdshUBeNbcGU0B4PPNDyJNnOrb7QMcajPCC9AXTX9mFQ==}
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
       react-dom: ^18.2.0 || ^19.0.0
@@ -5448,7 +5442,7 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/icon-lab@7.10.0(react@19.3.0)(supports-color@10.2.2)':
+  '@atlaskit/icon-lab@7.11.0(react@19.3.0)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/icon': 38.0.2(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/react-compiler-gating': 0.2.4(react@19.3.0)
@@ -5674,31 +5668,6 @@ snapshots:
       react-dom: 19.3.0(react@19.3.0)
       react-popper: 2.3.0(@popperjs/core@2.11.8)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
     transitivePeerDependencies:
-      - supports-color
-
-  '@atlaskit/popup@6.3.10(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)':
-    dependencies:
-      '@atlaskit/css': 1.1.6(react@19.3.0)(supports-color@10.2.2)
-      '@atlaskit/ds-lib': 8.0.0(react@19.3.0)
-      '@atlaskit/layering': 6.0.0(react@19.3.0)
-      '@atlaskit/motion': 9.0.1(react@19.3.0)(supports-color@10.2.2)
-      '@atlaskit/platform-feature-flags': 2.2.1(react@19.3.0)
-      '@atlaskit/popper': 9.4.6(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
-      '@atlaskit/portal': 7.0.2(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
-      '@atlaskit/primitives': 22.5.4(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
-      '@atlaskit/react-compiler-gating': 0.2.4(react@19.3.0)
-      '@atlaskit/tokens': 20.0.0(react@19.3.0)(supports-color@10.2.2)
-      '@atlaskit/top-layer': 6.0.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
-      '@babel/runtime': 7.29.7
-      '@compiled/react': 1.0.2(react@19.3.0)
-      bind-event-listener: 3.0.0
-      focus-trap: 2.4.6
-      memoize-one: 6.0.0
-      react: 19.3.0
-      react-dom: 19.3.0(react@19.3.0)
-      tiny-invariant: 1.3.3
-    transitivePeerDependencies:
-      - '@types/react'
       - supports-color
 
   '@atlaskit/popup@9.0.0(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)':
