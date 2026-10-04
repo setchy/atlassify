@@ -93,7 +93,7 @@
     "@atlaskit/toggle": "17.3.4",
     "@atlaskit/tokens": "20.1.0",
     "@atlaskit/tooltip": "24.4.0",
-    "@biomejs/biome": "2.5.14",
+    "@biomejs/biome": "2.5.15",
     "@compiled/react": "2.0.0",
     "@compiled/vite-plugin": "2.0.4",
     "@discordapp/twemoji": "16.0.1",

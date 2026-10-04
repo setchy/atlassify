@@ -9,7 +9,7 @@ const { currentPathname } = Astro.props;
 const isHomepage = currentPathname === '/';
 ---
 
-<nav class:list={["py-8 px-8", isHomepage && "bg-atlassify-docs-hero"]}>
+<nav class:list={['py-8 px-8', isHomepage && 'bg-atlassify-docs-hero']}>
   <div class="container max-w-5xl lg:mx-auto">
     <div
       class="bg-atlassify-docs-navbar text-atlassify-docs-link rounded-lg flex items-center justify-between px-8 lg:px-12 py-4 lg:py-6"
@@ -23,21 +23,21 @@ const isHomepage = currentPathname === '/';
       <div class="flex justify-end">
         <ul class="flex flex-row items-center list-none space-x-4">
           {siteMetadata.menuLinks.map((item) => (
-              <li>
-                <a
-                  href={item.path}
-                  class:list={[
-                    "py-1.5 lg:py-2 px-2 lg:px-3",
-                    "atlassify-navbar font-light",
-                    currentPathname === item.path
-                      ? "border rounded-lg border-white"
-                      : "",
-                  ]}
-                >
-                  {item.name}
-                </a>
-              </li>
-            ))}
+            <li>
+              <a
+                href={item.path}
+                class:list={[
+                  'py-1.5 lg:py-2 px-2 lg:px-3',
+                  'atlassify-navbar font-light',
+                  currentPathname === item.path
+                    ? 'border rounded-lg border-white'
+                    : '',
+                ]}
+              >
+                {item.name}
+              </a>
+            </li>
+          ))}
 
           <li><GitHubRepo /></li>
         </ul>

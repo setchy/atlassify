@@ -25,17 +25,17 @@ const {
 
 <div
   class:list={[
-    "flex px-12 py-16 lg:py-24",
+    'flex px-12 py-16 lg:py-24',
     isDark
-      ? "bg-atlassify-docs-section-dark text-white"
-      : "bg-atlassify-docs-section-light",
+      ? 'bg-atlassify-docs-section-dark text-white'
+      : 'bg-atlassify-docs-section-light',
   ]}
 >
   <div
     class:list={[
-      "container max-w-5xl mx-auto flex flex-col items-center lg:space-x-36",
-      !isReversed ? "lg:flex-row" : "lg:flex-row-reverse",
-      isReversed && "lg:space-x-reverse",
+      'container max-w-5xl mx-auto flex flex-col items-center lg:space-x-36',
+      !isReversed ? 'lg:flex-row' : 'lg:flex-row-reverse',
+      isReversed && 'lg:space-x-reverse',
     ]}
   >
     <div class="flex-1">
@@ -47,14 +47,18 @@ const {
     </div>
 
     {screenshot && (
-        <Image
-          class:list={["w-full lg:w-96 max-w-md rounded-lg shadow-lg transform", "mt-16 lg:mt-0 mb-8 lg:mb-0", isReversed ? "-rotate-6" : "rotate-6"]}
-          width="500"
-          height="400"
-          src={import(`../assets/${screenshot.path}.png`)}
-          alt={screenshot.alt}
-        />
-      )}
+      <Image
+        class:list={[
+          'w-full lg:w-96 max-w-md rounded-lg shadow-lg transform',
+          'mt-16 lg:mt-0 mb-8 lg:mb-0',
+          isReversed ? '-rotate-6' : 'rotate-6',
+        ]}
+        width="500"
+        height="400"
+        src={import(`../assets/${screenshot.path}.png`)}
+        alt={screenshot.alt}
+      />
+    )}
 
     <slot />
   </div>
