@@ -73,20 +73,28 @@ For a signing-only check, manually run the Publish workflow with an empty tag. S
 
 ### Locales
 
-Atlassify supports multiple languages/locales.
-
-To add a new locale:
-- Add a new locale file under `./src/renderer/i18n/locales`.
-- Import and update the resources in `./src/renderer/i18n/index.ts`.
+Atlassify supports multiple languages.
 
 To add a new UI string:
-- Wrap it with `t('namespace.key', { defaultValue: 'English text' })` — the `defaultValue` is the canonical English string and the source for the primary locale; `i18n:extract` seeds `en.json` from it, so `en.json` never needs hand-authoring and never holds empty values.
-- Run `pnpm i18n:extract` to regenerate `en.json`, then use the VSCode Extension `i18n Ally` to translate the new key into the other locales.
-- Carefully verify the translated values. **Do not translate placeholder variables** like `{{ }}`. You may need to manually update these if needed.
 
-`pnpm i18n:extract` is the **writer** — run it whenever you add, change, or remove a `t()` key or its `defaultValue`, commit the generated locale diff, and let CI verify. `pnpm i18n:check` is the **verifier** (CI): it refuses to merge if the committed locale files aren't in sync with the code-derived state. It can be run as focused sub-checks: `i18n:check:sync` (files match code), `i18n:check:values` (no empty/key-path `en.json` values), `i18n:check:defaults` (every `t()` has a default), `i18n:check:coverage` (locale key sets match `en.json`).
+- Wrap it in `t()` with the English text as `defaultValue`:
 
-**Important:** never enable `--trust-derived` when extracting — it overwrites existing hand-authored English with dotted key paths for any key without an explicit `defaultValue` in code. The `pnpm i18n:check` guard (CI) fails if any `t()` call lacks a `defaultValue`, if `en.json` ever contains an empty or key-path value, or if any locale's key set drifts from `en.json`. New keys are seeded into every locale as empty placeholders by `i18n:extract` — translating them later is expected and allowed.
+  ```tsx
+  t('common.save', { defaultValue: 'Save' })
+  ```
+
+- Run `pnpm i18n:extract`, then translate the new string in `src/renderer/i18n/locales/`.
+- Never translate `{{ }}` placeholders.
+
+To translate new strings into every language, install the [i18n Ally](https://marketplace.visualstudio.com/items?itemName=Lokalise.i18n-ally) VSCode extension. It highlights missing translations and can auto-translate them for you — review the results before committing.
+
+`en.json` is generated from the code defaults — you don't need to edit it by hand.
+
+To add a new locale:
+
+- Add a file under `./src/renderer/i18n/locales/` and register it in `./src/renderer/i18n/index.ts`.
+
+CI runs `pnpm i18n:check` to make sure the locale files stay in sync with the code. Don't use `--trust-derived` when extracting — it replaces real English text with key names.
 
 
 <!-- LINK LABELS -->
