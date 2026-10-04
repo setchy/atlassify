@@ -35,10 +35,11 @@ async function fetchNotificationFeedForScope(
 ): Promise<NotificationFeedResult> {
   const nodes: AtlassianNotificationFragment[] = [];
   let unseenNotificationCount = 0;
-  let after: string | undefined;
-  let isFullPage: boolean;
+  let hasMoreNotifications = false;
 
-  do {
+  // Fetch pages sequentially: each request needs the `after` cursor from the
+  // previous page, so recursion keeps the await out of a loop.
+  async function fetchPage(after: string | undefined): Promise<void> {
     const res = await getNotificationsForUser(account, after, cloudId);
 
     if (res.errors) {
@@ -49,17 +50,23 @@ async function fetchNotificationFeedForScope(
     unseenNotificationCount = res.data.notifications.unseenNotificationCount;
     nodes.push(...(feed.nodes ?? []));
 
-    isFullPage = feed.nodes?.length === Constants.NOTIFICATIONS_PAGE_SIZE;
-    after = feed.pageInfo?.endCursor;
-  } while (
-    isFullPage &&
-    nodes.length < Constants.MAX_NOTIFICATIONS_PER_ACCOUNT
-  );
+    const isFullPage = feed.nodes?.length === Constants.NOTIFICATIONS_PAGE_SIZE;
+    const shouldFetchMore =
+      isFullPage && nodes.length < Constants.MAX_NOTIFICATIONS_PER_ACCOUNT;
+
+    if (shouldFetchMore) {
+      await fetchPage(feed.pageInfo?.endCursor);
+    } else {
+      hasMoreNotifications = isFullPage;
+    }
+  }
+
+  await fetchPage(undefined);
 
   return {
     nodes,
     unseenNotificationCount,
-    hasMoreNotifications: isFullPage,
+    hasMoreNotifications,
   };
 }
 
