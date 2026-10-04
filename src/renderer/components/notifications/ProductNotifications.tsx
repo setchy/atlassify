@@ -19,6 +19,9 @@ import { CHEVRON_ICONS, getChevronDetails } from '../../utils/ui/display';
 import { isLightMode } from '../../utils/ui/theme';
 import { NotificationRow } from './NotificationRow';
 
+// Hoisted so its identity is stable across re-renders (S6478).
+const ProductMarkAllReadIcon: FC = () => <StrokeWeightLargeIcon label="" />;
+
 export interface ProductNotificationsProps {
   productNotifications: AtlassifyNotification[];
 }
@@ -141,7 +144,7 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
             >
               <IconButton
                 appearance="subtle"
-                icon={() => <StrokeWeightLargeIcon label="" />}
+                icon={ProductMarkAllReadIcon}
                 label={t('notifications.product.mark_all_read')}
                 onClick={(event: MouseEvent<HTMLElement>) => {
                   // Don't trigger onClick of parent element.

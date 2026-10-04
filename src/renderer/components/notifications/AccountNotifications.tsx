@@ -7,7 +7,14 @@ import Button, { IconButton } from '@atlaskit/button/new';
 import { cssMap, cx } from '@atlaskit/css';
 import CrossIcon from '@atlaskit/icon/core/cross';
 import StrokeWeightLargeIcon from '@atlaskit/icon/core/stroke-weight-large';
+import type { IconProps, NewIconProps } from '@atlaskit/icon/types';
 import { BitbucketIcon } from '@atlaskit/logo';
+
+// Props handed to IconButton icon renderers (S6478-stable renderers below).
+type ButtonIconProps =
+  | Omit<IconProps, 'size'>
+  | Omit<NewIconProps, 'spacing' | 'size'>;
+
 import Modal, {
   ModalBody,
   ModalFooter,
@@ -44,6 +51,13 @@ import { AllRead } from '../AllRead';
 import { Oops } from '../Oops';
 import { NotificationRow } from './NotificationRow';
 import { ProductNotifications } from './ProductNotifications';
+
+// Hoisted so their identities are stable across re-renders (S6478).
+const PullRequestsIcon: FC<ButtonIconProps> = (iconProps) => (
+  <BitbucketIcon {...iconProps} appearance="neutral" size="xxsmall" />
+);
+
+const MarkAllReadIcon: FC = () => <StrokeWeightLargeIcon label="" />;
 
 export interface AccountNotificationsProps {
   account: Account;
@@ -200,13 +214,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
               >
                 <IconButton
                   appearance="subtle"
-                  icon={(iconProps) => (
-                    <BitbucketIcon
-                      {...iconProps}
-                      appearance="neutral"
-                      size="xxsmall"
-                    />
-                  )}
+                  icon={PullRequestsIcon}
                   label={t('notifications.account.pull_requests')}
                   onClick={(event: MouseEvent<HTMLElement>) => {
                     event.stopPropagation();
@@ -224,7 +232,7 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
               >
                 <IconButton
                   appearance="subtle"
-                  icon={() => <StrokeWeightLargeIcon label="" />}
+                  icon={MarkAllReadIcon}
                   label={t('notifications.account.mark_all_read')}
                   onClick={(event: MouseEvent<HTMLElement>) => {
                     event.stopPropagation();
