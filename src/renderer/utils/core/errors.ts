@@ -8,46 +8,76 @@ import type {
 
 import i18n from '../../i18n';
 
+/**
+ * Error catalog.
+ *
+ * Translated strings are exposed as getters so they resolve in the *current*
+ * language whenever they are read, rather than being frozen at module load.
+ * The entries themselves are stable object references, so callers may rely on
+ * reference equality (e.g. `areAllAccountErrorsSame`, `determineFailureType`).
+ */
 export const Errors: Record<ErrorType, AtlassifyError> = {
   BAD_CREDENTIALS: {
-    title: i18n.t('errors.badCredentials.title'),
-    descriptions: [
-      i18n.t('errors.badCredentials.description1'),
-      i18n.t('errors.badCredentials.description2'),
-    ],
+    get title() {
+      return i18n.t('errors.badCredentials.title');
+    },
+    get descriptions() {
+      return [
+        i18n.t('errors.badCredentials.description1'),
+        i18n.t('errors.badCredentials.description2'),
+      ];
+    },
     emojis: Constants.EMOJIS.ERRORS.BAD_CREDENTIALS,
     actions: [
       {
-        label: i18n.t('accounts.manage'),
+        get label() {
+          return i18n.t('accounts.manage');
+        },
         route: '/accounts',
         appearance: 'warning',
       },
     ],
   },
   BAD_REQUEST: {
-    title: i18n.t('errors.badRequest.title'),
-    descriptions: [i18n.t('errors.badRequest.description1')],
+    get title() {
+      return i18n.t('errors.badRequest.title');
+    },
+    get descriptions() {
+      return [i18n.t('errors.badRequest.description1')];
+    },
     emojis: Constants.EMOJIS.ERRORS.BAD_REQUEST,
   },
   NETWORK: {
-    title: i18n.t('errors.network.title'),
-    descriptions: [
-      i18n.t('errors.network.description1'),
-      i18n.t('errors.network.description2'),
-    ],
+    get title() {
+      return i18n.t('errors.network.title');
+    },
+    get descriptions() {
+      return [
+        i18n.t('errors.network.description1'),
+        i18n.t('errors.network.description2'),
+      ];
+    },
     emojis: Constants.EMOJIS.ERRORS.NETWORK,
   },
   OFFLINE: {
-    title: i18n.t('errors.offline.title'),
-    descriptions: [
-      i18n.t('errors.offline.description1'),
-      i18n.t('errors.offline.description2'),
-    ],
+    get title() {
+      return i18n.t('errors.offline.title');
+    },
+    get descriptions() {
+      return [
+        i18n.t('errors.offline.description1'),
+        i18n.t('errors.offline.description2'),
+      ];
+    },
     emojis: Constants.EMOJIS.ERRORS.OFFLINE,
   },
   UNKNOWN: {
-    title: i18n.t('errors.unknown.title'),
-    descriptions: [i18n.t('errors.unknown.description1')],
+    get title() {
+      return i18n.t('errors.unknown.title');
+    },
+    get descriptions() {
+      return [i18n.t('errors.unknown.description1')];
+    },
     emojis: Constants.EMOJIS.ERRORS.UNKNOWN,
   },
 };
