@@ -84,7 +84,7 @@ To add a new UI string:
 - Run `pnpm i18n:extract` to regenerate `en.json`, then use the VSCode Extension `i18n Ally` to translate the new key into the other locales.
 - Carefully verify the translated values. **Do not translate placeholder variables** like `{{ }}`. You may need to manually update these if needed.
 
-**Important:** never enable `--trust-derived` when extracting — it overwrites existing hand-authored English with dotted key paths for any key without an explicit `defaultValue` in code. The `pnpm i18n:check` guard (CI) fails if any `t()` call lacks a `defaultValue`, or if `en.json` ever contains an empty or key-path value.
+**Important:** never enable `--trust-derived` when extracting — it overwrites existing hand-authored English with dotted key paths for any key without an explicit `defaultValue` in code. The `pnpm i18n:check` guard (CI) fails if any `t()` call lacks a `defaultValue`, if `en.json` ever contains an empty or key-path value, or if any locale's key set drifts from `en.json`. New keys are seeded into every locale as empty placeholders by `i18n:extract` — translating them later is expected and allowed.
 
 
 <!-- LINK LABELS -->
