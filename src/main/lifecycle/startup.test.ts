@@ -77,5 +77,20 @@ describe('main/lifecycle/startup.ts', () => {
 
       expect(mb.setContextMenu).toHaveBeenCalledWith(contextMenu);
     });
+
+    it('shows the window when a second instance is launched', () => {
+      const mb = createMb();
+      const contextMenu = {} as Electron.Menu;
+
+      initializeAppLifecycle(mb as unknown as Menubar, contextMenu);
+
+      const secondInstanceHandler = appOnMock.mock.calls
+        .filter(([eventName]) => eventName === 'second-instance')
+        .at(-1)?.[1];
+      expect(secondInstanceHandler).toBeDefined();
+      secondInstanceHandler?.();
+
+      expect(mb.showWindow).toHaveBeenCalled();
+    });
   });
 });

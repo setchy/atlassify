@@ -75,6 +75,21 @@ describe('main/utils', () => {
     );
   });
 
+  it('takeScreenshot logs an error when capturing the page fails', async () => {
+    const mb = createMb();
+    mb.window.capturePage = () => Promise.reject(new Error('capture-failed'));
+
+    takeScreenshot(mb as unknown as Menubar);
+
+    await vi.waitFor(() =>
+      expect(logErrorMock).toHaveBeenCalledWith(
+        'takeScreenshot',
+        'Failed to capture screenshot',
+        expect.any(Error),
+      ),
+    );
+  });
+
   it('openLogsDirectory opens directory when present', () => {
     openLogsDirectory();
     expect(shell.openPath).toHaveBeenCalledWith('/var/log/app');

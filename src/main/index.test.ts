@@ -15,7 +15,7 @@ vi.mock('electron', () => ({
     isPackaged: true,
     whenReady: vi.fn(() => {
       calls.push('whenReady');
-      return new Promise(() => undefined);
+      return Promise.resolve();
     }),
   },
 }));
@@ -79,5 +79,30 @@ describe('main/index.ts', () => {
 
   it('applies the Ozone backend before Electron becomes ready', () => {
     expect(calls).toEqual(['ozone', 'whenReady']);
+  });
+
+  it('logs an error when Electron fails to become ready', async () => {
+    vi.resetModules();
+    vi.doMock('electron', () => ({
+      app: {
+        isPackaged: true,
+        whenReady: vi.fn(() => Promise.reject(new Error('ready-failed'))),
+      },
+    }));
+    vi.doMock('../shared/logger', () => ({
+      logError: vi.fn(),
+    }));
+
+    const { logError } = await import('../shared/logger');
+
+    await import('./index');
+
+    await vi.waitFor(() =>
+      expect(logError).toHaveBeenCalledWith(
+        'main',
+        'Failed to initialize application',
+        expect.any(Error),
+      ),
+    );
   });
 });

@@ -5,6 +5,7 @@ import { autoUpdater } from 'electron-updater';
 import type { Mock } from 'vitest';
 
 import { APPLICATION } from '../shared/constants';
+import { logError } from '../shared/logger';
 import { isMacOS } from '../shared/platform';
 
 import { resetApp } from './lifecycle/reset';
@@ -55,6 +56,10 @@ vi.mock('./lifecycle/reset', () => ({
 
 vi.mock('../shared/platform', () => ({
   isMacOS: vi.fn(),
+}));
+
+vi.mock('../shared/logger', () => ({
+  logError: vi.fn(),
 }));
 
 describe('main/menu.ts', () => {
@@ -297,6 +302,52 @@ describe('main/menu.ts', () => {
       const item = template.find((i) => i.label === 'Visit Website');
       item.click();
       expect(shell.openExternal).toHaveBeenCalledWith(APPLICATION.WEBSITE);
+    });
+
+    it('show menu item shows the menubar window', () => {
+      const template = buildAndGetTemplate();
+      const item = template.find((i) => i.label === `Show ${APPLICATION.NAME}`);
+      item.click();
+      expect(menubar.showWindow).toHaveBeenCalled();
+    });
+
+    it('logs when the repository URL cannot be opened', async () => {
+      const template = buildAndGetTemplate();
+      const devEntry = template.find(
+        (item) => item?.label === 'Developer',
+      ) as TemplateItem;
+      const item = devEntry.submenu.find((i) => i.label === 'Visit Repository');
+      vi.mocked(shell.openExternal).mockRejectedValueOnce(
+        new Error('connection refused'),
+      );
+
+      item.click();
+
+      await vi.waitFor(() =>
+        expect(logError).toHaveBeenCalledWith(
+          'menu',
+          'Failed to open repository URL',
+          expect.any(Error),
+        ),
+      );
+    });
+
+    it('logs when the website URL cannot be opened', async () => {
+      const template = buildAndGetTemplate();
+      const item = template.find((i) => i.label === 'Visit Website');
+      vi.mocked(shell.openExternal).mockRejectedValueOnce(
+        new Error('connection refused'),
+      );
+
+      item.click();
+
+      await vi.waitFor(() =>
+        expect(logError).toHaveBeenCalledWith(
+          'menu',
+          'Failed to open website URL',
+          expect.any(Error),
+        ),
+      );
     });
 
     it('quit menu item quits the app', () => {

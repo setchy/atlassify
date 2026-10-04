@@ -150,6 +150,24 @@ describe('main/updater.ts', () => {
 
       expect(autoUpdater.quitAndInstall).toHaveBeenCalled();
     });
+
+    it('logs an error when the update ready dialog fails to show', async () => {
+      vi.mocked(dialog.showMessageBox).mockRejectedValue(
+        new Error('dialog-failed'),
+      );
+
+      await updater.start();
+
+      emit('update-downloaded', { releaseName: 'v1.2.3' });
+
+      await vi.waitFor(() =>
+        expect(logError).toHaveBeenCalledWith(
+          'auto updater',
+          'Failed to show update ready dialog',
+          expect.any(Error),
+        ),
+      );
+    });
   });
 
   describe('update event handlers & scheduling', () => {
