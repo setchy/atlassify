@@ -1,0 +1,14 @@
+docs/src/components/Footer.astro
+  h_ac004aadb63da9 29,31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "83aa2e4c40f6a167141d1c9158935c18da6393ea",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
