@@ -24,3 +24,6 @@ coverage
 
 # Mac Files
 .DS_Store
+
+# OpenSpec
+openspec/
