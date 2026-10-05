@@ -1,0 +1,24 @@
+docs/src/icons/i18next.svg
+  h_ac004aadb63da9 1-8
+docs/src/icons/icons.ts
+  h_ac004aadb63da9 5,25-30,34-48
+docs/src/icons/tanstack-query.svg
+  h_ac004aadb63da9 1-40
+docs/src/icons/vite.svg
+  h_ac004aadb63da9 1-39
+docs/src/icons/zustand.svg
+  h_ac004aadb63da9 1-314
+docs/src/pages/index.astro
+  h_ac004aadb63da9 4,58,60-63,65-73,76-78,81,83
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "527ce8c88dddc8fa14189b00c81b32822b3849af",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
