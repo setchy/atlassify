@@ -1,0 +1,14 @@
+.gitignore
+  h_ac004aadb63da9 26-29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6c50ad6a7e76db62bc1b74ff950482c4e06b6c3b",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
