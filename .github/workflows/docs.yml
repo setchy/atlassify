@@ -6,9 +6,13 @@ on:
       - main
     paths:
       - "docs/**"
+      - ".github/workflows/docs.yml"
+      - ".github/actions/setup-node/**"
   pull_request:
     paths:
       - "docs/**"
+      - ".github/workflows/docs.yml"
+      - ".github/actions/setup-node/**"
 
 permissions: {}
 
@@ -24,3 +28,30 @@ jobs:
       contents: read
     with:
       directory: "docs"
+
+  tests:
+    name: Test Docs [node:test]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: ./.github/actions/setup-node
+        with:
+          directory: "docs"
+
+      - name: Run tests with coverage
+        run: pnpm test:coverage
+        working-directory: docs
+
+      - name: Archive docs coverage results
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: docs-code-coverage-report
+          path: docs/coverage/lcov.info

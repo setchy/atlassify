@@ -2,19 +2,17 @@
 import { Icon } from 'astro-icon/components';
 
 import { format } from 'date-fns';
-import { Octokit } from 'octokit';
 
 import { siteMetadata, URLs } from '~/constants';
 
 import DownloadButton from '~/components/DownloadButton.astro';
+import { getGitHubLatestRelease } from '~/lib/github';
 import type {
   DownloadLink,
   DownloadLinks,
   HeroData,
   ReleaseAsset,
 } from '~/types';
-
-const octokit = new Octokit();
 
 const getDownloadLinks = (assets: ReleaseAsset[]): DownloadLinks => {
   const getAssetLink = (filenameRegex: RegExp): string => {
@@ -81,18 +79,26 @@ const getDownloadLinks = (assets: ReleaseAsset[]): DownloadLinks => {
 
 const loadInitialData = async (): Promise<HeroData> => {
   try {
-    const latestRelease = await octokit.rest.repos.getLatestRelease({
+    const latestRelease = await getGitHubLatestRelease({
       owner: siteMetadata.repo.owner,
       repo: siteMetadata.repo.name,
     });
 
-    const downloadLinks = getDownloadLinks(latestRelease.data.assets);
+    if (!latestRelease) {
+      return {
+        downloadLinks: { alt: [], primary: [] },
+        version: '',
+        releaseDate: '',
+      };
+    }
+
+    const downloadLinks = getDownloadLinks(latestRelease.assets);
 
     return {
       downloadLinks,
-      version: latestRelease.data.name,
-      releaseDate: latestRelease.data.published_at
-        ? format(latestRelease.data.published_at, 'dd/MM/yyyy')
+      version: latestRelease.name ?? latestRelease.tag_name,
+      releaseDate: latestRelease.published_at
+        ? format(latestRelease.published_at, 'dd/MM/yyyy')
         : '',
     };
   } catch (err) {
