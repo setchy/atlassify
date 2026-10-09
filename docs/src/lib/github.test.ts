@@ -75,7 +75,7 @@ test('keeps cached data when a refresh fails', async (t) => {
 test('uses a five-second timeout and falls back after an aborted request', async (t) => {
   let requests = 0;
   t.mock.method(console, 'warn', () => {});
-  t.mock.method(AbortSignal, 'timeout', (duration) => {
+  t.mock.method(AbortSignal, 'timeout', (duration: number) => {
     assert.equal(duration, 5000);
     return AbortSignal.abort(new DOMException('Timed out', 'TimeoutError'));
   });
