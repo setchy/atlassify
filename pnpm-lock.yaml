@@ -219,8 +219,8 @@ importers:
         specifier: 25.4.4
         version: 25.4.4(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/checkbox':
-        specifier: 19.2.4
-        version: 19.2.4(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
+        specifier: 19.3.0
+        version: 19.3.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/css':
         specifier: 1.1.6
         version: 1.1.6(react@19.3.0)(supports-color@10.2.2)
@@ -471,8 +471,8 @@ packages:
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
-  '@atlaskit/checkbox@19.2.4':
-    resolution: {integrity: sha512-/X3MXk13z0jtBJM7FBCao4w+0L/sRUiXAoMWA51a5DWmqX/ZVr0kwBXQ7qaRPoNbfN2ckfm+cRvmC8OaD3fS/w==}
+  '@atlaskit/checkbox@19.3.0':
+    resolution: {integrity: sha512-W8AqTQVB9TxHm+w00x4VQL2AvS2C3BVn8W/t+MaVzzkQWzXL/ny/6saQ1APLOXYdnjp0H5jd1PwAS7UOYEqGmA==}
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
@@ -5297,11 +5297,12 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/checkbox@19.2.4(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)':
+  '@atlaskit/checkbox@19.3.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/analytics-next': 12.5.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       '@atlaskit/css': 1.1.6(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/ds-lib': 8.0.0(react@19.3.0)
+      '@atlaskit/platform-feature-flags': 2.2.1(react@19.3.0)
       '@atlaskit/react-compiler-gating': 0.2.4(react@19.3.0)
       '@atlaskit/tokens': 20.3.0(react@19.3.0)(supports-color@10.2.2)
       '@babel/runtime': 7.29.7
