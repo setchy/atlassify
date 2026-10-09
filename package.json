@@ -91,7 +91,7 @@
     "@atlaskit/tag-group": "13.4.2",
     "@atlaskit/textfield": "10.2.6",
     "@atlaskit/toggle": "17.3.4",
-    "@atlaskit/tokens": "20.1.0",
+    "@atlaskit/tokens": "20.3.0",
     "@atlaskit/tooltip": "24.4.0",
     "@biomejs/biome": "2.5.15",
     "@compiled/react": "2.0.0",
