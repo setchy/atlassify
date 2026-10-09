@@ -8,7 +8,8 @@
     "prepare": "cd .. && husky",
     "dev": "astro dev",
     "start": "pnpm dev",
-    "build": "astro build",
+    "check": "astro check",
+    "build": "pnpm check && astro build",
     "test": "node --test \"src/**/*.test.ts\"",
     "test:coverage": "c8 node --test \"src/**/*.test.ts\"",
     "preview": "astro preview",
@@ -52,9 +53,12 @@
     "tailwindcss-motion": "1.1.1"
   },
   "devDependencies": {
+    "@astrojs/check": "0.9.10",
     "@biomejs/biome": "2.5.15",
+    "@types/node": "24.19.1",
     "c8": "12.0.0",
-    "husky": "9.1.7"
+    "husky": "9.1.7",
+    "typescript": "6.0.3"
   },
   "packageManager": "pnpm@12.8.2",
   "lint-staged": {

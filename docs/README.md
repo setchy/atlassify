@@ -36,12 +36,24 @@ All commands are run from the `docs/` directory, from a terminal:
 | :------------------ | :------------------------------------------------- |
 | `pnpm install`      | Installs dependencies                              |
 | `pnpm run dev`      | Starts local dev server at `http://localhost:4321` |
-| `pnpm run build`    | Build your production site to `./dist/`            |
+| `pnpm check`        | Check Astro and TypeScript diagnostics             |
+| `pnpm run build`    | Check diagnostics, then build to `./dist/`          |
 | `pnpm test`         | Run unit tests with Node.js                        |
 | `pnpm test:coverage` | Run tests and write `coverage/lcov.info`           |
 | `pnpm run preview`  | Preview your build locally, before deploying       |
 | `pnpm astro ...`    | Run CLI commands like `astro add`, `astro check`   |
 | `pnpm astro --help` | Get help using the Astro CLI                       |
+
+`pnpm check` reports Astro and TypeScript errors without building the site.
+Errors cause a nonzero exit status; warnings and hints remain advisory.
+`pnpm build` runs this check before generating production output, including
+Netlify builds, and stops if the check fails. Docs CI also runs the check
+alongside lint and unit-test coverage for website pull requests and pushes to
+`main`.
+
+Build environments must install development dependencies for the checker.
+Netlify does this by default; avoid production-only dependency installation
+(such as setting `NODE_ENV=production` during installation).
 
 ### GitHub API access
 

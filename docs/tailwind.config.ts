@@ -34,7 +34,8 @@ const config: Config = {
       },
     },
   },
-  plugins: [TailwindCSSMotion],
+  // The plugin's legacy declaration uses unknown theme values, unlike Tailwind 4.
+  plugins: [TailwindCSSMotion as NonNullable<Config['plugins']>[number]],
 };
 
 export default config;
