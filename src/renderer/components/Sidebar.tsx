@@ -100,7 +100,9 @@ const SidebarComponent: FC = () => {
       isFetching ? (
         <Spinner
           appearance="invert"
-          label={t('sidebar.refresh.label')}
+          label={t('sidebar.refresh.label', {
+            defaultValue: 'Refresh notifications',
+          })}
           size="medium"
         />
       ) : (
@@ -122,14 +124,14 @@ const SidebarComponent: FC = () => {
         <Box paddingBlockStart="space.200">
           <Stack alignInline="center" space="space.100">
             <Tooltip
-              content={t('sidebar.home')}
+              content={t('sidebar.home', { defaultValue: 'Home' })}
               position="right"
               shortcut={[shortcuts.home.key]}
             >
               <IconButton
                 appearance="subtle"
                 icon={SidebarHomeIcon}
-                label={t('sidebar.home')}
+                label={t('sidebar.home', { defaultValue: 'Home' })}
                 onClick={() => shortcuts.home.action()}
                 shape="circle"
                 testId="sidebar-home"
@@ -138,11 +140,16 @@ const SidebarComponent: FC = () => {
 
             <Tooltip
               content={t('sidebar.notifications.tooltip', {
+                defaultValue: '{{count}}{{countSuffix}} {{countType}} ↗',
                 count: notificationCount,
                 countSuffix: hasMoreAccountNotifications ? '+' : '',
                 countType: fetchOnlyUnreadNotifications
-                  ? t('sidebar.notifications.unread')
-                  : t('sidebar.notifications.read'),
+                  ? t('sidebar.notifications.unread', {
+                      defaultValue: 'unread notifications',
+                    })
+                  : t('sidebar.notifications.read', {
+                      defaultValue: 'notifications',
+                    }),
               })}
               position="right"
               shortcut={[shortcuts.myNotifications.key]}
@@ -150,7 +157,9 @@ const SidebarComponent: FC = () => {
               <IconButton
                 appearance={hasNotifications ? 'primary' : 'subtle'}
                 icon={renderNotificationsIcon}
-                label={t('sidebar.notifications.label')}
+                label={t('sidebar.notifications.label', {
+                  defaultValue: 'Notifications',
+                })}
                 onClick={() => shortcuts.myNotifications.action()}
                 shape="circle"
                 spacing="compact"
@@ -161,14 +170,18 @@ const SidebarComponent: FC = () => {
             {isLoggedIn && (
               <Fragment>
                 <Tooltip
-                  content={t('sidebar.toggles.unreadOnly.tooltip')}
+                  content={t('sidebar.toggles.unreadOnly.tooltip', {
+                    defaultValue: 'Show only unread notifications',
+                  })}
                   position="right"
                   shortcut={[shortcuts.toggleReadUnread.key]}
                 >
                   <Toggle
                     id="toggle-unread-only"
                     isChecked={fetchOnlyUnreadNotifications}
-                    label={t('sidebar.toggles.unreadOnly.label')}
+                    label={t('sidebar.toggles.unreadOnly.label', {
+                      defaultValue: 'Show only unread toggle',
+                    })}
                     onChange={() => shortcuts.toggleReadUnread.action()}
                     size="regular"
                     testId="sidebar-toggle-unread-only"
@@ -176,7 +189,9 @@ const SidebarComponent: FC = () => {
                 </Tooltip>
 
                 <Tooltip
-                  content={t('sidebar.toggles.groupByProduct.tooltip')}
+                  content={t('sidebar.toggles.groupByProduct.tooltip', {
+                    defaultValue: 'Group notifications by products',
+                  })}
                   position="right"
                   shortcut={[shortcuts.groupByProduct.key]}
                 >
@@ -185,7 +200,9 @@ const SidebarComponent: FC = () => {
                       groupNotificationsByProduct ? 'discovery' : 'subtle'
                     }
                     icon={renderGroupByProductIcon}
-                    label={t('sidebar.toggles.groupByProduct.label')}
+                    label={t('sidebar.toggles.groupByProduct.label', {
+                      defaultValue: 'Group notifications by products',
+                    })}
                     onClick={() => shortcuts.groupByProduct.action()}
                     shape="circle"
                     spacing="compact"
@@ -194,7 +211,9 @@ const SidebarComponent: FC = () => {
                 </Tooltip>
 
                 <Tooltip
-                  content={t('sidebar.toggles.groupByTitle.tooltip')}
+                  content={t('sidebar.toggles.groupByTitle.tooltip', {
+                    defaultValue: 'Group notifications by title',
+                  })}
                   position="right"
                   shortcut={[shortcuts.groupByTitle.key]}
                 >
@@ -208,7 +227,9 @@ const SidebarComponent: FC = () => {
                         label="groupByTitle"
                       />
                     )}
-                    label={t('sidebar.toggles.groupByTitle.label')}
+                    label={t('sidebar.toggles.groupByTitle.label', {
+                      defaultValue: 'Group notifications by title',
+                    })}
                     onClick={() => shortcuts.groupByTitle.action()}
                     shape="circle"
                     spacing="compact"
@@ -217,14 +238,18 @@ const SidebarComponent: FC = () => {
                 </Tooltip>
 
                 <Tooltip
-                  content={t('sidebar.filters.tooltip')}
+                  content={t('sidebar.filters.tooltip', {
+                    defaultValue: 'Filter notifications',
+                  })}
                   position="right"
                   shortcut={[shortcuts.filters.key]}
                 >
                   <IconButton
                     appearance={hasFilters ? 'discovery' : 'subtle'}
                     icon={renderFilterIcon}
-                    label={t('sidebar.filters.label')}
+                    label={t('sidebar.filters.label', {
+                      defaultValue: 'Filters',
+                    })}
                     onClick={() => shortcuts.filters.action()}
                     shape="circle"
                     spacing="compact"
@@ -241,7 +266,9 @@ const SidebarComponent: FC = () => {
             {isLoggedIn ? (
               <Fragment>
                 <Tooltip
-                  content={t('sidebar.refresh.tooltip')}
+                  content={t('sidebar.refresh.tooltip', {
+                    defaultValue: 'Refresh notifications',
+                  })}
                   position="right"
                   shortcut={[shortcuts.refresh.key]}
                 >
@@ -249,7 +276,9 @@ const SidebarComponent: FC = () => {
                     appearance="subtle"
                     icon={renderRefreshIcon}
                     isDisabled={isFetching}
-                    label={t('sidebar.refresh.label')}
+                    label={t('sidebar.refresh.label', {
+                      defaultValue: 'Refresh notifications',
+                    })}
                     onClick={() => shortcuts.refresh.action()}
                     shape="circle"
                     testId="sidebar-refresh"
@@ -257,14 +286,18 @@ const SidebarComponent: FC = () => {
                 </Tooltip>
 
                 <Tooltip
-                  content={t('sidebar.settings.tooltip')}
+                  content={t('sidebar.settings.tooltip', {
+                    defaultValue: 'Settings',
+                  })}
                   position="right"
                   shortcut={[shortcuts.settings.key]}
                 >
                   <IconButton
                     appearance="subtle"
                     icon={renderSettingsIcon}
-                    label={t('sidebar.settings.label')}
+                    label={t('sidebar.settings.label', {
+                      defaultValue: 'Settings',
+                    })}
                     onClick={() => shortcuts.settings.action()}
                     shape="circle"
                     testId="sidebar-settings"
@@ -274,6 +307,7 @@ const SidebarComponent: FC = () => {
             ) : (
               <Tooltip
                 content={t('sidebar.quit.tooltip', {
+                  defaultValue: 'Quit {{appName}}',
                   appName: APPLICATION.NAME,
                 })}
                 position="right"
@@ -288,6 +322,7 @@ const SidebarComponent: FC = () => {
                     />
                   )}
                   label={t('sidebar.quit.label', {
+                    defaultValue: 'Quit {{appName}}',
                     appName: APPLICATION.NAME,
                   })}
                   onClick={() => shortcuts.quit.action()}

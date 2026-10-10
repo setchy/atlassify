@@ -48,7 +48,9 @@ export const NotificationActions: FC<NotificationActionsProps> = ({
             content={
               failure?.action === 'read'
                 ? failureMessage
-                : t('notifications.interactions.mark_as_read')
+                : t('notifications.interactions.mark_as_read', {
+                    defaultValue: 'Mark as read',
+                  })
             }
             position="left"
           >
@@ -59,8 +61,10 @@ export const NotificationActions: FC<NotificationActionsProps> = ({
               }
               label={
                 failure?.action === 'read'
-                  ? `${failureMessage}. ${t('notifications.interactions.mark_as_read')}`
-                  : t('notifications.interactions.mark_as_read')
+                  ? `${failureMessage}. ${t('notifications.interactions.mark_as_read', { defaultValue: 'Mark as read' })}`
+                  : t('notifications.interactions.mark_as_read', {
+                      defaultValue: 'Mark as read',
+                    })
               }
               onClick={onMarkAsRead}
               shape="circle"
@@ -73,7 +77,9 @@ export const NotificationActions: FC<NotificationActionsProps> = ({
             content={
               failure?.action === 'unread'
                 ? failureMessage
-                : t('notifications.interactions.mark_as_unread')
+                : t('notifications.interactions.mark_as_unread', {
+                    defaultValue: 'Mark as unread',
+                  })
             }
             position="left"
           >
@@ -82,8 +88,10 @@ export const NotificationActions: FC<NotificationActionsProps> = ({
               icon={failure?.action === 'unread' ? FailedActionIcon : EmptyIcon}
               label={
                 failure?.action === 'unread'
-                  ? `${failureMessage}. ${t('notifications.interactions.mark_as_unread')}`
-                  : t('notifications.interactions.mark_as_unread')
+                  ? `${failureMessage}. ${t('notifications.interactions.mark_as_unread', { defaultValue: 'Mark as unread' })}`
+                  : t('notifications.interactions.mark_as_unread', {
+                      defaultValue: 'Mark as unread',
+                    })
               }
               onClick={onMarkAsUnread}
               shape="circle"

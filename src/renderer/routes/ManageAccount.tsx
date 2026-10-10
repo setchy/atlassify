@@ -33,7 +33,7 @@ export const ManageAccountRoute: FC = () => {
   return (
     <Page testId="manage-account">
       <Header subheading={account.username}>
-        {t('accounts.manage_account.title')}
+        {t('accounts.manage_account.title', { defaultValue: 'Manage account' })}
       </Header>
 
       <Contents>

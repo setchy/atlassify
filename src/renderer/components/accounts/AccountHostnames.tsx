@@ -67,7 +67,9 @@ export const AccountHostnames: FC<AccountHostnamesProps> = ({ account }) => {
     <Stack space="space.100">
       <Inline alignBlock="start" space="space.050">
         <Heading size="small">
-          {t('accounts.manage_account.hostname.title')}
+          {t('accounts.manage_account.hostname.title', {
+            defaultValue: 'Account host names',
+          })}
         </Heading>
 
         <InlineMessage appearance="info">
@@ -75,11 +77,16 @@ export const AccountHostnames: FC<AccountHostnamesProps> = ({ account }) => {
             <Stack space="space.100">
               <Text as="p" size="small">
                 {t('accounts.manage_account.hostname.description_1', {
+                  defaultValue:
+                    '{{appName}} usually fetches your notification feed across your tenanted applications, such as Jira and Confluence, automatically.',
                   appName: APPLICATION.NAME,
                 })}
               </Text>
               <Text as="p" size="small">
-                {t('accounts.manage_account.hostname.description_2')}
+                {t('accounts.manage_account.hostname.description_2', {
+                  defaultValue:
+                    'However, for some accounts you may need to explicitly configure your host names for notification feed data to be correctly routed and returned.',
+                })}
               </Text>
               <Text
                 as="p"
@@ -87,7 +94,10 @@ export const AccountHostnames: FC<AccountHostnamesProps> = ({ account }) => {
                 size="small"
                 weight="medium"
               >
-                {t('accounts.manage_account.hostname.description_warning')}
+                {t('accounts.manage_account.hostname.description_warning', {
+                  defaultValue:
+                    'Only configure the absolute minimum host names required, as adding unnecessary host names can slow down notification checks.',
+                })}
               </Text>
             </Stack>
           </div>
@@ -104,7 +114,9 @@ export const AccountHostnames: FC<AccountHostnamesProps> = ({ account }) => {
                 size="small"
                 weight="medium"
               >
-                {t('accounts.manage_account.hostname.configured_hostnames')}
+                {t('accounts.manage_account.hostname.configured_hostnames', {
+                  defaultValue: 'Configured host names',
+                })}
               </Text>
 
               <TagGroup alignment="start" titleId="hostname-hints-heading">
@@ -143,7 +155,9 @@ export const AccountHostnames: FC<AccountHostnamesProps> = ({ account }) => {
                   <Field
                     defaultValue=""
                     isRequired
-                    label={t('accounts.manage_account.hostname.add_hostname')}
+                    label={t('accounts.manage_account.hostname.add_hostname', {
+                      defaultValue: 'Add host name',
+                    })}
                     name="hostname"
                     testId="hostname-hint-input"
                   >
@@ -166,7 +180,7 @@ export const AccountHostnames: FC<AccountHostnamesProps> = ({ account }) => {
                             appearance="subtle"
                             icon={AddIcon}
                             isDisabled={submitting}
-                            label={t('common.add')}
+                            label={t('common.add', { defaultValue: 'Add' })}
                             shape="circle"
                             testId="hostname-hint-add"
                             type="submit"

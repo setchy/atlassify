@@ -110,6 +110,7 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
             content={
               productNotification.home
                 ? t('notifications.product.open_product', {
+                    defaultValue: 'Open {{name}} ↗',
                     name: productNotification.display,
                   })
                 : ''
@@ -139,13 +140,17 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
 
           <Inline space="space.100">
             <Tooltip
-              content={t('notifications.product.mark_all_read')}
+              content={t('notifications.product.mark_all_read', {
+                defaultValue: 'Mark all product notifications as read',
+              })}
               position="bottom"
             >
               <IconButton
                 appearance="subtle"
                 icon={ProductMarkAllReadIcon}
-                label={t('notifications.product.mark_all_read')}
+                label={t('notifications.product.mark_all_read', {
+                  defaultValue: 'Mark all product notifications as read',
+                })}
                 onClick={(event: MouseEvent<HTMLElement>) => {
                   // Don't trigger onClick of parent element.
                   event.stopPropagation();

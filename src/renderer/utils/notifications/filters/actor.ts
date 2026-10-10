@@ -21,18 +21,26 @@ export const actorFilter: Filter<ActorType> = {
   get FILTER_TYPES(): Record<ActorType, FilterDetails> {
     return {
       user: {
-        name: i18n.t('filters.actors.user.title'),
-        description: i18n.t('filters.actors.user.description'),
+        name: i18n.t('filters.actors.user.title', { defaultValue: 'User' }),
+        description: i18n.t('filters.actors.user.description', {
+          defaultValue: 'Notifications from users',
+        }),
         icon: PersonIcon,
       },
       rovo: {
-        name: i18n.t('filters.actors.rovo.title'),
-        description: i18n.t('filters.actors.rovo.description'),
+        name: i18n.t('filters.actors.rovo.title', { defaultValue: 'Rovo' }),
+        description: i18n.t('filters.actors.rovo.description', {
+          defaultValue: 'Notifications from Rovo products',
+        }),
         icon: RovoIcon,
       },
       automation: {
-        name: i18n.t('filters.actors.automation.title'),
-        description: i18n.t('filters.actors.automation.description'),
+        name: i18n.t('filters.actors.automation.title', {
+          defaultValue: 'Automation',
+        }),
+        description: i18n.t('filters.actors.automation.description', {
+          defaultValue: 'Notifications from automation rules',
+        }),
         icon: AutomationIcon,
       },
     };

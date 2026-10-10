@@ -19,19 +19,26 @@ import i18n from '../../i18n';
 export const Errors: Record<ErrorType, AtlassifyError> = {
   BAD_CREDENTIALS: {
     get title() {
-      return i18n.t('errors.badCredentials.title');
+      return i18n.t('errors.badCredentials.title', {
+        defaultValue: 'Bad Credentials',
+      });
     },
     get descriptions() {
       return [
-        i18n.t('errors.badCredentials.description1'),
-        i18n.t('errors.badCredentials.description2'),
+        i18n.t('errors.badCredentials.description1', {
+          defaultValue: 'Your credentials are either invalid or expired.',
+        }),
+        i18n.t('errors.badCredentials.description2', {
+          defaultValue:
+            'Please try removing your account and authenticating again.',
+        }),
       ];
     },
     emojis: Constants.EMOJIS.ERRORS.BAD_CREDENTIALS,
     actions: [
       {
         get label() {
-          return i18n.t('accounts.manage');
+          return i18n.t('accounts.manage', { defaultValue: 'Manage accounts' });
         },
         route: '/accounts',
         appearance: 'warning',
@@ -40,43 +47,64 @@ export const Errors: Record<ErrorType, AtlassifyError> = {
   },
   BAD_REQUEST: {
     get title() {
-      return i18n.t('errors.badRequest.title');
+      return i18n.t('errors.badRequest.title', { defaultValue: 'Bad Request' });
     },
     get descriptions() {
-      return [i18n.t('errors.badRequest.description1')];
+      return [
+        i18n.t('errors.badRequest.description1', {
+          defaultValue: 'Something went wrong making the API request.',
+        }),
+      ];
     },
     emojis: Constants.EMOJIS.ERRORS.BAD_REQUEST,
   },
   NETWORK: {
     get title() {
-      return i18n.t('errors.network.title');
+      return i18n.t('errors.network.title', { defaultValue: 'Network Error' });
     },
     get descriptions() {
       return [
-        i18n.t('errors.network.description1'),
-        i18n.t('errors.network.description2'),
+        i18n.t('errors.network.description1', {
+          defaultValue: 'Unable to connect to Atlassian Cloud.',
+        }),
+        i18n.t('errors.network.description2', {
+          defaultValue:
+            'Please check your network connection, including whether you require a VPN, and try again.',
+        }),
       ];
     },
     emojis: Constants.EMOJIS.ERRORS.NETWORK,
   },
   OFFLINE: {
     get title() {
-      return i18n.t('errors.offline.title');
+      return i18n.t('errors.offline.title', {
+        defaultValue: 'Network Offline',
+      });
     },
     get descriptions() {
       return [
-        i18n.t('errors.offline.description1'),
-        i18n.t('errors.offline.description2'),
+        i18n.t('errors.offline.description1', {
+          defaultValue: 'Your device is offline.',
+        }),
+        i18n.t('errors.offline.description2', {
+          defaultValue: 'Please check your network connection.',
+        }),
       ];
     },
     emojis: Constants.EMOJIS.ERRORS.OFFLINE,
   },
   UNKNOWN: {
     get title() {
-      return i18n.t('errors.unknown.title');
+      return i18n.t('errors.unknown.title', {
+        defaultValue: 'Oops! Something went wrong',
+      });
     },
     get descriptions() {
-      return [i18n.t('errors.unknown.description1')];
+      return [
+        i18n.t('errors.unknown.description1', {
+          defaultValue: 'Please try again later.',
+        }),
+      ];
     },
     emojis: Constants.EMOJIS.ERRORS.UNKNOWN,
   },
