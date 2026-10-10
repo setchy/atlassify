@@ -1,26 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:best-practices",
-    ":disableRateLimiting",
-    ":enableVulnerabilityAlerts",
-    ":semanticCommitTypeAll(chore)",
-    ":separateMultipleMajorReleases",
-    "customManagers:biomeVersions",
-    "schedule:monthly"
-  ],
-  "labels": ["dependency"],
-  "rangeStrategy": "pin",
+  "extends": ["local>setchy/renovate-config", "schedule:monthly"],
   "packageRules": [
-    {
-      "matchDepTypes": ["engines"],
-      "rangeStrategy": "auto"
-    },
-    {
-      "description": "Remove word `dependency` from commit messages and PR titles",
-      "matchDatasources": ["npm"],
-      "commitMessageTopic": "{{depName}}"
-    },
     {
       "description": "Fetch changelog details for Atlassian atlaskit packages",
       "extends": ["packages:atlaskit"],
