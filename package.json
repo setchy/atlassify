@@ -22,6 +22,8 @@
     "i18n:status": "i18next-cli status",
     "lint": "biome check --fix",
     "lint:check": "biome check",
+    "lint:ci": "biome ci --reporter=github",
+    "typecheck": "tsc --noEmit",
     "test": "vitest --coverage --run",
     "test:watch": "vitest --watch --coverage",
     "test:ui": "vitest --ui"

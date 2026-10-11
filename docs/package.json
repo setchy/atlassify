@@ -14,7 +14,8 @@
     "test:coverage": "c8 node --test \"src/**/*.test.ts\"",
     "preview": "astro preview",
     "lint": "biome check --fix",
-    "lint:check": "biome check"
+    "lint:check": "biome check",
+    "lint:ci": "biome ci --reporter=github"
   },
   "repository": {
     "type": "git",
