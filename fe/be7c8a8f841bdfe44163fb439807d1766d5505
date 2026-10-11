@@ -1,0 +1,26 @@
+package.json
+  s_ed5968ec94bff6::t_b0c5270c7fd2e4 26
+  s_ed5968ec94bff6::t_56a845174c5777 25
+.github/workflows/lint.yml
+  s_ed5968ec94bff6::t_56a845174c5777 32
+docs/package.json
+  s_ed5968ec94bff6::t_56a845174c5777 17-18
+.github/workflows/test.yml
+  s_ed5968ec94bff6::t_b0c5270c7fd2e4 28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "febe7c8a8f841bdfe44163fb439807d1766d5505",
+  "prompts": {},
+  "sessions": {
+    "s_ed5968ec94bff6": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_ed53caab7ffeRQOW6svNPY0MM6",
+        "model": "unknown"
+      },
+      "human_author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
