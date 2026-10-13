@@ -28,7 +28,7 @@
     "rules": {
       "preset": "recommended",
       "a11y": {
-        "noSvgWithoutTitle": "warn"
+        "noSvgWithoutTitle": "error"
       },
       "style": {
         "noInferrableTypes": "error",
