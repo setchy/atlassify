@@ -1,15 +1,13 @@
-import type { FC } from 'react';
-
 import { token } from '@atlaskit/tokens';
 
 interface AtlassifyIconProps {
   size?: number;
   color?: 'brand' | 'default';
 }
-export const AtlassifyIcon: FC<AtlassifyIconProps> = ({
+export function AtlassifyIcon({
   size = 48,
   color = 'default',
-}: AtlassifyIconProps) => {
+}: AtlassifyIconProps) {
   const fillColor = color === 'brand' ? token('color.icon.brand') : '#FFFFFF'; //TODO - update to token when available (formerly N0)
 
   return (
@@ -50,4 +48,4 @@ export const AtlassifyIcon: FC<AtlassifyIconProps> = ({
       />
     </svg>
   );
-};
+}

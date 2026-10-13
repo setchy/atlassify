@@ -20,11 +20,11 @@ export interface FilterSectionProps<K extends keyof FiltersState> {
   filterSetting: K;
 }
 
-const FilterSectionComponent = <K extends keyof FiltersState>({
+function FilterSectionComponent<K extends keyof FiltersState>({
   title,
   filter,
   filterSetting,
-}: FilterSectionProps<K>) => {
+}: FilterSectionProps<K>) {
   const { notifications } = useAppContext();
   const updateFilter = useFiltersStore((s) => s.updateFilter);
 
@@ -103,7 +103,7 @@ const FilterSectionComponent = <K extends keyof FiltersState>({
       </Box>
     </Stack>
   );
-};
+}
 
 // Memoize the component to prevent unnecessary re-renders
 export const FilterSection = memo(

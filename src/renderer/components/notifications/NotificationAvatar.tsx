@@ -1,5 +1,3 @@
-import type { FC } from 'react';
-
 import Avatar, { type AppearanceType } from '@atlaskit/avatar';
 import { Stack } from '@atlaskit/primitives';
 import Tooltip from '@atlaskit/tooltip';
@@ -13,10 +11,10 @@ export interface NotificationAvatarProps {
   avatarAppearance: AppearanceType;
 }
 
-export const NotificationAvatar: FC<NotificationAvatarProps> = ({
+export function NotificationAvatar({
   notification,
   avatarAppearance,
-}: NotificationAvatarProps) => {
+}: NotificationAvatarProps) {
   const categoryDetails = categoryFilter.getTypeDetails(notification.category);
   const CategoryIcon = categoryDetails.icon;
 
@@ -35,4 +33,4 @@ export const NotificationAvatar: FC<NotificationAvatarProps> = ({
       </Tooltip>
     </Stack>
   );
-};
+}

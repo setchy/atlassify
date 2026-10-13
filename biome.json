@@ -96,6 +96,9 @@
       "suspicious": {
         "noConsole": "error",
         "noUnknownAtRules": "warn"
+      },
+      "nursery": {
+        "useReactFunctionComponentDefinition": "error"
       }
     }
   },

@@ -1,4 +1,4 @@
-import { type FC, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
@@ -11,7 +11,7 @@ import { Contents } from '../components/layout/Contents';
 import { Page } from '../components/layout/Page';
 import { Header } from '../components/primitives/Header';
 
-export const ManageAccountRoute: FC = () => {
+export function ManageAccountRoute() {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
@@ -45,4 +45,4 @@ export const ManageAccountRoute: FC = () => {
       </Contents>
     </Page>
   );
-};
+}

@@ -1,4 +1,4 @@
-import { type FC, useMemo } from 'react';
+import { useMemo } from 'react';
 
 import { useAppContext } from '../hooks/useAppContext';
 import { useAccountsStore, useSettingsStore } from '../stores';
@@ -12,7 +12,7 @@ import { Oops } from '../components/Oops';
 
 import { Errors } from '../utils/core/errors';
 
-export const NotificationsRoute: FC = () => {
+export function NotificationsRoute() {
   const {
     notifications,
     globalError,
@@ -62,4 +62,4 @@ export const NotificationsRoute: FC = () => {
       </Contents>
     </Page>
   );
-};
+}

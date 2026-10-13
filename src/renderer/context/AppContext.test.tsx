@@ -14,10 +14,10 @@ vi.mock('../hooks/useNotifications');
 const renderWithContext = () => {
   let context!: AppContextState;
 
-  const CaptureContext = () => {
+  function CaptureContext() {
     context = useAppContext();
     return null;
-  };
+  }
 
   renderWithProviders(
     <AppProvider>

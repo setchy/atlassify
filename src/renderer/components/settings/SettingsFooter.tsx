@@ -1,4 +1,4 @@
-import { type FC, useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Button, { IconButton } from '@atlaskit/button/new';
@@ -18,7 +18,7 @@ import { Footer } from '../primitives/Footer';
 import { getAppVersion } from '../../utils/system/comms';
 import { openAtlassifyReleaseNotes } from '../../utils/system/links';
 
-export const SettingsFooter: FC = () => {
+export function SettingsFooter() {
   const { t } = useTranslation();
 
   const { fetchNotifications, isLoading } = useAppContext();
@@ -108,4 +108,4 @@ export const SettingsFooter: FC = () => {
       </Inline>
     </Footer>
   );
-};
+}

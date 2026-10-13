@@ -1,4 +1,4 @@
-import { type FC, Fragment, memo, useCallback } from 'react';
+import { Fragment, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { IconButton } from '@atlaskit/button/new';
@@ -32,9 +32,11 @@ import { useAccountsStore, useFiltersStore, useSettingsStore } from '../stores';
 import { AtlassifyIcon } from './icons/AtlassifyIcon';
 
 // Hoisted so its identity is stable across re-renders (S6478).
-const SidebarHomeIcon: FC = () => <AtlassifyIcon size={32} />;
+function SidebarHomeIcon() {
+  return <AtlassifyIcon size={32} />;
+}
 
-const SidebarComponent: FC = () => {
+function SidebarComponent() {
   const { t } = useTranslation();
 
   const {
@@ -301,7 +303,7 @@ const SidebarComponent: FC = () => {
       </Stack>
     </div>
   );
-};
+}
 
 // Memoize the component to prevent unnecessary re-renders
 export const Sidebar = memo(SidebarComponent);

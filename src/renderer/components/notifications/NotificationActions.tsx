@@ -1,4 +1,3 @@
-import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { IconButton } from '@atlaskit/button/new';
@@ -10,15 +9,17 @@ import Tooltip from '@atlaskit/tooltip';
 
 import type { NotificationActionFailure } from '../../stores';
 
-const MarkAsReadIcon = () => (
-  <StrokeWeightLargeIcon color={token('color.icon.brand')} label="" />
-);
+function MarkAsReadIcon() {
+  return <StrokeWeightLargeIcon color={token('color.icon.brand')} label="" />;
+}
 
-const FailedActionIcon = () => (
-  <WarningIcon color={token('color.icon.danger')} label="" />
-);
+function FailedActionIcon() {
+  return <WarningIcon color={token('color.icon.danger')} label="" />;
+}
 
-const EmptyIcon = () => null;
+function EmptyIcon() {
+  return null;
+}
 
 export interface NotificationActionsProps {
   isUnread: boolean;
@@ -28,13 +29,13 @@ export interface NotificationActionsProps {
   failure?: NotificationActionFailure;
 }
 
-export const NotificationActions: FC<NotificationActionsProps> = ({
+export function NotificationActions({
   isUnread,
   isAnimatingExit,
   onMarkAsRead,
   onMarkAsUnread,
   failure,
-}: NotificationActionsProps) => {
+}: NotificationActionsProps) {
   const { t } = useTranslation();
   const failureMessage = failure
     ? `${failure.error.title}: ${failure.error.descriptions.join(' ')}`
@@ -94,4 +95,4 @@ export const NotificationActions: FC<NotificationActionsProps> = ({
         ))}
     </Box>
   );
-};
+}

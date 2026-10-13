@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { cssMap } from '@atlaskit/css';
 import { Box, Flex } from '@atlaskit/primitives/compiled';
@@ -17,10 +17,10 @@ const styles = cssMap({
   },
 });
 
-export const Footer: FC<FooterProps> = (props: FooterProps) => {
+export function Footer(props: FooterProps) {
   return (
     <Box xcss={styles.root}>
       <Flex justifyContent={props.justify}>{props.children}</Flex>
     </Box>
   );
-};
+}
