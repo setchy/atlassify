@@ -25,10 +25,26 @@
   },
   "linter": {
     "enabled": true,
+    "domains": {
+      "astro": "recommended",
+      "project": "recommended",
+      "tailwind": "recommended",
+      "test": "recommended",
+      "types": "recommended"
+    },
     "rules": {
       "preset": "recommended",
       "a11y": {
         "noSvgWithoutTitle": "error"
+      },
+      "nursery": {
+        "noAstroConflictingSetDirectives": "error",
+        "noAstroSetHtmlDirective": "error",
+        "noFloatingPromises": "error",
+        "noMisusedPromises": "error",
+        "noTailwindRawColors": "error",
+        "noUnsafePlusOperands": "error",
+        "useTailwindShorthandClasses": "error"
       },
       "style": {
         "noInferrableTypes": "error",
