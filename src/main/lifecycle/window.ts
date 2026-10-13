@@ -78,7 +78,7 @@ export function configureWindowEvents(
         return;
       }
 
-      mb.window.setSize(WindowConfig.width!, WindowConfig.height!);
+      mb.window.setSize(WindowConfig.width, WindowConfig.height);
       mb.recenterOnTray();
       mb.window.resizable = false;
     });

@@ -458,7 +458,7 @@ export const useNotifications = (): UseNotificationsResult => {
       // This ensures fresh data is fetched on next access or when switching query parameters
       // (e.g., toggling fetchOnlyUnread setting).
       // refetchType: 'none' prevents immediate refetch since cache was already updated optimistically.
-      queryClient.invalidateQueries({
+      void queryClient.invalidateQueries({
         queryKey: notificationsKeys.all,
         refetchType: 'none',
       });

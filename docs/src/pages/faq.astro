@@ -1,20 +1,14 @@
 ---
 import { Accordion, AccordionItem } from 'accessible-astro-components';
 
+import type { MarkdownInstance } from 'astro';
+
 import Layout from '~/layouts/Layout.astro';
 
 interface FAQFrontmatter {
-  frontmatter: {
-    title: string;
-    category: string;
-    order: number;
-  };
-  compiledContent: () => string;
-}
-
-interface FAQ extends FAQFrontmatter {
-  slug: string;
-  content: string;
+  title: string;
+  category: string;
+  order: number;
 }
 
 const CATEGORY_ORDER = [
@@ -24,26 +18,15 @@ const CATEGORY_ORDER = [
   'Contributing',
 ];
 
-function externalizeLinks(html: string): string {
-  return html.replace(/<a href="([^"]+)"/g, (match, href) =>
-    /^https?:\/\//i.test(href) && !href.startsWith('https://atlassify.io')
-      ? `<a href="${href}" target="_blank" rel="noopener noreferrer"`
-      : match,
-  );
-}
-
-const allFaqs: FAQ[] = await Promise.all(
-  Object.entries(import.meta.glob('~/faqs/**/*.md', { eager: true })).map(
-    async ([path, mod]) => {
-      const faq = mod as FAQFrontmatter;
-      return {
-        ...faq,
-        slug: (path.split('/').pop() ?? '').replace(/\.md$/, ''),
-        content: externalizeLinks(await faq.compiledContent()),
-      };
-    },
-  ),
-);
+const allFaqs = Object.entries(
+  import.meta.glob('~/faqs/**/*.md', { eager: true }),
+).map(([path, mod]) => {
+  const faq = mod as MarkdownInstance<FAQFrontmatter>;
+  return {
+    ...faq,
+    slug: (path.split('/').pop() ?? '').replace(/\.md$/, ''),
+  };
+});
 
 const grouped = CATEGORY_ORDER.map((category) => ({
   category,
@@ -62,13 +45,18 @@ const grouped = CATEGORY_ORDER.map((category) => ({
       <div class="mb-10">
         <h2 class="text-xl font-semibold mb-4">{category}</h2>
         <Accordion>
-          {faqs.map((faq) => (
-            <div id={faq.slug} class="faq-item">
-              <AccordionItem title={faq.frontmatter.title} variant="chevron">
-                <div class="faq" set:html={faq.content} />
-              </AccordionItem>
-            </div>
-          ))}
+          {faqs.map((faq) => {
+            const { Content } = faq;
+            return (
+              <div id={faq.slug} class="faq-item">
+                <AccordionItem title={faq.frontmatter.title} variant="chevron">
+                  <div class="faq">
+                    <Content />
+                  </div>
+                </AccordionItem>
+              </div>
+            );
+          })}
         </Accordion>
       </div>
     ))}
@@ -149,6 +137,16 @@ document.querySelectorAll<HTMLElement>('.faq-item').forEach((item) => {
 
   summary.appendChild(btn);
 });
+
+// Open external links in a new tab (previously rewritten at build time).
+document
+  .querySelectorAll<HTMLAnchorElement>('.faq a[href^="http"]')
+  .forEach((link) => {
+    if (link.hostname !== window.location.hostname) {
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+    }
+  });
 
 // Open + scroll to item matching the URL hash
 function openFromHash() {
