@@ -20,7 +20,7 @@ describe('renderer/utils/notifications/formatters.ts', () => {
     });
 
     describe('formatNativeNotificationFooterText', () => {
-      it('use entity title when available ', () => {
+      it('use entity title when available', () => {
         expect(
           formatNativeNotificationFooterText(mockAtlassifyNotifications[1]),
         ).toBe('Atlassify Space: Atlassify Home');

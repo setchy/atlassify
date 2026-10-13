@@ -39,7 +39,7 @@ export const Paths = {
 /**
  * Default browser window construction options for the menubar popup.
  */
-export const WindowConfig: BrowserWindowConstructorOptions = {
+export const WindowConfig = {
   width: 500,
   height: 400,
   minWidth: 500,
@@ -60,4 +60,4 @@ export const WindowConfig: BrowserWindowConstructorOptions = {
      */
     backgroundThrottling: false,
   },
-};
+} satisfies BrowserWindowConstructorOptions;

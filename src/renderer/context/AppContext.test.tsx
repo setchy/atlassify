@@ -70,7 +70,9 @@ describe('renderer/context/App.tsx', () => {
       const getContext = renderWithContext();
 
       act(() => {
-        getContext().markNotificationsRead([mockSingleAtlassifyNotification]);
+        void getContext().markNotificationsRead([
+          mockSingleAtlassifyNotification,
+        ]);
       });
 
       expect(markNotificationsReadMock).toHaveBeenCalledTimes(1);
@@ -83,7 +85,9 @@ describe('renderer/context/App.tsx', () => {
       const getContext = renderWithContext();
 
       act(() => {
-        getContext().markNotificationsUnread([mockSingleAtlassifyNotification]);
+        void getContext().markNotificationsUnread([
+          mockSingleAtlassifyNotification,
+        ]);
       });
 
       expect(markNotificationsUnreadMock).toHaveBeenCalledTimes(1);
