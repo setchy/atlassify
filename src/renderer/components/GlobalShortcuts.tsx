@@ -1,4 +1,4 @@
-import { type FC, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import { useAppContext } from '../hooks/useAppContext';
 import { useGlobalShortcuts } from '../hooks/useGlobalShortcuts';
@@ -12,7 +12,7 @@ import {
  * Component that registers global keyboard shortcuts for the renderer app.
  * Mount once inside App, within Router + AppProvider.
  */
-export const GlobalShortcuts: FC = () => {
+export function GlobalShortcuts() {
   const { fetchNotifications, isLoading } = useAppContext();
 
   const { shortcuts } = useGlobalShortcuts({ fetchNotifications, isLoading });
@@ -51,4 +51,4 @@ export const GlobalShortcuts: FC = () => {
   }, [shortcuts]);
 
   return null;
-};
+}

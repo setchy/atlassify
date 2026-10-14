@@ -67,6 +67,7 @@
         "noMisusedPromises": "error",
         "noTailwindRawColors": "error",
         "noUnsafePlusOperands": "error",
+        "useReactFunctionComponentDefinition": "error",
         "useTailwindShorthandClasses": "error",
         "useValidTestTitle": "error"
       },

@@ -1,4 +1,4 @@
-import { type FC, useState } from 'react';
+import { useState } from 'react';
 
 import { Box, Inline } from '@atlaskit/primitives';
 import { token } from '@atlaskit/tokens';
@@ -27,10 +27,10 @@ export interface NotificationRowProps {
   isProductAnimatingExit: boolean;
 }
 
-export const NotificationRow: FC<NotificationRowProps> = ({
+export function NotificationRow({
   notification,
   isProductAnimatingExit,
-}: NotificationRowProps) => {
+}: NotificationRowProps) {
   const markAsReadOnOpen = useSettingsStore((s) => s.markAsReadOnOpen);
 
   const {
@@ -147,4 +147,4 @@ export const NotificationRow: FC<NotificationRowProps> = ({
       </Box>
     </div>
   );
-};
+}

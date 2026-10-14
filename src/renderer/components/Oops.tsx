@@ -1,4 +1,4 @@
-import { type FC, useMemo } from 'react';
+import { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Button from '@atlaskit/button/new';
@@ -14,7 +14,7 @@ interface OopsProps {
   error: AtlassifyError;
 }
 
-export const Oops: FC<OopsProps> = ({ error }: OopsProps) => {
+export function Oops({ error }: OopsProps) {
   const navigate = useNavigate();
 
   const err = error ?? Errors.UNKNOWN;
@@ -41,4 +41,4 @@ export const Oops: FC<OopsProps> = ({ error }: OopsProps) => {
       subHeadings={err.descriptions}
     />
   );
-};
+}

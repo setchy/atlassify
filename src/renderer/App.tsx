@@ -1,4 +1,4 @@
-import { type FC, useEffect } from 'react';
+import { useEffect } from 'react';
 import {
   Navigate,
   Route,
@@ -40,7 +40,7 @@ function RequireAuth({ children }) {
   );
 }
 
-export const App: FC = () => {
+export function App() {
   // Initialize store subscriptions with proper cleanup
   useEffect(() => {
     const cleanup = initializeStoreSubscriptions();
@@ -107,4 +107,4 @@ export const App: FC = () => {
       </AppProvider>
     </QueryClientProvider>
   );
-};
+}

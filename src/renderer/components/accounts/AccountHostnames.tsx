@@ -1,4 +1,4 @@
-import { type FC, Fragment, useState } from 'react';
+import { Fragment, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { IconButton } from '@atlaskit/button/new';
@@ -41,7 +41,7 @@ interface AccountHostnamesProps {
   account: Account;
 }
 
-export const AccountHostnames: FC<AccountHostnamesProps> = ({ account }) => {
+export function AccountHostnames({ account }: AccountHostnamesProps) {
   const { t } = useTranslation();
 
   const addHostnameHint = useAccountsStore((s) => s.addHostnameHint);
@@ -190,4 +190,4 @@ export const AccountHostnames: FC<AccountHostnamesProps> = ({ account }) => {
       </Box>
     </Stack>
   );
-};
+}

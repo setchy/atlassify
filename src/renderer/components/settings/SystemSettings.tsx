@@ -1,4 +1,3 @@
-import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { IconButton, SplitButton } from '@atlaskit/button/new';
@@ -43,7 +42,7 @@ const styles = cssMap({
   },
 });
 
-export const SystemSettings: FC = () => {
+export function SystemSettings() {
   const { t } = useTranslation();
 
   // Setting store actions
@@ -277,4 +276,4 @@ export const SystemSettings: FC = () => {
       )}
     </Stack>
   );
-};
+}

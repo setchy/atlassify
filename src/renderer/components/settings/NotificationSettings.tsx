@@ -1,4 +1,3 @@
-import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Checkbox } from '@atlaskit/checkbox';
@@ -10,7 +9,7 @@ import { APPLICATION } from '../../../shared/constants';
 
 import { useSettingsStore } from '../../stores';
 
-export const NotificationSettings: FC = () => {
+export function NotificationSettings() {
   const { t } = useTranslation();
 
   // Setting store actions
@@ -73,4 +72,4 @@ export const NotificationSettings: FC = () => {
       </Inline>
     </Stack>
   );
-};
+}

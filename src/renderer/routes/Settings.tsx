@@ -1,4 +1,3 @@
-import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Box, Stack } from '@atlaskit/primitives';
@@ -14,7 +13,7 @@ import { SettingsReset } from '../components/settings/SettingsReset';
 import { SystemSettings } from '../components/settings/SystemSettings';
 import { TraySettings } from '../components/settings/TraySettings';
 
-export const SettingsRoute: FC = () => {
+export function SettingsRoute() {
   const { t } = useTranslation();
 
   return (
@@ -37,4 +36,4 @@ export const SettingsRoute: FC = () => {
       <SettingsFooter />
     </Page>
   );
-};
+}

@@ -1,4 +1,4 @@
-import { type FC, type MouseEvent, useState } from 'react';
+import { type MouseEvent, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Badge from '@atlaskit/badge/new';
@@ -20,7 +20,9 @@ import { isLightMode } from '../../utils/ui/theme';
 import { NotificationRow } from './NotificationRow';
 
 // Hoisted so its identity is stable across re-renders (S6478).
-const ProductMarkAllReadIcon: FC = () => <StrokeWeightLargeIcon label="" />;
+function ProductMarkAllReadIcon() {
+  return <StrokeWeightLargeIcon label="" />;
+}
 
 export interface ProductNotificationsProps {
   productNotifications: AtlassifyNotification[];
@@ -47,9 +49,9 @@ const styles = cssMap({
   },
 });
 
-export const ProductNotifications: FC<ProductNotificationsProps> = ({
+export function ProductNotifications({
   productNotifications,
-}) => {
+}: ProductNotificationsProps) {
   const { t } = useTranslation();
 
   const { markNotificationsRead } = useAppContext();
@@ -190,4 +192,4 @@ export const ProductNotifications: FC<ProductNotificationsProps> = ({
       )}
     </Stack>
   );
-};
+}

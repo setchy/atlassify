@@ -1,4 +1,4 @@
-import { type FC, useCallback } from 'react';
+import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
@@ -39,7 +39,7 @@ const styles = cssMap({
   },
 });
 
-export const AccountsRoute: FC = () => {
+export function AccountsRoute() {
   const { t } = useTranslation();
 
   const navigate = useNavigate();
@@ -185,4 +185,4 @@ export const AccountsRoute: FC = () => {
       </Footer>
     </Page>
   );
-};
+}
