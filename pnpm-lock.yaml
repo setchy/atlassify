@@ -228,8 +228,8 @@ importers:
         specifier: 8.4.6
         version: 8.4.6(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/form':
-        specifier: 18.1.0
-        version: 18.1.0(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
+        specifier: 18.2.0
+        version: 18.2.0(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/heading':
         specifier: 8.0.0
         version: 8.0.0(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
@@ -499,8 +499,8 @@ packages:
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
-  '@atlaskit/form@18.1.0':
-    resolution: {integrity: sha512-D6LY9xbI0q3QTMG2vKYg4iq1qPB+nZHuAtC02Ehje2lqzsg1IeKHi+DHheUNbABsns9JN9O6rk07gjI29rPk5w==}
+  '@atlaskit/form@18.2.0':
+    resolution: {integrity: sha512-LbnW8AG6EKtwfmUqs2VJ9bgNof8FN1G8jt9tYK5Bq4A2AzeYHigZbhnhrGIVntqZnHRgiEZSnVcXHp1wm3eIgw==}
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
@@ -646,6 +646,7 @@ packages:
 
   '@atlaskit/theme@28.2.4':
     resolution: {integrity: sha512-6KNWtnSJMhU72xC13MYvMJtzPtlVRzEyMw+kHOJBCDMU+4dx2RVJioYaKKFcnXRVMcyP0ZbLSSeroUnyPkjStA==}
+    deprecated: This package is deprecated and is no longer maintained or supported.
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
@@ -5356,7 +5357,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/form@18.1.0(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)':
+  '@atlaskit/form@18.2.0(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/css': 1.1.6(react@19.3.0)(supports-color@10.2.2)
       '@atlaskit/ds-lib': 8.0.0(react@19.3.0)
