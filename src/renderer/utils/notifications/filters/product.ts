@@ -65,6 +65,7 @@ function buildProductFilterDetails(
         {
           name: p.display,
           description: i18n.t('filters.products.description', {
+            defaultValue: '{{type}} notifications',
             type: p.display,
           }),
           logo: p.logo,

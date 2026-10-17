@@ -73,13 +73,28 @@ For a signing-only check, manually run the Publish workflow with an empty tag. S
 
 ### Locales
 
-Atlassify supports multiple languages/locales.
+Atlassify supports multiple languages.
+
+To add a new UI string:
+
+- Wrap it in `t()` with the English text as `defaultValue`:
+
+  ```tsx
+  t('common.save', { defaultValue: 'Save' })
+  ```
+
+- Run `pnpm i18n:extract`, then translate the new string in `src/renderer/i18n/locales/`.
+- Never translate `{{ }}` placeholders.
+
+To translate new strings into every language, install the [i18n Ally](https://marketplace.visualstudio.com/items?itemName=Lokalise.i18n-ally) VSCode extension. It highlights missing translations and can auto-translate them for you — review the results before committing.
+
+`en.json` is generated from the code defaults — you don't need to edit it by hand.
 
 To add a new locale:
-- Add a new locale file under `./src/renderer/i18n/locales`.
-- Import and update the resources in `./src/renderer/i18n/index.ts`.
-- Use the VSCode Extension `i18n Ally` to automatically translate the keys.
-- Carefully verify the translated values. **Do not translate placeholder variables** like `{{ }}`.  You may need to manually update these if needed.
+
+- Add a file under `./src/renderer/i18n/locales/` and register it in `./src/renderer/i18n/index.ts`.
+
+CI runs `pnpm i18n:check` to make sure the locale files stay in sync with the code. Don't use `--trust-derived` when extracting — it replaces real English text with key names.
 
 
 <!-- LINK LABELS -->

@@ -29,11 +29,15 @@ export function NotificationSettings() {
 
   return (
     <Stack space="space.100">
-      <Heading size="small">{t('settings.notifications.title')}</Heading>
+      <Heading size="small">
+        {t('settings.notifications.title', { defaultValue: 'Notifications' })}
+      </Heading>
 
       <Checkbox
         isChecked={markAsReadOnOpen}
-        label={t('settings.notifications.mark_as_read_on_open')}
+        label={t('settings.notifications.mark_as_read_on_open', {
+          defaultValue: 'Mark as read on open',
+        })}
         name="markAsReadOnOpen"
         onChange={() => toggleSetting('markAsReadOnOpen')}
       />
@@ -42,7 +46,9 @@ export function NotificationSettings() {
         <Checkbox
           isChecked={groupNotificationsByProductAlphabetically}
           isDisabled={!groupNotificationsByProduct}
-          label={t('settings.notifications.group_alphabetically')}
+          label={t('settings.notifications.group_alphabetically', {
+            defaultValue: 'Sort product groups alphabetically',
+          })}
           name="groupNotificationsByProductAlphabetically"
           onChange={() =>
             toggleSetting('groupNotificationsByProductAlphabetically')
@@ -50,7 +56,10 @@ export function NotificationSettings() {
         />
         <InlineMessage appearance="info">
           <div className="settings-help-text">
-            {t('settings.notifications.group_alphabetically_help')}
+            {t('settings.notifications.group_alphabetically_help', {
+              defaultValue:
+                'When `Group notifications by product` is enabled in the sidebar, this setting will sort products in alphabetical order.',
+            })}
           </div>
         </InlineMessage>
       </Inline>
@@ -58,13 +67,17 @@ export function NotificationSettings() {
       <Inline space="space.100">
         <Checkbox
           isChecked={delayNotificationState}
-          label={t('settings.notifications.delay_notification_state')}
+          label={t('settings.notifications.delay_notification_state', {
+            defaultValue: 'Delay notification state',
+          })}
           name="delayNotificationState"
           onChange={() => toggleSetting('delayNotificationState')}
         />
         <InlineMessage appearance="info">
           <div className="settings-help-text">
             {t('settings.notifications.delay_notification_state_help', {
+              defaultValue:
+                'Keep the notification within {{appName}} upon interaction (ie: open notification, mark as read) until the next refresh window (scheduled or user initiated).',
               appName: APPLICATION.NAME,
             })}
           </div>
