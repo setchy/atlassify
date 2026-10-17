@@ -1,5 +1,10 @@
 schema: spec-driven
 
+# Shared OpenSpec store (store-only setup).
+# Specs and changes live in the setchy/atlassify-specs repo, not in this one.
+# Teammates clone it and run: openspec store register ~/openspec/atlassify-specs
+store: atlassify-specs
+
 # Project context (optional)
 # This is shown to AI when creating artifacts.
 # Add your tech stack, conventions, style guides, domain knowledge, etc.
