@@ -7,8 +7,8 @@ import type { AtlassifyNotification } from '../../types';
 import { categoryFilter } from '../../utils/notifications/filters';
 
 export interface NotificationAvatarProps {
-  notification: AtlassifyNotification;
-  avatarAppearance: AppearanceType;
+  readonly notification: AtlassifyNotification;
+  readonly avatarAppearance: AppearanceType;
 }
 
 export function NotificationAvatar({

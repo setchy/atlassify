@@ -22,11 +22,11 @@ function EmptyIcon() {
 }
 
 export interface NotificationActionsProps {
-  isUnread: boolean;
-  isAnimatingExit: boolean;
-  onMarkAsRead: () => void;
-  onMarkAsUnread: () => void;
-  failure?: NotificationActionFailure;
+  readonly isUnread: boolean;
+  readonly isAnimatingExit: boolean;
+  readonly onMarkAsRead: () => void;
+  readonly onMarkAsUnread: () => void;
+  readonly failure?: NotificationActionFailure;
 }
 
 export function NotificationActions({

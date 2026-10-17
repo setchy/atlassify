@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import { convertTextToEmojiImgHtml } from '../../utils/ui/emojis';
 
 export interface EmojiTextProps {
-  text: string;
+  readonly text: string;
 }
 
 export function EmojiText({ text }: EmojiTextProps) {

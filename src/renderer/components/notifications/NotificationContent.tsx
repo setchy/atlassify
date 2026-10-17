@@ -8,10 +8,10 @@ import { formatNotificationUpdatedAt } from '../../utils/notifications/formatter
 import { blockAlignmentByLength } from '../../utils/ui/display';
 
 export interface NotificationContentProps {
-  notification: AtlassifyNotification;
-  bodyText: string;
-  footerText: string;
-  onClick: () => void;
+  readonly notification: AtlassifyNotification;
+  readonly bodyText: string;
+  readonly footerText: string;
+  readonly onClick: () => void;
 }
 
 export function NotificationContent({

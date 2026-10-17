@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
 
 interface PageProps {
-  children: ReactNode;
-  testId: string;
+  readonly children: ReactNode;
+  readonly testId: string;
 }
 
 /**

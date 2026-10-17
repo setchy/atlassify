@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 interface ContentsProps {
-  children: ReactNode;
+  readonly children: ReactNode;
 }
 
 /**

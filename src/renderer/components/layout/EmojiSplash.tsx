@@ -9,10 +9,10 @@ import { Centered } from './Centered';
 const EMPTY_SUBHEADINGS: string[] = [];
 
 interface EmojiSplashProps {
-  emoji: string;
-  heading: string;
-  subHeadings?: string[];
-  actions?: ReactNode;
+  readonly emoji: string;
+  readonly heading: string;
+  readonly subHeadings?: string[];
+  readonly actions?: ReactNode;
 }
 
 export function EmojiSplash({

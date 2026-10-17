@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 interface CenteredProps {
-  children: ReactNode;
+  readonly children: ReactNode;
 }
 
 export function Centered(props: CenteredProps) {

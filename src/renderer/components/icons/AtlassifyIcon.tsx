@@ -1,8 +1,8 @@
 import { token } from '@atlaskit/tokens';
 
 interface AtlassifyIconProps {
-  size?: number;
-  color?: 'brand' | 'default';
+  readonly size?: number;
+  readonly color?: 'brand' | 'default';
 }
 export function AtlassifyIcon({
   size = 48,

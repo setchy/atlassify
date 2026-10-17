@@ -23,8 +23,8 @@ import { NotificationAvatar } from './NotificationAvatar';
 import { NotificationContent } from './NotificationContent';
 
 export interface NotificationRowProps {
-  notification: AtlassifyNotification;
-  isProductAnimatingExit: boolean;
+  readonly notification: AtlassifyNotification;
+  readonly isProductAnimatingExit: boolean;
 }
 
 export function NotificationRow({
