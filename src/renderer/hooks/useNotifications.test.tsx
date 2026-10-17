@@ -42,6 +42,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
   });
 
   afterEach(() => {
+    nock.cleanAll();
     onlineManager.setOnline(true);
   });
 
@@ -114,6 +115,11 @@ describe('renderer/hooks/useNotifications.ts', () => {
     });
 
     it('keeps settled data out of loading state during a background refetch', async () => {
+      let releaseRefetch!: () => void;
+      const refetchGate = new Promise<void>((resolve) => {
+        releaseRefetch = resolve;
+      });
+
       nock('https://home.atlassian.com')
         .post('/gateway/api/graphql')
         .reply(200, {
@@ -123,8 +129,10 @@ describe('renderer/hooks/useNotifications.ts', () => {
           },
         })
         .post('/gateway/api/graphql')
-        .delay(50)
-        .reply(500);
+        .reply(async () => {
+          await refetchGate;
+          return [500, {}];
+        });
 
       const { queryClient, result, unmount } = renderHookWithProviders(() =>
         useNotifications(),
@@ -140,6 +148,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
       expect(result.current.isLoading).toBe(false);
       expect(result.current.notifications).toHaveLength(1);
 
+      releaseRefetch();
       await act(async () => {
         await refetchPromise;
       });
