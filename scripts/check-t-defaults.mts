@@ -94,7 +94,10 @@ function findIssues(code) {
       }
     }
 
-    const start = kind === 't' ? use + 2 : use + 7; // opening quote
+    let start = kind === 't' ? use + 2 : use + 7; // opening quote
+    while (start < code.length && /\s/.test(code[start])) {
+      start++;
+    }
     const q = code[start];
     if (q !== "'" && q !== '"') {
       i = use + (kind === 't' ? 2 : 7);

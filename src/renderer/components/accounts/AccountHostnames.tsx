@@ -129,6 +129,10 @@ export function AccountHostnames({ account }: AccountHostnamesProps) {
                           color={token('color.icon.warning')}
                           label={t(
                             'accounts.manage_account.hostname.invalid_hint',
+                            {
+                              defaultValue:
+                                'Could not resolve this host name to a site',
+                            },
                           )}
                         />
                       ) : undefined
@@ -139,6 +143,7 @@ export function AccountHostnames({ account }: AccountHostnamesProps) {
                     }
                     removeButtonLabel={t(
                       'accounts.manage_account.hostname.remove_hint',
+                      { defaultValue: 'Remove' },
                     )}
                     testId={`hostname-hint-${hint.hostname}`}
                     text={hint.hostname}
@@ -174,6 +179,9 @@ export function AccountHostnames({ account }: AccountHostnamesProps) {
                             isCompact
                             placeholder={t(
                               'accounts.manage_account.hostname.hostname_helper',
+                              {
+                                defaultValue: 'e.g. your-domain.atlassian.net',
+                              },
                             )}
                           />
                           <IconButton
@@ -190,6 +198,10 @@ export function AccountHostnames({ account }: AccountHostnamesProps) {
                           <ErrorMessage>
                             {t(
                               'accounts.manage_account.hostname.resolution_error',
+                              {
+                                defaultValue:
+                                  'Could not resolve this host name to a site. Check the host name and try again.',
+                              },
                             )}
                           </ErrorMessage>
                         )}
