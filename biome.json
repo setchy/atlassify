@@ -54,15 +54,27 @@
   "linter": {
     "enabled": true,
     "domains": {
+      "project": "recommended",
       "react": "recommended",
-      "test": "recommended"
+      "tailwind": "recommended",
+      "test": "recommended",
+      "types": "recommended"
     },
     "rules": {
       "preset": "recommended",
+      "nursery": {
+        "noFloatingPromises": "error",
+        "noMisusedPromises": "error",
+        "noTailwindRawColors": "error",
+        "noUnsafePlusOperands": "error",
+        "useReactFunctionComponentDefinition": "error",
+        "useTailwindShorthandClasses": "error",
+        "useValidTestTitle": "error"
+      },
       "correctness": {
         "noUnusedFunctionParameters": "error",
         "useExhaustiveDependencies": {
-          "level": "warn",
+          "level": "error",
           "options": {
             "hooks": [
               {
@@ -95,7 +107,7 @@
       },
       "suspicious": {
         "noConsole": "error",
-        "noUnknownAtRules": "warn"
+        "noUnknownAtRules": "error"
       }
     }
   },

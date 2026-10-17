@@ -2,7 +2,7 @@ import type { IconDetails } from '~/types';
 
 export const openSourceLibs: IconDetails[] = [
   {
-    name: 'Typescript',
+    name: 'TypeScript',
     link: 'https://typescriptlang.org/',
     svg: 'typescript',
   },
@@ -17,18 +17,33 @@ export const openSourceLibs: IconDetails[] = [
     svg: 'react',
   },
   {
-    name: 'Electron Vite',
-    link: 'https://electron-vite.github.io/',
-    svg: 'electron-vite',
-  },
-  {
     name: 'Tailwind CSS',
     link: 'https://tailwindcss.com/',
     svg: 'tailwindcss',
   },
   {
-    name: 'Atlassian',
+    name: 'Vite',
+    link: 'https://vite.dev/',
+    svg: 'vite',
+  },
+  {
+    name: 'Atlassian Design System',
     link: 'https://atlassian.design/',
     svg: 'atlassian',
+  },
+  {
+    name: 'TanStack Query',
+    link: 'https://tanstack.com/query',
+    svg: 'tanstack-query',
+  },
+  {
+    name: 'Zustand',
+    link: 'https://zustand.docs.pmnd.rs/',
+    svg: 'zustand',
+  },
+  {
+    name: 'i18next',
+    link: 'https://www.i18next.com/',
+    svg: 'i18next',
   },
 ];

@@ -1,4 +1,4 @@
-import { type FC, Fragment, type MouseEvent, useMemo, useState } from 'react';
+import { Fragment, type MouseEvent, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Avatar, { AvatarItem } from '@atlaskit/avatar';
@@ -53,18 +53,20 @@ import { NotificationRow } from './NotificationRow';
 import { ProductNotifications } from './ProductNotifications';
 
 // Hoisted so their identities are stable across re-renders (S6478).
-const PullRequestsIcon: FC<ButtonIconProps> = (iconProps) => (
-  <BitbucketIcon {...iconProps} appearance="neutral" size="xxsmall" />
-);
+function PullRequestsIcon(iconProps: ButtonIconProps) {
+  return <BitbucketIcon {...iconProps} appearance="neutral" size="xxsmall" />;
+}
 
-const MarkAllReadIcon: FC = () => <StrokeWeightLargeIcon label="" />;
+function MarkAllReadIcon() {
+  return <StrokeWeightLargeIcon label="" />;
+}
 
 export interface AccountNotificationsProps {
-  account: Account;
-  notifications: AtlassifyNotification[];
-  hasMoreNotifications: boolean;
-  error: AtlassifyError | null;
-  showAccountHeader: boolean;
+  readonly account: Account;
+  readonly notifications: AtlassifyNotification[];
+  readonly hasMoreNotifications: boolean;
+  readonly error: AtlassifyError | null;
+  readonly showAccountHeader: boolean;
 }
 
 const styles = cssMap({
@@ -104,9 +106,7 @@ const styles = cssMap({
   },
 });
 
-export const AccountNotifications: FC<AccountNotificationsProps> = (
-  props: AccountNotificationsProps,
-) => {
+export function AccountNotifications(props: AccountNotificationsProps) {
   const { account, notifications, hasMoreNotifications, showAccountHeader } =
     props;
 
@@ -365,4 +365,4 @@ export const AccountNotifications: FC<AccountNotificationsProps> = (
       </ModalTransition>
     </Stack>
   );
-};
+}

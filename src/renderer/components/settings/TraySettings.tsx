@@ -1,4 +1,3 @@
-import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Checkbox } from '@atlaskit/checkbox';
@@ -13,7 +12,7 @@ import trayActiveIcon from '../../../../assets/images/tray-active@2x.png';
 import trayIdleWhiteIcon from '../../../../assets/images/tray-idle-white@2x.png';
 import trayIdleIcon from '../../../../assets/images/tray-idleTemplate@2x.png';
 
-export const TraySettings: FC = () => {
+export function TraySettings() {
   const { t } = useTranslation();
 
   // Setting store actions
@@ -154,4 +153,4 @@ export const TraySettings: FC = () => {
       </Box>
     </Stack>
   );
-};
+}

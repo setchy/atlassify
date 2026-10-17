@@ -1,4 +1,3 @@
-import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Button from '@atlaskit/button/new';
@@ -20,7 +19,7 @@ import {
   readStateFilter,
 } from '../utils/notifications/filters';
 
-export const FiltersRoute: FC = () => {
+export function FiltersRoute() {
   const { t } = useTranslation();
 
   const clearFilters = useFiltersStore((s) => s.reset);
@@ -90,4 +89,4 @@ export const FiltersRoute: FC = () => {
       </Footer>
     </Page>
   );
-};
+}

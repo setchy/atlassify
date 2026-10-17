@@ -1,5 +1,3 @@
-import type { FC } from 'react';
-
 import Avatar from '@atlaskit/avatar';
 import AvatarGroup, { type AvatarProps } from '@atlaskit/avatar-group';
 import { Box, Inline, Stack, Text } from '@atlaskit/primitives';
@@ -10,18 +8,18 @@ import { formatNotificationUpdatedAt } from '../../utils/notifications/formatter
 import { blockAlignmentByLength } from '../../utils/ui/display';
 
 export interface NotificationContentProps {
-  notification: AtlassifyNotification;
-  bodyText: string;
-  footerText: string;
-  onClick: () => void;
+  readonly notification: AtlassifyNotification;
+  readonly bodyText: string;
+  readonly footerText: string;
+  readonly onClick: () => void;
 }
 
-export const NotificationContent: FC<NotificationContentProps> = ({
+export function NotificationContent({
   notification,
   bodyText,
   footerText,
   onClick,
-}: NotificationContentProps) => {
+}: NotificationContentProps) {
   const updatedAt = formatNotificationUpdatedAt(notification);
 
   const avatarGroup: AvatarProps[] =
@@ -128,4 +126,4 @@ export const NotificationContent: FC<NotificationContentProps> = ({
       </div>
     </Box>
   );
-};
+}

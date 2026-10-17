@@ -29,7 +29,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                 role="img"
               >
                 <span
-                  class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsb7vkz _4t3i7vkz"
+                  class="_11q7cxp3 _vchh1ntv _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsb7vkz _4t3i7vkz"
                   style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                 >
                   <img
@@ -81,7 +81,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
           >
             <button
               aria-live="polite"
-              class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+              class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v564k6bl _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _1ggl5xtf _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
               data-testid="account-pull-requests"
               type="button"
             >
@@ -128,7 +128,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
           >
             <button
               aria-live="polite"
-              class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+              class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v564k6bl _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _1ggl5xtf _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
               data-testid="account-mark-as-read"
               type="button"
             >
@@ -167,7 +167,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
           >
             <button
               aria-live="polite"
-              class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+              class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v564k6bl _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _1ggl5xtf _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
               data-testid="account-toggle"
               type="button"
             >
@@ -241,7 +241,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                 role="img"
               >
                 <span
-                  class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsb7vkz _4t3i7vkz"
+                  class="_11q7cxp3 _vchh1ntv _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsb7vkz _4t3i7vkz"
                   style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                 >
                   <img
@@ -293,7 +293,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
           >
             <button
               aria-live="polite"
-              class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+              class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v564k6bl _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _1ggl5xtf _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
               data-testid="account-pull-requests"
               type="button"
             >
@@ -340,7 +340,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
           >
             <button
               aria-live="polite"
-              class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+              class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v564k6bl _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _1ggl5xtf _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
               data-testid="account-mark-as-read"
               type="button"
             >
@@ -379,7 +379,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
           >
             <button
               aria-live="polite"
-              class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+              class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v564k6bl _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _1ggl5xtf _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
               data-testid="account-toggle"
               type="button"
             >
@@ -453,7 +453,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                 role="img"
               >
                 <span
-                  class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsb7vkz _4t3i7vkz"
+                  class="_11q7cxp3 _vchh1ntv _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsb7vkz _4t3i7vkz"
                   style="--avatar-bg-color: gray; --avatar-box-shadow: 0 0 0 2px gray;"
                 >
                   <img
@@ -505,7 +505,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
           >
             <button
               aria-live="polite"
-              class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+              class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v564k6bl _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _1ggl5xtf _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
               data-testid="account-pull-requests"
               type="button"
             >
@@ -552,7 +552,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
           >
             <button
               aria-live="polite"
-              class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+              class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v564k6bl _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _1ggl5xtf _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
               data-testid="account-mark-as-read"
               type="button"
             >
@@ -591,7 +591,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
           >
             <button
               aria-live="polite"
-              class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+              class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v564k6bl _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _1ggl5xtf _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
               data-testid="account-toggle"
               type="button"
             >
@@ -657,7 +657,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                     role="img"
                   >
                     <span
-                      class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
+                      class="_11q7cxp3 _vchh1ntv _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
                       style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                     >
                       <img
@@ -753,7 +753,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                               role="img"
                             >
                               <span
-                                class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkol0p1 _1bsb7vkz _4t3i7vkz"
+                                class="_11q7cxp3 _vchh1ntv _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkol0p1 _1bsb7vkz _4t3i7vkz"
                                 style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                               >
                                 <img
@@ -841,7 +841,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
             >
               <button
                 aria-live="polite"
-                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v564k6bl _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _1ggl5xtf _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                 data-testid="notification-mark-as-read"
                 type="button"
               >
@@ -910,7 +910,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                     role="img"
                   >
                     <span
-                      class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
+                      class="_11q7cxp3 _vchh1ntv _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
                       style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                     >
                       <img
@@ -1006,7 +1006,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                               role="img"
                             >
                               <span
-                                class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkol0p1 _1bsb7vkz _4t3i7vkz"
+                                class="_11q7cxp3 _vchh1ntv _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkol0p1 _1bsb7vkz _4t3i7vkz"
                                 style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                               >
                                 <img
@@ -1098,7 +1098,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                                   >
                                     <a
                                       aria-label="atlassify-app"
-                                      class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswh2mm _4cvr1fhb _1bah1h6o _2lx21bp4 _80omtlke _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsb7vkz _4t3i7vkz _4tpu1f0r _ez1ykb7n _gcm1jer9 _eeh8kb7n _jlxit94y"
+                                      class="_11q7cxp3 _vchh1ntv _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswh2mm _4cvr1fhb _1bah1h6o _2lx21bp4 _80omtlke _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsb7vkz _4t3i7vkz _4tpu1f0r _ez1ykb7n _gcm1jer9 _eeh8kb7n _jlxit94y"
                                       href="#"
                                       style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                     >
@@ -1140,7 +1140,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
             >
               <button
                 aria-live="polite"
-                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v564k6bl _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _1ggl5xtf _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                 data-testid="notification-mark-as-read"
                 type="button"
               >
@@ -1211,7 +1211,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                 role="img"
               >
                 <span
-                  class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsb7vkz _4t3i7vkz"
+                  class="_11q7cxp3 _vchh1ntv _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsb7vkz _4t3i7vkz"
                   style="--avatar-bg-color: white; --avatar-box-shadow: 0 0 0 2px white;"
                 >
                   <img
@@ -1263,7 +1263,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
           >
             <button
               aria-live="polite"
-              class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+              class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v564k6bl _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _1ggl5xtf _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
               data-testid="account-pull-requests"
               type="button"
             >
@@ -1310,7 +1310,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
           >
             <button
               aria-live="polite"
-              class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+              class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v564k6bl _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _1ggl5xtf _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
               data-testid="account-mark-as-read"
               type="button"
             >
@@ -1349,7 +1349,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
           >
             <button
               aria-live="polite"
-              class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+              class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v564k6bl _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _1ggl5xtf _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
               data-testid="account-toggle"
               type="button"
             >
@@ -1415,7 +1415,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                     role="img"
                   >
                     <span
-                      class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
+                      class="_11q7cxp3 _vchh1ntv _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
                       style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                     >
                       <img
@@ -1511,7 +1511,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                               role="img"
                             >
                               <span
-                                class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkol0p1 _1bsb7vkz _4t3i7vkz"
+                                class="_11q7cxp3 _vchh1ntv _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkol0p1 _1bsb7vkz _4t3i7vkz"
                                 style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                               >
                                 <img
@@ -1599,7 +1599,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
             >
               <button
                 aria-live="polite"
-                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v564k6bl _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _1ggl5xtf _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                 data-testid="notification-mark-as-read"
                 type="button"
               >
@@ -1668,7 +1668,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                     role="img"
                   >
                     <span
-                      class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
+                      class="_11q7cxp3 _vchh1ntv _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsbzwfg _4t3izwfg"
                       style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                     >
                       <img
@@ -1764,7 +1764,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                               role="img"
                             >
                               <span
-                                class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkol0p1 _1bsb7vkz _4t3i7vkz"
+                                class="_11q7cxp3 _vchh1ntv _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswpfqs _4cvr1fhb _1bah1h6o _2lx21bp4 _80om1kw7 _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rkol0p1 _1bsb7vkz _4t3i7vkz"
                                 style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                               >
                                 <img
@@ -1856,7 +1856,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
                                   >
                                     <a
                                       aria-label="atlassify-app"
-                                      class="_vchh1ntv _bfhkcxp3 _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswh2mm _4cvr1fhb _1bah1h6o _2lx21bp4 _80omtlke _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsb7vkz _4t3i7vkz _4tpu1f0r _ez1ykb7n _gcm1jer9 _eeh8kb7n _jlxit94y"
+                                      class="_11q7cxp3 _vchh1ntv _16qs1nhn _19itglyw _12ji1r31 _1qu2glyw _12y31o36 _1reo15vq _18m915vq _v564ieh6 _1e0c1txw _kqswh2mm _4cvr1fhb _1bah1h6o _2lx21bp4 _80omtlke _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5ze3t _1q51ze3t _y4tize3t _bozgze3t _t9ec1aqe _9v7aze3t _qc5o1p41 _z0ai1osq _18postnw _1hfk1j28 _aetrf705 _1peqidpf _11fnglyw _1ejjglyw _mizu1v1w _1ah3v77o _ra3xnqa1 _128mdkaa _4dave4h9 _2rko1qll _14mj1qll _1bsb7vkz _4t3i7vkz _4tpu1f0r _ez1ykb7n _gcm1jer9 _eeh8kb7n _jlxit94y"
                                       href="#"
                                       style="--avatar-bg-color: var(--ds-surface, #FFFFFF); --avatar-box-shadow: 0 0 0 2px var(--ds-surface, #FFFFFF);"
                                     >
@@ -1898,7 +1898,7 @@ exports[`renderer/components/notifications/AccountNotifications.tsx > account vi
             >
               <button
                 aria-live="polite"
-                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v5649dqc _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
+                class="_ymio1r31 _ypr0glyw _zcxs1o36 _mizu194a _1ah3dkaa _ra3xnqa1 _128mdkaa _1cvmnqa1 _4davt94y _19itglyw _vchhusvi _r06hglyw _80omtlke _2rko1rr0 _11c8fhey _v564k6bl _189eidpf _1rjcv77o _1e0c116y _1bsb1k8s _p12f1osq _kqswh2mm _4cvr1q9y _1bah1h6o _gy1p12x7 _1o9zidpf _4t3i1k8s _k48p1wq8 _y4tize3t _bozgze3t _y3gn1h6o _s7n4nkob _14mj1kw7 _9v7aze3t _1tv3nqa1 _39yqe4h9 _11fnglyw _18postnw _1ggl5xtf _bfhksm61 _syazazsu _1053azsu _f8pjazsu _30l3azsu _9h8hazsu _irr31dpa _1di6fcek _4bfu1r31 _1hmsglyw _ajmmnqa1 _1a3b1r31 _4fprglyw _5goinqa1 _9oik1r31 _1bnxglyw _jf4cnqa1 _1nrm1r31 _c2waglyw _1iohnqa1"
                 data-testid="notification-mark-as-read"
                 type="button"
               >

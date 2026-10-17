@@ -14,7 +14,9 @@ import { handleMainEvent, onMainEvent } from '../events';
 export function registerAppHandlers(mb: Menubar): void {
   handleMainEvent(EVENTS.VERSION, () => app.getVersion());
 
-  onMainEvent(EVENTS.WINDOW_SHOW, () => mb.showWindow());
+  onMainEvent(EVENTS.WINDOW_SHOW, () => {
+    void mb.showWindow();
+  });
 
   onMainEvent(EVENTS.WINDOW_HIDE, () => mb.hideWindow());
 

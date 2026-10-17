@@ -1,4 +1,3 @@
-import type { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { IconButton } from '@atlaskit/button/new';
@@ -10,12 +9,12 @@ import Tooltip from '@atlaskit/tooltip';
 import { useAppContext } from '../../hooks/useAppContext';
 
 interface HeaderProps {
-  children: string;
-  subheading?: string;
-  fetchOnBack?: boolean;
+  readonly children: string;
+  readonly subheading?: string;
+  readonly fetchOnBack?: boolean;
 }
 
-export const Header: FC<HeaderProps> = (props: HeaderProps) => {
+export function Header(props: HeaderProps) {
   const navigate = useNavigate();
 
   const { fetchNotifications } = useAppContext();
@@ -52,4 +51,4 @@ export const Header: FC<HeaderProps> = (props: HeaderProps) => {
       </Inline>
     </Box>
   );
-};
+}

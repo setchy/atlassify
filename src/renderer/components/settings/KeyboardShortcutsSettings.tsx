@@ -1,4 +1,3 @@
-import type { FC } from 'react';
 import { Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -9,11 +8,11 @@ import type { KeybindingEntry } from '../../constants/keybindings';
 import { keybindings } from '../../constants/keybindings';
 
 interface KeybindingRowProps {
-  label: string;
-  keys: readonly string[];
+  readonly label: string;
+  readonly keys: readonly string[];
 }
 
-const KeybindingRow: FC<KeybindingRowProps> = ({ label, keys }) => {
+function KeybindingRow({ label, keys }: KeybindingRowProps) {
   return (
     <Box paddingInlineEnd="space.150">
       <Inline alignBlock="center" space="space.200" spread="space-between">
@@ -29,12 +28,12 @@ const KeybindingRow: FC<KeybindingRowProps> = ({ label, keys }) => {
       </Inline>
     </Box>
   );
-};
+}
 
 const getDisplayKeys = (entry: KeybindingEntry) =>
   entry.display ?? [entry.eventKey];
 
-export const KeyboardShortcutsSettings: FC = () => {
+export function KeyboardShortcutsSettings() {
   const { t } = useTranslation();
 
   return (
@@ -163,4 +162,4 @@ export const KeyboardShortcutsSettings: FC = () => {
       </Box>
     </Stack>
   );
-};
+}

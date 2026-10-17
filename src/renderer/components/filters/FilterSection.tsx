@@ -15,16 +15,16 @@ import type { Filter } from '../../utils/notifications/filters';
 import { formatProperCase } from '../../utils/notifications/formatters';
 
 export interface FilterSectionProps<K extends keyof FiltersState> {
-  title: string;
-  filter: Filter<FiltersState[K][number]>;
-  filterSetting: K;
+  readonly title: string;
+  readonly filter: Filter<FiltersState[K][number]>;
+  readonly filterSetting: K;
 }
 
-const FilterSectionComponent = <K extends keyof FiltersState>({
+function FilterSectionComponent<K extends keyof FiltersState>({
   title,
   filter,
   filterSetting,
-}: FilterSectionProps<K>) => {
+}: FilterSectionProps<K>) {
   const { notifications } = useAppContext();
   const updateFilter = useFiltersStore((s) => s.updateFilter);
 
@@ -103,7 +103,7 @@ const FilterSectionComponent = <K extends keyof FiltersState>({
       </Box>
     </Stack>
   );
-};
+}
 
 // Memoize the component to prevent unnecessary re-renders
 export const FilterSection = memo(

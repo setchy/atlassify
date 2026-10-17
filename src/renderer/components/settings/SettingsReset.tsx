@@ -1,4 +1,4 @@
-import { type FC, useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Button, { IconButton } from '@atlaskit/button/new';
@@ -23,7 +23,7 @@ const styles = cssMap({
   },
 });
 
-export const SettingsReset: FC = () => {
+export function SettingsReset() {
   const { t } = useTranslation();
 
   const resetSettings = useSettingsStore((s) => s.reset);
@@ -103,4 +103,4 @@ export const SettingsReset: FC = () => {
       </ModalTransition>
     </Inline>
   );
-};
+}

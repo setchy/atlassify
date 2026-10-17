@@ -1,4 +1,4 @@
-import { type FC, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
@@ -34,11 +34,11 @@ import { Centered } from '../components/layout/Centered';
 import { showWindow } from '../utils/system/comms';
 
 // Hoisted so its identity is stable across re-renders (S6478).
-const LoginButtonIcon: FC<ButtonIconProps> = (iconProps) => (
-  <AtlassianIcon {...iconProps} size="small" />
-);
+function LoginButtonIcon(iconProps: ButtonIconProps) {
+  return <AtlassianIcon {...iconProps} size="small" />;
+}
 
-export const LandingRoute: FC = () => {
+export function LandingRoute() {
   const { t } = useTranslation();
 
   const navigate = useNavigate();
@@ -100,4 +100,4 @@ export const LandingRoute: FC = () => {
       </Stack>
     </Centered>
   );
-};
+}

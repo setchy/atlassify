@@ -1,4 +1,3 @@
-import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { IconButton } from '@atlaskit/button/new';
@@ -10,31 +9,33 @@ import Tooltip from '@atlaskit/tooltip';
 
 import type { NotificationActionFailure } from '../../stores';
 
-const MarkAsReadIcon = () => (
-  <StrokeWeightLargeIcon color={token('color.icon.brand')} label="" />
-);
-
-const FailedActionIcon = () => (
-  <WarningIcon color={token('color.icon.danger')} label="" />
-);
-
-const EmptyIcon = () => null;
-
-export interface NotificationActionsProps {
-  isUnread: boolean;
-  isAnimatingExit: boolean;
-  onMarkAsRead: () => void;
-  onMarkAsUnread: () => void;
-  failure?: NotificationActionFailure;
+function MarkAsReadIcon() {
+  return <StrokeWeightLargeIcon color={token('color.icon.brand')} label="" />;
 }
 
-export const NotificationActions: FC<NotificationActionsProps> = ({
+function FailedActionIcon() {
+  return <WarningIcon color={token('color.icon.danger')} label="" />;
+}
+
+function EmptyIcon() {
+  return null;
+}
+
+export interface NotificationActionsProps {
+  readonly isUnread: boolean;
+  readonly isAnimatingExit: boolean;
+  readonly onMarkAsRead: () => void;
+  readonly onMarkAsUnread: () => void;
+  readonly failure?: NotificationActionFailure;
+}
+
+export function NotificationActions({
   isUnread,
   isAnimatingExit,
   onMarkAsRead,
   onMarkAsUnread,
   failure,
-}: NotificationActionsProps) => {
+}: NotificationActionsProps) {
   const { t } = useTranslation();
   const failureMessage = failure
     ? `${failure.error.title}: ${failure.error.descriptions.join(' ')}`
@@ -102,4 +103,4 @@ export const NotificationActions: FC<NotificationActionsProps> = ({
         ))}
     </Box>
   );
-};
+}

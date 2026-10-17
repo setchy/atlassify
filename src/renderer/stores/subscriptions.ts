@@ -163,7 +163,7 @@ export function initializeStoreSubscriptions(): () => void {
     // When filters change, invalidate queries to trigger select re-execution
     // The select function in useQuery will reapply filters to cached unfiltered data
     // This happens instantly without API calls
-    queryClient.invalidateQueries({ queryKey, refetchType: 'none' });
+    void queryClient.invalidateQueries({ queryKey, refetchType: 'none' });
   });
   unsubscribers.push(unsubFilters);
 

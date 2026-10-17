@@ -29,7 +29,7 @@ jobs:
           directory: ${{ inputs.directory }}
 
       - name: Run linter
-        run: pnpm lint:check
+        run: pnpm lint:ci
         working-directory: ${{ inputs.directory }}
 
   lint-i18n:

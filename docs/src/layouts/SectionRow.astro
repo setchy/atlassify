@@ -1,11 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 
-import { marked } from 'marked';
-
 export interface Props {
   title: string;
-  description: string;
   screenshot?: {
     path: string;
     alt: string;
@@ -14,13 +11,7 @@ export interface Props {
   isReversed?: boolean;
 }
 
-const {
-  title,
-  description,
-  screenshot,
-  isDark = false,
-  isReversed = false,
-} = Astro.props;
+const { title, screenshot, isDark = false, isReversed = false } = Astro.props;
 ---
 
 <div
@@ -40,10 +31,9 @@ const {
   >
     <div class="flex-1">
       <h3 class="mb-4 text-xl lg:text-2xl font-semibold">{title}</h3>
-      <div
-        class="text-lg lg:text-xl font-light"
-        set:html={marked(description)}
-      />
+      <div class="text-lg lg:text-xl font-light">
+        <slot name="description" />
+      </div>
     </div>
 
     {screenshot && (

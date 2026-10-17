@@ -1,4 +1,4 @@
-import { type FC, useCallback, useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { IconButton, SplitButton } from '@atlaskit/button/new';
@@ -41,7 +41,7 @@ const styles = cssMap({
   },
 });
 
-export const AppearanceSettings: FC = () => {
+export function AppearanceSettings() {
   const { t, i18n } = useTranslation();
 
   // Account store values
@@ -216,4 +216,4 @@ export const AppearanceSettings: FC = () => {
       )}
     </Stack>
   );
-};
+}

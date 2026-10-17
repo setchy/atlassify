@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { Box, Stack } from '@atlaskit/primitives';
 
@@ -9,16 +9,16 @@ import { Centered } from './Centered';
 const EMPTY_SUBHEADINGS: string[] = [];
 
 interface EmojiSplashProps {
-  emoji: string;
-  heading: string;
-  subHeadings?: string[];
-  actions?: ReactNode;
+  readonly emoji: string;
+  readonly heading: string;
+  readonly subHeadings?: string[];
+  readonly actions?: ReactNode;
 }
 
-export const EmojiSplash: FC<EmojiSplashProps> = ({
+export function EmojiSplash({
   subHeadings = EMPTY_SUBHEADINGS,
   ...props
-}: EmojiSplashProps) => {
+}: EmojiSplashProps) {
   return (
     <Centered>
       <Box paddingInline="space.400">
@@ -46,4 +46,4 @@ export const EmojiSplash: FC<EmojiSplashProps> = ({
       </Box>
     </Centered>
   );
-};
+}

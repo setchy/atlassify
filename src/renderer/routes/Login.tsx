@@ -1,10 +1,4 @@
-import {
-  type ChangeEvent,
-  type FC,
-  Fragment,
-  useCallback,
-  useState,
-} from 'react';
+import { type ChangeEvent, Fragment, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
@@ -44,7 +38,7 @@ interface LoginProps {
   token: Token;
 }
 
-export const LoginRoute: FC = () => {
+export function LoginRoute() {
   const { t } = useTranslation();
 
   const navigate = useNavigate();
@@ -226,4 +220,4 @@ export const LoginRoute: FC = () => {
       </Form>
     </Page>
   );
-};
+}

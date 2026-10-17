@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 
-import { siteMetadata } from '~/constants';
+import { siteMetadata, URLs } from '~/constants';
 
 import Hero from '~/components/Hero.astro';
 import { openSourceLibs } from '~/icons/icons';
@@ -15,62 +15,123 @@ import SectionRow from '~/layouts/SectionRow.astro';
 
     <SectionRow
       title="All your Atlassian notifications, right on your desktop."
-      description="<p>Atlassify is here to simplify your workflow.</p><br /><p>Always visible on your menu bar, Atlassify delivers real-time notifications from your favorite Atlassian products such as Bitbucket, Compass, Confluence, Jira, Rovo and many more!</p>"
       screenshot={{
         path: 'products',
         alt: 'Screenshot when notifications are grouped by Atlassian products',
       }}
       isReversed
-    />
+    >
+      <Fragment slot="description">
+        <p>Atlassify is here to simplify your workflow.</p>
+        <br>
+        <p>
+          Always visible on your menu bar, Atlassify delivers real-time
+          notifications from your favorite Atlassian products such as Bitbucket,
+          Compass, Confluence, Jira, Rovo and many more!
+        </p>
+      </Fragment>
+    </SectionRow>
 
     <SectionRow
       title="Stay on top of your work, effortlessly."
-      description="<p>Overwhelmed by Atlassian notifications? Emails piling up? Missing important updates?</p><br /><p>Never again with Atlassify!</p>"
       screenshot={{
         path: 'all-read',
         alt: 'Screenshot when all notifications have been read',
       }}
       isDark
-    />
+    >
+      <Fragment slot="description">
+        <p>
+          Overwhelmed by Atlassian notifications? Emails piling up? Missing
+          important updates?
+        </p>
+        <br>
+        <p>Never again with Atlassify!</p>
+      </Fragment>
+    </SectionRow>
 
     <SectionRow
       title="Cut through the noise, focus on what matters."
-      description="<p>Inbox overflowing?</p><br /><p>Atlassify helps you filter notifications so you can quickly zero in on what’s important.</p>"
       screenshot={{
         path: 'filters',
         alt: 'Screenshot for notification filters',
       }}
       isReversed
-    />
+    >
+      <Fragment slot="description">
+        <p>Inbox overflowing?</p>
+        <br>
+        <p>
+          Atlassify helps you filter notifications so you can quickly zero in on
+          what’s important.
+        </p>
+      </Fragment>
+    </SectionRow>
 
     <SectionRow
       title="Your notifications, your way."
-      description="<p>Atlassify gives you full control: show native OS notifications, play a new notification sound (we promise it's not annoying), or change it's appearance.</p><br /><p>It’s designed to keep you informed without interrupting your workflow. Customize it to suit your style.</p>"
       screenshot={{
         path: 'settings',
         alt: 'Screenshot for user preferences, settings',
       }}
       isDark
-    />
-
-    <SectionRow
-      title="Free & Open Source."
-      description="<p>Atlassify is built with TypeScript, Electron, React, Vite, Tailwind CSS, and other open-source libraries.</p>"
     >
-      <div class="flex flex-wrap justify-center md:max-w-lg mt-12 lg:mt-0">
+      <Fragment slot="description">
+        <p>
+          Atlassify gives you full control: show native OS notifications, play a
+          new notification sound (we promise it's not annoying), or change it's
+          appearance.
+        </p>
+        <br>
+        <p>
+          It’s designed to keep you informed without interrupting your workflow.
+          Customize it to suit your style.
+        </p>
+      </Fragment>
+    </SectionRow>
+
+    <SectionRow title="Free & Open Source.">
+      <Fragment slot="description">
+        <p>
+          Atlassify is built with TypeScript, Electron, React, Tailwind CSS,
+          Vite, Atlassian Design System, TanStack Query, Zustand, i18next, and
+          other open-source libraries.
+        </p>
+        <br>
+        <p>
+          Free to use,{' '}
+          <a href={`${URLs.GITHUB.REPO}/blob/main/LICENSE`}>MIT-licensed</a>,
+          and{' '}
+          <a href={`${URLs.GITHUB.REPO}/blob/main/CONTRIBUTING.md`}>
+            open to contributions
+          </a
+          >.
+        </p>
+      </Fragment>
+      <ul
+        class="grid grid-cols-3 gap-4 w-full max-w-xs shrink-0 mt-12 lg:mt-0"
+        aria-label="Built with open-source libraries"
+      >
         {openSourceLibs.map((item) => (
-          <div class="p-2 m-2 rounded-lg hover:motion-preset-pulse hover:motion-duration-1000">
-            <a href={item.link} target="_blank" rel="noopener noreferrer">
+          <li>
+            <a
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={item.name}
+              title={item.name}
+              class="flex items-center justify-center p-3 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-atlassify-docs-navbar motion-safe:hover:motion-preset-pulse motion-safe:hover:motion-duration-1000"
+            >
               <Icon
                 name={item.svg}
-                title={item.name}
-                size={32}
-                class="w-8 sm:w-12"
+                size={48}
+                class="size-8 sm:size-12"
+                aria-hidden="true"
               />
             </a>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </SectionRow>
   </main>
 </Layout>

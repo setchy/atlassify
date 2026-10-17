@@ -1,13 +1,10 @@
 ---
 import { Icon } from 'astro-icon/components';
 
-import { Octokit } from 'octokit';
-
 import { siteMetadata, URLs } from '~/constants';
 
+import { getGitHubLatestRelease, getGitHubRepository } from '~/lib/github';
 import type { RepoStats } from '~/types';
-
-const octokit = new Octokit();
 
 const formatCount = (count: number) => {
   return new Intl.NumberFormat('en', {
@@ -18,20 +15,21 @@ const formatCount = (count: number) => {
 
 const loadRepoStats = async (): Promise<RepoStats> => {
   try {
-    const repository = await octokit.rest.repos.get({
+    const params = {
       owner: siteMetadata.repo.owner,
       repo: siteMetadata.repo.name,
-    });
-
-    const latestRelease = await octokit.rest.repos.getLatestRelease({
-      owner: siteMetadata.repo.owner,
-      repo: siteMetadata.repo.name,
-    });
+    };
+    const [repository, latestRelease] = await Promise.all([
+      getGitHubRepository(params),
+      getGitHubLatestRelease(params),
+    ]);
 
     return {
-      forks: formatCount(repository.data.forks_count),
-      stars: formatCount(repository.data.stargazers_count),
-      latestReleaseName: latestRelease.data.name?.replace('v', '') ?? '',
+      forks: repository ? formatCount(repository.forks_count) : '',
+      stars: repository ? formatCount(repository.stargazers_count) : '',
+      latestReleaseName:
+        (latestRelease?.name ?? latestRelease?.tag_name)?.replace('v', '') ??
+        '',
     };
   } catch (err) {
     console.error('Failed to load repo stats', err);
@@ -60,18 +58,24 @@ const { forks, stars, latestReleaseName } = await loadRepoStats();
     <div class="font-light max-sm:hidden">
       <div class="text-sm">{siteMetadata.repo.fullName}</div>
       <div class="flex flex-row gap-2 text-xs">
-        <div class="flex flex-row gap-0.5 items-center">
-          <Icon name="mdi:tag-outline" />
-          {latestReleaseName}
-        </div>
-        <div class="flex flex-1 gap-0.5 items-center">
-          <Icon name="mdi:star-outline" />
-          {stars}
-        </div>
-        <div class="flex flex-1 gap-0.5 items-center">
-          <Icon name="mdi:source-branch" />
-          {forks}
-        </div>
+        {latestReleaseName && (
+          <div class="flex flex-row gap-0.5 items-center">
+            <Icon name="mdi:tag-outline" />
+            {latestReleaseName}
+          </div>
+        )}
+        {stars && (
+          <div class="flex flex-1 gap-0.5 items-center">
+            <Icon name="mdi:star-outline" />
+            {stars}
+          </div>
+        )}
+        {forks && (
+          <div class="flex flex-1 gap-0.5 items-center">
+            <Icon name="mdi:source-branch" />
+            {forks}
+          </div>
+        )}
       </div>
     </div>
   </section>

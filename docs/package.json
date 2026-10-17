@@ -8,10 +8,14 @@
     "prepare": "cd .. && husky",
     "dev": "astro dev",
     "start": "pnpm dev",
-    "build": "astro build",
+    "check": "astro check",
+    "build": "pnpm check && astro build",
+    "test": "node --test \"src/**/*.test.ts\"",
+    "test:coverage": "c8 node --test \"src/**/*.test.ts\"",
     "preview": "astro preview",
     "lint": "biome check --fix",
-    "lint:check": "biome check"
+    "lint:check": "biome check",
+    "lint:ci": "biome ci --reporter=github"
   },
   "repository": {
     "type": "git",
@@ -40,20 +44,23 @@
     "@octokit/openapi-types": "29.0.1",
     "@tailwindcss/vite": "4.3.3",
     "accessible-astro-components": "5.8.0",
-    "astro": "7.3.5",
+    "astro": "7.3.8",
     "astro-icon": "1.2.0",
     "date-fns": "4.4.0",
-    "marked": "18.0.14",
     "octokit": "5.0.5",
     "sharp": "0.35.5",
     "tailwindcss": "4.3.3",
     "tailwindcss-motion": "1.1.1"
   },
   "devDependencies": {
+    "@astrojs/check": "0.9.10",
     "@biomejs/biome": "2.5.15",
-    "husky": "9.1.7"
+    "@types/node": "24.19.2",
+    "c8": "12.0.0",
+    "husky": "9.1.7",
+    "typescript": "6.0.3"
   },
-  "packageManager": "pnpm@12.8.2",
+  "packageManager": "pnpm@12.13.0",
   "lint-staged": {
     "*.{js,ts,cjs,mjs,astro}": "biome format --fix"
   }

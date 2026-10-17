@@ -42,7 +42,7 @@ export interface AppContextState {
 
 export const AppContext = createContext<AppContextState | null>(null);
 
-export const AppProvider = ({ children }: { children: ReactNode }) => {
+export function AppProvider({ children }: { readonly children: ReactNode }) {
   const {
     isLoading,
     isFetching,
@@ -127,4 +127,4 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   return (
     <AppContext.Provider value={contextValues}>{children}</AppContext.Provider>
   );
-};
+}
