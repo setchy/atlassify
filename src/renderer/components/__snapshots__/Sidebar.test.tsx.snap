@@ -453,7 +453,7 @@ exports[`renderer/components/Sidebar.tsx > logged in > should render itself & it
             role="presentation"
           >
             <label
-              class="_1h6d1j28 _1dqonqa1 _189e1dm9 _1e0c1o8l _vchh1ntv _kqswh2mm _1y1m1ntv _bfhkkcmj _syaz5w2r _80omtlke _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5v77o _1q51v77o _y4tiv77o _bozgv77o _1oeci9qs _k8m01e03 _6fl4574g _rfx31qll _1cs8stnw _1rus5w2r _1kt9b3bt _1fkr1y44 _z5wt1y44 _1cg6i9qs _qs2z1e03 _mlfe574g _1ys41v1w _ju3ddkaa _16rslghj _i5ec1w7i _2rko1rr0 _4t3ipxbi _1bsbxy5q _kfgtutpp _1mp41crf _7dwz1fbe _irr3y7x8"
+              class="_v564c7pe _1h6d1j28 _1dqonqa1 _189e1dm9 _1e0c1o8l _vchh1ntv _kqswh2mm _1y1m1ntv _bfhkkcmj _syaz5w2r _80omtlke _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5v77o _1q51v77o _y4tiv77o _bozgv77o _rfx31qll _pdykc7pe _1cs8stnw _1rus5w2r _1kt9b3bt _1fkr1y44 _z5wt1y44 _1ys41v1w _ju3ddkaa _16rslghj _i5ec1w7i _2rko1rr0 _4t3ipxbi _1bsbxy5q _kfgtutpp _1mp41crf _7dwz1fbe _irr3y7x8"
               data-testid="sidebar-toggle-unread-only"
             >
               <span
@@ -843,7 +843,7 @@ exports[`renderer/components/Sidebar.tsx > logged in > should render itself & it
             role="presentation"
           >
             <label
-              class="_1h6d1j28 _1dqonqa1 _189e1dm9 _1e0c1o8l _vchh1ntv _kqswh2mm _1y1m1ntv _bfhkkcmj _syaz5w2r _80omtlke _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5v77o _1q51v77o _y4tiv77o _bozgv77o _1oeci9qs _k8m01e03 _6fl4574g _rfx31qll _1cs8stnw _1rus5w2r _1kt9b3bt _1fkr1y44 _z5wt1y44 _1cg6i9qs _qs2z1e03 _mlfe574g _1ys41v1w _ju3ddkaa _16rslghj _i5ec1w7i _2rko1rr0 _4t3ipxbi _1bsbxy5q _kfgtutpp _1mp41crf _7dwz1fbe _irr3y7x8"
+              class="_v564c7pe _1h6d1j28 _1dqonqa1 _189e1dm9 _1e0c1o8l _vchh1ntv _kqswh2mm _1y1m1ntv _bfhkkcmj _syaz5w2r _80omtlke _6rthv77o _1pfhv77o _12l2v77o _ahbqv77o _85i5v77o _1q51v77o _y4tiv77o _bozgv77o _rfx31qll _pdykc7pe _1cs8stnw _1rus5w2r _1kt9b3bt _1fkr1y44 _z5wt1y44 _1ys41v1w _ju3ddkaa _16rslghj _i5ec1w7i _2rko1rr0 _4t3ipxbi _1bsbxy5q _kfgtutpp _1mp41crf _7dwz1fbe _irr3y7x8"
               data-testid="sidebar-toggle-unread-only"
             >
               <span
