@@ -62,11 +62,11 @@ function MarkAllReadIcon() {
 }
 
 export interface AccountNotificationsProps {
-  account: Account;
-  notifications: AtlassifyNotification[];
-  hasMoreNotifications: boolean;
-  error: AtlassifyError | null;
-  showAccountHeader: boolean;
+  readonly account: Account;
+  readonly notifications: AtlassifyNotification[];
+  readonly hasMoreNotifications: boolean;
+  readonly error: AtlassifyError | null;
+  readonly showAccountHeader: boolean;
 }
 
 const styles = cssMap({

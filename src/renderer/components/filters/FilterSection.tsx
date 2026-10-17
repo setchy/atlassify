@@ -15,9 +15,9 @@ import type { Filter } from '../../utils/notifications/filters';
 import { formatProperCase } from '../../utils/notifications/formatters';
 
 export interface FilterSectionProps<K extends keyof FiltersState> {
-  title: string;
-  filter: Filter<FiltersState[K][number]>;
-  filterSetting: K;
+  readonly title: string;
+  readonly filter: Filter<FiltersState[K][number]>;
+  readonly filterSetting: K;
 }
 
 function FilterSectionComponent<K extends keyof FiltersState>({

@@ -38,7 +38,7 @@ interface HostnameHintFormData {
 }
 
 interface AccountHostnamesProps {
-  account: Account;
+  readonly account: Account;
 }
 
 export function AccountHostnames({ account }: AccountHostnamesProps) {

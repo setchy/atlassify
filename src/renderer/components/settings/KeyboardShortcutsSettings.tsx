@@ -8,8 +8,8 @@ import type { KeybindingEntry } from '../../constants/keybindings';
 import { keybindings } from '../../constants/keybindings';
 
 interface KeybindingRowProps {
-  label: string;
-  keys: readonly string[];
+  readonly label: string;
+  readonly keys: readonly string[];
 }
 
 function KeybindingRow({ label, keys }: KeybindingRowProps) {

@@ -9,9 +9,9 @@ import Tooltip from '@atlaskit/tooltip';
 import { useAppContext } from '../../hooks/useAppContext';
 
 interface HeaderProps {
-  children: string;
-  subheading?: string;
-  fetchOnBack?: boolean;
+  readonly children: string;
+  readonly subheading?: string;
+  readonly fetchOnBack?: boolean;
 }
 
 export function Header(props: HeaderProps) {

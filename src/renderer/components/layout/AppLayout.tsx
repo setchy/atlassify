@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { Sidebar } from '../Sidebar';
 
-type AppLayoutProps = { children: ReactNode };
+type AppLayoutProps = { readonly children: ReactNode };
 
 /**
  * AppLayout is the main container for the application.

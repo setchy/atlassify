@@ -25,7 +25,7 @@ function ProductMarkAllReadIcon() {
 }
 
 export interface ProductNotificationsProps {
-  productNotifications: AtlassifyNotification[];
+  readonly productNotifications: AtlassifyNotification[];
 }
 
 const styles = cssMap({

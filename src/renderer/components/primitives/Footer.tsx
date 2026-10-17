@@ -5,8 +5,8 @@ import { Box, Flex } from '@atlaskit/primitives/compiled';
 import { token } from '@atlaskit/tokens';
 
 interface FooterProps {
-  children: ReactNode;
-  justify: 'end' | 'space-between';
+  readonly children: ReactNode;
+  readonly justify: 'end' | 'space-between';
 }
 
 const styles = cssMap({

@@ -11,7 +11,7 @@ import { Errors } from '../utils/core/errors';
 import { randomElement } from '../utils/core/random';
 
 interface OopsProps {
-  error: AtlassifyError;
+  readonly error: AtlassifyError;
 }
 
 export function Oops({ error }: OopsProps) {
