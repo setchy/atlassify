@@ -446,11 +446,6 @@ packages:
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
-  '@atlaskit/avatar@30.0.4':
-    resolution: {integrity: sha512-pGz6ijRZ0ajxqHTtbnVAQXGh432mQAKfRG/unPDQlcPDSAFEiH/ODXrZXZw9GCUwcguPuBhS3p9wBgJjCqjG2A==}
-    peerDependencies:
-      react: ^18.2.0 || ^19.0.0
-
   '@atlaskit/avatar@30.0.5':
     resolution: {integrity: sha512-EO53A4ItJZBvgEHofcFgb4h6UNW7IRJ747FyHhnxkcRonCf67W8O+uyIw2cfWImlA39WKQNieLK5HLbBXjpa/w==}
     peerDependencies:
@@ -581,12 +576,6 @@ packages:
 
   '@atlaskit/popup@10.0.1':
     resolution: {integrity: sha512-K74nlW1hpEIOjlv/lXjcOwV83n0+vl8lrvi+voejW1oALwgSl00ey+FFoYkmnoivTofVGb3yK0a2RvRJGmZUHA==}
-    peerDependencies:
-      react: ^18.2.0 || ^19.0.0
-      react-dom: ^18.2.0 || ^19.0.0
-
-  '@atlaskit/popup@9.0.4':
-    resolution: {integrity: sha512-LGMDHNlROwyYz+Nk2O1HXN97EtpVw0YFuqAB1iDzdNiQqIEzZu1LDys/AiEIEGCNgq08A32RwozJ0vLUa7JUkg==}
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
       react-dom: ^18.2.0 || ^19.0.0
@@ -3821,8 +3810,8 @@ packages:
     resolution: {integrity: sha512-EjRr1weMa4ALQX35AgZTEnP+weJJjlW1KGDiNM2IQC2069YDHas4f4B4UUYR+TTLyKWxJvOz2wObDKQs/LNreA==}
     engines: {node: '>=18.20.0 <20 || >=20.12.1'}
 
-  node-abi@4.38.0:
-    resolution: {integrity: sha512-suSdznUPfabdaeLiNERA0LHod14RhcEn8wMPUZEQ6bKvajUCZ+aizY4pIvlLU+gImeLKp2bFDHhOc9yonISsXw==}
+  node-abi@4.39.0:
+    resolution: {integrity: sha512-pULjI3qsVrn6K5DZz5tCpX2dL8IKM9/xBMRz29hBko8UFXZ/C3QxRMl/Z7wKaQwaxPmYU+7UPKbDf7EO+ASvfA==}
     engines: {node: '>=22.12.0'}
 
   node-addon-api@7.1.1:
@@ -5236,25 +5225,6 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/avatar@30.0.4(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)':
-    dependencies:
-      '@atlaskit/analytics-next': 12.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      '@atlaskit/css': 1.1.7(react@19.3.1)(supports-color@10.2.2)
-      '@atlaskit/ds-lib': 8.0.0(react@19.3.1)
-      '@atlaskit/icon': 38.0.2(react@19.3.1)(supports-color@10.2.2)
-      '@atlaskit/platform-feature-flags': 2.2.1(react@19.3.1)
-      '@atlaskit/popup': 9.0.4(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
-      '@atlaskit/primitives': 22.6.0(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
-      '@atlaskit/react-compiler-gating': 0.2.4(react@19.3.1)
-      '@atlaskit/tokens': 20.6.1(react@19.3.1)(supports-color@10.2.2)
-      '@babel/runtime': 7.29.10
-      '@compiled/react': 1.0.2(react@19.3.1)
-      react: 19.3.1
-    transitivePeerDependencies:
-      - '@types/react'
-      - react-dom
-      - supports-color
-
   '@atlaskit/avatar@30.0.5(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/analytics-next': 12.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
@@ -5645,31 +5615,6 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/popup@9.0.4(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)':
-    dependencies:
-      '@atlaskit/css': 1.1.7(react@19.3.1)(supports-color@10.2.2)
-      '@atlaskit/ds-lib': 8.0.0(react@19.3.1)
-      '@atlaskit/layering': 6.0.0(react@19.3.1)
-      '@atlaskit/motion': 9.4.0(react@19.3.1)(supports-color@10.2.2)
-      '@atlaskit/platform-feature-flags': 2.2.1(react@19.3.1)
-      '@atlaskit/popper': 9.4.7(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
-      '@atlaskit/portal': 7.0.2(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
-      '@atlaskit/primitives': 22.6.0(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
-      '@atlaskit/react-compiler-gating': 0.2.4(react@19.3.1)
-      '@atlaskit/tokens': 20.6.1(react@19.3.1)(supports-color@10.2.2)
-      '@atlaskit/top-layer': 6.5.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
-      '@babel/runtime': 7.29.10
-      '@compiled/react': 1.0.2(react@19.3.1)
-      bind-event-listener: 3.0.0
-      focus-trap: 2.4.6
-      memoize-one: 6.0.0
-      react: 19.3.1
-      react-dom: 19.3.1(react@19.3.1)
-      tiny-invariant: 1.3.3
-    transitivePeerDependencies:
-      - '@types/react'
-      - supports-color
-
   '@atlaskit/portal@7.0.2(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/app-provider': 8.2.0(react@19.3.1)(supports-color@10.2.2)
@@ -5824,7 +5769,7 @@ snapshots:
   '@atlaskit/tag@17.0.3(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/analytics-next': 12.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      '@atlaskit/avatar': 30.0.4(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/avatar': 30.0.5(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/css': 1.1.7(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/ds-lib': 8.0.0(react@19.3.1)
       '@atlaskit/icon': 38.0.2(react@19.3.1)(supports-color@10.2.2)
@@ -5847,7 +5792,7 @@ snapshots:
 
   '@atlaskit/teams-avatar@4.1.9(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)':
     dependencies:
-      '@atlaskit/avatar': 30.0.4(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/avatar': 30.0.5(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/css': 1.1.7(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/platform-feature-flags': 2.2.1(react@19.3.1)
       '@atlaskit/primitives': 22.6.0(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
@@ -6292,7 +6237,7 @@ snapshots:
     dependencies:
       '@malept/cross-spawn-promise': 2.0.0
       debug: 4.4.3(supports-color@10.2.2)
-      node-abi: 4.38.0
+      node-abi: 4.39.0
       node-api-version: 0.2.1
       node-gyp: 12.4.0
       read-binary-file-arch: 1.0.6(supports-color@10.2.2)
@@ -9223,7 +9168,7 @@ snapshots:
       json-stringify-safe: 5.0.1
       propagate: 2.0.1
 
-  node-abi@4.38.0:
+  node-abi@4.39.0:
     dependencies:
       semver: 7.7.4
 
