@@ -179,8 +179,8 @@ importers:
         specifier: 4.3.3
         version: 4.3.3(vite@8.3.4(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))
       accessible-astro-components:
-        specifier: 5.8.0
-        version: 5.8.0(astro@7.4.0(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))
+        specifier: 5.8.1
+        version: 5.8.1(astro@7.4.0(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))
       astro:
         specifier: 7.4.0
         version: 7.4.0(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1)
@@ -1158,8 +1158,8 @@ packages:
   '@vscode/l10n@0.0.18':
     resolution: {integrity: sha512-KYSIHVmslkaCDyw013pphY+d7x1qV8IZupYfeIfzNA+nsaWHbn5uPuQRvdRFsa9zFzGeudPuoGoZ1Op4jrJXIQ==}
 
-  accessible-astro-components@5.8.0:
-    resolution: {integrity: sha512-TYGVy+u0pCRQJl4gp0r397YsNfM6R+ZTDj5sbatadFuxAdQ92qlhJg31S55nWUkFUre8zHoZvPIo4GWxCHVXTQ==}
+  accessible-astro-components@5.8.1:
+    resolution: {integrity: sha512-G7G6y2DVJEByxv0OManoZf24z5qIJAijOaXuwjRMHOl6cZcu1Yrkn3sQfZzsG2n54koYdjzI+x5mh8pOiF1sTA==}
     engines: {node: ^18.20.8 || ^20.3.0 || >=22.0.0}
     peerDependencies:
       astro: ^5.0.0 || ^6.0.0 || ^7.0.0
@@ -3271,7 +3271,7 @@ snapshots:
 
   '@vscode/l10n@0.0.18': {}
 
-  accessible-astro-components@5.8.0(astro@7.4.0(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1)):
+  accessible-astro-components@5.8.1(astro@7.4.0(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1)):
     dependencies:
       astro: 7.4.0(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1)
 
