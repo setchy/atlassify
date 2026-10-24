@@ -1,5 +1,52 @@
 # Changelog
 
+## [3.17.1](https://github.com/setchy/atlassify/compare/v3.17.0...v3.17.1) (2026-10-24)
+
+
+### 🐛 Bug Fixes
+
+* **notifications:** show loading after login with empty inbox ([#3935](https://github.com/setchy/atlassify/issues/3935)) ([8c61f45](https://github.com/setchy/atlassify/commit/8c61f45291f766a663b560f8abebe583bfb5c763))
+* pnpm lockfile duplicate ([681125d](https://github.com/setchy/atlassify/commit/681125d6a74851bdea171af4dea896c480d97820))
+
+
+### 📦 Dependency Updates (Core)
+
+* **deps-core:** update @atlaskit/avatar to v30.0.5 ([#3926](https://github.com/setchy/atlassify/issues/3926)) ([8a8fd9c](https://github.com/setchy/atlassify/commit/8a8fd9c67ab2398eb980bd713f9b3cc6febfc261))
+* **deps-core:** update @atlaskit/avatar-group to v14.4.6 ([#3927](https://github.com/setchy/atlassify/issues/3927)) ([c0066aa](https://github.com/setchy/atlassify/commit/c0066aa47445f3da85b080806bda95175bd4b526))
+* **deps-core:** update @atlaskit/button to v25.4.8 ([#3902](https://github.com/setchy/atlassify/issues/3902)) ([d51f9e6](https://github.com/setchy/atlassify/commit/d51f9e61f17c1780b79b27a74752d724e2baa661))
+* **deps-core:** update @atlaskit/button to v25.5.0 ([#3931](https://github.com/setchy/atlassify/issues/3931)) ([9098847](https://github.com/setchy/atlassify/commit/9098847e24279f9d3676a13094c24453802e5591))
+* **deps-core:** update @atlaskit/css to v1.1.7 ([#3903](https://github.com/setchy/atlassify/issues/3903)) ([28bc259](https://github.com/setchy/atlassify/commit/28bc259895b0909b5b66fcdd730166af6838252c))
+* **deps-core:** update @atlaskit/inline-message to v16.4.8 ([#3928](https://github.com/setchy/atlassify/issues/3928)) ([5b5f65f](https://github.com/setchy/atlassify/commit/5b5f65fb47b3859bc31878fe0562e9c4e65b3a36))
+* **deps-core:** update @atlaskit/modal-dialog to v17.1.0 ([#3918](https://github.com/setchy/atlassify/issues/3918)) ([eb7bddd](https://github.com/setchy/atlassify/commit/eb7bddd89211272649c61d8188c5b935f7c539c8))
+* **deps-core:** update @atlaskit/primitives to v22.6.0 ([#3911](https://github.com/setchy/atlassify/issues/3911)) ([80b8bc2](https://github.com/setchy/atlassify/commit/80b8bc2213b64626d88e3175b75b624a87da6f1d))
+* **deps-core:** update @atlaskit/select to v23.1.3 ([#3904](https://github.com/setchy/atlassify/issues/3904)) ([462cf59](https://github.com/setchy/atlassify/commit/462cf591a8c22818b9af174b4b0ccfe4b3f9ec73))
+* **deps-core:** update @atlaskit/tokens to v20.6.1 ([#3912](https://github.com/setchy/atlassify/issues/3912)) ([fd6e323](https://github.com/setchy/atlassify/commit/fd6e323388d764390ae4927d54b1f8259ae80832))
+* **deps-core:** update @tanstack/react-query to v5.104.3 ([#3905](https://github.com/setchy/atlassify/issues/3905)) ([60f956d](https://github.com/setchy/atlassify/commit/60f956ddb04a0f921639a827fdc3a6188322cd71))
+* **deps-core:** update @tanstack/react-query to v5.104.4 ([#3917](https://github.com/setchy/atlassify/issues/3917)) ([f765b63](https://github.com/setchy/atlassify/commit/f765b63243dd7820e5634f3a5a8efe0d5532305b))
+* **deps-core:** update @tanstack/react-query to v5.104.5 ([#3932](https://github.com/setchy/atlassify/issues/3932)) ([43b6bef](https://github.com/setchy/atlassify/commit/43b6bef3661c2ff058066ced895139f7563d1c00))
+* **deps-core:** update electron to v44.8.0 ([#3913](https://github.com/setchy/atlassify/issues/3913)) ([2f64f3d](https://github.com/setchy/atlassify/commit/2f64f3d835985a34ae65649758e000a88c35644e))
+* **deps-core:** update electron to v44.9.0 ([#3919](https://github.com/setchy/atlassify/issues/3919)) ([fcf8f5a](https://github.com/setchy/atlassify/commit/fcf8f5a14619749a3e34e13be37db91ac2c78ad5))
+* **deps-core:** update electron-menubar to v11.1.2 ([#3936](https://github.com/setchy/atlassify/issues/3936)) ([8cf4463](https://github.com/setchy/atlassify/commit/8cf4463d8824a5aaf3b6e78265bafe21431275c3))
+
+
+### 📦 Dependency Updates (Other)
+
+* **deps:** lock file maintenance ([#3900](https://github.com/setchy/atlassify/issues/3900)) ([4aaf12c](https://github.com/setchy/atlassify/commit/4aaf12c51be6b51bb431a273990aeab639ed548f))
+* **deps:** lock file maintenance ([#3916](https://github.com/setchy/atlassify/issues/3916)) ([63688f2](https://github.com/setchy/atlassify/commit/63688f271f918bc79a9e2b2b04cf6b3e658fbf51))
+* **deps:** lock file maintenance ([#3924](https://github.com/setchy/atlassify/issues/3924)) ([ffad5ae](https://github.com/setchy/atlassify/commit/ffad5aec95467d193bc06f29bec54b019a9fd335))
+* **deps:** update cn to v0.5.0 ([#3920](https://github.com/setchy/atlassify/issues/3920)) ([a6129c4](https://github.com/setchy/atlassify/commit/a6129c4d3ed8210978deb29fb5cbb3ffd930b62b))
+* **deps:** update happy-dom to v21.0.3 ([#3906](https://github.com/setchy/atlassify/issues/3906)) ([efedda1](https://github.com/setchy/atlassify/commit/efedda1004a798166277aa0e8d7695ad6b5ceb4f))
+* **deps:** update i18next to v26.4.7 ([#3907](https://github.com/setchy/atlassify/issues/3907)) ([8f12f5b](https://github.com/setchy/atlassify/commit/8f12f5b91ae8e0d117f17755a0ccfd0ee7597ccf))
+* **deps:** update i18next to v26.5.2 ([#3921](https://github.com/setchy/atlassify/issues/3921)) ([ad27a83](https://github.com/setchy/atlassify/commit/ad27a832c92b1e6f325fc4179e940c9d0fbb3f33))
+* **deps:** update i18next to v26.5.3 ([#3934](https://github.com/setchy/atlassify/issues/3934)) ([ac1496d](https://github.com/setchy/atlassify/commit/ac1496dbf8888c124b422dce8eb1fa9e0980c84b))
+* **deps:** update i18next-cli to v1.77.0 ([#3922](https://github.com/setchy/atlassify/issues/3922)) ([dad1e07](https://github.com/setchy/atlassify/commit/dad1e07265e316aaff1e0bf8e50f54f1da25c863))
+* **deps:** update node.js to v24.22.1 ([#3930](https://github.com/setchy/atlassify/issues/3930)) ([4d06a02](https://github.com/setchy/atlassify/commit/4d06a02a7c042919bcde571ee404d82336daa252))
+* **deps:** update pnpm to v12.14.0 ([#3915](https://github.com/setchy/atlassify/issues/3915)) ([a6011c8](https://github.com/setchy/atlassify/commit/a6011c8ad8b72d1f1b350779428b66ed162edf04))
+* **deps:** update react monorepo to v19.3.1 ([#3908](https://github.com/setchy/atlassify/issues/3908)) ([e34d433](https://github.com/setchy/atlassify/commit/e34d4330d18a7040f77bc353c6a6453b34b4757c))
+* **deps:** update react-i18next to v17.0.19 ([#3909](https://github.com/setchy/atlassify/issues/3909)) ([7eed1cc](https://github.com/setchy/atlassify/commit/7eed1cc3f37e3cede6b58fb955079b4270d51872))
+* **deps:** update react-i18next to v17.1.0 ([#3923](https://github.com/setchy/atlassify/issues/3923)) ([7afe51f](https://github.com/setchy/atlassify/commit/7afe51f62f295ab13ead29a12e90fa638fb82db8))
+* **deps:** update vitest monorepo to v5.0.5 ([#3910](https://github.com/setchy/atlassify/issues/3910)) ([790bc6d](https://github.com/setchy/atlassify/commit/790bc6de393803515508d0bdafdab8b0ffe366ba))
+
 ## [3.17.0](https://github.com/setchy/atlassify/compare/v3.16.2...v3.17.0) (2026-10-17)
 
 
