@@ -43,6 +43,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
 
   afterEach(() => {
     onlineManager.setOnline(true);
+    nock.cleanAll();
   });
 
   describe('fetchNotifications', () => {
@@ -82,6 +83,77 @@ describe('renderer/hooks/useNotifications.ts', () => {
       expect(result.current.notifications[0]?.account.id).toBe(
         mockAtlassianCloudAccountTwo.id,
       );
+    });
+
+    it('shows loading after login when the signed-out result was empty', async () => {
+      useAccountsStore.setState({ accounts: [] });
+
+      const { result } = renderHookWithProviders(() => useNotifications());
+      await waitFor(() => expect(result.current.isLoading).toBe(false));
+
+      nock('https://home.atlassian.com')
+        .post('/gateway/api/graphql')
+        .delay(50)
+        .reply(200, {
+          data: { notifications: { notificationFeed: { nodes: [] } } },
+          extensions: {
+            notifications: { response_info: { responseSize: 0 } },
+          },
+        });
+
+      act(() => {
+        useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
+      });
+
+      await waitFor(() => expect(result.current.isLoading).toBe(true));
+      await waitFor(() => expect(result.current.isLoading).toBe(false));
+
+      expect(result.current.notifications).toEqual([
+        {
+          account: mockAtlassianCloudAccount,
+          notifications: [],
+          error: null,
+          hasMoreNotifications: false,
+        },
+      ]);
+    });
+
+    it('shows loading when the account set changes from an empty settled inbox', async () => {
+      nock('https://home.atlassian.com')
+        .post('/gateway/api/graphql')
+        .reply(200, {
+          data: { notifications: { notificationFeed: { nodes: [] } } },
+          extensions: {
+            notifications: { response_info: { responseSize: 0 } },
+          },
+        });
+
+      const { result } = renderHookWithProviders(() => useNotifications());
+      await waitFor(() => expect(result.current.isLoading).toBe(false));
+      expect(result.current.notifications).toHaveLength(1);
+      expect(result.current.notifications[0].notifications).toEqual([]);
+
+      nock('https://home.atlassian.com')
+        .post('/gateway/api/graphql')
+        .twice()
+        .delay(50)
+        .reply(200, {
+          data: { notifications: { notificationFeed: { nodes: [] } } },
+          extensions: {
+            notifications: { response_info: { responseSize: 0 } },
+          },
+        });
+
+      act(() => {
+        useAccountsStore.setState({
+          accounts: [mockAtlassianCloudAccount, mockAtlassianCloudAccountTwo],
+        });
+      });
+
+      await waitFor(() => expect(result.current.isLoading).toBe(true));
+      await waitFor(() => expect(result.current.isLoading).toBe(false));
+
+      expect(result.current.notifications).toHaveLength(2);
     });
 
     it('uses the notification polling cadence for stale and refetch intervals', async () => {
