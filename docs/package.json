@@ -60,7 +60,7 @@
     "husky": "9.1.7",
     "typescript": "6.0.3"
   },
-  "packageManager": "pnpm@12.14.0",
+  "packageManager": "pnpm@12.15.0",
   "lint-staged": {
     "*.{js,ts,cjs,mjs,astro}": "biome format --fix"
   }
