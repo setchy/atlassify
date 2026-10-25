@@ -182,8 +182,8 @@ importers:
         specifier: 11.1.2
         version: 11.1.2(electron@44.9.1(supports-color@10.2.2))
       electron-updater:
-        specifier: 6.8.9
-        version: 6.8.9(supports-color@10.2.2)
+        specifier: 6.8.11
+        version: 6.8.11(supports-color@10.2.2)
       i18next:
         specifier: 26.5.3
         version: 26.5.3(typescript@7.0.2)
@@ -2759,8 +2759,8 @@ packages:
   electron-to-chromium@1.5.463:
     resolution: {integrity: sha512-nVWNU6ltFjopvOdD44J4zoBkgO0M+WZiFKKFV7EjebOH9z0KNphk6bCEjplXtJofL21ARIuuwWOCsFkBVklm6w==}
 
-  electron-updater@6.8.9:
-    resolution: {integrity: sha512-ZhVxM9iGONUpZGI1FxdMRgJjUFXi7AYGVa5PwKlO1tV1/4zDxQmfKpXOHVztKrd6L9rLcFjERvi1Mf2vxyTkig==}
+  electron-updater@6.8.11:
+    resolution: {integrity: sha512-12U/mbzaIKQS3Q543aQ7DjyAZMXeVJy1Wpu0qdq5ne4RXpIQDpWYm25zRjgXngAoo6swMrm4C4owGyiIipelsg==}
 
   electron-winstaller@5.4.0:
     resolution: {integrity: sha512-bO3y10YikuUwUuDUQRM4KfwNkKhnpVO7IPdbsrejwN9/AABJzzTQ4GeHwyzNSrVO+tEH3/Np255a3sVZpZDjvg==}
@@ -8170,7 +8170,7 @@ snapshots:
 
   electron-to-chromium@1.5.463: {}
 
-  electron-updater@6.8.9(supports-color@10.2.2):
+  electron-updater@6.8.11(supports-color@10.2.2):
     dependencies:
       builder-util-runtime: 9.7.0(supports-color@10.2.2)
       fs-extra: 10.1.0
