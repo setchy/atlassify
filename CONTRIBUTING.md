@@ -1,6 +1,6 @@
 # Atlassify Contributing Guide
 
-Hi, we're really excited that you're interested in contributing to Atlassify! 
+Hi, we're really excited that you're interested in contributing to Atlassify!
 
 Before submitting your contribution, please read through the following guide.
 
@@ -13,14 +13,14 @@ This project is a tool for monitoring new notifications from Atlassian Cloud pro
 To get started:
 
 Clone the repository and install dependencies:
-  ```shell
-  pnpm install
-  ```
+```shell
+pnpm install
+```
 
 Start development mode (includes GraphQL codegen and hot module reload):
-  ```shell
-  pnpm dev
-  ```
+```shell
+pnpm dev
+```
 
 ### Tests
 
@@ -79,7 +79,7 @@ To add a new locale:
 - Add a new locale file under `./src/renderer/i18n/locales`.
 - Import and update the resources in `./src/renderer/i18n/index.ts`.
 - Use the VSCode Extension `i18n Ally` to automatically translate the keys.
-- Carefully verify the translated values. **Do not translate placeholder variables** like `{{ }}`.  You may need to manually update these if needed.
+- Carefully verify the translated values. **Do not translate placeholder variables** like `{{ }}`. You may need to manually update these if needed.
 
 
 <!-- LINK LABELS -->
@@ -92,4 +92,3 @@ To add a new locale:
 [homebrew-cask-autobump-workflow]: https://github.com/Homebrew/homebrew-cask/actions/workflows/autobump.yml
 [release-please]: https://github.com/googleapis/release-please
 [vitest-website]: https://vitest.dev/
-
