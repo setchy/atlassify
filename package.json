@@ -28,6 +28,13 @@
     "test:watch": "vitest --watch --coverage",
     "test:ui": "vitest --ui"
   },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "24.22.1",
+      "onFail": "warn"
+    }
+  },
   "engines": {
     "node": ">=24"
   },
