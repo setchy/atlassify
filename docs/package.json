@@ -62,6 +62,6 @@
   },
   "packageManager": "pnpm@12.15.0",
   "lint-staged": {
-    "*.{js,ts,cjs,mjs,astro}": "biome format --fix"
+    "*.{js,ts,cjs,mjs,astro,md,yml,yaml}": "biome format --fix"
   }
 }
