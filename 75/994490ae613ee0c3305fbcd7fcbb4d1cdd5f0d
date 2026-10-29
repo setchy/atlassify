@@ -1,0 +1,16 @@
+src/renderer/i18n/loader.test.ts
+  h_ac004aadb63da9 5-9,36-53
+src/renderer/i18n/loader.ts
+  h_ac004aadb63da9 27-50
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "75994490ae613ee0c3305fbcd7fcbb4d1cdd5f0d",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
