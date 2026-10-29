@@ -29,6 +29,11 @@ import type {
 } from '../types';
 
 import * as client from '../utils/api/client';
+import type { AtlassianNotificationFragment } from '../utils/api/graphql/generated/graphql';
+import {
+  InfluentsNotificationCategory,
+  InfluentsNotificationReadState,
+} from '../utils/api/graphql/generated/graphql';
 import { Errors } from '../utils/core/errors';
 import { useNotifications } from './useNotifications';
 
@@ -56,6 +61,63 @@ function mockNotificationsError(delayMs = 0) {
         setTimeout(() => reject(new Error('Request failed')), delayMs),
       ),
   );
+}
+
+function createRawNotification(
+  id: string,
+  groupId: string,
+  groupSize = 1,
+): AtlassianNotificationFragment {
+  return {
+    groupId,
+    groupSize,
+    additionalActors: [],
+    headNotification: {
+      notificationId: id,
+      timestamp: '2024-01-01T00:00:00.000Z',
+      readState: InfluentsNotificationReadState.Unread,
+      category: InfluentsNotificationCategory.Direct,
+      content: {
+        type: 'comment',
+        message: `Notification ${id}`,
+        url: `https://example.atlassian.net/browse/${id}`,
+        bodyItems: [],
+        entity: {
+          title: id,
+          iconUrl: 'https://example.atlassian.net/favicon.ico',
+          url: `https://example.atlassian.net/browse/${id}`,
+        },
+        path: null,
+        actor: {
+          displayName: 'Test User',
+          avatarURL: 'https://example.com/avatar.png',
+        },
+      },
+      analyticsAttributes: [
+        { key: 'registrationProduct', value: 'confluence' },
+      ],
+    },
+  };
+}
+
+function createNotificationsResponse(
+  nodes: AtlassianNotificationFragment[],
+  endCursor: string | null = null,
+) {
+  return {
+    data: {
+      notifications: {
+        unseenNotificationCount: nodes.length,
+        notificationFeed: {
+          pageInfo: { hasNextPage: true, endCursor },
+          nodes,
+        },
+      },
+    },
+    extensions: {
+      notifications: { response_info: { responseSize: nodes.length } },
+    },
+  } as Awaited<ReturnType<typeof client.getNotificationsForUser>>;
 }
 
 describe('renderer/hooks/useNotifications.ts', () => {
@@ -210,6 +272,133 @@ describe('renderer/hooks/useNotifications.ts', () => {
       });
 
       expect(getNotificationsSpy).toHaveBeenCalledTimes(1);
+    });
+
+    it('absorbs a transient notification omission without changing the count or raising an alert', async () => {
+      const notificationA = createRawNotification('a', 'page/1', 2);
+      const notificationB = createRawNotification('b', 'page/2');
+      const notificationC = createRawNotification('c', 'page/3');
+
+      const getGroupSpy = vi
+        .spyOn(client, 'getNotificationsByGroupId')
+        .mockResolvedValue({
+          data: {
+            notifications: {
+              notificationGroup: {
+                nodes: [
+                  {
+                    notificationId:
+                      notificationA.headNotification.notificationId,
+                    readState: InfluentsNotificationReadState.Unread,
+                  },
+                ],
+              },
+            },
+          },
+        } as Awaited<ReturnType<typeof client.getNotificationsByGroupId>>);
+
+      getNotificationsSpy
+        .mockResolvedValueOnce(
+          createNotificationsResponse(
+            [notificationA, notificationB, notificationC],
+            'cursor-1',
+          ),
+        )
+        .mockResolvedValueOnce(createNotificationsResponse([], null));
+
+      const { result } = renderHookWithProviders(() => useNotifications());
+
+      await waitFor(() => expect(result.current.notificationCount).toBe(3));
+      vi.mocked(window.atlassify.raiseNativeNotification).mockClear();
+
+      // The API omits one notification from an otherwise complete response.
+      getNotificationsSpy
+        .mockResolvedValueOnce(
+          createNotificationsResponse(
+            [notificationB, notificationC],
+            'cursor-1',
+          ),
+        )
+        .mockResolvedValueOnce(createNotificationsResponse([], null));
+
+      await act(async () => {
+        await result.current.refetchNotifications();
+      });
+
+      await waitFor(() => expect(result.current.isFetching).toBe(false));
+      expect(result.current.notificationCount).toBe(3);
+      expect(window.atlassify.raiseNativeNotification).not.toHaveBeenCalled();
+      expect(getGroupSpy).toHaveBeenCalledWith(
+        mockAtlassianCloudAccount,
+        'page/1',
+        2,
+        undefined,
+      );
+
+      // It returns on the next fetch; this is not new activity and must not alert.
+      getNotificationsSpy
+        .mockResolvedValueOnce(
+          createNotificationsResponse(
+            [notificationA, notificationB, notificationC],
+            'cursor-1',
+          ),
+        )
+        .mockResolvedValueOnce(createNotificationsResponse([], null));
+
+      await act(async () => {
+        await result.current.refetchNotifications();
+      });
+
+      await waitFor(() => expect(result.current.isFetching).toBe(false));
+      expect(result.current.notificationCount).toBe(3);
+      expect(window.atlassify.raiseNativeNotification).not.toHaveBeenCalled();
+      expect(getGroupSpy).toHaveBeenCalledTimes(1);
+    });
+
+    it('removes a notification read on the Atlassian side without waiting for the grace period', async () => {
+      const notificationA = createRawNotification('a', 'page/1', 2);
+      const notificationB = createRawNotification('b', 'page/2');
+      const notificationC = createRawNotification('c', 'page/3');
+
+      vi.spyOn(client, 'getNotificationsByGroupId').mockResolvedValue({
+        data: {
+          notifications: {
+            notificationGroup: { nodes: [] },
+          },
+        },
+      } as Awaited<ReturnType<typeof client.getNotificationsByGroupId>>);
+
+      getNotificationsSpy
+        .mockResolvedValueOnce(
+          createNotificationsResponse(
+            [notificationA, notificationB, notificationC],
+            'cursor-1',
+          ),
+        )
+        .mockResolvedValueOnce(createNotificationsResponse([], null));
+
+      const { result } = renderHookWithProviders(() => useNotifications());
+
+      await waitFor(() => expect(result.current.notificationCount).toBe(3));
+      vi.mocked(window.atlassify.raiseNativeNotification).mockClear();
+
+      // Reading on the Atlassian side removes A from the next feed.
+      getNotificationsSpy
+        .mockResolvedValueOnce(
+          createNotificationsResponse(
+            [notificationB, notificationC],
+            'cursor-1',
+          ),
+        )
+        .mockResolvedValueOnce(createNotificationsResponse([], null));
+
+      await act(async () => {
+        await result.current.refetchNotifications();
+      });
+
+      await waitFor(() => expect(result.current.isFetching).toBe(false));
+      expect(result.current.notificationCount).toBe(2);
+      expect(window.atlassify.raiseNativeNotification).not.toHaveBeenCalled();
     });
 
     it('fetchNotifications - unread only', async () => {

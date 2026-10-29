@@ -4,12 +4,15 @@ import {
   mockSingleAccountNotifications,
 } from '../../__mocks__/notifications-mocks';
 
-import type { AccountNotifications } from '../../types';
+import type { AccountNotifications, AtlassifyNotification } from '../../types';
 
+import { Errors } from '../core/errors';
 import {
   getNewNotifications,
   getNotificationCount,
   hasMoreNotifications,
+  reconcileMissingNotifications,
+  type TransientNotificationMisses,
 } from './fetch';
 
 describe('renderer/utils/notifications/fetch.ts', () => {
@@ -376,6 +379,256 @@ describe('renderer/utils/notifications/fetch.ts', () => {
 
       expect(result).toHaveLength(4);
       expect(result.map((n) => n.id)).toEqual(['1', '2', '10', '11']);
+    });
+  });
+
+  describe('reconcileMissingNotifications', () => {
+    function createNotification(
+      id: string,
+      groupId: string,
+      groupSize: number,
+    ): AtlassifyNotification {
+      return {
+        ...createMockNotificationForProductType(id, 'confluence'),
+        notificationGroup: {
+          id: groupId,
+          size: groupSize,
+          additionalActors: [],
+        },
+      };
+    }
+
+    function createAccountNotifications(
+      notifications: AtlassifyNotification[],
+      error: AccountNotifications['error'] = null,
+    ): AccountNotifications[] {
+      return [
+        {
+          account: mockAtlassianCloudAccount,
+          notifications,
+          error,
+          hasMoreNotifications: false,
+        },
+      ];
+    }
+
+    it('retains a notification that the API confirms is still unread', async () => {
+      const notificationA = createNotification('a', 'group-a', 2);
+      const notificationB = createNotification('b', 'group-b', 1);
+      const transientMisses: TransientNotificationMisses = new Map();
+      const verifyStillUnread = vi.fn(async () => true);
+
+      const result = await reconcileMissingNotifications(
+        createAccountNotifications([notificationA, notificationB]),
+        createAccountNotifications([notificationB]),
+        transientMisses,
+        verifyStillUnread,
+        0,
+        1000,
+      );
+
+      expect(result[0].notifications.map((n) => n.id).sort()).toEqual([
+        'a',
+        'b',
+      ]);
+      expect(verifyStillUnread).toHaveBeenCalledWith(
+        mockAtlassianCloudAccount,
+        notificationA,
+      );
+      expect(transientMisses.size).toBe(0);
+    });
+
+    it('removes a notification immediately when the API confirms it is no longer unread', async () => {
+      const notificationA = createNotification('a', 'group-a', 2);
+      const notificationB = createNotification('b', 'group-b', 1);
+      const transientMisses: TransientNotificationMisses = new Map();
+      const verifyStillUnread = vi.fn(async () => false);
+
+      const result = await reconcileMissingNotifications(
+        createAccountNotifications([notificationA, notificationB]),
+        createAccountNotifications([notificationB]),
+        transientMisses,
+        verifyStillUnread,
+        0,
+        1000,
+      );
+
+      expect(result[0].notifications.map((n) => n.id)).toEqual(['b']);
+      expect(transientMisses.size).toBe(0);
+    });
+
+    it('falls back to the grace period when verification fails', async () => {
+      const notificationA = createNotification('a', 'group-a', 2);
+      const notificationB = createNotification('b', 'group-b', 1);
+      const transientMisses: TransientNotificationMisses = new Map();
+      const verifyStillUnread = vi.fn(async () => {
+        throw new Error('verification failed');
+      });
+
+      const firstResult = await reconcileMissingNotifications(
+        createAccountNotifications([notificationA, notificationB]),
+        createAccountNotifications([notificationB]),
+        transientMisses,
+        verifyStillUnread,
+        0,
+        1000,
+      );
+
+      expect(firstResult[0].notifications.map((n) => n.id).sort()).toEqual([
+        'a',
+        'b',
+      ]);
+
+      const stillWithinGrace = await reconcileMissingNotifications(
+        firstResult,
+        createAccountNotifications([notificationB]),
+        transientMisses,
+        verifyStillUnread,
+        999,
+        1000,
+      );
+
+      expect(stillWithinGrace[0].notifications.map((n) => n.id).sort()).toEqual(
+        ['a', 'b'],
+      );
+
+      const afterGrace = await reconcileMissingNotifications(
+        stillWithinGrace,
+        createAccountNotifications([notificationB]),
+        transientMisses,
+        verifyStillUnread,
+        1000,
+        1000,
+      );
+
+      expect(afterGrace[0].notifications.map((n) => n.id)).toEqual(['b']);
+    });
+
+    it('clears the miss timer when the notification returns', async () => {
+      const notificationA = createNotification('a', 'group-a', 2);
+      const notificationB = createNotification('b', 'group-b', 1);
+      const transientMisses: TransientNotificationMisses = new Map();
+      const verifyStillUnread = vi.fn(async () => {
+        throw new Error('verification failed');
+      });
+
+      const retained = await reconcileMissingNotifications(
+        createAccountNotifications([notificationA, notificationB]),
+        createAccountNotifications([notificationB]),
+        transientMisses,
+        verifyStillUnread,
+        0,
+        1000,
+      );
+
+      const restored = await reconcileMissingNotifications(
+        retained,
+        createAccountNotifications([notificationA, notificationB]),
+        transientMisses,
+        verifyStillUnread,
+        5000,
+        1000,
+      );
+
+      expect(restored[0].notifications.map((n) => n.id).sort()).toEqual([
+        'a',
+        'b',
+      ]);
+
+      const retainedAgain = await reconcileMissingNotifications(
+        restored,
+        createAccountNotifications([notificationB]),
+        transientMisses,
+        verifyStillUnread,
+        5001,
+        1000,
+      );
+
+      expect(retainedAgain[0].notifications.map((n) => n.id).sort()).toEqual([
+        'a',
+        'b',
+      ]);
+    });
+
+    it('does not verify or retain notifications when the account fetch failed', async () => {
+      const notificationA = createNotification('a', 'group-a', 2);
+      const transientMisses: TransientNotificationMisses = new Map();
+      const verifyStillUnread = vi.fn(async () => true);
+
+      const result = await reconcileMissingNotifications(
+        createAccountNotifications([notificationA]),
+        createAccountNotifications([], Errors.UNKNOWN),
+        transientMisses,
+        verifyStillUnread,
+        0,
+        1000,
+      );
+
+      expect(result[0].notifications).toEqual([]);
+      expect(result[0].error).toBe(Errors.UNKNOWN);
+      expect(verifyStillUnread).not.toHaveBeenCalled();
+    });
+
+    it('does not duplicate a group when its head notification changes', async () => {
+      const oldHead = createNotification('old-head', 'shared-group', 2);
+      const newHead = createNotification('new-head', 'shared-group', 2);
+      const transientMisses: TransientNotificationMisses = new Map();
+      const verifyStillUnread = vi.fn(async () => true);
+
+      const result = await reconcileMissingNotifications(
+        createAccountNotifications([oldHead]),
+        createAccountNotifications([newHead]),
+        transientMisses,
+        verifyStillUnread,
+        0,
+        1000,
+      );
+
+      expect(result[0].notifications.map((n) => n.id)).toEqual(['new-head']);
+      expect(verifyStillUnread).not.toHaveBeenCalled();
+    });
+
+    it('retains flat notifications that the API confirms are still unread', async () => {
+      const notificationA = createNotification('a', 'shared-group', 1);
+      const notificationB = createNotification('b', 'shared-group', 1);
+      const transientMisses: TransientNotificationMisses = new Map();
+      const verifyStillUnread = vi.fn(async () => true);
+
+      const result = await reconcileMissingNotifications(
+        createAccountNotifications([notificationA, notificationB]),
+        createAccountNotifications([notificationB]),
+        transientMisses,
+        verifyStillUnread,
+        0,
+        1000,
+      );
+
+      expect(result[0].notifications.map((n) => n.id).sort()).toEqual([
+        'a',
+        'b',
+      ]);
+    });
+
+    it('trusts the feed for bulk removals instead of verifying each one', async () => {
+      const notifications = Array.from({ length: 3 }, (_, index) =>
+        createNotification(`n${index}`, `group-${index}`, 2),
+      );
+      const transientMisses: TransientNotificationMisses = new Map();
+      const verifyStillUnread = vi.fn(async () => true);
+
+      const result = await reconcileMissingNotifications(
+        createAccountNotifications(notifications),
+        createAccountNotifications([]),
+        transientMisses,
+        verifyStillUnread,
+        0,
+        1000,
+        2,
+      );
+
+      expect(result[0].notifications).toEqual([]);
+      expect(verifyStillUnread).not.toHaveBeenCalled();
+      expect(transientMisses.size).toBe(0);
     });
   });
 });

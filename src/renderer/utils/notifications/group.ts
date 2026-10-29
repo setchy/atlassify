@@ -110,6 +110,32 @@ export function getFlattenedNotificationsByProduct(
 }
 
 /**
+ * Resolve the Cloud ID scoping a notification to a specific Atlassian site.
+ *
+ * @param account - The account the notification belongs to.
+ * @param notification - The notification whose URL hostname should be matched.
+ * @returns The matching Cloud ID, or `undefined` when the URL is not scoped to a known site.
+ */
+export function getCloudIdForNotification(
+  account: Account,
+  notification: AtlassifyNotification,
+): CloudID | undefined {
+  let hostname: string;
+
+  try {
+    hostname = new URL(notification.url).hostname.toLowerCase();
+  } catch {
+    return undefined;
+  }
+
+  const hint = (account.hostnameHints ?? []).find(
+    (item) => item.cloudId && item.hostname.toLowerCase() === hostname,
+  );
+
+  return hint?.cloudId ?? undefined;
+}
+
+/**
  * Resolves all notification IDs for a given list of notifications, including both single and grouped notifications.
  *
  * @param account The account to use for fetching group notifications

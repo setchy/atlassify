@@ -14,6 +14,7 @@ import {
 } from '../stores';
 
 import type {
+  Account,
   AccountNotifications,
   AtlassifyError,
   AtlassifyNotification,
@@ -21,9 +22,11 @@ import type {
 } from '../types';
 
 import {
+  getNotificationsByGroupId,
   markNotificationsAsRead,
   markNotificationsAsUnread,
 } from '../utils/api/client';
+import { InfluentsNotificationReadState } from '../utils/api/graphql/generated/graphql';
 import { notificationsKeys } from '../utils/api/queryKeys';
 import {
   areAllAccountErrorsSame,
@@ -36,9 +39,14 @@ import {
   getNewNotifications,
   getNotificationCount,
   hasMoreNotifications,
+  reconcileMissingNotifications,
+  type TransientNotificationMisses,
 } from '../utils/notifications/fetch';
 import { filterNotifications } from '../utils/notifications/filters';
-import { resolveNotificationIdsForGroup } from '../utils/notifications/group';
+import {
+  getCloudIdForNotification,
+  resolveNotificationIdsForGroup,
+} from '../utils/notifications/group';
 import {
   restoreFailedNotifications,
   settleNotificationActionBatches,
@@ -104,6 +112,12 @@ export const useNotifications = (): UseNotificationsResult => {
   // Track previous notifications for diffing new notifications
   const previousNotificationsRef = useRef<AccountNotifications[]>([]);
 
+  // Track when notifications are first omitted from a fetch so intermittent API
+  // gaps do not make the inbox count flap or raise native alerts.
+  const transientNotificationMissesRef = useRef<TransientNotificationMisses>(
+    new Map(),
+  );
+
   // Account store values
   const accounts = useAccountsStore((s) => s.accounts);
 
@@ -152,6 +166,43 @@ export const useNotifications = (): UseNotificationsResult => {
     [engagementStates, categories, actors, readStates, products],
   );
 
+  /**
+   * Check whether a notification that vanished from the feed is still unread.
+   * This keeps notifications read on the Atlassian side from lingering locally.
+   */
+  const verifyNotificationStillUnread = useCallback(
+    async (account: Account, notification: AtlassifyNotification) => {
+      const group = notification.notificationGroup;
+
+      if (!group?.id) {
+        throw new Error('Notification group ID is missing');
+      }
+
+      const res = await getNotificationsByGroupId(
+        account,
+        group.id,
+        Math.max(group.size, 1),
+        getCloudIdForNotification(account, notification),
+      );
+
+      if (res.errors) {
+        throw new Error(Errors.BAD_REQUEST.title);
+      }
+
+      const nodes = res.data?.notifications?.notificationGroup?.nodes ?? [];
+      const fetchOnlyUnread =
+        useSettingsStore.getState().fetchOnlyUnreadNotifications;
+
+      return nodes.some(
+        (node) =>
+          node.notificationId === notification.id &&
+          (!fetchOnlyUnread ||
+            node.readState === InfluentsNotificationReadState.Unread),
+      );
+    },
+    [],
+  );
+
   // Query for fetching notifications - React Query handles polling and refetching
   const {
     data: notifications = [],
@@ -165,7 +216,17 @@ export const useNotifications = (): UseNotificationsResult => {
     queryKey: notificationsQueryKey,
 
     queryFn: async () => {
-      return await getAllNotifications();
+      const fetchedNotifications = await getAllNotifications();
+      const previousNotifications = queryClient.getQueryData<
+        AccountNotifications[]
+      >(notificationsQueryKey);
+
+      return await reconcileMissingNotifications(
+        previousNotifications,
+        fetchedNotifications,
+        transientNotificationMissesRef.current,
+        verifyNotificationStillUnread,
+      );
     },
 
     // Apply filters as a transformation on the cached data

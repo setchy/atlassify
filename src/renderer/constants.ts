@@ -38,6 +38,14 @@ export const Constants = {
   // Maximum number of notifications to fetch per account, across paginated requests
   MAX_NOTIFICATIONS_PER_ACCOUNT: 999,
 
+  // How long a notification may be absent from the feed before it is removed
+  // when its unread state could not be verified. Absorbs intermittent API gaps.
+  NOTIFICATION_TRANSIENT_MISS_GRACE_MS: 2 * 60 * 1000, // 2 minutes
+
+  // Maximum number of missing notifications to verify with the API per fetch.
+  // Larger drops are treated as real bulk reads/removals and are not retained.
+  MAX_TRANSIENT_NOTIFICATION_VERIFICATIONS: 10,
+
   // Threshold for determining if a notification content block is "long" and needs truncating
   BLOCK_ALIGNMENT_LENGTH_THRESHOLD: 55,
 
