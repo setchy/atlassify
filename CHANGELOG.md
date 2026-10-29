@@ -1,5 +1,30 @@
 # Changelog
 
+## [3.17.2](https://github.com/setchy/atlassify/compare/v3.17.1...v3.17.2) (2026-10-29)
+
+
+### 🐛 Bug Fixes
+
+* **api:** paginate past short notification pages ([#3979](https://github.com/setchy/atlassify/issues/3979)) ([34b12b4](https://github.com/setchy/atlassify/commit/34b12b4dce54e900190282b7897a8903759057e4))
+* **i18n:** follow the OS language until the user chooses one ([#3977](https://github.com/setchy/atlassify/issues/3977)) ([e3d76f1](https://github.com/setchy/atlassify/commit/e3d76f1502fbb6fc7bd98ea1c50d73e26e255974))
+
+
+### 🧼 Code Refactoring
+
+* **i18n:** adopt t() defaultValue as the source of English ([#3830](https://github.com/setchy/atlassify/issues/3830)) ([00195ae](https://github.com/setchy/atlassify/commit/00195aea2141fb9033e35e2968ca91a71719050b))
+
+
+### 📦 Dependency Updates (Core)
+
+* **deps-core:** update @atlaskit/select to v23.1.4 ([#3980](https://github.com/setchy/atlassify/issues/3980)) ([f59217e](https://github.com/setchy/atlassify/commit/f59217e720bbbe85be953775fe8f0703769b3782))
+* **deps-core:** update @atlaskit/tokens to v20.8.0 ([#3981](https://github.com/setchy/atlassify/issues/3981)) ([1d2b551](https://github.com/setchy/atlassify/commit/1d2b5519ff9c8786cc85e1f153cfd12995b6a2b3))
+* **deps-core:** update @tanstack/react-query to v5.105.0 ([#3982](https://github.com/setchy/atlassify/issues/3982)) ([b143561](https://github.com/setchy/atlassify/commit/b1435611c844b956cc9e74c7915b7b7d92dea09c))
+
+
+### 🧹 Chore
+
+* i18n ally config ([121084f](https://github.com/setchy/atlassify/commit/121084fb63f93293108dbde2656d7e7baba3216c))
+
 ## [3.17.1](https://github.com/setchy/atlassify/compare/v3.17.0...v3.17.1) (2026-10-29)
 
 
