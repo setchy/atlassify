@@ -1,0 +1,28 @@
+CONTRIBUTING.md
+  h_ac004aadb63da9 86-95
+i18next.config.ts
+  h_ac004aadb63da9 21
+scripts/check-t-defaults.mts
+  h_ac004aadb63da9 4-5,156-203,209,218,230-232
+src/renderer/components/notifications/AccountNotifications.tsx
+  h_ac004aadb63da9 2,331-335
+src/renderer/i18n/locales/de.json
+  h_ac004aadb63da9 159
+src/renderer/i18n/locales/en.json
+  h_ac004aadb63da9 159
+src/renderer/i18n/locales/es.json
+  h_ac004aadb63da9 159
+src/renderer/i18n/locales/fr.json
+  h_ac004aadb63da9 159
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d1a0c8fd66924eee09b490115140f1fa01fb4661",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
