@@ -2,7 +2,11 @@ import { Constants } from '../constants';
 
 import { DEFAULT_LANGUAGE } from './types';
 
-import i18n, { loadLanguageLocale, setLanguage } from './loader';
+import i18n, {
+  clearUnsupportedStoredLanguage,
+  loadLanguageLocale,
+  setLanguage,
+} from './loader';
 
 describe('renderer/i18n/loader.ts', () => {
   beforeEach(() => {
@@ -26,6 +30,24 @@ describe('renderer/i18n/loader.ts', () => {
       expect(loadLanguageLocale()).toBe(
         i18n.resolvedLanguage ?? DEFAULT_LANGUAGE,
       );
+    });
+  });
+
+  describe('clearUnsupportedStoredLanguage', () => {
+    it('removes a legacy detected locale', () => {
+      localStorage.setItem(Constants.STORAGE.LANGUAGE, 'en-US');
+
+      clearUnsupportedStoredLanguage();
+
+      expect(localStorage.getItem(Constants.STORAGE.LANGUAGE)).toBeNull();
+    });
+
+    it('keeps a supported language', () => {
+      localStorage.setItem(Constants.STORAGE.LANGUAGE, 'fr');
+
+      clearUnsupportedStoredLanguage();
+
+      expect(localStorage.getItem(Constants.STORAGE.LANGUAGE)).toBe('fr');
     });
   });
 

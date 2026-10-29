@@ -24,6 +24,30 @@ const resources = Object.fromEntries(
   Object.entries(locales).map(([lng, data]) => [lng, { translation: data }]),
 ) as Record<Language, { translation: typeof enTranslation }>;
 
+function isSupportedLanguage(
+  value: string | null | undefined,
+): value is Language {
+  return SUPPORTED_LANGUAGES.includes(value as Language);
+}
+
+/**
+ * Older builds cached the detected OS locale (e.g. `en-US`), which would keep
+ * overriding the OS language. Drop any stored value that isn't supported.
+ */
+export function clearUnsupportedStoredLanguage(): void {
+  // Not available when loaded outside the renderer (e.g. by i18next-cli)
+  if (!globalThis.localStorage) {
+    return;
+  }
+
+  const stored = localStorage.getItem(Constants.STORAGE.LANGUAGE);
+  if (stored !== null && !isSupportedLanguage(stored)) {
+    localStorage.removeItem(Constants.STORAGE.LANGUAGE);
+  }
+}
+
+clearUnsupportedStoredLanguage();
+
 void i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -47,12 +71,6 @@ void i18n
       caches: [],
     },
   });
-
-function isSupportedLanguage(
-  value: string | null | undefined,
-): value is Language {
-  return SUPPORTED_LANGUAGES.includes(value as Language);
-}
 
 /**
  * The language currently in effect: the user's saved choice when supported,
