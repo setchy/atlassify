@@ -1,0 +1,14 @@
+src/renderer/hooks/useNotifications.test.tsx
+  h_ac004aadb63da9 4,35,38,40-43,46,48,52-53,57,64-66,71,76-77,81,87-91,101,121,128-129,144,166-167,202,206,212,216,239,262-264,291,299,301-303,306,359,428,520,578,610,612-614,617
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ccdac4638c72e3f905f54c7f45f45419ed2f3a39",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
