@@ -1,6 +1,6 @@
 # Atlassify Contributing Guide
 
-Hi, we're really excited that you're interested in contributing to Atlassify! 
+Hi, we're really excited that you're interested in contributing to Atlassify!
 
 Before submitting your contribution, please read through the following guide.
 
@@ -13,14 +13,14 @@ This project is a tool for monitoring new notifications from Atlassian Cloud pro
 To get started:
 
 Clone the repository and install dependencies:
-  ```shell
-  pnpm install
-  ```
+```shell
+pnpm install
+```
 
 Start development mode (includes GraphQL codegen and hot module reload):
-  ```shell
-  pnpm dev
-  ```
+```shell
+pnpm dev
+```
 
 ### Tests
 
@@ -102,7 +102,9 @@ To translate new strings into every language, install the [i18n Ally](https://ma
 
 To add a new locale:
 
-- Add a file under `./src/renderer/i18n/locales/` and register it in `./src/renderer/i18n/index.ts`.
+- Add a locale file under `./src/renderer/i18n/locales/`.
+- Add the language to `SUPPORTED_LANGUAGES` and `LANGUAGE_LABELS` in `./src/renderer/i18n/types.ts`, and register the locale file in `./src/renderer/i18n/loader.ts`.
+- Translate the strings (i18n Ally can do this), then carefully verify the results. **Do not translate placeholder variables** like `{{ }}`.
 
 CI runs `pnpm i18n:check` to make sure the locale files stay in sync with the code. Don't use `--trust-derived` when extracting — it replaces real English text with key names.
 
@@ -117,4 +119,3 @@ CI runs `pnpm i18n:check` to make sure the locale files stay in sync with the co
 [homebrew-cask-autobump-workflow]: https://github.com/Homebrew/homebrew-cask/actions/workflows/autobump.yml
 [release-please]: https://github.com/googleapis/release-please
 [vitest-website]: https://vitest.dev/
-
