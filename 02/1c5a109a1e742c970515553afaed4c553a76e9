@@ -1,0 +1,18 @@
+src/renderer/components/settings/AppearanceSettings.tsx
+  h_ac004aadb63da9 22,45,68-70,84
+src/renderer/i18n/loader.test.ts
+  h_ac004aadb63da9 1-59
+src/renderer/i18n/loader.ts
+  h_ac004aadb63da9 8,33-35,45-47,51-60,62-70,72-77
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "021c5a109a1e742c970515553afaed4c553a76e9",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
