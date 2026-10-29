@@ -1,0 +1,18 @@
+package.json
+  h_ac004aadb63da9 142,147
+pnpm-lock.yaml
+  h_ac004aadb63da9 378-379,392-394,1429-1431,1449-1450,3832-3834,4441-4443,6980,6982-6984,6987-6989,7005,8921-8922,9221,9223-9225,9824-9825,10170
+src/renderer/__helpers__/vitest.setup.ts
+  h_ac004aadb63da9 3-4,14-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "506c735e3f73467526c50fcc3bc8a889e7cfcb57",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
