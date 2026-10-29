@@ -1,0 +1,14 @@
+src/renderer/hooks/useNotifications.test.tsx
+  h_ac004aadb63da9 324,635
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d5c66cbf45bbea9f256dcfe5e5deed1a7dbbb04a",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
