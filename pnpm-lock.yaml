@@ -273,8 +273,8 @@ importers:
         specifier: 17.3.5
         version: 17.3.5(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/tokens':
-        specifier: 20.7.0
-        version: 20.7.0(react@19.3.1)(supports-color@10.2.2)
+        specifier: 20.8.0
+        version: 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/tooltip':
         specifier: 24.4.2
         version: 24.4.2(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
@@ -657,8 +657,8 @@ packages:
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
-  '@atlaskit/tokens@20.7.0':
-    resolution: {integrity: sha512-88ocQ7UL/WmkMsPzKY+cOt3feE4vbIGbApYdkgQtfwKEo0KyI1lSSMaaVPCRjnhzWT3Jy5Cxz+2eBjweOcMYCw==}
+  '@atlaskit/tokens@20.8.0':
+    resolution: {integrity: sha512-WUDObEI7xDnZgmbv38bizuRUJN6hT8g6qNAVmLMAqvSwQJnb+cqcvWhNRJc5knx0NXTCOSO7ZmC+VPIJFVRg6Q==}
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
@@ -5181,7 +5181,7 @@ snapshots:
       '@atlaskit/css': 1.1.7(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/platform-feature-flags': 2.2.1(react@19.3.1)
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       bind-event-listener: 3.0.0
       react: 19.3.1
@@ -5203,7 +5203,7 @@ snapshots:
       '@atlaskit/platform-feature-flags': 2.2.1(react@19.3.1)
       '@atlaskit/popup': 10.0.2(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/tooltip': 24.4.2(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/top-layer': 6.7.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
@@ -5225,7 +5225,7 @@ snapshots:
       '@atlaskit/popup': 10.0.2(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/primitives': 22.6.0(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
       react: 19.3.1
@@ -5238,7 +5238,7 @@ snapshots:
     dependencies:
       '@atlaskit/primitives': 22.6.0(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
       react: 19.3.1
@@ -5254,7 +5254,7 @@ snapshots:
       '@atlaskit/ds-lib': 8.0.1(react@19.3.1)
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
       '@atlaskit/theme': 28.2.5(react@19.3.1)(supports-color@10.2.2)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
       react: 19.3.1
@@ -5299,7 +5299,7 @@ snapshots:
       '@atlaskit/ds-lib': 8.0.1(react@19.3.1)
       '@atlaskit/platform-feature-flags': 2.2.1(react@19.3.1)
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
       react: 19.3.1
@@ -5309,7 +5309,7 @@ snapshots:
 
   '@atlaskit/css-reset@8.4.6(react@19.3.1)(supports-color@10.2.2)':
     dependencies:
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       react: 19.3.1
     transitivePeerDependencies:
@@ -5317,7 +5317,7 @@ snapshots:
 
   '@atlaskit/css@1.1.7(react@19.3.1)(supports-color@10.2.2)':
     dependencies:
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
       react: 19.3.1
@@ -5344,7 +5344,7 @@ snapshots:
   '@atlaskit/focus-ring@6.0.0(@types/react@19.3.0)(react@19.3.1)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       '@emotion/react': 11.14.0(@types/react@19.3.0)(react@19.3.1)(supports-color@10.2.2)
       react: 19.3.1
@@ -5362,7 +5362,7 @@ snapshots:
       '@atlaskit/platform-feature-flags': 2.2.1(react@19.3.1)
       '@atlaskit/primitives': 22.6.0(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/visually-hidden': 4.4.0(react@19.3.1)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
@@ -5379,7 +5379,7 @@ snapshots:
     dependencies:
       '@atlaskit/primitives': 22.6.0(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
       react: 19.3.1
@@ -5401,7 +5401,7 @@ snapshots:
     dependencies:
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
       '@atlaskit/tile': 5.0.0(react@19.3.1)(supports-color@10.2.2)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
       react: 19.3.1
@@ -5420,7 +5420,7 @@ snapshots:
       '@atlaskit/primitives': 22.6.0(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
       '@atlaskit/theme': 28.2.5(react@19.3.1)(supports-color@10.2.2)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
       react: 19.3.1
@@ -5448,7 +5448,7 @@ snapshots:
       '@atlaskit/platform-feature-flags': 2.2.1(react@19.3.1)
       '@atlaskit/primitives': 22.6.0(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
       react: 19.3.1
@@ -5464,7 +5464,7 @@ snapshots:
       '@atlaskit/platform-feature-flags': 2.2.1(react@19.3.1)
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
       '@atlaskit/theme': 28.2.5(react@19.3.1)(supports-color@10.2.2)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
       react: 19.3.1
@@ -5484,7 +5484,7 @@ snapshots:
       '@atlaskit/primitives': 22.6.0(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
       '@atlaskit/spinner': 20.4.4(react@19.3.1)(supports-color@10.2.2)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
       react: 19.3.1
@@ -5501,7 +5501,7 @@ snapshots:
       '@atlaskit/platform-feature-flags': 2.2.1(react@19.3.1)
       '@atlaskit/primitives': 22.6.0(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
       react: 19.3.1
@@ -5526,7 +5526,7 @@ snapshots:
       '@atlaskit/primitives': 22.6.0(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
       '@atlaskit/theme': 28.2.5(react@19.3.1)(supports-color@10.2.2)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/top-layer': 6.7.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
@@ -5568,7 +5568,7 @@ snapshots:
       '@atlaskit/ds-lib': 8.0.1(react@19.3.1)
       '@atlaskit/platform-feature-flags': 2.2.1(react@19.3.1)
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/top-layer': 6.7.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
@@ -5591,7 +5591,7 @@ snapshots:
       '@atlaskit/portal': 7.1.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/primitives': 22.6.0(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/top-layer': 6.7.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
@@ -5631,7 +5631,7 @@ snapshots:
       '@atlaskit/ds-lib': 8.0.1(react@19.3.1)
       '@atlaskit/interaction-context': 4.1.0(react@19.3.1)
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/visually-hidden': 4.4.0(react@19.3.1)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
@@ -5653,7 +5653,7 @@ snapshots:
       '@atlaskit/platform-feature-flags': 2.2.1(react@19.3.1)
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
       '@atlaskit/theme': 28.2.5(react@19.3.1)(supports-color@10.2.2)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
       react: 19.3.1
@@ -5680,7 +5680,7 @@ snapshots:
       '@atlaskit/primitives': 22.6.0(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/spinner': 20.4.4(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/tag': 17.0.3(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/top-layer': 6.7.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
@@ -5727,7 +5727,7 @@ snapshots:
       '@atlaskit/interaction-context': 4.1.0(react@19.3.1)
       '@atlaskit/platform-feature-flags': 2.2.1(react@19.3.1)
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
       react: 19.3.1
@@ -5738,7 +5738,7 @@ snapshots:
     dependencies:
       '@atlaskit/interaction-context': 4.1.0(react@19.3.1)
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
       react: 19.3.1
@@ -5771,7 +5771,7 @@ snapshots:
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
       '@atlaskit/spinner': 20.4.4(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/teams-avatar': 4.2.0(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
       react: 19.3.1
@@ -5787,7 +5787,7 @@ snapshots:
       '@atlaskit/platform-feature-flags': 2.2.1(react@19.3.1)
       '@atlaskit/primitives': 22.6.0(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
       react: 19.3.1
@@ -5801,7 +5801,7 @@ snapshots:
       '@atlaskit/analytics-next': 12.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@atlaskit/platform-feature-flags': 2.2.1(react@19.3.1)
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
       react: 19.3.1
@@ -5813,7 +5813,7 @@ snapshots:
     dependencies:
       '@atlaskit/ds-lib': 8.0.1(react@19.3.1)
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       react: 19.3.1
     transitivePeerDependencies:
@@ -5823,7 +5823,7 @@ snapshots:
     dependencies:
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
       '@atlaskit/skeleton': 4.4.4(react@19.3.1)(supports-color@10.2.2)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
       bind-event-listener: 3.0.0
@@ -5841,7 +5841,7 @@ snapshots:
       '@atlaskit/primitives': 22.6.0(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
       '@atlaskit/spinner': 20.4.4(react@19.3.1)(supports-color@10.2.2)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/visually-hidden': 4.4.0(react@19.3.1)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
@@ -5852,7 +5852,7 @@ snapshots:
       - react-dom
       - supports-color
 
-  '@atlaskit/tokens@20.7.0(react@19.3.1)(supports-color@10.2.2)':
+  '@atlaskit/tokens@20.8.0(react@19.3.1)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/ds-lib': 8.0.1(react@19.3.1)
       '@atlaskit/platform-feature-flags': 2.2.1(react@19.3.1)
@@ -5889,7 +5889,7 @@ snapshots:
       '@atlaskit/portal': 7.1.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
       '@atlaskit/theme': 28.2.5(react@19.3.1)(supports-color@10.2.2)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/top-layer': 6.7.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
@@ -5905,7 +5905,7 @@ snapshots:
       '@atlaskit/css': 1.1.7(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/ds-lib': 8.0.1(react@19.3.1)
       '@atlaskit/react-compiler-gating': 0.2.5(react@19.3.1)
-      '@atlaskit/tokens': 20.7.0(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/tokens': 20.8.0(react@19.3.1)(supports-color@10.2.2)
       '@babel/runtime': 7.29.10
       '@compiled/react': 1.0.2(react@19.3.1)
       bind-event-listener: 3.0.0
