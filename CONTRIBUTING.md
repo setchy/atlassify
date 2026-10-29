@@ -83,6 +83,16 @@ To add a new UI string:
   t('common.save', { defaultValue: 'Save' })
   ```
 
+- When a sentence contains markup (bold, links), keep it as one `<Trans>` string instead of splitting it into several `t()` fragments, so translators can reorder the words:
+
+  ```tsx
+  <Trans
+    i18nKey="notifications.account.mark_read_confirm.description"
+    components={[<strong key={0} />]}
+    defaults="Please confirm that you want to <0>mark all account notifications</0> as read"
+  />
+  ```
+
 - Run `pnpm i18n:extract`, then translate the new string in `src/renderer/i18n/locales/`.
 - Never translate `{{ }}` placeholders.
 

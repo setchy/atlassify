@@ -156,9 +156,7 @@
     "account": {
       "mark_all_read": "Mark all account notifications as read",
       "mark_read_confirm": {
-        "description1": "Please confirm that you want to",
-        "description2": "mark all account notifications",
-        "description3": "as read"
+        "description": "Please confirm that you want to <0>mark all account notifications</0> as read"
       },
       "open_profile": "Open account profile ↗",
       "pull_requests": "My pull requests ↗"

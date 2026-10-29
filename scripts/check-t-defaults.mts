@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /**
  * Source-level guard: every t() / i18n.t() call in the app must carry a
- * defaultValue, so the extractor can always seed a non-empty primary locale.
+ * defaultValue, and every <Trans> must set `defaults`, so the extractor can
+ * always seed a non-empty primary locale.
  *
  * Runs as part of `pnpm i18n:check` (Node >= 23.6 runs .ts natively via type
  * stripping). Scans src/renderer, skipping tests, the i18n bootstrap files and
@@ -152,12 +153,60 @@ function findIssues(code) {
   return issues;
 }
 
+function skipString(text, start) {
+  // `start` points at an opening quote; returns the index of the closing one
+  const q = text[start];
+  for (let i = start + 1; i < text.length; i++) {
+    if (text[i] === '\\') {
+      i++;
+    } else if (text[i] === q) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+function openingTagProps(text, start) {
+  // Returns the props source of a JSX opening tag up to its closing `>`,
+  // skipping `>` characters inside strings and {expressions}.
+  let depth = 0;
+  for (let i = start; i < text.length; i++) {
+    const c = text[i];
+    if (c === "'" || c === '"' || c === '`') {
+      const end = skipString(text, i);
+      if (end === -1) {
+        return null;
+      }
+      i = end;
+    } else if (c === '{') {
+      depth++;
+    } else if (c === '}') {
+      depth--;
+    } else if (c === '>' && depth === 0) {
+      return text.slice(start, i);
+    }
+  }
+  return null;
+}
+
+function findTransIssues(code) {
+  const issues = [];
+  for (const match of code.matchAll(/<Trans\b/g)) {
+    const props = openingTagProps(code, match.index + match[0].length);
+    if (props === null || !/\bdefaults\s*=/.test(props)) {
+      const key = /i18nKey="([^"]+)"/.exec(props ?? '')?.[1] ?? '<unknown key>';
+      issues.push(`${key}: <Trans> without defaults`);
+    }
+  }
+  return issues;
+}
+
 const files = await collectFiles(SCAN_DIR);
 const problemsByFile = new Map();
 
 for (const file of files) {
   const code = await readFile(file, 'utf8');
-  const issues = findIssues(code);
+  const issues = [...findIssues(code), ...findTransIssues(code)];
   if (issues.length > 0) {
     problemsByFile.set(file, issues);
   }
@@ -166,7 +215,7 @@ for (const file of files) {
 if (problemsByFile.size > 0) {
   // biome-ignore lint/suspicious/noConsole: CLI guard reporting policy violations
   console.error(
-    'Missing defaultValue on t() calls. Every t()/i18n.t() call must include defaultValue so extraction seeds a non-empty primary locale.',
+    'Missing English defaults. Every t()/i18n.t() call must include defaultValue, and every <Trans> must set `defaults`, so extraction seeds a non-empty primary locale.',
   );
   for (const [file, issues] of problemsByFile) {
     for (const issue of issues) {
@@ -178,4 +227,6 @@ if (problemsByFile.size > 0) {
 }
 
 // biome-ignore lint/suspicious/noConsole: CLI guard success message
-console.log('✅ src/renderer: every t()/i18n.t() call carries a defaultValue');
+console.log(
+  '✅ src/renderer: every t()/i18n.t() call and <Trans> carries an English default',
+);

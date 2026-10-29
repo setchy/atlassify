@@ -1,5 +1,5 @@
 import { Fragment, type MouseEvent, useMemo, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 
 import Avatar, { AvatarItem } from '@atlaskit/avatar';
 import Badge from '@atlaskit/badge/new';
@@ -328,17 +328,11 @@ export function AccountNotifications(props: AccountNotificationsProps) {
             </ModalHeader>
             <ModalBody>
               <p>
-                {t('notifications.account.mark_read_confirm.description1', {
-                  defaultValue: 'Please confirm that you want to',
-                })}{' '}
-                <strong>
-                  {t('notifications.account.mark_read_confirm.description2', {
-                    defaultValue: 'mark all account notifications',
-                  })}
-                </strong>{' '}
-                {t('notifications.account.mark_read_confirm.description3', {
-                  defaultValue: 'as read',
-                })}
+                <Trans
+                  components={[<strong key={0} />]}
+                  defaults="Please confirm that you want to <0>mark all account notifications</0> as read"
+                  i18nKey="notifications.account.mark_read_confirm.description"
+                />
               </p>
             </ModalBody>
             <ModalFooter>
