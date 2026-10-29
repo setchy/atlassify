@@ -321,7 +321,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
       expect(result.current.isFetching).toBe(false);
     });
 
-    expect(result.current.notifications.length).toBe(1);
+    expect(result.current.notifications).toHaveLength(1);
   });
 
   it('markNotificationsRead - should scope mutation calls by hostname hint cloud ID', async () => {
@@ -632,6 +632,6 @@ describe('renderer/hooks/useNotifications.ts', () => {
       expect(result.current.isFetching).toBe(false);
     });
 
-    expect(result.current.notifications.length).toBe(1);
+    expect(result.current.notifications).toHaveLength(1);
   });
 });
