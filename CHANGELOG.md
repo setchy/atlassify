@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.17.3](https://github.com/setchy/atlassify/compare/v3.17.2...v3.17.3) (2026-10-29)
+
+
+### 🧹 Chore
+
+* move zizmor config into .github ([#3985](https://github.com/setchy/atlassify/issues/3985)) ([ab0a82d](https://github.com/setchy/atlassify/commit/ab0a82dd9b202b24420f9345293cd2a1cc3f2b8d))
+
 ## [3.17.2](https://github.com/setchy/atlassify/compare/v3.17.1...v3.17.2) (2026-10-29)
 
 
