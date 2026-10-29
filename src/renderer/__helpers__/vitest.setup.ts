@@ -1,7 +1,5 @@
 import '@testing-library/jest-dom/vitest';
 
-import { Response as UndiciResponse } from 'undici';
-
 import { mockAtlassianCloudAccount } from '../__mocks__/account-mocks';
 
 import {
@@ -10,12 +8,6 @@ import {
   useNotificationActionFailuresStore,
   useSettingsStore,
 } from '../stores';
-
-/**
- * happy-dom's Response cannot consume Node streams, which nock v15 uses to build
- * mocked responses (bodies end up as "[object Object]"). Use undici's instead.
- */
-globalThis.Response = UndiciResponse as unknown as typeof Response;
 
 /**
  * Shared navigate mock — import from test-utils in any test that needs to assert on navigation

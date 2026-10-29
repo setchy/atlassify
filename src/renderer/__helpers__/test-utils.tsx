@@ -7,7 +7,6 @@ import { type ReactElement, type ReactNode, useMemo } from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import axios from 'axios';
 
 import { AppContext, type AppContextState } from '../context/AppContext';
 import { useAccountsStore, useFiltersStore, useSettingsStore } from '../stores';
@@ -147,14 +146,4 @@ export function renderWithProviders(
       </QueryClientProvider>
     ),
   });
-}
-
-/**
- * Configure axios to use the http adapter instead of XHR.
- * This allows nock to intercept HTTP requests in tests
- *
- * See: https://github.com/nock/nock?tab=readme-ov-file#axios
- */
-export function configureAxiosHttpAdapterForNock() {
-  axios.defaults.adapter = 'http';
 }

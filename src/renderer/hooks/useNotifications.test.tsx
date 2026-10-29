@@ -1,12 +1,9 @@
 import { act, waitFor } from '@testing-library/react';
 
 import { onlineManager } from '@tanstack/react-query';
-import nock from 'nock';
+import axios from 'axios';
 
-import {
-  configureAxiosHttpAdapterForNock,
-  renderHookWithProviders,
-} from '../__helpers__/test-utils';
+import { renderHookWithProviders } from '../__helpers__/test-utils';
 import {
   mockAtlassianCloudAccount,
   mockAtlassianCloudAccountTwo,
@@ -35,51 +32,57 @@ import * as client from '../utils/api/client';
 import { Errors } from '../utils/core/errors';
 import { useNotifications } from './useNotifications';
 
+const emptyNotificationsBody = {
+  data: { notifications: { notificationFeed: { nodes: [] } } },
+  extensions: { notifications: { response_info: { responseSize: 0 } } },
+};
+
+function mockGraphQLResponse(
+  body: unknown = emptyNotificationsBody,
+  delayMs = 0,
+) {
+  vi.mocked(axios).mockImplementationOnce(
+    () =>
+      new Promise((resolve) =>
+        setTimeout(() => resolve({ data: body }), delayMs),
+      ) as ReturnType<typeof axios>,
+  );
+}
+
+function mockGraphQLError(delayMs = 0) {
+  vi.mocked(axios).mockImplementationOnce(
+    () =>
+      new Promise((_, reject) =>
+        setTimeout(() => reject(new Error('Request failed')), delayMs),
+      ) as ReturnType<typeof axios>,
+  );
+}
+
 describe('renderer/hooks/useNotifications.ts', () => {
   beforeEach(() => {
-    configureAxiosHttpAdapterForNock();
     onlineManager.setOnline(true);
+    vi.mocked(axios).mockRejectedValue(new Error('Unexpected request'));
   });
 
   afterEach(() => {
     onlineManager.setOnline(true);
-    nock.cleanAll();
+    vi.mocked(axios).mockReset();
   });
 
   describe('fetchNotifications', () => {
     it('refetches when an account is replaced without changing the account count', async () => {
-      let requestCount = 0;
-      nock('https://home.atlassian.com')
-        .post('/gateway/api/graphql')
-        .twice()
-        .reply(() => {
-          requestCount += 1;
-          return [
-            200,
-            {
-              data: {
-                notifications: {
-                  notificationFeed: { nodes: [] },
-                },
-              },
-              extensions: {
-                notifications: {
-                  response_info: { responseSize: 0 },
-                },
-              },
-            },
-          ];
-        });
+      mockGraphQLResponse();
+      mockGraphQLResponse();
 
       const { result } = renderHookWithProviders(() => useNotifications());
 
-      await waitFor(() => expect(requestCount).toBe(1));
+      await waitFor(() => expect(axios).toHaveBeenCalledTimes(1));
 
       act(() => {
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccountTwo] });
       });
 
-      await waitFor(() => expect(requestCount).toBe(2));
+      await waitFor(() => expect(axios).toHaveBeenCalledTimes(2));
       expect(result.current.notifications[0]?.account.id).toBe(
         mockAtlassianCloudAccountTwo.id,
       );
@@ -91,15 +94,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
       const { result } = renderHookWithProviders(() => useNotifications());
       await waitFor(() => expect(result.current.isLoading).toBe(false));
 
-      nock('https://home.atlassian.com')
-        .post('/gateway/api/graphql')
-        .delay(50)
-        .reply(200, {
-          data: { notifications: { notificationFeed: { nodes: [] } } },
-          extensions: {
-            notifications: { response_info: { responseSize: 0 } },
-          },
-        });
+      mockGraphQLResponse(emptyNotificationsBody, 50);
 
       act(() => {
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
@@ -119,30 +114,15 @@ describe('renderer/hooks/useNotifications.ts', () => {
     });
 
     it('shows loading when the account set changes from an empty settled inbox', async () => {
-      nock('https://home.atlassian.com')
-        .post('/gateway/api/graphql')
-        .reply(200, {
-          data: { notifications: { notificationFeed: { nodes: [] } } },
-          extensions: {
-            notifications: { response_info: { responseSize: 0 } },
-          },
-        });
+      mockGraphQLResponse();
 
       const { result } = renderHookWithProviders(() => useNotifications());
       await waitFor(() => expect(result.current.isLoading).toBe(false));
       expect(result.current.notifications).toHaveLength(1);
       expect(result.current.notifications[0].notifications).toEqual([]);
 
-      nock('https://home.atlassian.com')
-        .post('/gateway/api/graphql')
-        .twice()
-        .delay(50)
-        .reply(200, {
-          data: { notifications: { notificationFeed: { nodes: [] } } },
-          extensions: {
-            notifications: { response_info: { responseSize: 0 } },
-          },
-        });
+      mockGraphQLResponse(emptyNotificationsBody, 50);
+      mockGraphQLResponse(emptyNotificationsBody, 50);
 
       act(() => {
         useAccountsStore.setState({
@@ -157,14 +137,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
     });
 
     it('uses the notification polling cadence for stale and refetch intervals', async () => {
-      nock('https://home.atlassian.com')
-        .post('/gateway/api/graphql')
-        .reply(200, {
-          data: { notifications: { notificationFeed: { nodes: [] } } },
-          extensions: {
-            notifications: { response_info: { responseSize: 0 } },
-          },
-        });
+      mockGraphQLResponse();
 
       const { queryClient, result, unmount } = renderHookWithProviders(() =>
         useNotifications(),
@@ -186,17 +159,8 @@ describe('renderer/hooks/useNotifications.ts', () => {
     });
 
     it('keeps settled data out of loading state during a background refetch', async () => {
-      nock('https://home.atlassian.com')
-        .post('/gateway/api/graphql')
-        .reply(200, {
-          data: { notifications: { notificationFeed: { nodes: [] } } },
-          extensions: {
-            notifications: { response_info: { responseSize: 0 } },
-          },
-        })
-        .post('/gateway/api/graphql')
-        .delay(50)
-        .reply(500);
+      mockGraphQLResponse();
+      mockGraphQLError(50);
 
       const { queryClient, result, unmount } = renderHookWithProviders(() =>
         useNotifications(),
@@ -231,58 +195,21 @@ describe('renderer/hooks/useNotifications.ts', () => {
     });
 
     it('does not refetch when a display-only filter changes', async () => {
-      let requestCount = 0;
-      nock('https://home.atlassian.com')
-        .post('/gateway/api/graphql')
-        .reply(() => {
-          requestCount += 1;
-          return [
-            200,
-            {
-              data: {
-                notifications: {
-                  notificationFeed: { nodes: [] },
-                },
-              },
-              extensions: {
-                notifications: {
-                  response_info: { responseSize: 0 },
-                },
-              },
-            },
-          ];
-        });
+      mockGraphQLResponse();
 
       renderHookWithProviders(() => useNotifications());
 
-      await waitFor(() => expect(requestCount).toBe(1));
+      await waitFor(() => expect(axios).toHaveBeenCalledTimes(1));
 
       act(() => {
         useFiltersStore.setState({ engagementStates: ['mention'] });
       });
 
-      expect(requestCount).toBe(1);
+      expect(axios).toHaveBeenCalledTimes(1);
     });
 
     it('fetchNotifications - unread only', async () => {
-      nock('https://home.atlassian.com')
-        .post('/gateway/api/graphql')
-        .reply(200, {
-          data: {
-            notifications: {
-              notificationFeed: {
-                nodes: [],
-              },
-            },
-          },
-          extensions: {
-            notifications: {
-              response_info: {
-                responseSize: 0,
-              },
-            },
-          },
-        });
+      mockGraphQLResponse();
 
       const { result } = renderHookWithProviders(() => useNotifications());
 
@@ -305,24 +232,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
         fetchOnlyUnreadNotifications: false,
       });
 
-      nock('https://home.atlassian.com')
-        .post('/gateway/api/graphql')
-        .reply(200, {
-          data: {
-            notifications: {
-              notificationFeed: {
-                nodes: [],
-              },
-            },
-          },
-          extensions: {
-            notifications: {
-              response_info: {
-                responseSize: 0,
-              },
-            },
-          },
-        });
+      mockGraphQLResponse();
 
       const { result } = renderHookWithProviders(() => useNotifications());
 
@@ -345,17 +255,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
         fetchOnlyUnreadNotifications: false,
       });
 
-      nock('https://home.atlassian.com')
-        .post('/gateway/api/graphql')
-        .reply(200, {
-          data: {
-            notifications: {
-              notificationFeed: {
-                nodes: [],
-              },
-            },
-          },
-        });
+      mockGraphQLResponse({ data: emptyNotificationsBody.data });
 
       const { result } = renderHookWithProviders(() => useNotifications());
 
@@ -375,9 +275,6 @@ describe('renderer/hooks/useNotifications.ts', () => {
 
     it('reports an offline pause without starting a request', async () => {
       onlineManager.setOnline(false);
-      const request = nock('https://home.atlassian.com')
-        .post('/gateway/api/graphql')
-        .reply(200);
 
       const { queryClient, result, unmount } = renderHookWithProviders(() =>
         useNotifications(),
@@ -385,56 +282,21 @@ describe('renderer/hooks/useNotifications.ts', () => {
 
       await waitFor(() => expect(result.current.isErrorOrPaused).toBe(true));
       expect(result.current.globalError).toEqual(Errors.OFFLINE);
-      expect(request.isDone()).toBe(false);
+      expect(axios).not.toHaveBeenCalled();
       unmount();
       queryClient.clear();
-      nock.cleanAll();
     });
   });
 
   it('markNotificationsRead', async () => {
     // Mock initial fetch
-    nock('https://home.atlassian.com')
-      .post('/gateway/api/graphql')
-      .reply(200, {
-        data: {
-          notifications: {
-            notificationFeed: {
-              nodes: [],
-            },
-          },
-        },
-        extensions: {
-          notifications: {
-            response_info: {
-              responseSize: 0,
-            },
-          },
-        },
-      });
+    mockGraphQLResponse();
 
     // Mock the markNotificationsAsRead mutation
-    nock('https://home.atlassian.com').post('/gateway/api/graphql').reply(200);
+    mockGraphQLResponse({});
 
     // Mock the automatic refetch after mutation
-    nock('https://home.atlassian.com')
-      .post('/gateway/api/graphql')
-      .reply(200, {
-        data: {
-          notifications: {
-            notificationFeed: {
-              nodes: [],
-            },
-          },
-        },
-        extensions: {
-          notifications: {
-            response_info: {
-              responseSize: 0,
-            },
-          },
-        },
-      });
+    mockGraphQLResponse();
 
     const { result } = renderHookWithProviders(() => useNotifications());
 
@@ -487,24 +349,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
     };
 
     // Mock initial fetch
-    nock('https://home.atlassian.com')
-      .post('/gateway/api/graphql')
-      .reply(200, {
-        data: {
-          notifications: {
-            notificationFeed: {
-              nodes: [],
-            },
-          },
-        },
-        extensions: {
-          notifications: {
-            response_info: {
-              responseSize: 0,
-            },
-          },
-        },
-      });
+    mockGraphQLResponse();
 
     const markReadSpy = vi
       .spyOn(client, 'markNotificationsAsRead')
@@ -573,14 +418,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
         size: 1,
       },
     };
-    nock('https://home.atlassian.com')
-      .post('/gateway/api/graphql')
-      .reply(200, {
-        data: { notifications: { notificationFeed: { nodes: [] } } },
-        extensions: {
-          notifications: { response_info: { responseSize: 0 } },
-        },
-      });
+    mockGraphQLResponse();
     const markReadSpy = vi
       .spyOn(client, 'markNotificationsAsRead')
       .mockImplementation(async (_account, _ids, cloudId) => {
@@ -672,24 +510,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
     };
 
     // Mock initial fetch
-    nock('https://home.atlassian.com')
-      .post('/gateway/api/graphql')
-      .reply(200, {
-        data: {
-          notifications: {
-            notificationFeed: {
-              nodes: [],
-            },
-          },
-        },
-        extensions: {
-          notifications: {
-            response_info: {
-              responseSize: 0,
-            },
-          },
-        },
-      });
+    mockGraphQLResponse();
 
     const markUnreadSpy = vi
       .spyOn(client, 'markNotificationsAsUnread')
@@ -747,24 +568,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
     };
 
     // Mock initial fetch
-    nock('https://home.atlassian.com')
-      .post('/gateway/api/graphql')
-      .reply(200, {
-        data: {
-          notifications: {
-            notificationFeed: {
-              nodes: [],
-            },
-          },
-        },
-        extensions: {
-          notifications: {
-            response_info: {
-              responseSize: 0,
-            },
-          },
-        },
-      });
+    mockGraphQLResponse();
 
     const markReadSpy = vi
       .spyOn(client, 'markNotificationsAsRead')
@@ -796,47 +600,13 @@ describe('renderer/hooks/useNotifications.ts', () => {
 
   it('markNotificationsUnread', async () => {
     // Mock initial fetch
-    nock('https://home.atlassian.com')
-      .post('/gateway/api/graphql')
-      .reply(200, {
-        data: {
-          notifications: {
-            notificationFeed: {
-              nodes: [],
-            },
-          },
-        },
-        extensions: {
-          notifications: {
-            response_info: {
-              responseSize: 0,
-            },
-          },
-        },
-      });
+    mockGraphQLResponse();
 
     // Mock the markNotificationsAsUnread mutation
-    nock('https://home.atlassian.com').post('/gateway/api/graphql').reply(200);
+    mockGraphQLResponse({});
 
     // Mock the automatic refetch after mutation
-    nock('https://home.atlassian.com')
-      .post('/gateway/api/graphql')
-      .reply(200, {
-        data: {
-          notifications: {
-            notificationFeed: {
-              nodes: [],
-            },
-          },
-        },
-        extensions: {
-          notifications: {
-            response_info: {
-              responseSize: 0,
-            },
-          },
-        },
-      });
+    mockGraphQLResponse();
 
     const { result } = renderHookWithProviders(() => useNotifications());
 
