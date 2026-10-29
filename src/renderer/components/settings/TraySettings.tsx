@@ -28,19 +28,26 @@ export function TraySettings() {
 
   return (
     <Stack space="space.100">
-      <Heading size="small">{t('settings.tray.title')}</Heading>
+      <Heading size="small">
+        {t('settings.tray.title', { defaultValue: 'Tray' })}
+      </Heading>
 
       {window.atlassify.platform.isMacOS() && (
         <Inline space="space.100">
           <Checkbox
             isChecked={showNotificationsCountInTray}
-            label={t('settings.tray.show_count_in_tray')}
+            label={t('settings.tray.show_count_in_tray', {
+              defaultValue: 'Show notifications count in tray',
+            })}
             name="showNotificationsCountInTray"
             onChange={() => toggleSetting('showNotificationsCountInTray')}
           />
           <InlineMessage appearance="info">
             <div className="settings-help-text">
-              {t('settings.tray.show_count_in_tray_help')}
+              {t('settings.tray.show_count_in_tray_help', {
+                defaultValue:
+                  'Show the unread notification count next to the tray icon. Useful for a quick glance at unread activity.',
+              })}
             </div>
           </InlineMessage>
         </Inline>
@@ -48,13 +55,19 @@ export function TraySettings() {
 
       <Box paddingInlineStart="space.050">
         <div className="flex items-center gap-2">
-          <Text weight="medium">{t('settings.tray.alternate_icon')}:</Text>
+          <Text weight="medium">
+            {t('settings.tray.alternate_icon', { defaultValue: 'Idle style' })}:
+          </Text>
           <Radio
             isChecked={!useAlternateIdleIcon}
             label={
               <span className="tray-icon-pill">
                 <img alt="" className="tray-icon" src={trayIdleIcon} />
-                <span>{t('settings.tray.idle_icon_default')}</span>
+                <span>
+                  {t('settings.tray.idle_icon_default', {
+                    defaultValue: 'Default',
+                  })}
+                </span>
               </span>
             }
             name="useAlternateIdleIcon"
@@ -67,7 +80,9 @@ export function TraySettings() {
               <span className="tray-icon-pill-dark">
                 <img alt="" className="tray-icon" src={trayIdleWhiteIcon} />
                 <span className="text-white">
-                  {t('settings.tray.idle_icon_alternate')}
+                  {t('settings.tray.idle_icon_alternate', {
+                    defaultValue: 'Alternate',
+                  })}
                 </span>
               </span>
             }
@@ -77,7 +92,10 @@ export function TraySettings() {
           />
           <InlineMessage appearance="info">
             <div className="settings-help-text">
-              {t('settings.tray.alternate_icon_help')}
+              {t('settings.tray.alternate_icon_help', {
+                defaultValue:
+                  'Choose which tray icon variant to display when all notifications are read. This setting is particularly useful for devices which have a dark-themed menubar or taskbar.',
+              })}
             </div>
           </InlineMessage>
         </div>
@@ -85,13 +103,22 @@ export function TraySettings() {
 
       <Box paddingInlineStart="space.050">
         <div className="flex items-center gap-2">
-          <Text weight="medium">{t('settings.tray.unread_active_icon')}:</Text>
+          <Text weight="medium">
+            {t('settings.tray.unread_active_icon', {
+              defaultValue: 'Unread style',
+            })}
+            :
+          </Text>
           <Radio
             isChecked={useUnreadActiveIcon}
             label={
               <span className="tray-icon-pill">
                 <img alt="" className="tray-icon" src={trayActiveIcon} />
-                <span>{t('settings.tray.unread_icon_highlighted')}</span>
+                <span>
+                  {t('settings.tray.unread_icon_highlighted', {
+                    defaultValue: 'Highlighted',
+                  })}
+                </span>
               </span>
             }
             name="useUnreadActiveIcon"
@@ -103,7 +130,11 @@ export function TraySettings() {
             label={
               <span className="tray-icon-pill">
                 <img alt="" className="tray-icon" src={trayIdleIcon} />
-                <span>{t('settings.tray.unread_icon_stealth')}</span>
+                <span>
+                  {t('settings.tray.unread_icon_stealth', {
+                    defaultValue: 'Stealth',
+                  })}
+                </span>
               </span>
             }
             name="useUnreadActiveIcon"
@@ -112,7 +143,10 @@ export function TraySettings() {
           />
           <InlineMessage appearance="info">
             <div className="settings-help-text">
-              {t('settings.tray.unread_active_icon_help')}
+              {t('settings.tray.unread_active_icon_help', {
+                defaultValue:
+                  'Choose which tray icon variant to display when you have unread notifications.',
+              })}
             </div>
           </InlineMessage>
         </div>

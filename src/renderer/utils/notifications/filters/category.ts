@@ -16,13 +16,21 @@ export const categoryFilter: Filter<CategoryType> = {
   get FILTER_TYPES(): Record<CategoryType, FilterDetails> {
     return {
       direct: {
-        name: i18n.t('filters.category.direct.title'),
-        description: i18n.t('filters.category.direct.description'),
+        name: i18n.t('filters.category.direct.title', {
+          defaultValue: 'Direct',
+        }),
+        description: i18n.t('filters.category.direct.description', {
+          defaultValue: 'Direct notifications',
+        }),
         icon: FlagIcon,
       },
       watching: {
-        name: i18n.t('filters.category.watching.title'),
-        description: i18n.t('filters.category.watching.description'),
+        name: i18n.t('filters.category.watching.title', {
+          defaultValue: 'Watching',
+        }),
+        description: i18n.t('filters.category.watching.description', {
+          defaultValue: 'Watching notifications',
+        }),
         icon: EyeOpenIcon,
       },
     };

@@ -40,7 +40,7 @@ export function SettingsFooter() {
     () => (
       <PeopleGroupIcon
         color={token('color.icon.accent.blue')}
-        label={t('settings.accounts')}
+        label={t('settings.accounts', { defaultValue: 'Accounts' })}
       />
     ),
     [t],
@@ -50,7 +50,10 @@ export function SettingsFooter() {
     () => (
       <CrossCircleIcon
         color={token('color.icon.accent.red')}
-        label={t('sidebar.quit.label', { appName: APPLICATION.NAME })}
+        label={t('sidebar.quit.label', {
+          defaultValue: 'Quit {{appName}}',
+          appName: APPLICATION.NAME,
+        })}
       />
     ),
     [t],
@@ -60,6 +63,7 @@ export function SettingsFooter() {
     <Footer justify="space-between">
       <Tooltip
         content={t('settings.view_release_notes', {
+          defaultValue: 'View {{appName}} release notes',
           appName: APPLICATION.NAME,
         })}
         position="top-start"
@@ -77,21 +81,24 @@ export function SettingsFooter() {
 
       <Inline space="space.200">
         <Tooltip
-          content={t('settings.accounts')}
+          content={t('settings.accounts', { defaultValue: 'Accounts' })}
           position="top"
           shortcut={[shortcuts.accounts.key]}
         >
           <IconButton
             appearance="subtle"
             icon={renderAccountsIcon}
-            label={t('settings.accounts')}
+            label={t('settings.accounts', { defaultValue: 'Accounts' })}
             onClick={() => shortcuts.accounts.action()}
             shape="circle"
             testId="settings-accounts"
           />
         </Tooltip>
         <Tooltip
-          content={t('sidebar.quit.tooltip', { appName: APPLICATION.NAME })}
+          content={t('sidebar.quit.tooltip', {
+            defaultValue: 'Quit {{appName}}',
+            appName: APPLICATION.NAME,
+          })}
           position="top"
           shortcut={[shortcuts.quit.key]}
         >
@@ -99,7 +106,10 @@ export function SettingsFooter() {
             appearance="subtle"
             color="danger"
             icon={renderQuitIcon}
-            label={t('sidebar.quit.label', { appName: APPLICATION.NAME })}
+            label={t('sidebar.quit.label', {
+              defaultValue: 'Quit {{appName}}',
+              appName: APPLICATION.NAME,
+            })}
             onClick={() => shortcuts.quit.action()}
             shape="circle"
             testId="settings-quit"
