@@ -19,7 +19,7 @@ import { Theme } from '../../../shared/theme';
 
 import { useAccountsStore, useSettingsStore } from '../../stores';
 
-import { LANGUAGES, loadLanguageLocale } from '../../i18n';
+import { LANGUAGES, loadLanguageLocale, setLanguage } from '../../i18n';
 import { setTheme } from '../../utils/ui/theme';
 import {
   canDecreaseZoom,
@@ -42,7 +42,7 @@ const styles = cssMap({
 });
 
 export function AppearanceSettings() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   // Account store values
   const hasMultipleAccounts = useAccountsStore((s) => s.hasMultipleAccounts());
@@ -65,12 +65,9 @@ export function AppearanceSettings() {
     });
   }, [theme]);
 
-  const handleLanguageChange = useCallback(
-    (option) => {
-      void i18n.changeLanguage(option.value);
-    },
-    [i18n],
-  );
+  const handleLanguageChange = useCallback((option) => {
+    void setLanguage(option.value);
+  }, []);
 
   const locale = loadLanguageLocale();
 
@@ -84,9 +81,7 @@ export function AppearanceSettings() {
             {t('settings.appearance.language')}:
           </Text>
           <Select
-            defaultValue={LANGUAGES.find((lang) =>
-              locale.startsWith(lang.value),
-            )}
+            defaultValue={LANGUAGES.find((lang) => lang.value === locale)}
             menuPortalTarget={document.body}
             onChange={(option) => {
               handleLanguageChange(option);
