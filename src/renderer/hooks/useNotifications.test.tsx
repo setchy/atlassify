@@ -1,7 +1,7 @@
 import { act, waitFor } from '@testing-library/react';
 
 import { onlineManager } from '@tanstack/react-query';
-import axios from 'axios';
+import type { MockInstance } from 'vitest';
 
 import { renderHookWithProviders } from '../__helpers__/test-utils';
 import {
@@ -32,59 +32,63 @@ import * as client from '../utils/api/client';
 import { Errors } from '../utils/core/errors';
 import { useNotifications } from './useNotifications';
 
-const emptyNotificationsBody = {
+const emptyNotificationsResponse = {
   data: { notifications: { notificationFeed: { nodes: [] } } },
   extensions: { notifications: { response_info: { responseSize: 0 } } },
-};
+} as Awaited<ReturnType<typeof client.getNotificationsForUser>>;
 
-function mockGraphQLResponse(
-  body: unknown = emptyNotificationsBody,
+let getNotificationsSpy: MockInstance<typeof client.getNotificationsForUser>;
+
+function mockNotificationsResponse(
+  response = emptyNotificationsResponse,
   delayMs = 0,
 ) {
-  vi.mocked(axios).mockImplementationOnce(
+  getNotificationsSpy.mockImplementationOnce(
     () =>
-      new Promise((resolve) =>
-        setTimeout(() => resolve({ data: body }), delayMs),
-      ) as ReturnType<typeof axios>,
+      new Promise((resolve) => setTimeout(() => resolve(response), delayMs)),
   );
 }
 
-function mockGraphQLError(delayMs = 0) {
-  vi.mocked(axios).mockImplementationOnce(
+function mockNotificationsError(delayMs = 0) {
+  getNotificationsSpy.mockImplementationOnce(
     () =>
       new Promise((_, reject) =>
         setTimeout(() => reject(new Error('Request failed')), delayMs),
-      ) as ReturnType<typeof axios>,
+      ),
   );
 }
 
 describe('renderer/hooks/useNotifications.ts', () => {
   beforeEach(() => {
     onlineManager.setOnline(true);
-    vi.mocked(axios).mockRejectedValue(new Error('Unexpected request'));
+    getNotificationsSpy = vi
+      .spyOn(client, 'getNotificationsForUser')
+      .mockRejectedValue(new Error('Unexpected request'));
   });
 
   afterEach(() => {
     onlineManager.setOnline(true);
-    vi.mocked(axios).mockReset();
+    vi.restoreAllMocks();
   });
 
   describe('fetchNotifications', () => {
     it('refetches when an account is replaced without changing the account count', async () => {
-      mockGraphQLResponse();
-      mockGraphQLResponse();
+      mockNotificationsResponse();
+      mockNotificationsResponse();
 
       const { result } = renderHookWithProviders(() => useNotifications());
 
-      await waitFor(() => expect(axios).toHaveBeenCalledTimes(1));
+      await waitFor(() => expect(getNotificationsSpy).toHaveBeenCalledTimes(1));
 
       act(() => {
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccountTwo] });
       });
 
-      await waitFor(() => expect(axios).toHaveBeenCalledTimes(2));
-      expect(result.current.notifications[0]?.account.id).toBe(
-        mockAtlassianCloudAccountTwo.id,
+      await waitFor(() => expect(getNotificationsSpy).toHaveBeenCalledTimes(2));
+      await waitFor(() =>
+        expect(result.current.notifications[0]?.account.id).toBe(
+          mockAtlassianCloudAccountTwo.id,
+        ),
       );
     });
 
@@ -94,7 +98,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
       const { result } = renderHookWithProviders(() => useNotifications());
       await waitFor(() => expect(result.current.isLoading).toBe(false));
 
-      mockGraphQLResponse(emptyNotificationsBody, 50);
+      mockNotificationsResponse(emptyNotificationsResponse, 50);
 
       act(() => {
         useAccountsStore.setState({ accounts: [mockAtlassianCloudAccount] });
@@ -114,15 +118,15 @@ describe('renderer/hooks/useNotifications.ts', () => {
     });
 
     it('shows loading when the account set changes from an empty settled inbox', async () => {
-      mockGraphQLResponse();
+      mockNotificationsResponse();
 
       const { result } = renderHookWithProviders(() => useNotifications());
       await waitFor(() => expect(result.current.isLoading).toBe(false));
       expect(result.current.notifications).toHaveLength(1);
       expect(result.current.notifications[0].notifications).toEqual([]);
 
-      mockGraphQLResponse(emptyNotificationsBody, 50);
-      mockGraphQLResponse(emptyNotificationsBody, 50);
+      mockNotificationsResponse(emptyNotificationsResponse, 50);
+      mockNotificationsResponse(emptyNotificationsResponse, 50);
 
       act(() => {
         useAccountsStore.setState({
@@ -137,7 +141,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
     });
 
     it('uses the notification polling cadence for stale and refetch intervals', async () => {
-      mockGraphQLResponse();
+      mockNotificationsResponse();
 
       const { queryClient, result, unmount } = renderHookWithProviders(() =>
         useNotifications(),
@@ -159,8 +163,8 @@ describe('renderer/hooks/useNotifications.ts', () => {
     });
 
     it('keeps settled data out of loading state during a background refetch', async () => {
-      mockGraphQLResponse();
-      mockGraphQLError(50);
+      mockNotificationsResponse();
+      mockNotificationsError(50);
 
       const { queryClient, result, unmount } = renderHookWithProviders(() =>
         useNotifications(),
@@ -195,21 +199,21 @@ describe('renderer/hooks/useNotifications.ts', () => {
     });
 
     it('does not refetch when a display-only filter changes', async () => {
-      mockGraphQLResponse();
+      mockNotificationsResponse();
 
       renderHookWithProviders(() => useNotifications());
 
-      await waitFor(() => expect(axios).toHaveBeenCalledTimes(1));
+      await waitFor(() => expect(getNotificationsSpy).toHaveBeenCalledTimes(1));
 
       act(() => {
         useFiltersStore.setState({ engagementStates: ['mention'] });
       });
 
-      expect(axios).toHaveBeenCalledTimes(1);
+      expect(getNotificationsSpy).toHaveBeenCalledTimes(1);
     });
 
     it('fetchNotifications - unread only', async () => {
-      mockGraphQLResponse();
+      mockNotificationsResponse();
 
       const { result } = renderHookWithProviders(() => useNotifications());
 
@@ -232,7 +236,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
         fetchOnlyUnreadNotifications: false,
       });
 
-      mockGraphQLResponse();
+      mockNotificationsResponse();
 
       const { result } = renderHookWithProviders(() => useNotifications());
 
@@ -255,7 +259,9 @@ describe('renderer/hooks/useNotifications.ts', () => {
         fetchOnlyUnreadNotifications: false,
       });
 
-      mockGraphQLResponse({ data: emptyNotificationsBody.data });
+      mockNotificationsResponse({
+        data: emptyNotificationsResponse.data,
+      } as typeof emptyNotificationsResponse);
 
       const { result } = renderHookWithProviders(() => useNotifications());
 
@@ -282,7 +288,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
 
       await waitFor(() => expect(result.current.isErrorOrPaused).toBe(true));
       expect(result.current.globalError).toEqual(Errors.OFFLINE);
-      expect(axios).not.toHaveBeenCalled();
+      expect(getNotificationsSpy).not.toHaveBeenCalled();
       unmount();
       queryClient.clear();
     });
@@ -290,13 +296,14 @@ describe('renderer/hooks/useNotifications.ts', () => {
 
   it('markNotificationsRead', async () => {
     // Mock initial fetch
-    mockGraphQLResponse();
+    mockNotificationsResponse();
 
-    // Mock the markNotificationsAsRead mutation
-    mockGraphQLResponse({});
+    vi.spyOn(client, 'markNotificationsAsRead').mockResolvedValue(
+      {} as Awaited<ReturnType<typeof client.markNotificationsAsRead>>,
+    );
 
     // Mock the automatic refetch after mutation
-    mockGraphQLResponse();
+    mockNotificationsResponse();
 
     const { result } = renderHookWithProviders(() => useNotifications());
 
@@ -349,7 +356,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
     };
 
     // Mock initial fetch
-    mockGraphQLResponse();
+    mockNotificationsResponse();
 
     const markReadSpy = vi
       .spyOn(client, 'markNotificationsAsRead')
@@ -418,7 +425,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
         size: 1,
       },
     };
-    mockGraphQLResponse();
+    mockNotificationsResponse();
     const markReadSpy = vi
       .spyOn(client, 'markNotificationsAsRead')
       .mockImplementation(async (_account, _ids, cloudId) => {
@@ -510,7 +517,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
     };
 
     // Mock initial fetch
-    mockGraphQLResponse();
+    mockNotificationsResponse();
 
     const markUnreadSpy = vi
       .spyOn(client, 'markNotificationsAsUnread')
@@ -568,7 +575,7 @@ describe('renderer/hooks/useNotifications.ts', () => {
     };
 
     // Mock initial fetch
-    mockGraphQLResponse();
+    mockNotificationsResponse();
 
     const markReadSpy = vi
       .spyOn(client, 'markNotificationsAsRead')
@@ -600,13 +607,14 @@ describe('renderer/hooks/useNotifications.ts', () => {
 
   it('markNotificationsUnread', async () => {
     // Mock initial fetch
-    mockGraphQLResponse();
+    mockNotificationsResponse();
 
-    // Mock the markNotificationsAsUnread mutation
-    mockGraphQLResponse({});
+    vi.spyOn(client, 'markNotificationsAsUnread').mockResolvedValue(
+      {} as Awaited<ReturnType<typeof client.markNotificationsAsUnread>>,
+    );
 
     // Mock the automatic refetch after mutation
-    mockGraphQLResponse();
+    mockNotificationsResponse();
 
     const { result } = renderHookWithProviders(() => useNotifications());
 
