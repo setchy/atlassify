@@ -1,0 +1,16 @@
+pnpm-lock.yaml
+  h_ac004aadb63da9 10119-10120
+src/renderer/hooks/useNotifications.test.tsx
+  h_ac004aadb63da9 4,6,35-60,64,69,74-75,79,85,97,117,124-125,140,162-163,198,202,208,212,235,258,285,293,296,299,352,421,513,571,603,606,609
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0ae2e5633e07d0d0c21c70907f35da4b5e684ae1",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
