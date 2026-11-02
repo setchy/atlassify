@@ -32,6 +32,7 @@
     "check:fix": "biome check --write .",
     "typecheck": "tsc --noEmit",
     "test": "vitest --coverage --run",
+    "test:ci": "vitest --coverage --run --reporter=default --reporter=github-actions",
     "test:watch": "vitest --watch --coverage",
     "test:ui": "vitest --ui"
   },
