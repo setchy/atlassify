@@ -29,8 +29,8 @@ There are two main checks:
 2. Unit tests with [Vitest][vitest-website]
 
 ```shell
-# Run biome to check linting and formatting
-pnpm lint:check
+# Run all static checks (Biome lint, formatting, and import order)
+pnpm check
 
 # Run unit tests with coverage
 pnpm test
@@ -41,7 +41,7 @@ pnpm test -u
 
 ### Code Style & Conventions
 
-- We use [Biome][biome-website] for linting and formatting. Please run `pnpm lint:check` before submitting a PR.
+- We use [Biome][biome-website] for linting and formatting. Please run `pnpm check` before submitting a PR; `pnpm check:fix` applies all fixes locally.
 - Follow existing file and folder naming conventions.
 - Keep commit messages clear and descriptive.
 

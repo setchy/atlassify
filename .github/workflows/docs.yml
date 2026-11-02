@@ -47,7 +47,7 @@ jobs:
           directory: "docs"
 
       - name: Run Astro check
-        run: pnpm check
+        run: pnpm check:astro
         working-directory: docs
 
   links:
