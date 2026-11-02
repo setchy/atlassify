@@ -1,0 +1,9 @@
+# Lychee configuration for checking the built docs site.
+
+no_progress = true
+root_dir = "dist"
+
+max_concurrency = 4
+max_retries = 3
+retry_wait_time = 2
+timeout = 20
