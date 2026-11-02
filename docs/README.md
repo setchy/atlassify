@@ -36,7 +36,8 @@ All commands are run from the `docs/` directory, from a terminal:
 | :------------------- | :------------------------------------------------- |
 | `pnpm install`       | Installs dependencies                              |
 | `pnpm run dev`       | Starts local dev server at `http://localhost:4321` |
-| `pnpm check`         | Check Astro and TypeScript diagnostics             |
+| `pnpm check`         | Check lint, formatting, and Astro/TS diagnostics   |
+| `pnpm check:astro`   | Check Astro and TypeScript diagnostics             |
 | `pnpm run build`     | Check diagnostics, then build to `./dist/`         |
 | `pnpm test`          | Run unit tests with Node.js                        |
 | `pnpm test:coverage` | Run tests and write `coverage/lcov.info`           |
@@ -45,7 +46,8 @@ All commands are run from the `docs/` directory, from a terminal:
 | `pnpm astro ...`     | Run CLI commands like `astro add`, `astro check`   |
 | `pnpm astro --help`  | Get help using the Astro CLI                       |
 
-`pnpm check` reports Astro and TypeScript errors without building the site.
+`pnpm check` runs Biome plus `astro check`; `pnpm check:astro` reports Astro and
+TypeScript errors without building the site.
 `pnpm links:check` requires a prior `pnpm build` and [lychee](https://lychee.cli.rs)
 (`brew install lychee`); settings live in [`lychee.toml`](lychee.toml).
 Errors cause a nonzero exit status; warnings and hints remain advisory.

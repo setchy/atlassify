@@ -28,20 +28,20 @@ There are two main checks:
 1. Linter & formatter with [Biome][biome-website]
 2. Unit tests with [Vitest][vitest-website]
 
-```shell
-# Run biome to check linting and formatting
-pnpm lint:check
-
-# Run unit tests with coverage
-pnpm test
-
-# Update vitest snapshots
-pnpm test -u
-```
+| Command             | Description                              |
+| ------------------- | ---------------------------------------- |
+| `pnpm check`        | Check lint, formatting, and import order |
+| `pnpm check:fix`    | Apply all Biome fixes                    |
+| `pnpm lint`         | Apply lint fixes                         |
+| `pnpm lint:check`   | Check lint only                          |
+| `pnpm format`       | Format files                             |
+| `pnpm format:check` | Check formatting only                    |
+| `pnpm test`         | Run unit tests with coverage             |
+| `pnpm test -u`      | Update Vitest snapshots                  |
 
 ### Code Style & Conventions
 
-- We use [Biome][biome-website] for linting and formatting. Please run `pnpm lint:check` before submitting a PR.
+- We use [Biome][biome-website] for linting and formatting. Please run `pnpm check` before submitting a PR; `pnpm check:fix` applies all fixes locally.
 - Follow existing file and folder naming conventions.
 - Keep commit messages clear and descriptive.
 
