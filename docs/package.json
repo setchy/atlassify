@@ -15,7 +15,9 @@
     "preview": "astro preview",
     "lint": "biome check --fix",
     "lint:check": "biome check",
-    "lint:ci": "biome ci --reporter=github"
+    "lint:ci": "biome ci --reporter=github",
+    "links:check": "lychee --offline \"dist/**/*.html\"",
+    "links:check:external": "lychee \"dist/**/*.html\""
   },
   "repository": {
     "type": "git",

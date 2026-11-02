@@ -41,10 +41,13 @@ All commands are run from the `docs/` directory, from a terminal:
 | `pnpm test`          | Run unit tests with Node.js                        |
 | `pnpm test:coverage` | Run tests and write `coverage/lcov.info`           |
 | `pnpm run preview`   | Preview your build locally, before deploying       |
+| `pnpm links:check`   | Check internal links in the built site             |
 | `pnpm astro ...`     | Run CLI commands like `astro add`, `astro check`   |
 | `pnpm astro --help`  | Get help using the Astro CLI                       |
 
 `pnpm check` reports Astro and TypeScript errors without building the site.
+`pnpm links:check` requires a prior `pnpm build` and [lychee](https://lychee.cli.rs)
+(`brew install lychee`); settings live in [`lychee.toml`](lychee.toml).
 Errors cause a nonzero exit status; warnings and hints remain advisory.
 `pnpm build` runs this check before generating production output, including
 Netlify builds, and stops if the check fails. Docs CI also runs the check
