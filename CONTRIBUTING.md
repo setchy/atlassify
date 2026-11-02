@@ -28,16 +28,16 @@ There are two main checks:
 1. Linter & formatter with [Biome][biome-website]
 2. Unit tests with [Vitest][vitest-website]
 
-```shell
-# Run all static checks (Biome lint, formatting, and import order)
-pnpm check
-
-# Run unit tests with coverage
-pnpm test
-
-# Update vitest snapshots
-pnpm test -u
-```
+| Command             | Description                              |
+| ------------------- | ---------------------------------------- |
+| `pnpm check`        | Check lint, formatting, and import order |
+| `pnpm check:fix`    | Apply all Biome fixes                    |
+| `pnpm lint`         | Apply lint fixes                         |
+| `pnpm lint:check`   | Check lint only                          |
+| `pnpm format`       | Format files                             |
+| `pnpm format:check` | Check formatting only                    |
+| `pnpm test`         | Run unit tests with coverage             |
+| `pnpm test -u`      | Update Vitest snapshots                  |
 
 ### Code Style & Conventions
 
