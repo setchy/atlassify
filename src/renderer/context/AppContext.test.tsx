@@ -10,22 +10,22 @@ import { type AppContextState, AppProvider } from './AppContext';
 
 vi.mock('../hooks/useNotifications');
 
+let capturedContext!: AppContextState;
+
+function CaptureContext() {
+  capturedContext = useAppContext();
+  return null;
+}
+
 // Helper to render the context
 const renderWithContext = () => {
-  let context!: AppContextState;
-
-  function CaptureContext() {
-    context = useAppContext();
-    return null;
-  }
-
   renderWithProviders(
     <AppProvider>
       <CaptureContext />
     </AppProvider>,
   );
 
-  return () => context;
+  return () => capturedContext;
 };
 
 describe('renderer/context/App.tsx', () => {

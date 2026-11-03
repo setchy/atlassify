@@ -156,9 +156,7 @@
     "account": {
       "mark_all_read": "Marcar todas las notificaciones de la cuenta como leídas",
       "mark_read_confirm": {
-        "description1": "Por favor confirma que quieres",
-        "description2": "marcar todas las notificaciones de la cuenta",
-        "description3": "como se lee"
+        "description": "Por favor, confirma que quieres <0>marcar todas las notificaciones de la cuenta</0> como leídas"
       },
       "open_profile": "Abrir perfil de cuenta ↗",
       "pull_requests": "Mis solicitudes de extracción ↗"

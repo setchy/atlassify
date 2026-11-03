@@ -1,6 +1,6 @@
 # Atlassify Contributing Guide
 
-Hi, we're really excited that you're interested in contributing to Atlassify! 
+Hi, we're really excited that you're interested in contributing to Atlassify!
 
 Before submitting your contribution, please read through the following guide.
 
@@ -13,14 +13,14 @@ This project is a tool for monitoring new notifications from Atlassian Cloud pro
 To get started:
 
 Clone the repository and install dependencies:
-  ```shell
-  pnpm install
-  ```
+```shell
+pnpm install
+```
 
 Start development mode (includes GraphQL codegen and hot module reload):
-  ```shell
-  pnpm dev
-  ```
+```shell
+pnpm dev
+```
 
 ### Tests
 
@@ -28,20 +28,20 @@ There are two main checks:
 1. Linter & formatter with [Biome][biome-website]
 2. Unit tests with [Vitest][vitest-website]
 
-```shell
-# Run biome to check linting and formatting
-pnpm lint:check
-
-# Run unit tests with coverage
-pnpm test
-
-# Update vitest snapshots
-pnpm test -u
-```
+| Command             | Description                              |
+| ------------------- | ---------------------------------------- |
+| `pnpm check`        | Check lint, formatting, and import order |
+| `pnpm check:fix`    | Apply all Biome fixes                    |
+| `pnpm lint`         | Apply lint fixes                         |
+| `pnpm lint:check`   | Check lint only                          |
+| `pnpm format`       | Format files                             |
+| `pnpm format:check` | Check formatting only                    |
+| `pnpm test`         | Run unit tests with coverage             |
+| `pnpm test -u`      | Update Vitest snapshots                  |
 
 ### Code Style & Conventions
 
-- We use [Biome][biome-website] for linting and formatting. Please run `pnpm lint:check` before submitting a PR.
+- We use [Biome][biome-website] for linting and formatting. Please run `pnpm check` before submitting a PR; `pnpm check:fix` applies all fixes locally.
 - Follow existing file and folder naming conventions.
 - Keep commit messages clear and descriptive.
 
@@ -73,13 +73,40 @@ For a signing-only check, manually run the Publish workflow with an empty tag. S
 
 ### Locales
 
-Atlassify supports multiple languages/locales.
+Atlassify supports multiple languages.
+
+To add a new UI string:
+
+- Wrap it in `t()` with the English text as `defaultValue`:
+
+  ```tsx
+  t('common.save', { defaultValue: 'Save' })
+  ```
+
+- When a sentence contains markup (bold, links), keep it as one `<Trans>` string instead of splitting it into several `t()` fragments, so translators can reorder the words:
+
+  ```tsx
+  <Trans
+    i18nKey="notifications.account.mark_read_confirm.description"
+    components={[<strong key={0} />]}
+    defaults="Please confirm that you want to <0>mark all account notifications</0> as read"
+  />
+  ```
+
+- Run `pnpm i18n:extract`, then translate the new string in `src/renderer/i18n/locales/`.
+- Never translate `{{ }}` placeholders.
+
+To translate new strings into every language, install the [i18n Ally](https://marketplace.visualstudio.com/items?itemName=Lokalise.i18n-ally) VSCode extension. It highlights missing translations and can auto-translate them for you — review the results before committing.
+
+`en.json` is generated from the code defaults — you don't need to edit it by hand.
 
 To add a new locale:
-- Add a new locale file under `./src/renderer/i18n/locales`.
-- Import and update the resources in `./src/renderer/i18n/index.ts`.
-- Use the VSCode Extension `i18n Ally` to automatically translate the keys.
-- Carefully verify the translated values. **Do not translate placeholder variables** like `{{ }}`.  You may need to manually update these if needed.
+
+- Add a locale file under `./src/renderer/i18n/locales/`.
+- Add the language to `SUPPORTED_LANGUAGES` and `LANGUAGE_LABELS` in `./src/renderer/i18n/types.ts`, and register the locale file in `./src/renderer/i18n/loader.ts`.
+- Translate the strings (i18n Ally can do this), then carefully verify the results. **Do not translate placeholder variables** like `{{ }}`.
+
+CI runs `pnpm i18n:check` to make sure the locale files stay in sync with the code. Don't use `--trust-derived` when extracting — it replaces real English text with key names.
 
 
 <!-- LINK LABELS -->
@@ -92,4 +119,3 @@ To add a new locale:
 [homebrew-cask-autobump-workflow]: https://github.com/Homebrew/homebrew-cask/actions/workflows/autobump.yml
 [release-please]: https://github.com/googleapis/release-please
 [vitest-website]: https://vitest.dev/
-

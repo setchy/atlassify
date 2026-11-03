@@ -47,8 +47,40 @@ jobs:
           directory: "docs"
 
       - name: Run Astro check
-        run: pnpm check
+        run: pnpm check:astro
         working-directory: docs
+
+  links:
+    name: Check Docs Links
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: $/.github/actions/setup-node
+        with:
+          directory: "docs"
+
+      - name: Build docs
+        run: pnpm build
+        working-directory: docs
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2.9.0
+        with:
+          workingDirectory: docs
+          args: >-
+            --offline
+            "dist/**/*.html"
+          fail: true
+          failIfEmpty: true
+          jobSummary: true
 
   tests:
     name: Test Docs [node:test]

@@ -156,9 +156,7 @@
     "account": {
       "mark_all_read": "Marquer toutes les notifications de compte comme lues",
       "mark_read_confirm": {
-        "description1": "Veuillez confirmer que vous souhaitez",
-        "description2": "marquer toutes les notifications de compte",
-        "description3": "comme lu"
+        "description": "Veuillez confirmer que vous souhaitez <0>marquer toutes les notifications du compte</0> comme lues"
       },
       "open_profile": "Ouvrir un profil de compte ↗",
       "pull_requests": "Mes pull request ↗"

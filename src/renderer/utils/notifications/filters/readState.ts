@@ -15,13 +15,19 @@ export const readStateFilter: Filter<ReadStateType> = {
   get FILTER_TYPES(): Record<ReadStateType, FilterDetails> {
     return {
       unread: {
-        name: i18n.t('filters.read_state.unread.title'),
-        description: i18n.t('filters.read_state.unread.description'),
+        name: i18n.t('filters.read_state.unread.title', {
+          defaultValue: 'Unread',
+        }),
+        description: i18n.t('filters.read_state.unread.description', {
+          defaultValue: 'Unread notifications',
+        }),
         heroicon: EnvelopeIcon,
       },
       read: {
-        name: i18n.t('filters.read_state.read.title'),
-        description: i18n.t('filters.read_state.read.description'),
+        name: i18n.t('filters.read_state.read.title', { defaultValue: 'Read' }),
+        description: i18n.t('filters.read_state.read.description', {
+          defaultValue: 'Read notifications',
+        }),
         heroicon: EnvelopeOpenIcon,
       },
     };

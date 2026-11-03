@@ -73,6 +73,24 @@ describe('renderer/utils/core/errors.ts', () => {
       await i18n.changeLanguage('en');
     });
 
+    it('exposes translatable strings for every error type', () => {
+      const errorTypes = [
+        Errors.BAD_CREDENTIALS,
+        Errors.BAD_REQUEST,
+        Errors.NETWORK,
+        Errors.OFFLINE,
+        Errors.UNKNOWN,
+      ];
+
+      for (const error of errorTypes) {
+        expect(error.title.length).toBeGreaterThan(0);
+        expect(error.descriptions.length).toBeGreaterThan(0);
+        error.actions?.forEach((action) => {
+          expect(action.label.length).toBeGreaterThan(0);
+        });
+      }
+    });
+
     it('resolves translated strings in the current language at access time', async () => {
       const enTitle = Errors.NETWORK.title;
       await i18n.changeLanguage('de');

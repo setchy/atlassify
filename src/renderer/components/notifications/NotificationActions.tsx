@@ -49,7 +49,9 @@ export function NotificationActions({
             content={
               failure?.action === 'read'
                 ? failureMessage
-                : t('notifications.interactions.mark_as_read')
+                : t('notifications.interactions.mark_as_read', {
+                    defaultValue: 'Mark as read',
+                  })
             }
             position="left"
           >
@@ -60,8 +62,10 @@ export function NotificationActions({
               }
               label={
                 failure?.action === 'read'
-                  ? `${failureMessage}. ${t('notifications.interactions.mark_as_read')}`
-                  : t('notifications.interactions.mark_as_read')
+                  ? `${failureMessage}. ${t('notifications.interactions.mark_as_read', { defaultValue: 'Mark as read' })}`
+                  : t('notifications.interactions.mark_as_read', {
+                      defaultValue: 'Mark as read',
+                    })
               }
               onClick={onMarkAsRead}
               shape="circle"
@@ -74,7 +78,9 @@ export function NotificationActions({
             content={
               failure?.action === 'unread'
                 ? failureMessage
-                : t('notifications.interactions.mark_as_unread')
+                : t('notifications.interactions.mark_as_unread', {
+                    defaultValue: 'Mark as unread',
+                  })
             }
             position="left"
           >
@@ -83,8 +89,10 @@ export function NotificationActions({
               icon={failure?.action === 'unread' ? FailedActionIcon : EmptyIcon}
               label={
                 failure?.action === 'unread'
-                  ? `${failureMessage}. ${t('notifications.interactions.mark_as_unread')}`
-                  : t('notifications.interactions.mark_as_unread')
+                  ? `${failureMessage}. ${t('notifications.interactions.mark_as_unread', { defaultValue: 'Mark as unread' })}`
+                  : t('notifications.interactions.mark_as_unread', {
+                      defaultValue: 'Mark as unread',
+                    })
               }
               onClick={onMarkAsUnread}
               shape="circle"

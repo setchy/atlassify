@@ -8,14 +8,20 @@
     "prepare": "cd .. && husky",
     "dev": "astro dev",
     "start": "pnpm dev",
-    "check": "astro check",
-    "build": "pnpm check && astro build",
+    "check": "biome check && astro check",
+    "check:fix": "biome check --write . && astro check",
+    "check:astro": "astro check",
+    "build": "pnpm check:astro && astro build",
     "test": "node --test \"src/**/*.test.ts\"",
     "test:coverage": "c8 node --test \"src/**/*.test.ts\"",
     "preview": "astro preview",
-    "lint": "biome check --fix",
-    "lint:check": "biome check",
-    "lint:ci": "biome ci --reporter=github"
+    "lint": "biome lint --fix .",
+    "lint:check": "biome lint .",
+    "lint:ci": "biome ci --reporter=github",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "links:check": "lychee --offline \"dist/**/*.html\"",
+    "links:check:external": "lychee \"dist/**/*.html\""
   },
   "repository": {
     "type": "git",
@@ -44,7 +50,7 @@
     "@octokit/openapi-types": "29.0.1",
     "@tailwindcss/vite": "4.3.3",
     "accessible-astro-components": "5.8.1",
-    "astro": "7.4.1",
+    "astro": "7.4.4",
     "astro-icon": "1.2.0",
     "date-fns": "4.4.0",
     "octokit": "5.0.5",
@@ -53,15 +59,15 @@
     "tailwindcss-motion": "1.1.1"
   },
   "devDependencies": {
-    "@astrojs/check": "0.9.11",
-    "@biomejs/biome": "2.5.15",
-    "@types/node": "24.19.2",
+    "@astrojs/check": "0.9.12",
+    "@biomejs/biome": "2.6.4",
+    "@types/node": "26.6.6",
     "c8": "12.0.0",
     "husky": "9.1.7",
     "typescript": "6.0.3"
   },
-  "packageManager": "pnpm@12.14.0",
+  "packageManager": "pnpm@12.16.1",
   "lint-staged": {
-    "*.{js,ts,cjs,mjs,astro}": "biome format --fix"
+    "*.{js,ts,cjs,mjs,astro,md,yml,yaml}": "biome format --fix"
   }
 }

@@ -62,7 +62,7 @@ export function AccountsRoute() {
 
   return (
     <Page testId="accounts">
-      <Header>{t('accounts.title')}</Header>
+      <Header>{t('accounts.title', { defaultValue: 'Accounts' })}</Header>
 
       <Contents>
         {accounts.map((account) => {
@@ -74,7 +74,9 @@ export function AccountsRoute() {
               <Stack space="space.100">
                 <Inline alignBlock="center" grow="fill" spread="space-between">
                   <Tooltip
-                    content={t('accounts.open_profile')}
+                    content={t('accounts.open_profile', {
+                      defaultValue: 'Open account profile ↗',
+                    })}
                     position="bottom"
                   >
                     <AvatarItem
@@ -87,7 +89,9 @@ export function AccountsRoute() {
                           src={account.avatar}
                         />
                       }
-                      label={t('accounts.open_profile')}
+                      label={t('accounts.open_profile', {
+                        defaultValue: 'Open account profile ↗',
+                      })}
                       onClick={() => openAccountProfile(account)}
                       primaryText={account.name}
                       secondaryText={account.username}
@@ -97,13 +101,17 @@ export function AccountsRoute() {
 
                   <Inline>
                     <Tooltip
-                      content={t('accounts.manage_account.title')}
+                      content={t('accounts.manage_account.title', {
+                        defaultValue: 'Manage account',
+                      })}
                       position="bottom"
                     >
                       <IconButton
                         appearance="subtle"
                         icon={SettingsIcon}
-                        label={t('accounts.manage_account.title')}
+                        label={t('accounts.manage_account.title', {
+                          defaultValue: 'Manage account',
+                        })}
                         onClick={() =>
                           navigate(`/accounts/manage?accountId=${account.id}`)
                         }
@@ -114,6 +122,7 @@ export function AccountsRoute() {
 
                     <Tooltip
                       content={t('accounts.refresh_account', {
+                        defaultValue: 'Refresh {{username}}',
                         username: account.username,
                       })}
                       position="bottom"
@@ -122,6 +131,7 @@ export function AccountsRoute() {
                         appearance="subtle"
                         icon={RefreshIcon}
                         label={t('accounts.refresh_account', {
+                          defaultValue: 'Refresh {{username}}',
                           username: account.username,
                         })}
                         onClick={async (e) => {
@@ -148,6 +158,7 @@ export function AccountsRoute() {
 
                     <Tooltip
                       content={t('accounts.logout_account', {
+                        defaultValue: 'Logout {{username}}',
                         username: account.username,
                       })}
                       position="bottom"
@@ -156,6 +167,7 @@ export function AccountsRoute() {
                         appearance="subtle"
                         icon={LogOutIcon}
                         label={t('accounts.logout_account', {
+                          defaultValue: 'Logout {{username}}',
                           username: account.username,
                         })}
                         onClick={() => logoutAccount(account)}
@@ -172,11 +184,14 @@ export function AccountsRoute() {
       </Contents>
 
       <Footer justify="end">
-        <Tooltip content={t('accounts.add_new')} position="left">
+        <Tooltip
+          content={t('accounts.add_new', { defaultValue: 'Add new account' })}
+          position="left"
+        >
           <IconButton
             appearance="subtle"
             icon={PersonAddIcon}
-            label={t('accounts.add_new')}
+            label={t('accounts.add_new', { defaultValue: 'Add new account' })}
             onClick={() => login()}
             shape="circle"
             testId="account-add-new"

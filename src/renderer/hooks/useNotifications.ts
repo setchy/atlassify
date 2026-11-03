@@ -1,11 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 
-import {
-  keepPreviousData,
-  useMutation,
-  useQuery,
-  useQueryClient,
-} from '@tanstack/react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 import { Constants } from '../constants';
 
@@ -79,6 +74,22 @@ interface UseNotificationsResult {
   markNotificationsUnread: (
     notifications: AtlassifyNotification[],
   ) => Promise<void>;
+}
+
+/**
+ * Keep previous notifications visible across query-key changes only when they
+ * contain actual content or account errors. An account set with empty inboxes is
+ * not content: it must not make a new account set look settled. Returning
+ * undefined lets the query report initial loading instead.
+ */
+function keepNonEmptyPreviousData(
+  previousData: AccountNotifications[] | undefined,
+): AccountNotifications[] | undefined {
+  return previousData?.some(
+    (account) => account.notifications.length > 0 || account.error !== null,
+  )
+    ? previousData
+    : undefined;
 }
 
 /**
@@ -161,7 +172,7 @@ export const useNotifications = (): UseNotificationsResult => {
     // This allows filter changes to instantly update without refetching
     select: selectFilteredNotifications,
 
-    placeholderData: keepPreviousData,
+    placeholderData: keepNonEmptyPreviousData,
 
     refetchOnReconnect: true,
     refetchOnWindowFocus: true,

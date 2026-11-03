@@ -1,54 +1,57 @@
 version: v1
 
+# Title matchers accept the optional `!` breaking-change marker (e.g.
+# `feat(auth)!: ...`) so a breaking PR still earns its semantic label and
+# passes the "Semantic Pull Request" status check.
 labels:
-  - label: 'bug'
+  - label: "bug"
     sync: true
     matcher:
-      title: '^fix(\((?!deps)\w+\))?: .*'
+      title: '^fix(\((?!deps)[\w/]+\))?!?: .*'
 
-  - label: 'build'
+  - label: "build"
     sync: true
     matcher:
-      title: '^(ci|build)(\((?!release)\w+\))?: (?!.*\brelease\b).*'  
+      title: '^(ci|build)(\((?!release)[\w/]+\))?!?: (?!.*\brelease\b).*'
 
-  - label: 'chore'
+  - label: "chore"
     sync: true
     matcher:
-      title: '^chore(\((?!deps)\w+\))?: .*'
+      title: '^chore(\((?!deps)[\w/]+\))?!?: .*'
 
-  - label: 'dependency'
+  - label: "dependency"
     sync: true
     matcher:
-      branch: '^renovate/.*'
-      files: ['pnpm-lock.yaml']
+      branch: "^renovate/.*"
+      files: ["pnpm-lock.yaml"]
 
-  - label: 'documentation'
+  - label: "documentation"
     sync: true
     matcher:
-      title: '^docs(\(\w+\))?: .*'
+      title: '^docs(\([\w/]+\))?!?: .*'
 
-  - label: 'enhancement'
+  - label: "enhancement"
     sync: true
     matcher:
-      title: '^feat(\(\w+\))?: .*'
+      title: '^feat(\([\w/]+\))?!?: .*'
 
-  - label: 'refactor'
+  - label: "refactor"
     sync: true
     matcher:
-      title: '^refactor(\(\w+\))?: .*'
+      title: '^(refactor|perf)(\([\w/]+\))?!?: .*'
 
-  - label: 'release'
+  - label: "release"
     sync: true
     matcher:
-      branch: '^release-please--.*'
+      branch: "^release-please--.*"
 
-  - label: 'test'
+  - label: "test"
     sync: true
     matcher:
-      title: '^test(\(\w+\))?: .*'
- 
+      title: '^test(\([\w/]+\))?!?: .*'
+
 checks:
-  - context: 'Semantic Pull Request'
+  - context: "Semantic Pull Request"
     description:
       success: Ready for review & merge
       failure: Missing semantic label for merge

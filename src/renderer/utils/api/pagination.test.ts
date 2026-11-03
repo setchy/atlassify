@@ -43,30 +43,88 @@ describe('renderer/utils/api/pagination.ts', () => {
     vi.restoreAllMocks();
   });
 
-  it('should return all nodes and stop when a partial page is returned', async () => {
-    const fullPage = Array.from(
-      { length: Constants.NOTIFICATIONS_PAGE_SIZE },
-      (_, i) => createMockNode(`full-${i}`),
+  it('should continue paginating when a short page is not the end of the feed', async () => {
+    // The Atlassian API can return a short page (99) while more pages remain.
+    // Treating 99 as the end previously truncated the inbox and changed the count.
+    const firstPage = Array.from({ length: 99 }, (_, i) =>
+      createMockNode(`first-${i}`),
     );
-    const partialPage = [createMockNode('partial-0')];
+    const secondPage = Array.from({ length: 11 }, (_, i) =>
+      createMockNode(`second-${i}`),
+    );
 
     vi.spyOn(client, 'getNotificationsForUser')
-      .mockResolvedValueOnce(createMockPage(fullPage, 'cursor-1', 5))
-      .mockResolvedValueOnce(createMockPage(partialPage, null, 5));
+      .mockResolvedValueOnce(createMockPage(firstPage, 'cursor-1', 5))
+      .mockResolvedValueOnce(createMockPage(secondPage, 'cursor-2', 5))
+      .mockResolvedValueOnce(createMockPage([], null, 5));
 
     const result = await fetchAccountNotificationFeed(
       mockAtlassianCloudAccount,
     );
 
-    expect(client.getNotificationsForUser).toHaveBeenCalledTimes(2);
+    expect(client.getNotificationsForUser).toHaveBeenCalledTimes(3);
     expect(client.getNotificationsForUser).toHaveBeenNthCalledWith(
       2,
       mockAtlassianCloudAccount,
       'cursor-1',
       undefined,
     );
-    expect(result.nodes).toHaveLength(Constants.NOTIFICATIONS_PAGE_SIZE + 1);
-    expect(result.unseenNotificationCount).toBe(5);
+    expect(client.getNotificationsForUser).toHaveBeenNthCalledWith(
+      3,
+      mockAtlassianCloudAccount,
+      'cursor-2',
+      undefined,
+    );
+    expect(result.nodes).toHaveLength(110);
+    expect(result.hasMoreNotifications).toBe(false);
+  });
+
+  it('should stop when the feed returns a partial page with no cursor', async () => {
+    const partialPage = [createMockNode('partial-0')];
+
+    vi.spyOn(client, 'getNotificationsForUser').mockResolvedValueOnce(
+      createMockPage(partialPage, null, 5),
+    );
+
+    const result = await fetchAccountNotificationFeed(
+      mockAtlassianCloudAccount,
+    );
+
+    expect(client.getNotificationsForUser).toHaveBeenCalledTimes(1);
+    expect(result.nodes).toHaveLength(1);
+    expect(result.hasMoreNotifications).toBe(false);
+  });
+
+  it('should stop when the cursor does not advance', async () => {
+    const page = [createMockNode('node-0')];
+
+    const spy = vi
+      .spyOn(client, 'getNotificationsForUser')
+      .mockResolvedValueOnce(createMockPage(page, 'cursor-1'))
+      .mockResolvedValueOnce(createMockPage(page, 'cursor-1'));
+
+    const result = await fetchAccountNotificationFeed(
+      mockAtlassianCloudAccount,
+    );
+
+    expect(spy).toHaveBeenCalledTimes(2);
+    expect(result.nodes).toHaveLength(2);
+    expect(result.hasMoreNotifications).toBe(false);
+  });
+
+  it('should stop when a cursor repeats an earlier cursor', async () => {
+    const spy = vi
+      .spyOn(client, 'getNotificationsForUser')
+      .mockResolvedValueOnce(createMockPage([createMockNode('a')], 'cursor-a'))
+      .mockResolvedValueOnce(createMockPage([createMockNode('b')], 'cursor-b'))
+      .mockResolvedValueOnce(createMockPage([createMockNode('c')], 'cursor-a'));
+
+    const result = await fetchAccountNotificationFeed(
+      mockAtlassianCloudAccount,
+    );
+
+    expect(spy).toHaveBeenCalledTimes(3);
+    expect(result.nodes).toHaveLength(3);
     expect(result.hasMoreNotifications).toBe(false);
   });
 

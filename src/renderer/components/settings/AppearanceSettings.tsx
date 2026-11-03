@@ -19,7 +19,7 @@ import { Theme } from '../../../shared/theme';
 
 import { useAccountsStore, useSettingsStore } from '../../stores';
 
-import { LANGUAGES, loadLanguageLocale } from '../../i18n';
+import { LANGUAGES, loadLanguageLocale, setLanguage } from '../../i18n';
 import { setTheme } from '../../utils/ui/theme';
 import {
   canDecreaseZoom,
@@ -42,7 +42,7 @@ const styles = cssMap({
 });
 
 export function AppearanceSettings() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   // Account store values
   const hasMultipleAccounts = useAccountsStore((s) => s.hasMultipleAccounts());
@@ -65,34 +65,33 @@ export function AppearanceSettings() {
     });
   }, [theme]);
 
-  const handleLanguageChange = useCallback(
-    (option) => {
-      void i18n.changeLanguage(option.value);
-    },
-    [i18n],
-  );
+  const handleLanguageChange = useCallback((option) => {
+    void setLanguage(option.value);
+  }, []);
 
   const locale = loadLanguageLocale();
 
   return (
     <Stack space="space.100">
-      <Heading size="small">{t('settings.appearance.title')}</Heading>
+      <Heading size="small">
+        {t('settings.appearance.title', { defaultValue: 'Appearance' })}
+      </Heading>
 
       <Box xcss={styles.row}>
         <Inline alignBlock="start" space="space.100">
           <Text id="language-label" weight="medium">
-            {t('settings.appearance.language')}:
+            {t('settings.appearance.language', { defaultValue: 'Language' })}:
           </Text>
           <Select
-            defaultValue={LANGUAGES.find((lang) =>
-              locale.startsWith(lang.value),
-            )}
+            defaultValue={LANGUAGES.find((lang) => lang.value === locale)}
             menuPortalTarget={document.body}
             onChange={(option) => {
               handleLanguageChange(option);
             }}
             options={LANGUAGES}
-            placeholder={t('settings.appearance.language_select')}
+            placeholder={t('settings.appearance.language_select', {
+              defaultValue: 'Select language',
+            })}
             testId="settings-language-selector"
           />
         </Inline>
@@ -100,7 +99,9 @@ export function AppearanceSettings() {
 
       <Box xcss={styles.row}>
         <Inline alignBlock="center" space="space.100">
-          <Text weight="medium">{t('settings.appearance.theme')}:</Text>
+          <Text weight="medium">
+            {t('settings.appearance.theme', { defaultValue: 'Theme' })}:
+          </Text>
           <Radio
             isChecked={theme === Theme.SYSTEM}
             label="System"
@@ -131,7 +132,7 @@ export function AppearanceSettings() {
       <Box xcss={styles.row}>
         <Inline alignBlock="center" space="space.100">
           <Text id="zoom-label" weight="medium">
-            {t('settings.appearance.zoom')}:
+            {t('settings.appearance.zoom', { defaultValue: 'Zoom' })}:
           </Text>
           <Inline xcss={styles.root}>
             <SplitButton spacing="compact">
@@ -140,13 +141,17 @@ export function AppearanceSettings() {
                   <Text>{zoomPercentage.toFixed(0)}%</Text>
                 </Box>
                 <Tooltip
-                  content={t('settings.appearance.zoom_out')}
+                  content={t('settings.appearance.zoom_out', {
+                    defaultValue: 'Zoom out',
+                  })}
                   position="bottom"
                 >
                   <IconButton
                     icon={ZoomOutIcon}
                     isDisabled={!canDecreaseZoom(zoomPercentage)}
-                    label={t('settings.appearance.zoom_out')}
+                    label={t('settings.appearance.zoom_out', {
+                      defaultValue: 'Zoom out',
+                    })}
                     onClick={() => decreaseZoom(zoomPercentage)}
                     shape="circle"
                     spacing="compact"
@@ -154,13 +159,17 @@ export function AppearanceSettings() {
                   />
                 </Tooltip>
                 <Tooltip
-                  content={t('settings.appearance.zoom_in')}
+                  content={t('settings.appearance.zoom_in', {
+                    defaultValue: 'Zoom in',
+                  })}
                   position="bottom"
                 >
                   <IconButton
                     icon={ZoomInIcon}
                     isDisabled={!canIncreaseZoom(zoomPercentage)}
-                    label={t('settings.appearance.zoom_in')}
+                    label={t('settings.appearance.zoom_in', {
+                      defaultValue: 'Zoom in',
+                    })}
                     onClick={() => increaseZoom(zoomPercentage)}
                     shape="circle"
                     spacing="compact"
@@ -169,12 +178,16 @@ export function AppearanceSettings() {
                 </Tooltip>
               </Inline>
               <Tooltip
-                content={t('settings.appearance.zoom_reset')}
+                content={t('settings.appearance.zoom_reset', {
+                  defaultValue: 'Reset zoom',
+                })}
                 position="bottom"
               >
                 <IconButton
                   icon={RetryIcon}
-                  label={t('settings.appearance.zoom_reset')}
+                  label={t('settings.appearance.zoom_reset', {
+                    defaultValue: 'Reset zoom',
+                  })}
                   onClick={() => resetZoomLevel()}
                   shape="circle"
                   spacing="compact"
@@ -189,7 +202,9 @@ export function AppearanceSettings() {
       {!hasMultipleAccounts && (
         <Checkbox
           isChecked={showAccountHeader}
-          label={t('settings.appearance.show_account_header')}
+          label={t('settings.appearance.show_account_header', {
+            defaultValue: 'Show account header',
+          })}
           name="showAccountHeader"
           onChange={() => toggleSetting('showAccountHeader')}
         />

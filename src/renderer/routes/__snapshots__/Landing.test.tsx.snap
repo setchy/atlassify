@@ -56,7 +56,8 @@ exports[`renderer/routes/Landing.tsx > should render itself & its children 1`] =
         <h2
           class="_dxsyidpf _1i144jg8 _nmk4glyw _fqox10sd _1w90i7uo"
         >
-          Atlassian 
+          Atlassian
+           
           notifications
         </h2>
         <span

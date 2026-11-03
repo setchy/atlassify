@@ -8,7 +8,6 @@
 
 ---
 
-
 ## Features
 
 - 🔔 Unified notifications from Atlassian Cloud products
@@ -26,6 +25,7 @@
 3. **Authenticate** with your Atlassian account and start receiving notifications.
 
 #### Experimental 
+
 macOS users can also install via [Homebrew][brew]
 ```shell
 brew install --cask setchy/brews/atlassify
@@ -65,7 +65,7 @@ See [PRIVACY.md](PRIVACY.md) for complete details.
 
 ## License
 
-Atlassify is licensed under the MIT Open Source license. 
+Atlassify is licensed under the MIT Open Source license.
 
 See [LICENSE](LICENSE) for details.
 
@@ -82,10 +82,8 @@ I would like to acknowledge the following projects and resources that have inspi
 [social]: docs/public/images//social.png
 [website]: https://atlassify.io
 [faqs]: https://atlassify.io/faq
-
 [attribution-gitify]: https://gitify.io
 [attribution-atlassian]: https://atlassian.design
-
 [github]: https://github.com/setchy/atlassify
 [github-actions]: https://github.com/setchy/atlassify/actions
 [github-issues]: https://github.com/setchy/atlassify/issues
@@ -93,12 +91,10 @@ I would like to acknowledge the following projects and resources that have inspi
 [github-website]: https://github.com/setchy/atlassify-website
 [github-website-pulls]: https://github.com/setchy/atlassify-website/pulls
 [brew]: https://brew.sh
-
 [coverage-badge]: https://img.shields.io/sonar/coverage/setchy_atlassify?server=https%3A%2F%2Fsonarcloud.io&logo=sonarqubecloud
 [coverage]: https://sonarcloud.io/summary/new_code?id=setchy_atlassify
 [quality-badge]: https://img.shields.io/sonar/quality_gate/setchy_atlassify?server=https%3A%2F%2Fsonarcloud.io&logo=sonarqubecloud
 [quality]: https://sonarcloud.io/summary/new_code?id=setchy_atlassify
-
 [ci-workflow-badge]: https://img.shields.io/github/actions/workflow/status/setchy/atlassify/ci.yml?logo=github&label=CI
 [release-workflow-badge]: https://img.shields.io/github/actions/workflow/status/setchy/atlassify/release.yml?logo=github&label=Release
 [downloads-total-badge]: https://img.shields.io/github/downloads/setchy/atlassify/total?label=downloads@all&logo=github
@@ -111,5 +107,5 @@ I would like to acknowledge the following projects and resources that have inspi
 [netlify-deploys]: https://app.netlify.com/projects/atlassify/deploys
 [renovate]: https://github.com/setchy/atlassify/issues/1
 [renovate-badge]: https://img.shields.io/badge/renovate-enabled-brightgreen.svg?logo=renovate&logoColor=white
-[wakatime-badge]: https://wakatime.com/badge/user/2b948ae2-4be1-4020-8a57-7de60b53fe1d/project/60db4d24-0691-43a4-8762-9823d1ad5784.svg
 [watatime]: https://wakatime.com
+[wakatime-badge]: https://img.shields.io/wakatime/user/2b948ae2-4be1-4020-8a57-7de60b53fe1d/project/60db4d24-0691-43a4-8762-9823d1ad5784

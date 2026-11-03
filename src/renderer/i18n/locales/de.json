@@ -156,9 +156,7 @@
     "account": {
       "mark_all_read": "Markieren Sie alle Kontobenachrichtigungen als gelesen",
       "mark_read_confirm": {
-        "description1": "Bitte bestätigen Sie, dass Sie dies wünschen",
-        "description2": "Markieren Sie alle Kontobenachrichtigungen",
-        "description3": "wie gelesen"
+        "description": "Bitte bestätigen Sie, dass Sie <0>alle Kontobenachrichtigungen</0> als gelesen markieren möchten"
       },
       "open_profile": "Kontoprofil öffnen ↗",
       "pull_requests": "Meine Pull-Requests ↗"

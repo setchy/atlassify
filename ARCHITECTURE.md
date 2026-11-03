@@ -1,10 +1,12 @@
 # Atlassify Project Architecture
 
 ## Overview
+
 Atlassify is a cross-platform desktop app for monitoring notifications from Atlassian Cloud products. Built with Electron, React, and TypeScript, it provides a fast, native experience with customizable filters, themes, and tray/menu bar integration.
 
 
 ## Folder Structure
+
 ```
 /
 ├── src/
@@ -22,6 +24,7 @@ Atlassify is a cross-platform desktop app for monitoring notifications from Atla
 
 
 ## Core Components
+
 - **Main Process (`src/main`)**: Handles app lifecycle, system events, tray/menu bar, auto-launch, updater, and IPC communication.
 - **Preload (`src/preload`)**: Secure bridge exposing whitelisted APIs to the renderer.
 - **Renderer (`src/renderer`)**: React-based UI, state management (stores via [Zustand](https://github.com/pmndrs/zustand)), hooks, components, and settings. Uses [TanStack Query](https://tanstack.com/query/latest) for data fetching and caching.
@@ -32,11 +35,11 @@ Atlassify is a cross-platform desktop app for monitoring notifications from Atla
 
 The app uses a deliberate three-layer approach. Use the following decision rule when choosing where state belongs:
 
-| Layer | Use when | Examples |
-|---|---|---|
-| **Zustand (persisted)** | Data must survive app restarts; serialisable config or credentials | `useAccountsStore`, `useFiltersStore`, `useSettingsStore` |
-| **Zustand (non-persisted)** | Volatile state that must be readable *outside* React (e.g. tray subscriptions) | `useRuntimeStore` |
-| **AppContext + React Query** | Ephemeral, async, React-lifecycle-bound state; cannot be serialised | notifications, loading/error status, mutations |
+| Layer                        | Use when                                                                       | Examples                                                  |
+| ---------------------------- | ------------------------------------------------------------------------------ | --------------------------------------------------------- |
+| **Zustand (persisted)**      | Data must survive app restarts; serialisable config or credentials             | `useAccountsStore`, `useFiltersStore`, `useSettingsStore` |
+| **Zustand (non-persisted)**  | Volatile state that must be readable _outside_ React (e.g. tray subscriptions) | `useRuntimeStore`                                         |
+| **AppContext + React Query** | Ephemeral, async, React-lifecycle-bound state; cannot be serialised            | notifications, loading/error status, mutations            |
 
 **Persisted Zustand stores** (`src/renderer/stores`):
 - `useAccountsStore` — Authenticated accounts; tokens are encrypted via `electron.safeStorage` before being written to local storage.
@@ -88,33 +91,39 @@ All hooks live in `src/renderer/hooks`. Each hook has a single, named responsibi
   - **Animation Coordination**: Components manage their own exit animations independently of cache updates, decoupling UI timing from data layer.
 
 ## UI
+
 - **Component Library**: Uses [Atlassian @atlaskit](https://atlassian.design/components/) for UI components, ensuring a native Atlassian look and feel.
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/) is used for utility-first styling and layout.
 - **Design Tokens**: Atlassian design tokens are integrated for consistent theming and design language across the app.
 
 ## API & Integrations
+
 - **Atlassian API**: Accessed via secure requests, using API tokens with scopes.
 - **State & Query**: [Zustand](https://github.com/pmndrs/zustand) for state management, [TanStack Query](https://tanstack.com/query/latest) for server state and caching.
 - **Third-party Integrations**: Homebrew, Netlify, SonarCloud, GitHub Actions for CI/CD and releases.
 
 ## Build & Deployment
+
 - **Build Tools**: Vite for frontend, Electron Builder for packaging.
 - **Testing**: [Vitest](https://vitest.dev/) for unit tests and coverage.
 - **CI/CD**: Automated workflows for linting, testing, building, signing, and releasing.
 - **Release Process**: See CONTRIBUTING.md for details.
 
 ## Extensibility & Customization
+
 - **Locales**: Add new language files in `src/renderer/i18n/locales`.
 - **Themes & Filters**: Customizable via settings store and UI.
 - **Components**: Modular React components for easy extension.
 
 ## Key Patterns & Conventions
+
 - **TypeScript**: Strong typing throughout.
 - **Biome**: Linting and formatting.
 - **Testing**: Vitest for unit tests, coverage tracked.
 - **Commit Style**: Clear, descriptive commit messages.
 
 ## Useful Links
+
 - [CONTRIBUTING.md](CONTRIBUTING.md)
 - [README.md](README.md)
 - [GitHub Issues](https://github.com/setchy/atlassify/issues)
