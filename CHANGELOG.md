@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.17.4](https://github.com/setchy/atlassify/compare/v3.17.3...v3.17.4) (2026-11-04)
+
+
+### 📚 Documentation
+
+* add emojis to README headings ([#4027](https://github.com/setchy/atlassify/issues/4027)) ([06c9928](https://github.com/setchy/atlassify/commit/06c9928129c6e1050132e5b3eabdb2c87e20a641))
+* rename experimental README section to Homebrew ([#4029](https://github.com/setchy/atlassify/issues/4029)) ([63756ab](https://github.com/setchy/atlassify/commit/63756ab23bb6f39975cb59039511e0d0bc1ebea1))
+
 ## [3.17.3](https://github.com/setchy/atlassify/compare/v3.17.2...v3.17.3) (2026-11-04)
 
 
