@@ -2,7 +2,6 @@ import type { ComponentType } from 'react';
 
 import type { NewCoreIconProps } from '@atlaskit/icon/base-new';
 import ChevronDownIcon from '@atlaskit/icon/core/chevron-down';
-import ChevronLeftIcon from '@atlaskit/icon/core/chevron-left';
 import ChevronRightIcon from '@atlaskit/icon/core/chevron-right';
 import type { AlignBlock } from '@atlaskit/primitives/dist/types/components/types';
 
@@ -14,7 +13,7 @@ import i18n from '../../i18n';
 
 /**
  * Maps each `ChevronIconType` to its icon component. Guarantees `Chevron.icon`
- * can only ever resolve to one of these three, since the component types
+ * can only ever resolve to one of these two, since the component types
  * themselves are structurally identical and can't be used to restrict this.
  */
 export const CHEVRON_ICONS: Record<
@@ -22,20 +21,21 @@ export const CHEVRON_ICONS: Record<
   ComponentType<NewCoreIconProps>
 > = {
   down: ChevronDownIcon,
-  left: ChevronLeftIcon,
   right: ChevronRightIcon,
 };
 
 /**
  * Returns the appropriate chevron icon and accessible label for a collapsible section.
  *
- * @param hasNotifications - Whether the section has any notifications to display.
+ * The icon always reflects the disclosure state: right when collapsed and down
+ * when expanded. Empty sections follow the same convention because they still
+ * disclose the "all read" panel.
+ *
  * @param isVisible - Whether the section is currently expanded/visible.
  * @param type - The type of section (`'account'` or `'product'`).
- * @returns A `Chevron` object containing the icon component and its accessible label.
+ * @returns A `Chevron` object containing the icon direction and its accessible label.
  */
 export function getChevronDetails(
-  hasNotifications: boolean,
   isVisible: boolean,
   type: 'account' | 'product',
 ): Chevron {
@@ -46,32 +46,17 @@ export function getChevronDetails(
     typeLocale = i18n.t('common.product', { defaultValue: 'product' });
   }
 
-  if (!hasNotifications) {
-    return {
-      icon: 'left',
-      label: i18n.t('chevron.none', {
-        defaultValue: 'No notifications for {{type}}',
-        type: typeLocale,
-      }),
-    };
-  }
-
-  if (isVisible) {
-    return {
-      icon: 'down',
-      label: i18n.t('chevron.hide', {
-        defaultValue: 'Hide {{type}} notifications',
-        type: typeLocale,
-      }),
-    };
-  }
-
   return {
-    icon: 'right',
-    label: i18n.t('chevron.show', {
-      defaultValue: 'Show {{type}} notifications',
-      type: typeLocale,
-    }),
+    icon: isVisible ? 'down' : 'right',
+    label: isVisible
+      ? i18n.t('chevron.hide', {
+          defaultValue: 'Hide {{type}} notifications',
+          type: typeLocale,
+        })
+      : i18n.t('chevron.show', {
+          defaultValue: 'Show {{type}} notifications',
+          type: typeLocale,
+        }),
   };
 }
 

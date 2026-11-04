@@ -165,11 +165,7 @@ export function AccountNotifications(props: AccountNotificationsProps) {
 
   const hasAccountNotifications = notifications.length > 0;
 
-  const Chevron = getChevronDetails(
-    hasAccountNotifications,
-    isAccountNotificationsVisible,
-    'account',
-  );
+  const Chevron = getChevronDetails(isAccountNotificationsVisible, 'account');
   const ChevronIcon = CHEVRON_ICONS[Chevron.icon];
 
   return (
@@ -264,6 +260,7 @@ export function AccountNotifications(props: AccountNotificationsProps) {
               <Tooltip content={Chevron.label} position="bottom">
                 <IconButton
                   appearance="subtle"
+                  aria-expanded={isAccountNotificationsVisible}
                   icon={(iconProps) => (
                     <ChevronIcon {...iconProps} size="small" />
                   )}

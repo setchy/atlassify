@@ -93,11 +93,7 @@ export function ProductNotifications({
     setIsProductNotificationsVisible(!isProductNotificationsVisible);
   };
 
-  const Chevron = getChevronDetails(
-    true,
-    isProductNotificationsVisible,
-    'product',
-  );
+  const Chevron = getChevronDetails(isProductNotificationsVisible, 'product');
   const ChevronIcon = CHEVRON_ICONS[Chevron.icon];
 
   return (
@@ -167,6 +163,7 @@ export function ProductNotifications({
             <Tooltip content={Chevron.label} position="bottom">
               <IconButton
                 appearance="subtle"
+                aria-expanded={isProductNotificationsVisible}
                 icon={(iconProps) => (
                   <ChevronIcon {...iconProps} size="small" />
                 )}
