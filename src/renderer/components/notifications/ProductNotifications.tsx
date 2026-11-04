@@ -15,8 +15,9 @@ import type { AtlassifyNotification } from '../../types';
 
 import { shouldRemoveNotificationsFromState } from '../../utils/notifications/postProcess';
 import { openExternalLink } from '../../utils/system/comms';
-import { CHEVRON_ICONS, getChevronDetails } from '../../utils/ui/display';
+import { getChevronDetails } from '../../utils/ui/display';
 import { isLightMode } from '../../utils/ui/theme';
+import { CHEVRON_ICONS } from '../icons/ChevronIcons';
 import { NotificationRow } from './NotificationRow';
 
 // Hoisted so its identity is stable across re-renders (S6478).
@@ -164,9 +165,7 @@ export function ProductNotifications({
               <IconButton
                 appearance="subtle"
                 aria-expanded={isProductNotificationsVisible}
-                icon={(iconProps) => (
-                  <ChevronIcon {...iconProps} size="small" />
-                )}
+                icon={ChevronIcon}
                 label={Chevron.label}
                 shape="circle"
                 spacing="compact"

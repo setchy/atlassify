@@ -1,28 +1,10 @@
-import type { ComponentType } from 'react';
-
-import type { NewCoreIconProps } from '@atlaskit/icon/base-new';
-import ChevronDownIcon from '@atlaskit/icon/core/chevron-down';
-import ChevronRightIcon from '@atlaskit/icon/core/chevron-right';
 import type { AlignBlock } from '@atlaskit/primitives/dist/types/components/types';
 
 import { Constants } from '../../constants';
 
-import type { Chevron, ChevronIconType } from '../../types';
+import type { Chevron } from '../../types';
 
 import i18n from '../../i18n';
-
-/**
- * Maps each `ChevronIconType` to its icon component. Guarantees `Chevron.icon`
- * can only ever resolve to one of these two, since the component types
- * themselves are structurally identical and can't be used to restrict this.
- */
-export const CHEVRON_ICONS: Record<
-  ChevronIconType,
-  ComponentType<NewCoreIconProps>
-> = {
-  down: ChevronDownIcon,
-  right: ChevronRightIcon,
-};
 
 /**
  * Returns the appropriate chevron icon and accessible label for a collapsible section.

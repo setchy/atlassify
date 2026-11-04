@@ -45,9 +45,10 @@ import {
   openAccountProfile,
   openMyPullRequests,
 } from '../../utils/system/links';
-import { CHEVRON_ICONS, getChevronDetails } from '../../utils/ui/display';
+import { getChevronDetails } from '../../utils/ui/display';
 import { isLightMode } from '../../utils/ui/theme';
 import { AllRead } from '../AllRead';
+import { CHEVRON_ICONS } from '../icons/ChevronIcons';
 import { Oops } from '../Oops';
 import { NotificationRow } from './NotificationRow';
 import { ProductNotifications } from './ProductNotifications';
@@ -261,9 +262,7 @@ export function AccountNotifications(props: AccountNotificationsProps) {
                 <IconButton
                   appearance="subtle"
                   aria-expanded={isAccountNotificationsVisible}
-                  icon={(iconProps) => (
-                    <ChevronIcon {...iconProps} size="small" />
-                  )}
+                  icon={ChevronIcon}
                   label={Chevron.label}
                   shape="circle"
                   spacing="compact"
