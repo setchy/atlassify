@@ -26,7 +26,7 @@
 
 #### Experimental 
 
-macOS users can also install via [Homebrew][brew]
+Users can also install via [Homebrew][brew]
 ```shell
 brew install --cask setchy/brews/atlassify
 ```
