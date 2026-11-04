@@ -22,6 +22,10 @@ const config: Config = {
         atlassify: {
           sidebar: 'var(--atlassify-background-sidebar)',
           notifications: token('color.background.neutral.subtle.hovered'),
+          logo: {
+            brand: token('color.icon.brand'),
+            default: '#FFFFFF',
+          },
           heroicon: {
             neutral: {
               background: token('color.background.accent.gray.subtler'),
