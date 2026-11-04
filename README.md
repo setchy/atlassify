@@ -24,9 +24,10 @@
 2. **Install** and launch the app for your platform.
 3. **Authenticate** with your Atlassian account and start receiving notifications.
 
-#### 🧪 Experimental
+#### 🍺 Homebrew
 
-Users can also install via [Homebrew][brew]
+[Homebrew][brew] users can install via the following cask:
+
 ```shell
 brew install --cask setchy/brews/atlassify
 ```
