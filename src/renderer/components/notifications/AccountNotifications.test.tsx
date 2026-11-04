@@ -261,8 +261,12 @@ describe('account actions', () => {
       screen.getAllByTestId('notification-details').length,
     ).toBeGreaterThan(0);
 
-    await userEvent.click(screen.getByTestId('account-toggle'));
+    const toggle = screen.getByTestId('account-toggle');
+    expect(toggle).toHaveAttribute('aria-expanded', 'true');
+
+    await userEvent.click(toggle);
 
     expect(screen.queryAllByTestId('notification-details')).toHaveLength(0);
+    expect(toggle).toHaveAttribute('aria-expanded', 'false');
   });
 });

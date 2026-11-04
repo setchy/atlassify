@@ -3,19 +3,19 @@ import { blockAlignmentByLength, getChevronDetails } from './display';
 describe('renderer/utils/ui/display.ts', () => {
   describe('getChevronDetails', () => {
     it('should return correct chevron details', () => {
-      expect(getChevronDetails(true, true, 'account')).toEqual({
+      expect(getChevronDetails(true, 'account')).toEqual({
         icon: 'down',
         label: 'Hide account notifications',
       });
 
-      expect(getChevronDetails(true, false, 'account')).toEqual({
+      expect(getChevronDetails(false, 'account')).toEqual({
         icon: 'right',
         label: 'Show account notifications',
       });
 
-      expect(getChevronDetails(false, false, 'product')).toEqual({
-        icon: 'left',
-        label: 'No notifications for product',
+      expect(getChevronDetails(false, 'product')).toEqual({
+        icon: 'right',
+        label: 'Show product notifications',
       });
     });
   });
