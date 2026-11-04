@@ -1,5 +1,76 @@
 # Changelog
 
+## [3.17.3](https://github.com/setchy/atlassify/compare/v3.17.2...v3.17.3) (2026-11-04)
+
+
+### 🐛 Bug Fixes
+
+* **notifications:** align chevron disclosure and expose expanded state ([#4016](https://github.com/setchy/atlassify/issues/4016)) ([a36f554](https://github.com/setchy/atlassify/commit/a36f55479aed3113b8b22a3f7e32f916f9423b2e))
+* **sonar:** use async Electron safeStorage APIs (typescript:S1874) ([#4024](https://github.com/setchy/atlassify/issues/4024)) ([0545f30](https://github.com/setchy/atlassify/commit/0545f30b91e7accc8d438eea0eb5252e9cae8fb1))
+
+
+### 🧼 Code Refactoring
+
+* **sonar:** hoist inline icon renderers (typescript:S6478) ([#4026](https://github.com/setchy/atlassify/issues/4026)) ([c795937](https://github.com/setchy/atlassify/commit/c7959379a23d6c2f935c4dd862f7d1dfc5ed60cb))
+* **sonar:** move Atlassify logo colours to Tailwind (typescript:S1135) ([#4025](https://github.com/setchy/atlassify/issues/4025)) ([6928ccf](https://github.com/setchy/atlassify/commit/6928ccf7680eabc55b914f54897011eb517f0657))
+
+
+### 📚 Documentation
+
+* Update installation instructions for Homebrew ([501da7e](https://github.com/setchy/atlassify/commit/501da7e22c0db291d5fede4f1187f4d1eeb91333))
+* use command table in contributing guide ([#4002](https://github.com/setchy/atlassify/issues/4002)) ([c5af551](https://github.com/setchy/atlassify/commit/c5af551bb8370f0df9e3bd83fb7be1ae2b662133))
+
+
+### 🧪 Testing
+
+* add Vitest GitHub Actions reporter ([#4003](https://github.com/setchy/atlassify/issues/4003)) ([52ef873](https://github.com/setchy/atlassify/commit/52ef873d77f02c23328d3e18897d890d077f7088))
+
+
+### 📦 Dependency Updates (Core)
+
+* **deps-core:** update @atlaskit/avatar-group to v14.4.7 ([#3987](https://github.com/setchy/atlassify/issues/3987)) ([c4cfa42](https://github.com/setchy/atlassify/commit/c4cfa4221d10da0e5b2cf40d96e763fbc707a37a))
+* **deps-core:** update @atlaskit/avatar-group to v14.4.8 ([#4004](https://github.com/setchy/atlassify/issues/4004)) ([db0ebc4](https://github.com/setchy/atlassify/commit/db0ebc401cc582b44cbf3e99a6609f743602790c))
+* **deps-core:** update @atlaskit/css-reset to v8.4.8 ([#4005](https://github.com/setchy/atlassify/issues/4005)) ([4276351](https://github.com/setchy/atlassify/commit/4276351a3f35e209f3289879d74b49b90162ae70))
+* **deps-core:** update @atlaskit/form to v18.3.1 ([#3994](https://github.com/setchy/atlassify/issues/3994)) ([8c2bd1e](https://github.com/setchy/atlassify/commit/8c2bd1e9304ca9290ba1bbbc46421a18bc69f01a))
+* **deps-core:** update @atlaskit/modal-dialog to v17.2.0 ([#4012](https://github.com/setchy/atlassify/issues/4012)) ([4ed1681](https://github.com/setchy/atlassify/commit/4ed16819491f301cc8f86305a01b2e2d150f324e))
+* **deps-core:** update @atlaskit/select to v23.1.5 ([#4006](https://github.com/setchy/atlassify/issues/4006)) ([bf7cf54](https://github.com/setchy/atlassify/commit/bf7cf54f6284ff307ce2cc0b4a70c94067fdd620))
+* **deps-core:** update @atlaskit/textfield to v10.3.0 ([#3995](https://github.com/setchy/atlassify/issues/3995)) ([d33e438](https://github.com/setchy/atlassify/commit/d33e438bfee22fe7151e5b673193b01aa7cb02af))
+* **deps-core:** update @atlaskit/tokens to v20.8.2 ([#3988](https://github.com/setchy/atlassify/issues/3988)) ([4901fcf](https://github.com/setchy/atlassify/commit/4901fcf644e6be3d29b3ffb9b7b1effbf744f51a))
+* **deps-core:** update @atlaskit/tooltip to v24.4.3 ([#4007](https://github.com/setchy/atlassify/issues/4007)) ([513c57b](https://github.com/setchy/atlassify/commit/513c57b210f18a7ef0c1f67b3ef2f399074f6e73))
+* **deps-core:** update @tanstack/react-query to v5.105.1 ([#4017](https://github.com/setchy/atlassify/issues/4017)) ([2ed8b18](https://github.com/setchy/atlassify/commit/2ed8b184a439dae72faaf5c8806e1ee8fa3c3853))
+* **deps-core:** update electron to v45.1.0 ([#3996](https://github.com/setchy/atlassify/issues/3996)) ([f520d87](https://github.com/setchy/atlassify/commit/f520d87a577ba4aa2f8ae13612dcc4bb03ee6650))
+* **deps-core:** update electron to v45.2.1 ([#4013](https://github.com/setchy/atlassify/issues/4013)) ([222077d](https://github.com/setchy/atlassify/commit/222077d796e937ed0c9d4296fde4a77ea6dcff4e))
+
+
+### 📦 Dependency Updates (Other)
+
+* **deps:** lock file maintenance ([#3999](https://github.com/setchy/atlassify/issues/3999)) ([bb57206](https://github.com/setchy/atlassify/commit/bb5720637f0b4270929f1a5ffdf97cc7ffb5e790))
+* **deps:** lock file maintenance ([#4014](https://github.com/setchy/atlassify/issues/4014)) ([3f1b1b6](https://github.com/setchy/atlassify/commit/3f1b1b6fe01d27e8b31ea0b0766e55134e78e43c))
+* **deps:** lock file maintenance ([#4023](https://github.com/setchy/atlassify/issues/4023)) ([c4089f1](https://github.com/setchy/atlassify/commit/c4089f15f734ac2c9d7c5aee72f8ad0545ffa6d4))
+* **deps:** update @biomejs/biome to v2.6.4 ([#3989](https://github.com/setchy/atlassify/issues/3989)) ([e0b5492](https://github.com/setchy/atlassify/commit/e0b5492ae48779498f176a8e3b159a6dbd049bb3))
+* **deps:** update axios to v1.21.0 ([#3997](https://github.com/setchy/atlassify/issues/3997)) ([759ef16](https://github.com/setchy/atlassify/commit/759ef166b9a3c23fd5518fb6ffc19fcfd7f6569e))
+* **deps:** update cn to v0.5.1 ([#4008](https://github.com/setchy/atlassify/issues/4008)) ([f6587bc](https://github.com/setchy/atlassify/commit/f6587bca76fabe0212b5e2c653ccbfe8ae7d44e4))
+* **deps:** update i18next to v26.5.12 ([#4009](https://github.com/setchy/atlassify/issues/4009)) ([de3c59c](https://github.com/setchy/atlassify/commit/de3c59cf6472bbe6ec5cff2afa64cfe307174eae))
+* **deps:** update i18next to v26.6.0 ([#4020](https://github.com/setchy/atlassify/issues/4020)) ([d342f9a](https://github.com/setchy/atlassify/commit/d342f9ad40ebba6c4ef587c0a14a64981b3a36ef))
+* **deps:** update i18next-browser-languagedetector to v8.2.4 ([#4010](https://github.com/setchy/atlassify/issues/4010)) ([c8adeb4](https://github.com/setchy/atlassify/commit/c8adeb47d2faa9673262a7047477bce7d88be7d6))
+* **deps:** update i18next-cli to v1.80.5 ([#3991](https://github.com/setchy/atlassify/issues/3991)) ([a7e08be](https://github.com/setchy/atlassify/commit/a7e08befd63e31944d53d24c2dca707dea9c4991))
+* **deps:** update i18next-cli to v1.80.7 ([#4011](https://github.com/setchy/atlassify/issues/4011)) ([fc8a660](https://github.com/setchy/atlassify/commit/fc8a660c2201923fe9d8d0520a7ce6bf3b5ebb6f))
+* **deps:** update i18next-cli to v1.81.0 ([#4021](https://github.com/setchy/atlassify/issues/4021)) ([f179a6c](https://github.com/setchy/atlassify/commit/f179a6ca1f5a7df71e72ebfc9f27358995ba830e))
+* **deps:** update node.js to v26.6.6 ([#3992](https://github.com/setchy/atlassify/issues/3992)) ([aacb93a](https://github.com/setchy/atlassify/commit/aacb93a97686617824fe8ede6e99f2345cdef9c4))
+* **deps:** update pnpm to v12.16.1 ([#3998](https://github.com/setchy/atlassify/issues/3998)) ([c776c50](https://github.com/setchy/atlassify/commit/c776c50d655ab5c78a49d517ef1a3127d52abdf0))
+* **deps:** update react-i18next to v17.1.10 ([#4018](https://github.com/setchy/atlassify/issues/4018)) ([62a4fb4](https://github.com/setchy/atlassify/commit/62a4fb460babe8bde307a520d052ac1c2f1de54c))
+* **deps:** update react-router-dom to v7.18.5 ([#3993](https://github.com/setchy/atlassify/issues/3993)) ([666b6e5](https://github.com/setchy/atlassify/commit/666b6e51fb36a5cffee8f63bb20e99daa15d9c44))
+* **deps:** update sonarsource/sonarqube-scan-action action to v8.4.1 ([#4019](https://github.com/setchy/atlassify/issues/4019)) ([9a59238](https://github.com/setchy/atlassify/commit/9a5923897e2eccc25d9ba9582d05304d6af74733))
+* **deps:** update vite-plugin-electron to v1.2.0 ([#4022](https://github.com/setchy/atlassify/issues/4022)) ([86cf7f3](https://github.com/setchy/atlassify/commit/86cf7f330e66f39bcf1003d7dd9d40eda3a40635))
+* **deps:** update zizmorcore/zizmor-action action to v0.8.1 ([#4015](https://github.com/setchy/atlassify/issues/4015)) ([34d8bcb](https://github.com/setchy/atlassify/commit/34d8bcbf4f827c083cef5870e3186ed909d39dfe))
+
+
+### 🧹 Chore
+
+* **docs:** add lychee link checking ([#4000](https://github.com/setchy/atlassify/issues/4000)) ([c2bd071](https://github.com/setchy/atlassify/commit/c2bd071df4cbff483e85c76b4ca44b4910772289))
+* move zizmor config into .github ([#3985](https://github.com/setchy/atlassify/issues/3985)) ([ab0a82d](https://github.com/setchy/atlassify/commit/ab0a82dd9b202b24420f9345293cd2a1cc3f2b8d))
+* split lint, format, and combined check scripts ([#4001](https://github.com/setchy/atlassify/issues/4001)) ([978807a](https://github.com/setchy/atlassify/commit/978807afc519ce9ffbcebced6b355a2bab3d3759))
+
 ## [3.17.2](https://github.com/setchy/atlassify/compare/v3.17.1...v3.17.2) (2026-10-29)
 
 
