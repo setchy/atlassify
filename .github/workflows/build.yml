@@ -27,18 +27,21 @@ jobs:
         include:
           - os: macos-latest
             platform: macOS
+            fuse-path: dist/mac-universal/Atlassify.app
             package-path: dist/mac-universal/Atlassify.app
             package-cmd: vp run package:macos --publish=never -c.mac.identity=null
             cleanup-path: dist/mac-universal
             artifact-name: Atlassify-dist-mac
           - os: windows-latest
             platform: Windows
+            fuse-path: dist/win-unpacked/Atlassify.exe
             package-path: dist/win-unpacked
             package-cmd: vp run package:win --publish=never
             cleanup-path: dist/win-unpacked
             artifact-name: Atlassify-dist-win
           - os: ubuntu-latest
             platform: Linux
+            fuse-path: dist/linux-unpacked/atlassify
             package-path: dist/linux-unpacked
             package-cmd: vp run package:linux --publish=never
             cleanup-path: dist/linux-unpacked
@@ -75,6 +78,9 @@ jobs:
       - name: Verify packaged dependencies
         shell: bash
         run: node scripts/verifyPackagedDependencies.js "${{ matrix.package-path }}"
+
+      - name: Verify Electron fuses
+        run: node scripts/verifyFuses.js "${{ matrix.fuse-path }}"
 
       - name: Clean up builds
         shell: bash
