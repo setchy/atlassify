@@ -152,6 +152,26 @@ jobs:
             exit 1
           fi
 
+          # Each platform job verifies its own output, but a platform can still
+          # fail to attach to the draft. Publishing without a platform's
+          # installer strands existing installs on an old version, which is how
+          # the Windows installer went missing for seven releases (#4031).
+          assets=$(printf '%s' "${release}" | jq -r '.assets[].name')
+          missing=()
+          check_asset() {
+            printf '%s\n' "${assets}" | grep -Eq "$1" || missing+=("$2")
+          }
+          check_asset '\.dmg$' 'macOS disk image (*.dmg)'
+          check_asset '\.exe$' 'Windows installer (*.exe)'
+          check_asset '\.AppImage$' 'Linux AppImage (*.AppImage)'
+          check_asset '^latest-mac\.yml$' 'macOS update manifest (latest-mac.yml)'
+          check_asset '^latest\.yml$' 'Windows update manifest (latest.yml)'
+          check_asset '^latest-linux\.yml$' 'Linux update manifest (latest-linux.yml)'
+          if [ ${#missing[@]} -gt 0 ]; then
+            echo "::error::Release ${TAG_NAME} is missing: ${missing[*]}"
+            exit 1
+          fi
+
           # Credit contributors in the release body. GitHub's generated notes
           # attribute every PR to its author; the @mentions also drive the
           # contributor avatar strip on the release page. The tag does not
