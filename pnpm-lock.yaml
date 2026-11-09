@@ -378,8 +378,8 @@ importers:
         specifier: 9.1.7
         version: 9.1.7
       i18next-cli:
-        specifier: 1.81.0
-        version: 1.81.0(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(typescript@7.0.2)
+        specifier: 1.86.0
+        version: 1.86.0(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(typescript@7.0.2)
       react-devtools:
         specifier: 8.0.0
         version: 8.0.0(supports-color@10.2.2)
@@ -3527,10 +3527,6 @@ packages:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
     engines: {node: '>= 6'}
 
-  glob@13.0.6:
-    resolution: {integrity: sha512-Wjlyrolmm8uDpm/ogGyXZXb1Z+Ca2B8NbJwqBVg0axK9GbBeoS7yGV6vjXnYdGm6X53iehEuxxbyiKp8QmN4Vw==}
-    engines: {node: 18 || 20 || >=22}
-
   glob@14.0.4:
     resolution: {integrity: sha512-mMiwNKoJZ4HAIRVJxotO6LsNRReA30gQwP9E2/p94tfLv+jygCNpKDjhhSL6OLY6LE371EZm5EAf7RpYuUqlsw==}
     engines: {node: 18 || 20 || >=22}
@@ -3670,8 +3666,8 @@ packages:
   i18next-browser-languagedetector@8.2.4:
     resolution: {integrity: sha512-n6zWTCD8plrPN6gotXNXf0qdM2cORZqZ6ypJA4aIXZkEa45Ds2BVlrZfFItD+XQWP3yAgWxV+euldyN+2utk0Q==}
 
-  i18next-cli@1.81.0:
-    resolution: {integrity: sha512-w5Uw5/F9S9XdfAle40sXq1FrK/Pd0XoQyJ9T6+9EdaocAwPx3xOwjJQg+TDOHgR86lWr4EI7qjP0dhSNnY2CkA==}
+  i18next-cli@1.86.0:
+    resolution: {integrity: sha512-i1LV7JeM9XATZc4tAGUlgmgMLorTAa6O17l/gnrfmvOgsP6OWWlwwBYDzHgu4w1pHlhqpn0MoPEq84wrEYMYqQ==}
     engines: {node: '>=22'}
     hasBin: true
 
@@ -4454,10 +4450,6 @@ packages:
   path-root@0.1.1:
     resolution: {integrity: sha512-QLcPegTHF11axjfojBIoDygmS2E3Lf+8+jI6wOVmNVenrKSo3mFdSGiIgdSHenczw3wPtlVMQaFVwGmM7BJdtg==}
     engines: {node: '>=0.10.0'}
-
-  path-scurry@2.0.2:
-    resolution: {integrity: sha512-3O/iVVsJAPsOnpwWIeD+d6z/7PmqApyQePUtCndjatj/9I5LylHvt5qluFaBT3I5h3r1ejfR056c+FCv+NnNXg==}
-    engines: {node: 18 || 20 || >=22}
 
   path-scurry@3.0.0:
     resolution: {integrity: sha512-1pTbQqH1wIwMi/eleQ5leFTTCkzFsPcgXNjwOA8YGGW/W4/kHT3dssE7Z6NH+zuqNLOzOB0uaD61yl7cAcVhgg==}
@@ -9282,12 +9274,6 @@ snapshots:
     dependencies:
       is-glob: 4.0.3
 
-  glob@13.0.6:
-    dependencies:
-      minimatch: 10.2.6
-      minipass: 7.1.3
-      path-scurry: 2.0.2
-
   glob@14.0.4:
     dependencies:
       minimatch: 11.0.5
@@ -9463,7 +9449,7 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.29.10
 
-  i18next-cli@1.81.0(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(typescript@7.0.2):
+  i18next-cli@1.86.0(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(typescript@7.0.2):
     dependencies:
       '@croct/json5-parser': 0.2.2
       '@formatjs/icu-messageformat-parser': 3.5.22
@@ -9474,14 +9460,14 @@ snapshots:
       '@swc/core': 1.16.21
       chokidar: 5.0.0
       commander: 15.0.0
-      glob: 13.0.6
+      glob: 14.0.4
       i18next: 26.7.2(typescript@7.0.2)
       i18next-resources-for-ts: 2.1.2
       jiti: 2.7.0
       jsonc-parser: 3.3.1
       magic-string: 1.4.5
       messageformat: 4.1.0
-      minimatch: 10.2.6
+      minimatch: 11.0.5
       nano-spawn: 2.1.0
       react-i18next: 17.1.13(i18next@26.7.2(typescript@7.0.2))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(typescript@7.0.2)
       yaml: 2.9.1
@@ -10159,11 +10145,6 @@ snapshots:
   path-root@0.1.1:
     dependencies:
       path-root-regex: 0.1.2
-
-  path-scurry@2.0.2:
-    dependencies:
-      lru-cache: 11.5.3
-      minipass: 7.1.3
 
   path-scurry@3.0.0:
     dependencies:
