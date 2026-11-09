@@ -143,7 +143,7 @@
     "date-fns": "4.4.0",
     "electron": "45.2.3",
     "electron-builder": "26.18.0",
-    "graphql": "17.0.2",
+    "graphql": "17.1.0",
     "happy-dom": "21.0.4",
     "husky": "9.1.7",
     "i18next-cli": "1.86.0",
