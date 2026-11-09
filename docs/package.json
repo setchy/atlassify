@@ -48,14 +48,14 @@
     "@iconify-json/line-md": "1.2.16",
     "@iconify-json/mdi": "1.2.3",
     "@octokit/openapi-types": "29.0.1",
-    "@tailwindcss/vite": "4.3.3",
+    "@tailwindcss/vite": "4.3.5",
     "accessible-astro-components": "5.8.1",
     "astro": "7.4.7",
     "astro-icon": "1.2.0",
     "date-fns": "4.4.0",
     "octokit": "5.0.5",
     "sharp": "0.35.5",
-    "tailwindcss": "4.3.3",
+    "tailwindcss": "4.3.5",
     "tailwindcss-motion": "1.1.1"
   },
   "devDependencies": {
