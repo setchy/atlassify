@@ -24,24 +24,27 @@ jobs:
       contents: read
     strategy:
       matrix:
+        # electron-builder is invoked through node rather than `pnpm run`: on
+        # Windows, `pnpm run` launches the `node_modules/.bin` shim but the
+        # target never runs, exiting 0 with no output and no artifacts (#4031).
         include:
           - os: macos-latest
             platform: macOS
-            package-cmd: pnpm package:macos --publish=never -c.mac.identity=null
+            package-cmd: node node_modules/electron-builder/cli.js --mac --publish=never -c.mac.identity=null
             cleanup-path: dist/mac-universal
             verify-path: dist/mac-universal/Atlassify.app
             fuse-path: dist/mac-universal/Atlassify.app
             artifact-name: Atlassify-dist-mac
           - os: windows-latest
             platform: Windows
-            package-cmd: pnpm package:win --publish=never
+            package-cmd: node node_modules/electron-builder/cli.js --win --publish=never
             cleanup-path: dist/win-unpacked
             verify-path: dist/win-unpacked
             fuse-path: dist/win-unpacked/Atlassify.exe
             artifact-name: Atlassify-dist-win
           - os: ubuntu-latest
             platform: Linux
-            package-cmd: pnpm package:linux --publish=never
+            package-cmd: node node_modules/electron-builder/cli.js --linux --publish=never
             cleanup-path: dist/linux-unpacked
             verify-path: dist/linux-unpacked
             fuse-path: dist/linux-unpacked/atlassify
