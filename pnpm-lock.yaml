@@ -166,7 +166,7 @@ overrides:
   react-is: 19.3.1
   cross-spawn: 7.0.6
   got: 11.8.6
-  electron: 45.2.1
+  electron: 45.2.3
 
 importers:
 
@@ -180,7 +180,7 @@ importers:
         version: 5.4.4
       electron-menubar:
         specifier: 11.1.3
-        version: 11.1.3(electron@45.2.1(supports-color@10.2.2))
+        version: 11.1.3(electron@45.2.3(supports-color@10.2.2))
       electron-updater:
         specifier: 6.8.11
         version: 6.8.11(supports-color@10.2.2)
@@ -205,7 +205,7 @@ importers:
     devDependencies:
       '@aptabase/electron':
         specifier: 0.3.1
-        version: 0.3.1(electron@45.2.1(supports-color@10.2.2))
+        version: 0.3.1(electron@45.2.3(supports-color@10.2.2))
       '@atlaskit/avatar':
         specifier: 30.0.5
         version: 30.0.5(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
@@ -357,8 +357,8 @@ importers:
         specifier: 4.4.0
         version: 4.4.0
       electron:
-        specifier: 45.2.1
-        version: 45.2.1(supports-color@10.2.2)
+        specifier: 45.2.3
+        version: 45.2.3(supports-color@10.2.2)
       electron-builder:
         specifier: 26.18.0
         version: 26.18.0(electron-builder-squirrel-windows@26.18.0)(supports-color@10.2.2)
@@ -410,7 +410,7 @@ packages:
   '@aptabase/electron@0.3.1':
     resolution: {integrity: sha512-FECaGsjuoQu70F+M6V1evdgLP7yaq/sne9fC60AZZ6B9RsCDlxFBnJzdq3+xevHlUx6AB5o9ygUhQ+ONT9EqiA==}
     peerDependencies:
-      electron: 45.2.1
+      electron: 45.2.3
 
   '@ardatan/relay-compiler@13.0.2':
     resolution: {integrity: sha512-VFpv9UP820SiwDUPYtq7PmD3jifzZlevkQ26bhbSzFeruSTys0eHzQCZyKg+IhgmZzwPI9AFjPe26ABNjGeIKg==}
@@ -2755,7 +2755,7 @@ packages:
   electron-menubar@11.1.3:
     resolution: {integrity: sha512-Oy0QYnqXJyNJ9o/cytSyrw1rpMfyIG3f0yqhtcix/UO6EICXtthDPEGf9uhLpMH73+M5HHIucdTaNslcvqaUig==}
     peerDependencies:
-      electron: 45.2.1
+      electron: 45.2.3
 
   electron-publish@26.18.0:
     resolution: {integrity: sha512-MagnqaZSALSWjcdKu5HEVhYUZD/2BDL3q7XzrqWwub6gf/UfD3ItMgmthVDv9w5y9E0gH1C3JWqKaXwf6f4ROg==}
@@ -2770,8 +2770,8 @@ packages:
     resolution: {integrity: sha512-bO3y10YikuUwUuDUQRM4KfwNkKhnpVO7IPdbsrejwN9/AABJzzTQ4GeHwyzNSrVO+tEH3/Np255a3sVZpZDjvg==}
     engines: {node: '>=8.0.0'}
 
-  electron@45.2.1:
-    resolution: {integrity: sha512-t433yuo8Kh8WG/mTStnPRT/NtpWw8A+caNLJgeU0tS/FlfOkeNEntFsac4ViLgDxZOmDe7BeSkOANVqrqNHhDA==}
+  electron@45.2.3:
+    resolution: {integrity: sha512-Vurzu5UOA5nTGT4LqIwXD16QFGrOZdiXxF+1UP4KNsAOo/YtDcT3/u0jhP4WSwNJ0iLrLDi85hzBJ0arnGDhyw==}
     engines: {node: '>= 22.12.0'}
     hasBin: true
 
@@ -5105,9 +5105,9 @@ snapshots:
 
   '@adobe/css-tools@4.5.0': {}
 
-  '@aptabase/electron@0.3.1(electron@45.2.1(supports-color@10.2.2))':
+  '@aptabase/electron@0.3.1(electron@45.2.3(supports-color@10.2.2))':
     dependencies:
-      electron: 45.2.1(supports-color@10.2.2)
+      electron: 45.2.3(supports-color@10.2.2)
 
   '@ardatan/relay-compiler@13.0.2(graphql@17.0.2)':
     dependencies:
@@ -8129,9 +8129,9 @@ snapshots:
 
   electron-log@5.4.4: {}
 
-  electron-menubar@11.1.3(electron@45.2.1(supports-color@10.2.2)):
+  electron-menubar@11.1.3(electron@45.2.3(supports-color@10.2.2)):
     dependencies:
-      electron: 45.2.1(supports-color@10.2.2)
+      electron: 45.2.3(supports-color@10.2.2)
 
   electron-publish@26.18.0(supports-color@10.2.2):
     dependencies:
@@ -8174,7 +8174,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  electron@45.2.1(supports-color@10.2.2):
+  electron@45.2.3(supports-color@10.2.2):
     dependencies:
       '@electron-internal/extract-zip': 1.0.8
       '@electron/get': 5.1.0(supports-color@10.2.2)
@@ -9556,7 +9556,7 @@ snapshots:
   react-devtools@8.0.0(supports-color@10.2.2):
     dependencies:
       cross-spawn: 7.0.6
-      electron: 45.2.1(supports-color@10.2.2)
+      electron: 45.2.3(supports-color@10.2.2)
       internal-ip: 6.2.0
       minimist: 1.2.8
       react-devtools-core: 8.0.0
