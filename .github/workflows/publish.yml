@@ -49,6 +49,10 @@ jobs:
               - dist/mac-universal/Atlassify.app
               - dist/mac-arm64/Atlassify.app
               - dist/mac/Atlassify.app
+            fuse-paths:
+              - dist/mac-universal/Atlassify.app
+              - dist/mac-arm64/Atlassify.app
+              - dist/mac/Atlassify.app
             package-cmd: vp run package:macos --publish onTagOrDraft
             artifact-name: Atlassify-release-mac
             use-apple-notarization: true
@@ -56,6 +60,8 @@ jobs:
             platform: Windows
             package-paths:
               - dist/win-unpacked
+            fuse-paths:
+              - dist/win-unpacked/Atlassify.exe
             package-cmd: vp run package:win --publish onTagOrDraft
             artifact-name: Atlassify-release-win
             use-apple-notarization: false
@@ -63,6 +69,8 @@ jobs:
             platform: Linux
             package-paths:
               - dist/linux-unpacked
+            fuse-paths:
+              - dist/linux-unpacked/atlassify
             package-cmd: vp run package:linux --publish onTagOrDraft
             artifact-name: Atlassify-release-linux
             use-apple-notarization: false
@@ -108,6 +116,13 @@ jobs:
           # One entry per macOS arch, so word splitting is intended.
           # shellcheck disable=SC2086
           node scripts/verifyPackagedDependencies.js ${{ join(matrix.package-paths, ' ') }}
+
+      - name: Verify Electron fuses
+        shell: bash
+        run: |
+          # One entry per macOS arch, so word splitting is intended.
+          # shellcheck disable=SC2086
+          node scripts/verifyFuses.js ${{ join(matrix.fuse-paths, ' ') }}
 
       - name: Upload artifacts
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
