@@ -156,7 +156,7 @@
     "vite-plugin-electron": "1.2.0",
     "vite-plus": "catalog:",
     "vitest": "5.0.5",
-    "zustand": "5.0.16"
+    "zustand": "5.1.0"
   },
   "lint-staged": {
     "*": "biome check --fix --no-errors-on-unmatched",
