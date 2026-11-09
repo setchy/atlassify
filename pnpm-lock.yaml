@@ -172,9 +172,6 @@ importers:
 
   .:
     dependencies:
-      cn:
-        specifier: 0.5.1
-        version: 0.5.1
       electron-log:
         specifier: 5.4.4
         version: 5.4.4
@@ -184,24 +181,6 @@ importers:
       electron-updater:
         specifier: 6.8.11
         version: 6.8.11(supports-color@10.2.2)
-      i18next:
-        specifier: 26.6.0
-        version: 26.6.0(typescript@7.0.2)
-      i18next-browser-languagedetector:
-        specifier: 8.2.4
-        version: 8.2.4
-      react:
-        specifier: 19.3.1
-        version: 19.3.1
-      react-dom:
-        specifier: 19.3.1
-        version: 19.3.1(react@19.3.1)
-      react-i18next:
-        specifier: 17.1.10
-        version: 17.1.10(i18next@26.6.0(typescript@7.0.2))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(typescript@7.0.2)
-      react-router-dom:
-        specifier: 7.18.5
-        version: 7.18.5(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
     devDependencies:
       '@aptabase/electron':
         specifier: 0.3.1
@@ -350,6 +329,9 @@ importers:
       axios:
         specifier: 1.21.0
         version: 1.21.0(debug@4.4.3(supports-color@10.2.2))(supports-color@10.2.2)
+      cn:
+        specifier: 0.5.1
+        version: 0.5.1
       concurrently:
         specifier: 10.0.6
         version: 10.0.6
@@ -371,12 +353,30 @@ importers:
       husky:
         specifier: 9.1.7
         version: 9.1.7
+      i18next:
+        specifier: 26.6.0
+        version: 26.6.0(typescript@7.0.2)
+      i18next-browser-languagedetector:
+        specifier: 8.2.4
+        version: 8.2.4
       i18next-cli:
         specifier: 1.81.0
         version: 1.81.0(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(typescript@7.0.2)
+      react:
+        specifier: 19.3.1
+        version: 19.3.1
       react-devtools:
         specifier: 8.0.0
         version: 8.0.0(supports-color@10.2.2)
+      react-dom:
+        specifier: 19.3.1
+        version: 19.3.1(react@19.3.1)
+      react-i18next:
+        specifier: 17.1.10
+        version: 17.1.10(i18next@26.6.0(typescript@7.0.2))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(typescript@7.0.2)
+      react-router-dom:
+        specifier: 7.18.5
+        version: 7.18.5(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       rimraf:
         specifier: 6.1.3
         version: 6.1.3
