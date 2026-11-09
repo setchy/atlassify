@@ -45,16 +45,19 @@ jobs:
         include:
           - os: macos-latest
             platform: macOS
+            package-path: dist/mac-universal/Atlassify.app
             package-cmd: vp run package:macos --publish onTagOrDraft
             artifact-name: Atlassify-release-mac
             use-apple-notarization: true
           - os: windows-latest
             platform: Windows
+            package-path: dist/win-unpacked
             package-cmd: vp run package:win --publish onTagOrDraft
             artifact-name: Atlassify-release-win
             use-apple-notarization: false
           - os: ubuntu-latest
             platform: Linux
+            package-path: dist/linux-unpacked
             package-cmd: vp run package:linux --publish onTagOrDraft
             artifact-name: Atlassify-release-linux
             use-apple-notarization: false
@@ -93,6 +96,10 @@ jobs:
           NOTARIZE: ${{ matrix.use-apple-notarization }}
           # General
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verify packaged dependencies
+        shell: bash
+        run: node scripts/verifyPackagedDependencies.js "${{ matrix.package-path }}"
 
       - name: Upload artifacts
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2

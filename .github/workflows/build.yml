@@ -27,16 +27,19 @@ jobs:
         include:
           - os: macos-latest
             platform: macOS
+            package-path: dist/mac-universal/Atlassify.app
             package-cmd: vp run package:macos --publish=never -c.mac.identity=null
             cleanup-path: dist/mac-universal
             artifact-name: Atlassify-dist-mac
           - os: windows-latest
             platform: Windows
+            package-path: dist/win-unpacked
             package-cmd: vp run package:win --publish=never
             cleanup-path: dist/win-unpacked
             artifact-name: Atlassify-dist-win
           - os: ubuntu-latest
             platform: Linux
+            package-path: dist/linux-unpacked
             package-cmd: vp run package:linux --publish=never
             cleanup-path: dist/linux-unpacked
             artifact-name: Atlassify-dist-linux
@@ -68,6 +71,10 @@ jobs:
           # Signing certificates - important to use the correct cert per platform
           CSC_LINK: ${{ matrix.platform == 'macOS' && secrets.CSC_LINK || (matrix.platform == 'windows' && secrets.WIN_CSC_LINK || '') }}
           CSC_KEY_PASSWORD: ${{ matrix.platform == 'macOS' && secrets.CSC_KEY_PASSWORD || (matrix.platform == 'windows' && secrets.WIN_CSC_KEY_PASSWORD || '') }}
+
+      - name: Verify packaged dependencies
+        shell: bash
+        run: node scripts/verifyPackagedDependencies.js "${{ matrix.package-path }}"
 
       - name: Clean up builds
         shell: bash
