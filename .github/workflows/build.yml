@@ -27,18 +27,23 @@ jobs:
         include:
           - os: macos-latest
             platform: macOS
+            package-paths:
+              - dist/mac-universal/Atlassify.app
+              - dist/mac-arm64/Atlassify.app
+              - dist/mac/Atlassify.app
             package-cmd: vp run package:macos --publish=never -c.mac.identity=null
-            cleanup-path: dist/mac-universal
             artifact-name: Atlassify-dist-mac
           - os: windows-latest
             platform: Windows
+            package-paths:
+              - dist/win-unpacked
             package-cmd: vp run package:win --publish=never
-            cleanup-path: dist/win-unpacked
             artifact-name: Atlassify-dist-win
           - os: ubuntu-latest
             platform: Linux
+            package-paths:
+              - dist/linux-unpacked
             package-cmd: vp run package:linux --publish=never
-            cleanup-path: dist/linux-unpacked
             artifact-name: Atlassify-dist-linux
     runs-on: ${{ matrix.os }}
 
@@ -69,9 +74,12 @@ jobs:
           CSC_LINK: ${{ matrix.platform == 'macOS' && secrets.CSC_LINK || (matrix.platform == 'windows' && secrets.WIN_CSC_LINK || '') }}
           CSC_KEY_PASSWORD: ${{ matrix.platform == 'macOS' && secrets.CSC_KEY_PASSWORD || (matrix.platform == 'windows' && secrets.WIN_CSC_KEY_PASSWORD || '') }}
 
-      - name: Clean up builds
+      - name: Verify packaged dependencies
         shell: bash
-        run: rm -rfv ${{ matrix.cleanup-path }}
+        run: |
+          # One entry per macOS arch, so word splitting is intended.
+          # shellcheck disable=SC2086
+          node scripts/verifyPackagedDependencies.js ${{ join(matrix.package-paths, ' ') }}
 
       - name: Upload artifacts
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
