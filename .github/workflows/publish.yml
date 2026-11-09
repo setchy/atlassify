@@ -52,6 +52,7 @@ jobs:
             verify-path: dist/mac-universal/Atlassify.app
             fuse-path: dist/mac-universal/Atlassify.app
             artifact-name: Atlassify-release-mac
+            installer-glob: dist/*.dmg
             use-apple-notarization: true
           - os: windows-latest
             platform: Windows
@@ -59,6 +60,7 @@ jobs:
             verify-path: dist/win-unpacked
             fuse-path: dist/win-unpacked/Atlassify.exe
             artifact-name: Atlassify-release-win
+            installer-glob: dist/*.exe
             use-apple-notarization: false
           - os: ubuntu-latest
             platform: Linux
@@ -66,6 +68,7 @@ jobs:
             verify-path: dist/linux-unpacked
             fuse-path: dist/linux-unpacked/atlassify
             artifact-name: Atlassify-release-linux
+            installer-glob: dist/*.AppImage
             use-apple-notarization: false
     runs-on: ${{ matrix.os }}
 
@@ -104,6 +107,13 @@ jobs:
       - name: Verify Electron fuses
         run: node scripts/verifyFuses.js "${{ matrix.fuse-path }}"
 
+      - name: Verify installer was produced
+        shell: bash
+        # The dependency and fuse checks only cover the unpacked app. Electron
+        # can pack successfully and still fail to build the installer, which
+        # would publish a release with no downloadable artifact (#4031).
+        run: ls -1 ${{ matrix.installer-glob }}
+
       - name: Upload artifacts
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
@@ -112,6 +122,7 @@ jobs:
             dist/*
             !dist/*/
           overwrite: true
+          if-no-files-found: error
 
   publish-release:
     name: Publish release
