@@ -53,7 +53,6 @@ const config = {
     'assets/sounds/**/*',
     'build/**/*',
     'LICENSE',
-    'node_modules/**/*', // Ideally we would have !node_modules and let electron-builder prune deps
     'package.json',
   ],
   electronLanguages: ['en'],
