@@ -34,6 +34,12 @@
       "matchPackageNames": ["electron-menubar"],
       "minimumReleaseAge": "0 days",
       "schedule": ["at any time"]
+    },
+    {
+      "description": "Keep the graphql-code-generator monorepo in one PR, including major upgrades. Its CLI and plugin majors share a plugin API contract, so separate major PRs cannot be verified independently.",
+      "extends": ["monorepo:graphqlcodegenerator"],
+      "groupName": "graphql-codegen",
+      "separateMajorMinor": false
     }
   ],
   "customManagers": [
