@@ -4,9 +4,28 @@ import compiled from '@compiled/vite-plugin';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vitest/config';
 
+// Workaround for @compiled/vite-plugin@2.0.4 on Vite 8: the plugin's dev CSS
+// virtual module can be requested in its client-encoded form
+// (`/@id/__x00__virtual:@compiled/vite-plugin/local-css:…`), which the plugin's
+// own resolveId does not match, so the module fails to load ("Cannot find
+// module"). Decode it back to the resolved `\0`-prefixed id so the plugin's
+// load() hook runs.
+const compiledDevCssCompat = {
+  name: 'compiled-dev-css-compat',
+  enforce: 'pre' as const,
+  resolveId(source: string) {
+    const clientPrefix = '/@id/__x00__';
+    if (source.startsWith(`${clientPrefix}virtual:@compiled/vite-plugin/`)) {
+      return `\0${source.slice(clientPrefix.length)}`;
+    }
+    return null;
+  },
+};
+
 export default defineConfig({
   // pre-compile token() calls to literal CSS var strings so cssMap() can statically evaluate them
   plugins: [
+    compiledDevCssCompat,
     compiled({ transformerBabelPlugins: [tokensBabelPlugin] }),
     react(),
   ],
