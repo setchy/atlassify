@@ -9,7 +9,7 @@ allowBuilds:
   unrs-resolver: true
 catalog:
   electron: '45.2.3'
-  vite-plus: 1.5.0
+  vite-plus: 1.6.0
 minimumReleaseAgeExclude:
   - electron-menubar
 overrides:
