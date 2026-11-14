@@ -110,7 +110,7 @@
     "@atlaskit/tooltip": "24.4.3",
     "@biomejs/biome": "2.6.6",
     "@compiled/react": "2.0.0",
-    "@compiled/vite-plugin": "2.0.4",
+    "@compiled/vite-plugin": "2.1.0",
     "@discordapp/twemoji": "16.0.1",
     "@electron/notarize": "3.1.2",
     "@graphql-codegen/cli": "8.0.0",
