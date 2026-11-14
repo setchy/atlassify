@@ -1,14 +1,13 @@
 ---
-
 name: openspec-update-change
 description: Update an OpenSpec change by revising its existing planning artifacts and keeping them coherent with one another. Use when the user wants to revise a change's plan, fold new decisions into it, or reconcile its artifacts after an edit. Also use when the user says "openspec update change" or "opsx update". If the user means the openspec update CLI command, which refreshes generated files, run that command instead. Never edits code.
 allowed-tools: Bash(openspec:*)
 license: MIT
 compatibility: Requires openspec CLI.
 metadata:
-author: openspec
-version: "1.0"
-generatedBy: "2.0.0"
+  author: openspec
+  version: "1.0"
+  generatedBy: "2.0.0"
 ---
 
 Revise a change's existing planning artifacts and keep them coherent. Never edit code.
@@ -49,11 +48,9 @@ This workflow revises artifacts that already exist; it never creates missing one
    Always announce: "Using change: <name>" and how to override (e.g., `openspec-update-change <other>`).
 
 2. **Get the change's artifacts**
-
    ```bash
    openspec status --change "<name>" --json
    ```
-
    Parse the JSON to understand current state. The response includes:
    - `schemaName`: The workflow schema being used (e.g., "spec-driven")
    - `artifacts`: Array of artifacts with their status ("done", "skipped", "ready", "blocked")
@@ -86,7 +83,6 @@ This workflow revises artifacts that already exist; it never creates missing one
    - Show each proposed revision and why - including the requested edit drafted in step 4. Write only after the user confirms.
    - If the user rejects a revision, do not write it - leave that artifact unchanged.
    - When a substantial rewrite is needed, get that artifact's rules and template first:
-
      ```bash
      openspec instructions "<artifact-id>" --change "<name>" --json
      ```
@@ -99,17 +95,15 @@ This workflow revises artifacts that already exist; it never creates missing one
 **Output**
 
 After each invocation, show:
-
 - Which artifacts were revised (and which proposed revisions were rejected)
 - Any file created under a glob artifact that was already partially populated
 - Anything deferred because it does not exist yet (artifacts with no files and status `ready` or `blocked`, never `skipped` artifacts)
 - Where the change stands and the recommended next skill
 
 **Guardrails**
-
 - Planning artifacts only - NEVER edit implementation code. If the revised plan implies code changes, stop and point to `openspec-apply-change`.
 - Use the artifact ids and paths reported by `openspec status`; never branch on hardcoded artifact names.
 - Edit only the concrete files in `existingOutputPaths`, plus any confirmed concrete path allowed under a partly populated glob artifact (step 4); never write to a glob `resolvedOutputPath`.
 - Do not advance the build frontier: if an artifact has empty `existingOutputPaths` and status `ready` or `blocked`, creating them is a separate step, outside this workflow. Leave `skipped` artifacts untouched. The only new-file scope is a confirmed concrete path under a glob artifact whose `existingOutputPaths` is non-empty.
 - Confirm every edit with the user before writing.
-- If the request changes the change's _intent_ rather than refining it, ask for a distinct unused change name and recommend `openspec new change "<new-change-name>"` instead (the "Update vs. Start Fresh" heuristic).
+- If the request changes the change's *intent* rather than refining it, ask for a distinct unused change name and recommend `openspec new change "<new-change-name>"` instead (the "Update vs. Start Fresh" heuristic).

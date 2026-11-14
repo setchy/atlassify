@@ -11,6 +11,7 @@
       "!.github/prompts",
       "!.github/skills",
       "!.opencode",
+      "!**/.agents",
       "!openspec"
     ]
   },
