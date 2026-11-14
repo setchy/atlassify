@@ -115,7 +115,7 @@
     "@electron/notarize": "3.1.2",
     "@graphql-codegen/cli": "8.0.0",
     "@graphql-codegen/schema-ast": "7.0.0",
-    "@graphql-codegen/typescript-operations": "7.0.0",
+    "@graphql-codegen/typescript-operations": "7.0.1",
     "@graphql-typed-document-node/core": "3.2.0",
     "@heroicons/react": "2.2.0",
     "@parcel/watcher": "2.6.0",
