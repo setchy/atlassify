@@ -151,7 +151,7 @@
     "rimraf": "6.1.4",
     "tailwindcss": "4.3.5",
     "typescript": "7.0.2",
-    "vite": "8.3.6",
+    "vite": "8.3.8",
     "vite-plugin-checker": "0.14.5",
     "vite-plugin-electron": "1.2.0",
     "vite-plus": "catalog:",
