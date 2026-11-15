@@ -213,8 +213,8 @@ importers:
         specifier: 8.4.10
         version: 8.4.10(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/form':
-        specifier: 18.3.1
-        version: 18.3.1(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
+        specifier: 18.3.3
+        version: 18.3.3(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/heading':
         specifier: 8.0.0
         version: 8.0.0(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
@@ -508,8 +508,8 @@ packages:
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
-  '@atlaskit/form@18.3.1':
-    resolution: {integrity: sha512-fRzpeYUELvLUIwYZeY0wkaIan0Zd1qYa397UGoW/6GmDmZP+Dz6COP796ylnFMYLCN064zMXm7v+AyGk0BP44w==}
+  '@atlaskit/form@18.3.3':
+    resolution: {integrity: sha512-uzhO3JamOLbhYMjGADgy7DvGJtxSgt2USer3Hv9E+kgzWtO3nGd8QcGgZ3O10bGqQYK3/I+rTLV8WU06yMNinw==}
     peerDependencies:
       react: ^18.2.0 || ^19.0.0
 
@@ -5892,13 +5892,13 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@atlaskit/form@18.3.1(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)':
+  '@atlaskit/form@18.3.3(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)':
     dependencies:
       '@atlaskit/css': 1.1.8(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/ds-lib': 8.0.1(react@19.3.1)
       '@atlaskit/heading': 8.0.0(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/icon': 38.0.2(react@19.3.1)(supports-color@10.2.2)
-      '@atlaskit/motion': 9.6.1(react@19.3.1)(supports-color@10.2.2)
+      '@atlaskit/motion': 10.0.1(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/platform-feature-flags': 2.2.2(react@19.3.1)
       '@atlaskit/primitives': 22.7.1(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)
       '@atlaskit/react-compiler-gating': 0.2.7(react@19.3.1)
