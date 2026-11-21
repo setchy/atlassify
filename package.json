@@ -108,7 +108,7 @@
     "@atlaskit/toggle": "17.3.5",
     "@atlaskit/tokens": "20.12.0",
     "@atlaskit/tooltip": "24.4.5",
-    "@biomejs/biome": "2.6.6",
+    "@biomejs/biome": "2.6.8",
     "@compiled/react": "2.0.0",
     "@compiled/vite-plugin": "2.1.0",
     "@discordapp/twemoji": "17.0.3",
