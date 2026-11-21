@@ -1,5 +1,78 @@
 # Changelog
 
+## [3.17.5](https://github.com/setchy/atlassify/compare/v3.17.4...v3.17.5) (2026-11-21)
+
+
+### 🐛 Bug Fixes
+
+* changelog url ([9bb3013](https://github.com/setchy/atlassify/commit/9bb3013b479d1765ff9990f9b0f5ca53da5b0035))
+
+
+### 📦 Dependency Updates (Core)
+
+* **deps-core:** update @atlaskit/avatar to v30.1.2 ([#4112](https://github.com/setchy/atlassify/issues/4112)) ([d0f4c9e](https://github.com/setchy/atlassify/commit/d0f4c9e4c35ceb727d7aceb52538bccb78a60004))
+* **deps-core:** update @atlaskit/avatar-group to v14.4.10 ([#4080](https://github.com/setchy/atlassify/issues/4080)) ([401699a](https://github.com/setchy/atlassify/commit/401699a93519bda59e148a93354532ab8f476c61))
+* **deps-core:** update @atlaskit/avatar-group to v14.4.12 ([#4113](https://github.com/setchy/atlassify/issues/4113)) ([43cd0b8](https://github.com/setchy/atlassify/commit/43cd0b8d4ea25f1c5258135bd65e325a73555624))
+* **deps-core:** update @atlaskit/button to v25.8.1 ([#4097](https://github.com/setchy/atlassify/issues/4097)) ([6473a94](https://github.com/setchy/atlassify/commit/6473a9479a518f4bf8f60b66d7d7b5497cd39004))
+* **deps-core:** update @atlaskit/checkbox to v19.3.2 ([#4081](https://github.com/setchy/atlassify/issues/4081)) ([1f0fbe5](https://github.com/setchy/atlassify/commit/1f0fbe55539790b13677e0cf971fa063e52dae2c))
+* **deps-core:** update @atlaskit/css to v1.1.8 ([#4082](https://github.com/setchy/atlassify/issues/4082)) ([a1874c8](https://github.com/setchy/atlassify/commit/a1874c8a387460ac3366bf257c6054a5f8e49f5c))
+* **deps-core:** update @atlaskit/form to v18.3.3 ([#4083](https://github.com/setchy/atlassify/issues/4083)) ([72f8175](https://github.com/setchy/atlassify/commit/72f817528eca214f027bfc943df744ffc444fa6b))
+* **deps-core:** update @atlaskit/icon to v38.1.0 ([#4122](https://github.com/setchy/atlassify/issues/4122)) ([839fc43](https://github.com/setchy/atlassify/commit/839fc43c18681c6481e4742b4cf1f3155870098f))
+* **deps-core:** update @atlaskit/logo to v23.3.2 ([#4084](https://github.com/setchy/atlassify/issues/4084)) ([666271c](https://github.com/setchy/atlassify/commit/666271c1932a5da740e80a14e94bb2579fe33b1b))
+* **deps-core:** update @atlaskit/modal-dialog to v17.2.4 ([#4085](https://github.com/setchy/atlassify/issues/4085)) ([2d4659c](https://github.com/setchy/atlassify/commit/2d4659c6e6d870d38c3c17deb8c5fb03e552e02f))
+* **deps-core:** update @atlaskit/modal-dialog to v17.2.7 ([#4114](https://github.com/setchy/atlassify/issues/4114)) ([4fda9d9](https://github.com/setchy/atlassify/commit/4fda9d9c60f2cbc5d40fff815dd07ce3fa5a9712))
+* **deps-core:** update @atlaskit/primitives to v22.7.1 ([#4098](https://github.com/setchy/atlassify/issues/4098)) ([e3cda0a](https://github.com/setchy/atlassify/commit/e3cda0a43e0209ba6005f47939182044f19f3f36))
+* **deps-core:** update @atlaskit/select to v23.2.0 ([#4099](https://github.com/setchy/atlassify/issues/4099)) ([c9eb003](https://github.com/setchy/atlassify/commit/c9eb00357b665b5e2690417eda7018175de41fb7))
+* **deps-core:** update @atlaskit/select to v23.2.2 ([#4115](https://github.com/setchy/atlassify/issues/4115)) ([68fec64](https://github.com/setchy/atlassify/commit/68fec64037bf78b38243132a4959b2ef8b27ffcd))
+* **deps-core:** update @atlaskit/tag to v17.1.2 ([#4086](https://github.com/setchy/atlassify/issues/4086)) ([1636fc9](https://github.com/setchy/atlassify/commit/1636fc94de53b406e6066cb2ea41ec86e64b551e))
+* **deps-core:** update @atlaskit/tag-group to v13.4.3 ([#4087](https://github.com/setchy/atlassify/issues/4087)) ([3ac5f06](https://github.com/setchy/atlassify/commit/3ac5f0636272f030b3f034302f9596264fc498ca))
+* **deps-core:** update @atlaskit/textfield to v10.3.1 ([#4088](https://github.com/setchy/atlassify/issues/4088)) ([c39646a](https://github.com/setchy/atlassify/commit/c39646a0c3dbd5a3d6e3f5e72a015e1c287230aa))
+* **deps-core:** update @atlaskit/tokens to v20.11.0 ([#4100](https://github.com/setchy/atlassify/issues/4100)) ([129a717](https://github.com/setchy/atlassify/commit/129a717ae484fbd647957c6ad30371ff17e6bb09))
+* **deps-core:** update @atlaskit/tokens to v20.12.0 ([#4123](https://github.com/setchy/atlassify/issues/4123)) ([7980075](https://github.com/setchy/atlassify/commit/7980075e2a3087a5c0790fa94bc28a9245165efe))
+* **deps-core:** update @atlaskit/tooltip to v24.4.5 ([#4089](https://github.com/setchy/atlassify/issues/4089)) ([4cb3002](https://github.com/setchy/atlassify/commit/4cb30023828c6dd64085ea1c3a8faa742a007923))
+* **deps-core:** update @atlaskit/tooltip to v24.4.8 ([#4116](https://github.com/setchy/atlassify/issues/4116)) ([5ffee79](https://github.com/setchy/atlassify/commit/5ffee7929010af6b1cf9b1210c389323a71b14f2))
+* **deps-core:** update electron to v45.3.1 ([#4101](https://github.com/setchy/atlassify/issues/4101)) ([dcd9f37](https://github.com/setchy/atlassify/commit/dcd9f3772e07dce6bb0849a6e7e3e27cce3944d1))
+* **deps-core:** update electron to v45.3.3 ([#4117](https://github.com/setchy/atlassify/issues/4117)) ([b407f68](https://github.com/setchy/atlassify/commit/b407f68818e9a4d2dc5e30218ae1f6876485660e))
+
+
+### 📦 Dependency Updates (Other)
+
+* **deps:** lock file maintenance ([#4030](https://github.com/setchy/atlassify/issues/4030)) ([e934762](https://github.com/setchy/atlassify/commit/e93476249defa9138cfee806cab9cf9bac838e88))
+* **deps:** repair pnpm lockfile for @atlaskit/css ([#4109](https://github.com/setchy/atlassify/issues/4109)) ([c46aea2](https://github.com/setchy/atlassify/commit/c46aea24b8735145353c932e20544a874c30291d))
+* **deps:** update @biomejs/biome to v2.6.8 ([#4118](https://github.com/setchy/atlassify/issues/4118)) ([44d5a5c](https://github.com/setchy/atlassify/commit/44d5a5cfe56f037f67c048a74ded5571ea81975f))
+* **deps:** update @compiled/vite-plugin to v2.1.0 ([#4102](https://github.com/setchy/atlassify/issues/4102)) ([9b4976b](https://github.com/setchy/atlassify/commit/9b4976b9d8d0e602714fdfbfc9e34996efeeb61d))
+* **deps:** update @discordapp/twemoji to v17 ([#4107](https://github.com/setchy/atlassify/issues/4107)) ([3dc0e6f](https://github.com/setchy/atlassify/commit/3dc0e6f9850e268c2b4846d6450ffd2b825455d9))
+* **deps:** update @graphql-codegen/typescript-operations to v7.0.1 ([#4090](https://github.com/setchy/atlassify/issues/4090)) ([95b0422](https://github.com/setchy/atlassify/commit/95b04229dddf0db0809ed88aafca951802c7ec9c))
+* **deps:** update @testing-library/user-event to v14.6.10 ([#4091](https://github.com/setchy/atlassify/issues/4091)) ([d818f1b](https://github.com/setchy/atlassify/commit/d818f1b4f1091f380ffc1b0990e4515e5f7e3076))
+* **deps:** update @testing-library/user-event to v14.6.12 ([#4119](https://github.com/setchy/atlassify/issues/4119)) ([65d5fbc](https://github.com/setchy/atlassify/commit/65d5fbcc7f51ff030192604bfa9023ade6a55ffe))
+* **deps:** update @vitejs/plugin-react to v6.3.0 ([#4103](https://github.com/setchy/atlassify/issues/4103)) ([de8977a](https://github.com/setchy/atlassify/commit/de8977ab54e4ec78d3f87b551b2d52bdd9d7d2fb))
+* **deps:** update axios to v1.21.1 ([#4093](https://github.com/setchy/atlassify/issues/4093)) ([8e3ab07](https://github.com/setchy/atlassify/commit/8e3ab07aceba0207ab2249c5da51c510c73eb00e))
+* **deps:** update concurrently to v10.0.7 ([#4094](https://github.com/setchy/atlassify/issues/4094)) ([55b6dde](https://github.com/setchy/atlassify/commit/55b6ddef4e20f890e389edced915dc73e1f246c1))
+* **deps:** update graphql codegen toolchain to v8 ([#4076](https://github.com/setchy/atlassify/issues/4076)) ([6b7a894](https://github.com/setchy/atlassify/commit/6b7a8947341c87d20707099f4917b15f264978ad))
+* **deps:** update i18next to v27 ([#4073](https://github.com/setchy/atlassify/issues/4073)) ([0438e2e](https://github.com/setchy/atlassify/commit/0438e2ecb8f3413261380da4a4ac496d93290087))
+* **deps:** update i18next to v27.1.3 ([#4120](https://github.com/setchy/atlassify/issues/4120)) ([7928732](https://github.com/setchy/atlassify/commit/7928732f37d6b81bc8185ce4fdccab9c5cdc84b4))
+* **deps:** update i18next-cli to v1.87.0 ([#4070](https://github.com/setchy/atlassify/issues/4070)) ([368d807](https://github.com/setchy/atlassify/commit/368d807e96c359eb52a2d852b49b8f47caad9365))
+* **deps:** update i18next-cli to v1.91.0 ([#4124](https://github.com/setchy/atlassify/issues/4124)) ([0785da5](https://github.com/setchy/atlassify/commit/0785da51a0e6fd5ba272c114f125e5e633f5931b))
+* **deps:** update node.js to v26.13.1 ([#4095](https://github.com/setchy/atlassify/issues/4095)) ([f895789](https://github.com/setchy/atlassify/commit/f895789b075d096da7247f9071c7bc2dbc78fe91))
+* **deps:** update pnpm to v12.21.0 ([#4125](https://github.com/setchy/atlassify/issues/4125)) ([f8aff81](https://github.com/setchy/atlassify/commit/f8aff819b316190d6f022a16d8fccb88ba804c3a))
+* **deps:** update pnpm/setup action to v3.2.0 ([#4104](https://github.com/setchy/atlassify/issues/4104)) ([2c9a081](https://github.com/setchy/atlassify/commit/2c9a081d1171e590716a8cf8a9f3c773e1edf249))
+* **deps:** update react-i18next to v18 ([#4074](https://github.com/setchy/atlassify/issues/4074)) ([3e94ab7](https://github.com/setchy/atlassify/commit/3e94ab7122caf2c857409b2df0d365289d4c48cb))
+* **deps:** update react-i18next to v18.0.2 ([#4121](https://github.com/setchy/atlassify/issues/4121)) ([e7de78c](https://github.com/setchy/atlassify/commit/e7de78cb9816f7e5b8ed88d7604c7c43f16ffc87))
+* **deps:** update sonarsource/sonarqube-scan-action action to v8.5.0 ([#4105](https://github.com/setchy/atlassify/issues/4105)) ([7f9e29f](https://github.com/setchy/atlassify/commit/7f9e29f5cf99f5229f6175c3d409a996faaee05a))
+* **deps:** update vite to v8.3.8 ([#4096](https://github.com/setchy/atlassify/issues/4096)) ([2ea7f0f](https://github.com/setchy/atlassify/commit/2ea7f0f43f82668f6a6cf42722f965497a09e0a8))
+* **deps:** update vite-plugin-checker to v1 ([#4108](https://github.com/setchy/atlassify/issues/4108)) ([75b6b91](https://github.com/setchy/atlassify/commit/75b6b91bc754a5e5383f42adfd350f759d6bf8d4))
+* **deps:** update vite-plus to v1.6.0 ([#4106](https://github.com/setchy/atlassify/issues/4106)) ([b53a391](https://github.com/setchy/atlassify/commit/b53a3918d3a2e0fa82e5939ba474ffb2fe29c6f2))
+* **deps:** update vite+ packages ([#4126](https://github.com/setchy/atlassify/issues/4126)) ([e33489c](https://github.com/setchy/atlassify/commit/e33489c782611700caf285b97c9b9b8adc0d7c8f))
+
+
+### 🧹 Chore
+
+* group graphql-codegen updates ([#4078](https://github.com/setchy/atlassify/issues/4078)) ([974c61a](https://github.com/setchy/atlassify/commit/974c61a7428679c60b6b74de6f2ac3914c3f7e27))
+* migrate OpenSpec to v2.0.0 ([#4110](https://github.com/setchy/atlassify/issues/4110)) ([e603d9c](https://github.com/setchy/atlassify/commit/e603d9c2b8bdd5ee8c9dd4314a28ac4c1a2dac6c))
+* openspec update v2.0.0 ([bd13412](https://github.com/setchy/atlassify/commit/bd13412e054dcf34779874684e05847bc9a9077a))
+* **openspec:** use global skills instead of project copies ([#4111](https://github.com/setchy/atlassify/issues/4111)) ([745fcde](https://github.com/setchy/atlassify/commit/745fcde84351fa96c08fed78221e364d09376213))
+* restore local GraphQL SDL for editor tooling ([#4079](https://github.com/setchy/atlassify/issues/4079)) ([9e57287](https://github.com/setchy/atlassify/commit/9e5728715baa0d0c2ee72da8858ea7d29937e615))
+
 ## [3.17.4](https://github.com/setchy/atlassify/compare/v3.17.3...v3.17.4) (2026-11-10)
 
 
