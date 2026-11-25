@@ -65,7 +65,7 @@ describe('main/updater.ts', () => {
   class TestMenuBuilder extends MenuBuilder {
     public override setCheckForUpdatesMenuEnabled = vi.fn();
     public override setNoUpdateAvailableMenuVisibility = vi.fn();
-    public override setUpdateAvailableMenuVisibility = vi.fn();
+    public override setDownloadingUpdateMenuVisibility = vi.fn();
     public override setUpdateReadyForInstallMenuVisibility = vi.fn();
   }
 
@@ -112,9 +112,9 @@ describe('main/updater.ts', () => {
         }),
       );
       expect(autoUpdater.quitAndInstall).not.toHaveBeenCalled();
-      expect(menuBuilder.setUpdateAvailableMenuVisibility).toHaveBeenCalledWith(
-        false,
-      );
+      expect(
+        menuBuilder.setDownloadingUpdateMenuVisibility,
+      ).toHaveBeenCalledWith(false);
       expect(
         menuBuilder.setUpdateReadyForInstallMenuVisibility,
       ).toHaveBeenCalledWith(true);
@@ -203,18 +203,25 @@ describe('main/updater.ts', () => {
 
       emit('update-available');
 
-      expect(menuBuilder.setUpdateAvailableMenuVisibility).toHaveBeenCalledWith(
-        true,
-      );
+      expect(
+        menuBuilder.setUpdateReadyForInstallMenuVisibility,
+      ).toHaveBeenLastCalledWith(false);
+      expect(
+        menuBuilder.setDownloadingUpdateMenuVisibility,
+      ).toHaveBeenLastCalledWith(true);
       expect(menubar.tray.setToolTip).toHaveBeenCalledWith(
         expect.stringContaining('A new update is available'),
       );
     });
 
-    it('handles download-progress', async () => {
+    it('shows download progress only in the tooltip', async () => {
       await updater.start();
 
       emit('download-progress', { percent: 12.3456 });
+
+      expect(
+        menuBuilder.setDownloadingUpdateMenuVisibility,
+      ).not.toHaveBeenCalled();
 
       expect(menubar.tray.setToolTip).toHaveBeenCalledWith(
         expect.stringContaining('12.35%'),
@@ -232,9 +239,9 @@ describe('main/updater.ts', () => {
       expect(
         menuBuilder.setNoUpdateAvailableMenuVisibility,
       ).toHaveBeenCalledWith(true);
-      expect(menuBuilder.setUpdateAvailableMenuVisibility).toHaveBeenCalledWith(
-        false,
-      );
+      expect(
+        menuBuilder.setDownloadingUpdateMenuVisibility,
+      ).toHaveBeenCalledWith(false);
       expect(
         menuBuilder.setUpdateReadyForInstallMenuVisibility,
       ).toHaveBeenCalledWith(false);

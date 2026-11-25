@@ -15,7 +15,7 @@ import { openLogsDirectory, takeScreenshot } from './utils';
 export default class MenuBuilder {
   private readonly checkForUpdatesMenuItem: MenuItem;
   private readonly noUpdateAvailableMenuItem: MenuItem;
-  private readonly updateAvailableMenuItem: MenuItem;
+  private readonly downloadingUpdateMenuItem: MenuItem;
   private readonly updateReadyForInstallMenuItem: MenuItem;
   private readonly showWindowMenuItem: MenuItem;
   private readonly hideWindowMenuItem: MenuItem;
@@ -45,8 +45,8 @@ export default class MenuBuilder {
       visible: false,
     });
 
-    this.updateAvailableMenuItem = new MenuItem({
-      label: 'An update is available',
+    this.downloadingUpdateMenuItem = new MenuItem({
+      label: 'Downloading update…',
       enabled: false,
       visible: false,
     });
@@ -89,7 +89,7 @@ export default class MenuBuilder {
       { type: 'separator' },
       this.checkForUpdatesMenuItem,
       this.noUpdateAvailableMenuItem,
-      this.updateAvailableMenuItem,
+      this.downloadingUpdateMenuItem,
       this.updateReadyForInstallMenuItem,
       { type: 'separator' },
       {
@@ -201,12 +201,12 @@ export default class MenuBuilder {
   }
 
   /**
-   * Show or hide the "An update is available" status menu item.
+   * Show or hide the "Downloading update…" status menu item.
    *
    * @param isVisible - Whether the item should be visible.
    */
-  setUpdateAvailableMenuVisibility(isVisible: boolean) {
-    this.updateAvailableMenuItem.visible = isVisible;
+  setDownloadingUpdateMenuVisibility(isVisible: boolean) {
+    this.downloadingUpdateMenuItem.visible = isVisible;
     this.refreshMenu();
   }
 
