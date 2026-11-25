@@ -1,0 +1,20 @@
+src/main/menu.test.ts
+  h_ac004aadb63da9 165,167,170,176,179,183,186
+src/main/menu.ts
+  h_ac004aadb63da9 18,48-49,92,204,208-209
+src/main/updater.test.ts
+  h_ac004aadb63da9 68,115-117,206-211,217,222-225,242-244
+src/main/updater.ts
+  h_ac004aadb63da9 82-83,95,104,186
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4a491f6f9b9f0168b95e0ca624590369bcff88a2",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
