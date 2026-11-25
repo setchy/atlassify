@@ -79,7 +79,8 @@ export default class AppUpdater {
     autoUpdater.on('update-available', () => {
       logInfo('auto updater', 'Update available');
       this.setTooltipWithStatus('A new update is available');
-      this.menuBuilder.setUpdateAvailableMenuVisibility(true);
+      this.menuBuilder.setUpdateReadyForInstallMenuVisibility(false);
+      this.menuBuilder.setDownloadingUpdateMenuVisibility(true);
     });
 
     autoUpdater.on('download-progress', (progressObj) => {
@@ -91,7 +92,7 @@ export default class AppUpdater {
     autoUpdater.on('update-downloaded', (event) => {
       logInfo('auto updater', 'Update downloaded');
       this.setTooltipWithStatus('A new update is ready to install');
-      this.menuBuilder.setUpdateAvailableMenuVisibility(false);
+      this.menuBuilder.setDownloadingUpdateMenuVisibility(false);
       this.menuBuilder.setUpdateReadyForInstallMenuVisibility(true);
       this.showUpdateReadyDialog(event.releaseName ?? event.version);
     });
@@ -100,7 +101,7 @@ export default class AppUpdater {
       logInfo('auto updater', 'Update not available');
       this.menuBuilder.setCheckForUpdatesMenuEnabled(true);
       this.menuBuilder.setNoUpdateAvailableMenuVisibility(true);
-      this.menuBuilder.setUpdateAvailableMenuVisibility(false);
+      this.menuBuilder.setDownloadingUpdateMenuVisibility(false);
       this.menuBuilder.setUpdateReadyForInstallMenuVisibility(false);
 
       // Auto-hide the "no updates available" message
@@ -182,7 +183,7 @@ export default class AppUpdater {
     this.menubar.tray.setToolTip(APPLICATION.NAME);
     this.menuBuilder.setCheckForUpdatesMenuEnabled(true);
     this.menuBuilder.setNoUpdateAvailableMenuVisibility(false);
-    this.menuBuilder.setUpdateAvailableMenuVisibility(false);
+    this.menuBuilder.setDownloadingUpdateMenuVisibility(false);
     this.menuBuilder.setUpdateReadyForInstallMenuVisibility(false);
 
     // Clear any pending timeout

@@ -162,28 +162,28 @@ describe('main/menu.ts', () => {
     });
   });
 
-  describe('updateAvailableMenuItem', () => {
+  describe('downloadingUpdateMenuItem', () => {
     it('default menu configuration', () => {
-      const config = getMenuItemConfigByLabel('An update is available');
+      const config = getMenuItemConfigByLabel('Downloading update…');
 
       expect(config).toBeDefined();
-      expect(config?.label).toBe('An update is available');
+      expect(config?.label).toBe('Downloading update…');
       expect(config?.enabled).toBe(false);
       expect(config?.visible).toBe(false);
     });
 
     it('should show menu item', () => {
-      menuBuilder.setUpdateAvailableMenuVisibility(true);
+      menuBuilder.setDownloadingUpdateMenuVisibility(true);
 
       // biome-ignore lint/complexity/useLiteralKeys: This is a test
-      expect(menuBuilder['updateAvailableMenuItem'].visible).toBe(true);
+      expect(menuBuilder['downloadingUpdateMenuItem'].visible).toBe(true);
     });
 
     it('should hide menu item', () => {
-      menuBuilder.setUpdateAvailableMenuVisibility(false);
+      menuBuilder.setDownloadingUpdateMenuVisibility(false);
 
       // biome-ignore lint/complexity/useLiteralKeys: This is a test
-      expect(menuBuilder['updateAvailableMenuItem'].visible).toBe(false);
+      expect(menuBuilder['downloadingUpdateMenuItem'].visible).toBe(false);
     });
   });
 
