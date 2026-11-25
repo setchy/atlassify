@@ -1,0 +1,14 @@
+release-please-config.json
+  h_ac004aadb63da9 23-24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "20c23887a8c9ac5654507208da7fe566aa1466e1",
+  "prompts": {},
+  "humans": {
+    "h_ac004aadb63da9": {
+      "author": "Adam Setch <adam.setch@outlook.com>"
+    }
+  }
+}
