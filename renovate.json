@@ -1,6 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["local>setchy/renovate-config", "schedule:monthly"],
+  "extends": [
+    "local>setchy/renovate-config",
+    "schedule:monthly",
+    "customManagers:githubActionsVersions"
+  ],
   "packageRules": [
     {
       "description": "Fetch changelog details for Atlassian atlaskit packages",
@@ -11,7 +15,7 @@
     {
       "description": "Fetch changelog details for twemoji packages",
       "matchPackageNames": ["@discordapp/twemoji"],
-      "changelogUrl": "https://github.com/jdjdecked/twemoji"
+      "changelogUrl": "https://github.com/jdecked/twemoji"
     },
     {
       "description": "Hold got on the v11 line. The override only exists to satisfy security scanners for dev tooling (@electron/get via electron-builder, react-devtools), which was built against the non-ESM v11 API. v11.8.5+ already includes the security fix, and v12+ is ESM-only.",
@@ -34,6 +38,12 @@
       "matchPackageNames": ["electron-menubar"],
       "minimumReleaseAge": "0 days",
       "schedule": ["at any time"]
+    },
+    {
+      "description": "Keep the graphql-code-generator monorepo in one PR, including major upgrades. Its CLI and plugin majors share a plugin API contract, so separate major PRs cannot be verified independently.",
+      "extends": ["monorepo:graphqlcodegenerator"],
+      "groupName": "graphql-codegen",
+      "separateMajorMinor": false
     }
   ],
   "customManagers": [

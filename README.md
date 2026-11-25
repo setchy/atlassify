@@ -8,7 +8,7 @@
 
 ---
 
-## Features
+## 📦 Features
 
 - 🔔 Unified notifications from Atlassian Cloud products
 - 💻 Cross-platform: macOS, Windows, and Linux
@@ -17,22 +17,21 @@
 - ⚡ Fast, native experience
 - 🌐 Multi-language/localization support
 
-
-## Quick Start
+## 🚀 Quick Start
 
 1. **Download** Atlassify for free from [atlassify.io][website].
 2. **Install** and launch the app for your platform.
 3. **Authenticate** with your Atlassian account and start receiving notifications.
 
-#### Experimental 
+#### 🍺 Homebrew
 
-macOS users can also install via [Homebrew][brew]
+[Homebrew][brew] users can install via the following cask:
+
 ```shell
 brew install --cask setchy/brews/atlassify
 ```
 
-
-## Build & Development
+## 🛠️ Build & Development
 
 To build and run Atlassify locally:
 
@@ -44,39 +43,33 @@ pnpm dev
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for full development and contribution instructions.
 
-
-## FAQ
+## ❓ FAQ
 
 See our [Atlassify FAQs][faqs] for answers to common questions.
 
-
-## Privacy & Analytics
+## 🔒 Privacy & Analytics
 
 Atlassify includes optional anonymous usage analytics to help improve product quality and UX.
 
 See [PRIVACY.md](PRIVACY.md) for complete details.
 
-
-## Community & Support
+## 🤝 Community & Support
 
 - Open an [issue][github-issues] for bugs or feature requests.
 - See [CONTRIBUTING.md](CONTRIBUTING.md) for more ways to get involved.
 
-
-## License
+## 📄 License
 
 Atlassify is licensed under the MIT Open Source license.
 
 See [LICENSE](LICENSE) for details.
 
-
-## Acknowledgements
+## 🙏 Acknowledgements
 
 I would like to acknowledge the following projects and resources that have inspired and contributed to the development of Atlassify:
 
 1. [Gitify][attribution-gitify] – An open-source GitHub notification app, which I am the lead maintainer of, served as the launchpad for Atlassify.
 2. [Atlassian Design System][attribution-atlassian] – The design principles and UI components (@atlaskit) from Atlassian have helped shape the user interface of Atlassify.
-
 
 <!-- LINK LABELS -->
 [social]: docs/public/images//social.png

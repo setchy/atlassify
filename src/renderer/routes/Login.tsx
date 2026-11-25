@@ -13,6 +13,7 @@ import Form, {
 import LinkExternalIcon from '@atlaskit/icon/core/link-external';
 import LockLockedIcon from '@atlaskit/icon/core/lock-locked';
 import LogInIcon from '@atlaskit/icon/core/log-in';
+import type { IconProps, NewIconProps } from '@atlaskit/icon/types';
 import { Box, Inline } from '@atlaskit/primitives';
 import TextField from '@atlaskit/textfield';
 import Tooltip from '@atlaskit/tooltip';
@@ -32,6 +33,16 @@ import {
   openAtlassianCreateToken,
   openAtlassianSecurityDocs,
 } from '../utils/system/links';
+
+// Props handed to Button icon renderers.
+type ButtonIconProps =
+  | Omit<IconProps, 'size'>
+  | Omit<NewIconProps, 'spacing' | 'size'>;
+
+// Hoisted so its identity is stable across re-renders (S6478).
+function CreateTokenIcon(iconProps: ButtonIconProps) {
+  return <LockLockedIcon {...iconProps} size="small" />;
+}
 
 interface LoginProps {
   username: Username;
@@ -148,12 +159,7 @@ export function LoginRoute() {
                               >
                                 <Button
                                   appearance="discovery"
-                                  iconBefore={(iconProps) => (
-                                    <LockLockedIcon
-                                      {...iconProps}
-                                      size="small"
-                                    />
-                                  )}
+                                  iconBefore={CreateTokenIcon}
                                   onClick={() => openAtlassianCreateToken()}
                                   spacing="compact"
                                   testId="login-create-token"

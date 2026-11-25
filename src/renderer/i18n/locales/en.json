@@ -28,7 +28,6 @@
   },
   "chevron": {
     "hide": "Hide {{type}} notifications",
-    "none": "No notifications for {{type}}",
     "show": "Show {{type}} notifications"
   },
   "common": {

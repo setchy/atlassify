@@ -45,9 +45,10 @@ import {
   openAccountProfile,
   openMyPullRequests,
 } from '../../utils/system/links';
-import { CHEVRON_ICONS, getChevronDetails } from '../../utils/ui/display';
+import { getChevronDetails } from '../../utils/ui/display';
 import { isLightMode } from '../../utils/ui/theme';
 import { AllRead } from '../AllRead';
+import { CHEVRON_ICONS } from '../icons/ChevronIcons';
 import { Oops } from '../Oops';
 import { NotificationRow } from './NotificationRow';
 import { ProductNotifications } from './ProductNotifications';
@@ -165,11 +166,7 @@ export function AccountNotifications(props: AccountNotificationsProps) {
 
   const hasAccountNotifications = notifications.length > 0;
 
-  const Chevron = getChevronDetails(
-    hasAccountNotifications,
-    isAccountNotificationsVisible,
-    'account',
-  );
+  const Chevron = getChevronDetails(isAccountNotificationsVisible, 'account');
   const ChevronIcon = CHEVRON_ICONS[Chevron.icon];
 
   return (
@@ -264,9 +261,8 @@ export function AccountNotifications(props: AccountNotificationsProps) {
               <Tooltip content={Chevron.label} position="bottom">
                 <IconButton
                   appearance="subtle"
-                  icon={(iconProps) => (
-                    <ChevronIcon {...iconProps} size="small" />
-                  )}
+                  aria-expanded={isAccountNotificationsVisible}
+                  icon={ChevronIcon}
                   label={Chevron.label}
                   shape="circle"
                   spacing="compact"

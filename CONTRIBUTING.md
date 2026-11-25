@@ -13,11 +13,13 @@ This project is a tool for monitoring new notifications from Atlassian Cloud pro
 To get started:
 
 Clone the repository and install dependencies:
+
 ```shell
 pnpm install
 ```
 
 Start development mode (includes GraphQL codegen and hot module reload):
+
 ```shell
 pnpm dev
 ```
@@ -25,6 +27,7 @@ pnpm dev
 ### Tests
 
 There are two main checks:
+
 1. Linter & formatter with [Biome][biome-website]
 2. Unit tests with [Vitest][vitest-website]
 
@@ -70,7 +73,6 @@ Changes confined to `docs/` are excluded from desktop app releases. They are val
 
 For a signing-only check, manually run the Publish workflow with an empty tag. Supplying a tag publishes that existing draft after all platform jobs succeed.
 
-
 ### Locales
 
 Atlassify supports multiple languages.
@@ -107,7 +109,6 @@ To add a new locale:
 - Translate the strings (i18n Ally can do this), then carefully verify the results. **Do not translate placeholder variables** like `{{ }}`.
 
 CI runs `pnpm i18n:check` to make sure the locale files stay in sync with the code. Don't use `--trust-derived` when extracting — it replaces real English text with key names.
-
 
 <!-- LINK LABELS -->
 [biome-website]: https://biomejs.dev/

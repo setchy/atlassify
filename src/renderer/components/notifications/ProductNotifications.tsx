@@ -15,8 +15,9 @@ import type { AtlassifyNotification } from '../../types';
 
 import { shouldRemoveNotificationsFromState } from '../../utils/notifications/postProcess';
 import { openExternalLink } from '../../utils/system/comms';
-import { CHEVRON_ICONS, getChevronDetails } from '../../utils/ui/display';
+import { getChevronDetails } from '../../utils/ui/display';
 import { isLightMode } from '../../utils/ui/theme';
+import { CHEVRON_ICONS } from '../icons/ChevronIcons';
 import { NotificationRow } from './NotificationRow';
 
 // Hoisted so its identity is stable across re-renders (S6478).
@@ -93,11 +94,7 @@ export function ProductNotifications({
     setIsProductNotificationsVisible(!isProductNotificationsVisible);
   };
 
-  const Chevron = getChevronDetails(
-    true,
-    isProductNotificationsVisible,
-    'product',
-  );
+  const Chevron = getChevronDetails(isProductNotificationsVisible, 'product');
   const ChevronIcon = CHEVRON_ICONS[Chevron.icon];
 
   return (
@@ -167,9 +164,8 @@ export function ProductNotifications({
             <Tooltip content={Chevron.label} position="bottom">
               <IconButton
                 appearance="subtle"
-                icon={(iconProps) => (
-                  <ChevronIcon {...iconProps} size="small" />
-                )}
+                aria-expanded={isProductNotificationsVisible}
+                icon={ChevronIcon}
                 label={Chevron.label}
                 shape="circle"
                 spacing="compact"

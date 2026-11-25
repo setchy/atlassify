@@ -27,18 +27,31 @@ jobs:
         include:
           - os: macos-latest
             platform: macOS
-            package-cmd: pnpm package:macos --publish=never -c.mac.identity=null
-            cleanup-path: dist/mac-universal
+            package-paths:
+              - dist/mac-universal/Atlassify.app
+              - dist/mac-arm64/Atlassify.app
+              - dist/mac/Atlassify.app
+            fuse-paths:
+              - dist/mac-universal/Atlassify.app
+              - dist/mac-arm64/Atlassify.app
+              - dist/mac/Atlassify.app
+            package-cmd: vp run package:macos --publish=never -c.mac.identity=null
             artifact-name: Atlassify-dist-mac
           - os: windows-latest
             platform: Windows
-            package-cmd: pnpm package:win --publish=never
-            cleanup-path: dist/win-unpacked
+            package-paths:
+              - dist/win-unpacked
+            fuse-paths:
+              - dist/win-unpacked/Atlassify.exe
+            package-cmd: vp run package:win --publish=never
             artifact-name: Atlassify-dist-win
           - os: ubuntu-latest
             platform: Linux
-            package-cmd: pnpm package:linux --publish=never
-            cleanup-path: dist/linux-unpacked
+            package-paths:
+              - dist/linux-unpacked
+            fuse-paths:
+              - dist/linux-unpacked/atlassify
+            package-cmd: vp run package:linux --publish=never
             artifact-name: Atlassify-dist-linux
     runs-on: ${{ matrix.os }}
 
@@ -51,8 +64,14 @@ jobs:
       - name: Setup Node.js
         uses: $/.github/actions/setup-node
 
+      - name: Setup Vite+
+        uses: voidzero-dev/setup-vp@v1.22.0
+        with:
+          run-install: false
+          node-manager: false
+
       - name: Build application
-        run: pnpm build
+        run: vp run build
         env:
           VITE_APTABASE_KEY: ${{ secrets.APTABASE_KEY }}
 
@@ -63,9 +82,19 @@ jobs:
           CSC_LINK: ${{ matrix.platform == 'macOS' && secrets.CSC_LINK || (matrix.platform == 'windows' && secrets.WIN_CSC_LINK || '') }}
           CSC_KEY_PASSWORD: ${{ matrix.platform == 'macOS' && secrets.CSC_KEY_PASSWORD || (matrix.platform == 'windows' && secrets.WIN_CSC_KEY_PASSWORD || '') }}
 
-      - name: Clean up builds
+      - name: Verify packaged dependencies
         shell: bash
-        run: rm -rfv ${{ matrix.cleanup-path }}
+        run: |
+          # One entry per macOS arch, so word splitting is intended.
+          # shellcheck disable=SC2086
+          node scripts/verifyPackagedDependencies.js ${{ join(matrix.package-paths, ' ') }}
+
+      - name: Verify Electron fuses
+        shell: bash
+        run: |
+          # One entry per macOS arch, so word splitting is intended.
+          # shellcheck disable=SC2086
+          node scripts/verifyFuses.js ${{ join(matrix.fuse-paths, ' ') }}
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v7.0.2
@@ -75,3 +104,4 @@ jobs:
             dist/*
             !dist/*/
           overwrite: true
+          if-no-files-found: error

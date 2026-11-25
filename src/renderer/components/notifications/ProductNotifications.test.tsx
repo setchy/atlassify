@@ -89,7 +89,12 @@ describe('renderer/components/notifications/ProductNotifications.tsx', () => {
       renderWithProviders(<ProductNotifications {...props} />);
     });
 
-    await userEvent.click(screen.getByTestId('product-toggle'));
+    const toggle = screen.getByTestId('product-toggle');
+    expect(toggle).toHaveAttribute('aria-expanded', 'true');
+
+    await userEvent.click(toggle);
+
+    expect(toggle).toHaveAttribute('aria-expanded', 'false');
 
     const tree = renderWithProviders(<ProductNotifications {...props} />);
 

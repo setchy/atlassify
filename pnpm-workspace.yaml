@@ -8,7 +8,8 @@ allowBuilds:
   esbuild: true
   unrs-resolver: true
 catalog:
-  electron: '45.2.1'
+  electron: '45.3.3'
+  vite-plus: 1.7.0
 minimumReleaseAgeExclude:
   - electron-menubar
 overrides:

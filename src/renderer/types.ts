@@ -300,7 +300,7 @@ export type ErrorType =
 /**
  * The direction of a chevron icon used in a header accordion.
  */
-export type ChevronIconType = 'down' | 'left' | 'right';
+export type ChevronIconType = 'down' | 'right';
 
 /**
  * Details for Chevron header accordion.

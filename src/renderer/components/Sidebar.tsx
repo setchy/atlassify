@@ -90,6 +90,16 @@ function SidebarComponent() {
     [sidebarIconColorToken],
   );
 
+  const renderGroupByTitleIcon = useCallback(
+    () => (
+      <CollapseVerticalIcon
+        color={sidebarIconColorToken}
+        label="groupByTitle"
+      />
+    ),
+    [sidebarIconColorToken],
+  );
+
   const renderFilterIcon = useCallback(
     (iconProps: ButtonIconProps) => (
       <FilterIcon {...iconProps} color={sidebarIconColorToken} />
@@ -116,6 +126,13 @@ function SidebarComponent() {
   const renderSettingsIcon = useCallback(
     (iconProps: ButtonIconProps) => (
       <SettingsIcon {...iconProps} color={sidebarIconColorToken} />
+    ),
+    [sidebarIconColorToken],
+  );
+
+  const renderQuitIcon = useCallback(
+    (iconProps: ButtonIconProps) => (
+      <CrossCircleIcon {...iconProps} color={sidebarIconColorToken} />
     ),
     [sidebarIconColorToken],
   );
@@ -223,12 +240,7 @@ function SidebarComponent() {
                     appearance={
                       groupNotificationsByTitle ? 'discovery' : 'subtle'
                     }
-                    icon={() => (
-                      <CollapseVerticalIcon
-                        color={sidebarIconColorToken}
-                        label="groupByTitle"
-                      />
-                    )}
+                    icon={renderGroupByTitleIcon}
                     label={t('sidebar.toggles.groupByTitle.label', {
                       defaultValue: 'Group notifications by title',
                     })}
@@ -317,12 +329,7 @@ function SidebarComponent() {
               >
                 <IconButton
                   appearance="subtle"
-                  icon={(iconProps) => (
-                    <CrossCircleIcon
-                      {...iconProps}
-                      color={sidebarIconColorToken}
-                    />
-                  )}
+                  icon={renderQuitIcon}
                   label={t('sidebar.quit.label', {
                     defaultValue: 'Quit {{appName}}',
                     appName: APPLICATION.NAME,

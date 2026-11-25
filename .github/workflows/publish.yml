@@ -45,17 +45,33 @@ jobs:
         include:
           - os: macos-latest
             platform: macOS
-            package-cmd: pnpm package:macos --publish onTagOrDraft
+            package-paths:
+              - dist/mac-universal/Atlassify.app
+              - dist/mac-arm64/Atlassify.app
+              - dist/mac/Atlassify.app
+            fuse-paths:
+              - dist/mac-universal/Atlassify.app
+              - dist/mac-arm64/Atlassify.app
+              - dist/mac/Atlassify.app
+            package-cmd: vp run package:macos --publish onTagOrDraft
             artifact-name: Atlassify-release-mac
             use-apple-notarization: true
           - os: windows-latest
             platform: Windows
-            package-cmd: pnpm package:win --publish onTagOrDraft
+            package-paths:
+              - dist/win-unpacked
+            fuse-paths:
+              - dist/win-unpacked/Atlassify.exe
+            package-cmd: vp run package:win --publish onTagOrDraft
             artifact-name: Atlassify-release-win
             use-apple-notarization: false
           - os: ubuntu-latest
             platform: Linux
-            package-cmd: pnpm package:linux --publish onTagOrDraft
+            package-paths:
+              - dist/linux-unpacked
+            fuse-paths:
+              - dist/linux-unpacked/atlassify
+            package-cmd: vp run package:linux --publish onTagOrDraft
             artifact-name: Atlassify-release-linux
             use-apple-notarization: false
     runs-on: ${{ matrix.os }}
@@ -69,8 +85,14 @@ jobs:
       - name: Setup Node.js
         uses: $/.github/actions/setup-node
 
+      - name: Setup Vite+
+        uses: voidzero-dev/setup-vp@v1.22.0
+        with:
+          run-install: false
+          node-manager: false
+
       - name: Build application
-        run: pnpm build
+        run: vp run build
         env:
           VITE_APTABASE_KEY: ${{ secrets.APTABASE_KEY }}
 
@@ -88,6 +110,20 @@ jobs:
           # General
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Verify packaged dependencies
+        shell: bash
+        run: |
+          # One entry per macOS arch, so word splitting is intended.
+          # shellcheck disable=SC2086
+          node scripts/verifyPackagedDependencies.js ${{ join(matrix.package-paths, ' ') }}
+
+      - name: Verify Electron fuses
+        shell: bash
+        run: |
+          # One entry per macOS arch, so word splitting is intended.
+          # shellcheck disable=SC2086
+          node scripts/verifyFuses.js ${{ join(matrix.fuse-paths, ' ') }}
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v7.0.2
         with:
@@ -96,6 +132,7 @@ jobs:
             dist/*
             !dist/*/
           overwrite: true
+          if-no-files-found: error
 
   publish-release:
     name: Publish release
@@ -122,6 +159,14 @@ jobs:
           release_id=$(printf '%s' "${release}" | jq -r '.id // empty')
           if [ -z "${release_id}" ]; then
             echo "::error::No release found for tag ${TAG_NAME}"
+            exit 1
+          fi
+
+          # Packaging verifies every target against electron-builder.js, but a
+          # draft with no assets would publish a release nobody can download.
+          asset_count=$(printf '%s' "${release}" | jq -r '.assets | length')
+          if [ "${asset_count}" -eq 0 ]; then
+            echo "::error::Release ${TAG_NAME} has no assets to publish"
             exit 1
           fi
 
